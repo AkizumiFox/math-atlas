@@ -1,0 +1,29 @@
+flowchart LR
+  AN2_5["AN2.5 等度連續、Arzelà–Ascoli 與 Peano 定理"]:::ext
+  AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
+  AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
+  HA_2["HA.2 好核、可和性與 Fejér 定理"]:::ext
+  HA_4["HA.4 Fourier 級數的應用"]:::ext
+  CA_1["1 全純函數與冪級數"]
+  CA_2["2 Cauchy 定理及其初步推論"]
+  CA_3["3 Laurent 級數、奇點與留數"]
+  CA_4["4 環繞數、整體 Cauchy 定理與零點計數"]
+  CA_5["5 共形映射、正規族與 Riemann 映射定理"]
+  CA_6["6 調和函數與次調和函數"]
+  CA_7["7 無窮乘積與整函數"]
+  CA_8["8 解析延拓、單值性與 Picard 定理"]
+  AN3_1 -.-> CA_1
+  AN3_4 -.-> CA_2
+  CA_1 --> CA_2
+  CA_2 --> CA_3
+  CA_3 --> CA_4
+  AN2_5 --> CA_5
+  CA_4 --> CA_5
+  HA_2 --> CA_6
+  CA_2 --> CA_6
+  CA_4 --> CA_7
+  HA_4 -.-> CA_8
+  CA_7 --> CA_8
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

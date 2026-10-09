@@ -1,0 +1,33 @@
+flowchart LR
+  AN1_10["AN1.10 冪級數、Taylor 級數與初等函數"]:::ext
+  F3_6["F3.6 複數"]:::ext
+  LA3_12["LA3.12 譜理論"]:::ext
+  AN2_2["AN2.2 完備性與完備化"]:::ext
+  AN2_6["AN2.6 C(K) 的稠密與範疇：Stone–Weierstrass 與 Baire"]:::ext
+  AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
+  HA_1["1 Fourier 級數：起源與基本性質"]
+  HA_2["2 好核、可和性與 Fejér 定理"]
+  HA_3["3 均方收斂與逐點收斂"]
+  HA_4["4 Fourier 級數的應用"]
+  HA_5["5 ℝ 上的 Fourier 變換"]
+  HA_6["6 ℝᵈ 上的 Fourier 變換與波動方程"]
+  HA_7["7 有限 Abel 群上的 Fourier 分析"]:::opt
+  HA_8["8 算術級數中的質數：Dirichlet 定理"]:::opt
+  HA_9["9 Riemann 積分的不足"]
+  AN1_10 --> HA_1
+  F3_6 --> HA_1
+  HA_1 --> HA_2
+  AN2_2 --> HA_3
+  HA_2 --> HA_3
+  HA_3 --> HA_4
+  AN3_4 --> HA_5
+  HA_2 --> HA_5
+  HA_5 --> HA_6
+  LA3_12 --> HA_7
+  HA_3 --> HA_7
+  HA_7 --> HA_8
+  AN2_6 --> HA_9
+  HA_3 --> HA_9
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

@@ -1,0 +1,24 @@
+flowchart LR
+  F2_2["F2.2 等價關係、序與歸納"]:::ext
+  F2_3["F2.3 基數：可數與不可數（含選擇公理的陳述）"]:::ext
+  AN1_1["AN1.1 有序體與最小上界公理"]:::ext
+  F3_1["1 ZF 公理、選擇與自然數"]:::opt
+  F3_2["2 以等價類建構 ℤ 與 ℚ"]:::opt
+  F3_3["3 以 Dedekind 分割建構 ℝ"]:::opt
+  F3_4["4 完備有序體的唯一性"]:::opt
+  F3_5["5 整除、帶餘除法與 ℤ/nℤ"]
+  F3_6["6 複數"]
+  F3_7["7 體"]
+  F3_8["8 形式多項式"]
+  F2_3 --> F3_1
+  F3_1 --> F3_2
+  AN1_1 --> F3_3
+  F3_2 --> F3_3
+  AN1_1 --> F3_4
+  F2_2 --> F3_5
+  AN1_1 -.-> F3_6
+  F3_5 --> F3_7
+  F3_7 --> F3_8
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

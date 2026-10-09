@@ -1,0 +1,29 @@
+flowchart LR
+  AN3_2["AN3.2 反函數、隱函數與 Lagrange 乘數"]:::ext
+  AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
+  MT_1["1 ℝᵈ 上的 Lebesgue 測度與可測函數"]
+  MT_2["2 Lebesgue 積分與收斂定理"]
+  MT_3["3 抽象測度空間與 Carathéodory 構造"]
+  MT_4["4 乘積測度與 Fubini–Tonelli 定理"]
+  MT_5["5 線性映射、變數變換與極座標"]
+  MT_6["6 曲面、曲面測度與散度定理"]
+  MT_7["7 Lᵖ 空間、摺積與磨光子"]
+  MT_8["8 收斂模式、一致可積與弱 Lᵖ"]
+  MT_9["9 極大函數與 Lebesgue 微分定理"]
+  MT_10["10 有界變差、絕對連續與微積分基本定理"]
+  MT_11["11 符號測度、Radon–Nikodym 與 Lebesgue 分解"]
+  AN3_4 --> MT_1
+  MT_1 --> MT_2
+  MT_2 --> MT_3
+  MT_3 --> MT_4
+  AN3_2 --> MT_5
+  MT_4 --> MT_5
+  MT_5 --> MT_6
+  MT_4 --> MT_7
+  MT_7 --> MT_8
+  MT_7 --> MT_9
+  MT_9 --> MT_10
+  MT_7 --> MT_11
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

@@ -1,0 +1,74 @@
+# 資格考目標：每個目標是一組「讀完就算涵蓋該科」的章。必讀集合由 atlas.py stats 以 s 祖先閉包計算。
+# items 是考綱條目 → 章的覆蓋矩陣；找不到章的條目寫 gap。reported 是先前對話報告手算的章數（舊章節清單），只供對照。
+
+- id: complex
+  name: 複分析（Ahlfors 程度）
+  reported: 49
+  note: Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8）不列入。
+  chapters: [CA.1, CA.2, CA.3, CA.4, CA.5, CA.6, CA.7]
+  items:
+    - {topic: Cauchy 積分公式、Liouville、最大模, ch: [CA.2]}
+    - {topic: Laurent、留數、實積分計算, ch: [CA.3]}
+    - {topic: 輻角原理、Rouché, ch: [CA.4]}
+    - {topic: 共形映射、Schwarz 引理、Riemann 映射定理, ch: [CA.5]}
+    - {topic: 調和函數、Poisson 積分, ch: [CA.6]}
+    - {topic: Weierstrass 乘積、Mittag-Leffler, ch: [CA.7]}
+
+- id: real-ntu
+  name: 實分析（台大必考，最小版）
+  reported: 57
+  note: 台大博士班資格考必考實分析；考綱原文未取得，範圍依 Folland 第 1–5 章（Wisconsin 的參考範圍）推估。
+  chapters: [MT.1, MT.2, MT.3, MT.4, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1, FA.2, FA.3, FA.4, FA.6]
+  items:
+    - {topic: Lebesgue 測度與可測函數, ch: [MT.1]}
+    - {topic: 收斂定理, ch: [MT.2]}
+    - {topic: 外測度、Carathéodory, ch: [MT.3]}
+    - {topic: Fubini–Tonelli, ch: [MT.4]}
+    - {topic: Lᵖ、Hölder、Minkowski、Riesz–Fischer, ch: [MT.7]}
+    - {topic: 微分定理、AC 與 BV, ch: [MT.9, MT.10]}
+    - {topic: Radon–Nikodym, ch: [MT.11]}
+    - {topic: Banach 空間、Lᵖ 的對偶, ch: [FA.1]}
+    - {topic: Riesz 表現定理, ch: [FA.2]}
+    - {topic: Hahn–Banach、Baire 三定理, ch: [FA.3, FA.4]}
+    - {topic: Hilbert 空間, ch: [FA.6]}
+
+- id: real-harvard
+  name: 實分析（Harvard 版，含 Fourier series）
+  reported: 66
+  note: 台大版再加 Fourier 級數與變換、弱拓樸。
+  chapters: [MT.1, MT.2, MT.3, MT.4, MT.5, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1, FA.2, FA.3, FA.4, FA.5, FA.6, HA.1, HA.2, HA.3, HA.5, HA.6]
+  items:
+    - {topic: Fourier series（Lᵖ、Parseval、Fejér）, ch: [HA.1, HA.2, HA.3]}
+    - {topic: Fourier 變換、Plancherel, ch: [HA.5, HA.6]}
+
+- id: algebra-harvard
+  name: 代數（Harvard 版）
+  reported: 74
+  note: Harvard 考綱：Sylow、p 群、可解群、自由群；張量積、行列式、Jordan 標準形、PID、UFD；分裂體、可分擴張；Serre 表示論 §1–6。
+  chapters: [AL1.7, AL1.8, AL1.9, AL1.10, AL1.11, AL2.4, AL2.5, AL2.9, AL2.10, AL3.4, AL3.6, AL3.7, AL3.8, AL4.4, AL4.5, AL4.10, LA2.10, LA4.15]
+  items:
+    - {topic: Sylow、p 群, ch: [AL1.7]}
+    - {topic: 可解群, ch: [AL1.9]}
+    - {topic: 自由群, ch: [AL1.11]}
+    - {topic: 張量積, ch: [LA4.15, AL4.5]}
+    - {topic: 行列式, ch: [LA2.7]}
+    - {topic: Jordan 標準形, ch: [LA2.10, AL4.4]}
+    - {topic: PID、UFD, ch: [AL2.5]}
+    - {topic: 分裂體、可分與不可分擴張, ch: [AL2.8, AL3.1]}
+    - {topic: Galois 理論, ch: [AL3.3, AL3.7, AL3.8]}
+    - {topic: 有限群表示（Serre §1–6）, ch: [AL4.9, AL4.10]}
+
+- id: linalg-berkeley
+  name: 線性代數（Berkeley prelim）
+  note: Berkeley prelim 線代題，程度為大學 honors 課。
+  chapters: [LA2.10, LA3.13, LA4.14]
+  items:
+    - {topic: 標準形, ch: [LA2.10]}
+    - {topic: 譜定理、SVD, ch: [LA3.12, LA3.13]}
+    - {topic: 二次型, ch: [LA4.14]}
+
+- id: clt
+  name: 中央極限定理（對照「最長鏈」）
+  note: 對話報告的最長鏈終點。PR.1 已含 Lindeberg CLT。
+  chapters: [PR.1]
+  items: []

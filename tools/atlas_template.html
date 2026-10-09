@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Math Atlas</title>
+<style>
+:root {
+  --bg: #fbfaf7; --panel: #ffffff; --ink: #1f2328; --muted: #6b7280; --line: #d6d3cc;
+  --edge: #8a8f98; --edge-b: #a3a8b0; --soft: #c9c4bb; --sel: #d1361b; --anc: #1f6feb;
+  --borrow: #8957e5; --desc: #1a7f37; --dim: 0.16;
+  --found: #e8e2f4; --analysis: #dcebf7; --linalg: #dff2e1; --algebra: #fbe6d4; --side: #ececec;
+  --vol-bg: rgba(0,0,0,0.025);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171a; --panel: #1d2024; --ink: #e6e6e6; --muted: #9aa0a6; --line: #3a3f45;
+    --edge: #7d838c; --edge-b: #6b7079; --soft: #4a4f56; --sel: #ff7b5c; --anc: #58a6ff;
+    --borrow: #b88cff; --desc: #3fb950; --dim: 0.18;
+    --found: #3a3350; --analysis: #22384a; --linalg: #233d2a; --algebra: #4a3424; --side: #33363a;
+    --vol-bg: rgba(255,255,255,0.03);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171a; --panel: #1d2024; --ink: #e6e6e6; --muted: #9aa0a6; --line: #3a3f45;
+  --edge: #7d838c; --edge-b: #6b7079; --soft: #4a4f56; --sel: #ff7b5c; --anc: #58a6ff;
+  --borrow: #b88cff; --desc: #3fb950; --dim: 0.18;
+  --found: #3a3350; --analysis: #22384a; --linalg: #233d2a; --algebra: #4a3424; --side: #33363a;
+  --vol-bg: rgba(255,255,255,0.03);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Noto Sans TC", "PingFang TC", sans-serif; display: flex; flex-direction: column; }
+header { padding: 10px 16px; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+header h1 { font-size: 16px; margin: 0 8px 0 0; }
+header label { color: var(--muted); display: inline-flex; gap: 4px; align-items: center; }
+select, input[type=search], button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+button { cursor: pointer; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+.legend span::before { content: ""; display: inline-block; width: 18px; height: 0; border-top: 2px solid var(--c); margin-right: 4px; vertical-align: middle; }
+.legend .dash::before { border-top-style: dashed; }
+main { flex: 1; display: flex; min-height: 0; }
+#wrap { flex: 1; position: relative; overflow: hidden; cursor: grab; }
+#wrap.drag { cursor: grabbing; }
+svg { width: 100%; height: 100%; display: block; }
+aside { width: 340px; max-width: 45vw; border-left: 1px solid var(--line); background: var(--panel); padding: 12px 14px; overflow: auto; }
+aside h2 { font-size: 15px; margin: 0 0 4px; }
+aside h3 { font-size: 13px; margin: 14px 0 4px; color: var(--muted); font-weight: 600; }
+aside ul { margin: 0; padding-left: 18px; }
+aside li { cursor: pointer; }
+aside li:hover { text-decoration: underline; }
+.muted { color: var(--muted); }
+.tag { display: inline-block; font-size: 11px; padding: 0 5px; border: 1px solid var(--line); border-radius: 4px; margin-left: 4px; color: var(--muted); }
+.vol rect.box { fill: var(--vol-bg); stroke: var(--line); }
+.vol text { fill: var(--muted); font-size: 12px; font-weight: 600; cursor: pointer; }
+.node rect { stroke: rgba(0,0,0,0.18); rx: 5; }
+.node text { fill: var(--ink); font-size: 12px; pointer-events: none; }
+.node { cursor: pointer; }
+.node.opt rect { stroke-dasharray: 4 3; fill-opacity: 0.45; }
+.node.collapsed rect { stroke-width: 1.5; }
+.edge { fill: none; stroke: var(--edge); stroke-width: 1.1; }
+.edge.b { stroke: var(--edge-b); stroke-dasharray: 5 4; }
+.edge.soft { stroke: var(--soft); stroke-dasharray: 2 3; }
+.hl .node, .hl .edge, .hl .vol { opacity: var(--dim); }
+.hl .node.on, .hl .edge.on { opacity: 1; }
+.hl .vol.on { opacity: 1; }
+.node.sel rect { stroke: var(--sel); stroke-width: 3; }
+.node.anc rect { stroke: var(--anc); stroke-width: 2.5; }
+.node.bor rect { stroke: var(--borrow); stroke-width: 2.5; stroke-dasharray: 4 2; }
+.node.desc rect { stroke: var(--desc); stroke-width: 2.5; }
+.edge.on.anc { stroke: var(--anc); stroke-width: 1.8; }
+.edge.on.desc { stroke: var(--desc); stroke-width: 1.8; }
+#status { position: absolute; left: 12px; bottom: 10px; color: var(--muted); font-size: 12px; background: var(--panel); padding: 2px 8px; border-radius: 6px; border: 1px solid var(--line); }
+@media (max-width: 720px) {
+  main { flex-direction: column; }
+  aside { width: auto; max-width: none; max-height: 40vh; border-left: 0; border-top: 1px solid var(--line); }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Math Atlas · 章層級依賴圖</h1>
+  <label>目標 <select id="target"><option value="">（無）</option></select></label>
+  <label><input type="search" id="q" placeholder="搜尋章（id 或標題）"></label>
+  <label><input type="checkbox" id="soft"> 顯示 see／revisits</label>
+  <label><input type="checkbox" id="full"> 不做傳遞約簡</label>
+  <button id="collapseAll">全部收合</button>
+  <button id="expandAll">全部展開</button>
+  <button id="fit">置中</button>
+  <div class="legend">
+    <span style="--c:var(--edge)">s 需讀</span>
+    <span class="dash" style="--c:var(--edge-b)">b 借用</span>
+    <span style="--c:var(--anc)">必讀祖先</span>
+    <span class="dash" style="--c:var(--borrow)">只借用</span>
+    <span style="--c:var(--desc)">後代</span>
+  </div>
+</header>
+<main>
+  <div id="wrap"><svg id="svg"></svg><div id="status">排版中…</div></div>
+  <aside id="info"><p class="muted">點一章看它的先備與後代；點冊名收合或展開該冊。資料由 <code>tools/atlas.py render</code> 從 registry 產生。</p></aside>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/elkjs@0.9.3/lib/elk.bundled.js"></script>
+<script>
+const DATA = /*__DATA__*/null;
+const NS = "http://www.w3.org/2000/svg";
+const $ = (id) => document.getElementById(id);
+const chap = Object.fromEntries(DATA.chapters.map(c => [c.id, c]));
+const vol = Object.fromEntries(DATA.volumes.map(v => [v.id, v]));
+const HARD = new Set(["s", "b"]);
+const preds = {}, succs = {};
+for (const c of DATA.chapters) { preds[c.id] = []; succs[c.id] = []; }
+for (const e of DATA.edges) if (HARD.has(e.type)) { preds[e.to].push(e); succs[e.from].push(e); }
+
+const collapsed = new Set();
+let selected = null, targetSet = null;
+try { JSON.parse(localStorage.getItem("atlas.collapsed") || "[]").forEach(v => collapsed.add(v)); } catch (_) {}
+
+for (const t of DATA.targets || []) {
+  const o = document.createElement("option"); o.value = t.id; o.textContent = t.name; $("target").appendChild(o);
+}
+
+function closure(starts, step) {
+  const seen = new Set(), todo = [...starts];
+  while (todo.length) { const n = todo.pop(); if (seen.has(n)) continue; seen.add(n); for (const m of step(n)) todo.push(m); }
+  return seen;
+}
+const sAnc = (ids) => closure(ids, n => preds[n].filter(e => e.type === "s").map(e => e.from));
+const allAnc = (ids) => closure(ids, n => preds[n].map(e => e.from));
+const allDesc = (ids) => closure(ids, n => succs[n].map(e => e.to));
+
+const canvas = document.createElement("canvas").getContext("2d");
+canvas.font = "12px system-ui, sans-serif";
+const short = (t) => t.length > 16 ? t.slice(0, 15) + "…" : t;
+const nodeLabel = (c) => `${c.id}  ${short(c.title)}`;
+const textW = (s) => Math.ceil(canvas.measureText(s).width);
+
+function shown(cid) { const v = chap[cid].vol; return collapsed.has(v) ? v : cid; }
+
+function buildGraph() {
+  const soft = $("soft").checked, full = $("full").checked;
+  const kids = {};
+  const root = { id: "root", layoutOptions: {
+      "elk.algorithm": "layered", "elk.direction": "DOWN",
+      "elk.hierarchyHandling": "INCLUDE_CHILDREN",
+      "elk.layered.spacing.nodeNodeBetweenLayers": "26", "elk.spacing.nodeNode": "12",
+      "elk.layered.spacing.edgeNodeBetweenLayers": "10", "elk.edgeRouting": "POLYLINE",
+      "elk.layered.crossingMinimization.strategy": "LAYER_SWEEP",
+      "elk.layered.nodePlacement.strategy": "NETWORK_SIMPLEX" },
+    children: [], edges: [] };
+  for (const v of DATA.volumes) {
+    if (collapsed.has(v.id)) {
+      const lab = `${v.id} ${v.title}`;
+      root.children.push({ id: v.id, width: textW(lab) + 22, height: 30, kind: "vol-node" });
+    } else {
+      const box = { id: v.id, kind: "vol", children: [], edges: [],
+        layoutOptions: { "elk.padding": "[top=26,left=10,bottom=10,right=10]" } };
+      kids[v.id] = box; root.children.push(box);
+    }
+  }
+  for (const c of DATA.chapters) if (kids[c.vol]) kids[c.vol].children.push({ id: c.id, width: textW(nodeLabel(c)) + 16, height: 24 });
+  const seen = new Map();
+  for (const e of DATA.edges) {
+    const isSoft = !HARD.has(e.type);
+    if (isSoft && !soft) continue;
+    if (!isSoft && !full && !e.reduced) continue;
+    const a = shown(e.from), b = shown(e.to);
+    if (a === b) continue;
+    const key = a + ">" + b, prev = seen.get(key);
+    const rank = { s: 3, b: 2, revisits: 1, see: 0 }[e.type];
+    if (prev && prev.rank >= rank) continue;
+    seen.set(key, { a, b, type: e.type, rank });
+  }
+  let i = 0;
+  for (const { a, b, type } of seen.values()) {
+    const va = chap[a] ? chap[a].vol : a, vb = chap[b] ? chap[b].vol : b;
+    const edge = { id: "e" + (i++), sources: [a], targets: [b], type };
+    if (va === vb && kids[va]) kids[va].edges.push(edge); else root.edges.push(edge);
+  }
+  return root;
+}
+
+let layoutGen = 0;
+async function layout() {
+  const gen = ++layoutGen;
+  $("status").textContent = "排版中…"; $("status").style.display = "";
+  const g = buildGraph();
+  const elk = new ELK();
+  let res;
+  try { res = await elk.layout(g); } catch (err) { $("status").textContent = "排版失敗：" + err; return; }
+  if (gen !== layoutGen) return;
+  draw(res);
+  $("status").style.display = "none";
+}
+
+function el(name, attrs, parent) {
+  const n = document.createElementNS(NS, name);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+let view = { x: 0, y: 0, w: 1000, h: 800 }, bounds = null;
+const svg = $("svg");
+function setView() { svg.setAttribute("viewBox", `${view.x} ${view.y} ${view.w} ${view.h}`); }
+
+function draw(res) {
+  svg.innerHTML = "";
+  const gVol = el("g", {}, svg), gEdge = el("g", {}, svg), gNode = el("g", {}, svg);
+  const abs = {};
+  const branchFill = (b) => `var(--${b})`;
+  for (const v of res.children) {
+    abs[v.id] = { x: v.x, y: v.y, w: v.width, h: v.height };
+    const meta = vol[v.id];
+    if (v.children && v.children.length) {
+      const g = el("g", { class: "vol", "data-vol": v.id }, gVol);
+      el("rect", { class: "box", x: v.x, y: v.y, width: v.width, height: v.height, rx: 8 }, g);
+      el("rect", { x: v.x, y: v.y, width: 6, height: v.height, fill: branchFill(meta.branch), rx: 3 }, g);
+      const t = el("text", { x: v.x + 12, y: v.y + 17 }, g);
+      t.textContent = `${v.id} ${meta.title}  ▾`;
+      t.addEventListener("click", () => toggle(v.id));
+      for (const c of v.children) {
+        const x = v.x + c.x, y = v.y + c.y;
+        abs[c.id] = { x, y, w: c.width, h: c.height };
+        drawNode(gNode, c.id, x, y, c.width, c.height, branchFill(meta.branch), nodeLabel(chap[c.id]), chap[c.id].opt ? "opt" : "");
+      }
+    } else {
+      drawNode(gNode, v.id, v.x, v.y, v.width, v.height, branchFill(meta.branch), `${v.id} ${meta.title}  ▸`, "collapsed");
+    }
+  }
+  const drawEdges = (edges, ox, oy) => {
+    for (const e of edges || []) {
+      for (const s of e.sections || []) {
+        const pts = [s.startPoint, ...(s.bendPoints || []), s.endPoint].map(p => `${p.x + ox},${p.y + oy}`);
+        const cls = "edge " + (e.type === "s" ? "s" : e.type === "b" ? "b" : "soft");
+        const p = el("polyline", { points: pts.join(" "), class: cls, "marker-end": "url(#arrow)" }, gEdge);
+        p.dataset.from = e.sources[0]; p.dataset.to = e.targets[0];
+      }
+    }
+  };
+  drawEdges(res.edges, 0, 0);
+  for (const v of res.children) drawEdges(v.edges, v.x, v.y);
+  const defs = el("defs", {}, svg);
+  const m = el("marker", { id: "arrow", viewBox: "0 0 8 8", refX: 7, refY: 4, markerWidth: 6, markerHeight: 6, orient: "auto-start-reverse" }, defs);
+  el("path", { d: "M0,0 L8,4 L0,8 z", fill: "var(--edge)" }, m);
+  bounds = { x: -20, y: -20, w: res.width + 40, h: res.height + 40 };
+  if (!draw.fitted) { fit(); draw.fitted = true; } else setView();
+  highlight();
+}
+
+function drawNode(parent, id, x, y, w, h, fill, label, extra) {
+  const g = el("g", { class: "node " + extra, "data-id": id, transform: `translate(${x},${y})` }, parent);
+  el("rect", { width: w, height: h, fill }, g);
+  const t = el("text", { x: 8, y: h / 2 + 4 }, g); t.textContent = label;
+  const tip = el("title", {}, g);
+  tip.textContent = chap[id] ? `${id} ${chap[id].title}` : `${id} ${vol[id].title}（已收合，點擊展開）`;
+  g.addEventListener("click", (ev) => { ev.stopPropagation(); if (vol[id]) toggle(id); else select(id); });
+}
+
+function toggle(v) {
+  collapsed.has(v) ? collapsed.delete(v) : collapsed.add(v);
+  try { localStorage.setItem("atlas.collapsed", JSON.stringify([...collapsed])); } catch (_) {}
+  layout();
+}
+
+function select(id) { selected = id; $("target").value = ""; targetSet = null; highlight(); info(); }
+
+function highlight() {
+  const root = svg;
+  root.classList.remove("hl");
+  root.querySelectorAll(".on,.sel,.anc,.bor,.desc").forEach(n => n.classList.remove("on", "sel", "anc", "bor", "desc"));
+  let req = null, bor = null, desc = null, sel = null;
+  if (selected) {
+    sel = selected;
+    req = sAnc([selected]); req.delete(selected);
+    bor = allAnc([selected]); for (const r of req) bor.delete(r); bor.delete(selected);
+    desc = allDesc([selected]); desc.delete(selected);
+  } else if (targetSet) {
+    req = sAnc(targetSet);
+    bor = allAnc(targetSet); for (const r of req) bor.delete(r);
+  } else return;
+  root.classList.add("hl");
+  const mark = (cid, cls) => {
+    const shownId = shown(cid);
+    const n = root.querySelector(`.node[data-id="${CSS.escape(shownId)}"]`);
+    if (n) { n.classList.add("on"); if (!n.classList.contains("sel")) n.classList.add(cls); }
+    const v = root.querySelector(`.vol[data-vol="${CSS.escape(chap[cid].vol)}"]`); if (v) v.classList.add("on");
+  };
+  if (sel) mark(sel, "sel");
+  for (const c of req) mark(c, "anc");
+  for (const c of bor) mark(c, "bor");
+  if (desc) for (const c of desc) mark(c, "desc");
+  const ancAll = new Set([...req, ...(sel ? [sel] : [])].map(shown));
+  const descAll = desc ? new Set([...desc, sel].map(shown)) : new Set();
+  root.querySelectorAll(".edge").forEach(p => {
+    const a = p.dataset.from, b = p.dataset.to;
+    if (ancAll.has(a) && ancAll.has(b)) p.classList.add("on", "anc");
+    else if (descAll.has(a) && descAll.has(b)) p.classList.add("on", "desc");
+  });
+}
+
+function li(ul, cid, extra) {
+  const l = document.createElement("li");
+  l.textContent = `${cid} ${chap[cid].title}` + (extra || "");
+  l.addEventListener("click", () => select(cid));
+  ul.appendChild(l);
+}
+
+function info() {
+  const box = $("info"); box.innerHTML = "";
+  if (!selected) return;
+  const c = chap[selected], v = vol[c.vol];
+  const h = document.createElement("h2"); h.textContent = `${c.id} ${c.title}`; box.appendChild(h);
+  const p = document.createElement("p"); p.className = "muted";
+  p.innerHTML = `${v.id} ${v.title}` + (c.opt ? '<span class="tag">選讀</span>' : "") + (c.seg ? `<span class="tag">${c.seg} 段</span>` : "");
+  box.appendChild(p);
+  const src = document.createElement("p"); src.className = "muted"; src.textContent = "來源：" + c.src.join("、"); box.appendChild(src);
+  const req = sAnc([selected]); req.delete(selected);
+  const sec = (title, items, fmt) => {
+    if (!items.length) return;
+    const h3 = document.createElement("h3"); h3.textContent = title; box.appendChild(h3);
+    const ul = document.createElement("ul"); box.appendChild(ul);
+    for (const it of items) fmt(ul, it);
+  };
+  const order = (a, b) => DATA.chapters.findIndex(x => x.id === a) - DATA.chapters.findIndex(x => x.id === b);
+  const direct = DATA.edges.filter(e => e.to === selected);
+  for (const [typ, title] of [["s", "直接需讀（s）"], ["b", "借用（b）"], ["revisits", "重訪（revisits）"], ["see", "參見（see）"]]) {
+    sec(title, direct.filter(e => e.type === typ).map(e => e).sort((a, b) => order(a.from, b.from)),
+      (ul, e) => li(ul, e.from, (e.why ? `：${e.why}` : "") + (e.origin === "computed" ? "（計算）" : "")));
+  }
+  const p2 = document.createElement("p"); p2.innerHTML = `<b>必讀集合：${req.size} 章</b>（s 祖先閉包）`; box.appendChild(p2);
+  const out = DATA.edges.filter(e => e.from === selected && HARD.has(e.type)).map(e => e.to).sort(order);
+  sec("直接被誰用", out, (ul, x) => li(ul, x));
+}
+
+$("target").addEventListener("change", () => {
+  const t = (DATA.targets || []).find(x => x.id === $("target").value);
+  selected = null; targetSet = t ? t.chapters : null; highlight();
+  const box = $("info"); box.innerHTML = "";
+  if (t) {
+    const req = sAnc(t.chapters), bor = allAnc(t.chapters); for (const r of req) bor.delete(r);
+    box.innerHTML = `<h2>${t.name}</h2><p class="muted">${t.note || ""}</p><p><b>必讀 ${req.size} 章</b>，另借用 ${bor.size} 章。</p>`;
+    const ul = document.createElement("ul"); box.appendChild(ul);
+    DATA.chapters.filter(c => req.has(c.id)).forEach(c => li(ul, c.id));
+  }
+});
+$("soft").addEventListener("change", layout);
+$("full").addEventListener("change", layout);
+$("collapseAll").addEventListener("click", () => { DATA.volumes.forEach(v => collapsed.add(v.id)); toggle.call(null, "__none__"); });
+$("expandAll").addEventListener("click", () => { collapsed.clear(); toggle.call(null, "__none__"); });
+$("fit").addEventListener("click", fit);
+$("q").addEventListener("change", () => {
+  const q = $("q").value.trim().toLowerCase(); if (!q) return;
+  const hit = DATA.chapters.find(c => c.id.toLowerCase() === q) || DATA.chapters.find(c => (c.id + c.title).toLowerCase().includes(q));
+  if (!hit) return;
+  if (collapsed.has(hit.vol)) { collapsed.delete(hit.vol); layout().then(() => select(hit.id)); } else select(hit.id);
+});
+svg.addEventListener("click", () => { selected = null; targetSet = null; $("target").value = ""; highlight(); info(); });
+
+function fit() {
+  if (!bounds) return;
+  const r = svg.getBoundingClientRect();
+  const s = Math.max(bounds.w / r.width, bounds.h / r.height);
+  view = { w: r.width * s, h: r.height * s, x: bounds.x - (r.width * s - bounds.w) / 2, y: bounds.y - (r.height * s - bounds.h) / 2 };
+  setView();
+}
+svg.addEventListener("wheel", (ev) => {
+  ev.preventDefault();
+  const r = svg.getBoundingClientRect(), k = Math.exp(ev.deltaY * 0.0015);
+  const mx = view.x + (ev.clientX - r.left) / r.width * view.w, my = view.y + (ev.clientY - r.top) / r.height * view.h;
+  view = { x: mx - (mx - view.x) * k, y: my - (my - view.y) * k, w: view.w * k, h: view.h * k };
+  setView();
+}, { passive: false });
+let drag = null;
+svg.addEventListener("pointerdown", (ev) => { drag = { x: ev.clientX, y: ev.clientY, v: { ...view }, moved: false }; $("wrap").classList.add("drag"); });
+window.addEventListener("pointermove", (ev) => {
+  if (!drag) return;
+  const r = svg.getBoundingClientRect(), dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+  if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+  view = { ...drag.v, x: drag.v.x - dx / r.width * view.w, y: drag.v.y - dy / r.height * view.h };
+  setView();
+});
+window.addEventListener("pointerup", () => { if (drag && drag.moved) svg.addEventListener("click", (e) => e.stopPropagation(), { capture: true, once: true }); drag = null; $("wrap").classList.remove("drag"); });
+window.addEventListener("resize", fit);
+layout();
+</script>
+</body>
+</html>

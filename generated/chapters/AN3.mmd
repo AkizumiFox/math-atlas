@@ -1,0 +1,27 @@
+flowchart LR
+  LA3_12["LA3.12 譜理論"]:::ext
+  LA4_15["LA4.15 張量與外代數"]:::ext
+  AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
+  AN2_4["AN2.4 壓縮映射與 Picard–Lindelöf 定理"]:::ext
+  AN3_1["1 ℝⁿ 上的導數"]
+  AN3_2["2 反函數、隱函數與 Lagrange 乘數"]
+  AN3_3["3 線性微分方程組、矩陣指數與流"]
+  AN3_4["4 ℝⁿ 上的 Riemann 積分"]
+  AN3_5["5 ℝⁿ 的子流形與切空間"]:::segb
+  AN3_6["6 微分形式與外微分"]:::segb
+  AN3_7["7 流形上的積分與 Stokes 定理"]:::segb
+  LA3_12 -.-> AN3_1
+  AN2_3 --> AN3_1
+  AN2_4 --> AN3_2
+  AN3_1 --> AN3_2
+  AN2_4 --> AN3_3
+  AN3_1 --> AN3_3
+  AN2_3 --> AN3_4
+  AN3_2 --> AN3_5
+  LA4_15 --> AN3_6
+  AN3_4 --> AN3_7
+  AN3_5 --> AN3_7
+  AN3_6 --> AN3_7
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

@@ -1,0 +1,31 @@
+flowchart LR
+  F2_2["F2.2 等價關係、序與歸納"]:::ext
+  F2_3["F2.3 基數：可數與不可數（含選擇公理的陳述）"]:::ext
+  AN1_1["1 有序體與最小上界公理"]
+  AN1_2["2 數列、子列與 Cauchy 列"]
+  AN1_3["3 無窮級數"]
+  AN1_4["4 ℝ 的開集、閉集與緊集"]
+  AN1_5["5 函數極限與連續"]
+  AN1_6["6 緊集與區間上的連續函數"]
+  AN1_7["7 導數與均值定理"]
+  AN1_8["8 Riemann–Darboux 積分"]
+  AN1_9["9 函數列與函數級數"]
+  AN1_10["10 冪級數、Taylor 級數與初等函數"]
+  AN1_11["11 完備性的各種形式"]
+  F2_2 --> AN1_1
+  AN1_1 --> AN1_2
+  F2_3 --> AN1_3
+  AN1_2 --> AN1_3
+  F2_3 --> AN1_4
+  AN1_2 --> AN1_4
+  AN1_4 --> AN1_5
+  AN1_5 --> AN1_6
+  AN1_6 --> AN1_7
+  AN1_7 --> AN1_8
+  AN1_3 --> AN1_9
+  AN1_8 --> AN1_9
+  AN1_9 --> AN1_10
+  AN1_6 --> AN1_11
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

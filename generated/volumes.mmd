@@ -1,0 +1,59 @@
+flowchart TD
+  F1["F1 邏輯與證明"]:::found
+  F2["F2 集合、函數與關係"]:::found
+  AN1["AN1 實數線上的分析"]:::analysis
+  F3["F3 數系與代數預備"]:::found
+  LA1["LA1 空間與映射"]:::linalg
+  AL1["AL1 群"]:::algebra
+  LA2["LA2 行列式與算子的結構"]:::linalg
+  LA3["LA3 內積與譜理論"]:::linalg
+  LA4["LA4 形式與多線性代數"]:::linalg
+  AN2["AN2 度量空間與拓樸"]:::analysis
+  AN3["AN3 多變數分析"]:::analysis
+  AL2["AL2 環與體"]:::algebra
+  AL3["AL3 Galois 理論"]:::algebra
+  HA["HA Fourier 分析"]:::analysis
+  MT["MT 測度與積分"]:::analysis
+  CA["CA 複分析"]:::analysis
+  FA["FA 泛函分析"]:::analysis
+  AL4["AL4 模、表示與同調入門"]:::algebra
+  MA["MA 矩陣分析"]:::linalg
+  PR["PR 測度論機率"]:::side
+  PDE["PDE 分佈與 Sobolev 空間"]:::side
+  GEO["GEO 仿射與射影幾何"]:::side
+  NLA["NLA 計算與應用"]:::side
+  ST["ST 公理集合論"]:::side
+  F1 --> F2
+  F2 --> AN1
+  AN1 --> F3
+  F3 --> LA1
+  F3 --> AL1
+  AL1 --> LA2
+  LA1 --> LA2
+  LA2 --> LA3
+  AN3 -.-> LA4
+  LA3 -.-> AN2
+  LA4 --> AN3
+  AL1 --> AL2
+  LA1 --> AL2
+  AL2 --> AL3
+  AN2 --> AL3
+  AN3 --> HA
+  AN3 --> MT
+  HA --> CA
+  CA -.-> FA
+  MT --> FA
+  AL2 --> AL4
+  LA4 --> AL4
+  CA -.-> MA
+  HA -.-> PR
+  MT --> PR
+  FA --> PDE
+  MA --> GEO
+  MA --> NLA
+  MT --> ST
+  classDef found fill:#e8e2f4,stroke:#888,color:#222
+  classDef analysis fill:#dcebf7,stroke:#888,color:#222
+  classDef linalg fill:#dff2e1,stroke:#888,color:#222
+  classDef algebra fill:#fbe6d4,stroke:#888,color:#222
+  classDef side fill:#eeeeee,stroke:#888,color:#222

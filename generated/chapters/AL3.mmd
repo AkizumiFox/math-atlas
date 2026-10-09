@@ -1,0 +1,31 @@
+flowchart LR
+  AN2_7["AN2.7 拓樸空間、積與緊緻性"]:::ext
+  AL1_7["AL1.7 Sylow 定理"]:::ext
+  AL1_9["AL1.9 合成列、可解群與冪零群"]:::ext
+  AL2_8["AL2.8 代數擴張、分裂體與代數閉包"]:::ext
+  AL2_9["AL2.9 有限體"]:::ext
+  AL3_1["1 正規擴張與可分擴張"]
+  AL3_2["2 Galois 群與 Artin 定理"]
+  AL3_3["3 Galois 基本定理"]
+  AL3_4["4 有限體與分圓擴張"]
+  AL3_5["5 對稱多項式與判別式"]
+  AL3_6["6 原始元定理"]
+  AL3_7["7 根式可解性"]
+  AL3_8["8 Galois 群的計算"]
+  AL3_9["9 無限 Galois 理論"]:::opt
+  AL2_8 --> AL3_1
+  AL3_1 --> AL3_2
+  AL3_2 --> AL3_3
+  AL2_9 --> AL3_4
+  AL3_3 --> AL3_4
+  AL3_3 --> AL3_5
+  AL3_1 --> AL3_6
+  AL1_9 --> AL3_7
+  AL3_3 --> AL3_7
+  AL1_7 --> AL3_8
+  AL3_5 --> AL3_8
+  AN2_7 --> AL3_9
+  AL3_3 --> AL3_9
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
