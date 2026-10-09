@@ -116,6 +116,10 @@
     - 其餘 14 個是**同一內容**：遷移時以 analysis-book 為準合併。
 12. - [ ] **`thm-zorn`、`thm-induction` 的接手**（2026-10-10）：線代書 §1.8 改成以 b 借用 F2.4 的 Zorn 引理（地圖已記 LA1.1 ← F2.4，scope F2.2）。F2.4、F2.2 寫好後接手這兩個 label（`chapter-constraints.yaml` 的 `takes`），線代書原處留錨點。
 
+## 書稿巨集的待辦
+
+- [ ] **新增六個語意巨集**（2026-10-10 確認，`registry/notation.yaml` 中 status 為 confirmed 的條目）：`\Lp{p}`、`\ellp{p}`、`\Cont{K}`、`\Cz{X}`、`\Hz{1}`、`\AltGroup{n}`。寫到用得上的章之前，加進該書的 `latex/macros.tex`（網站版由 `build/macros.py` 讀同一檔）。analysis-book 的 `\Alt` 是交錯形式的運算子，不要和 `\AltGroup` 混用。
+
 ## 授權的待辦
 
 不需要遷移：analysis-book、linear-algebra、regression 的書稿都已是 CC BY-NC-SA 4.0（2026-10-09 確認各 repo 的 `LICENSE`）。新冊（代數、ST 等）建 repo 時沿用同一份 `LICENSE`。

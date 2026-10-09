@@ -1,8 +1,9 @@
 # 記號表（schema 見 spec/02）。目前只有章名用到的記號；其餘條目照 spec/02 的現況表逐步搬進來。
 # macro: 作者寫的語意巨集；render: 渲染成的 LaTeX；unicode: 純文字輸出（章名、hover、Mermaid）用的字形，
 #        #1 會先依同樣規則轉成 Unicode，^ 與 _ 轉成上下標字元。
-# status: existing（兩本書的 latex/macros.tex 已有，名稱與意思不變）| proposed（新巨集，待作者確認；確認前可以先用，
-#         改名走 spec/04 圖 4 的約定變更流程）
+# status: existing（兩本書的 latex/macros.tex 已有，名稱與意思不變）| confirmed（作者已確認的新巨集，書稿的 macros.tex 還沒有）
+#         | proposed（新巨集，待作者確認）。確認之後改名要走 spec/04 圖 4 的約定變更流程。
+# 2026-10-10：\Lp、\ellp、\Cont、\Cz、\Hz、\AltGroup 確認。
 # 2026-10-10 建立：章名裡的數學一律寫成語意巨集（spec/01 章名規則），不直接寫 ℝⁿ、Lᵖ、Aₙ 這類字形。
 
 - {id: sym:naturals, macro: '\nN', render: '\mathbb{N}', unicode: 'ℕ', meaning: 自然數（含 0）, defined_at: def-common-number-sets, status: existing}
@@ -10,11 +11,11 @@
 - {id: sym:rationals, macro: '\nQ', render: '\mathbb{Q}', unicode: 'ℚ', meaning: 有理數, defined_at: def-common-number-sets, status: existing}
 - {id: sym:reals, macro: '\nR', render: '\mathbb{R}', unicode: 'ℝ', meaning: 實數, defined_at: def-common-number-sets, status: existing}
 - {id: sym:complexes, macro: '\nC', render: '\mathbb{C}', unicode: 'ℂ', meaning: 複數, defined_at: def-complex-numbers, status: existing}
-- {id: sym:lebesgue-space, macro: '\Lp{#1}', render: 'L^{#1}', unicode: 'L^{#1}', meaning: Lebesgue 空間 Lᵖ, status: proposed,
+- {id: sym:lebesgue-space, macro: '\Lp{#1}', render: 'L^{#1}', unicode: 'L^{#1}', meaning: Lebesgue 空間 Lᵖ, status: confirmed,
    note: '底下的測度空間省略時由上下文決定；要寫出時用 \Lp{p}(X)'}
-- {id: sym:sequence-space, macro: '\ellp{#1}', render: '\ell^{#1}', unicode: 'ℓ^{#1}', meaning: 數列空間 ℓᵖ, status: proposed}
-- {id: sym:continuous-functions, macro: '\Cont{#1}', render: 'C(#1)', unicode: 'C(#1)', meaning: 緊空間上的連續函數空間 C(K), status: proposed}
-- {id: sym:vanishing-functions, macro: '\Cz{#1}', render: 'C_0(#1)', unicode: 'C_0(#1)', meaning: 在無窮遠處趨於 0 的連續函數 C₀(X), status: proposed}
-- {id: sym:sobolev-zero, macro: '\Hz{#1}', render: 'H^{#1}_0', unicode: 'H^{#1}_0', meaning: 跡為零的 Sobolev 空間 H¹₀, status: proposed}
-- {id: sym:alternating-group, macro: '\AltGroup{#1}', render: 'A_{#1}', unicode: 'A_{#1}', meaning: 交錯群 Aₙ, status: proposed,
+- {id: sym:sequence-space, macro: '\ellp{#1}', render: '\ell^{#1}', unicode: 'ℓ^{#1}', meaning: 數列空間 ℓᵖ, status: confirmed}
+- {id: sym:continuous-functions, macro: '\Cont{#1}', render: 'C(#1)', unicode: 'C(#1)', meaning: 緊空間上的連續函數空間 C(K), status: confirmed}
+- {id: sym:vanishing-functions, macro: '\Cz{#1}', render: 'C_0(#1)', unicode: 'C_0(#1)', meaning: 在無窮遠處趨於 0 的連續函數 C₀(X), status: confirmed}
+- {id: sym:sobolev-zero, macro: '\Hz{#1}', render: 'H^{#1}_0', unicode: 'H^{#1}_0', meaning: 跡為零的 Sobolev 空間 H¹₀, status: confirmed}
+- {id: sym:alternating-group, macro: '\AltGroup{#1}', render: 'A_{#1}', unicode: 'A_{#1}', meaning: 交錯群 Aₙ, status: confirmed,
    note: '不用 \Alt：analysis-book 的 \Alt 已是交錯形式的運算子'}

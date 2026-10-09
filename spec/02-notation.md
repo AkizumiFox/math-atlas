@@ -17,7 +17,7 @@
 
 ## 記號表 schema（`registry/notation.yaml`）
 
-2026-10-10 建立，目前只收章名用到的記號（數系巨集，以及 Lᵖ、ℓᵖ、C(K)、C₀(X)、H¹₀、Aₙ 六個新提案的巨集，status: proposed）。另加一個 `unicode` 欄：純文字輸出（章名、hover、Mermaid）用的字形。
+2026-10-10 建立，目前只收章名用到的記號（數系巨集，以及 Lᵖ、ℓᵖ、C(K)、C₀(X)、H¹₀、Aₙ 六個新巨集，2026-10-10 確認，status: confirmed）。另加一個 `unicode` 欄：純文字輸出（章名、hover、Mermaid）用的字形。
 
 ```yaml
 - id: sym:inner
