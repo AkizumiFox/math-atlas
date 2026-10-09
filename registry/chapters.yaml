@@ -33,7 +33,7 @@ AN1:
   - {id: AN1.11, title: 完備性的各種形式, src: ab:21}
 
 F3:
-  - {id: F3.1, title: ZF 公理、選擇與自然數, src: ab:9, opt: true}
+  - {id: F3.1, title: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9, opt: true}
   - {id: F3.2, title: 以等價類建構 ℤ 與 ℚ, src: ab:10, opt: true}
   - {id: F3.3, title: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
   - {id: F3.4, title: 完備有序體的唯一性, src: ab:23, opt: true}
@@ -216,7 +216,7 @@ NLA:
   - {id: NLA.24, title: 計算與應用, src: la:ch24}
 
 ST:
-  - {id: ST.1, title: ZF 公理系統, src: new}
+  - {id: ST.1, title: 完整的 ZF 公理系統（重訪 F3.1）, src: new}
   - {id: ST.2, title: 序數與超限歸納, src: new}
   - {id: ST.3, title: 基數算術, src: new}
   - {id: ST.4, title: 選擇公理的等價形式, src: new}
