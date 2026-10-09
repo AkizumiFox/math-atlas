@@ -448,7 +448,7 @@ def check_terms(at):
         status = Counter(t.get("naer") for t in at.terms)
         at.notes.append(f"terms.yaml: {len(at.terms)} terms; Chinese names: " + ", ".join(
             f"{k} {status[k]}" for k in ("univ", "hs", "hand", "choose", "missing") if status[k])
-            + " (choose and missing are the author's to decide)")
+            + " (zh is optional and frozen until the main volumes are written)")
     local = defaultdict(list)
     for nid, targets in spec.items():
         n = nodes[nid]

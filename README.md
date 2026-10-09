@@ -16,7 +16,7 @@ registry/    唯一的事實來源
   plan-edges.yaml     手寫的章層級計畫邊（s／b／see／revisits，b 要附 why）
   computed/           由書稿 build 計算出的邊（目前：線代書）
   statements.yaml     陳述層種子（F 系列＋九個主幹）
-  terms.yaml          術語表：英文、樂詞網譯名、唯一的正式定義（tools/seed_terms.py 產生，可重跑）
+  terms.yaml          術語表：英文術語（正式名稱）、唯一的正式定義、選填的樂詞網譯名 zh（tools/seed_terms.py 產生，可重跑）
   chapter-constraints.yaml  還沒寫的章要照做的約束（生成管線的 Spec 步驟讀它）
   exam-targets.yaml   資格考目標與考綱覆蓋
   fields.yaml         數學各領域 → 章的覆蓋表；科目之間的 after 邊

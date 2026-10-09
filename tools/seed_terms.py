@@ -175,8 +175,8 @@ def main():
         out.append(row)
     header = """# 術語表（全套共用）。由 tools/seed_terms.py 從兩本書的定義（粗體字）與 statements.yaml 產生，可重跑；
 # forms、note、meta 是手填欄位，重跑會保留；naer: hand 的 zh 也會保留。
-# id: 術語 ID（statements.yaml 第 7 欄引用它）  en: 英文
-# zh: 中文譯名，取自國家教育研究院「樂詞網」的政府開放資料（registry/external/naer/，出處見下）
+# id: 術語 ID（statements.yaml 第 7 欄引用它）  en: 英文術語，正式名稱（書稿用英文，spec/00 原則 7）
+# zh: 選填的中文譯名（雙語詞彙表、hover 用；目前凍結，choose 與 missing 不擋任何進度），，取自國家教育研究院「樂詞網」的政府開放資料（registry/external/naer/，出處見下）
 # naer: univ（兩岸數學學術名詞）| hs（高中含以下數學學術名詞，只用於 F 冊）
 #       | choose（樂詞網同一條列了多個譯名，見 zh_candidates，待作者選）| missing（兩份都未收錄，待作者決定）
 #       | hand（作者決定的譯名，填 zh 並把 naer 改成 hand，重跑不覆寫；zh_alt 可記其他寫法）

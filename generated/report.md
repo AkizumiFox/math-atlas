@@ -213,34 +213,34 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |
 |---|---:|---:|---:|---|
 | AL4.8 代數與表示 | 19 | 23 | 27 | F1.5（divides）、F3.6（modulus，經 LA2.10）、F3.8（polynomial、degree）、LA3.13（with-multiplicity） |
-| MA.16 範數與矩陣分析 | 7 | 21 | 25 | F1.5（prime，經 LA2.10）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（matrix、entries）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.8（block、direct-sum，經 LA2.10）、LA3.12（stable、symbol）、AL1.1（subgroup、group，經 LA2.7） |
-| MA.17 變分原理與交錯 | 11 | 22 | 26 | F1.5（even、odd，經 LA2.7）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（polynomial、coefficient，經 MA.16）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（dual-basis、evaluation，經 LA2.6）、AL1.1（subgroup、group，經 LA2.7） |
-| MA.18 凸性 | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entries）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol，經 MA.16）、AL1.1（associativity，經 LA1.0）、MA.17（same-number，經 LA1.3） |
-| MA.19 非負矩陣 | 15 | 24 | 28 | F1.5（prime，經 LA2.10）、F2.2（blocks、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（degree）、LA1.0（matrix、zero-matrix）、LA1.1（length、vectors）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7） |
-| MA.20 擾動理論 | 15 | 25 | 29 | F1.5（even、odd，經 LA2.7）、F2.2（reflexive、symmetric，經 MA.16）、F3.6（modulus）、F3.7（addition，經 MA.16）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、basis）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7）、MA.19（vertices，經 MA.18） |
-| MA.21 矩陣不等式 | 14 | 26 | 30 | F1.5（prime，經 LA2.10）、F2.2（symmetric、partition）、F3.6（modulus，經 LA2.10）、F3.7（addition，經 MA.16）、F3.8（polynomial、coefficient，經 MA.16）、LA1.0（matrix、entries）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、AL1.1（associativity，經 LA1.2）、MA.19（vertices、edge，經 LA1.3）、MA.20（separation，經 MA.18） |
+| MA.16 範數與矩陣分析 | 7 | 21 | 25 | F1.5（even，經 LA3.11）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（matrix、entries）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.8（block、direct-sum，經 LA2.10）、LA3.12（stable、symbol）、AL1.1（group、subgroup，經 LA3.11） |
+| MA.17 變分原理與交錯 | 11 | 22 | 26 | F1.5（even，經 LA3.11）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（monic、polynomial，經 LA3.11）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（dual-basis、evaluation，經 LA2.6）、AL1.1（group、subgroup，經 LA3.11） |
+| MA.18 凸性 | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entries）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（modulo，經 LA1.4）、AL1.1（associativity，經 LA1.2）、MA.17（same-number，經 LA1.3） |
+| MA.19 非負矩陣 | 15 | 24 | 28 | F1.5（prime，經 LA2.10）、F2.2（blocks、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（degree）、LA1.0（matrix、zero-matrix）、LA1.1（length、vectors）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（associativity，經 LA2.8） |
+| MA.20 擾動理論 | 15 | 25 | 29 | F1.5（even，經 LA3.11）、F2.2（symmetric，經 LA3.11）、F3.6（modulus）、F3.7（addition、multiplication，經 LA3.11）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、basis）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（group、subgroup，經 LA3.11）、MA.19（vertices，經 MA.18） |
+| MA.21 矩陣不等式 | 14 | 26 | 30 | F1.5（prime，經 LA2.10）、F2.2（symmetric、partition）、F3.6（modulus，經 LA2.10）、F3.7（field、characteristic，經 LA2.10）、F3.8（monic、polynomial，經 LA2.10）、LA1.0（matrix、entries）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、AL1.1（associativity，經 LA1.2）、MA.19（vertices、edge，經 LA1.3）、MA.20（separation，經 MA.18） |
 | GEO.22 仿射與射影幾何 | 20 | 26 | 30 | F1.5（even、odd，經 LA4.14）、F3.6（imaginary-part，經 MA.17）、F3.7（field）、F3.8（polynomial）、LA1.0（matrix、diagonal）、LA4.15（form、order） |
-| NLA.24 計算與應用 | 14 | 23 | 27 | F1.5（even、odd）、F2.2（symmetric、partition）、F3.6（modulus）、F3.7（multiplication、field）、F3.8（degree、polynomial）、LA1.1（subspace、dimension）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.7（determinant、submatrix）、AL1.1（associativity，經 LA1.0） |
+| NLA.24 計算與應用 | 14 | 23 | 27 | F1.5（even、odd）、F2.2（symmetric、partition）、F3.6（modulus）、F3.7（multiplication、field）、F3.8（degree、polynomial）、LA1.1（subspace、dimension）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.7（determinant、submatrix）、AL1.1（group、subgroup，經 LA3.11） |
 
 影響最大的術語：「支撐」＝上表多出的章裡，有幾章（各列合計）是經由這個詞的比對進來的；「唯一」＝只拿掉這個詞，估計合計會少幾章（多數章同時被好幾個詞拉進來，所以通常很小）。分流 terms.yaml 的 `also` 時從上面幾個詞開始：常用詞（even、over 之類）多半是假陽性，可以加進 seed_terms.py 的 STOP 或標成 meta。F1 的邏輯用語已標為 `meta`，不參與比對。
 
 | 術語 | 正式定義所在 | 支撐 | 唯一 |
 |---|---|---:|---:|
+| modulus | F3.6 | 9 | 2 |
+| coefficient | F3.8 | 9 | 0 |
+| polynomial | F3.8 | 9 | 0 |
+| monic | F3.8 | 9 | 0 |
+| degree | F3.8 | 9 | 0 |
+| leading-coefficient | F3.8 | 9 | 0 |
+| divides | F1.5 | 9 | 0 |
 | even | F1.5 | 9 | 0 |
 | prime | F1.5 | 9 | 0 |
 | odd | F1.5 | 9 | 0 |
-| divides | F1.5 | 9 | 0 |
-| monic | F3.8 | 9 | 0 |
-| coefficient | F3.8 | 9 | 0 |
-| degree | F3.8 | 9 | 0 |
-| leading-coefficient | F3.8 | 9 | 0 |
-| polynomial | F3.8 | 9 | 0 |
-| modulus | F3.6 | 9 | 2 |
+| field | F3.7 | 8 | 0 |
 | addition | F3.7 | 8 | 0 |
 | characteristic | F3.7 | 8 | 0 |
-| field | F3.7 | 8 | 0 |
 | multiplication | F3.7 | 8 | 0 |
-| evaluation | LA1.5 | 7 | 0 |
+| dual-basis | LA1.5 | 7 | 0 |
 
 術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：
 

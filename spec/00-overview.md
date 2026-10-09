@@ -45,6 +45,11 @@ math-atlas 是一整套「零基礎 → 數學研究所資格考」教科書的*
    - **tools**：MIT。
 
    對外部素材的影響：Open Logic（CC BY）可以改編進書稿；Napkin（CC BY-SA）**不能**，因為 BY-SA 的改編作只能以 BY-SA 或相容授權釋出，NC-SA 不相容，只能當參考；Book of Proof（ND）不能改編。
+7. **語言**（2026-10-10 定案）：
+   - **書稿用英文。** 給讀者看的一切也用英文：章名、先備頁、閱讀路徑、依賴圖（`chapters.yaml` 的 `title`、`generated/README.md`、`atlas.html`、各冊的 Mermaid 圖）。
+   - **atlas 的規格與給作者看的報告維持中文**（`spec/`、`generated/report.md`、`diff.md`、`migration.md`）。
+   - **術語以英文為正式名稱**，用詞變體依 spec/02 的英文用詞約定統一。中文只是選填欄位：術語表的 `zh`、章的 `title_zh`，日後用來做雙語詞彙表與 hover 時附上中文，不擋任何進度。
+   - 因為主要參考書（Rudin、Folland、Axler 等）也是英文，與原書句子重疊的風險比中文高得多，原創性檢查（04 圖 1）不可省略，見 spec/05 第 13 項。
 
 ## 文件索引
 

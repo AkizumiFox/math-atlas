@@ -23,7 +23,7 @@ flowchart TD
   E --> F{有未解決的標記？}
   F -- 有 --> C
   F -- 無 --> G[機械驗證：計算用 SymPy；抽樣核心定理做 Lean 陳述，再 back-translation 比對]
-  G --> H[版權重疊檢測：n-gram 與 embedding]
+  G --> H[版權重疊檢測：與來源書比對 n-gram 與 embedding，閾值以英文語料校準，spec/05 第 13 項]
   H --> I[人工抽審：20% 證明，加上全部易錯節點]
   I --> J[狀態：drafted → reviewed → lean-stated → lean-proved]
   E -. 抓到的真實錯誤 .-> K[validation 題庫：讓學生找錯的「有瑕疵證明」]
