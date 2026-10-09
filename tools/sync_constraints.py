@@ -34,14 +34,13 @@ def tidy(text):
 
 
 def wanted(constraints):
-    """{analysis-book chapter number: [constraint, ...]} for the constraints on analysis-book chapters."""
+    """{analysis-book chapter number: [constraint, ...]} for the constraints on analysis-book chapters.
+    Only the English rule goes to the book; why is the atlas's own rationale and stays in the atlas."""
     out = {}
     for k in constraints:
         m = re.fullmatch(r"ab:(\d+)", str(k.get("book")))
         if m:
             row = {"atlas": k["chapter"], "decided": str(k["decided"]), "rule": tidy(k["rule"])}
-            if k.get("why"):
-                row["why"] = tidy(k["why"])
             out.setdefault(int(m.group(1)), []).append(row)
     return dict(sorted(out.items()))
 

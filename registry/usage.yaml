@@ -139,3 +139,15 @@
           modelled, cancelled, cancelling]
   why: >-
     兩本書都是美式拼寫：-ize 2,287 次，詞幹相同的 -ise 0 次。例外只有 analyse 2 次（線代書）與 labelled 1 次（analysis-book）。
+
+- id: serial-comma
+  title: 序列逗號（Oxford comma）
+  status: confirmed
+  use: ["re:,\\s+(?:and|or)\\s"]
+  avoid: ["re:,\\s+(?:[A-Za-z][\\w'’-]*\\s+){1,4}(?:and|or)\\s"]
+  review: true
+  why: >-
+    列舉三項以上時，最後的 and／or 前加逗號（A, B, and C）。2026-10-10 定案：和美式拼寫、non- 連寫一致，
+    是美式數學出版（Chicago、AMS）的慣例；數學標題的項目本身常含 and，少了逗號就讀不出邊界
+    （Direct and Semidirect Products, and Finite Abelian Groups）。章名由 atlas.py check 機械檢查；
+    散文用 regex 分辨不出「A, B and C」是不是列舉（例如 if x, then y and z），所以報告列出候選處，逐處判斷。

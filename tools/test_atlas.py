@@ -133,12 +133,25 @@ class TitleTest(unittest.TestCase):
         from atlas import title_problems
         ok = ["Contraction Mappings and the Picard–Lindelöf Theorem", "Capstone: The Dirichlet Problem",
               "Ruler-and-Compass Constructions", "Lᵖ Spaces, Convolution and Mollifiers", "Finitely Generated Modules over a PID",
-              "The Von Neumann Natural Numbers (the Fragment of ZF They Need)", "H¹₀, the Poincaré Inequality"]
+              "The von Neumann Natural Numbers", "H¹₀, the Poincaré Inequality"]
         for t in ok:
             self.assertEqual(title_problems(t), [], t)
+        self.assertEqual(title_problems("The von Neumann Natural Numbers"), [])
+        self.assertEqual(title_problems("Von Neumann Algebras"), [])  # a particle that starts the title is capitalised
+        self.assertTrue(title_problems("The Von Neumann Natural Numbers"))
         self.assertTrue(title_problems("Groups And Rings"))
         self.assertTrue(title_problems("the Spectral theorem"))
         self.assertTrue(title_problems("Mean-square Convergence"))
+
+    def test_notation_in_titles(self):
+        import notation
+        m = notation.load()
+        self.assertEqual(notation.render(r"The Derivative in \(\nR^n\)", m), "The Derivative in ℝⁿ")
+        self.assertEqual(notation.render(r"\(\Hz{1}\) and \(\Lp{p}\) on \(\nZ/n\nZ\)", m), "H¹₀ and Lᵖ on ℤ/nℤ")
+        self.assertEqual(notation.render(r"\(\ellp{\infty}\)", m), "ℓ^∞")  # no superscript infinity in Unicode
+        self.assertTrue(notation.problems("The Derivative in ℝⁿ", m))  # raw glyph
+        self.assertTrue(notation.problems(r"The \(\Sob{1}\) Space", m))  # macro not in the table
+        self.assertEqual(notation.problems(r"The Dual of \(\Lp{p}\)", m), [])
 
     def test_titles_unique_and_follow_usage(self):
         import atlas

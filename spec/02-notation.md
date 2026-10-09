@@ -15,7 +15,9 @@
 
 現況：線代書的 `latex/macros.tex` 混用兩種巨集。`\inner` 是語意型；`\tp`、`\sA`、`\T` 是表現型。遷移時需要一張對照表，見 06。
 
-## 記號表 schema（`registry/notation.yaml`，尚未建立）
+## 記號表 schema（`registry/notation.yaml`）
+
+2026-10-10 建立，目前只收章名用到的記號（數系巨集，以及 Lᵖ、ℓᵖ、C(K)、C₀(X)、H¹₀、Aₙ 六個新提案的巨集，status: proposed）。另加一個 `unicode` 欄：純文字輸出（章名、hover、Mermaid）用的字形。
 
 ```yaml
 - id: sym:inner
@@ -70,7 +72,7 @@
 書稿用英文，而英文沒有樂詞網那樣的官方標準，同一個概念的寫法變體更多。約定記在 `registry/usage.yaml`：每組選定一個寫法（use），其餘列為 avoid。
 
 - **先統計，再提案**：`tools/usage_report.py` 掃兩本書稿的散文（去掉數學式、程式碼、label 與參照），統計每組變體各出現幾次，寫成 `generated/usage.md`。提案依頻率與一般慣例，status 為 proposed；作者確認後改成 confirmed，報告就會列出書稿裡每一處 avoid 寫法。
-- **涵蓋的組**：injective／one-to-one、surjective／onto（只禁形容詞用法）、bijection、image／range、kernel 與 null space（兩者並存：映射的核 vs 矩陣的零空間）、map／mapping／function、non- 字首要不要連字號、codomain 等連寫詞、finite-dimensional、positive definite、self-adjoint、well-defined（名詞前加連字號、述語分寫）、if and only if／iff、複數形、美式拼寫。
+- **涵蓋的組**（16 組）：序列逗號（Oxford comma）、injective／one-to-one、surjective／onto（只禁形容詞用法）、bijection、image／range、kernel 與 null space（兩者並存：映射的核 vs 矩陣的零空間）、map／mapping／function、non- 字首要不要連字號、codomain 等連寫詞、finite-dimensional、positive definite、self-adjoint、well-defined（名詞前加連字號、述語分寫）、if and only if／iff、複數形、美式拼寫。
 - **不做 lint、只寫規則的**：range 不當 image 的同義詞（range 多半是別的意思，無法機械判斷）；人名之間用 en dash（Cauchy–Schwarz，兩本書已一致）。
 - **2026-10-10 全部確認**。non- 改為連寫（nonzero、nonnegative），和美式拼寫一致；後接專有名詞或大寫字時保留連字號（non-Euclidean）。書稿的遷移見 spec/06，陳述雜湊先正規化 avoid 寫法，不觸發重審（spec/04 圖 3）。
 - lint 本身屬於引擎（spec/05 第 14 項）；atlas 這邊的報告是它的原型。

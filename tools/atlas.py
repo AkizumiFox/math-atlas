@@ -17,6 +17,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import graph as G  # noqa: E402
+import notation  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 REG = ROOT / "registry"
@@ -38,7 +39,9 @@ BRANCH_NAME = {"found": "基礎", "analysis": "分析", "linalg": "線代", "alg
 
 class Atlas:
     def __init__(self, reg=REG):
-        self.volumes = yaml.safe_load((reg / "volumes.yaml").read_text())
+        self.notation = notation.load(reg / "notation.yaml")
+        self.volumes = [dict(v, title_src=v["title"], title=notation.render(v["title"], self.notation))
+                        for v in yaml.safe_load((reg / "volumes.yaml").read_text())]
         self.vol = {v["id"]: v for v in self.volumes}
         raw = yaml.safe_load((reg / "chapters.yaml").read_text())
         self.errors, self.warnings, self.notes = [], [], []
@@ -47,7 +50,8 @@ class Atlas:
             if vid not in self.vol:
                 self.errors.append(f"chapters.yaml: volume {vid} is not in volumes.yaml")
             for i, ch in enumerate(chs):
-                ch = dict(ch, vol=vid, idx=i, opt=bool(ch.get("opt")))
+                ch = dict(ch, vol=vid, idx=i, opt=bool(ch.get("opt")), title_src=ch["title"],
+                          title=notation.render(ch["title"], self.notation))  # semantic macros -> Unicode
                 src = ch.get("src")
                 ch["src"] = src if isinstance(src, list) else [src]
                 if ch["id"] in self.chapters:
@@ -294,8 +298,11 @@ def check(at):
         if at._known(k["chapter"], "chapter-constraints.yaml") and k["chapter"] in done:
             at.errors.append(f"chapter-constraints.yaml: {k['chapter']} is already written in {k.get('book')}; "
                              "a change to it is a rewrite and belongs in spec/06")
-        if not k.get("rule") or not k.get("decided"):
-            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} needs `rule` and `decided`")
+        if not k.get("rule") or not k.get("decided") or not k.get("why"):
+            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} needs `rule`, `why` and `decided`")
+        elif re.search(r"[\u2e80-\u9fff\u3000-\u303f\uff00-\uffef]", k["rule"]):
+            at.errors.append(f"chapter-constraints.yaml: {k['chapter']}'s rule contains Chinese; the rule is the English "
+                             "instruction the drafting pipeline follows, the reasons go in why")
     return not at.errors
 
 
@@ -303,6 +310,8 @@ def check(at):
 # (and every part of a hyphenated compound) starts with a capital, or with a symbol (ℝⁿ, Lᵖ, H¹₀, C(K)).
 MINOR = {"a", "an", "the", "and", "or", "nor", "but", "of", "in", "on", "for", "by", "at", "from", "to", "with", "as",
          "over", "under", "into", "onto", "via", "versus", "between", "through", "without", "per", "than"}
+# Particles of personal names stay lowercase except at the start: von Neumann, van der Waerden, de Rham.
+NAME_PARTICLES = {"von", "van", "der", "den", "de", "du", "di", "da", "del", "della", "le", "la", "ten", "ter"}
 
 
 def title_problems(title):
@@ -314,7 +323,7 @@ def title_problems(title):
             word = re.sub(r"^[^\w]+|[^\w'’]+$", "", part)
             m = re.match(r"[A-Za-z]", word)
             if m and m.start() == 0:
-                lower = word.lower() in MINOR
+                lower = word.lower() in MINOR or word.lower() in NAME_PARTICLES
                 start = first and i == 0
                 if (start or not lower) and word[0].islower():
                     out.append(f"'{word}' should be capitalised")
@@ -325,18 +334,34 @@ def title_problems(title):
     return out
 
 
+def serial_comma_problems(title):
+    """A list of three or more items in a title must have a comma before the final and/or (serial comma)."""
+    out = []
+    for segment in title.split(":"):
+        parts = [p.strip() for p in re.sub(r"\(.*?\)", "", segment).split(",")]
+        if len(parts) >= 2 and re.search(r"\s(and|or)\s", " " + parts[-1] + " ") and not re.match(r"(and|or)\s", parts[-1]):
+            out.append(f"serial comma missing before the last item ('{parts[-1]}')")
+    return out
+
+
 def check_titles(at):
-    """Reader-facing names: Title Case as in the manuscripts, unique across the series, and the confirmed English
-    usage (registry/usage.yaml) applies to them too."""
+    """Reader-facing names: Title Case as in the manuscripts, unique across the series, the confirmed English usage
+    (registry/usage.yaml) applies to them too, and their mathematics is written in semantic macros
+    (registry/notation.yaml), never as raw glyphs."""
     import usage_report
     avoid = [(g["id"], f, usage_report.pattern(f), [usage_report.pattern(k) for k in g.get("keep") or ()])
-             for g in at.usage if g.get("status") == "confirmed" for f in g.get("avoid") or ()]
+             for g in at.usage if g.get("status") == "confirmed" and not g.get("review") for f in g.get("avoid") or ()]
     seen = {}
-    for kind, items in (("chapter", [(c, at.chapters[c]["title"]) for c in at.order]),
-                        ("volume", [(v["id"], v["title"]) for v in at.volumes])):
-        for cid, title in items:
+    for kind, items in (("chapter", [(c, at.chapters[c]) for c in at.order]),
+                        ("volume", [(v["id"], v) for v in at.volumes])):
+        for cid, row in items:
+            title = row["title"]
+            for p in notation.problems(row["title_src"], at.notation):
+                at.errors.append(f"{kind} {cid} title \"{row['title_src']}\": {p}")
             for p in title_problems(title):
                 at.errors.append(f"{kind} {cid} title \"{title}\": {p} (Title Case, as in the manuscripts)")
+            for p in serial_comma_problems(title):
+                at.errors.append(f"{kind} {cid} title \"{title}\": {p} (usage group serial-comma)")
             for gid, form, pat, kept in avoid:
                 if pat.search(usage_report.without_kept(title, kept)):
                     at.errors.append(f"{kind} {cid} title \"{title}\" uses an avoided form ({gid}: {form.removeprefix('re:')})")

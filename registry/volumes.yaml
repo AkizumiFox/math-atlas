@@ -6,7 +6,7 @@
 # status: plan | drafting | published
 
 - {id: F1,  title: "Logic and Proof", title_zh: 邏輯與證明,                    branch: found,    tier: T1, repo: ab,  status: drafting}
-- {id: F2,  title: "Sets, Functions and Relations", title_zh: 集合、函數與關係, branch: found,    tier: T1, repo: ab,  status: drafting}
+- {id: F2,  title: "Sets, Functions, and Relations", title_zh: 集合、函數與關係, branch: found,    tier: T1, repo: ab,  status: drafting}
 - {id: AN1, title: "Analysis on the Real Line", title_zh: 實數線上的分析,          branch: analysis, tier: T1, repo: ab,  status: drafting}
 - {id: F3,  title: "Number Systems and Algebraic Preliminaries", title_zh: 數系與代數預備, branch: found, tier: T1, repo: ab+la, status: plan}
 - {id: LA1, title: "Spaces and Maps", title_zh: 空間與映射,                    branch: linalg,   tier: T1, repo: la,  status: published}
@@ -22,7 +22,7 @@
 - {id: MT,  title: "Measure and Integration", title_zh: 測度與積分,            branch: analysis, tier: T2, repo: ab,  status: plan}
 - {id: CA,  title: "Complex Analysis", title_zh: 複分析,                   branch: analysis, tier: T2, repo: ab,  status: plan}
 - {id: FA,  title: "Functional Analysis", title_zh: 泛函分析,                branch: analysis, tier: T2, repo: ab,  status: plan}
-- {id: AL4, title: "Modules, Representations and Homological Algebra", title_zh: 模、表示與同調入門, branch: algebra, tier: T2, repo: new+la, status: plan}
+- {id: AL4, title: "Modules, Representations, and Homological Algebra", title_zh: 模、表示與同調入門, branch: algebra, tier: T2, repo: new+la, status: plan}
 - {id: AL5, title: "Commutative Algebra", title_zh: 交換代數,                branch: algebra,  tier: T3, repo: new, status: plan}
 - {id: MA,  title: "Matrix Analysis", title_zh: 矩陣分析,                    branch: linalg,   tier: T2, repo: la,  status: published}
 - {id: PR,  title: "Measure-Theoretic Probability", title_zh: 測度論機率,      branch: side,     tier: T3, repo: ab+new, status: plan}
