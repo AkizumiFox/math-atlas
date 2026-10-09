@@ -1,6 +1,6 @@
 # math-atlas
 
-一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套有 25 冊、167 章，以一張分型別的依賴圖串起來；各冊的書稿在各自的 repo（`analysis-book`、`linear-algebra` 等）。
+一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套有 25 冊、168 章，以一張分型別的依賴圖串起來；各冊的書稿在各自的 repo（`analysis-book`、`linear-algebra` 等）。
 
 - 先讀 `spec/00-overview.md`。
 - 要看圖：`generated/README.md`（Mermaid，GitHub 會直接渲染），或用瀏覽器開 `generated/atlas.html`（互動版，需要網路載入 elkjs）。
