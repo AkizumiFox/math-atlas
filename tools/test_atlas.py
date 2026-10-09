@@ -116,6 +116,18 @@ class LexiconTest(unittest.TestCase):
         self.assertEqual(m.find("see @def-vector-space for spaces"), ["S"])  # label references are not text
 
 
+class UsageTest(unittest.TestCase):
+    def test_prose_and_patterns(self):
+        import usage_report as u
+        text = "If \\( f \\) is onto, see @thm-onto-x.\n$$ \\text{one-to-one} $$\nA one-to-one map is non-zero."
+        plain = u.prose(text)
+        self.assertEqual(len(u.pattern("is onto").findall(plain)), 1)
+        self.assertEqual(len(u.pattern("one-to-one").findall(plain)), 1)  # the display is mathematics, not prose
+        self.assertEqual(len(u.pattern("non-zero").findall(plain)), 1)
+        self.assertEqual(len(u.pattern("nonzero").findall(plain)), 0)
+        self.assertEqual(len(u.pattern("injection*").findall("injections and injection")), 2)
+
+
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):
         import atlas

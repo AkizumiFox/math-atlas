@@ -1,0 +1,134 @@
+# 英文用詞約定（書稿用英文，spec/00 原則 7；說明見 spec/02「英文用詞約定」）。
+# 每組選定 use，其餘寫法列在 avoid。寫法是不分大小寫的整詞比對；* 是詞幹萬用字元，空白可對到換行。
+# status: proposed（agent 依兩本書稿的頻率提案，待作者確認）| confirmed（tools/usage_report.py 列出書稿裡每一處 avoid）
+# 頻率見 generated/usage.md（tools/usage_report.py 產生）。2026-10-10 首次統計。
+
+- id: injective
+  title: 單射
+  status: proposed
+  use: [injective, injection*, injectivity]
+  avoid: [one-to-one, one-one]
+  why: >-
+    injective 系列 721 次，one-to-one 12 次（線代書 11、analysis-book 1）。injective／surjective／bijective 成組，
+    不會和 one-to-one correspondence（＝bijection）混淆。
+
+- id: surjective
+  title: 滿射
+  status: proposed
+  use: [surjective, surjection*, surjectivity]
+  avoid: [is onto, are onto, be onto, not onto]
+  why: >-
+    surjective 系列 521 次。onto 出現 368 次，但絕大多數是介系詞（projection onto a subspace），不能整個禁用；
+    只禁用形容詞用法（is onto 等，共 23 次）。
+
+- id: bijective
+  title: 雙射
+  status: proposed
+  use: [bijective, bijection*]
+  avoid: [one-to-one correspondence*]
+  why: bijective／bijection 398 次，one-to-one correspondence 1 次。
+
+- id: image
+  title: 像
+  status: proposed
+  use: [image*]
+  avoid: []
+  why: >-
+    f(X) 一律稱 image（482 次）。range 出現 161 次，幾乎都是別的意思（range over、a range of lines），
+    所以不列入 avoid、也不做 lint；只有線代書一處把 range 當成 image 的同義詞，改寫時順手改掉。
+    range 不用來指對應域（codomain）。
+
+- id: kernel
+  title: 核與零空間
+  status: proposed
+  use: [kernel*, null space*]
+  avoid: [nullspace*]
+  why: >-
+    兩個都保留，各有用途，不是變體：kernel 是映射的核（ker T，416 次），null space 是矩陣的零空間（nul A ⊆ Fⁿ，80 次），
+    這是線代書 NOTATION.md 的既有約定。nullspace（連寫）0 次，列入 avoid 防止日後出現。
+
+- id: map
+  title: 映射與函數
+  status: proposed
+  use: [map, maps, linear map*, function, functions]
+  avoid: [mapping, mappings, linear mapping*, linear transformation*]
+  why: >-
+    map 用於保持結構的映射（linear map 511 次），function 用於集合論與分析的一般函數（1,705 次）；operator 指 V → V 的線性映射。
+    mapping 21 次、linear transformation 1 次是同一意思的第三種寫法，改成 map。
+
+- id: non-prefix
+  title: non- 字首
+  status: proposed
+  use: [non-negative, non-zero, non-empty, non-singular, non-trivial, non-decreasing, non-increasing, non-degenerate,
+        non-invertible, non-positive, non-measurable]
+  avoid: [nonnegative, nonzero, nonempty, nonsingular, nontrivial, nondecreasing, nonincreasing, nondegenerate,
+          noninvertible, nonpositive, nonmeasurable]
+  why: >-
+    兩本書都 100% 加連字號（non-zero 1,736 次、non-negative 662 次、non-empty 378 次，連寫 0 次），提案照現況。
+    注意：美式數學出版（AMS、Chicago）多半連寫（nonnegative）；若要改成連寫，改動的是兩本書全部的既有用法，請作者決定。
+
+- id: closed-compounds
+  title: 連寫的複合詞
+  status: proposed
+  use: [codomain*, preimage*, counterexample*]
+  avoid: [co-domain*, pre-image*, counter-example*]
+  why: 連寫 87／131／67 次，加連字號 0 次。
+
+- id: dimensional
+  title: finite-dimensional
+  status: proposed
+  use: [finite-dimensional, infinite-dimensional]
+  avoid: [finite dimensional, infinite dimensional]
+  why: 加連字號 723 次，分寫 0 次；不論修飾名詞或當述語都加連字號。
+
+- id: definite
+  title: 正定與半正定
+  status: proposed
+  use: [positive definite, positive semidefinite, negative definite, negative semidefinite]
+  avoid: [positive-definite, positive semi-definite, positive-semidefinite, negative-definite, negative semi-definite]
+  why: 分寫 561 次，其他寫法 0 次。
+
+- id: self-adjoint
+  title: 自伴
+  status: proposed
+  use: [self-adjoint]
+  avoid: [selfadjoint, self adjoint]
+  why: self-adjoint 237 次，其他寫法 0 次。
+
+- id: well-defined
+  title: well-defined
+  status: proposed
+  use: [well-defined, well defined]
+  avoid: [is well-defined, are well-defined, be well-defined, been well-defined, a well defined, an well defined,
+          the well defined]
+  why: >-
+    Chicago 規則：放在名詞前加連字號（a well-defined map，36 次），當述語分寫（is well defined，81 次）。
+    兩本書已經完全照這條規則，反例 0 次。
+
+- id: iff
+  title: if and only if
+  status: proposed
+  use: [if and only if]
+  avoid: [iff]
+  why: >-
+    if and only if 861 次，iff 80 次。iff 多半出現在 F1 談連接詞本身的地方（an "iff"、iff-introduction），那是在講符號，不是縮寫；
+    其餘當縮寫用的改成 if and only if。lint 會把 F1 的用法也列出來，由作者逐處判斷。
+
+- id: plurals
+  title: 複數形
+  status: proposed
+  use: [zeros, formulas, lemmas, indices]
+  avoid: [zeroes, formulae, lemmata]
+  why: >-
+    zeros 188 比 zeroes 1；formulas 338 比 formulae 0；lemmas 10 比 lemmata 0；indices 171 比 indexes 2
+    （indexes 也可能是動詞，不列入 avoid）。
+
+- id: us-spelling
+  title: 美式拼寫
+  status: proposed
+  use: [neighborhood*, behavior*, center*, fiber*, color*, favor*, analyze*, labeled, labeling, modeling, modeled,
+        canceled, canceling]
+  avoid: [neighbourhood*, behaviour*, centre*, fibre*, colour*, favour*, analyse*, labelled, labelling, modelling,
+          modelled, cancelled, cancelling]
+  why: >-
+    兩本書都是美式拼寫：-ize 2,287 次，詞幹相同的 -ise 0 次。例外只有 analyse 2 次（線代書）與 labelled 1 次（analysis-book）。

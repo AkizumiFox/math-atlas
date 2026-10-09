@@ -37,3 +37,4 @@
 11. **跨書 label 唯一**：build 讀其他書匯出的 label 表，同一個 label 在兩本書裡指不同結果時報錯（線代書與 analysis-book 目前已有 22 個重複，見 `generated/diff.md`，其中 `def-image` 是真正的撞名：線性映射的像 vs 集合的像）。
 12. **搬家錨點**：label 搬到另一章或另一本書時，舊位置自動產生「已移至⋯⋯」的錨點與重導，讓已發布的連結不失效（spec/01 的「發布」）。
 13. **原創性檢查併入共用引擎**：書稿用英文，主要參考書（Rudin、Folland、Axler 等）也是英文，生成內容與原書句子重疊的風險很高，04 圖 1 的版權重疊檢測不可省略。analysis-book 的 `blueprint/originality.py` 已在做：以章在 book.yaml 列出的來源節點為對照，找出共享的 8-gram，並排除由常用詞與數學套語（`COMMON`、`STOCK`）組成的片段。把它搬進共用引擎，讓每本書都用：來源清單改由 registry 提供，閾值（n、套語表、容許的片段數）用英文語料校準：拿已知原創與已知抄寫的段落量出誤報率與漏報率再定，不憑感覺設定。
+14. **英文用詞 lint**：讀 `registry/usage.yaml`，status 為 confirmed 的組，書稿散文裡出現 avoid 寫法就報出（檔案與行號）。比對規則與 `tools/usage_report.py` 相同：去掉數學式、程式碼、label 與參照，整詞、不分大小寫。

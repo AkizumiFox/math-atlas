@@ -77,6 +77,8 @@ class Atlas:
         self.subject = {f["id"]: f for fs in self.fields.values() for f in fs if "id" in f}
         ext = reg / "external" / "subject-dag.yaml"
         self.external = yaml.safe_load(ext.read_text()) if ext.exists() else None
+        usage = reg / "usage.yaml"
+        self.usage = (yaml.safe_load(usage.read_text()) or []) if usage.exists() else []
         terms = reg / "terms.yaml"
         self.terms = (yaml.safe_load(terms.read_text()) or []) if terms.exists() else []
         triage = reg / "label-triage.yaml"
@@ -270,6 +272,16 @@ def check(at):
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
     check_ids(at)
+    for g in at.usage:
+        if g.get("status") not in ("proposed", "confirmed") or not g.get("use") or not g.get("why"):
+            at.errors.append(f"usage.yaml: {g.get('id')} needs status proposed|confirmed, a use list and a why")
+        both = {f.lower() for f in g.get("use") or ()} & {f.lower() for f in g.get("avoid") or ()}
+        if both:
+            at.errors.append(f"usage.yaml: {g['id']} lists {', '.join(sorted(both))} as both use and avoid")
+    if at.usage:
+        n = sum(g.get("status") == "proposed" for g in at.usage)
+        at.notes.append(f"usage.yaml: {len(at.usage)} English usage groups, {n} proposed and awaiting confirmation "
+                        "(generated/usage.md by tools/usage_report.py)")
     import sync_constraints
     reason = sync_constraints.drift(at.constraints)
     if reason:

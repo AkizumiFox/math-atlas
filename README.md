@@ -16,6 +16,7 @@ registry/    唯一的事實來源
   plan-edges.yaml     手寫的章層級計畫邊（s／b／see／revisits，b 要附 why）
   computed/           由書稿 build 計算出的邊（目前：線代書）
   statements.yaml     陳述層種子（F 系列＋九個主幹）
+  usage.yaml          英文用詞約定（每組一個 use，其餘 avoid）
   terms.yaml          術語表：英文術語（正式名稱）、唯一的正式定義、選填的樂詞網譯名 zh（tools/seed_terms.py 產生，可重跑）
   chapter-constraints.yaml  還沒寫的章要照做的約束（生成管線的 Spec 步驟讀它）
   exam-targets.yaml   資格考目標與考綱覆蓋
@@ -34,6 +35,7 @@ generated/   工具的產出，勿手改
 python3 tools/import_la.py          # 從 ../linear-algebra/_build/crossref_labels.json 重算線代邊
 python3 tools/import_labels.py      # 收集各書的 label，找出跨書重複
 python3 tools/seed_terms.py         # 由兩本書的定義更新術語表（保留手填譯名）
+python3 tools/usage_report.py       # 統計兩本書稿的英文用詞變體 → generated/usage.md
 python3 tools/atlas.py check        # 無環、章序、選讀、b 的 why；失敗時結束碼為 1
 python3 tools/atlas.py all          # check＋stats＋diff＋render，寫入 generated/
 python3 -m unittest discover -s tools -p "test_*.py"

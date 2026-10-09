@@ -65,4 +65,13 @@
 
 兩本書都已經有一部分語意型巨集（`\inner`、`\nN`），只是巨集檔各自獨立。合併成全套共用的記號表，是 05 引擎需求的第一項。
 
+## 英文用詞約定（2026-10-10）
+
+書稿用英文，而英文沒有樂詞網那樣的官方標準，同一個概念的寫法變體更多。約定記在 `registry/usage.yaml`：每組選定一個寫法（use），其餘列為 avoid。
+
+- **先統計，再提案**：`tools/usage_report.py` 掃兩本書稿的散文（去掉數學式、程式碼、label 與參照），統計每組變體各出現幾次，寫成 `generated/usage.md`。提案依頻率與一般慣例，status 為 proposed；作者確認後改成 confirmed，報告就會列出書稿裡每一處 avoid 寫法。
+- **涵蓋的組**：injective／one-to-one、surjective／onto（只禁形容詞用法）、bijection、image／range、kernel 與 null space（兩者並存：映射的核 vs 矩陣的零空間）、map／mapping／function、non- 字首要不要連字號、codomain 等連寫詞、finite-dimensional、positive definite、self-adjoint、well-defined（名詞前加連字號、述語分寫）、if and only if／iff、複數形、美式拼寫。
+- **不做 lint、只寫規則的**：range 不當 image 的同義詞（range 多半是別的意思，無法機械判斷）；人名之間用 en dash（Cauchy–Schwarz，兩本書已一致）。
+- lint 本身屬於引擎（spec/05 第 14 項）；atlas 這邊的報告是它的原型。
+
 術語表 `registry/terms.yaml` 所有冊共用，以英文術語為正式名稱（書稿用英文，spec/00 原則 7）。中文譯名是選填欄位 `zh`，取自國家教育研究院「樂詞網」，目前凍結：`choose`、`missing` 的術語不擋任何進度，等主線冊寫完再補，用途是雙語詞彙表與 hover。譯名的例外（例如 eigenvalue 要不要用「特徵值」而非樂詞網的「固有值」）只影響 `zh`，與書稿無關。它由 `tools/seed_terms.py` 從兩本書定義中的粗體字與 `statements.yaml` 產生，可重跑，手填的譯名會保留。每個術語只有一個正式定義（`def`）；同一個詞的其他定義列在 `also`，待分流成就地定義、同形異義或遷移時合併的重複。
