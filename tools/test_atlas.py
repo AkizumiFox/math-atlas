@@ -87,6 +87,13 @@ class RegistryTest(unittest.TestCase):
         self.assertTrue(any(e.startswith("scope lint: MA.21") for e in at.errors), at.errors)
         self.assertTrue(any("a borrow needs at most R1" in e for e in at.errors), at.errors)
 
+    def test_generalization_must_be_linked(self):
+        import atlas
+        at = atlas.Atlas()
+        del at.edges[("AN3.7", "MT.6")]  # Stokes on manifolds vs the divergence theorem
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any("an3.thm.stokes (AN3.7) generalizes" in e for e in at.errors), at.errors)
+
 
 if __name__ == "__main__":
     unittest.main()

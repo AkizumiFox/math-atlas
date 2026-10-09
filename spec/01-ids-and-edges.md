@@ -59,6 +59,7 @@ computed/*.yaml   build 回溯得到（目前只有線代：tools/import_la.py�
 - 每條 b 邊都有 why。
 - A／R：uses 邊「需要 ≤ 教到」；borrows 邊需要的 R ≤ R1（陳述層）。
 - 記號作用域（代理）：b 邊宣告的 `scope` 章都必須是借用章的 s 祖先。
+- 陳述層的 generalizes 跨章時，兩章在章層級必須有邊（任何型別）或 s 路徑相連，避免同一件事的兩個版本各自獨立。
 
 警告（不會讓檢查失敗）：
 

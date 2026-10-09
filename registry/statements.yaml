@@ -61,6 +61,8 @@ nodes:
   - [la2.def.charpoly, LA2.7, def, "特徵多項式（§7.10）", A1, R1]
   - [la4.thm.det-top-ext, LA4.15, thm, "行列式即最高外冪上的作用（§15.9）", A3, R2]
   - [mt.thm.change-of-variables, MT.5, thm, "變數變換公式", A1, R2]
+  - [mt.thm.divergence, MT.6, thm, "散度定理（C¹ 邊界的有界區域，曲面測度）", A1, R2]
+  - [an3.thm.stokes, AN3.7, thm, "流形上的 Stokes 定理 ∫_M dω = ∫_∂M ω", A2, R2]
   # 主幹：譜定理
   - [la3.thm.gram-schmidt, LA3.11, thm, "Gram–Schmidt 與正交基存在", A1, R1]
   - [la3.def.adjoint, LA3.11, def, "伴隨算子（經 Riesz 表現）", A2, R2]
@@ -155,6 +157,7 @@ edges:
   - [la2.def.charpoly, la2.thm.det-mult, uses]
   - [la4.thm.det-top-ext, la2.thm.det-unique, revisits]
   - [mt.thm.change-of-variables, la2.thm.det-mult, uses]
+  - [an3.thm.stokes, mt.thm.divergence, generalizes]   # 同一件事的兩個版本；章層級以 AN3.7 revisits MT.6 連起來
   - [la3.def.adjoint, la3.thm.gram-schmidt, uses]
   - [la3.thm.spectral-normal, la3.def.adjoint, uses]
   - [la3.thm.spectral-normal, la2.def.charpoly, uses]

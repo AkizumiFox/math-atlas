@@ -182,8 +182,16 @@ def check(at):
             if have and (need[0] > have[0] or need[1] > have[1]):
                 at.errors.append(f"A/R lint: {user} needs {rest[0]} of {used}, which only teaches "
                                  f"{teach[used][0]}/{teach[used][1]}")
-    # notation scope (chapter-level proxy): what a borrowed statement is written in must already be in scope
     sonly = at.preds(("s",))
+    # a generalization must be linked to its special case at chapter level, so neither is written in isolation
+    stmt_ch = {n[0]: n[1] for n in at.statements["nodes"]}
+    for user, used, typ, *_ in at.statements["edges"]:
+        a, b = stmt_ch[user], stmt_ch[used]
+        if typ == "generalizes" and a != b and not ((a, b) in at.edges or (b, a) in at.edges
+                                                     or b in G.ancestors(sonly, [a])):
+            at.errors.append(f"{user} ({a}) generalizes {used} ({b}), but the chapters are not linked; "
+                             f"add a revisits or see edge {a} <- {b}")
+    # notation scope (chapter-level proxy): what a borrowed statement is written in must already be in scope
     for (to, frm), chs in sorted(at.scope.items()):
         if at.edges.get((to, frm)) != "b":
             at.errors.append(f"scope declared for {to} <- {frm}, but the effective edge is {at.edges.get((to, frm))}")

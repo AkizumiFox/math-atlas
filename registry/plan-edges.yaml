@@ -155,7 +155,7 @@ CA.8: {s: [CA.4, CA.7], b: [HA.4, AN1.10], why: {HA.4: theta 函數與 Poisson �
 FA.1a: {s: [AN2.2, AN2.3], see: [AN3.1]}   # 例子只用 ℓᵖ 與 C(K)；有限維的算子範數先見於 AN3.1
 FA.1b: {s: [FA.1a, MT.7, MT.11]}
 FA.2: {s: [FA.1a, AN2.8, MT.3]}
-FA.3: {s: [FA.1a], b: [F2.4], why: {F2.4: 一般 Hahn–Banach 用 Zorn 引理}}
+FA.3: {s: [FA.1a], b: [F2.4], revisits: [MA.18], why: {F2.4: 一般 Hahn–Banach 用 Zorn 引理}}
 FA.4: {s: [FA.1a, AN2.6], see: [HA.1]}
 FA.5: {s: [FA.3, FA.4, AN2.7]}
 FA.6: {s: [FA.1a], revisits: [MT.7], see: [LA3.11, HA.3]}   # 主例 ℓ²；L² 以 revisits 指回 MT

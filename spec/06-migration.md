@@ -65,7 +65,7 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 | 6 | ~~交換代數~~ | **已定：獨立成支線冊 AL5**（2026-10-09） | 不增加代數資格考的必讀量；代數幾何與代數數論從 AL5 進入 |
 | 7 | ~~MA 的 (A7)~~ | **已查：Pick–Nevanlinna**（線代書 `ch21-inequalities/index.md`，2026-10-09） | MA.21 改為 b 借用 CA.6（Herglotz 表示屬於調和函數）；CA.6 要補 Herglotz，見下方待辦 |
 | 8 | ~~授權~~ | **已定：書稿 CC BY-NC-SA 4.0；atlas 的 registry／spec CC BY 4.0；tools MIT**（2026-10-09） | 三本既有的書已是 NC-SA，不必遷移；Napkin（BY-SA）不能改編進書稿 |
-| 9 | AN3.5–3.7 流形三章 | 留在 AN3 的 B 段，或拆成獨立的微分幾何支線 | T3 範圍 |
+| 9 | ~~AN3.5–3.7 流形三章~~ | **已定：保留，維持 B 段**（2026-10-09） | 它們是微分幾何、微分拓樸兩條支線（Harvard 資格考科目）唯一的入口，刪掉的話支線要自己重寫 Stokes。MT.6 的散度定理與 AN3.7 的 Stokes 以 generalizes 連起來（陳述層），章層級是 AN3.7 revisits MT.6 |
 | 10 | ~~ZF 出現兩次~~ | **已定：分工**（2026-10-09） | F3.1 只放建構 ω 所需的 ZF 片段與 von Neumann 自然數（$0=\varnothing$），ST.1 是完整的公理系統，以 revisits 指回 F3.1 |
 
 ## 記號約定的書稿待辦
@@ -83,6 +83,8 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 - [ ] **FA.1 拆章**（2026-10-09 定案）：analysis-book 第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；ℓᵖ 的 Hölder 與 Minkowski 要在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。FA.1b 是 Lᵖ 的對偶，依賴 MT.7、MT.11。第 70 章（FA.6 Hilbert 空間）的主例改成 ℓ²，L² 與三角系完備性改成回顧，指向 Part IV。拆完之後 FA.3–FA.7（Hahn–Banach、Baire 三定理、弱拓樸、Hilbert、緊算子）都可以和 MT 平行閱讀；FA.1b、FA.2 照舊排在 MT 之後。
 
 - [ ] **CA.6 補 Herglotz 表示**（2026-10-09）：(A7) 借用的是 Pick 函數的 Herglotz 積分表示，analysis-book 第 60 章目前沒有。它需要對正測度積分（Poisson–Stieltjes 積分，或經 Helly 選取），超出 Ahlfors 程度。做法二選一：在第 60 章加一個選讀節，s 依賴 MT（不影響 CA 的主線）；或把 (A7) 的出處改到 FA.2（Riesz–Markov）之後。另外，(A7) 的陳述用到「解析」「上半平面」「正測度」，MA 讀者的 s 祖先裡沒有 CA 和 MT，依 spec/03 §6 規則 3 這條借用寫不出來；線代書第 21 章目前是在原處把這些詞當作已知。所以 MA.21 ← CA.6 暫不宣告 `scope`，等作者決定。
+
+- [ ] **散度定理與 Stokes 不各寫各的**（2026-10-09）：analysis-book 第 48 章（MT.6）的散度定理結尾加一條 see 指向 AN3.7；AN3.7 證完 Stokes 之後，把散度定理當作特例推回來，並指出兩者的假設差在哪裡（C¹ 邊界與曲面測度，對上光滑流形與微分形式）。
 
 ## 授權的待辦
 
