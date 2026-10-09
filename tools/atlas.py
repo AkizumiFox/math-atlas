@@ -265,6 +265,10 @@ def check(at):
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
     check_ids(at)
+    import sync_constraints
+    reason = sync_constraints.drift(at.constraints)
+    if reason:
+        at.errors.append(reason)
     written = at.labels.get("written") or {}
     for k in at.constraints:
         book = str(k.get("book", "")).split(":")[0]

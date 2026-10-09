@@ -197,6 +197,20 @@ class RegistryTest(unittest.TestCase):
         self.assertFalse(atlas.check(at))
         self.assertTrue(any("term `continuous` is not in registry/terms.yaml" in e for e in at.errors), at.errors)
 
+    def test_constraint_block_drift(self):
+        import tempfile
+        import sync_constraints as sc
+        cons = [{"chapter": "PDE.1", "book": "ab:73", "decided": "2026-10-09", "rule": "重跑 Baire\n論證"}]
+        with tempfile.TemporaryDirectory() as d:
+            book = Path(d) / "book.yaml"
+            body = sc.yaml.safe_dump({"atlas_constraints": {"source": "math-atlas@x", "chapters": sc.wanted(cons)}},
+                                     allow_unicode=True)
+            book.write_text(f"title: t\n{sc.BEGIN}\n{body}{sc.END}\n")
+            self.assertIsNone(sc.drift(cons, book))
+            self.assertEqual(sc.wanted(cons)[73][0]["rule"], "在 Fréchet 空間上重跑 Baire 論證")
+            book.write_text(book.read_text().replace("Baire", "Banach"))  # a hand edit inside the block
+            self.assertIn("differs", sc.drift(cons, book))
+
     def test_subject_after(self):
         import atlas
         at = atlas.Atlas()
