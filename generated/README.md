@@ -51,7 +51,7 @@ flowchart TD
   AN3 --> HA
   AN3 --> MT
   FA --> CA
-  CA -.-> FA
+  CA --> FA
   AL2 --> AL4
   LA4 --> AL4
   AL4 --> AL5
@@ -615,7 +615,6 @@ flowchart LR
   AL2_5 --> AL4_3
   AL4_2 --> AL4_3
   AL4_3 --> AL4_4
-  LA4_15 -.-> AL4_5
   AL4_2 --> AL4_5
   F2_4 -.-> AL4_6
   AL4_5 --> AL4_6
@@ -730,7 +729,6 @@ flowchart LR
   MT_8["MT.8 收斂模式、一致可積與弱 Lᵖ"]:::ext
   MT_10["MT.10 有界變差、絕對連續與微積分基本定理"]:::ext
   CA_4["CA.4 環繞數、整體 Cauchy 定理與零點計數"]:::ext
-  CA_6["CA.6 調和函數與次調和函數"]:::ext
   FA_1b["FA.1b Lᵖ 的對偶"]:::ext
   FA_7["FA.7 緊算子、Fredholm 選擇與譜定理"]:::ext
   PDE_1["1 分佈"]
@@ -741,7 +739,6 @@ flowchart LR
   PDE_6["6 總結：Dirichlet 問題與 Dirichlet–Laplace 特徵基"]
   MT_6 --> PDE_1
   MT_7 --> PDE_1
-  CA_6 -.-> PDE_1
   HA_6 --> PDE_2
   PDE_1 --> PDE_2
   MT_8 --> PDE_3

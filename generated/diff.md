@@ -27,32 +27,15 @@
 
 ## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）
 
-- AN1.11 ← F2.3
-- F3.6 ← AN1.1
 - LA2.6 ← AN1.6
 - LA2.10 ← AN1.10
-- AN2.1 ← LA3.11
 - AN3.1 ← LA2.7
 - AN3.1 ← LA3.12
 - AN3.1 ← LA4.14
 - AN3.4 ← LA2.7
-- AL2.3 ← F2.4
-- AL2.8 ← F2.4
-- MT.7 ← LA3.11
 - CA.1 ← AN3.1
-- CA.2 ← AN3.4
 - CA.8 ← HA.4
-- CA.8 ← AN1.10
-- FA.3 ← F2.4
 - FA.7 ← CA.2
-- FA.8 ← CA.2
-- AL4.5 ← LA4.15
-- AL4.6 ← F2.4
-- MA.16 ← AN1.11
-- MA.16 ← AN2.3
-- PR.1 ← AN1.7
-- PR.4 ← HA.6
-- PDE.1 ← CA.6
 - PDE.3 ← CA.4
 - ST.6 ← AL1.11
 
