@@ -32,8 +32,8 @@
   ch: F1.1
   meta: true
   also: [def-derived-rule@F1.2]
+- {id: box, en: box, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: box-free-derivation, en: box-free derivation, zh: null, naer: missing, def: def-box-free-derivation, ch: F1.1, meta: true}
-- {id: boxes, en: boxes, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: claim, en: claim, zh: null, naer: missing, def: def-sequent, ch: F1.1, meta: true}
 - id: closed
   en: closed
@@ -61,7 +61,7 @@
   def: def-rules-implication
   ch: F1.1
   meta: true
-  also: [def-rule-raa@F1.2, def-rules-negation@F1.2]
+  also: [def-rules-negation@F1.2, def-rule-raa@F1.2]
 - id: earlier
   en: earlier
   zh: null
@@ -70,8 +70,8 @@
   ch: F1.1
   meta: true
   also: [def-formula@F1.3, def-term@F1.4, def-first-order-formula@F1.4]
-- id: expressions
-  en: expressions
+- id: expression
+  en: expression
   zh: null
   naer: choose
   def: def-rule-schema
@@ -85,7 +85,7 @@
 - {id: justified-by-the-rule, en: justified by the rule, zh: null, naer: missing, def: def-rule-schema, ch: F1.1, meta: true}
 - {id: last-line, en: last line, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: main-connective, en: main connective, zh: null, naer: missing, def: def-main-connective, ch: F1.1, meta: true}
-- {id: modus-ponens, en: modus ponens, zh: null, naer: missing, def: def-rule-implication-elimination, ch: F1.1, meta: true}
+- {id: modus-ponen, en: modus ponen, zh: null, naer: missing, def: def-rule-implication-elimination, ch: F1.1, meta: true}
 - id: of-that-box-itself
   en: of that box itself
   zh: null
@@ -93,20 +93,19 @@
   def: def-rules-implication
   ch: F1.1
   meta: true
-  also: [def-rules-biconditional@F1.2, def-rule-raa@F1.2]
+  also: [def-rule-raa@F1.2, def-rules-biconditional@F1.2]
 - {id: one-inside-the-other, en: one inside the other, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: or-elimination, en: or-elimination, zh: null, naer: missing, def: def-rules-disjunction, ch: F1.1, meta: true}
 - {id: or-introduction, en: or-introduction, zh: null, naer: missing, def: def-rule-disjunction-introduction, ch: F1.1, meta: true}
-- {id: premise, en: premise, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
-- id: premises
-  en: premises
+- id: premise
+  en: premise
   zh: null
   naer: missing
   def: def-sequent
   ch: F1.1
   meta: true
-  also: [def-box-free-derivation@F1.1]
-- {id: proof-by-cases, en: proof by cases, zh: null, naer: missing, def: def-rules-disjunction, ch: F1.1, meta: true}
+  also: [def-box-free-derivation@F1.1, def-derivation@F1.1]
+- {id: proof-by-case, en: proof by case, zh: null, naer: missing, def: def-rules-disjunction, ch: F1.1, meta: true}
 - {id: repetition, en: repetition, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: rule-schema, en: rule schema, zh: null, naer: missing, def: def-rule-schema, ch: F1.1, meta: true}
 - {id: scope-rule, en: scope rule, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
@@ -125,9 +124,9 @@
 - {id: partial-derivation, en: partial derivation, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
 - {id: provably-equivalent, en: provably equivalent, zh: null, naer: missing, def: def-provable-equivalence, ch: F1.2, meta: true}
 - {id: reductio-ad-absurdum, en: reductio ad absurdum, zh: null, naer: missing, def: def-rule-raa, ch: F1.2, meta: true}
-- {id: resources, en: resources, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
+- {id: resource, en: resource, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
 - {id: adequate, en: adequate, zh: null, naer: missing, def: def-adequate, ch: F1.3, meta: true}
-- {id: agrees-with-the-row, en: agrees with the row, zh: null, naer: missing, def: def-truth-table, ch: F1.3, meta: true}
+- {id: agree-with-the-row, en: agree with the row, zh: null, naer: missing, def: def-truth-table, ch: F1.3, meta: true}
 - id: branch
   en: branch
   zh: null
@@ -137,10 +136,10 @@
   zh_candidates: [分枝, 分支]
   meta: true
 - {id: contradiction, en: contradiction, zh: 矛盾, naer: univ, def: def-tautology, ch: F1.3, meta: true}
-- {id: expresses, en: expresses, zh: null, naer: missing, def: def-truth-function, ch: F1.3, meta: true}
+- {id: express, en: express, zh: null, naer: missing, def: def-truth-function, ch: F1.3, meta: true}
 - {id: formation-sequence, en: formation sequence, zh: null, naer: missing, def: def-formula, ch: F1.3, meta: true}
-- id: formulas
-  en: formulas
+- id: formula
+  en: formula
   zh: 公式
   naer: univ
   def: def-formula
@@ -157,15 +156,15 @@
   ch: F1.3
   zh_candidates: [高, 高度]
   meta: true
-- {id: immediate-subformulas, en: immediate subformulas, zh: null, naer: missing, def: def-subformula, ch: F1.3, meta: true}
+- {id: immediate-subformula, en: immediate subformula, zh: null, naer: missing, def: def-subformula, ch: F1.3, meta: true}
 - {id: in-cnf, en: in cnf, zh: null, naer: missing, def: def-cnf, ch: F1.3, meta: true}
 - {id: in-dnf, en: in dnf, zh: null, naer: missing, def: def-dnf, ch: F1.3, meta: true}
-- {id: includes-every-atom, en: includes every atom, zh: null, naer: missing, def: def-truth-table, ch: F1.3, meta: true}
-- {id: leaves, en: leaves, zh: null, naer: missing, def: def-parse-tree, ch: F1.3, meta: true}
+- {id: include-every-atom, en: include every atom, zh: null, naer: missing, def: def-truth-table, ch: F1.3, meta: true}
+- {id: leave, en: leave, zh: null, naer: missing, def: def-parse-tree, ch: F1.3, meta: true}
 - {id: left, en: left, zh: null, naer: missing, def: def-parse-tree, ch: F1.3, meta: true}
 - {id: literal, en: literal, zh: null, naer: missing, def: def-literal, ch: F1.3, meta: true}
 - {id: longest, en: longest, zh: null, naer: missing, def: def-height, ch: F1.3, meta: true}
-- {id: makes, en: makes, zh: null, naer: missing, def: def-truth-value, ch: F1.3, meta: true}
+- {id: make, en: make, zh: null, naer: missing, def: def-truth-value, ch: F1.3, meta: true}
 - id: nothing-else
   en: nothing else
   zh: null
@@ -174,8 +173,8 @@
   ch: F1.3
   meta: true
   also: [def-term@F1.4, def-first-order-formula@F1.4]
-- id: one-or-more-literals
-  en: one or more literals
+- id: one-or-more-literal
+  en: one or more literal
   zh: null
   naer: missing
   def: def-cnf
@@ -196,8 +195,8 @@
   also: [def-polynomial-evaluation@F3.8]
 - {id: row, en: row, zh: 列, naer: hs, def: def-truth-table, ch: F1.3, meta: true}
 - {id: satisfiable, en: satisfiable, zh: null, naer: missing, def: def-satisfiable, ch: F1.3, meta: true}
-- id: semantically-entails
-  en: semantically entails
+- id: semantically-entail
+  en: semantically entail
   zh: null
   naer: missing
   def: def-valid-argument
@@ -205,7 +204,7 @@
   meta: true
   also: [def-first-order-entailment@F1.4]
 - {id: semantically-equivalent, en: semantically equivalent, zh: null, naer: missing, def: def-semantic-equivalence, ch: F1.3, meta: true}
-- {id: subformulas, en: subformulas, zh: null, naer: missing, def: def-subformula, ch: F1.3, meta: true}
+- {id: subformula, en: subformula, zh: null, naer: missing, def: def-subformula, ch: F1.3, meta: true}
 - id: tautology
   en: tautology
   zh: null
@@ -229,11 +228,11 @@
 - {id: valid, en: valid, zh: null, naer: missing, def: def-valid-argument, ch: F1.3, meta: true}
 - {id: valuation, en: valuation, zh: 賦值, naer: univ, def: def-valuation, ch: F1.3, meta: true}
 - {id: assignment, en: assignment, zh: null, naer: missing, def: def-assignment, ch: F1.4, meta: true}
-- {id: atomic-formulas, en: atomic formulas, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
-- {id: binds, en: binds, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
+- {id: atomic-formula, en: atomic formula, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
+- {id: bind, en: bind, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
 - {id: both-and-are-free, en: both and are free, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: bound, en: bound, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
-- {id: bounded-quantifiers, en: bounded quantifiers, zh: 約束量詞, naer: univ, def: def-bounded-quantifier, ch: F1.4, meta: true}
+- {id: bounded-quantifier, en: bounded quantifier, zh: 約束量詞, naer: univ, def: def-bounded-quantifier, ch: F1.4, meta: true}
 - {id: counter-model, en: counter-model, zh: null, naer: missing, def: def-first-order-entailment, ch: F1.4, meta: true}
 - id: domain
   en: domain
@@ -246,7 +245,7 @@
   also: [def-function@F2.1, def-relation@F2.1, def-kernel@LA1.2]
 - {id: equality-elimination, en: equality elimination, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: equality-introduction, en: equality introduction, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
-- {id: first-order-formulas, en: first-order formulas, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
+- {id: first-order-formula, en: first-order formula, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
 - id: free
   en: free
   zh: null
@@ -271,7 +270,6 @@
   ch: F1.4
   zh_candidates: ['恆等[式]', '單位[元素]', 同一]
   meta: true
-  also: [def-group@AL1.1]
 - id: model
   en: model
   zh: null
@@ -292,7 +290,7 @@
   meta: true
 - {id: sentence, en: sentence, zh: 語句, naer: univ, def: def-sentence, ch: F1.4, meta: true}
 - {id: structure, en: structure, zh: 結構, naer: univ, def: def-structure, ch: F1.4, meta: true}
-- {id: terms, en: terms, zh: 項, naer: univ, def: def-term, ch: F1.4, meta: true}
+- {id: term, en: term, zh: 項, naer: univ, def: def-term, ch: F1.4, meta: true}
 - id: variable
   en: variable
   zh: null
@@ -305,8 +303,8 @@
 - {id: contrapositive, en: contrapositive, zh: null, naer: missing, def: def-implication-converse-contrapositive, ch: F1.5, meta: true}
 - {id: converse, en: converse, zh: null, naer: missing, def: def-implication-converse-contrapositive, ch: F1.5, meta: true}
 - {id: disjunction, en: disjunction, zh: '析取[詞]', naer: univ, def: def-connectives, ch: F1.5, meta: true}
-- id: divides
-  en: divides
+- id: divide
+  en: divide
   zh: 除
   naer: univ
   def: def-divisibility-prime
@@ -320,7 +318,7 @@
   ch: F1.5
   also: [def-sign-permutation@LA2.7, def-alternating-group@LA2.7]
 - {id: existential, en: existential, zh: null, naer: missing, def: def-quantifiers, ch: F1.5, meta: true}
-- {id: existential-quantifiers, en: existential quantifiers, zh: 存在量詞, naer: univ, def: def-quantifiers, ch: F1.5, meta: true}
+- {id: existential-quantifier, en: existential quantifier, zh: 存在量詞, naer: univ, def: def-quantifiers, ch: F1.5, meta: true}
 - {id: hypothesis, en: hypothesis, zh: 假設, naer: univ, def: def-implication-converse-contrapositive, ch: F1.5, meta: true}
 - id: implication
   en: implication
@@ -367,7 +365,7 @@
   def: def-bijective
   ch: F2.1
   also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@AL1.1, def-intertwining-map@AL4.8]
-- {id: cartesian-product, en: cartesian product, zh: 笛卡兒積, naer: univ, def: def-cartesian-product, ch: F2.1}
+- {id: cartesian-product, en: Cartesian product, zh: 笛卡兒積, naer: univ, def: def-cartesian-product, ch: F2.1}
 - {id: characteristic-property, en: characteristic property, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - id: codomain
   en: codomain
@@ -384,8 +382,8 @@
   ch: F2.1
   zh_candidates: [餘, 補, 補碼, 補數, 餘補]
   also: [def-set-difference@F2.1]
-- id: complex-numbers
-  en: complex numbers
+- id: complex-number
+  en: complex number
   zh: 複數
   naer: univ
   def: def-common-number-sets
@@ -393,8 +391,8 @@
   also: [def-complex-numbers@F3.6]
 - {id: composite, en: composite, zh: null, naer: missing, def: def-composition, ch: F2.1}
 - {id: composition, en: composition, zh: 合成, naer: univ, def: def-composition, ch: F2.1}
+- {id: contain, en: contain, zh: null, naer: missing, def: def-subset, ch: F2.1}
 - {id: contained, en: contained, zh: null, naer: missing, def: def-subset, ch: F2.1}
-- {id: contains, en: contains, zh: null, naer: missing, def: def-subset, ch: F2.1}
 - id: difference
   en: difference
   zh: null
@@ -412,8 +410,8 @@
   zh_candidates: [不相交的, 互斥的]
   also: [def-intersection@F2.1]
 - {id: empty-set, en: empty set, zh: 空集, naer: univ, def: def-empty-set, ch: F2.1}
-- {id: family-of-sets-indexed, en: family of sets indexed, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
-- {id: family-of-subsets, en: family of subsets, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
+- {id: family-of-set-indexed, en: family of set indexed, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
+- {id: family-of-subset, en: family of subset, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: first-coordinate, en: first coordinate, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - {id: function, en: function, zh: 函數, naer: univ, def: def-function, ch: F2.1}
 - {id: graph, en: graph, zh: '圖[形]', naer: univ, def: def-function, ch: F2.1}
@@ -426,7 +424,7 @@
   ch: F2.1
   zh_candidates: [像點, 像, 鏡像]
   also: [def-image-preimage@F2.1, def-image@LA1.2, def-algebra-homomorphism@AL4.8]
-- {id: includes, en: includes, zh: null, naer: missing, def: def-common-number-sets, ch: F2.1}
+- {id: include, en: include, zh: null, naer: missing, def: def-common-number-sets, ch: F2.1}
 - {id: index-set, en: index set, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: indexed-family, en: indexed family, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - id: injection
@@ -443,7 +441,7 @@
   def: def-injective
   ch: F2.1
   also: [def-injective-surjective-bijective@F2.1]
-- {id: integers, en: integers, zh: 整數, naer: univ, def: def-common-number-sets, ch: F2.1}
+- {id: integer, en: integer, zh: 整數, naer: univ, def: def-common-number-sets, ch: F2.1}
 - id: intersection
   en: intersection
   zh: null
@@ -451,7 +449,7 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [相交, 交集]
-  also: [def-set-operations@F2.1, def-intersection@F2.1, def-indexed-family@F2.1]
+  also: [def-set-operations@F2.1, def-indexed-family@F2.1, def-intersection@F2.1]
 - id: inverse
   en: inverse
   zh: null
@@ -477,8 +475,15 @@
   also: [def-invertible-matrix@LA1.0, def-invertible-linear-map@LA1.2, def-similar-matrices@LA1.4, def-schur-complement@LA2.8, def-triangularizable@LA2.9, def-diagonalizable@LA2.9,
     def-congruent@LA4.14, def-m-matrix@MA.19]
 - {id: left-inverse, en: left inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
+- id: map
+  en: map
+  zh: 映射
+  naer: univ
+  def: def-function
+  ch: F2.1
+  also: [def-intertwining-map@AL4.8]
 - {id: member, en: member, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
-- {id: natural-numbers, en: natural numbers, zh: 自然數, naer: hs, def: def-common-number-sets, ch: F2.1}
+- {id: natural-number, en: natural number, zh: 自然數, naer: hs, def: def-common-number-sets, ch: F2.1}
 - {id: one-to-one, en: one-to-one, zh: null, naer: missing, def: def-injective, ch: F2.1}
 - {id: onto, en: onto, zh: null, naer: missing, def: def-surjective, ch: F2.1}
 - id: ordered-pair
@@ -511,8 +516,8 @@
   def: def-relation
   ch: F2.1
   zh_candidates: [區域, 範圍, 值域, 全距, 列]
-- {id: rational-numbers, en: rational numbers, zh: 有理數, naer: univ, def: def-common-number-sets, ch: F2.1}
-- {id: real-numbers, en: real numbers, zh: 實數, naer: univ, def: def-common-number-sets, ch: F2.1}
+- {id: rational-number, en: rational number, zh: 有理數, naer: univ, def: def-common-number-sets, ch: F2.1}
+- {id: real-number, en: real number, zh: 實數, naer: univ, def: def-common-number-sets, ch: F2.1}
 - id: relation
   en: relation
   zh: 關係
@@ -537,7 +542,7 @@
   def: def-surjective
   ch: F2.1
   also: [def-injective-surjective-bijective@F2.1, def-countable@LA1.1]
-- {id: tuple, en: -tuple, zh: null, naer: missing, def: def-n-tuple, ch: F2.1}
+- {id: tuple, en: tuple, zh: null, naer: missing, def: def-n-tuple, ch: F2.1}
 - {id: two-sided-inverse, en: two-sided inverse, zh: null, naer: missing, def: def-inverse-function, ch: F2.1}
 - id: union
   en: union
@@ -546,8 +551,14 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [聯, 併]
-  also: [def-union@F2.1, def-set-operations@F2.1, def-indexed-family@F2.1]
-- {id: blocks, en: blocks, zh: null, naer: missing, def: def-partition, ch: F2.2}
+  also: [def-set-operations@F2.1, def-union@F2.1, def-indexed-family@F2.1]
+- id: block
+  en: block
+  zh: null
+  naer: missing
+  def: def-partition
+  ch: F2.2
+  also: [def-block-partition@LA2.8]
 - {id: equivalence-class, en: equivalence class, zh: 等價類, naer: univ, def: def-equivalence-class, ch: F2.2}
 - {id: equivalence-relation, en: equivalence relation, zh: 等價關係, naer: univ, def: def-equivalence-relation, ch: F2.2}
 - {id: is-related, en: is related, zh: null, naer: missing, def: def-relation, ch: F2.2}
@@ -580,8 +591,8 @@
   naer: missing
   def: def-equivalence-relation
   ch: F2.2
-  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-symmetric-form@LA4.14, def-quadratic-form@LA4.14, def-symmetric-multilinear-map@LA4.15, def-symmetric-power@LA4.15,
-    def-symmetric-tensor@LA4.15]
+  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-quadratic-form@LA4.14, def-symmetric-form@LA4.14, def-symmetric-tensor@LA4.15, def-symmetric-multilinear-map@LA4.15,
+    def-symmetric-power@LA4.15]
 - {id: transitive, en: transitive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.2}
 - id: absolute-value
   en: absolute value
@@ -599,7 +610,7 @@
   also: [def-entrywise-convergence@LA2.10]
 - {id: bounded-above, en: bounded above, zh: null, naer: missing, def: def-bounded-above, ch: AN1.1}
 - {id: bounded-below, en: bounded below, zh: null, naer: missing, def: def-bounded-above, ch: AN1.1}
-- {id: field-axioms, en: field axioms, zh: null, naer: missing, def: def-ordered-field, ch: AN1.1}
+- {id: field-axiom, en: field axiom, zh: null, naer: missing, def: def-ordered-field, ch: AN1.1}
 - {id: greatest-lower-bound, en: greatest lower bound, zh: 最大下界, naer: univ, def: def-infimum, ch: AN1.1}
 - {id: inductive, en: inductive, zh: null, naer: missing, def: def-inductive-set, ch: AN1.1}
 - {id: infimum, en: infimum, zh: null, naer: missing, def: def-infimum, ch: AN1.1}
@@ -619,7 +630,7 @@
   def: def-maximum
   ch: AN1.1
   zh_candidates: ['最小[值]', '極小[值]']
-- {id: order-axioms, en: order axioms, zh: null, naer: missing, def: def-ordered-field, ch: AN1.1}
+- {id: order-axiom, en: order axiom, zh: null, naer: missing, def: def-ordered-field, ch: AN1.1}
 - {id: ordered-field, en: ordered field, zh: 有序體, naer: univ, def: def-ordered-field, ch: AN1.1}
 - {id: supremum, en: supremum, zh: null, naer: missing, def: def-supremum, ch: AN1.1}
 - id: upper-bound
@@ -666,7 +677,13 @@
   ch: F3.7
   zh_candidates: [體, 場, 範圍, 域]
 - {id: multiplication, en: multiplication, zh: 乘法, naer: univ, def: def-field, ch: F3.7}
-- {id: coefficient, en: coefficient, zh: 係數, naer: univ, def: def-polynomial, ch: F3.8}
+- id: coefficient
+  en: coefficient
+  zh: 係數
+  naer: univ
+  def: def-polynomial
+  ch: F3.8
+  also: [def-linear-combination@LA1.1]
 - id: degree
   en: degree
   zh: null
@@ -674,7 +691,7 @@
   def: def-degree
   ch: F3.8
   zh_candidates: ['次[數]', '度[數]']
-  also: [def-restriction-of-scalars@LA1.1, def-polynomial-algebra-several-variables@LA4.15, def-representation@AL4.8, def-character@AL4.8]
+  also: [def-restriction-of-scalars@LA1.1, def-polynomial-algebra-several-variables@LA4.15, def-character@AL4.8, def-representation@AL4.8]
 - id: leading-coefficient
   en: leading coefficient
   zh: null
@@ -688,7 +705,7 @@
   naer: missing
   def: def-degree
   ch: F3.8
-  also: [def-minimal-polynomial@LA2.9, def-companion-matrix@LA2.10, def-t-annihilator@LA2.10, def-orthogonal-polynomial-sequence@LA3.11]
+  also: [def-minimal-polynomial@LA2.9, def-t-annihilator@LA2.10, def-companion-matrix@LA2.10, def-orthogonal-polynomial-sequence@LA3.11]
 - {id: only-finitely-many, en: only finitely many, zh: null, naer: missing, def: def-polynomial, ch: F3.8}
 - {id: polynomial, en: polynomial, zh: 多項式, naer: univ, def: def-polynomial, ch: F3.8}
 - {id: polynomial-function, en: polynomial function, zh: 多項式函數, naer: hs, def: def-polynomial-evaluation, ch: F3.8}
@@ -700,8 +717,8 @@
   ch: LA1.0
   also: [def-vectors-scalars@LA1.1]
 - {id: diagonal, en: diagonal, zh: 對角線, naer: univ, def: def-diagonal-matrix, ch: LA1.0}
-- id: entries
-  en: entries
+- id: entry
+  en: entry
   zh: null
   naer: choose
   def: def-matrix
@@ -714,7 +731,7 @@
   def: def-identity-matrix
   ch: LA1.0
   zh_candidates: [單位方陣, 單位矩陣]
-- {id: kronecker-delta, en: kronecker delta, zh: Kronecker符號, naer: univ, def: def-identity-matrix, ch: LA1.0}
+- {id: kronecker-delta, en: Kronecker delta, zh: Kronecker符號, naer: univ, def: def-identity-matrix, ch: LA1.0}
 - {id: lower-triangular, en: lower triangular, zh: null, naer: missing, def: def-upper-triangular, ch: LA1.0}
 - id: matrix
   en: matrix
@@ -724,8 +741,8 @@
   ch: LA1.0
   also: [def-matrix-of-linear-map@LA1.4, def-form-matrix@LA4.14]
 - {id: not-defined, en: not defined, zh: null, naer: missing, def: def-matrix-multiplication, ch: LA1.0}
-- id: powers
-  en: powers
+- id: power
+  en: power
   zh: null
   naer: choose
   def: def-polynomial-of-matrix
@@ -781,13 +798,11 @@
   also: [def-adjugate@LA2.7]
 - {id: upper-triangular, en: upper triangular, zh: null, naer: missing, def: def-upper-triangular, ch: LA1.0}
 - {id: zero-matrix, en: zero matrix, zh: 零矩陣, naer: univ, def: def-zero-matrix, ch: LA1.0}
-- {id: bases, en: bases, zh: null, naer: missing, def: def-basis, ch: LA1.1}
 - {id: basis, en: basis, zh: null, naer: missing, def: def-basis, ch: LA1.1}
 - {id: chain, en: chain, zh: 鏈, naer: univ, def: def-partial-order, ch: LA1.1}
-- {id: coefficients, en: coefficients, zh: 係數, naer: univ, def: def-linear-combination, ch: LA1.1}
 - {id: complexification, en: complexification, zh: 複數化, naer: univ, def: def-complexification, ch: LA1.1}
+- {id: coordinate, en: coordinate, zh: 坐標, naer: univ, def: def-coordinates, ch: LA1.1}
 - {id: coordinate-vector, en: coordinate vector, zh: null, naer: missing, def: def-coordinates, ch: LA1.1}
-- {id: coordinates, en: coordinates, zh: 坐標, naer: univ, def: def-coordinates, ch: LA1.1}
 - {id: countable, en: countable, zh: 可數的, naer: univ, def: def-countable, ch: LA1.1}
 - id: dimension
   en: dimension
@@ -796,7 +811,7 @@
   def: def-dimension
   ch: LA1.1
   zh_candidates: ['維[度]', 維數, 因次, 量綱, 尺寸大小]
-  also: [def-affine-hull@MA.18, def-affine-space@GEO.22, def-projective-space@GEO.22, def-projective-subspace@GEO.22]
+  also: [def-affine-hull@MA.18, def-projective-space@GEO.22, def-affine-space@GEO.22, def-projective-subspace@GEO.22]
 - id: direct
   en: direct
   zh: null
@@ -839,10 +854,11 @@
   naer: missing
   def: def-restriction-of-scalars
   ch: LA1.1
-  also: [def-linear-transformation@LA1.2, def-linear-system@LA1.3, def-coprime@LA2.6, def-divisibility-polynomials@LA2.6, def-orientation@LA2.7, def-inner-product@LA3.11,
+  also: [def-linear-transformation@LA1.2, def-linear-system@LA1.3, def-divisibility-polynomials@LA2.6, def-coprime@LA2.6, def-orientation@LA2.7, def-inner-product@LA3.11,
     def-norm@MA.16, def-convex-set@MA.18]
 - {id: partial-order, en: partial order, zh: null, naer: missing, def: def-partial-order, ch: LA1.1}
-- {id: restriction-of-scalars, en: restriction of scalars, zh: null, naer: missing, def: def-restriction-of-scalars, ch: LA1.1}
+- {id: restriction-of-scalar, en: restriction of scalar, zh: null, naer: missing, def: def-restriction-of-scalars, ch: LA1.1}
+- {id: scalar, en: scalar, zh: 純量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
 - id: scalar-multiplication
   en: scalar multiplication
   zh: null
@@ -850,23 +866,15 @@
   def: def-vector-space
   ch: LA1.1
   zh_candidates: [純量乘法, 係數積]
-- {id: scalars, en: scalars, zh: 純量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
 - id: span
   en: span
   zh: null
   naer: missing
   def: def-span
   ch: LA1.1
-  also: [def-hyperbolic-pair@LA4.14]
+  also: [def-basis@LA1.1, def-spanning-set@LA1.1, def-hyperbolic-pair@LA4.14]
 - {id: spanning-list, en: spanning list, zh: null, naer: missing, def: def-spanning-set, ch: LA1.1}
 - {id: spanning-set, en: spanning set, zh: null, naer: missing, def: def-spanning-set, ch: LA1.1}
-- id: spans
-  en: spans
-  zh: null
-  naer: missing
-  def: def-spanning-set
-  ch: LA1.1
-  also: [def-basis@LA1.1]
 - {id: subfield, en: subfield, zh: 子體, naer: univ, def: def-restriction-of-scalars, ch: LA1.1}
 - id: subspace
   en: subspace
@@ -876,11 +884,17 @@
   ch: LA1.1
   also: [def-left-ideal@AL4.8, def-subalgebra@AL4.8]
 - {id: uncountable, en: uncountable, zh: null, naer: missing, def: def-countable, ch: LA1.1}
+- id: vector
+  en: vector
+  zh: 向量
+  naer: univ
+  def: def-vectors-scalars
+  ch: LA1.1
+  also: [def-affine-combination@GEO.22]
 - {id: vector-space, en: vector space, zh: null, naer: missing, def: def-vector-space, ch: LA1.1}
-- {id: vectors, en: vectors, zh: 向量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
 - {id: with-respect, en: with respect, zh: null, naer: missing, def: def-coordinates, ch: LA1.1}
 - {id: zero-vector, en: zero vector, zh: 零向量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
-- {id: exists-a-linear, en: exists a linear, zh: null, naer: missing, def: def-invertible-linear-map, ch: LA1.2}
+- {id: exist-a-linear, en: exist a linear, zh: null, naer: missing, def: def-invertible-linear-map, ch: LA1.2}
 - id: isomorphic
   en: isomorphic
   zh: null
@@ -966,8 +980,8 @@
   ch: LA1.3
   zh_candidates: [零核空間, 點空間]
 - {id: permutation-matrix, en: permutation matrix, zh: 置換矩陣, naer: univ, def: def-permutation-matrix, ch: LA1.3}
-- {id: pivot-columns, en: pivot columns, zh: null, naer: missing, def: def-row-echelon-form, ch: LA1.3}
-- {id: pivots, en: pivots, zh: '樞軸[元]', naer: univ, def: def-row-echelon-form, ch: LA1.3}
+- {id: pivot, en: pivot, zh: '樞軸[元]', naer: univ, def: def-row-echelon-form, ch: LA1.3}
+- {id: pivot-column, en: pivot column, zh: null, naer: missing, def: def-row-echelon-form, ch: LA1.3}
 - {id: plu-factorization, en: plu factorization, zh: null, naer: missing, def: def-plu-factorization, ch: LA1.3}
 - {id: reduced-row-echelon-form, en: reduced row echelon form, zh: null, naer: missing, def: def-reduced-row-echelon-form, ch: LA1.3}
 - {id: replace, en: replace, zh: null, naer: missing, def: def-elementary-row-operations, ch: LA1.3}
@@ -988,7 +1002,7 @@
 - {id: swap, en: swap, zh: null, naer: missing, def: def-elementary-row-operations, ch: LA1.3}
 - {id: trivial-solution, en: trivial solution, zh: null, naer: missing, def: def-homogeneous-system, ch: LA1.3}
 - {id: unit-lower-triangular, en: unit lower triangular, zh: null, naer: missing, def: def-lu-factorization, ch: LA1.3}
-- {id: change-of-coordinates-matrix, en: change-of-coordinates matrix, zh: null, naer: missing, def: def-change-of-coordinates-matrix, ch: LA1.4}
+- {id: change-of-coordinate-matrix, en: change-of-coordinate matrix, zh: null, naer: missing, def: def-change-of-coordinates-matrix, ch: LA1.4}
 - {id: coset, en: coset, zh: 陪集, naer: univ, def: def-coset, ch: LA1.4}
 - id: entrywise
   en: entrywise
@@ -1022,6 +1036,13 @@
   zh_candidates: [射影, 射影算子, 投影]
 - {id: quotient-space, en: quotient space, zh: 商空間, naer: univ, def: def-quotient-space, ch: LA1.4}
 - {id: similar, en: similar, zh: '相似[的]', naer: univ, def: def-similar-matrices, ch: LA1.4}
+- id: annihilator
+  en: annihilator
+  zh: null
+  naer: missing
+  def: def-annihilator
+  ch: LA1.5
+  also: [def-t-annihilator@LA2.10]
 - id: any-subset
   en: any subset
   zh: null
@@ -1045,8 +1066,8 @@
   also: [def-projective-subspace@GEO.22]
 - {id: infinite-codimension, en: infinite codimension, zh: null, naer: missing, def: def-codimension, ch: LA1.5}
 - {id: linear-functional, en: linear functional, zh: 線性泛函, naer: univ, def: def-linear-functional, ch: LA1.5}
-- {id: annihilates, en: annihilates, zh: null, naer: missing, def: def-annihilating-polynomial, ch: LA2.6}
-- {id: associates, en: associates, zh: null, naer: missing, def: def-divisibility-polynomials, ch: LA2.6}
+- {id: annihilate, en: annihilate, zh: null, naer: missing, def: def-annihilating-polynomial, ch: LA2.6}
+- {id: associate, en: associate, zh: null, naer: missing, def: def-divisibility-polynomials, ch: LA2.6}
 - {id: congruent-modulo, en: congruent modulo, zh: null, naer: missing, def: def-congruence-polynomials, ch: LA2.6}
 - {id: coprime, en: coprime, zh: 互質, naer: univ, def: def-coprime, ch: LA2.6}
 - id: divisor
@@ -1078,9 +1099,9 @@
   naer: missing
   def: def-irreducible-polynomial
   ch: LA2.6
-  also: [def-simple-module@AL4.8, def-character@AL4.8, def-irreducible-representation@AL4.8, def-irreducible@MA.19]
-- {id: lagrange-basis, en: lagrange basis, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
-- {id: lagrange-polynomial, en: lagrange polynomial, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
+  also: [def-simple-module@AL4.8, def-irreducible-representation@AL4.8, def-character@AL4.8, def-irreducible@MA.19]
+- {id: lagrange-basis, en: Lagrange basis, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
+- {id: lagrange-polynomial, en: Lagrange polynomial, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
 - {id: least-common-multiple, en: least common multiple, zh: 最小公倍數, naer: univ, def: def-lcm-polynomials, ch: LA2.6}
 - id: multiple
   en: multiple
@@ -1107,8 +1128,8 @@
   naer: missing
   def: def-root-multiplicity
   ch: LA2.6
-  also: [def-simple-algebra@AL4.8, def-simple-module@AL4.8, def-eigenvalue-condition-number@MA.20]
-- {id: splits, en: splits, zh: null, naer: missing, def: def-polynomial-splits, ch: LA2.6}
+  also: [def-simple-module@AL4.8, def-simple-algebra@AL4.8, def-eigenvalue-condition-number@MA.20]
+- {id: split, en: split, zh: null, naer: missing, def: def-polynomial-splits, ch: LA2.6}
 - {id: unique-monic, en: unique monic, zh: null, naer: missing, def: def-gcd-polynomials, ch: LA2.6}
 - {id: adjugate, en: adjugate, zh: null, naer: missing, def: def-adjugate, ch: LA2.7}
 - id: alternating
@@ -1117,7 +1138,7 @@
   naer: missing
   def: def-alternating-form
   ch: LA2.7
-  also: [def-alternating-multilinear-map@LA4.15, def-exterior-power@LA4.15]
+  also: [def-exterior-power@LA4.15, def-alternating-multilinear-map@LA4.15]
 - {id: alternating-group, en: alternating group, zh: null, naer: missing, def: def-alternating-group, ch: LA2.7}
 - id: bilinear
   en: bilinear
@@ -1134,7 +1155,7 @@
   ch: LA2.7
   also: [def-charpoly-operator@LA2.7]
 - id: cofactor
-  en: -cofactor
+  en: cofactor
   zh: null
   naer: choose
   def: def-minor-cofactor
@@ -1150,7 +1171,7 @@
 - {id: increasing, en: increasing, zh: null, naer: missing, def: def-submatrix-minor, ch: LA2.7}
 - {id: inversion, en: inversion, zh: 反演, naer: univ, def: def-inversion, ch: LA2.7}
 - id: linear
-  en: -linear
+  en: linear
   zh: null
   naer: choose
   def: def-multilinear-form
@@ -1158,7 +1179,7 @@
   zh_candidates: ['線性[的]', 一次, 線型]
   also: [def-multilinear-map@LA4.15]
 - id: minor
-  en: -minor
+  en: minor
   zh: null
   naer: choose
   def: def-minor-cofactor
@@ -1166,7 +1187,7 @@
   zh_candidates: [子式, 較小的]
   also: [def-submatrix-minor@LA2.7]
 - {id: multilinear-form, en: multilinear form, zh: 多重線性形式, naer: univ, def: def-multilinear-form, ch: LA2.7}
-- {id: opposite-orientations, en: opposite orientations, zh: null, naer: missing, def: def-orientation, ch: LA2.7}
+- {id: opposite-orientation, en: opposite orientation, zh: null, naer: missing, def: def-orientation, ch: LA2.7}
 - {id: same-orientation, en: same orientation, zh: null, naer: missing, def: def-orientation, ch: LA2.7}
 - {id: sign, en: sign, zh: null, naer: missing, def: def-sign-permutation, ch: LA2.7}
 - {id: submatrix, en: submatrix, zh: 子矩陣, naer: univ, def: def-submatrix-minor, ch: LA2.7}
@@ -1177,17 +1198,16 @@
   def: def-parallelepiped-volume
   ch: LA2.7
   zh_candidates: [體積, 容積]
-- {id: block, en: block, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
 - {id: block-diagonal, en: block diagonal, zh: null, naer: missing, def: def-block-diagonal, ch: LA2.8}
 - {id: block-matrix, en: block matrix, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
 - {id: column-partition, en: column partition, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
 - {id: commutator, en: commutator, zh: 交換子, naer: univ, def: def-commutator, ch: LA2.8}
 - {id: conformable, en: conformable, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
 - {id: direct-sum, en: direct sum, zh: 直和, naer: univ, def: def-block-diagonal, ch: LA2.8}
-- {id: kronecker-product, en: kronecker product, zh: null, naer: missing, def: def-kronecker-product, ch: LA2.8}
+- {id: kronecker-product, en: Kronecker product, zh: null, naer: missing, def: def-kronecker-product, ch: LA2.8}
 - {id: row-partition, en: row partition, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
 - {id: same-list, en: same list, zh: null, naer: missing, def: def-block-partition, ch: LA2.8}
-- {id: schur-complement, en: schur complement, zh: null, naer: missing, def: def-schur-complement, ch: LA2.8}
+- {id: schur-complement, en: Schur complement, zh: null, naer: missing, def: def-schur-complement, ch: LA2.8}
 - {id: vectorization, en: vectorization, zh: null, naer: missing, def: def-vec-operator, ch: LA2.8}
 - {id: algebraic-multiplicity, en: algebraic multiplicity, zh: null, naer: missing, def: def-algebraic-multiplicity, ch: LA2.9}
 - {id: diagonalizable, en: diagonalizable, zh: null, naer: missing, def: def-diagonalizable, ch: LA2.9}
@@ -1203,13 +1223,13 @@
   zh_candidates: [幾何重數, 幾何階數]
 - {id: induced-operator, en: induced operator, zh: null, naer: missing, def: def-restriction-operator, ch: LA2.9}
 - id: invariant
-  en: -invariant
+  en: invariant
   zh: null
   naer: choose
   def: def-invariant-subspace
   ch: LA2.9
   zh_candidates: [不變式, 不變量]
-  also: [def-representation-of-an-algebra@AL4.8, def-subrepresentation@AL4.8]
+  also: [def-subrepresentation@AL4.8, def-representation-of-an-algebra@AL4.8]
 - id: least-degree
   en: least degree
   zh: null
@@ -1218,11 +1238,11 @@
   ch: LA2.9
   also: [def-t-annihilator@LA2.10]
 - {id: left-eigenvector, en: left eigenvector, zh: null, naer: missing, def: def-left-eigenvector, ch: LA2.9}
-- {id: markov-chain, en: markov chain, zh: 馬可夫鏈, naer: univ, def: def-markov-chain, ch: LA2.9}
+- {id: markov-chain, en: Markov chain, zh: 馬可夫鏈, naer: univ, def: def-markov-chain, ch: LA2.9}
 - {id: minimal-polynomial, en: minimal polynomial, zh: 最小多項式, naer: univ, def: def-minimal-polynomial, ch: LA2.9}
 - {id: probability-vector, en: probability vector, zh: null, naer: missing, def: def-stochastic-matrix, ch: LA2.9}
 - {id: restriction, en: restriction, zh: 限制, naer: univ, def: def-restriction-operator, ch: LA2.9}
-- {id: right-eigenvectors, en: right eigenvectors, zh: null, naer: missing, def: def-left-eigenvector, ch: LA2.9}
+- {id: right-eigenvector, en: right eigenvector, zh: null, naer: missing, def: def-left-eigenvector, ch: LA2.9}
 - {id: simultaneously-diagonalizable, en: simultaneously diagonalizable, zh: null, naer: missing, def: def-simultaneously-diagonalizable, ch: LA2.9}
 - id: spectrum
   en: spectrum
@@ -1235,15 +1255,8 @@
 - {id: stochastic, en: stochastic, zh: '隨機[的]', naer: univ, def: def-stochastic-matrix, ch: LA2.9}
 - {id: transition-matrix, en: transition matrix, zh: 轉移矩陣, naer: univ, def: def-markov-chain, ch: LA2.9}
 - {id: triangularizable, en: triangularizable, zh: null, naer: missing, def: def-triangularizable, ch: LA2.9}
-- id: annihilator
-  en: -annihilator
-  zh: null
-  naer: missing
-  def: def-t-annihilator
-  ch: LA2.10
-  also: [def-annihilator@LA1.5]
-- {id: at-least-times-differentiable, en: at least times differentiable, zh: null, naer: missing, def: def-matrix-function-jordan, ch: LA2.10}
-- {id: basic-weyr-matrix, en: basic weyr matrix, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
+- {id: at-least-time-differentiable, en: at least time differentiable, zh: null, naer: missing, def: def-matrix-function-jordan, ch: LA2.10}
+- {id: basic-weyr-matrix, en: basic Weyr matrix, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
 - {id: below, en: below, zh: null, naer: missing, def: def-companion-matrix, ch: LA2.10}
 - id: column
   en: column
@@ -1251,9 +1264,15 @@
   naer: missing
   def: def-partition-of-n
   ch: LA2.10
-  also: [def-centered-data-matrix@NLA.24]
+  also: [def-gershgorin-discs@MA.20, def-centered-data-matrix@NLA.24]
 - {id: companion-matrix, en: companion matrix, zh: 友矩陣, naer: univ, def: def-companion-matrix, ch: LA2.10}
-- {id: converges, en: converges, zh: null, naer: missing, def: def-entrywise-convergence, ch: LA2.10}
+- id: converge
+  en: converge
+  zh: null
+  naer: missing
+  def: def-entrywise-convergence
+  ch: LA2.10
+  also: [def-matrix-integral@MA.21]
 - id: cyclic
   en: cyclic
   zh: null
@@ -1265,8 +1284,8 @@
 - {id: cyclic-vector, en: cyclic vector, zh: null, naer: missing, def: def-cyclic-vector, ch: LA2.10}
 - {id: dual-partition, en: dual partition, zh: null, naer: missing, def: def-partition-of-n, ch: LA2.10}
 - {id: each-invertible, en: each invertible, zh: null, naer: missing, def: def-polynomial-matrix-equivalence, ch: LA2.10}
-- {id: elementary-column-operations, en: elementary column operations, zh: null, naer: missing, def: def-polynomial-elementary-operations, ch: LA2.10}
-- {id: elementary-divisors, en: elementary divisors, zh: 基本因子, naer: univ, def: def-invariant-factors, ch: LA2.10}
+- {id: elementary-column-operation, en: elementary column operation, zh: null, naer: missing, def: def-polynomial-elementary-operations, ch: LA2.10}
+- {id: elementary-divisor, en: elementary divisor, zh: 基本因子, naer: univ, def: def-invariant-factors, ch: LA2.10}
 - {id: generalized-eigenspace, en: generalized eigenspace, zh: 廣義固有空間, naer: univ, def: def-generalized-eigenspace, ch: LA2.10}
 - id: generalized-eigenvector
   en: generalized eigenvector
@@ -1276,17 +1295,17 @@
   ch: LA2.10
   also: [def-generalized-eigenvalue@LA3.13]
 - {id: index-of-nilpotency, en: index of nilpotency, zh: null, naer: missing, def: def-nilpotent, ch: LA2.10}
-- {id: invariant-factors, en: invariant factors, zh: null, naer: missing, def: def-invariant-factors, ch: LA2.10}
-- {id: jordan-basis, en: jordan basis, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
-- {id: jordan-block, en: jordan block, zh: null, naer: missing, def: def-jordan-block, ch: LA2.10}
-- {id: jordan-chain, en: jordan chain, zh: null, naer: missing, def: def-jordan-chain, ch: LA2.10}
-- {id: jordan-form, en: jordan form, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
-- {id: jordan-matrix, en: jordan matrix, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
+- {id: invariant-factor, en: invariant factor, zh: null, naer: missing, def: def-invariant-factors, ch: LA2.10}
+- {id: jordan-basis, en: Jordan basis, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
+- {id: jordan-block, en: Jordan block, zh: null, naer: missing, def: def-jordan-block, ch: LA2.10}
+- {id: jordan-chain, en: Jordan chain, zh: null, naer: missing, def: def-jordan-chain, ch: LA2.10}
+- {id: jordan-form, en: Jordan form, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
+- {id: jordan-matrix, en: Jordan matrix, zh: null, naer: missing, def: def-jordan-form, ch: LA2.10}
 - {id: matrix-exponential, en: matrix exponential, zh: null, naer: missing, def: def-matrix-exponential, ch: LA2.10}
 - {id: nilpotent, en: nilpotent, zh: null, naer: missing, def: def-nilpotent, ch: LA2.10}
 - {id: non-zero-scalar, en: non-zero scalar, zh: null, naer: missing, def: def-polynomial-elementary-operations, ch: LA2.10}
-- {id: real-jordan-block, en: real jordan block, zh: null, naer: missing, def: def-real-jordan-block, ch: LA2.10}
-- {id: real-jordan-matrix, en: real jordan matrix, zh: null, naer: missing, def: def-real-jordan-block, ch: LA2.10}
+- {id: real-jordan-block, en: real Jordan block, zh: null, naer: missing, def: def-real-jordan-block, ch: LA2.10}
+- {id: real-jordan-matrix, en: real Jordan matrix, zh: null, naer: missing, def: def-real-jordan-block, ch: LA2.10}
 - {id: rotation-scaling-block, en: rotation-scaling block, zh: null, naer: missing, def: def-real-jordan-block, ch: LA2.10}
 - id: semisimple
   en: semisimple
@@ -1303,10 +1322,10 @@
   ch: LA2.10
   also: [def-real-jordan-block@LA2.10]
 - {id: top, en: top, zh: null, naer: missing, def: def-jordan-chain, ch: LA2.10}
-- {id: weyr-form, en: weyr form, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
-- {id: weyr-matrix, en: weyr matrix, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
-- {id: weyr-structure, en: weyr structure, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
-- {id: young-diagram, en: young diagram, zh: null, naer: missing, def: def-partition-of-n, ch: LA2.10}
+- {id: weyr-form, en: Weyr form, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
+- {id: weyr-matrix, en: Weyr matrix, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
+- {id: weyr-structure, en: Weyr structure, zh: null, naer: missing, def: def-weyr-form, ch: LA2.10}
+- {id: young-diagram, en: Young diagram, zh: null, naer: missing, def: def-partition-of-n, ch: LA2.10}
 - {id: adjoint, en: adjoint, zh: null, naer: missing, def: def-adjoint, ch: LA3.11}
 - id: angle
   en: angle
@@ -1325,23 +1344,23 @@
 - {id: conjugate-symmetry, en: conjugate symmetry, zh: null, naer: missing, def: def-inner-product, ch: LA3.11}
 - {id: conjugate-transpose, en: conjugate transpose, zh: null, naer: missing, def: def-conjugate-transpose, ch: LA3.11}
 - {id: distance, en: distance, zh: null, naer: missing, def: def-distance-to-subspace, ch: LA3.11}
-- {id: fourier-coefficients, en: fourier coefficients, zh: Fourier係數, naer: univ, def: def-fourier-coefficients, ch: LA3.11}
-- {id: givens-rotation, en: givens rotation, zh: null, naer: missing, def: def-givens-rotation, ch: LA3.11}
+- {id: fourier-coefficient, en: Fourier coefficient, zh: Fourier係數, naer: univ, def: def-fourier-coefficients, ch: LA3.11}
+- {id: givens-rotation, en: Givens rotation, zh: null, naer: missing, def: def-givens-rotation, ch: LA3.11}
 - id: gram-matrix
-  en: gram matrix
+  en: Gram matrix
   zh: null
   naer: missing
   def: def-gram-matrix
   ch: LA3.11
   also: [def-form-matrix@LA4.14]
 - id: hermitian
-  en: hermitian
+  en: Hermitian
   zh: null
   naer: missing
   def: def-conjugate-transpose
   ch: LA3.11
   also: [def-self-adjoint@LA3.11, def-positive-semidefinite@LA3.13, def-rayleigh-quotient@MA.17]
-- {id: householder-reflection, en: householder reflection, zh: null, naer: missing, def: def-householder-reflection, ch: LA3.11}
+- {id: householder-reflection, en: Householder reflection, zh: null, naer: missing, def: def-householder-reflection, ch: LA3.11}
 - {id: inner-product, en: inner product, zh: 內積, naer: univ, def: def-inner-product, ch: LA3.11}
 - {id: inner-product-space, en: inner product space, zh: null, naer: missing, def: def-inner-product, ch: LA3.11}
 - id: isometry
@@ -1380,6 +1399,14 @@
   def: def-induced-norm
   ch: LA3.11
   also: [def-norm@MA.16]
+- id: orthogonal
+  en: orthogonal
+  zh: null
+  naer: choose
+  def: def-orthogonal
+  ch: LA3.11
+  zh_candidates: [正交, 直交]
+  also: [def-unitary-orthogonal@LA3.11, def-orthonormal-list@LA3.11, def-spectral-resolution@LA3.12, def-orthogonal-basis-form@LA4.14, def-energy-norm@NLA.24]
 - {id: orthogonal-complement, en: orthogonal complement, zh: 正交補餘, naer: univ, def: def-orthogonal-complement, ch: LA3.11}
 - {id: orthogonal-matrix, en: orthogonal matrix, zh: 正交方陣, naer: univ, def: def-unitary-orthogonal, ch: LA3.11}
 - {id: orthogonal-polynomial-sequence, en: orthogonal polynomial sequence, zh: null, naer: missing, def: def-orthogonal-polynomial-sequence, ch: LA3.11}
@@ -1420,13 +1447,13 @@
 - {id: circulant, en: circulant, zh: null, naer: missing, def: def-circulant, ch: LA3.12}
 - {id: cross-product-matrix, en: cross-product matrix, zh: null, naer: missing, def: def-cross-product-matrix, ch: LA3.12}
 - {id: departure-from-normality, en: departure from normality, zh: null, naer: missing, def: def-departure-from-normality, ch: LA3.12}
-- {id: lyapunov-equation, en: lyapunov equation, zh: null, naer: missing, def: def-lyapunov-equation, ch: LA3.12}
+- {id: lyapunov-equation, en: Lyapunov equation, zh: null, naer: missing, def: def-lyapunov-equation, ch: LA3.12}
 - {id: modulo, en: modulo, zh: null, naer: missing, def: def-circulant, ch: LA3.12}
 - {id: resolution-of-the-identity, en: resolution of the identity, zh: null, naer: missing, def: def-spectral-resolution, ch: LA3.12}
 - {id: spectral-resolution, en: spectral resolution, zh: 譜分解, naer: univ, def: def-spectral-resolution, ch: LA3.12}
 - {id: stable, en: stable, zh: null, naer: missing, def: def-lyapunov-equation, ch: LA3.12}
-- {id: sylvester-equation, en: sylvester equation, zh: null, naer: missing, def: def-sylvester-operator, ch: LA3.12}
-- {id: sylvester-operator, en: sylvester operator, zh: null, naer: missing, def: def-sylvester-operator, ch: LA3.12}
+- {id: sylvester-equation, en: Sylvester equation, zh: null, naer: missing, def: def-sylvester-operator, ch: LA3.12}
+- {id: sylvester-operator, en: Sylvester operator, zh: null, naer: missing, def: def-sylvester-operator, ch: LA3.12}
 - id: symbol
   en: symbol
   zh: null
@@ -1434,11 +1461,11 @@
   def: def-circulant
   ch: LA3.12
   zh_candidates: [符號, 記號, 表象]
-- {id: dimensional-volume, en: -dimensional volume, zh: null, naer: missing, def: def-k-volume, ch: LA3.13}
+- {id: dimensional-volume, en: dimensional volume, zh: null, naer: missing, def: def-k-volume, ch: LA3.13}
 - {id: entrywise-product, en: entrywise product, zh: null, naer: missing, def: def-hadamard-product, ch: LA3.13}
 - {id: generalized-eigenvalue, en: generalized eigenvalue, zh: 廣義固有值, naer: univ, def: def-generalized-eigenvalue, ch: LA3.13}
-- {id: hadamard-product, en: hadamard product, zh: null, naer: missing, def: def-hadamard-product, ch: LA3.13}
-- {id: loewner-order, en: loewner order, zh: null, naer: missing, def: def-loewner-order, ch: LA3.13}
+- {id: hadamard-product, en: Hadamard product, zh: null, naer: missing, def: def-hadamard-product, ch: LA3.13}
+- {id: loewner-order, en: Loewner order, zh: null, naer: missing, def: def-loewner-order, ch: LA3.13}
 - {id: moore-penrose-pseudoinverse, en: moore–penrose pseudoinverse, zh: null, naer: missing, def: def-pseudoinverse, ch: LA3.13}
 - id: pair
   en: pair
@@ -1456,7 +1483,7 @@
   ch: LA3.13
   also: [def-definiteness-of-a-form@LA4.14]
 - {id: rank-truncation, en: rank- truncation, zh: null, naer: missing, def: def-truncated-svd, ch: LA3.13}
-- {id: singular-values, en: singular values, zh: 奇異值, naer: univ, def: def-singular-values, ch: LA3.13}
+- {id: singular-value, en: singular value, zh: 奇異值, naer: univ, def: def-singular-values, ch: LA3.13}
 - id: with-multiplicity
   en: with multiplicity
   zh: null
@@ -1465,7 +1492,7 @@
   ch: LA3.13
   also: [def-inertia-triple@MA.17]
 - id: algebra
-  en: -algebra
+  en: algebra
   zh: null
   naer: choose
   def: def-algebra-over-field
@@ -1475,16 +1502,16 @@
 - {id: associative, en: associative, zh: null, naer: missing, def: def-algebra-over-field, ch: LA4.14}
 - {id: bilinear-form, en: bilinear form, zh: 雙線性型, naer: univ, def: def-bilinear-form, ch: LA4.14}
 - {id: boost-of-rapidity, en: boost of rapidity, zh: null, naer: missing, def: def-lorentz-boost, ch: LA4.14}
-- {id: clifford-algebra, en: clifford algebra, zh: null, naer: missing, def: def-clifford-algebra, ch: LA4.14}
+- {id: clifford-algebra, en: Clifford algebra, zh: null, naer: missing, def: def-clifford-algebra, ch: LA4.14}
 - {id: congruent, en: congruent, zh: null, naer: missing, def: def-congruent, ch: LA4.14}
 - {id: critical-point, en: critical point, zh: 臨界點, naer: univ, def: def-hessian, ch: LA4.14}
-- {id: darboux-basis, en: darboux basis, zh: null, naer: missing, def: def-darboux-basis, ch: LA4.14}
+- {id: darboux-basis, en: Darboux basis, zh: null, naer: missing, def: def-darboux-basis, ch: LA4.14}
 - {id: degenerate, en: degenerate, zh: null, naer: missing, def: def-nondegenerate, ch: LA4.14}
 - {id: discriminant, en: discriminant, zh: 判別式, naer: univ, def: def-discriminant, ch: LA4.14}
 - {id: future-pointing, en: future-pointing, zh: null, naer: missing, def: def-causal-character, ch: LA4.14}
-- {id: hermitian-form, en: hermitian form, zh: null, naer: missing, def: def-hermitian-form, ch: LA4.14}
-- {id: hessian, en: hessian, zh: null, naer: missing, def: def-hessian, ch: LA4.14}
-- {id: homomorphism-of-algebras, en: homomorphism of -algebras, zh: null, naer: missing, def: def-algebra-over-field, ch: LA4.14}
+- {id: hermitian-form, en: Hermitian form, zh: null, naer: missing, def: def-hermitian-form, ch: LA4.14}
+- {id: hessian, en: Hessian, zh: null, naer: missing, def: def-hessian, ch: LA4.14}
+- {id: homomorphism-of-algebra, en: homomorphism of -algebra, zh: null, naer: missing, def: def-algebra-over-field, ch: LA4.14}
 - {id: hyperbolic-basis, en: hyperbolic basis, zh: null, naer: missing, def: def-hyperbolic-plane, ch: LA4.14}
 - id: hyperbolic-pair
   en: hyperbolic pair
@@ -1507,7 +1534,7 @@
 - {id: isotropic, en: isotropic, zh: null, naer: missing, def: def-isotropic-vector, ch: LA4.14}
 - {id: light-cone, en: light cone, zh: null, naer: missing, def: def-causal-character, ch: LA4.14}
 - {id: lightlike, en: lightlike, zh: null, naer: missing, def: def-causal-character, ch: LA4.14}
-- {id: minkowski-space, en: minkowski space, zh: null, naer: missing, def: def-minkowski-space, ch: LA4.14}
+- {id: minkowski-space, en: Minkowski space, zh: null, naer: missing, def: def-minkowski-space, ch: LA4.14}
 - {id: negative-definite, en: negative definite, zh: null, naer: missing, def: def-definiteness-of-a-form, ch: LA4.14}
 - {id: negative-semidefinite, en: negative semidefinite, zh: null, naer: missing, def: def-definiteness-of-a-form, ch: LA4.14}
 - id: non-degenerate
@@ -1516,7 +1543,7 @@
   naer: missing
   def: def-nondegenerate
   ch: LA4.14
-  also: [def-discriminant@LA4.14, def-isometry-group-of-form@LA4.14, def-projective-quadric@GEO.22]
+  also: [def-isometry-group-of-form@LA4.14, def-discriminant@LA4.14, def-projective-quadric@GEO.22]
 - {id: non-singular, en: non-singular, zh: null, naer: missing, def: def-isometry-group-of-form, ch: LA4.14}
 - {id: 'null', en: 'null', zh: null, naer: missing, def: def-causal-character, ch: LA4.14}
 - {id: orthogonal-basis, en: orthogonal basis, zh: 正交基底, naer: univ, def: def-orthogonal-basis-form, ch: LA4.14}
@@ -1529,7 +1556,7 @@
   ch: LA4.14
   also: [def-positive-semidefinite@LA3.13]
 - {id: quadratic-form, en: quadratic form, zh: 二次形式, naer: univ, def: def-quadratic-form, ch: LA4.14}
-- {id: quaternions, en: quaternions, zh: 四元數, naer: univ, def: def-quaternions, ch: LA4.14}
+- {id: quaternion, en: quaternion, zh: 四元數, naer: univ, def: def-quaternions, ch: LA4.14}
 - id: radical
   en: radical
   zh: null
@@ -1548,6 +1575,13 @@
   also: [def-motion-types-plane@GEO.22]
 - {id: restricted, en: restricted, zh: null, naer: missing, def: def-form-isometry, ch: LA4.14}
 - {id: signature, en: signature, zh: null, naer: missing, def: def-signature, ch: LA4.14}
+- id: space
+  en: space
+  zh: 空間
+  naer: univ
+  def: def-minkowski-space
+  ch: LA4.14
+  also: [def-representation-of-an-algebra@AL4.8]
 - {id: spacelike, en: spacelike, zh: 類空間, naer: univ, def: def-causal-character, ch: LA4.14}
 - {id: symplectic-basis, en: symplectic basis, zh: null, naer: missing, def: def-darboux-basis, ch: LA4.14}
 - {id: symplectic-form, en: symplectic form, zh: null, naer: missing, def: def-darboux-basis, ch: LA4.14}
@@ -1564,9 +1598,9 @@
   def: def-clifford-algebra
   ch: LA4.14
   also: [def-tensor-product@LA4.15, def-symmetric-power@LA4.15, def-tensor-power@LA4.15, def-exterior-power@LA4.15]
-- {id: witt-index, en: witt index, zh: null, naer: missing, def: def-witt-index, ch: LA4.14}
+- {id: witt-index, en: Witt index, zh: null, naer: missing, def: def-witt-index, ch: LA4.14}
 - {id: all-but-finitely-many, en: all but finitely many, zh: null, naer: missing, def: def-tensor-algebra, ch: LA4.15}
-- {id: blade, en: -blade, zh: null, naer: missing, def: def-decomposable, ch: LA4.15}
+- {id: blade, en: blade, zh: null, naer: missing, def: def-decomposable, ch: LA4.15}
 - {id: classical-tensor-of-type, en: classical tensor of type, zh: null, naer: missing, def: def-classical-tensor, ch: LA4.15}
 - id: contraction
   en: contraction
@@ -1576,7 +1610,7 @@
   ch: LA4.15
   zh_candidates: [縮距, 收縮, 縮約]
   also: [def-matrix-contraction@MA.21]
-- {id: contraction-on-slots, en: contraction on slots, zh: null, naer: missing, def: def-contraction-slots, ch: LA4.15}
+- {id: contraction-on-slot, en: contraction on slot, zh: null, naer: missing, def: def-contraction-slots, ch: LA4.15}
 - id: contravariant
   en: contravariant
   zh: null
@@ -1594,11 +1628,18 @@
   zh_candidates: [共變式, 共變量]
   also: [def-tensor-components@LA4.15]
 - {id: decomposable, en: decomposable, zh: null, naer: missing, def: def-decomposable, ch: LA4.15}
-- {id: downstairs, en: downstairs, zh: null, naer: missing, def: def-tensor-components, ch: LA4.15}
+- {id: downstair, en: downstair, zh: null, naer: missing, def: def-tensor-components, ch: LA4.15}
 - {id: entangled, en: entangled, zh: null, naer: missing, def: def-entangled, ch: LA4.15}
 - {id: every-alternating, en: every alternating, zh: null, naer: missing, def: def-exterior-power, ch: LA4.15}
 - {id: every-symmetric, en: every symmetric, zh: null, naer: missing, def: def-symmetric-power, ch: LA4.15}
 - {id: exterior-algebra, en: exterior algebra, zh: null, naer: missing, def: def-exterior-algebra, ch: LA4.15}
+- id: exterior-power
+  en: exterior power
+  zh: null
+  naer: missing
+  def: def-exterior-power
+  ch: LA4.15
+  also: [def-exterior-power-of-map@LA4.15]
 - id: form
   en: form
   zh: null
@@ -1607,7 +1648,7 @@
   ch: LA4.15
   zh_candidates: ['[形]式', 型]
 - {id: free-vector-space, en: free vector space, zh: null, naer: missing, def: def-free-vector-space, ch: LA4.15}
-- {id: grassmann-algebra, en: grassmann algebra, zh: null, naer: missing, def: def-exterior-algebra, ch: LA4.15}
+- {id: grassmann-algebra, en: Grassmann algebra, zh: null, naer: missing, def: def-exterior-algebra, ch: LA4.15}
 - id: homogeneous-of-degree
   en: homogeneous of degree
   zh: null
@@ -1615,8 +1656,8 @@
   def: def-tensor-algebra
   ch: LA4.15
   also: [def-exterior-algebra@LA4.15]
-- id: monomials
-  en: monomials
+- id: monomial
+  en: monomial
   zh: null
   naer: choose
   def: def-polynomial-algebra-several-variables
@@ -1637,10 +1678,10 @@
   def: def-space-of-multilinear-maps
   ch: LA4.15
   also: [def-dual-group@AL4.8]
-- {id: polynomial-algebra-in-variables, en: polynomial algebra in variables, zh: null, naer: missing, def: def-polynomial-algebra-several-variables, ch: LA4.15}
+- {id: polynomial-algebra-in-variable, en: polynomial algebra in variable, zh: null, naer: missing, def: def-polynomial-algebra-several-variables, ch: LA4.15}
 - {id: product-state, en: product state, zh: null, naer: missing, def: def-entangled, ch: LA4.15}
-- {id: schmidt-coefficients, en: schmidt coefficients, zh: null, naer: missing, def: def-schmidt-rank, ch: LA4.15}
-- {id: schmidt-rank, en: schmidt rank, zh: null, naer: missing, def: def-schmidt-rank, ch: LA4.15}
+- {id: schmidt-coefficient, en: Schmidt coefficient, zh: null, naer: missing, def: def-schmidt-rank, ch: LA4.15}
+- {id: schmidt-rank, en: Schmidt rank, zh: null, naer: missing, def: def-schmidt-rank, ch: LA4.15}
 - {id: separable, en: separable, zh: null, naer: missing, def: def-entangled, ch: LA4.15}
 - id: simple-tensor
   en: simple tensor
@@ -1650,9 +1691,11 @@
   ch: LA4.15
   also: [def-tensor-power@LA4.15]
 - {id: symmetric-algebra, en: symmetric algebra, zh: 對稱代數, naer: univ, def: def-symmetric-algebra, ch: LA4.15}
+- {id: symmetric-power, en: symmetric power, zh: null, naer: missing, def: def-symmetric-power, ch: LA4.15}
 - {id: symmetric-product, en: symmetric product, zh: null, naer: missing, def: def-symmetric-power, ch: LA4.15}
 - {id: tensor-algebra, en: tensor algebra, zh: 張量代數, naer: univ, def: def-tensor-algebra, ch: LA4.15}
 - {id: tensor-of-type, en: tensor of type, zh: null, naer: missing, def: def-tensor-type, ch: LA4.15}
+- {id: tensor-power, en: tensor power, zh: 張量冪, naer: univ, def: def-tensor-power, ch: LA4.15}
 - id: tensor-product
   en: tensor product
   zh: 張量積
@@ -1660,15 +1703,6 @@
   def: def-tensor-product
   ch: LA4.15
   also: [def-tensor-of-maps@LA4.15]
-- id: th-exterior-power
-  en: -th exterior power
-  zh: null
-  naer: missing
-  def: def-exterior-power
-  ch: LA4.15
-  also: [def-exterior-power-of-map@LA4.15]
-- {id: th-symmetric-power, en: -th symmetric power, zh: null, naer: missing, def: def-symmetric-power, ch: LA4.15}
-- {id: th-tensor-power, en: -th tensor power, zh: null, naer: missing, def: def-tensor-power, ch: LA4.15}
 - id: two-sided-ideal
   en: two-sided ideal
   zh: 雙邊理想
@@ -1676,13 +1710,12 @@
   def: def-two-sided-ideal
   ch: LA4.15
   also: [def-left-ideal@AL4.8]
-- {id: upstairs, en: upstairs, zh: null, naer: missing, def: def-tensor-components, ch: LA4.15}
+- {id: upstair, en: upstair, zh: null, naer: missing, def: def-tensor-components, ch: LA4.15}
 - {id: wedge, en: wedge, zh: null, naer: missing, def: def-exterior-power, ch: LA4.15}
 - {id: closed-set, en: closed set, zh: 閉集, naer: univ, def: def-closed, ch: AN2.1}
 - {id: partial-derivative, en: partial derivative, zh: 偏導數, naer: univ, def: def-partial, ch: AN3.1}
 - {id: total-derivative, en: total derivative, zh: null, naer: missing, def: def-frechet, ch: AN3.1}
 - {id: abelian, en: abelian, zh: null, naer: missing, def: def-group, ch: AL1.1}
-- {id: associativity, en: associativity, zh: null, naer: missing, def: def-group, ch: AL1.1}
 - {id: binary-operation, en: binary operation, zh: 二元運算, naer: univ, def: def-group, ch: AL1.1}
 - id: group
   en: group
@@ -1692,7 +1725,6 @@
   ch: AL1.1
   zh_candidates: [群, 組]
 - {id: homomorphism, en: homomorphism, zh: '同態[映射]', naer: univ, def: def-group-homomorphism, ch: AL1.1}
-- {id: inverses, en: inverses, zh: null, naer: missing, def: def-group, ch: AL1.1}
 - {id: subgroup, en: subgroup, zh: null, naer: missing, def: def-subgroup, ch: AL1.1}
 - id: fourier-transform
   en: Fourier transform
@@ -1701,7 +1733,7 @@
   def: def-fourier
   ch: HA.5
   also: [def-fourier-transform-on-a-group@AL4.8]
-- {id: acts-semisimply, en: acts semisimply, zh: null, naer: missing, def: def-semisimple-algebra, ch: AL4.8}
+- {id: act-semisimply, en: act semisimply, zh: null, naer: missing, def: def-semisimple-algebra, ch: AL4.8}
 - {id: algebra-homomorphism, en: algebra homomorphism, zh: null, naer: missing, def: def-algebra-homomorphism, ch: AL4.8}
 - {id: algebra-isomorphism, en: algebra isomorphism, zh: 代數同構, naer: univ, def: def-algebra-isomorphism, ch: AL4.8}
 - id: center
@@ -1710,10 +1742,15 @@
   naer: univ
   def: def-commutant
   ch: AL4.8
-  also: [def-perspective-triangles@GEO.22, def-centre@GEO.22]
-- {id: character, en: character, zh: '特徵[標]', naer: univ, def: def-character, ch: AL4.8}
+  also: [def-centre@GEO.22, def-perspective-triangles@GEO.22]
+- id: character
+  en: character
+  zh: 特徵[標]
+  naer: univ
+  def: def-character
+  ch: AL4.8
+  also: [def-dual-group@AL4.8]
 - {id: character-matrix, en: character matrix, zh: null, naer: missing, def: def-character-matrix, ch: AL4.8}
-- {id: characters, en: characters, zh: '特徵[標]', naer: univ, def: def-dual-group, ch: AL4.8}
 - {id: class-function, en: class function, zh: 類函數, naer: univ, def: def-class-function, ch: AL4.8}
 - {id: commutant, en: commutant, zh: 交換團, naer: univ, def: def-commutant, ch: AL4.8}
 - {id: conjugacy-class, en: conjugacy class, zh: null, naer: missing, def: def-conjugacy-class, ch: AL4.8}
@@ -1735,16 +1772,9 @@
   ch: AL4.8
   zh_candidates: [母線, 生成元, 母元]
 - {id: group-algebra, en: group algebra, zh: 群代數, naer: univ, def: def-group-algebra, ch: AL4.8}
-- {id: intertwines, en: intertwines, zh: null, naer: missing, def: def-equivalent-representations, ch: AL4.8}
-- {id: isomorphism-of-spaces, en: isomorphism of -spaces, zh: null, naer: missing, def: def-intertwining-map, ch: AL4.8}
+- {id: intertwine, en: intertwine, zh: null, naer: missing, def: def-equivalent-representations, ch: AL4.8}
+- {id: isomorphism-of-space, en: isomorphism of -space, zh: null, naer: missing, def: def-intertwining-map, ch: AL4.8}
 - {id: left-ideal, en: left ideal, zh: 左理想, naer: univ, def: def-left-ideal, ch: AL4.8}
-- id: map
-  en: -map
-  zh: 映射
-  naer: univ
-  def: def-intertwining-map
-  ch: AL4.8
-  also: [def-function@F2.1]
 - {id: matrix-representation, en: matrix representation, zh: 方陣表現, naer: univ, def: def-representation, ch: AL4.8}
 - {id: quotient-algebra, en: quotient algebra, zh: 商代數, naer: univ, def: def-quotient-algebra, ch: AL4.8}
 - {id: quotient-homomorphism, en: quotient homomorphism, zh: null, naer: missing, def: def-quotient-algebra, ch: AL4.8}
@@ -1758,13 +1788,6 @@
 - {id: representation-space, en: representation space, zh: 表現空間, naer: univ, def: def-representation, ch: AL4.8}
 - {id: right-ideal, en: right ideal, zh: 右理想, naer: univ, def: def-left-ideal, ch: AL4.8}
 - {id: slot-by-slot, en: slot by slot, zh: null, naer: missing, def: def-product-of-algebras, ch: AL4.8}
-- id: space
-  en: -space
-  zh: 空間
-  naer: univ
-  def: def-representation-of-an-algebra
-  ch: AL4.8
-  also: [def-minkowski-space@LA4.14]
 - id: subalgebra
   en: subalgebra
   zh: 子代數
@@ -1795,14 +1818,14 @@
 - {id: triangle-inequality, en: triangle inequality, zh: null, naer: missing, def: def-norm, ch: MA.16}
 - {id: adapted, en: adapted, zh: null, naer: missing, def: def-flag-adapted-list, ch: MA.17}
 - {id: compression, en: compression, zh: 壓縮, naer: univ, def: def-compression, ch: MA.17}
-- {id: equal-totals, en: equal totals, zh: null, naer: missing, def: def-majorization, ch: MA.17}
+- {id: equal-total, en: equal total, zh: null, naer: missing, def: def-majorization, ch: MA.17}
 - {id: flag-of-type, en: flag of type, zh: null, naer: missing, def: def-flag-adapted-list, ch: MA.17}
 - {id: for-every-size, en: for every size, zh: null, naer: missing, def: def-operator-monotone, ch: MA.17}
 - {id: majorized, en: majorized, zh: null, naer: missing, def: def-majorization, ch: MA.17}
 - {id: operator-concave, en: operator concave, zh: null, naer: missing, def: def-operator-monotone, ch: MA.17}
 - {id: operator-convex, en: operator convex, zh: null, naer: missing, def: def-operator-monotone, ch: MA.17}
 - {id: operator-monotone, en: operator monotone, zh: null, naer: missing, def: def-operator-monotone, ch: MA.17}
-- {id: rayleigh-quotient, en: rayleigh quotient, zh: null, naer: missing, def: def-rayleigh-quotient, ch: MA.17}
+- {id: rayleigh-quotient, en: Rayleigh quotient, zh: null, naer: missing, def: def-rayleigh-quotient, ch: MA.17}
 - {id: same-number, en: same number, zh: null, naer: missing, def: def-majorization, ch: MA.17}
 - {id: secular-equation, en: secular equation, zh: null, naer: missing, def: def-secular-function, ch: MA.17}
 - {id: secular-function, en: secular function, zh: null, naer: missing, def: def-secular-function, ch: MA.17}
@@ -1910,7 +1933,7 @@
   ch: MA.18
   also: [def-gauge@MA.18]
 - {id: linear-program, en: linear program, zh: null, naer: missing, def: def-linear-program, ch: MA.18}
-- {id: minkowski-functional, en: minkowski functional, zh: null, naer: missing, def: def-gauge, ch: MA.18}
+- {id: minkowski-functional, en: Minkowski functional, zh: null, naer: missing, def: def-gauge, ch: MA.18}
 - {id: mixed-strategy, en: mixed strategy, zh: 混合策略, naer: univ, def: def-mixed-strategy, ch: MA.18}
 - {id: non-empty-convex, en: non-empty convex, zh: null, naer: missing, def: def-convex-function, ch: MA.18}
 - {id: open, en: open, zh: null, naer: missing, def: def-closed-set, ch: MA.18}
@@ -1953,7 +1976,13 @@
   def: def-dual-program
   ch: MA.18
   also: [def-linear-program@MA.18]
-- {id: vertex, en: vertex, zh: 頂點, naer: univ, def: def-polyhedron, ch: MA.18}
+- id: vertex
+  en: vertex
+  zh: 頂點
+  naer: univ
+  def: def-polyhedron
+  ch: MA.18
+  also: [def-directed-graph-of-matrix@MA.19, def-perspective-triangles@GEO.22]
 - {id: absorbing, en: absorbing, zh: 吸收, naer: univ, def: def-absorbing-chain, ch: MA.19}
 - {id: dangling, en: dangling, zh: null, naer: missing, def: def-link-matrix, ch: MA.19}
 - {id: directed-graph, en: directed graph, zh: 有向圖, naer: univ, def: def-directed-graph-of-matrix, ch: MA.19}
@@ -1966,9 +1995,9 @@
   zh_candidates: [稜, 邊]
   also: [def-edge-and-facet@GEO.22]
 - {id: entrywise-absolute-value, en: entrywise absolute value, zh: null, naer: missing, def: def-entrywise-order, ch: MA.19}
-- {id: google-matrix, en: google matrix, zh: null, naer: missing, def: def-google-matrix, ch: MA.19}
+- {id: google-matrix, en: Google matrix, zh: null, naer: missing, def: def-google-matrix, ch: MA.19}
 - id: left-perron-vector
-  en: left perron vector
+  en: left Perron vector
   zh: null
   naer: missing
   def: def-perron-vector
@@ -1989,36 +2018,32 @@
 - {id: path, en: path, zh: 路徑, naer: univ, def: def-directed-graph-of-matrix, ch: MA.19}
 - {id: period, en: period, zh: 週期, naer: univ, def: def-period, ch: MA.19}
 - id: perron-root
-  en: perron root
+  en: Perron root
   zh: null
   naer: missing
   def: def-perron-vector
   ch: MA.19
   also: [def-perron-root-and-vectors@MA.19]
-- {id: perron-vector, en: perron vector, zh: null, naer: missing, def: def-perron-vector, ch: MA.19}
+- id: perron-vector
+  en: Perron vector
+  zh: null
+  naer: missing
+  def: def-perron-vector
+  ch: MA.19
+  also: [def-perron-root-and-vectors@MA.19]
 - {id: primitive, en: primitive, zh: null, naer: missing, def: def-primitive, ch: MA.19}
-- {id: right-perron-vector, en: right) perron vector, zh: null, naer: missing, def: def-perron-root-and-vectors, ch: MA.19}
 - {id: strongly-connected, en: strongly connected, zh: null, naer: missing, def: def-strongly-connected, ch: MA.19}
 - {id: transient, en: transient, zh: null, naer: missing, def: def-absorbing-chain, ch: MA.19}
 - {id: upper-collatz-wielandt-function, en: upper collatz–wielandt function, zh: null, naer: missing, def: def-collatz-wielandt-functions, ch: MA.19}
-- id: vertices
-  en: vertices
-  zh: null
-  naer: missing
-  def: def-directed-graph-of-matrix
-  ch: MA.19
-  also: [def-perspective-triangles@GEO.22]
 - {id: walk-of-length, en: walk of length, zh: null, naer: missing, def: def-directed-graph-of-matrix, ch: MA.19}
 - {id: z-matrix, en: z-matrix, zh: null, naer: missing, def: def-z-matrix, ch: MA.19}
-- {id: column-discs, en: column discs, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
-- {id: columns, en: columns, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
+- {id: column-disc, en: column disc, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
+- {id: gershgorin-disc, en: Gershgorin disc, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
+- {id: gershgorin-radius, en: Gershgorin radius, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
 - {id: numerical-range, en: numerical range, zh: 數值域, naer: univ, def: def-numerical-range, ch: MA.20}
-- {id: principal-angles, en: principal angles, zh: null, naer: missing, def: def-principal-angles, ch: MA.20}
+- {id: principal-angle, en: principal angle, zh: null, naer: missing, def: def-principal-angles, ch: MA.20}
 - {id: separation, en: separation, zh: null, naer: missing, def: def-sep, ch: MA.20}
-- {id: th-gershgorin-disc, en: -th gershgorin disc, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
-- {id: th-gershgorin-radius, en: -th gershgorin radius, zh: null, naer: missing, def: def-gershgorin-discs, ch: MA.20}
-- {id: acts-on-the-pair, en: acts on the pair, zh: null, naer: missing, def: def-t-transform, ch: MA.21}
-- {id: converge, en: converge, zh: null, naer: missing, def: def-matrix-integral, ch: MA.21}
+- {id: act-on-the-pair, en: act on the pair, zh: null, naer: missing, def: def-t-transform, ch: MA.21}
 - {id: divided-difference, en: divided difference, zh: 均差, naer: univ, def: def-divided-difference, ch: MA.21}
 - {id: doubly-substochastic, en: doubly substochastic, zh: null, naer: missing, def: def-doubly-substochastic, ch: MA.21}
 - {id: dual-gauge, en: dual gauge, zh: null, naer: missing, def: def-dual-gauge, ch: MA.21}
@@ -2037,8 +2062,9 @@
   def: def-matrix-integral
   ch: MA.21
   zh_candidates: [整的, 積分]
-- {id: ky-fan-norm, en: ky fan -norm, zh: null, naer: missing, def: def-ky-fan-norm, ch: MA.21}
-- {id: loewner-matrix, en: loewner matrix, zh: null, naer: missing, def: def-loewner-matrix, ch: MA.21}
+- {id: ky-fan-gauge, en: Ky Fan gauge, zh: null, naer: missing, def: def-ky-fan-gauge, ch: MA.21}
+- {id: ky-fan-norm, en: Ky Fan -norm, zh: null, naer: missing, def: def-ky-fan-norm, ch: MA.21}
+- {id: loewner-matrix, en: Loewner matrix, zh: null, naer: missing, def: def-loewner-matrix, ch: MA.21}
 - {id: monotone-of-order, en: monotone of order, zh: null, naer: missing, def: def-monotone-of-order-n, ch: MA.21}
 - {id: permutation-invariance, en: permutation invariance, zh: null, naer: missing, def: def-symmetric-gauge, ch: MA.21}
 - {id: schur-concave, en: schur-concave, zh: null, naer: missing, def: def-schur-concave, ch: MA.21}
@@ -2049,7 +2075,6 @@
 - {id: symmetric-and-convex, en: symmetric and convex, zh: null, naer: missing, def: def-schur-convex, ch: MA.21}
 - {id: symmetric-gauge-function, en: symmetric gauge function, zh: null, naer: missing, def: def-symmetric-gauge, ch: MA.21}
 - {id: t-transform, en: t-transform, zh: null, naer: missing, def: def-t-transform, ch: MA.21}
-- {id: th-ky-fan-gauge, en: -th ky fan gauge, zh: null, naer: missing, def: def-ky-fan-gauge, ch: MA.21}
 - {id: trace-norm, en: trace norm, zh: 跡範數, naer: univ, def: def-ky-fan-norm, ch: MA.21}
 - {id: unitarily-invariant-norm, en: unitarily invariant norm, zh: null, naer: missing, def: def-unitarily-invariant-norm, ch: MA.21}
 - {id: distribution, en: distribution, zh: null, naer: missing, def: def-distribution, ch: PDE.1}
@@ -2060,7 +2085,7 @@
 - {id: axis, en: axis, zh: null, naer: missing, def: def-perspective-triangles, ch: GEO.22}
 - {id: centerless, en: centerless, zh: null, naer: missing, def: def-centre, ch: GEO.22}
 - {id: central, en: central, zh: null, naer: missing, def: def-centre, ch: GEO.22}
-- {id: chasless-relation, en: chasless relation, zh: null, naer: missing, def: def-affine-space, ch: GEO.22}
+- {id: chasle-relation, en: chasle relation, zh: null, naer: missing, def: def-affine-space, ch: GEO.22}
 - id: conic
   en: conic
   zh: null
@@ -2076,7 +2101,7 @@
   ch: GEO.22
   zh_candidates: [交比, 非調和比, 重比, 叉比]
 - {id: dual-projective-space, en: dual projective space, zh: null, naer: missing, def: def-dual-projective-space, ch: GEO.22}
-- {id: euclidean-motion, en: euclidean motion, zh: null, naer: missing, def: def-euclidean-motion, ch: GEO.22}
+- {id: euclidean-motion, en: Euclidean motion, zh: null, naer: missing, def: def-euclidean-motion, ch: GEO.22}
 - {id: facet, en: facet, zh: null, naer: missing, def: def-edge-and-facet, ch: GEO.22}
 - {id: flat, en: flat, zh: null, naer: missing, def: def-flat, ch: GEO.22}
 - id: glide-reflection
@@ -2086,13 +2111,7 @@
   def: def-motion-types-plane
   ch: GEO.22
   also: [def-space-motion-types@GEO.22]
-- id: homogeneous-coordinates
-  en: homogeneous coordinates
-  zh: null
-  naer: choose
-  def: def-homogeneous-coordinates
-  ch: GEO.22
-  zh_candidates: [齊性坐標, 齊次坐標]
+- {id: homogeneous-coordinate, en: homogeneous coordinate, zh: null, naer: missing, def: def-homogeneous-coordinates, ch: GEO.22}
 - {id: in-general-position, en: in general position, zh: null, naer: missing, def: def-general-position, ch: GEO.22}
 - id: join
   en: join
@@ -2121,7 +2140,7 @@
 - {id: parallel, en: parallel, zh: 平行, naer: univ, def: def-parallel-flats, ch: GEO.22}
 - {id: perspective-from-a-line, en: perspective from a line, zh: null, naer: missing, def: def-perspective-triangles, ch: GEO.22}
 - {id: perspective-from-a-point, en: perspective from a point, zh: null, naer: missing, def: def-perspective-triangles, ch: GEO.22}
-- {id: pl-cker-coordinates, en: plücker coordinates, zh: null, naer: missing, def: def-plucker-coordinates, ch: GEO.22}
+- {id: pl-cker-coordinate, en: plücker coordinate, zh: null, naer: missing, def: def-plucker-coordinates, ch: GEO.22}
 - {id: pl-cker-point, en: plücker point, zh: null, naer: missing, def: def-plucker-coordinates, ch: GEO.22}
 - id: plane
   en: plane
@@ -2136,15 +2155,8 @@
   naer: univ
   def: def-affine-combination
   ch: GEO.22
-  also: [def-projective-subspace@GEO.22]
+  also: [def-projective-space@GEO.22, def-affine-space@GEO.22, def-projective-subspace@GEO.22]
 - {id: point-reflection, en: point reflection, zh: null, naer: missing, def: def-space-motion-types, ch: GEO.22}
-- id: points
-  en: points
-  zh: 點
-  naer: univ
-  def: def-affine-space
-  ch: GEO.22
-  also: [def-projective-space@GEO.22]
 - id: pole
   en: pole
   zh: null
@@ -2166,8 +2178,8 @@
 - {id: rotation-about, en: rotation about, zh: null, naer: missing, def: def-motion-types-plane, ch: GEO.22}
 - {id: rotation-about-the-axis, en: rotation about the axis, zh: null, naer: missing, def: def-space-motion-types, ch: GEO.22}
 - {id: screw-motion, en: screw motion, zh: null, naer: missing, def: def-space-motion-types, ch: GEO.22}
-- id: sides
-  en: sides
+- id: side
+  en: side
   zh: null
   naer: choose
   def: def-perspective-triangles
@@ -2178,15 +2190,7 @@
 - {id: tangent-line, en: tangent line, zh: 切線, naer: univ, def: def-pole-and-polar, ch: GEO.22}
 - {id: translation, en: translation, zh: 平移, naer: univ, def: def-motion-types-plane, ch: GEO.22}
 - {id: triangle, en: triangle, zh: 三角形, naer: univ, def: def-perspective-triangles, ch: GEO.22}
-- {id: vector, en: vector, zh: 向量, naer: univ, def: def-affine-combination, ch: GEO.22}
 - {id: algebraic-connectivity, en: algebraic connectivity, zh: null, naer: missing, def: def-fiedler-value, ch: NLA.24}
-- id: arithmetic
-  en: arithmetic
-  zh: null
-  naer: choose
-  def: def-floating-point-model
-  ch: NLA.24
-  zh_candidates: [算術, 四則, 算術的]
 - {id: arithmetic-cost, en: arithmetic cost, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: arithmetic-step, en: arithmetic step, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: as-long-as, en: as long as, zh: null, naer: missing, def: def-power-iteration, ch: NLA.24}
@@ -2194,26 +2198,25 @@
 - {id: backward-stable, en: backward stable, zh: null, naer: missing, def: def-backward-stable, ch: NLA.24}
 - {id: butterfly-matrix, en: butterfly matrix, zh: null, naer: missing, def: def-butterfly-and-twiddle, ch: NLA.24}
 - {id: centered-data-matrix, en: centered data matrix, zh: null, naer: missing, def: def-centered-data-matrix, ch: NLA.24}
-- {id: chebyshev-polynomials, en: chebyshev polynomials, zh: Chebyshev多項式, naer: univ, def: def-chebyshev-polynomials, ch: NLA.24}
-- {id: computes-the-product, en: computes the product, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
+- {id: chebyshev-polynomial, en: Chebyshev polynomial, zh: Chebyshev多項式, naer: univ, def: def-chebyshev-polynomials, ch: NLA.24}
+- {id: compute-the-product, en: compute the product, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: conjugate-gradient, en: conjugate gradient, zh: null, naer: missing, def: def-conjugate-gradient, ch: NLA.24}
 - {id: cost, en: cost, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: data-matrix, en: data matrix, zh: null, naer: missing, def: def-centered-data-matrix, ch: NLA.24}
-- {id: eigenvalue-estimates, en: eigenvalue estimates, zh: null, naer: missing, def: def-power-iteration, ch: NLA.24}
+- {id: eigenvalue-estimate, en: eigenvalue estimate, zh: null, naer: missing, def: def-power-iteration, ch: NLA.24}
 - {id: energy-inner-product, en: energy inner product, zh: null, naer: missing, def: def-energy-norm, ch: NLA.24}
 - {id: energy-norm, en: energy norm, zh: null, naer: missing, def: def-energy-norm, ch: NLA.24}
 - {id: even-odd-permutation-matrix, en: even-odd permutation matrix, zh: null, naer: missing, def: def-butterfly-and-twiddle, ch: NLA.24}
 - {id: exponent-of-matrix-multiplication, en: exponent of matrix multiplication, zh: null, naer: missing, def: def-matrix-multiplication-exponent, ch: NLA.24}
-- {id: fiedler-value, en: fiedler value, zh: null, naer: missing, def: def-fiedler-value, ch: NLA.24}
+- {id: fiedler-value, en: Fiedler value, zh: null, naer: missing, def: def-fiedler-value, ch: NLA.24}
 - {id: floating-point-model, en: floating-point model, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
 - {id: flow, en: flow, zh: 流, naer: univ, def: def-lax-pair, ch: NLA.24}
 - {id: forward-error, en: forward error, zh: null, naer: missing, def: def-forward-error, ch: NLA.24}
-- {id: generalized-rayleigh-quotient, en: generalized rayleigh quotient, zh: null, naer: missing, def: def-generalized-rayleigh-quotient, ch: NLA.24}
+- {id: generalized-rayleigh-quotient, en: generalized Rayleigh quotient, zh: null, naer: missing, def: def-generalized-rayleigh-quotient, ch: NLA.24}
 - {id: growth-factor, en: growth factor, zh: null, naer: missing, def: def-growth-factor, ch: NLA.24}
-- {id: hookes-law, en: hookes law, zh: null, naer: missing, def: def-mass-spring-model, ch: NLA.24}
 - {id: in-range, en: in range, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
-- id: indeterminates
-  en: indeterminates
+- id: indeterminate
+  en: indeterminate
   zh: null
   naer: choose
   def: def-arithmetic-cost
@@ -2221,9 +2224,10 @@
   zh_candidates: [不確定, 未定元]
 - {id: input-step, en: input step, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: inverse-iteration-with-shift, en: inverse iteration with shift, zh: null, naer: missing, def: def-inverse-iteration, ch: NLA.24}
-- {id: laplacian, en: laplacian, zh: null, naer: missing, def: def-graph-laplacian, ch: NLA.24}
-- {id: lax-equation, en: lax equation, zh: null, naer: missing, def: def-lax-pair, ch: NLA.24}
-- {id: lax-pair, en: lax pair, zh: null, naer: missing, def: def-lax-pair, ch: NLA.24}
+- {id: krylov-subspace, en: Krylov subspace, zh: null, naer: missing, def: def-krylov-subspace, ch: NLA.24}
+- {id: laplacian, en: Laplacian, zh: null, naer: missing, def: def-graph-laplacian, ch: NLA.24}
+- {id: lax-equation, en: Lax equation, zh: null, naer: missing, def: def-lax-pair, ch: NLA.24}
+- {id: lax-pair, en: Lax pair, zh: null, naer: missing, def: def-lax-pair, ch: NLA.24}
 - {id: mass-matrix, en: mass matrix, zh: null, naer: missing, def: def-mass-spring-system, ch: NLA.24}
 - {id: mass-spring-system, en: mass–spring system, zh: null, naer: missing, def: def-mass-spring-system, ch: NLA.24}
 - id: mean
@@ -2235,26 +2239,15 @@
   zh_candidates: [平均, 平均值]
 - {id: mixed-forward-backward-stable, en: mixed forward-backward stable, zh: null, naer: missing, def: def-mixed-stability, ch: NLA.24}
 - {id: nearest, en: nearest, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
-- {id: newtons-second-law, en: newtons second law, zh: null, naer: missing, def: def-mass-spring-model, ch: NLA.24}
-- {id: no-overflow-or-underflow, en: no overflow or underflow, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
 - {id: not-an-eigenvalue, en: not an eigenvalue, zh: null, naer: missing, def: def-inverse-iteration, ch: NLA.24}
-- id: orthogonal
-  en: -orthogonal
-  zh: null
-  naer: choose
-  def: def-energy-norm
-  ch: NLA.24
-  zh_candidates: [正交, 直交]
-  also: [def-orthogonal@LA3.11, def-unitary-orthogonal@LA3.11, def-orthonormal-list@LA3.11, def-spectral-resolution@LA3.12, def-orthogonal-basis-form@LA4.14]
 - {id: power-iteration, en: power iteration, zh: null, naer: missing, def: def-power-iteration, ch: NLA.24}
-- {id: principal-components, en: principal components, zh: null, naer: missing, def: def-principal-directions, ch: NLA.24}
-- {id: principal-directions, en: principal directions, zh: 主方向, naer: univ, def: def-principal-directions, ch: NLA.24}
-- {id: rayleigh-quotient-iteration, en: rayleigh quotient iteration, zh: null, naer: missing, def: def-rayleigh-quotient-iteration, ch: NLA.24}
-- {id: representable-numbers, en: representable numbers, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
-- {id: ritz-pair, en: ritz pair, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
-- {id: ritz-values, en: ritz values, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
-- {id: ritz-vector, en: ritz vector, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
-- {id: rounding, en: rounding, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
+- {id: principal-component, en: principal component, zh: null, naer: missing, def: def-principal-directions, ch: NLA.24}
+- {id: principal-direction, en: principal direction, zh: 主方向, naer: univ, def: def-principal-directions, ch: NLA.24}
+- {id: rayleigh-quotient-iteration, en: Rayleigh quotient iteration, zh: null, naer: missing, def: def-rayleigh-quotient-iteration, ch: NLA.24}
+- {id: representable-number, en: representable number, zh: null, naer: missing, def: def-floating-point-model, ch: NLA.24}
+- {id: ritz-pair, en: Ritz pair, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
+- {id: ritz-value, en: Ritz value, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
+- {id: ritz-vector, en: Ritz vector, zh: null, naer: missing, def: def-ritz-values, ch: NLA.24}
 - {id: sample-covariance-matrix, en: sample covariance matrix, zh: 樣本共變異矩陣, naer: univ, def: def-sample-covariance, ch: NLA.24}
 - id: steepest-descent
   en: steepest descent
@@ -2268,8 +2261,7 @@
 - {id: straight-line-program, en: straight-line program, zh: null, naer: missing, def: def-arithmetic-cost, ch: NLA.24}
 - {id: strictly-lower-triangular-part, en: strictly lower triangular part, zh: null, naer: missing, def: def-toda-flow, ch: NLA.24}
 - {id: strictly-upper-triangular-part, en: strictly upper triangular part, zh: null, naer: missing, def: def-toda-flow, ch: NLA.24}
-- {id: th-krylov-subspace, en: -th krylov subspace, zh: null, naer: missing, def: def-krylov-subspace, ch: NLA.24}
-- {id: toda-flow, en: toda flow, zh: null, naer: missing, def: def-toda-flow, ch: NLA.24}
+- {id: toda-flow, en: Toda flow, zh: null, naer: missing, def: def-toda-flow, ch: NLA.24}
 - {id: total-variance, en: total variance, zh: null, naer: missing, def: def-sample-covariance, ch: NLA.24}
 - {id: twiddle-matrix, en: twiddle matrix, zh: null, naer: missing, def: def-butterfly-and-twiddle, ch: NLA.24}
 - id: unit

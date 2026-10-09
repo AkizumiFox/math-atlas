@@ -19,6 +19,7 @@ from pathlib import Path
 import yaml
 
 import import_la
+import lexicon
 from import_labels import BOOKS, ab_chapter
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,20 +42,26 @@ STATEMENT_EN = {"seminorm": "seminorm", "distribution": "distribution", "sequenc
 
 
 def norm(text):
+    """The term a bold phrase introduces: mathematics, articles and trailing prepositions removed; singular; lowercase
+    except proper nouns (PROPER), so 'Cauchy sequences of $x$' becomes 'Cauchy sequence'."""
     t = MATH.sub(" ", text)
-    t = re.sub(r"<[^>]+>", " ", t)
-    t = re.sub(r"\s+", " ", t).strip().lower()
-    t = re.sub(r"[“”\"’'&;]|&[a-z]+;", "", t)
+    t = re.sub(r"<[^>]+>|&[a-z]+;", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"[“”\"&;]", "", t)
+    t = re.sub(r"^[^A-Za-z]*(?:th|st|nd|rd)\b\s*|^[^A-Za-z]+", "", t)  # '$i$-th Gershgorin disc', stray symbols
+    if ")" in t and "(" not in t.split(")")[0]:
+        t = t.split(")", 1)[1]  # '(right) Perron vector' with the bold starting inside the parenthesis
     prev = None
     while prev != t:
         prev = t
         t = TRAIL.sub("", t).strip(" ,.;:()")
-        t = re.sub(r"^(the|a|an)\s+", "", t)
-    return t
+        t = re.sub(r"^(the|a|an|The|A|An)\s+", "", t)
+    words = [w if w in PROPER else w.lower() for w in t.split()]
+    return lexicon.keys(words)[1] if words else ""
 
 
 def keep(t):
-    words = t.split()
+    words = t.lower().split()
     return 1 <= len(words) <= 4 and re.search(r"[a-z]{3}", t) and not all(w in STOP for w in words)
 
 
@@ -62,12 +69,17 @@ def slug(t):
     return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
 
 
+PROPER = set()  # names, as written capitalised mid-sentence in the books (filled by book_definitions)
+
+
 def book_definitions(chapters):
     locate = {"la": import_la.atlas_chapter, "ab": ab_chapter(chapters)}
     found = defaultdict(list)  # term text -> [(label, chapter, book)]
+    labels = {book: json.loads((ROOT.parent / BOOKS[book] / "_build" / "crossref_labels.json").read_text())
+              ["crossref_labels"] for book in ("la", "ab")}
+    PROPER.update(lexicon.proper_nouns(r.get("html_content") or "" for ls in labels.values() for r in ls.values()))
     for book in ("la", "ab"):
-        path = ROOT.parent / BOOKS[book] / "_build" / "crossref_labels.json"
-        for label, rec in json.loads(path.read_text())["crossref_labels"].items():
+        for label, rec in labels[book].items():
             ch = locate[book](rec.get("file"))
             if not label.startswith("def-") or ch is None:
                 continue
@@ -140,11 +152,12 @@ def main():
     for n in stmts["nodes"]:
         if len(n) > 6 and n[0] not in local:
             terms[n[6]] = {"id": n[6], "en": STATEMENT_EN.get(n[6], n[6].replace("-", " ")), "def": n[0], "ch": n[1]}
-    by_en = {t["en"].lower(): tid for tid, t in terms.items()}
+    by_en = {lexicon.keys(t["en"].split())[0]: tid for tid, t in terms.items()}
     for text, defs in sorted(book_definitions(chapters).items()):
         defs.sort(key=lambda d: (order.index(d[1]), d[2] != src_book[d[1]]))
-        tid = by_en.get(text) or slug(text)
-        if tid in terms and terms[tid]["en"].lower() != text:
+        low = lexicon.keys(text.split())[0]
+        tid = by_en.get(low) or slug(text)
+        if tid in terms and lexicon.keys(terms[tid]["en"].split())[0] != low:
             tid = slug(text)
         t = terms.setdefault(tid, {"id": tid, "en": text, "def": defs[0][0], "ch": defs[0][1]})
         also = [f"{label}@{ch}" for label, ch, _ in defs if (label, ch) != (t["def"], t["ch"])]

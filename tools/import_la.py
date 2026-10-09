@@ -20,6 +20,8 @@ from pathlib import Path
 
 import yaml
 
+from lexicon import Matcher
+
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_LA = ROOT.parent / "linear-algebra"
 OUT = ROOT / "registry" / "computed" / "la-edges.yaml"
@@ -139,13 +141,6 @@ def vocabulary(labels, moves=None):
 
 
 TERMS = ROOT / "registry" / "terms.yaml"
-MATH = re.compile(r'<span class="math[^"]*">.*?</span>|\\\(.*?\\\)|\\\[.*?\\\]', re.S)
-
-
-def plural(word):
-    if word.endswith("y") and not word.endswith(("ay", "ey", "oy")):
-        return word[:-1] + "ies"
-    return word + ("es" if word.endswith(("s", "x", "ch", "sh")) else "s")
 
 
 def term_edges(labels, terms, moves=None):
@@ -156,25 +151,16 @@ def term_edges(labels, terms, moves=None):
     for label, m in (moves or {}).items():
         if label in where:
             where[label] = m["to"]
-    form = {}
-    for t in terms:
-        if t.get("meta"):  # the metalanguage of reading mathematics (F1's logic), not vocabulary to go back for
-            continue
-        for f in [t["en"], *(t.get("forms") or [])]:
-            f = f.lower()
-            words = f.split()
-            for g in (f, " ".join(words[:-1] + [plural(words[-1])])):
-                form.setdefault(g, t)
-    pat = re.compile(r"\b(" + "|".join(re.escape(f) for f in sorted(form, key=len, reverse=True)) + r")\b")
+    # meta terms are the metalanguage of reading mathematics (F1's logic), not vocabulary to go back for
+    matcher = Matcher((f, t) for t in terms if not t.get("meta") for f in [t["en"], *(t.get("forms") or [])])
     count = defaultdict(int)
     which = defaultdict(lambda: defaultdict(int))  # (to, from) -> term id -> statements using it
     for name, rec in labels.items():
         dst = where.get(name)
         if dst is None or rec.get("optional") or name.split("-")[0] not in STATEMENT_PREFIXES:
             continue
-        text = re.sub(r"<[^>]+>", " ", MATH.sub(" ", rec.get("html_content") or "")).lower()
         cited = set(rec.get("uses") or ())
-        for t in {form[m].get("id"): form[m] for m in pat.findall(text)}.values():
+        for t in {t["id"]: t for t in matcher.find(rec.get("html_content") or "")}.values():
             if t["ch"] != dst and t["def"] not in cited:
                 count[(dst, t["ch"], "term")] += 1
                 which[(dst, t["ch"])][t["id"]] += 1

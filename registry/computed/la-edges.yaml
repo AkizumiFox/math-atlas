@@ -1408,48 +1408,48 @@ vocab:
 - - AL4.8
   - AL1.1
   - term
-  - 49
+  - 43
   - [group, abelian, homomorphism]
 - - AL4.8
   - F1.5
   - term
-  - 1
-  - [divides]
+  - 3
+  - [divide]
 - - AL4.8
   - F2.1
   - term
-  - 42
-  - [function, injective, complement, member, onto, bijection, bijective, image, composition, contains, disjoint, integers, intersection, inverse, invertible, ordered-pair, subset, union]
+  - 47
+  - [function, injective, map, complement, member, integer, onto, bijection, bijective, image, composition, contain, disjoint, intersection, inverse, invertible, ordered-pair, subset, union]
 - - AL4.8
   - F2.2
   - term
-  - 2
-  - [partition, representative]
+  - 3
+  - [block, partition, representative]
 - - AL4.8
   - F3.7
   - term
-  - 22
+  - 21
   - [field, multiplication, addition, characteristic]
 - - AL4.8
   - F3.8
   - term
-  - 9
-  - [polynomial, degree, coefficient, monic]
+  - 8
+  - [degree, polynomial, coefficient, monic]
 - - AL4.8
-  - GEO.22
+  - HA.5
   - term
-  - 1
-  - [vector]
+  - 2
+  - [fourier-transform]
 - - AL4.8
   - LA1.0
   - term
-  - 9
-  - [matrix, diagonal, scalar-multiple, upper-triangular]
+  - 7
+  - [matrix, diagonal, entry, scalar-multiple, upper-triangular]
 - - AL4.8
   - LA1.1
   - term
-  - 101
-  - [over, finite-dimensional, subspace, vector-space, basis, list, span, dimension, direct, vectors]
+  - 97
+  - [over, finite-dimensional, subspace, vector-space, basis, list, dimension, span, scalar, vector]
 - - AL4.8
   - LA1.2
   - term
@@ -1463,7 +1463,7 @@ vocab:
 - - AL4.8
   - LA1.4
   - term
-  - 8
+  - 7
   - [equivalent, ordered]
 - - AL4.8
   - LA1.5
@@ -1473,33 +1473,33 @@ vocab:
 - - AL4.8
   - LA2.10
   - term
-  - 14
+  - 12
   - [semisimple, cyclic, column, basic-weyr-matrix, nilpotent, weyr-structure]
 - - AL4.8
   - LA2.6
   - term
-  - 25
-  - [irreducible, ideal, simple, non-constant, reducible]
+  - 23
+  - [irreducible, simple, ideal, non-constant, reducible]
 - - AL4.8
   - LA2.7
   - term
-  - 2
-  - [bilinear, inversion]
+  - 4
+  - [linear, bilinear, inversion]
 - - AL4.8
   - LA2.8
   - term
   - 3
-  - [direct-sum, block]
+  - [direct-sum, block-diagonal]
 - - AL4.8
   - LA2.9
   - term
-  - 4
-  - [diagonalizable, eigenvalue, eigenvector, restriction]
+  - 21
+  - [invariant, diagonalizable, eigenvalue, eigenvector, minimal-polynomial, restriction, spectrum]
 - - AL4.8
   - LA3.11
   - term
-  - 13
-  - [complex, orthonormal, unitary, orthonormal-basis]
+  - 12
+  - [complex, orthonormal-basis, orthonormal, unitary]
 - - AL4.8
   - LA3.13
   - term
@@ -1508,18 +1508,18 @@ vocab:
 - - AL4.8
   - LA4.14
   - term
-  - 8
-  - [algebra, radical, time]
+  - 50
+  - [algebra, space, radical, time]
 - - AL4.8
   - LA4.15
   - term
-  - 15
-  - [order, form, pointwise, two-sided-ideal]
+  - 16
+  - [order, two-sided-ideal, form, pointwise]
 - - AL4.8
   - MA.18
   - term
   - 2
-  - [dual, finitely-many]
+  - [finitely-many]
 - - AN3.3
   - LA3.11
   - term
@@ -1543,8 +1543,8 @@ vocab:
 - - F1.5
   - F2.1
   - term
-  - 5
-  - [integers, range, natural-numbers]
+  - 15
+  - [integer, natural-number, range, rational-number]
 - - F1.5
   - LA1.0
   - term
@@ -1580,26 +1580,16 @@ vocab:
   - term
   - 2
   - [ordered]
-- - F2.1
-  - LA3.11
-  - term
-  - 2
-  - [complex, real]
 - - F2.2
   - F2.1
   - term
-  - 12
+  - 8
   - [relation, function, subset, disjoint]
 - - F2.2
-  - LA2.8
-  - term
-  - 2
-  - [block]
-- - F3.6
-  - AL4.8
+  - LA4.15
   - term
   - 1
-  - [conjugate]
+  - [every-symmetric]
 - - F3.6
   - AN1.1
   - term
@@ -1608,8 +1598,8 @@ vocab:
 - - F3.6
   - F2.1
   - term
-  - 1
-  - [complex-numbers]
+  - 2
+  - [complex-number, real-number]
 - - F3.6
   - F3.7
   - term
@@ -1623,8 +1613,8 @@ vocab:
 - - F3.6
   - LA3.11
   - term
-  - 5
-  - [real, complex, non-negative]
+  - 2
+  - [non-negative, real]
 - - F3.7
   - F1.5
   - term
@@ -1633,8 +1623,8 @@ vocab:
 - - F3.7
   - F2.1
   - term
-  - 2
-  - [function, inverse]
+  - 5
+  - [integer, function, inverse]
 - - F3.8
   - F2.1
   - term
@@ -1650,6 +1640,11 @@ vocab:
   - term
   - 4
   - [over]
+- - F3.8
+  - NLA.24
+  - term
+  - 1
+  - [indeterminate]
 - - GEO.22
   - AL1.1
   - term
@@ -1658,8 +1653,8 @@ vocab:
 - - GEO.22
   - AL4.8
   - term
-  - 13
-  - [map, center, space, conjugate, faithful]
+  - 6
+  - [center, conjugate, faithful]
 - - GEO.22
   - AN1.1
   - term
@@ -1668,18 +1663,18 @@ vocab:
 - - GEO.22
   - F2.1
   - term
-  - 65
-  - [bijection, onto, invertible, contains, intersection, inverse, composition, disjoint, subset, surjective, bijective, empty-set, injective, relation, composite, contained, difference, function, proper,
+  - 84
+  - [map, bijection, onto, invertible, contain, intersection, inverse, composition, disjoint, subset, surjective, bijective, injective, composite, contained, difference, empty-set, function, integer, proper,
     range, union]
 - - GEO.22
   - F2.2
   - term
-  - 8
-  - [representative, symmetric, equivalence-class, equivalence-relation]
+  - 9
+  - [representative, symmetric, block, equivalence-class, equivalence-relation]
 - - GEO.22
   - F3.7
   - term
-  - 6
+  - 5
   - [field]
 - - GEO.22
   - F3.8
@@ -1690,31 +1685,31 @@ vocab:
   - LA1.0
   - term
   - 8
-  - [matrix, diagonal, transpose]
+  - [matrix, diagonal]
 - - GEO.22
   - LA1.1
   - term
-  - 91
-  - [over, dimension, subspace, vector-space, finite-dimensional, list, basis, coordinates, linearly-independent, scalars, direct, vectors, with-respect, zero-vector]
+  - 93
+  - [over, dimension, subspace, vector-space, finite-dimensional, list, vector, basis, scalar, coordinate, linearly-independent, direct, with-respect]
 - - GEO.22
   - LA1.2
   - term
-  - 15
-  - [isomorphism, rank, linear-map, kernel, over-the-same-field]
+  - 16
+  - [isomorphism, rank, linear-map, over-the-same-field, kernel]
 - - GEO.22
   - LA1.3
   - term
-  - 6
-  - [another, solution, homogeneous, solution-set]
+  - 3
+  - [another, solution-set]
 - - GEO.22
   - LA1.4
   - term
-  - 9
+  - 8
   - [equivalent, ordered, projection]
 - - GEO.22
   - LA1.5
   - term
-  - 8
+  - 7
   - [hyperplane, evaluation-map, linear-functional]
 - - GEO.22
   - LA2.10
@@ -1729,13 +1724,13 @@ vocab:
 - - GEO.22
   - LA2.7
   - term
-  - 4
+  - 10
   - [linear, determinant, minor]
 - - GEO.22
   - LA2.8
   - term
-  - 3
-  - [block, block-matrix]
+  - 1
+  - [block-matrix]
 - - GEO.22
   - LA2.9
   - term
@@ -1744,8 +1739,8 @@ vocab:
 - - GEO.22
   - LA3.11
   - term
-  - 9
-  - [normal, angle, orthonormal-basis, isometry, non-negative]
+  - 10
+  - [normal, angle, orthonormal-basis, isometry, non-negative, orthogonal]
 - - GEO.22
   - LA3.13
   - term
@@ -1754,12 +1749,12 @@ vocab:
 - - GEO.22
   - LA4.14
   - term
-  - 13
-  - [quadratic-form, reflection, bilinear-form, inertia, non-degenerate, restricted]
+  - 35
+  - [space, quadratic-form, reflection, bilinear-form, inertia, non-degenerate, restricted]
 - - GEO.22
   - LA4.15
   - term
-  - 11
+  - 9
   - [form, order, pointwise, wedge]
 - - GEO.22
   - MA.16
@@ -1770,22 +1765,17 @@ vocab:
   - MA.18
   - term
   - 28
-  - [polyhedron, dual, face, vertex, affine-combination, polar, affine-subspace, affinely-independent, extreme-point, feasible-point, optimal, optimal-solution, polytope]
+  - [vertex, polyhedron, face, affinely-independent, affine-combination, affine-subspace, basic-feasible-point, extreme-point, optimal-solution, polar, polytope]
 - - GEO.22
   - MA.19
   - term
-  - 7
-  - [vertices, edge]
-- - LA1.0
-  - AL1.1
-  - term
-  - 1
-  - [associativity]
+  - 2
+  - [edge]
 - - LA1.0
   - F2.1
   - term
   - 7
-  - [invertible, inverse, function, integers]
+  - [invertible, inverse, function, integer]
 - - LA1.0
   - F2.2
   - term
@@ -1802,15 +1792,10 @@ vocab:
   - 1
   - [polynomial]
 - - LA1.0
-  - GEO.22
-  - term
-  - 1
-  - [vector]
-- - LA1.0
   - LA1.1
   - term
-  - 2
-  - [over, scalars]
+  - 3
+  - [over, scalar, vector]
 - - LA1.0
   - LA1.3
   - term
@@ -1839,8 +1824,8 @@ vocab:
 - - LA1.1
   - F2.1
   - term
-  - 17
-  - [subset, contains, function, surjective, inverse, relation, surjection]
+  - 16
+  - [subset, contain, function, surjective, inverse, surjection]
 - - LA1.1
   - F2.2
   - term
@@ -1849,7 +1834,7 @@ vocab:
 - - LA1.1
   - F3.7
   - term
-  - 13
+  - 12
   - [field, addition, multiplication]
 - - LA1.1
   - F3.8
@@ -1859,13 +1844,13 @@ vocab:
 - - LA1.1
   - GEO.22
   - term
-  - 6
-  - [vector]
+  - 1
+  - [pairwise-distinct]
 - - LA1.1
   - LA1.0
   - term
   - 3
-  - [additive-inverse, entries]
+  - [additive-inverse, entry]
 - - LA1.1
   - LA1.3
   - term
@@ -1882,11 +1867,6 @@ vocab:
   - 2
   - [column]
 - - LA1.1
-  - LA2.9
-  - term
-  - 1
-  - [restriction]
-- - LA1.1
   - LA4.15
   - term
   - 1
@@ -1897,16 +1877,6 @@ vocab:
   - 2
   - [mean]
 - - LA1.2
-  - AL1.1
-  - term
-  - 1
-  - [associativity]
-- - LA1.2
-  - AL4.8
-  - term
-  - 2
-  - [map, space]
-- - LA1.2
   - F1.5
   - term
   - 1
@@ -1914,53 +1884,38 @@ vocab:
 - - LA1.2
   - F2.1
   - term
-  - 24
-  - [function, injective, surjective, bijective, invertible, inverse, subset, codomain, image]
-- - LA1.2
-  - F3.7
-  - term
-  - 4
-  - [field]
-- - LA1.2
-  - GEO.22
-  - term
-  - 1
-  - [vector]
+  - 26
+  - [function, injective, surjective, bijective, invertible, map, subset, codomain, image, inverse]
 - - LA1.2
   - LA1.0
   - term
-  - 1
-  - [powers]
+  - 2
+  - [power, scalar-multiple]
 - - LA1.2
   - LA1.1
   - term
   - 56
-  - [over, vector-space, finite-dimensional, basis, span, subspace, vectors, zero-vector]
+  - [vector-space, over, finite-dimensional, basis, span, subspace, vector, coordinate, linearly-independent, zero-vector]
 - - LA1.2
   - LA1.4
   - term
   - 1
   - [equivalent]
 - - LA1.2
-  - LA2.6
-  - term
-  - 1
-  - [multiple]
-- - LA1.2
   - LA2.7
   - term
-  - 3
+  - 13
   - [linear]
-- - LA1.3
-  - AL4.8
+- - LA1.2
+  - LA4.14
   - term
   - 1
   - [space]
 - - LA1.3
   - F2.1
   - term
-  - 13
-  - [invertible, inverse, subset]
+  - 14
+  - [invertible, integer, inverse, subset]
 - - LA1.3
   - F2.2
   - term
@@ -1974,23 +1929,18 @@ vocab:
 - - LA1.3
   - F3.8
   - term
-  - 2
+  - 1
   - [coefficient]
-- - LA1.3
-  - GEO.22
-  - term
-  - 2
-  - [vector]
 - - LA1.3
   - LA1.0
   - term
-  - 28
-  - [matrix, entries, diagonal, upper-triangular, lower-triangular]
+  - 34
+  - [matrix, entry, diagonal, upper-triangular, lower-triangular]
 - - LA1.3
   - LA1.1
   - term
-  - 24
-  - [basis, span, vectors, list, bases, over, scalars, subspace, linearly-dependent]
+  - 26
+  - [vector, basis, span, list, scalar, over, subspace, linearly-dependent, linearly-independent]
 - - LA1.3
   - LA1.2
   - term
@@ -1999,7 +1949,7 @@ vocab:
 - - LA1.3
   - LA1.4
   - term
-  - 6
+  - 2
   - [equivalent]
 - - LA1.3
   - LA2.10
@@ -2009,22 +1959,22 @@ vocab:
 - - LA1.3
   - LA2.6
   - term
-  - 1
-  - [multiple]
+  - 2
+  - [multiple, split]
+- - LA1.3
+  - LA2.7
+  - term
+  - 2
+  - [linear]
 - - LA1.3
   - LA3.13
   - term
   - 1
   - [pair]
 - - LA1.3
-  - LA4.14
-  - term
-  - 1
-  - ['null']
-- - LA1.3
   - LA4.15
   - term
-  - 10
+  - 8
   - [form, order]
 - - LA1.3
   - MA.17
@@ -2032,20 +1982,20 @@ vocab:
   - 1
   - [same-number]
 - - LA1.3
+  - MA.18
+  - term
+  - 2
+  - [vertex]
+- - LA1.3
   - MA.19
   - term
-  - 3
-  - [vertices, edge]
+  - 1
+  - [edge]
 - - LA1.3
   - NLA.24
   - term
-  - 2
-  - [unit]
-- - LA1.4
-  - AL4.8
-  - term
   - 1
-  - [space]
+  - [unit]
 - - LA1.4
   - F1.5
   - term
@@ -2054,8 +2004,8 @@ vocab:
 - - LA1.4
   - F2.1
   - term
-  - 18
-  - [invertible, injective, onto, image, disjoint, function, subset, surjective]
+  - 23
+  - [invertible, injective, map, onto, image, integer, disjoint, function, subset, surjective]
 - - LA1.4
   - F2.2
   - term
@@ -2064,7 +2014,7 @@ vocab:
 - - LA1.4
   - F3.7
   - term
-  - 4
+  - 3
   - [addition, field]
 - - LA1.4
   - F3.8
@@ -2074,33 +2024,38 @@ vocab:
 - - LA1.4
   - GEO.22
   - term
-  - 5
-  - [vector]
+  - 1
+  - [side]
 - - LA1.4
   - LA1.0
   - term
-  - 10
-  - [matrix, additive-inverse, entries, trace]
+  - 12
+  - [matrix, additive-inverse, entry, trace]
 - - LA1.4
   - LA1.1
   - term
-  - 92
-  - [vector-space, finite-dimensional, over, bases, subspace, basis, dimension, scalar-multiplication, with-respect, coordinate-vector, direct, linearly-independent, list, scalars, vectors]
+  - 94
+  - [vector-space, finite-dimensional, basis, over, subspace, dimension, scalar-multiplication, vector, with-respect, coordinate, coordinate-vector, direct, linearly-independent, list, scalar, zero-vector]
 - - LA1.4
   - LA1.2
   - term
-  - 9
-  - [isomorphism, linear-map, rank, isomorphic]
+  - 10
+  - [isomorphism, linear-map, rank, isomorphic, over-the-same-field]
 - - LA1.4
   - LA1.3
   - term
-  - 2
-  - [pivot-columns, right-hand-side]
+  - 3
+  - [pivot-column, reduced-row-echelon-form, right-hand-side]
 - - LA1.4
   - LA2.10
   - term
   - 3
   - [column]
+- - LA1.4
+  - LA2.7
+  - term
+  - 6
+  - [linear]
 - - LA1.4
   - LA2.9
   - term
@@ -2117,15 +2072,20 @@ vocab:
   - 1
   - [modulo]
 - - LA1.4
-  - LA4.15
+  - LA4.14
   - term
   - 2
+  - [space]
+- - LA1.4
+  - LA4.15
+  - term
+  - 1
   - [form]
 - - LA1.5
   - F2.1
   - term
-  - 14
-  - [surjective, injective, subset, function, image, intersection, invertible, onto]
+  - 16
+  - [surjective, injective, map, function, image, intersection, invertible, onto, subset]
 - - LA1.5
   - F2.2
   - term
@@ -2134,18 +2094,18 @@ vocab:
 - - LA1.5
   - GEO.22
   - term
-  - 3
-  - [vector, affine]
+  - 1
+  - [affine]
 - - LA1.5
   - LA1.0
   - term
-  - 1
-  - [matrix]
+  - 2
+  - [entry, matrix]
 - - LA1.5
   - LA1.1
   - term
-  - 108
-  - [vector-space, over, finite-dimensional, subspace, basis, dimension, linearly-independent, bases, infinite-dimensional, linear-combination, list, span, vectors]
+  - 111
+  - [vector-space, over, finite-dimensional, subspace, basis, dimension, linearly-independent, vector, infinite-dimensional, linear-combination, list, span]
 - - LA1.5
   - LA1.2
   - term
@@ -2154,8 +2114,8 @@ vocab:
 - - LA1.5
   - LA1.3
   - term
-  - 3
-  - [homogeneous, solution, solution-set]
+  - 2
+  - [homogeneous, solution-set]
 - - LA1.5
   - LA1.4
   - term
@@ -2167,10 +2127,20 @@ vocab:
   - 1
   - [column]
 - - LA1.5
+  - LA2.7
+  - term
+  - 2
+  - [linear]
+- - LA1.5
   - LA2.9
   - term
   - 1
   - [restriction]
+- - LA1.5
+  - LA4.14
+  - term
+  - 1
+  - [space]
 - - LA1.5
   - LA4.15
   - term
@@ -2179,8 +2149,8 @@ vocab:
 - - LA1.5
   - MA.18
   - term
-  - 3
-  - [dual, finitely-many]
+  - 1
+  - [finitely-many]
 - - LA2.10
   - AL4.8
   - term
@@ -2204,13 +2174,13 @@ vocab:
 - - LA2.10
   - F2.1
   - term
-  - 17
-  - [function, invertible, integers, onto, complex-numbers, inverse, relation]
+  - 22
+  - [integer, function, invertible, onto, complex-number, inverse]
 - - LA2.10
   - F2.2
   - term
-  - 18
-  - [blocks, partition]
+  - 20
+  - [block, partition, equivalence-relation]
 - - LA2.10
   - F3.6
   - term
@@ -2219,28 +2189,23 @@ vocab:
 - - LA2.10
   - F3.7
   - term
-  - 11
+  - 10
   - [field, characteristic]
 - - LA2.10
   - F3.8
   - term
-  - 24
+  - 23
   - [monic, polynomial, degree]
-- - LA2.10
-  - GEO.22
-  - term
-  - 3
-  - [vector]
 - - LA2.10
   - LA1.0
   - term
-  - 43
-  - [matrix, diagonal, powers, upper-triangular, entries, square, zero-matrix]
+  - 50
+  - [matrix, diagonal, upper-triangular, power, entry, square, zero-matrix]
 - - LA2.10
   - LA1.1
   - term
   - 139
-  - [over, finite-dimensional, vector-space, basis, list, chain, length, vectors, bases, linearly-independent, subfield, subspace, dimension, scalars, span]
+  - [over, finite-dimensional, vector-space, basis, list, vector, chain, length, linearly-independent, subfield, subspace, dimension, scalar, span]
 - - LA2.10
   - LA1.2
   - term
@@ -2257,25 +2222,30 @@ vocab:
   - 17
   - [equivalent, similar, entrywise, ordered, projection]
 - - LA2.10
+  - LA1.5
+  - term
+  - 5
+  - [annihilator]
+- - LA2.10
   - LA2.6
   - term
-  - 25
-  - [splits, irreducible, non-constant, divisor, factor, coprime, ideal, repeated]
+  - 23
+  - [split, irreducible, non-constant, coprime, divisor, ideal, repeated, unique-monic]
 - - LA2.10
   - LA2.8
   - term
-  - 13
-  - [block, direct-sum, block-diagonal, same-list]
+  - 4
+  - [direct-sum, block-diagonal, same-list]
 - - LA2.10
   - LA2.9
   - term
-  - 22
-  - [eigenvalue, eigenvector, invariant, diagonalizable, eigenspace, least-degree, minimal-polynomial, spectrum]
+  - 26
+  - [eigenvalue, invariant, diagonalizable, eigenvector, least-degree, minimal-polynomial, spectrum]
 - - LA2.10
   - LA3.11
   - term
-  - 6
-  - [real, normal, complex]
+  - 4
+  - [normal, real]
 - - LA2.10
   - LA3.13
   - term
@@ -2284,23 +2254,23 @@ vocab:
 - - LA2.10
   - LA4.14
   - term
-  - 2
+  - 1
   - [time]
 - - LA2.10
   - LA4.15
   - term
-  - 16
+  - 15
   - [order, form]
 - - LA2.10
   - MA.16
   - term
-  - 3
+  - 2
   - [differentiable]
 - - LA2.10
   - MA.18
   - term
-  - 3
-  - [dual, finitely-many, strict]
+  - 2
+  - [finitely-many, strict]
 - - LA2.10
   - NLA.24
   - term
@@ -2319,13 +2289,13 @@ vocab:
 - - LA2.6
   - F1.5
   - term
-  - 4
-  - [divides, odd, prime]
+  - 5
+  - [divide, odd, prime]
 - - LA2.6
   - F2.1
   - term
-  - 4
-  - [composition, image, onto, subset]
+  - 10
+  - [integer, map, composition, image, onto, subset]
 - - LA2.6
   - F3.7
   - term
@@ -2334,7 +2304,7 @@ vocab:
 - - LA2.6
   - F3.8
   - term
-  - 39
+  - 35
   - [polynomial, degree, monic, leading-coefficient]
 - - LA2.6
   - LA1.1
@@ -2349,38 +2319,33 @@ vocab:
 - - LA2.6
   - LA1.5
   - term
-  - 3
+  - 4
   - [dual-basis, evaluation, linear-functional]
+- - LA2.6
+  - LA2.7
+  - term
+  - 1
+  - [linear]
+- - LA2.6
+  - LA2.9
+  - term
+  - 2
+  - [least-degree]
 - - LA2.6
   - LA3.11
   - term
   - 3
   - [real]
 - - LA2.6
-  - LA3.12
-  - term
-  - 1
-  - [modulo]
-- - LA2.6
   - LA3.13
   - term
   - 1
   - [with-multiplicity]
 - - LA2.6
-  - LA4.14
-  - term
-  - 1
-  - [congruent]
-- - LA2.6
   - LA4.15
   - term
   - 2
   - [form, order]
-- - LA2.6
-  - MA.18
-  - term
-  - 1
-  - [dual]
 - - LA2.6
   - NLA.24
   - term
@@ -2392,11 +2357,6 @@ vocab:
   - 3
   - [subgroup, group]
 - - LA2.7
-  - AL4.8
-  - term
-  - 1
-  - [space]
-- - LA2.7
   - F1.5
   - term
   - 8
@@ -2404,38 +2364,28 @@ vocab:
 - - LA2.7
   - F2.1
   - term
-  - 19
-  - [invertible, function, surjective, image, injective, subset]
+  - 21
+  - [invertible, function, surjective, image, injective, integer, real-number, subset]
 - - LA2.7
   - F2.2
   - term
   - 1
   - [equivalence-class]
 - - LA2.7
-  - F3.7
-  - term
-  - 1
-  - [characteristic]
-- - LA2.7
   - F3.8
   - term
-  - 4
-  - [coefficient, degree, monic, polynomial]
-- - LA2.7
-  - GEO.22
-  - term
-  - 1
-  - [vector]
+  - 3
+  - [coefficient, degree, monic]
 - - LA2.7
   - LA1.0
   - term
-  - 14
-  - [matrix, entries, skew-symmetric, lower-triangular, transpose, zero-matrix]
+  - 17
+  - [entry, matrix, skew-symmetric, lower-triangular, transpose, upper-triangular, zero-matrix]
 - - LA2.7
   - LA1.1
   - term
-  - 33
-  - [over, vector-space, basis, bases, finite-dimensional, list, dimension, length, scalars, subspace, vectors]
+  - 35
+  - [over, vector-space, basis, finite-dimensional, list, dimension, length, linearly-dependent, linearly-independent, scalar, subspace, vector]
 - - LA2.7
   - LA1.2
   - term
@@ -2457,15 +2407,10 @@ vocab:
   - 4
   - [column]
 - - LA2.7
-  - LA3.11
-  - term
-  - 1
-  - [real]
-- - LA2.7
   - LA3.13
   - term
-  - 2
-  - [pair]
+  - 3
+  - [pair, dimensional-volume]
 - - LA2.7
   - LA4.15
   - term
@@ -2477,20 +2422,15 @@ vocab:
   - 1
   - [unit]
 - - LA2.8
-  - AL1.1
-  - term
-  - 1
-  - [associativity]
-- - LA2.8
   - F2.1
   - term
   - 18
-  - [invertible, complement, integers, inverse]
+  - [invertible, integer, map, inverse]
 - - LA2.8
   - F2.2
   - term
-  - 9
-  - [partition, blocks]
+  - 12
+  - [block, partition]
 - - LA2.8
   - F3.7
   - term
@@ -2500,17 +2440,17 @@ vocab:
   - GEO.22
   - term
   - 1
-  - [vector]
+  - [side]
 - - LA2.8
   - LA1.0
   - term
   - 15
-  - [matrix, diagonal, entries, square, trace, upper-triangular, zero-matrix]
+  - [matrix, entry, square, diagonal, upper-triangular]
 - - LA2.8
   - LA1.1
   - term
-  - 13
-  - [finite-dimensional, subspace, with-respect, bases, basis, linear-combination, list, over, span, vector-space]
+  - 15
+  - [basis, finite-dimensional, subspace, with-respect, linear-combination, list, over, scalar, span, vector, vector-space]
 - - LA2.8
   - LA1.2
   - term
@@ -2532,6 +2472,11 @@ vocab:
   - 5
   - [column, below]
 - - LA2.8
+  - LA2.7
+  - term
+  - 1
+  - [linear]
+- - LA2.8
   - LA4.14
   - term
   - 1
@@ -2544,38 +2489,28 @@ vocab:
 - - LA2.9
   - F2.1
   - term
-  - 12
-  - [invertible, injective, onto]
+  - 13
+  - [invertible, injective, integer, onto]
 - - LA2.9
   - F2.2
   - term
-  - 1
-  - [partition]
-- - LA2.9
-  - F3.7
-  - term
-  - 1
-  - [characteristic]
+  - 2
+  - [block, partition]
 - - LA2.9
   - F3.8
   - term
-  - 10
+  - 9
   - [polynomial, monic, degree]
-- - LA2.9
-  - GEO.22
-  - term
-  - 4
-  - [vector]
 - - LA2.9
   - LA1.0
   - term
-  - 22
-  - [diagonal, matrix, entries, upper-triangular, powers, trace]
+  - 24
+  - [matrix, diagonal, upper-triangular, entry, power, trace]
 - - LA2.9
   - LA1.1
   - term
-  - 117
-  - [finite-dimensional, over, vector-space, basis, subspace, list, dimension, direct, length, subfield, vectors, with-respect]
+  - 124
+  - [finite-dimensional, over, vector-space, basis, subspace, vector, list, linearly-independent, dimension, direct, length, linearly-dependent, scalar, subfield, with-respect]
 - - LA2.9
   - LA1.3
   - term
@@ -2590,22 +2525,22 @@ vocab:
   - LA2.10
   - term
   - 5
-  - [column, converges, nilpotent]
+  - [column, converge, nilpotent]
 - - LA2.9
   - LA2.6
   - term
-  - 14
-  - [splits, annihilates, irreducible, divisor, repeated]
+  - 15
+  - [split, annihilate, irreducible, divisor, repeated, unique-monic]
 - - LA2.9
   - LA2.7
   - term
-  - 1
-  - [determinant]
+  - 2
+  - [characteristic-polynomial, determinant]
 - - LA2.9
   - LA2.8
   - term
-  - 2
-  - [block]
+  - 1
+  - [block-diagonal]
 - - LA2.9
   - LA3.11
   - term
@@ -2614,28 +2549,23 @@ vocab:
 - - LA2.9
   - LA4.14
   - term
-  - 2
-  - [time]
+  - 6
+  - [space, time]
 - - LA2.9
   - LA4.15
   - term
   - 2
   - [form, order]
+- - LA2.9
+  - NLA.24
+  - term
+  - 1
+  - [not-an-eigenvalue]
 - - LA3.11
   - AL1.1
   - term
-  - 3
+  - 2
   - [group, subgroup]
-- - LA3.11
-  - AL4.8
-  - term
-  - 4
-  - [conjugate]
-- - LA3.11
-  - AN1.1
-  - term
-  - 1
-  - [minimum]
 - - LA3.11
   - F1.5
   - term
@@ -2644,38 +2574,38 @@ vocab:
 - - LA3.11
   - F2.1
   - term
-  - 11
-  - [invertible, subset, bijection, function, onto, real-numbers]
+  - 13
+  - [invertible, map, real-number, bijection, function, subset]
 - - LA3.11
   - F2.2
   - term
-  - 2
+  - 1
   - [symmetric]
 - - LA3.11
   - F3.7
   - term
-  - 4
+  - 3
   - [addition, multiplication]
 - - LA3.11
   - F3.8
   - term
-  - 14
+  - 13
   - [monic, polynomial, degree, leading-coefficient]
 - - LA3.11
   - GEO.22
   - term
-  - 6
-  - [vector, axis, line, plane]
+  - 3
+  - [axis, line, plane]
 - - LA3.11
   - LA1.0
   - term
-  - 25
-  - [matrix, entries, square, diagonal, identity-matrix, transpose, upper-triangular]
+  - 22
+  - [matrix, entry, diagonal, square, identity-matrix, upper-triangular]
 - - LA3.11
   - LA1.1
   - term
-  - 93
-  - [over, finite-dimensional, list, subspace, basis, vectors, linearly-independent, vector-space, bases, length, linearly-dependent, scalars, with-respect]
+  - 91
+  - [over, finite-dimensional, list, subspace, vector, linearly-independent, vector-space, basis, length, linearly-dependent, scalar, with-respect]
 - - LA3.11
   - LA1.2
   - term
@@ -2689,8 +2619,13 @@ vocab:
 - - LA3.11
   - LA1.4
   - term
-  - 4
-  - [equivalent, projection]
+  - 3
+  - [equivalent]
+- - LA3.11
+  - LA1.5
+  - term
+  - 1
+  - [any-subset]
 - - LA3.11
   - LA2.10
   - term
@@ -2700,11 +2635,11 @@ vocab:
   - LA2.6
   - term
   - 4
-  - [annihilates, factor, multiple, unique-monic]
+  - [annihilate, factor, multiple, unique-monic]
 - - LA3.11
   - LA2.7
   - term
-  - 3
+  - 4
   - [linear, sign]
 - - LA3.11
   - LA2.9
@@ -2719,8 +2654,8 @@ vocab:
 - - LA3.11
   - LA4.14
   - term
-  - 3
-  - [isometric, orthogonal-basis, reflection]
+  - 5
+  - [orthogonal-basis, isometric, reflection, space]
 - - LA3.11
   - LA4.15
   - term
@@ -2731,11 +2666,6 @@ vocab:
   - term
   - 2
   - [open]
-- - LA3.11
-  - NLA.24
-  - term
-  - 3
-  - [orthogonal]
 - - LA3.12
   - AL4.8
   - term
@@ -2745,12 +2675,12 @@ vocab:
   - F2.1
   - term
   - 12
-  - [onto, function, invertible, member, difference, disjoint, integers]
+  - [integer, invertible, member, real-number, difference, disjoint, function, onto]
 - - LA3.12
   - F2.2
   - term
   - 8
-  - [symmetric, blocks, partition]
+  - [symmetric, block, partition]
 - - LA3.12
   - F3.6
   - term
@@ -2764,23 +2694,23 @@ vocab:
 - - LA3.12
   - F3.8
   - term
-  - 5
+  - 4
   - [polynomial, degree]
 - - LA3.12
   - GEO.22
   - term
-  - 8
-  - [line, vector, axis, plane]
+  - 6
+  - [line, axis, plane]
 - - LA3.12
   - LA1.0
   - term
-  - 28
-  - [diagonal, matrix, upper-triangular, entries, same-size, square]
+  - 33
+  - [matrix, diagonal, upper-triangular, entry, same-size, square]
 - - LA3.12
   - LA1.1
   - term
-  - 48
-  - [finite-dimensional, over, list, basis, subspace, coordinates, dimension, length, vectors]
+  - 47
+  - [finite-dimensional, over, list, basis, subspace, vector, coordinate, dimension]
 - - LA3.12
   - LA1.3
   - term
@@ -2789,7 +2719,7 @@ vocab:
 - - LA3.12
   - LA1.4
   - term
-  - 8
+  - 6
   - [equivalent, projection]
 - - LA3.12
   - LA2.10
@@ -2800,26 +2730,26 @@ vocab:
   - LA2.6
   - term
   - 3
-  - [multiple, repeated, splits]
+  - [multiple, repeated, split]
 - - LA3.12
   - LA2.8
   - term
-  - 4
-  - [block, block-diagonal]
+  - 2
+  - [block-diagonal]
 - - LA3.12
   - LA2.9
   - term
-  - 49
-  - [eigenvalue, eigenvector, algebraic-multiplicity, eigenspace, diagonalizable, restriction]
+  - 54
+  - [eigenvalue, algebraic-multiplicity, eigenvector, eigenspace, invariant, diagonalizable, restriction, spectrum]
 - - LA3.12
   - LA3.11
   - term
-  - 91
-  - [normal, inner-product-space, orthonormal-basis, real, complex, self-adjoint, unitary, angle, non-negative, orthonormal, adjoint, hermitian, householder-reflection, inner-product]
+  - 92
+  - [inner-product-space, normal, orthonormal-basis, complex, self-adjoint, real, unitary, orthogonal, angle, non-negative, unit-vector, adjoint, hermitian, householder-reflection, inner-product, orthonormal]
 - - LA3.12
   - LA3.13
   - term
-  - 4
+  - 5
   - [pair, with-multiplicity]
 - - LA3.12
   - LA4.14
@@ -2834,18 +2764,18 @@ vocab:
 - - LA3.12
   - NLA.24
   - term
-  - 3
-  - [unit, orthogonal]
+  - 1
+  - [unit]
 - - LA3.13
   - AN1.1
   - term
-  - 4
+  - 3
   - [minimum, absolute-value]
 - - LA3.13
   - F2.1
   - term
-  - 20
-  - [invertible, onto, image, relation, complement]
+  - 21
+  - [invertible, image, onto, real-number, relation, complement]
 - - LA3.13
   - F2.2
   - term
@@ -2857,24 +2787,19 @@ vocab:
   - 2
   - [coefficient, polynomial]
 - - LA3.13
-  - GEO.22
-  - term
-  - 1
-  - [vector]
-- - LA3.13
   - LA1.0
   - term
-  - 21
-  - [diagonal, matrix, square, entries, singular, lower-triangular]
+  - 22
+  - [matrix, diagonal, entry, square, lower-triangular]
 - - LA3.13
   - LA1.1
   - term
-  - 29
-  - [over, list, basis, finite-dimensional, subspace, direct, linearly-independent, vectors]
+  - 28
+  - [over, list, finite-dimensional, basis, subspace, vector, linearly-independent, scalar]
 - - LA3.13
   - LA1.2
   - term
-  - 4
+  - 3
   - [rank]
 - - LA3.13
   - LA1.3
@@ -2884,13 +2809,13 @@ vocab:
 - - LA3.13
   - LA1.4
   - term
-  - 9
+  - 7
   - [equivalent, projection]
 - - LA3.13
   - LA2.10
   - term
-  - 11
-  - [column, generalized-eigenvector, top]
+  - 10
+  - [column, generalized-eigenvector]
 - - LA3.13
   - LA2.6
   - term
@@ -2899,8 +2824,8 @@ vocab:
 - - LA3.13
   - LA2.7
   - term
-  - 2
-  - [submatrix, volume]
+  - 3
+  - [minor, submatrix]
 - - LA3.13
   - LA2.8
   - term
@@ -2909,13 +2834,13 @@ vocab:
 - - LA3.13
   - LA2.9
   - term
-  - 10
+  - 9
   - [eigenvalue, eigenvector, diagonalizable]
 - - LA3.13
   - LA3.11
   - term
   - 48
-  - [hermitian, inner-product-space, real, unitary, self-adjoint, orthonormal, orthonormal-basis, inner-product, non-negative, gram-matrix, norm]
+  - [hermitian, inner-product-space, real, self-adjoint, unitary, orthonormal-basis, inner-product, non-negative, orthogonal, orthonormal, unitary-matrix, gram-matrix, orthogonal-projection-onto]
 - - LA3.13
   - LA4.14
   - term
@@ -2944,8 +2869,8 @@ vocab:
 - - LA4.14
   - AL4.8
   - term
-  - 5
-  - [conjugate, algebra-homomorphism, algebra-isomorphism, space]
+  - 3
+  - [algebra-homomorphism, algebra-isomorphism, conjugate]
 - - LA4.14
   - AN1.1
   - term
@@ -2959,8 +2884,8 @@ vocab:
 - - LA4.14
   - F2.1
   - term
-  - 31
-  - [invertible, function, bijection, bijective, inverse, onto, ordered-pair, contains, disjoint, first-coordinate, injective, relation, subset, union]
+  - 36
+  - [invertible, function, map, bijection, bijective, integer, inverse, onto, ordered-pair, contain, disjoint, first-coordinate, injective, subset, union]
 - - LA4.14
   - F2.2
   - term
@@ -2974,18 +2899,18 @@ vocab:
 - - LA4.14
   - GEO.22
   - term
-  - 7
-  - [vector, plane, point]
+  - 2
+  - [point]
 - - LA4.14
   - LA1.0
   - term
-  - 32
-  - [matrix, diagonal, entries, skew-symmetric, square, singular]
+  - 36
+  - [matrix, diagonal, entry, skew-symmetric, square, scalar-multiple, singular]
 - - LA4.14
   - LA1.1
   - term
-  - 77
-  - [vector-space, basis, finite-dimensional, over, subspace, vectors, dimension, bases, span, coordinates]
+  - 79
+  - [vector-space, basis, finite-dimensional, over, subspace, vector, dimension, span, with-respect, coordinate]
 - - LA4.14
   - LA1.2
   - term
@@ -2995,27 +2920,22 @@ vocab:
   - LA1.4
   - term
   - 7
-  - [ordered, change-of-coordinates-matrix, equivalent]
+  - [ordered, change-of-coordinate-matrix, equivalent]
 - - LA4.14
   - LA1.5
   - term
   - 1
   - [dual-basis]
 - - LA4.14
-  - LA2.10
-  - term
-  - 1
-  - [top]
-- - LA4.14
   - LA2.6
   - term
-  - 2
+  - 1
   - [multiple]
 - - LA4.14
   - LA2.7
   - term
-  - 17
-  - [alternating, bilinear, sign, linear]
+  - 18
+  - [alternating, linear, sign, bilinear]
 - - LA4.14
   - LA2.9
   - term
@@ -3025,7 +2945,7 @@ vocab:
   - LA3.11
   - term
   - 22
-  - [real, isometry, hermitian, complex, gram-matrix]
+  - [real, isometry, hermitian, orthogonal, complex, gram-matrix]
 - - LA4.14
   - LA3.13
   - term
@@ -3034,7 +2954,7 @@ vocab:
 - - LA4.14
   - LA4.15
   - term
-  - 28
+  - 26
   - [form, every-alternating, every-symmetric, order, pointwise]
 - - LA4.14
   - MA.16
@@ -3052,15 +2972,10 @@ vocab:
   - 2
   - [mean]
 - - LA4.15
-  - AL1.1
-  - term
-  - 1
-  - [homomorphism]
-- - LA4.15
   - AL4.8
   - term
-  - 9
-  - [map, space, algebra-homomorphism]
+  - 2
+  - [algebra-homomorphism]
 - - LA4.15
   - F1.5
   - term
@@ -3069,43 +2984,43 @@ vocab:
 - - LA4.15
   - F2.1
   - term
-  - 16
-  - [subset, function, injective, onto, bijection, intersection, invertible, real-numbers, surjective]
+  - 32
+  - [map, subset, tuple, function, injective, integer, onto, bijection, intersection, invertible, real-number, surjective]
 - - LA4.15
   - F2.2
   - term
-  - 14
+  - 11
   - [symmetric, quotient-map]
 - - LA4.15
   - F3.7
   - term
-  - 21
+  - 18
   - [field, multiplication, addition]
 - - LA4.15
   - F3.8
   - term
-  - 3
-  - [degree, only-finitely-many, polynomial]
+  - 2
+  - [degree, only-finitely-many]
 - - LA4.15
   - GEO.22
   - term
-  - 5
-  - [vector, sides]
+  - 2
+  - [side]
 - - LA4.15
   - LA1.0
   - term
-  - 6
-  - [powers, matrix, skew-symmetric]
+  - 3
+  - [matrix, skew-symmetric]
 - - LA4.15
   - LA1.1
   - term
-  - 142
-  - [over, vector-space, basis, finite-dimensional, bases, subspace, dimension, vectors, list, span, scalars, length, linearly-dependent]
+  - 137
+  - [over, vector-space, basis, finite-dimensional, subspace, vector, dimension, list, scalar, span, scalar-multiplication, coordinate, linearly-dependent, linearly-independent]
 - - LA4.15
   - LA1.2
   - term
-  - 43
-  - [linear-map, isomorphism, isomorphic, kernel, rank, linear-operator]
+  - 45
+  - [linear-map, isomorphism, isomorphic, kernel, rank, linear-operator, over-the-same-field]
 - - LA4.15
   - LA1.4
   - term
@@ -3114,23 +3029,23 @@ vocab:
 - - LA4.15
   - LA1.5
   - term
-  - 1
+  - 2
   - [dual-basis]
 - - LA4.15
   - LA2.10
   - term
-  - 3
-  - [column, top]
+  - 2
+  - [column]
 - - LA4.15
   - LA2.6
   - term
-  - 4
-  - [factor, ideal, simple]
+  - 3
+  - [factor, ideal]
 - - LA4.15
   - LA2.7
   - term
-  - 10
-  - [bilinear, alternating, increasing]
+  - 22
+  - [linear, bilinear, alternating, minor, increasing]
 - - LA4.15
   - LA2.9
   - term
@@ -3139,8 +3054,8 @@ vocab:
 - - LA4.15
   - LA3.11
   - term
-  - 7
-  - [complex, orthonormal, unit-vector, orthonormal-basis]
+  - 8
+  - [complex, inner-product-space, unit-vector, orthonormal, orthonormal-basis]
 - - LA4.15
   - LA3.13
   - term
@@ -3149,18 +3064,18 @@ vocab:
 - - LA4.15
   - LA4.14
   - term
-  - 18
-  - [universal-property, associative, bilinear-form, unital, algebra, quadratic-form, clifford-algebra]
+  - 25
+  - [algebra, universal-property, associative, bilinear-form, unital, quadratic-form, clifford-algebra, orthogonal-basis, space]
 - - LA4.15
   - MA.18
   - term
-  - 6
-  - [dual, finitely-many, separate, strict]
+  - 3
+  - [finitely-many, separate, strict]
 - - LA4.15
   - NLA.24
   - term
-  - 3
-  - [unit, mean]
+  - 2
+  - [mean, unit]
 - - MA.16
   - AN1.1
   - term
@@ -3179,8 +3094,8 @@ vocab:
 - - MA.16
   - F2.1
   - term
-  - 20
-  - [invertible, function, subset, real-numbers, relation]
+  - 22
+  - [invertible, function, map, subset, real-number, relation]
 - - MA.16
   - F2.2
   - term
@@ -3194,23 +3109,23 @@ vocab:
 - - MA.16
   - F3.8
   - term
-  - 6
+  - 5
   - [polynomial, coefficient, degree, monic]
 - - MA.16
   - GEO.22
   - term
-  - 5
-  - [vector, point, sides]
+  - 2
+  - [point, side]
 - - MA.16
   - LA1.0
   - term
-  - 11
-  - [matrix, entries, singular, square]
+  - 7
+  - [entry, matrix, square]
 - - MA.16
   - LA1.1
   - term
-  - 22
-  - [vector-space, over, finite-dimensional, with-respect, basis, coordinate-vector]
+  - 25
+  - [vector-space, over, finite-dimensional, vector, with-respect, basis, coordinate-vector]
 - - MA.16
   - LA1.2
   - term
@@ -3224,18 +3139,13 @@ vocab:
 - - MA.16
   - LA1.4
   - term
-  - 4
+  - 3
   - [equivalent, entrywise]
 - - MA.16
   - LA2.10
   - term
   - 2
   - [column]
-- - MA.16
-  - LA2.6
-  - term
-  - 1
-  - [splits]
 - - MA.16
   - LA2.7
   - term
@@ -3249,8 +3159,8 @@ vocab:
 - - MA.16
   - LA3.11
   - term
-  - 35
-  - [norm, complex, real, normalizing, unit-vector, unitary]
+  - 33
+  - [norm, real, complex, normalizing, positive-definiteness, unit-vector, unitary]
 - - MA.16
   - LA3.12
   - term
@@ -3264,12 +3174,12 @@ vocab:
 - - MA.16
   - MA.18
   - term
-  - 4
+  - 3
   - [open]
 - - MA.16
   - NLA.24
   - term
-  - 4
+  - 3
   - [unit]
 - - MA.17
   - AN1.1
@@ -3279,8 +3189,8 @@ vocab:
 - - MA.17
   - F2.1
   - term
-  - 18
-  - [function, invertible, index-set, real-numbers, complement, onto]
+  - 17
+  - [function, invertible, real-number, index-set, integer, onto]
 - - MA.17
   - F2.2
   - term
@@ -3299,18 +3209,18 @@ vocab:
 - - MA.17
   - GEO.22
   - term
-  - 7
-  - [vector, affine, line, plane, point]
+  - 3
+  - [affine, line, point]
 - - MA.17
   - LA1.0
   - term
-  - 18
-  - [matrix, diagonal, entries, singular]
+  - 20
+  - [matrix, diagonal, entry, singular]
 - - MA.17
   - LA1.1
   - term
-  - 42
-  - [subspace, over, list, dimension, vectors, chain, finite-dimensional, basis, span, vector-space, with-respect]
+  - 46
+  - [subspace, over, list, vector, dimension, chain, coordinate, finite-dimensional, basis, span, vector-space, with-respect]
 - - MA.17
   - LA1.2
   - term
@@ -3334,23 +3244,23 @@ vocab:
 - - MA.17
   - LA2.7
   - term
-  - 4
-  - [increasing, sign]
+  - 5
+  - [increasing, linear, sign]
 - - MA.17
   - LA2.9
   - term
-  - 20
-  - [eigenvalue, eigenvector, eigenspace, restriction, spectrum]
+  - 22
+  - [eigenvalue, eigenvector, spectrum, eigenspace, restriction]
 - - MA.17
   - LA3.11
   - term
-  - 66
-  - [hermitian, orthonormal-basis, real, orthonormal, inner-product-space, non-negative, self-adjoint, distance, normal]
+  - 69
+  - [hermitian, orthonormal-basis, real, orthonormal, orthogonal, inner-product-space, non-negative, self-adjoint, distance, unit-vector]
 - - MA.17
   - LA3.13
   - term
-  - 6
-  - [with-multiplicity, singular-values, pair]
+  - 8
+  - [singular-value, with-multiplicity, pair]
 - - MA.17
   - LA4.14
   - term
@@ -3370,16 +3280,16 @@ vocab:
   - NLA.24
   - term
   - 3
-  - [unit, nearest]
+  - [nearest, not-an-eigenvalue, unit]
 - - MA.18
   - AL4.8
   - term
-  - 4
-  - [conjugate, space]
+  - 2
+  - [conjugate]
 - - MA.18
   - AN1.1
   - term
-  - 15
+  - 14
   - [maximum, bounded, minimum, bounded-above, bounded-below]
 - - MA.18
   - AN1.5
@@ -3395,7 +3305,7 @@ vocab:
   - F2.1
   - term
   - 39
-  - [subset, function, intersection, disjoint, contained, contains, empty-set, image, index-set, invertible, preimage, relation, union]
+  - [subset, function, intersection, contain, disjoint, contained, image, index-set, invertible, preimage, relation, union]
 - - MA.18
   - F2.2
   - term
@@ -3414,18 +3324,18 @@ vocab:
 - - MA.18
   - GEO.22
   - term
-  - 27
-  - [point, vector, affine]
+  - 17
+  - [point, affine]
 - - MA.18
   - LA1.0
   - term
-  - 9
-  - [matrix, entries]
+  - 10
+  - [matrix, entry]
 - - MA.18
   - LA1.1
   - term
-  - 54
-  - [vector-space, finite-dimensional, list, linearly-independent, over, subspace, dimension, empty-sum, vectors]
+  - 61
+  - [vector-space, finite-dimensional, vector, list, linearly-independent, over, subspace, dimension, empty-sum]
 - - MA.18
   - LA1.2
   - term
@@ -3434,7 +3344,7 @@ vocab:
 - - MA.18
   - LA1.3
   - term
-  - 6
+  - 5
   - [solution, permutation-matrix, right-hand-side]
 - - MA.18
   - LA1.4
@@ -3444,13 +3354,18 @@ vocab:
 - - MA.18
   - LA1.5
   - term
-  - 5
-  - [linear-functional, hyperplane]
+  - 6
+  - [linear-functional, hyperplane, any-subset]
 - - MA.18
   - LA2.10
   - term
-  - 7
+  - 6
   - [column, below]
+- - MA.18
+  - LA2.6
+  - term
+  - 2
+  - [split]
 - - MA.18
   - LA2.7
   - term
@@ -3459,8 +3374,8 @@ vocab:
 - - MA.18
   - LA3.11
   - term
-  - 55
-  - [real, norm, inner-product-space, non-negative, hermitian, inner-product]
+  - 56
+  - [real, norm, inner-product-space, non-negative, hermitian, inner-product, orthogonal]
 - - MA.18
   - LA4.15
   - term
@@ -3471,16 +3386,6 @@ vocab:
   - term
   - 4
   - [closed-unit-ball, differentiable]
-- - MA.18
-  - MA.19
-  - term
-  - 1
-  - [vertices]
-- - MA.18
-  - MA.20
-  - term
-  - 1
-  - [separation]
 - - MA.18
   - NLA.24
   - term
@@ -3494,13 +3399,13 @@ vocab:
 - - MA.19
   - F2.1
   - term
-  - 9
-  - [invertible, function, graph, inverse, ordered-pair]
+  - 12
+  - [invertible, integer, function, graph, inverse, ordered-pair]
 - - MA.19
   - F2.2
   - term
-  - 2
-  - [blocks, symmetric]
+  - 3
+  - [block, symmetric]
 - - MA.19
   - F3.6
   - term
@@ -3512,25 +3417,15 @@ vocab:
   - 1
   - [multiplication]
 - - MA.19
-  - F3.8
-  - term
-  - 1
-  - [degree]
-- - MA.19
-  - GEO.22
-  - term
-  - 6
-  - [vector]
-- - MA.19
   - LA1.0
   - term
-  - 31
-  - [matrix, zero-matrix, diagonal, entries, square, upper-triangular]
+  - 40
+  - [matrix, entry, zero-matrix, diagonal, square, power, upper-triangular]
 - - MA.19
   - LA1.1
   - term
-  - 10
-  - [length, vectors, chain, dimension, list, over, span, subspace]
+  - 12
+  - [vector, length, chain, dimension, list, over, span, subspace]
 - - MA.19
   - LA1.2
   - term
@@ -3539,7 +3434,7 @@ vocab:
 - - MA.19
   - LA1.3
   - term
-  - 5
+  - 6
   - [permutation-matrix, solution, scale]
 - - MA.19
   - LA1.4
@@ -3550,32 +3445,27 @@ vocab:
   - LA2.10
   - term
   - 9
-  - [column, converges]
+  - [column, converge]
 - - MA.19
   - LA2.6
   - term
   - 32
-  - [irreducible, multiple, simple, factor, reducible, greatest-common-divisor, splits]
+  - [irreducible, multiple, simple, factor, reducible, greatest-common-divisor, split]
 - - MA.19
   - LA2.7
   - term
-  - 2
-  - [characteristic-polynomial, minor]
-- - MA.19
-  - LA2.8
-  - term
-  - 2
-  - [block]
+  - 3
+  - [minor, characteristic-polynomial]
 - - MA.19
   - LA2.9
   - term
-  - 36
-  - [eigenvalue, probability-vector, stochastic, eigenvector, left-eigenvector, steady-state, algebraic-multiplicity, invariant, markov-chain]
+  - 37
+  - [eigenvalue, probability-vector, stochastic, algebraic-multiplicity, eigenvector, left-eigenvector, steady-state, markov-chain]
 - - MA.19
   - LA3.11
   - term
-  - 21
-  - [non-negative, real, complex, hermitian, normal, self-adjoint, unitary]
+  - 19
+  - [non-negative, real, complex, hermitian, normal, unitary]
 - - MA.19
   - LA3.13
   - term
@@ -3584,8 +3474,8 @@ vocab:
 - - MA.19
   - LA4.14
   - term
-  - 2
-  - [algebra, non-singular]
+  - 1
+  - [space]
 - - MA.19
   - LA4.15
   - term
@@ -3599,13 +3489,8 @@ vocab:
 - - MA.19
   - MA.18
   - term
-  - 6
-  - [convex-combination, doubly-stochastic, extreme-point, vertex]
-- - MA.19
-  - MA.21
-  - term
-  - 1
-  - [converge]
+  - 8
+  - [vertex, convex-combination, doubly-stochastic, extreme-point]
 - - MA.19
   - NLA.24
   - term
@@ -3617,15 +3502,15 @@ vocab:
   - 2
   - [infimum, minimum]
 - - MA.20
-  - AN1.7
-  - term
-  - 1
-  - [derivative]
-- - MA.20
   - F2.1
   - term
-  - 21
-  - [invertible, contains, real-numbers, subset, disjoint, function, intersection, union]
+  - 23
+  - [invertible, real-number, contain, subset, disjoint, function, intersection, union]
+- - MA.20
+  - F2.2
+  - term
+  - 1
+  - [block]
 - - MA.20
   - F3.6
   - term
@@ -3639,18 +3524,18 @@ vocab:
 - - MA.20
   - GEO.22
   - term
-  - 3
-  - [point, line]
+  - 2
+  - [line, point]
 - - MA.20
   - LA1.0
   - term
-  - 13
-  - [matrix, diagonal, entries, singular, square]
+  - 14
+  - [matrix, diagonal, entry, square]
 - - MA.20
   - LA1.1
   - term
-  - 6
-  - [over, basis, coordinates, dimension, subspace]
+  - 5
+  - [over, coordinate, dimension, subspace]
 - - MA.20
   - LA1.3
   - term
@@ -3667,25 +3552,20 @@ vocab:
   - 11
   - [simple, irreducible, multiple, factor]
 - - MA.20
-  - LA2.8
-  - term
-  - 1
-  - [block]
-- - MA.20
   - LA2.9
   - term
   - 46
-  - [eigenvalue, eigenvector, algebraic-multiplicity, left-eigenvector, diagonalizable, right-eigenvectors]
+  - [eigenvalue, algebraic-multiplicity, left-eigenvector, right-eigenvector, diagonalizable, eigenvector]
 - - MA.20
   - LA3.11
   - term
-  - 37
-  - [hermitian, normal, real, unitary, orthonormal-basis, angle, orthonormal, distance, norm]
+  - 32
+  - [hermitian, normal, unitary, orthonormal-basis, real, distance, orthogonal, orthonormal]
 - - MA.20
   - LA3.13
   - term
-  - 3
-  - [with-multiplicity, singular-values]
+  - 6
+  - [singular-value, with-multiplicity]
 - - MA.20
   - LA4.14
   - term
@@ -3709,8 +3589,8 @@ vocab:
 - - MA.20
   - NLA.24
   - term
-  - 1
-  - [unit]
+  - 2
+  - [not-an-eigenvalue, unit]
 - - MA.21
   - AN1.1
   - term
@@ -3722,35 +3602,30 @@ vocab:
   - 5
   - [continuous]
 - - MA.21
-  - AN1.7
-  - term
-  - 1
-  - [derivative]
-- - MA.21
   - F2.1
   - term
-  - 21
-  - [function, bijection, inverse, invertible, real-numbers]
+  - 17
+  - [function, real-number, bijection, integer, inverse, invertible]
 - - MA.21
   - F2.2
   - term
-  - 10
+  - 4
   - [symmetric, partition]
 - - MA.21
   - GEO.22
   - term
-  - 8
-  - [point, vector, affine, sides]
+  - 6
+  - [point, affine, side]
 - - MA.21
   - LA1.0
   - term
-  - 21
-  - [matrix, entries, diagonal, same-size, square, singular]
+  - 19
+  - [matrix, entry, same-size, square, diagonal]
 - - MA.21
   - LA1.1
   - term
-  - 2
-  - [list, over]
+  - 4
+  - [list, over, vector, vector-space]
 - - MA.21
   - LA1.3
   - term
@@ -3764,8 +3639,8 @@ vocab:
 - - MA.21
   - LA2.10
   - term
-  - 2
-  - [column, converges]
+  - 3
+  - [converge, column]
 - - MA.21
   - LA2.7
   - term
@@ -3779,13 +3654,13 @@ vocab:
 - - MA.21
   - LA2.9
   - term
-  - 6
-  - [eigenvalue, eigenvector, invariant, spectrum]
+  - 9
+  - [spectrum, eigenvalue, eigenvector]
 - - MA.21
   - LA3.11
   - term
-  - 44
-  - [hermitian, norm, unitary, real, non-negative, isometry, normal, normalized, orthonormal-basis]
+  - 40
+  - [hermitian, norm, unitary, non-negative, isometry, orthogonal, real, normalized, orthonormal-basis]
 - - MA.21
   - LA3.12
   - term
@@ -3795,7 +3670,7 @@ vocab:
   - LA3.13
   - term
   - 4
-  - [positive-semidefinite, pair, singular-values]
+  - [positive-semidefinite, pair, singular-value]
 - - MA.21
   - LA4.14
   - term
@@ -3804,8 +3679,8 @@ vocab:
 - - MA.21
   - LA4.15
   - term
-  - 5
-  - [contraction, form, order]
+  - 4
+  - [contraction, form]
 - - MA.21
   - MA.16
   - term
@@ -3814,18 +3689,13 @@ vocab:
 - - MA.21
   - MA.17
   - term
-  - 7
+  - 9
   - [operator-convex, operator-monotone, operator-concave]
 - - MA.21
   - MA.18
   - term
-  - 31
-  - [convex, gauge, open, dual, concave, polar, strict, strictly-convex]
-- - MA.21
-  - NLA.24
-  - term
-  - 2
-  - [arithmetic, mean]
+  - 19
+  - [convex, gauge, open, dual, polar, strict, strictly-convex]
 - - MA.21b
   - AL4.8
   - term
@@ -3834,8 +3704,8 @@ vocab:
 - - MA.21b
   - F2.1
   - term
-  - 2
-  - [function]
+  - 3
+  - [function, map]
 - - MA.21b
   - F3.6
   - term
@@ -3844,13 +3714,8 @@ vocab:
 - - MA.21b
   - GEO.22
   - term
-  - 4
-  - [plane, point]
-- - MA.21b
-  - LA1.0
-  - term
-  - 1
-  - [matrix]
+  - 2
+  - [point]
 - - MA.21b
   - LA1.4
   - term
@@ -3866,6 +3731,11 @@ vocab:
   - term
   - 2
   - [non-negative]
+- - MA.21b
+  - LA3.13
+  - term
+  - 1
+  - [positive-semidefinite]
 - - MA.21b
   - MA.16
   - term
@@ -3889,7 +3759,7 @@ vocab:
 - - NLA.24
   - AL4.8
   - term
-  - 3
+  - 1
   - [conjugate]
 - - NLA.24
   - AN1.1
@@ -3899,18 +3769,18 @@ vocab:
 - - NLA.24
   - F1.5
   - term
-  - 3
-  - [even, odd]
+  - 1
+  - [even]
 - - NLA.24
   - F2.1
   - term
-  - 24
-  - [graph, invertible, function, contains, range, real-numbers, relation]
+  - 26
+  - [graph, invertible, function, contain, real-number, integer, map, relation]
 - - NLA.24
   - F2.2
   - term
-  - 18
-  - [symmetric, partition, blocks]
+  - 19
+  - [symmetric, block, partition]
 - - NLA.24
   - F3.6
   - term
@@ -3919,28 +3789,28 @@ vocab:
 - - NLA.24
   - F3.7
   - term
-  - 6
-  - [multiplication, field, characteristic]
+  - 3
+  - [field, multiplication]
 - - NLA.24
   - F3.8
   - term
-  - 10
-  - [degree, polynomial, coefficient]
+  - 9
+  - [degree, coefficient, polynomial]
 - - NLA.24
   - GEO.22
   - term
-  - 22
-  - [point, vector, affine, motion, line]
+  - 6
+  - [motion, point, affine, side]
 - - NLA.24
   - LA1.0
   - term
-  - 45
-  - [entries, matrix, upper-triangular, diagonal, square, singular, powers, skew-symmetric, trace]
+  - 47
+  - [entry, matrix, upper-triangular, diagonal, singular, square, lower-triangular, power, skew-symmetric, trace]
 - - NLA.24
   - LA1.1
   - term
-  - 34
-  - [subspace, dimension, list, over, vectors, basis, length, coordinates]
+  - 41
+  - [vector, dimension, list, over, subspace, basis, length, coordinate, linearly-independent, scalar]
 - - NLA.24
   - LA1.2
   - term
@@ -3949,18 +3819,23 @@ vocab:
 - - NLA.24
   - LA1.3
   - term
-  - 14
-  - [solution, swap, pivots, incidence-matrix, replace, unit-lower-triangular]
+  - 15
+  - [solution, swap, pivot, incidence-matrix, permutation-matrix, replace, unit-lower-triangular]
 - - NLA.24
   - LA1.4
   - term
   - 6
   - [entrywise, ordered, similar]
 - - NLA.24
+  - LA1.5
+  - term
+  - 1
+  - [annihilator]
+- - NLA.24
   - LA2.10
   - term
-  - 9
-  - [column, cyclic, generalized-eigenvector]
+  - 10
+  - [column, converge, cyclic, generalized-eigenvector]
 - - NLA.24
   - LA2.6
   - term
@@ -3969,38 +3844,38 @@ vocab:
 - - NLA.24
   - LA2.7
   - term
-  - 6
-  - [determinant, submatrix, characteristic-polynomial, increasing]
+  - 7
+  - [characteristic-polynomial, determinant, submatrix, increasing]
 - - NLA.24
   - LA2.8
   - term
-  - 3
-  - [block, schur-complement]
+  - 1
+  - [schur-complement]
 - - NLA.24
   - LA2.9
   - term
   - 28
-  - [eigenvalue, eigenvector, diagonalizable, algebraic-multiplicity]
+  - [eigenvalue, eigenvector, diagonalizable, invariant, algebraic-multiplicity]
 - - NLA.24
   - LA3.11
   - term
-  - 40
-  - [unit-vector, hermitian, real, orthonormal, orthonormal-basis, unitary, angle, complex, inner-product, normal, orthogonal-projection-onto, norm, normalized]
+  - 42
+  - [unit-vector, hermitian, orthogonal, real, inner-product, orthonormal, orthonormal-basis, unitary, normal, orthogonal-projection-onto, complex, normalized]
 - - NLA.24
   - LA3.12
   - term
-  - 2
-  - [circulant, stable]
+  - 1
+  - [circulant]
 - - NLA.24
   - LA3.13
   - term
-  - 7
-  - [pair, singular-values, with-multiplicity]
+  - 9
+  - [pair, with-multiplicity, singular-value]
 - - NLA.24
   - LA4.14
   - term
-  - 10
-  - [positive-definite, reflection, time]
+  - 11
+  - [positive-definite, reflection, space, time]
 - - NLA.24
   - LA4.15
   - term
@@ -4009,20 +3884,15 @@ vocab:
 - - NLA.24
   - MA.16
   - term
-  - 5
+  - 4
   - [differentiable]
 - - NLA.24
   - MA.18
   - term
-  - 5
-  - [open, vertex, affine-subspace]
+  - 12
+  - [vertex, open, affine-subspace]
 - - NLA.24
   - MA.19
   - term
-  - 18
-  - [edge, vertices]
-- - NLA.24
-  - MA.21
-  - term
-  - 1
-  - [converge]
+  - 9
+  - [edge]

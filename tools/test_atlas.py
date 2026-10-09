@@ -96,6 +96,26 @@ class ImportLATest(unittest.TestCase):
         self.assertNotIn(("LA1.3", "LA1.1", "stmt"), got)  # cited from the proof only
 
 
+class LexiconTest(unittest.TestCase):
+    def test_lemmas(self):
+        from lexicon import lemma, keys
+        for word, want in [("fields", "field"), ("matrices", "matrix"), ("bases", "basis"), ("entries", "entry"),
+                           ("classes", "class"), ("boxes", "box"), ("series", "series"), ("basis", "basis"),
+                           ("analysis", "analysis"), ("zeroes", "zero")]:
+            self.assertEqual(lemma(word), want)
+        self.assertEqual(keys("Cauchy sequences".split()), ("cauchy sequence", "Cauchy sequence"))
+        self.assertEqual(keys("Givens rotations".split())[1], "Givens rotation")  # a name is never singularised
+
+    def test_matcher(self):
+        from lexicon import Matcher
+        m = Matcher([("field", "F"), ("vector space", "VS"), ("Cauchy sequence", "CS"), ("Jordan block", "JB"),
+                     ("space", "S")])
+        self.assertEqual(m.find("Fields and <strong>vector spaces</strong> over \\(F\\)."), ["F", "VS"])
+        self.assertEqual(m.find("Every Cauchy sequence's limit; cauchy sequences"), ["CS"])  # lowercase name: no
+        self.assertEqual(m.find("a jordan block, then a Jordan block"), ["JB"])
+        self.assertEqual(m.find("see @def-vector-space for spaces"), ["S"])  # label references are not text
+
+
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):
         import atlas

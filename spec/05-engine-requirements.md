@@ -33,7 +33,7 @@
 7. **陳述雜湊**：每條 uses 邊存被引用陳述正規化後的雜湊，用來驅動 04 圖 3 的重審流程。
 8. **符號 hover**：語意巨集渲染時帶上 `data-sym` 屬性，前端顯示符號的定義位置。
 9. **先備頁由 registry 產生**：每冊列出「需要／借用／不需要」三欄，不手寫。
-10. **定義必須引用它用到的定義**：定義與定理陳述裡出現的既有術語，要以 crossref 或語意巨集連到其定義，並由 lint 檢查（未連結的已登記術語報錯）。atlas 的陳述讀者必讀集（spec/03 §6.2）目前只看得到明寫的引用，是下界；有了這條才會是精確值。原型是 `tools/import_la.py` 的 `term_edges`：拿 `registry/terms.yaml` 比對定義與陳述的文字，找出出現了術語卻沒有引用的地方。
+10. **定義必須引用它用到的定義**：定義與定理陳述裡出現的既有術語，要以 crossref 或語意巨集連到其定義，並由 lint 檢查（未連結的已登記術語報錯）。atlas 的陳述讀者必讀集（spec/03 §6.2）目前只看得到明寫的引用，是下界；有了這條才會是精確值。原型是 `tools/import_la.py` 的 `term_edges`：拿 `registry/terms.yaml` 比對定義與陳述的文字，找出出現了術語卻沒有引用的地方。比對規則在 `tools/lexicon.py`：去掉數學式與 label 參照後切詞，最長比對，詞形還原（fields → field、matrices → matrix、Cauchy sequences → Cauchy sequence），不分大小寫；但含專有名詞的術語（Cauchy、Jordan、Hermitian，依兩本書中句中大寫的頻率判定）只比對原本的大小寫，人名也不還原（Givens 不會變成 Given）。
 11. **跨書 label 唯一**：build 讀其他書匯出的 label 表，同一個 label 在兩本書裡指不同結果時報錯（線代書與 analysis-book 目前已有 22 個重複，見 `generated/diff.md`，其中 `def-image` 是真正的撞名：線性映射的像 vs 集合的像）。
 12. **搬家錨點**：label 搬到另一章或另一本書時，舊位置自動產生「已移至⋯⋯」的錨點與重導，讓已發布的連結不失效（spec/01 的「發布」）。
 13. **原創性檢查併入共用引擎**：書稿用英文，主要參考書（Rudin、Folland、Axler 等）也是英文，生成內容與原書句子重疊的風險很高，04 圖 1 的版權重疊檢測不可省略。analysis-book 的 `blueprint/originality.py` 已在做：以章在 book.yaml 列出的來源節點為對照，找出共享的 8-gram，並排除由常用詞與數學套語（`COMMON`、`STOCK`）組成的片段。把它搬進共用引擎，讓每本書都用：來源清單改由 registry 提供，閾值（n、套語表、容許的片段數）用英文語料校準：拿已知原創與已知抄寫的段落量出誤報率與漏報率再定，不憑感覺設定。
