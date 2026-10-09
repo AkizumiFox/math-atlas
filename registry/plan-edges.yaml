@@ -150,7 +150,8 @@ CA.4: {s: [CA.3, AN2.3]}
 CA.5: {s: [CA.4, AN2.5]}
 CA.6: {s: [CA.2], revisits: [HA.2], see: [MT.6, CA.9]}   # Poisson 核由 Cauchy 積分公式導出（Ahlfors）；好核觀點以 revisits 指回 HA.2
 CA.7: {s: [CA.3, CA.4]}
-CA.8: {s: [CA.4, CA.7], b: [HA.4, AN1.10], scope: {AN1.10: [AN1.8, AN1.10]}, why: {HA.4: theta 函數與 Poisson 求和, AN1.10: Γ 積分與 Stirling 型估計}}
+CA.8a: {s: [CA.4, CA.7], b: [AN1.10], scope: {AN1.10: [AN1.8, AN1.10]}, why: {AN1.10: Γ 積分與 Stirling 型估計}}
+CA.8b: {s: [CA.8a, HA.4]}   # theta 函數路線的 Picard；日後接模形式、代數數論
 CA.9: {s: [CA.5, CA.6, FA.2, FA.5]}   # 圓盤上 u_r dθ 取弱* 極限得測度，再以 Cayley 變換推到半平面（Rudin RCA 的順序）
 
 # ───────────── FA 泛函分析 ─────────────
@@ -161,7 +162,7 @@ FA.3: {s: [FA.1a], b: [F2.4], revisits: [MA.18], scope: {F2.4: [F2.2]}, why: {F2
 FA.4: {s: [FA.1a, AN2.6], see: [HA.1]}
 FA.5: {s: [FA.3, FA.4, AN2.7]}
 FA.6: {s: [FA.1a], revisits: [MT.7], see: [LA3.11, HA.3]}   # 主例 ℓ²；L² 以 revisits 指回 MT
-FA.7: {s: [FA.6, AN2.5], b: [CA.2], revisits: [LA3.12], why: {CA.2: Liouville 定理與向量值 Cauchy 估計}}
+FA.7: {s: [FA.6, AN2.5], revisits: [LA3.12]}   # 緊自伴算子的譜定理由 ‖T‖=sup|⟨Tx,x⟩| 取得特徵值；一般譜非空移到 FA.8
 FA.8: {s: [FA.7, CA.2]}   # 選讀章本身就是 FA × CA 的交會章：Gelfand–Mazur 用 Banach 值的 Liouville（2026-10-09）
 
 # ───────────── AL4 模、表示與同調 ─────────────
@@ -188,7 +189,7 @@ AL5.7: {s: [AL5.3, AL5.4]}
 # ───────────── PDE 分佈與 Sobolev ─────────────
 PDE.1: {s: [MT.7, MT.6], see: [CA.6]}   # ℝᵈ 的均值性質由散度定理（MT.6）導出；CA.6 只有平面版本（2026-10-09）
 PDE.2: {s: [PDE.1, HA.6, MT.4], see: [PR.1]}
-PDE.3: {s: [MT.8, FA.1b], b: [CA.4], why: {CA.4: 帶狀區域上的最大模原理與 Phragmén–Lindelöf}}
+PDE.3: {s: [MT.8, FA.1b, CA.4]}   # 三線引理的陳述需要「解析」，不能借用（2026-10-09）
 PDE.4: {s: [PDE.1, MT.10]}
 PDE.5: {s: [PDE.4, AN2.5, MT.6]}
 PDE.6: {s: [PDE.5, FA.7], see: [CA.6]}
@@ -199,4 +200,5 @@ ST.2: {s: [ST.1]}
 ST.3: {s: [ST.2, F2.3]}
 ST.4: {s: [ST.2], revisits: [F2.4], see: [AN2.7, FA.3, AL2.8]}
 ST.5: {s: [ST.4]}
-ST.6: {s: [ST.4, MT.1], b: [AL1.11], why: {AL1.11: 秩 2 自由群的悖論分解}}
+ST.6a: {s: [MT.1, F2.3]}   # 只需要 Lebesgue 測度與選擇公理
+ST.6b: {s: [ST.6a, AL1.11, AL1.6, LA1.0]}   # SO(3) 中自由子群的計算只用 LA1.0 的矩陣運算

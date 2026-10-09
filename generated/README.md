@@ -518,7 +518,8 @@ flowchart LR
   CA_5["5 共形映射、正規族與 Riemann 映射定理"]
   CA_6["6 調和函數與次調和函數"]
   CA_7["7 無窮乘積與整函數"]
-  CA_8["8 解析延拓、單值性與 Picard 定理"]
+  CA_8a["8a 解析延拓與單值性"]
+  CA_8b["8b Picard 定理（交會章：CA × HA）"]:::opt
   CA_9["9 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）"]:::opt
   AN1_10 --> CA_1
   AN3_1 -.-> CA_1
@@ -530,8 +531,9 @@ flowchart LR
   CA_4 --> CA_5
   CA_2 --> CA_6
   CA_4 --> CA_7
-  HA_4 -.-> CA_8
-  CA_7 --> CA_8
+  CA_7 --> CA_8a
+  HA_4 --> CA_8b
+  CA_8a --> CA_8b
   CA_5 --> CA_9
   CA_6 --> CA_9
   FA_2 --> CA_9
@@ -578,8 +580,8 @@ flowchart LR
   FA_4 --> FA_5
   FA_1a --> FA_6
   AN2_5 --> FA_7
-  CA_2 -.-> FA_7
   FA_6 --> FA_7
+  CA_2 --> FA_8
   FA_7 --> FA_8
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -742,7 +744,7 @@ flowchart LR
   HA_6 --> PDE_2
   PDE_1 --> PDE_2
   MT_8 --> PDE_3
-  CA_4 -.-> PDE_3
+  CA_4 --> PDE_3
   FA_1b --> PDE_3
   MT_10 --> PDE_4
   PDE_1 --> PDE_4
@@ -786,6 +788,7 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn 引理（使用者層級）"]:::ext
+  AL1_6["AL1.6 群作用、軌道—穩定子與類方程"]:::ext
   AL1_11["AL1.11 自由群與表現"]:::ext
   MT_1["MT.1 ℝᵈ 上的 Lebesgue 測度與可測函數"]:::ext
   ST_1["1 完整的 ZF 公理系統（重訪 F3.1）"]
@@ -793,15 +796,17 @@ flowchart LR
   ST_3["3 基數算術"]
   ST_4["4 選擇公理的等價形式"]
   ST_5["5 可構造宇宙與獨立性概觀"]
-  ST_6["6 不可測集與 Banach–Tarski"]
+  ST_6a["6a Vitali 不可測集"]
+  ST_6b["6b Banach–Tarski 悖論（交會章：ST × AL）"]:::opt
   F2_4 --> ST_1
   ST_1 --> ST_2
   ST_2 --> ST_3
   ST_2 --> ST_4
   ST_4 --> ST_5
-  AL1_11 -.-> ST_6
-  MT_1 --> ST_6
-  ST_4 --> ST_6
+  MT_1 --> ST_6a
+  AL1_6 --> ST_6b
+  AL1_11 --> ST_6b
+  ST_6a --> ST_6b
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

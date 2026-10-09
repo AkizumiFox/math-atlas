@@ -153,7 +153,8 @@ CA:
   - {id: CA.5, title: 共形映射、正規族與 Riemann 映射定理, src: ab:59}
   - {id: CA.6, title: 調和函數與次調和函數, src: ab:60}
   - {id: CA.7, title: 無窮乘積與整函數, src: ab:61}
-  - {id: CA.8, title: 解析延拓、單值性與 Picard 定理, src: ab:62}
+  - {id: CA.8a, title: 解析延拓與單值性, src: ab:62}
+  - {id: CA.8b, title: Picard 定理（交會章：CA × HA）, src: ab:62, opt: true}
   - {id: CA.9, title: 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）, src: new, opt: true}
 
 FA:
@@ -224,4 +225,5 @@ ST:
   - {id: ST.3, title: 基數算術, src: new}
   - {id: ST.4, title: 選擇公理的等價形式, src: new}
   - {id: ST.5, title: 可構造宇宙與獨立性概觀, src: new}
-  - {id: ST.6, title: 不可測集與 Banach–Tarski, src: new}
+  - {id: ST.6a, title: Vitali 不可測集, src: new}
+  - {id: ST.6b, title: Banach–Tarski 悖論（交會章：ST × AL）, src: new, opt: true}

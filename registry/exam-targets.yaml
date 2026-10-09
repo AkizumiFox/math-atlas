@@ -4,7 +4,7 @@
 - id: complex
   name: 複分析（Ahlfors 程度）
   reported: 49
-  note: Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8）不列入。
+  note: Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8b）不列入。
   chapters: [CA.1, CA.2, CA.3, CA.4, CA.5, CA.6, CA.7]
   items:
     - {topic: Cauchy 積分公式、Liouville、最大模, ch: [CA.2]}

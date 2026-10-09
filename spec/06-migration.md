@@ -108,14 +108,16 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 另外 PR.4 的 Fourier 變換（第 1 類）也登記為就地定義。
 
-**3. 陳述跨分支，候選交會章（4 條，待作者決定）**
+**3. 陳述跨分支（4 條，已定，2026-10-09）**
 
-| 邊 | 跨的分支 | 備註 |
+| 邊 | 決定 | 結果 |
 |---|---|---|
-| FA.7 ← CA.2 | FA × CA | Banach 值全純函數的 Liouville。若只用於譜非空，可把那段移到 FA.8（已是交會章） |
-| PDE.3 ← CA.4 | PDE × CA | Riesz–Thorin 用 Hadamard 三線引理。PDE 是支線冊，改 s 的代價是 CA.1–CA.4 |
-| CA.8 ← HA.4 | CA × HA | theta 函數的函數方程用 Poisson 求和；CA.8 不在 Ahlfors 目標內 |
-| ST.6 ← AL1.11 | ST × AL | Banach–Tarski 用秩 2 自由群；ST 讀者的 s 祖先裡沒有群 |
+| FA.7 ← CA.2 | 刪除；「譜非空」移到 FA.8 | 緊自伴算子的譜定理由 ‖T‖ = sup｜⟨Tx, x⟩｜ 取得特徵值，Fredholm 選擇也不需要譜非空；FA.8 本來就 s 依賴 CA.2 |
+| PDE.3 ← CA.4 | 改成 s | 三線引理的陳述需要「解析」。PDE 的冊外必讀從 61 章增為 65 章 |
+| CA.8 ← HA.4 | 拆章 | CA.8a「解析延拓與單值性」主線；CA.8b「Picard 定理」選讀交會章，s 依賴 CA.8a、HA.4 |
+| ST.6 ← AL1.11 | 拆章 | ST.6a「Vitali 不可測集」主線，s 依賴 MT.1、F2.3；ST.6b「Banach–Tarski」選讀交會章，s 依賴 ST.6a、AL1.11、AL1.6、LA1.0 |
+
+所有 b 邊現在都已宣告 `scope`。
 
 ## 記號約定的書稿待辦
 
@@ -139,6 +141,8 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 - [ ] **CA.9 正調和函數與 Herglotz–Nevanlinna 表示**（新的選讀章，2026-10-09）：圓盤上的正調和函數取 \( u_r\,\dd\theta \)，以 Banach–Alaoglu 取弱\* 極限得到測度（Riesz–Markov），再經 Cayley 變換推到半平面。CA.6 留一條 see 指向它。
 
 - [ ] **就地定義寫進書稿**（2026-10-09）：`statements.yaml` 中標「就地定義」的節點，每一個都要在對應的節寫出限定特例的定義，並註明完整定義的位置。線代書：§6.05 的連續、§10.9 的三個、第 16 章的 Cauchy 列與閉集（同時刪掉「本書至此不需要連續」）。analysis-book：第 30 章（AN3.1）的行列式與正定，二階判別法改用單位球面的緊緻性；第 33 章（AN3.4）的行列式與初等矩陣；第 55 章（CA.1）的實可微與 Jacobian。
+
+- [ ] **第 3 類的書稿改動**（2026-10-09）：analysis-book 第 71 章（FA.7）刪掉對 Liouville 的使用，一般 Banach 空間上的譜非空移到第 72 章（FA.8，Gelfand–Mazur）；第 62 章拆成兩章，Picard 與 theta 函數那段成為選讀的 CA.8b。
 
 ## 授權的待辦
 

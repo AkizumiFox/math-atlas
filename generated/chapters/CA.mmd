@@ -13,7 +13,8 @@ flowchart LR
   CA_5["5 共形映射、正規族與 Riemann 映射定理"]
   CA_6["6 調和函數與次調和函數"]
   CA_7["7 無窮乘積與整函數"]
-  CA_8["8 解析延拓、單值性與 Picard 定理"]
+  CA_8a["8a 解析延拓與單值性"]
+  CA_8b["8b Picard 定理（交會章：CA × HA）"]:::opt
   CA_9["9 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）"]:::opt
   AN1_10 --> CA_1
   AN3_1 -.-> CA_1
@@ -25,8 +26,9 @@ flowchart LR
   CA_4 --> CA_5
   CA_2 --> CA_6
   CA_4 --> CA_7
-  HA_4 -.-> CA_8
-  CA_7 --> CA_8
+  CA_7 --> CA_8a
+  HA_4 --> CA_8b
+  CA_8a --> CA_8b
   CA_5 --> CA_9
   CA_6 --> CA_9
   FA_2 --> CA_9

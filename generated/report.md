@@ -1,7 +1,7 @@
 # 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）
 
-- 冊：25；章：170（選讀 10）
-- 章層級邊：s 559、b 24、軟邊 90；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
+- 冊：25；章：172（選讀 12）
+- 章層級邊：s 566、b 20、軟邊 90；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
 
 除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。
 
@@ -11,7 +11,7 @@
 
 F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 → AN1.5 → AN1.6 → AN1.7 → AN1.8 → AN1.9 → AN2.2 → AN2.3 → AN3.4 → MT.1 → MT.2 → MT.3 → MT.4 → MT.5 → MT.6 → PDE.1 → PDE.4 → PDE.5 → PDE.6
 
-各冊最高的章（高度＝從零讀到該章至少要依序讀的章數）：PDE 27（PDE.6）、MA 26（MA.21）、PR 26（PR.3）、AL4 25（AL4.10）、AN3 24（AN3.7）、GEO 24（GEO.22）、FA 24（FA.1b）、MT 24（MT.10）、NLA 23（NLA.24）、AL3 22（AL3.8）、CA 22（CA.8）、LA4 22（LA4.15）、HA 20（HA.4）、LA3 20（LA3.13）、AL5 19（AL5.7）、ST 19（ST.6）、AL2 18（AL2.9）、AN2 18（AN2.8）、LA2 18（LA2.10）、AN1 15（AN1.10）、AL1 14（AL1.8）、LA1 13（LA1.5）、F3 9（F3.8）、F2 8（F2.4）、F1 4（F1.5）
+各冊最高的章（高度＝從零讀到該章至少要依序讀的章數）：PDE 27（PDE.6）、MA 26（MA.21）、PR 26（PR.3）、AL4 25（AL4.10）、AN3 24（AN3.7）、GEO 24（GEO.22）、FA 24（FA.1b）、MT 24（MT.10）、NLA 23（NLA.24）、AL3 22（AL3.8）、CA 22（CA.8a）、LA4 22（LA4.15）、HA 20（HA.4）、LA3 20（LA3.13）、AL5 19（AL5.7）、ST 19（ST.6a）、AL2 18（AL2.9）、AN2 18（AN2.8）、LA2 18（LA2.10）、AN1 15（AN1.10）、AL1 14（AL1.8）、LA1 13（LA1.5）、F3 9（F3.8）、F2 8（F2.4）、F1 4（F1.5）
 
 ### 章高度直方圖
 
@@ -45,7 +45,7 @@ F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 
 | 26 | 3 |
 | 27 | 1 |
 
-高度超過 20 的章（42 個，逐一檢查能否把 s 降成 b）：LA4.14、LA4.15、AN3.6、AN3.7、AL3.4、AL3.5、AL3.7、AL3.8、MT.4、MT.5、MT.6、MT.7、MT.8、MT.9、MT.10、MT.11、CA.5、CA.7、CA.8、FA.1b、FA.2、AL4.8、AL4.9、AL4.10、MA.16、MA.17、MA.18、MA.19、MA.20、MA.21、PR.1、PR.2、PR.3、PR.4、PDE.1、PDE.2、PDE.3、PDE.4、PDE.5、PDE.6、GEO.22、NLA.24
+高度超過 20 的章（42 個，逐一檢查能否把 s 降成 b）：LA4.14、LA4.15、AN3.6、AN3.7、AL3.4、AL3.5、AL3.7、AL3.8、MT.4、MT.5、MT.6、MT.7、MT.8、MT.9、MT.10、MT.11、CA.5、CA.7、CA.8a、FA.1b、FA.2、AL4.8、AL4.9、AL4.10、MA.16、MA.17、MA.18、MA.19、MA.20、MA.21、PR.1、PR.2、PR.3、PR.4、PDE.1、PDE.2、PDE.3、PDE.4、PDE.5、PDE.6、GEO.22、NLA.24
 
 ## 資格考目標的最短必讀集合
 
@@ -62,7 +62,7 @@ F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 
 
 ### 複分析（Ahlfors 程度）
 
-Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8）不列入。
+Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8b）不列入。
 
 必讀：F1.1、F1.2、F1.4、F1.5、F2.1、F2.2、F2.3、AN1.1、AN1.2、AN1.3、AN1.4、AN1.5、AN1.6、AN1.7、AN1.8、AN1.9、AN1.10、AN1.11、F3.5、F3.6、F3.7、F3.8、LA1.0、LA1.1、LA1.2、AN2.1、AN2.2、AN2.3、AN2.4、AN2.5、CA.1、CA.2、CA.3、CA.4、CA.5、CA.6、CA.7
 
@@ -154,16 +154,16 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | AL3 Galois 理論 | 9（1） | 26 | 43 | AL1、AL2、LA1 | — |
 | HA Fourier 分析 | 9（2） | 39 | 40 | AN1、AN2、AN3、F3、LA3 | — |
 | MT 測度與積分 | 11 | 41 | 41 | AN1、AN2、AN3、F2、LA2、LA3 | — |
-| CA 複分析 | 9（1） | 30 | 42 | AN1、AN2、F3 | AN3、HA |
-| FA 泛函分析 | 9（1） | 39 | 42 | AN2、MT | CA、F2 |
+| CA 複分析 | 10（2） | 30 | 55 | AN1、AN2、F3 | AN3 |
+| FA 泛函分析 | 9（1） | 39 | 42 | AN2、MT | F2 |
 | AL4 模、表示與同調入門 | 11 | 36 | 36 | AL1、AL2、F1、F3、LA1、LA2、LA3、LA4 | F2 |
 | AL5 交換代數 | 7 | 24 | 24 | AL2、AL4 | — |
 | MA 矩陣分析 | 7（1） | 25 | 61 | F1、F3、LA1、LA2、LA3 | AN1、AN2、AN3 |
 | PR 測度論機率 | 4 | 36 | 36 | AN1、F3、MT | HA |
-| PDE 分佈與 Sobolev 空間 | 6 | 61 | 61 | AN2、FA、HA、MT | CA |
+| PDE 分佈與 Sobolev 空間 | 6 | 65 | 65 | AN2、CA、FA、HA、MT | — |
 | GEO 仿射與射影幾何 | 1 | 30 | 30 | AL1、F2、LA1、LA2、LA3、LA4、MA | — |
 | NLA 計算與應用 | 1 | 27 | 27 | F3、LA1、LA2、LA3、MA | — |
-| ST 公理集合論 | 6 | 29 | 29 | F2、MT | AL1 |
+| ST 公理集合論 | 7（1） | 29 | 36 | F2、MT | — |
 
 ## 領域覆蓋
 

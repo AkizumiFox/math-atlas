@@ -5,7 +5,7 @@
 | 層 | 節點 | 量級 | 畫法 |
 |---|---|---|---|
 | L0 冊 | `F1`、`AN2`… | 25 | 全圖（`generated/volumes.mmd`） |
-| L1 章 | `AN2.3` | 170 | 每冊一張圖，另有全套互動圖（`generated/atlas.html`） |
+| L1 章 | `AN2.3` | 172 | 每冊一張圖，另有全套互動圖（`generated/atlas.html`） |
 | L2 節 | 由書稿 build 產生 | 推估約 1,800 | 只畫 ego graph |
 | L3 陳述 | `an2.thm.metric-compact-equiv` | 推估上萬 | 只畫 ego graph |
 | 概念 | 由 revisits／generalizes 連起來的等價類 | — | 概念頁 |
