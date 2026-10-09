@@ -291,6 +291,13 @@ def check(at):
     reason = sync_constraints.drift(at.constraints)
     if reason:
         at.errors.append(reason)
+    import usage_report
+    usage = [(g["id"], usage_report.pattern(f), [usage_report.pattern(p) for p in g.get("keep") or ()])
+             for g in at.usage if g.get("status") == "confirmed" and not g.get("review") for f in g.get("avoid") or ()]
+    for k in at.constraints:
+        for gid, pat, kept in usage:  # the rule is English text the drafting pipeline copies from
+            if k.get("rule") and pat.search(usage_report.without_kept(k["rule"], kept)):
+                at.errors.append(f"chapter-constraints.yaml: {k['chapter']}'s rule uses an avoided form (usage group {gid})")
     written = at.labels.get("written") or {}
     for k in at.constraints:
         book = str(k.get("book", "")).split(":")[0]

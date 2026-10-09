@@ -240,9 +240,11 @@ class RegistryTest(unittest.TestCase):
     def test_constraints_only_on_unwritten_chapters(self):
         import atlas
         at = atlas.Atlas()
-        at.constraints.append({"chapter": "LA2.6", "book": "la:ch06", "decided": "2026-10-09", "rule": "define continuity in place"})
+        at.constraints.append({"chapter": "LA2.6", "book": "la:ch06", "decided": "2026-10-09", "why": "x",
+                               "rule": "define continuity in place for non-zero inputs"})
         self.assertFalse(atlas.check(at))
         self.assertTrue(any(e.startswith("chapter-constraints.yaml: LA2.6 is already written") for e in at.errors), at.errors)
+        self.assertTrue(any("LA2.6's rule uses an avoided form (usage group non-prefix)" in e for e in at.errors), at.errors)
         at = atlas.Atlas()  # F2.2 has linear-algebra text (chapter 0) but its analysis-book chapter is unwritten
         self.assertTrue(any(k["chapter"] == "F2.2" for k in at.constraints))
         self.assertTrue(atlas.check(at), at.errors)

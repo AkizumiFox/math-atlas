@@ -113,7 +113,7 @@
   decided: 2026-10-09
   rule: >-
     Do not use Liouville's theorem. Get the eigenvalues in the spectral theorem for compact self-adjoint operators
-    from \(\|T\| = \sup_{\|x\| = 1} |\langle Tx, x\rangle|\). Move the non-emptiness of the spectrum in a general
+    from \(\|T\| = \sup_{\|x\| = 1} |\langle Tx, x\rangle|\). Move the nonemptiness of the spectrum in a general
     Banach space to Chapter 72 (Gelfand–Mazur).
   why: 原設計讓 FA.7 借用 CA.2（Liouville），陳述跨 FA 與 CA；Fredholm 選擇也不需要譜非空，而 FA.8 本來就依賴 CA.2。
 
