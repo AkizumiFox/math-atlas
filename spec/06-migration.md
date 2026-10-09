@@ -64,7 +64,7 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 | 5 | ~~LA3 是否要能跳過第 10 章~~ | **已定：`thm-unitary-exponential` 搬到 AN3.3**（2026-10-09） | 不能改成 b（跳過 LA2.10 的讀者沒有矩陣指數的記號）；MA.21 對它的引用改為 b，合法：MA.21 本身就以 s 引用 LA2.10（`thm-exponential-properties`，4 處），矩陣指數在作用域內；`moves.yaml` 的 `scope` 讓 lint 持續檢查這件事 |
 | 6 | ~~交換代數~~ | **已定：獨立成支線冊 AL5**（2026-10-09） | 不增加代數資格考的必讀量；代數幾何與代數數論從 AL5 進入 |
 | 7 | MA 的 (A7) | 對應的複變定理是哪一個 | 目前暫定 CA.2 |
-| 8 | 授權遷移 | 線代書與迴歸書從 CC BY-NC-SA 改成 CC BY-SA | 只有著作權人能改；之前收過的外部貢獻要確認授權 |
+| 8 | ~~授權~~ | **已定：書稿 CC BY-NC-SA 4.0；atlas 的 registry／spec CC BY 4.0；tools MIT**（2026-10-09） | 三本既有的書已是 NC-SA，不必遷移；Napkin（BY-SA）不能改編進書稿 |
 | 9 | AN3.5–3.7 流形三章 | 留在 AN3 的 B 段，或拆成獨立的微分幾何支線 | T3 範圍 |
 | 10 | ~~ZF 出現兩次~~ | **已定：分工**（2026-10-09） | F3.1 只放建構 ω 所需的 ZF 片段與 von Neumann 自然數（$0=\varnothing$），ST.1 是完整的公理系統，以 revisits 指回 F3.1 |
 
@@ -78,8 +78,8 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 - [ ] **`thm-unitary-exponential` → AN3.3**（2026-10-09 定案）：從線代書 LA3（第 12 章）移出，寫進 analysis-book 第 32 章（AN3.3 矩陣指數與流）；原處留一條 see。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
 
-## 授權遷移的待辦
+## 授權的待辦
 
-- [ ] `linear-algebra/LICENSE`：書的部分從 CC BY-NC-SA 4.0 改成 CC BY-SA 4.0；引擎維持 MIT。
-- [ ] `regression`：同上。
-- [ ] `analysis-book`：確認現行授權。它的 `book.yaml` 引用大量受版權保護的教科書作為「來源節點」，只能取結構，不能取文字；originality 檢查（`blueprint/originality.py`）要保留。
+不需要遷移：analysis-book、linear-algebra、regression 的書稿都已是 CC BY-NC-SA 4.0（2026-10-09 確認各 repo 的 `LICENSE`）。新冊（代數、ST 等）建 repo 時沿用同一份 `LICENSE`。
+
+- [ ] `analysis-book`：它的 `book.yaml` 引用大量受版權保護的教科書作為「來源節點」，只能取結構，不能取文字；originality 檢查（`blueprint/originality.py`）要保留。

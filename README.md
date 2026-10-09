@@ -37,4 +37,6 @@ python3 -m unittest discover -s tools -p "test_*.py"
 
 ## 授權
 
-內容（`registry/`、`spec/`、`generated/`）採 CC BY-SA 4.0；程式（`tools/`）採 MIT。詳見 `LICENSE`。
+地圖與規格（`registry/`、`spec/`、`generated/`）採 CC BY 4.0；程式（`tools/`）採 MIT。詳見 `LICENSE`。
+
+各冊書稿不在這個 repo，維持各自的 CC BY-NC-SA 4.0。

@@ -39,7 +39,12 @@ math-atlas 是一整套「零基礎 → 數學研究所資格考」教科書的*
 3. **集合論分兩段。** 開頭先教樸素集合論，用到 F2.4 的使用者層級 Zorn 引理為止；ZFC、序數和選擇公理的等價形式放在最後的 ST 冊。
 4. **ℝ 公理化優先。** AN1.1 直接給出完備有序體公理；從 ℕ 一路建構到 ℝ 的路線放在 F3.1–F3.4，標為選讀。這是 analysis-book 已經採用的路線，可以縮短分析主幹。
 5. **主幹只到 T2。** T3 的科目一律做成支線冊。`registry/fields.yaml` 記錄每一科在地圖上的接點。
-6. **授權為 CC BY-SA 4.0。** 可以改編 Open Logic（CC BY）與 Napkin（BY-SA）；不改編 Book of Proof（ND）。
+6. **授權分三層**（2026-10-09 定案）：
+   - **書稿**：CC BY-NC-SA 4.0，全套一致。三本既有的書（analysis-book、linear-algebra、regression）本來就是這個授權，不需遷移。
+   - **atlas 的 registry、spec 與 generated**：CC BY 4.0。它們是後設資料，越寬鬆越容易和其他先備知識編碼的專案共用。
+   - **tools**：MIT。
+
+   對外部素材的影響：Open Logic（CC BY）可以改編進書稿；Napkin（CC BY-SA）**不能**，因為 BY-SA 的改編作只能以 BY-SA 或相容授權釋出，NC-SA 不相容，只能當參考；Book of Proof（ND）不能改編。
 
 ## 文件索引
 
