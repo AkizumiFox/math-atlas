@@ -8,6 +8,7 @@
 """
 import argparse
 import json
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -109,12 +110,14 @@ class Atlas:
 
     def _load_computed(self, folder):
         out, wit = {}, {}
+        self.overrides = []
         for path in sorted(folder.glob("*-edges.yaml")):
             data = yaml.safe_load(path.read_text())
             for to, frm, typ, hard, soft in data["edges"]:
                 if self._known(to, path.name) and self._known(frm, path.name):
                     out[(to, frm)] = (typ, hard, soft, path.name)
             wit.update(data.get("witnesses") or {})
+            self.overrides += [tuple(o) for o in data.get("overrides") or ()]
         return out, wit
 
     def _merge(self):
@@ -201,6 +204,7 @@ def check(at):
             if c not in anc:
                 at.errors.append(f"scope lint: {to} borrows from {frm} a statement written in the vocabulary of {c}, "
                                  f"which is not an s-ancestor of {to}")
+    check_overrides(at)
     # volume level
     vpreds = volume_preds(at, HARD, main=True)
     vcyc = G.find_cycle(vpreds)
@@ -233,6 +237,36 @@ def check(at):
             for c in (f.get("ch") or []) + (f.get("hook") or []):
                 at._known(c, f"fields.yaml[{f['name']}]")
     return not at.errors
+
+
+def check_overrides(at):
+    """moves.yaml makes the map say what the book will say after a rewrite. Each row must point at an open
+    spec/06 TODO, and must go once the book has caught up (import_la.py records a 0 effect)."""
+    spec = (ROOT / "spec" / "06-migration.md").read_text()
+    open_todo = set(re.findall(r"^- \[ \].*?`todo:([a-z0-9-]+)`", spec, re.M))
+    done_todo = set(re.findall(r"^- \[x\].*?`todo:([a-z0-9-]+)`", spec, re.M))
+    for m in at.moves:
+        t = m.get("todo")
+        if not t:
+            at.errors.append(f"moves.yaml[{m['label']}]: no `todo` linking it to spec/06")
+        elif t in done_todo:
+            at.errors.append(f"moves.yaml[{m['label']}]: spec/06 todo:{t} is ticked; delete the row")
+        elif t not in open_todo:
+            at.errors.append(f"moves.yaml[{m['label']}]: todo:{t} is not an open item in spec/06")
+    seen = {(o[0], o[1], o[2]) for o in at.overrides}
+    for m in at.moves:
+        want = [(m["label"], "move", m["to"])] + [(m["label"], k, c) for k in ("softened_for", "borrowed_by")
+                                                  for c in m.get(k, ())]
+        for w in want:
+            if w not in seen:
+                at.warnings.append(f"moves.yaml[{m['label']}]: {w[1]} {w[2]} not in the computed edges; rerun import_la.py")
+    for label, kind, ch, n in at.overrides:
+        if n == 0:
+            what = "the label is already there" if kind == "move" else "no citation is affected any more"
+            at.errors.append(f"stale override in moves.yaml[{label}]: {kind} {ch} — {what}; the book has caught up, "
+                             "delete it (and tick the spec/06 todo)")
+    at.notes.append(f"{sum(1 for o in at.overrides if o[3])} active rewrite overrides from moves.yaml "
+                    f"({len(at.moves)} rows)")
 
 
 def parse_ar(text, where, at):
@@ -541,6 +575,8 @@ def main(argv=None):
         print("wrote generated/README.md, volumes.mmd, chapters/*.mmd, atlas.html")
     if args.cmd == "check":
         print(f"ok: {len(at.volumes)} volumes, {len(at.chapters)} chapters, {len(at.edges)} edges")
+    for n in at.notes:
+        print("note:", n)
 
 
 if __name__ == "__main__":

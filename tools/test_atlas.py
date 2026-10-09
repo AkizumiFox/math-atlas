@@ -96,6 +96,31 @@ class RegistryTest(unittest.TestCase):
         self.assertTrue(any(e.startswith("scope lint: MA.21") for e in at.errors), at.errors)
         self.assertTrue(any("a borrow needs at most R1" in e for e in at.errors), at.errors)
 
+    def test_cycle_through_optional_chapters_is_an_error(self):
+        import atlas
+        at = atlas.Atlas()
+        at.edges[("MA.21", "MA.21b")] = "s"  # MA.21b already s-depends on MA.21
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("s ∪ b has a cycle") for e in at.errors), at.errors)
+
+    def test_stale_and_unlinked_overrides(self):
+        import atlas
+        at = atlas.Atlas()
+        at.overrides = [o if o[1] != "softened_for" else (o[0], o[1], o[2], 0) for o in at.overrides]
+        at.moves[0] = dict(at.moves[0], todo="no-such-item")
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("stale override in moves.yaml[thm-loewner]") for e in at.errors), at.errors)
+        self.assertTrue(any("todo:no-such-item is not an open item" in e for e in at.errors), at.errors)
+
+    def test_effects_count(self):
+        labels = {
+            "thm-l": {"file": "ch21-inequalities/10-x.html", "uses": [], "uses_kinds": {}},
+            "cor-c": {"file": "ch21-inequalities/10-x.html", "uses": [], "uses_kinds": {}},
+        }
+        effects = {}
+        import_la.compute(labels, {"thm-l": {"to": "MA.21b", "softened_for": ["MA.21"]}}, effects)
+        self.assertEqual(effects, {("thm-l", "softened_for", "MA.21"): 0})  # the rewrite is done: stale
+
     def test_generalization_must_be_linked(self):
         import atlas
         at = atlas.Atlas()

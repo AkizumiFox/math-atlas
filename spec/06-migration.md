@@ -121,13 +121,13 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 - [ ] **§14.6 → AN3.1**（2026-10-09 定案）：線代書第 14 章刪除二階導數判別法的應用，只保留純代數的定性判準，並留一條 see 指向 AN3.1。判別法本身寫進 analysis-book 第 30 章（AN3.1，ℝⁿ 上的導數），以 b 借用 LA4.14 的定性判準。不放 AN3.2（反函數與隱函數），否則 MT.5 經由 AN3.2 會被迫讀 LA4。
 
-- [ ] **`thm-unitary-exponential` → AN3.3**（2026-10-09 定案）：從線代書 LA3（第 12 章）移出，寫進 analysis-book 第 32 章（AN3.3 矩陣指數與流）；原處留一條 see。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
+- [ ] **`thm-unitary-exponential` → AN3.3**（2026-10-09 定案，`todo:unitary-exp`）：從線代書 LA3（第 12 章）移出，寫進 analysis-book 第 32 章（AN3.3 矩陣指數與流）；原處留一條 see。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
 
 - [ ] **CA.6 自帶 Poisson 核**（2026-10-09 定案）：analysis-book 第 60 章（調和函數）照 Ahlfors，由 Cauchy 積分公式導出 Poisson 公式，不再列「Poisson 核、Abel 可和性、連續函數的 Fourier 級數（Part III）」為先修；好核的觀點寫成一段回顧，指向第 35 章（HA.2）。`book.yaml` 的 `external_prerequisites` 要刪掉那一條。
 
 - [ ] **FA.1 拆章**（2026-10-09 定案）：analysis-book 第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；ℓᵖ 的 Hölder 與 Minkowski 要在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。FA.1b 是 Lᵖ 的對偶，依賴 MT.7、MT.11。第 70 章（FA.6 Hilbert 空間）的主例改成 ℓ²，L² 與三角系完備性改成回顧，指向 Part IV。拆完之後 FA.3–FA.7（Hahn–Banach、Baire 三定理、弱拓樸、Hilbert、緊算子）都可以和 MT 平行閱讀；FA.1b、FA.2 照舊排在 MT 之後。
 
-- [ ] **第 21 章沿作用域切開**（2026-10-09 定案）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。
+- [ ] **第 21 章沿作用域切開**（2026-10-09 定案，`todo:ch21-split`）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。
   - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
   - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
   - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
