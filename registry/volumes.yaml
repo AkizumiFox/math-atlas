@@ -22,6 +22,7 @@
 - {id: CA,  title: 複分析,                  en: Complex Analysis,                   branch: analysis, tier: T2, repo: ab,  status: plan}
 - {id: FA,  title: 泛函分析,                en: Functional Analysis,                branch: analysis, tier: T2, repo: ab,  status: plan}
 - {id: AL4, title: 模、表示與同調入門,      en: Modules, Representations and Homological Algebra, branch: algebra, tier: T2, repo: new+la, status: plan}
+- {id: AL5, title: 交換代數,              en: Commutative Algebra,                branch: algebra,  tier: T3, repo: new, status: plan}
 - {id: MA,  title: 矩陣分析,                en: Matrix Analysis,                    branch: linalg,   tier: T2, repo: la,  status: published}
 - {id: PR,  title: 測度論機率,              en: Measure-Theoretic Probability,      branch: side,     tier: T3, repo: ab+new, status: plan}
 - {id: PDE, title: 分佈與 Sobolev 空間,     en: Distributions and Sobolev Spaces,   branch: side,     tier: T3, repo: ab,  status: plan}

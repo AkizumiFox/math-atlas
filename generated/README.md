@@ -25,6 +25,7 @@ flowchart TD
   CA["CA 複分析"]:::analysis
   FA["FA 泛函分析"]:::analysis
   AL4["AL4 模、表示與同調入門"]:::algebra
+  AL5["AL5 交換代數"]:::algebra
   MA["MA 矩陣分析"]:::linalg
   PR["PR 測度論機率"]:::side
   PDE["PDE 分佈與 Sobolev 空間"]:::side
@@ -53,6 +54,7 @@ flowchart TD
   MT --> FA
   AL2 --> AL4
   LA4 --> AL4
+  AL4 --> AL5
   CA -.-> MA
   HA -.-> PR
   MT --> PR
@@ -613,6 +615,39 @@ flowchart LR
   AL4_9 --> AL4_10
   AL4_6 --> AL4_11
   AL4_7 --> AL4_11
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## AL5 交換代數
+
+```mermaid
+flowchart LR
+  AL2_3["AL2.3 極大理想與質理想"]:::ext
+  AL2_6["AL2.6 多項式環、Gauss 引理與 Eisenstein 判別法"]:::ext
+  AL2_7["AL2.7 體擴張與次數"]:::ext
+  AL4_2["AL4.2 自由模、直和與正合列"]:::ext
+  AL5_1["1 局部化與分式模"]
+  AL5_2["2 Noether 環與 Hilbert 基底定理"]
+  AL5_3["3 整擴張與 going-up／going-down"]
+  AL5_4["4 Hilbert 零點定理（Nullstellensatz）"]
+  AL5_5["5 準素分解"]
+  AL5_6["6 Dedekind 整環"]
+  AL5_7["7 Krull 維數入門"]
+  AL2_3 --> AL5_1
+  AL4_2 --> AL5_1
+  AL2_6 --> AL5_2
+  AL4_2 --> AL5_2
+  AL2_7 --> AL5_3
+  AL5_1 --> AL5_3
+  AL5_2 --> AL5_4
+  AL5_3 --> AL5_4
+  AL5_1 --> AL5_5
+  AL5_2 --> AL5_5
+  AL5_2 --> AL5_6
+  AL5_3 --> AL5_6
+  AL5_4 --> AL5_7
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

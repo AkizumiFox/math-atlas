@@ -21,7 +21,7 @@
   - {name: 多重線性代數, en: Multilinear Algebra, status: core, ch: [LA4.14, LA4.15]}
   - {name: 抽象代數, en: Abstract Algebra, status: core, ch: [AL1.1, AL1.7, AL2.1, AL2.5, AL2.8, AL4.1, AL4.3]}
   - {name: Galois 理論, en: Galois Theory, status: core, ch: [AL3.1, AL3.2, AL3.3, AL3.7, AL3.8]}
-  - {name: 交換代數, en: Commutative Algebra, status: branch, hook: [AL2.5, AL4.5], note: 第一份報告的 V10 有局部化、Noether 環、Nullstellensatz；目前的 AL4 沒有，是否補章待定}
+  - {name: 交換代數, en: Commutative Algebra, status: core, ch: [AL5.1, AL5.2, AL5.3, AL5.4, AL5.5, AL5.6, AL5.7], note: 支線冊 AL5（T3），不在代數資格考的必讀路徑上}
   - {name: 非交換環論, en: Noncommutative Ring Theory, status: partial, ch: [AL4.8]}
   - {name: 同調代數, en: Homological Algebra, status: partial, ch: [AL4.6, AL4.11]}
   - {name: 表示論, en: Representation Theory, status: core, ch: [AL4.8, AL4.9, AL4.10]}
@@ -61,7 +61,7 @@
   - {name: 黎曼幾何, en: Riemannian Geometry, status: out, hook: [AN3.7]}
   - {name: 辛幾何, en: Symplectic Geometry, status: out, hook: [AN3.6, LA4.14]}
   - {name: 複幾何, en: Complex Geometry, status: out, hook: [CA.8, AN3.7]}
-  - {name: 代數幾何, en: Algebraic Geometry, status: branch, hook: [AL2.6, AN2.7], note: T3；需先補交換代數}
+  - {name: 代數幾何, en: Algebraic Geometry, status: branch, hook: [AL5.4, AL5.7, AN2.7], note: T3；入口是 AL5}
   - {name: 射影幾何與非歐幾何, en: Projective & Non-Euclidean Geometry, status: partial, ch: [GEO.22]}
   - {name: 凸幾何與離散幾何, en: Convex & Discrete Geometry, status: partial, ch: [MA.18]}
   - {name: 幾何測度論, en: Geometric Measure Theory, status: out, hook: [MT.6, MT.9]}
@@ -69,7 +69,7 @@
 
 數論:
   - {name: 初等數論, en: Elementary Number Theory, status: partial, ch: [F3.5, AL2.4]}
-  - {name: 代數數論, en: Algebraic Number Theory, status: branch, hook: [AL3.3, AL2.5]}
+  - {name: 代數數論, en: Algebraic Number Theory, status: branch, hook: [AL3.3, AL5.6]}
   - {name: 解析數論, en: Analytic Number Theory, status: partial, ch: [HA.8], hook: [CA.8]}
   - {name: 模形式, en: Modular Forms, status: out, hook: [CA.8, AL1.11]}
   - {name: p 進分析, en: p-adic Analysis, status: partial, ch: [AN2.2], note: 只作為完備化的例子}

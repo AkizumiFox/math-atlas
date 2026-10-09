@@ -18,12 +18,12 @@ math-atlas 是一整套「零基礎 → 數學研究所資格考」教科書的*
 
 ## 冊
 
-24 冊，清單在 `registry/volumes.yaml`，分五個分支：
+25 冊，清單在 `registry/volumes.yaml`，分五個分支：
 
 - **基礎**：F1 邏輯與證明、F2 集合函數與關係、F3 數系與代數預備，以及支線 ST 公理集合論。
 - **分析**：AN1 實數線、AN2 度量與拓樸、AN3 多變數、HA Fourier、MT 測度、CA 複分析、FA 泛函分析。
 - **線代**：LA1–LA4，以及 MA 矩陣分析。
-- **代數**：AL1 群、AL2 環與體、AL3 Galois、AL4 模、表示與同調。
+- **代數**：AL1 群、AL2 環與體、AL3 Galois、AL4 模、表示與同調，以及支線 AL5 交換代數。
 - **支線**：PR 機率、PDE 分佈與 Sobolev、GEO 幾何、NLA 計算、ST 公理集合論。
 
 書稿來源：

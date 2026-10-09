@@ -1,0 +1,28 @@
+flowchart LR
+  AL2_3["AL2.3 極大理想與質理想"]:::ext
+  AL2_6["AL2.6 多項式環、Gauss 引理與 Eisenstein 判別法"]:::ext
+  AL2_7["AL2.7 體擴張與次數"]:::ext
+  AL4_2["AL4.2 自由模、直和與正合列"]:::ext
+  AL5_1["1 局部化與分式模"]
+  AL5_2["2 Noether 環與 Hilbert 基底定理"]
+  AL5_3["3 整擴張與 going-up／going-down"]
+  AL5_4["4 Hilbert 零點定理（Nullstellensatz）"]
+  AL5_5["5 準素分解"]
+  AL5_6["6 Dedekind 整環"]
+  AL5_7["7 Krull 維數入門"]
+  AL2_3 --> AL5_1
+  AL4_2 --> AL5_1
+  AL2_6 --> AL5_2
+  AL4_2 --> AL5_2
+  AL2_7 --> AL5_3
+  AL5_1 --> AL5_3
+  AL5_2 --> AL5_4
+  AL5_3 --> AL5_4
+  AL5_1 --> AL5_5
+  AL5_2 --> AL5_5
+  AL5_2 --> AL5_6
+  AL5_3 --> AL5_6
+  AL5_4 --> AL5_7
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

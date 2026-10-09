@@ -178,6 +178,15 @@ AL4:
   - {id: AL4.10, title: 特徵標理論, src: new}
   - {id: AL4.11, title: 複形、同調、Tor 與 Ext 入門, src: new}
 
+AL5:
+  - {id: AL5.1, title: 局部化與分式模, src: new}
+  - {id: AL5.2, title: Noether 環與 Hilbert 基底定理, src: new}
+  - {id: AL5.3, title: 整擴張與 going-up／going-down, src: new}
+  - {id: AL5.4, title: Hilbert 零點定理（Nullstellensatz）, src: new}
+  - {id: AL5.5, title: 準素分解, src: new}
+  - {id: AL5.6, title: Dedekind 整環, src: new}
+  - {id: AL5.7, title: Krull 維數入門, src: new}
+
 MA:
   - {id: MA.16, title: 範數與矩陣分析, src: la:ch16}
   - {id: MA.17, title: 變分原理與交錯, src: la:ch17}
