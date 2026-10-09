@@ -18,7 +18,7 @@
   name: 實分析（台大必考，最小版）
   reported: 57
   note: 台大博士班資格考必考實分析；考綱原文未取得，範圍依 Folland 第 1–5 章（Wisconsin 的參考範圍）推估。
-  chapters: [MT.1, MT.2, MT.3, MT.4, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1, FA.2, FA.3, FA.4, FA.6]
+  chapters: [MT.1, MT.2, MT.3, MT.4, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1a, FA.1b, FA.2, FA.3, FA.4, FA.6]
   items:
     - {topic: Lebesgue 測度與可測函數, ch: [MT.1]}
     - {topic: 收斂定理, ch: [MT.2]}
@@ -27,7 +27,7 @@
     - {topic: Lᵖ、Hölder、Minkowski、Riesz–Fischer, ch: [MT.7]}
     - {topic: 微分定理、AC 與 BV, ch: [MT.9, MT.10]}
     - {topic: Radon–Nikodym, ch: [MT.11]}
-    - {topic: Banach 空間、Lᵖ 的對偶, ch: [FA.1]}
+    - {topic: Banach 空間、Lᵖ 的對偶, ch: [FA.1a, FA.1b]}
     - {topic: Riesz 表現定理, ch: [FA.2]}
     - {topic: Hahn–Banach、Baire 三定理, ch: [FA.3, FA.4]}
     - {topic: Hilbert 空間, ch: [FA.6]}
@@ -36,7 +36,7 @@
   name: 實分析（Harvard 版，含 Fourier series）
   reported: 66
   note: 台大版再加 Fourier 級數與變換、弱拓樸。
-  chapters: [MT.1, MT.2, MT.3, MT.4, MT.5, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1, FA.2, FA.3, FA.4, FA.5, FA.6, HA.1, HA.2, HA.3, HA.5, HA.6]
+  chapters: [MT.1, MT.2, MT.3, MT.4, MT.5, MT.7, MT.8, MT.9, MT.10, MT.11, FA.1a, FA.1b, FA.2, FA.3, FA.4, FA.5, FA.6, HA.1, HA.2, HA.3, HA.5, HA.6]
   items:
     - {topic: Fourier series（Lᵖ、Parseval、Fejér）, ch: [HA.1, HA.2, HA.3]}
     - {topic: Fourier 變換、Plancherel, ch: [HA.5, HA.6]}

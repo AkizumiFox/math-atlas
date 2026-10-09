@@ -541,13 +541,16 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn 引理（使用者層級）"]:::ext
+  AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
   AN2_5["AN2.5 等度連續、Arzelà–Ascoli 與 Peano 定理"]:::ext
   AN2_6["AN2.6 C(K) 的稠密與範疇：Stone–Weierstrass 與 Baire"]:::ext
   AN2_7["AN2.7 拓樸空間、積與緊緻性"]:::ext
   AN2_8["AN2.8 分離公理、Urysohn–Tietze 與局部緊空間"]:::ext
+  MT_3["MT.3 抽象測度空間與 Carathéodory 構造"]:::ext
   MT_11["MT.11 符號測度、Radon–Nikodym 與 Lebesgue 分解"]:::ext
   CA_2["CA.2 Cauchy 定理及其初步推論"]:::ext
-  FA_1["1 Banach 空間、對偶空間與 Lᵖ 的對偶"]
+  FA_1a["1a Banach 空間、有界算子與對偶空間（ℓᵖ、C(K)）"]
+  FA_1b["1b Lᵖ 的對偶"]
   FA_2["2 Radon 測度與 C₀(X) 的對偶"]
   FA_3["3 Hahn–Banach 定理"]
   FA_4["4 Baire 範疇與算子的基本定理"]
@@ -555,17 +558,20 @@ flowchart LR
   FA_6["6 Hilbert 空間"]
   FA_7["7 緊算子、Fredholm 選擇與譜定理"]
   FA_8["8 Banach 代數與 Gelfand 理論"]:::opt
-  MT_11 --> FA_1
+  AN2_3 --> FA_1a
+  MT_11 --> FA_1b
+  FA_1a --> FA_1b
   AN2_8 --> FA_2
-  FA_1 --> FA_2
+  MT_3 --> FA_2
+  FA_1a --> FA_2
   F2_4 -.-> FA_3
-  FA_1 --> FA_3
+  FA_1a --> FA_3
   AN2_6 --> FA_4
-  FA_1 --> FA_4
+  FA_1a --> FA_4
   AN2_7 --> FA_5
   FA_3 --> FA_5
   FA_4 --> FA_5
-  FA_1 --> FA_6
+  FA_1a --> FA_6
   AN2_5 --> FA_7
   CA_2 -.-> FA_7
   FA_6 --> FA_7
@@ -718,7 +724,7 @@ flowchart LR
   MT_10["MT.10 有界變差、絕對連續與微積分基本定理"]:::ext
   CA_4["CA.4 環繞數、整體 Cauchy 定理與零點計數"]:::ext
   CA_6["CA.6 調和函數與次調和函數"]:::ext
-  FA_1["FA.1 Banach 空間、對偶空間與 Lᵖ 的對偶"]:::ext
+  FA_1b["FA.1b Lᵖ 的對偶"]:::ext
   FA_7["FA.7 緊算子、Fredholm 選擇與譜定理"]:::ext
   PDE_1["1 分佈"]
   PDE_2["2 緩增分佈、Fourier 變換與 Plancherel"]
@@ -733,7 +739,7 @@ flowchart LR
   PDE_1 --> PDE_2
   MT_8 --> PDE_3
   CA_4 -.-> PDE_3
-  FA_1 --> PDE_3
+  FA_1b --> PDE_3
   MT_10 --> PDE_4
   PDE_1 --> PDE_4
   AN2_5 --> PDE_5

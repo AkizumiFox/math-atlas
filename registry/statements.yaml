@@ -73,7 +73,7 @@ nodes:
   - [mt.thm.holder-minkowski, MT.7, thm, "Hölder 與 Minkowski", A1, R2]
   - [mt.thm.riesz-fischer, MT.7, thm, "Riesz–Fischer：Lᵖ 完備", A2, R2]
   - [mt.thm.radon-nikodym, MT.11, thm, "Radon–Nikodym", A2, R3]
-  - [fa.thm.lp-dual, FA.1, thm, "(Lᵖ)* ≅ L^q（1≤p<∞，σ-有限）", A2, R3]
+  - [fa.thm.lp-dual, FA.1b, thm, "(Lᵖ)* ≅ L^q（1≤p<∞，σ-有限）", A2, R3]
   # 主幹：Hahn–Banach
   - [fa.thm.hb-analytic, FA.3, thm, "Hahn–Banach（次線性泛函控制的延拓）", A2, R2]
   - [fa.cor.hb-norming, FA.3, cor, "對偶空間足以分離點；‖x‖=sup|f(x)|", A2, R2]

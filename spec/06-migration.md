@@ -18,7 +18,7 @@
 | Part IV ch 43–53 | MT.1–MT.11 | |
 | Part IV ch 54 | PR.1 | 機率支線的入口；PR.2–4 是新章 |
 | Part V ch 55–62 | CA.1–CA.8 | |
-| Part VI ch 65–72 | FA.1–FA.8 | ch 72 選讀 |
+| Part VI ch 65–72 | FA.1a–FA.8 | ch 65 拆成 FA.1a（Banach 空間）與 FA.1b（Lᵖ 的對偶）；ch 72 選讀 |
 | Part VI ch 73–78 | PDE.1–PDE.6 | 支線冊 |
 
 analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫作，冊只是 registry 上的切面。等引擎支援跨冊 ID 之後，再決定是否真的分成多本出版。
@@ -79,6 +79,8 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 - [ ] **`thm-unitary-exponential` → AN3.3**（2026-10-09 定案）：從線代書 LA3（第 12 章）移出，寫進 analysis-book 第 32 章（AN3.3 矩陣指數與流）；原處留一條 see。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
 
 - [ ] **CA.6 自帶 Poisson 核**（2026-10-09 定案）：analysis-book 第 60 章（調和函數）照 Ahlfors，由 Cauchy 積分公式導出 Poisson 公式，不再列「Poisson 核、Abel 可和性、連續函數的 Fourier 級數（Part III）」為先修；好核的觀點寫成一段回顧，指向第 35 章（HA.2）。`book.yaml` 的 `external_prerequisites` 要刪掉那一條。
+
+- [ ] **FA.1 拆章**（2026-10-09 定案）：analysis-book 第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；ℓᵖ 的 Hölder 與 Minkowski 要在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。FA.1b 是 Lᵖ 的對偶，依賴 MT.7、MT.11。第 70 章（FA.6 Hilbert 空間）的主例改成 ℓ²，L² 與三角系完備性改成回顧，指向 Part IV。拆完之後 FA.3–FA.7（Hahn–Banach、Baire 三定理、弱拓樸、Hilbert、緊算子）都可以和 MT 平行閱讀；FA.1b、FA.2 照舊排在 MT 之後。
 
 ## 授權的待辦
 

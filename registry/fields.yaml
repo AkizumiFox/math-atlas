@@ -35,7 +35,7 @@
   - {name: 複分析, en: Complex Analysis, status: core, ch: [CA.1, CA.2, CA.3, CA.4, CA.5, CA.6, CA.7, CA.8]}
   - {name: 多複變函數論, en: Several Complex Variables, status: out, hook: [CA.8, AN3.7]}
   - {name: 測度論, en: Measure Theory, status: core, ch: [MT.1, MT.3, MT.4, MT.9, MT.10, MT.11]}
-  - {name: 泛函分析, en: Functional Analysis, status: core, ch: [FA.1, FA.3, FA.4, FA.5, FA.6, FA.7]}
+  - {name: 泛函分析, en: Functional Analysis, status: core, ch: [FA.1a, FA.1b, FA.3, FA.4, FA.5, FA.6, FA.7]}
   - {name: 算子理論與算子代數, en: Operator Theory / Operator Algebras, status: partial, ch: [FA.7, FA.8]}
   - {name: 譜理論, en: Spectral Theory, status: partial, ch: [LA3.12, FA.7, FA.8]}
   - {name: Fourier／調和分析, en: Fourier / Harmonic Analysis, status: core, ch: [HA.1, HA.2, HA.3, HA.5, HA.6, MT.9, PDE.3]}

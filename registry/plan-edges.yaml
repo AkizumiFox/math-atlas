@@ -152,12 +152,13 @@ CA.7: {s: [CA.3, CA.4]}
 CA.8: {s: [CA.4, CA.7], b: [HA.4, AN1.10], why: {HA.4: theta 函數與 Poisson 求和, AN1.10: Γ 積分與 Stirling 型估計}}
 
 # ───────────── FA 泛函分析 ─────────────
-FA.1: {s: [AN2.3, MT.7, MT.11]}
-FA.2: {s: [FA.1, AN2.8, MT.3]}
-FA.3: {s: [FA.1], b: [F2.4], why: {F2.4: 一般 Hahn–Banach 用 Zorn 引理}}
-FA.4: {s: [FA.1, AN2.6], see: [HA.1]}
+FA.1a: {s: [AN2.2, AN2.3], see: [AN3.1]}   # 例子只用 ℓᵖ 與 C(K)；有限維的算子範數先見於 AN3.1
+FA.1b: {s: [FA.1a, MT.7, MT.11]}
+FA.2: {s: [FA.1a, AN2.8, MT.3]}
+FA.3: {s: [FA.1a], b: [F2.4], why: {F2.4: 一般 Hahn–Banach 用 Zorn 引理}}
+FA.4: {s: [FA.1a, AN2.6], see: [HA.1]}
 FA.5: {s: [FA.3, FA.4, AN2.7]}
-FA.6: {s: [FA.1], see: [LA3.11, HA.3]}
+FA.6: {s: [FA.1a], revisits: [MT.7], see: [LA3.11, HA.3]}   # 主例 ℓ²；L² 以 revisits 指回 MT
 FA.7: {s: [FA.6, AN2.5], b: [CA.2], revisits: [LA3.12], why: {CA.2: Liouville 定理與向量值 Cauchy 估計}}
 FA.8: {s: [FA.7], b: [CA.2], why: {CA.2: Liouville 定理（譜非空）}}
 
@@ -185,7 +186,7 @@ AL5.7: {s: [AL5.3, AL5.4]}
 # ───────────── PDE 分佈與 Sobolev ─────────────
 PDE.1: {s: [MT.7, MT.6], b: [CA.6], why: {CA.6: 調和函數的均值性質，用於 Δ 的基本解}}
 PDE.2: {s: [PDE.1, HA.6, MT.4], see: [PR.1]}
-PDE.3: {s: [MT.8, FA.1], b: [CA.4], why: {CA.4: 帶狀區域上的最大模原理與 Phragmén–Lindelöf}}
+PDE.3: {s: [MT.8, FA.1b], b: [CA.4], why: {CA.4: 帶狀區域上的最大模原理與 Phragmén–Lindelöf}}
 PDE.4: {s: [PDE.1, MT.10]}
 PDE.5: {s: [PDE.4, AN2.5, MT.6]}
 PDE.6: {s: [PDE.5, FA.7], see: [CA.6]}

@@ -156,7 +156,8 @@ CA:
   - {id: CA.8, title: 解析延拓、單值性與 Picard 定理, src: ab:62}
 
 FA:
-  - {id: FA.1, title: Banach 空間、對偶空間與 Lᵖ 的對偶, src: ab:65}
+  - {id: FA.1a, title: Banach 空間、有界算子與對偶空間（ℓᵖ、C(K)）, src: ab:65}
+  - {id: FA.1b, title: Lᵖ 的對偶, src: ab:65}
   - {id: FA.2, title: Radon 測度與 C₀(X) 的對偶, src: ab:66}
   - {id: FA.3, title: Hahn–Banach 定理, src: ab:67}
   - {id: FA.4, title: Baire 範疇與算子的基本定理, src: ab:68}
