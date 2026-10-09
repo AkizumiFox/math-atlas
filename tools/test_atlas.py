@@ -80,6 +80,21 @@ class ImportLATest(unittest.TestCase):
         edges, _ = import_la.compute(labels, moves)
         self.assertEqual({(e[0], e[1]): e[2] for e in edges}, {("MA.21", "MA.21b"): "see"})
 
+    def test_vocabulary(self):
+        labels = {
+            "def-a": {"file": "ch01-x/01-x.html", "uses": [], "uses_kinds": {}},
+            "def-b": {"file": "ch02-x/01-x.html", "uses": ["def-a"], "uses_kinds": {"def-a": ["definition"]}},
+            "thm-t": {"file": "ch03-x/01-x.html", "uses": ["def-b", "def-a"],
+                      "uses_kinds": {"def-b": ["theorem"], "def-a": ["proof"]}},
+            "thm-u": {"file": "ch04-x/01-x.html", "uses": ["thm-t"], "uses_kinds": {"thm-t": ["proof"]}},
+        }
+        got = {(to, frm, kind) for to, frm, kind, _ in import_la.vocabulary(labels)}
+        # LA1.4 borrows thm-t: it needs the words of thm-t's statement (LA1.2), not LA1.3 itself
+        self.assertIn(("LA1.4", "LA1.2", "all"), got)
+        self.assertNotIn(("LA1.4", "LA1.3", "all"), got)
+        self.assertIn(("LA1.2", "LA1.1", "stmt"), got)
+        self.assertNotIn(("LA1.3", "LA1.1", "stmt"), got)  # cited from the proof only
+
 
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):

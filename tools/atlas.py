@@ -116,6 +116,7 @@ class Atlas:
     def _load_computed(self, folder):
         out, wit = {}, {}
         self.overrides = []
+        self.vocab = {"all": {}, "stmt": {}}  # R1 reader: definitions needed (import_la.vocabulary)
         for path in sorted(folder.glob("*-edges.yaml")):
             data = yaml.safe_load(path.read_text())
             for to, frm, typ, hard, soft in data["edges"]:
@@ -123,6 +124,9 @@ class Atlas:
                     out[(to, frm)] = (typ, hard, soft, path.name)
             wit.update(data.get("witnesses") or {})
             self.overrides += [tuple(o) for o in data.get("overrides") or ()]
+            for to, frm, kind, _n in data.get("vocab") or ():
+                if self._known(to, path.name) and self._known(frm, path.name):
+                    self.vocab[kind].setdefault(to, set()).add(frm)
         return out, wit
 
     def _merge(self):
@@ -559,6 +563,19 @@ def stats(at):
                     lines.append(f"| {f['name']}（{f['en']}） | {'、'.join(hook)} | {after} | {n} | {f.get('note', '')} |")
         lines.append("")
 
+    lines += ["## R1 讀者的必讀量（spec/03 §6.2）", "",
+              "R1 讀者只讀懂並套用定理，不重現證明。他要讀的是：目標章引用到的定義、借用的定理陳述所用的定義，"
+              "以及這些章的定義與陳述再引用到的定義（遞移）。這個集合只能由書稿的 crossref 算出，目前只有純線代章有資料。"
+              "書稿沒有明寫引用的隱含語彙（例如定義裡直接使用「矩陣」而不引用）看不到，所以下欄是**下界**；"
+              "s 祖先閉包是上界。", "",
+              "| 章 | s 閉包（上界） | R1 下界 | R1 下界的章 |", "|---|---:|---:|---|"]
+    for c in at.order:
+        if la_only(at, c) and not at.chapters[c]["opt"] and at.chapters[c]["vol"] in ("MA", "GEO", "NLA", "AL4"):
+            r1 = r1_lower_bound(at, c)
+            lines.append(f"| {at.label(c)} | {len(G.ancestors(s_only, [c])) - 1} | {len(r1)} | "
+                         + "、".join(sorted(r1, key=at.order.index)) + " |")
+    lines.append("")
+
     lines += ["## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章", ""]
     la3 = [c for c in at.order if at.chapters[c]["vol"] == "LA3"]
     needs = "LA2.10" in G.ancestors(s_only, la3)
@@ -575,6 +592,11 @@ def stats(at):
 
 
 # ───────────────────────── diff ─────────────────────────
+
+def r1_lower_bound(at, cid):
+    """Chapters an R1 reader of `cid` must read (definitions and statements only), from the computed vocab edges."""
+    return G.ancestors(at.vocab["stmt"], at.vocab["all"].get(cid, ())) - {cid}
+
 
 def la_only(at, cid):
     return all(str(s).startswith("la:") for s in at.chapters[cid]["src"])
