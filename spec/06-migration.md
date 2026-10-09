@@ -144,6 +144,8 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 - [ ] **第 3 類的書稿改動**（2026-10-09）：analysis-book 第 71 章（FA.7）刪掉對 Liouville 的使用，一般 Banach 空間上的譜非空移到第 72 章（FA.8，Gelfand–Mazur）；第 62 章拆成兩章，Picard 與 theta 函數那段成為選讀的 CA.8b。
 
+- [ ] **PDE.1 的一致有界原理**（2026-10-09 定案）：analysis-book 第 73 章證明「𝒟′ 序列完備」時，要在 Fréchet 空間 C_c^∞(K) 上重跑第 68 章（FA.4）的 Baire 論證，並明寫這一步依賴第 68 章；地圖記為 PDE.1 ← FA.4 的 s 邊（PDE 冊外必讀 65 → 67 章）。分佈與半範數的正式定義留在第 73 章。另加一段 see，指向第 69 章（FA.5）的拓樸向量空間觀點。
+
 ## 授權的待辦
 
 不需要遷移：analysis-book、linear-algebra、regression 的書稿都已是 CC BY-NC-SA 4.0（2026-10-09 確認各 repo 的 `LICENSE`）。新冊（代數、ST 等）建 repo 時沿用同一份 `LICENSE`。

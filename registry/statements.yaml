@@ -71,6 +71,10 @@ nodes:
   - [la3.thm.spectral-real, LA3.12, thm, "實對稱矩陣正交對角化", A1, R2]
   - [la3.thm.svd, LA3.13, thm, "SVD", A1, R2]
   - [fa.thm.spectral-compact, FA.7, thm, "緊自伴算子譜定理", A2, R3]
+  - [fa.thm.ubp, FA.4, thm, "一致有界原理（Banach 空間）", A2, R2]
+  - [pde.def.seminorm, PDE.1, def, "半範數；由半範數族定義的收斂（𝒟(Ω) 與 𝒮）", A2, R1, seminorm]
+  - [pde.def.distribution, PDE.1, def, "分佈：滿足 |u(φ)| ≤ C Σ_{|α|≤k} sup|∂^α φ| 的線性泛函", A2, R1, distribution]
+  - [pde.thm.dprime-complete, PDE.1, thm, "𝒟′ 序列完備：分佈序列的逐點極限仍是分佈", A2, R2]
   # 主幹：Lᵖ
   - [mt.def.lp, MT.7, def, "Lᵖ 為 a.e. 等價類的商空間", A2, R2]
   - [mt.thm.holder-minkowski, MT.7, thm, "Hölder 與 Minkowski", A1, R2]
@@ -206,6 +210,10 @@ edges:
   - [la3.thm.spectral-real, la3.thm.spectral-normal, uses]
   - [la3.thm.svd, la3.thm.spectral-real, uses]
   - [fa.thm.spectral-compact, la3.thm.spectral-normal, generalizes]
+  - [fa.thm.ubp, an2.thm.baire, uses]
+  - [pde.thm.dprime-complete, fa.thm.ubp, uses, A2/R2]   # 在 C_c^∞(K) 上重跑 Baire 論證
+  - [pde.thm.dprime-complete, pde.def.distribution, uses]
+  - [pde.def.distribution, pde.def.seminorm, uses]
   - [mt.thm.riesz-fischer, mt.def.lp, uses]
   - [mt.thm.riesz-fischer, mt.thm.holder-minkowski, uses]
   - [mt.def.lp, f2.thm.quotient-up, uses]
