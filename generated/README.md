@@ -40,8 +40,9 @@ flowchart TD
   AL1 --> LA2
   LA1 --> LA2
   LA2 --> LA3
-  AN3 -.-> LA4
+  LA3 --> LA4
   LA3 -.-> AN2
+  AN2 --> AN3
   LA4 --> AN3
   AL1 --> AL2
   LA1 --> AL2
@@ -279,11 +280,9 @@ flowchart LR
 ```mermaid
 flowchart LR
   LA3_13["LA3.13 正定矩陣與奇異值分解"]:::ext
-  AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
   LA4_14["14 雙線性形式與二次型"]
   LA4_15["15 張量與外代數"]
   LA3_13 --> LA4_14
-  AN3_1 -.-> LA4_14
   LA4_14 --> LA4_15
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -327,7 +326,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  LA3_12["LA3.12 譜理論"]:::ext
+  LA4_14["LA4.14 雙線性形式與二次型"]:::ext
   LA4_15["LA4.15 張量與外代數"]:::ext
   AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
   AN2_4["AN2.4 壓縮映射與 Picard–Lindelöf 定理"]:::ext
@@ -338,7 +337,7 @@ flowchart LR
   AN3_5["5 ℝⁿ 的子流形與切空間"]:::segb
   AN3_6["6 微分形式與外微分"]:::segb
   AN3_7["7 流形上的積分與 Stokes 定理"]:::segb
-  LA3_12 -.-> AN3_1
+  LA4_14 -.-> AN3_1
   AN2_3 --> AN3_1
   AN2_4 --> AN3_2
   AN3_1 --> AN3_2
@@ -347,6 +346,7 @@ flowchart LR
   AN2_3 --> AN3_4
   AN3_2 --> AN3_5
   LA4_15 --> AN3_6
+  AN3_1 --> AN3_6
   AN3_4 --> AN3_7
   AN3_5 --> AN3_7
   AN3_6 --> AN3_7
