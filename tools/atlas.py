@@ -159,6 +159,19 @@ def check(at):
             at.errors.append(f"{a['vol']}: chapter order puts {frm} after {to}, but {to} <-{typ}- {frm}")
         if typ == "s" and b["opt"] and not a["opt"]:
             at.errors.append(f"optional {frm} is an s-prerequisite of non-optional {to}")
+    # A/R: on a uses edge, what the user needs must not exceed what the used statement teaches
+    teach = {n[0]: (n[4], n[5]) for n in at.statements["nodes"]}
+    for user, used, typ, *rest in at.statements["edges"]:
+        if not rest:
+            continue
+        need = parse_ar(rest[0], f"statements.yaml edge {user} -> {used}", at)
+        if len(rest) > 1 and rest[1] not in ("yes", "no", True, False):  # YAML reads bare yes/no as booleans
+            at.errors.append(f"statements.yaml edge {user} -> {used}: assessed must be yes or no")
+        if need and typ == "uses":
+            have = parse_ar(f"{teach[used][0]}/{teach[used][1]}", f"statements.yaml node {used}", at)
+            if have and (need[0] > have[0] or need[1] > have[1]):
+                at.errors.append(f"A/R lint: {user} needs {rest[0]} of {used}, which only teaches "
+                                 f"{teach[used][0]}/{teach[used][1]}")
     # volume level
     vpreds = volume_preds(at, HARD)
     vcyc = G.find_cycle(vpreds)
@@ -191,6 +204,17 @@ def check(at):
             for c in (f.get("ch") or []) + (f.get("hook") or []):
                 at._known(c, f"fields.yaml[{f['name']}]")
     return not at.errors
+
+
+def parse_ar(text, where, at):
+    """'A2/R3' -> (2, 3)."""
+    try:
+        a, r = str(text).split("/")
+        assert a[0] == "A" and r[0] == "R"
+        return int(a[1:]), int(r[1:])
+    except (ValueError, AssertionError, IndexError):
+        at.errors.append(f"{where}: bad A/R value {text!r}")
+        return None
 
 
 def volume_preds(at, types):
@@ -365,7 +389,7 @@ def diff(at):
     stmt_ch = {n[0]: n[1] for n in at.statements["nodes"]}
     sb = at.preds(HARD)
     missing = []
-    for user, used, typ in at.statements["edges"]:  # [user, used, type]
+    for user, used, typ, *_ in at.statements["edges"]:  # [user, used, type, need?, assessed?]
         if typ not in ("uses", "borrows"):
             continue
         user_ch, used_ch = stmt_ch[user], stmt_ch[used]

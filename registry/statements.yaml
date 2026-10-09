@@ -1,6 +1,7 @@
 # 陳述層（L3）種子：F 系列與九個主幹的關鍵定義／定理。
 # 節點：[id, 章, kind, 標題, A, R]；A／R 是「教完時」的目標深度（定義見 spec/03，待確認）。
-# 邊：[使用者, 被用者, uses|borrows|revisits|generalizes]。
+# 邊：[使用者, 被用者, uses|borrows|revisits|generalizes, 需要的 A/R（選填）, assessed（選填）]。
+# 節點上的 A／R＝教到；邊上的 A／R＝下游需要；uses 邊要滿足「需要 ≤ 教到」（spec/03）。
 # 章欄位已改成新章號（分析線以 analysis-book 為準）。atlas.py diff 會檢查每條 uses／borrows
 # 在章層級都有硬路徑；一旦書稿有了 crossref，這份檔改由 build 產生。
 
@@ -136,7 +137,7 @@ edges:
   - [an1.thm.completeness-equiv, an1.ax.lub, uses]
   - [an1.thm.completeness-equiv, an1.thm.archimedes, uses]
   - [an1.thm.heine-borel-r, an1.ax.lub, uses]
-  - [an1.thm.evt, an1.thm.heine-borel-r, uses]
+  - [an1.thm.evt, an1.thm.heine-borel-r, uses, A1/R2, yes]
   - [an2.def.complete-metric, an1.thm.completeness-equiv, generalizes]
   - [an2.def.complete-metric, f2.thm.quotient-up, uses]
   - [an2.thm.baire, an2.def.complete-metric, uses]
@@ -146,7 +147,7 @@ edges:
   - [an2.thm.arzela-ascoli, an2.thm.metric-compact-equiv, uses]
   - [fa.thm.tychonoff, an2.def.compact, uses]
   - [fa.thm.tychonoff, f2.thm.zorn, borrows]
-  - [fa.thm.alaoglu, fa.thm.tychonoff, uses]
+  - [fa.thm.alaoglu, fa.thm.tychonoff, uses, A2/R2, no]
   - [fa.thm.alaoglu, fa.thm.hb-analytic, uses]
   - [al1.thm.sign, al1.thm.transpositions, uses]
   - [la2.thm.det-unique, al1.thm.transpositions, uses]
@@ -170,7 +171,7 @@ edges:
   - [fa.thm.hb-geometric, fa.thm.hb-analytic, uses]
   - [fa.thm.hb-geometric, ma.thm.sep-finite, generalizes]
   - [al1.thm.cauchy, al1.thm.orbit-stab, uses]
-  - [al1.thm.sylow, al1.thm.orbit-stab, uses]
+  - [al1.thm.sylow, al1.thm.orbit-stab, uses, A2/R2, yes]
   - [al1.thm.sylow, al1.thm.cauchy, uses]
   - [al1.cor.sylow-app, al1.thm.sylow, uses]
   - [al2.thm.tower, la1.thm.dimension, uses]
