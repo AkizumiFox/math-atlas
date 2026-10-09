@@ -147,7 +147,7 @@ CA.2: {s: [CA.1, AN1.8], b: [AN3.4], see: [MT.6], why: {AN3.4: 積分號下微�
 CA.3: {s: [CA.2]}
 CA.4: {s: [CA.3, AN2.3]}
 CA.5: {s: [CA.4, AN2.5]}
-CA.6: {s: [CA.2, HA.2], see: [MT.6]}
+CA.6: {s: [CA.2], revisits: [HA.2], see: [MT.6]}   # Poisson 核由 Cauchy 積分公式導出（Ahlfors）；好核觀點以 revisits 指回 HA.2
 CA.7: {s: [CA.3, CA.4]}
 CA.8: {s: [CA.4, CA.7], b: [HA.4, AN1.10], why: {HA.4: theta 函數與 Poisson 求和, AN1.10: Γ 積分與 Stirling 型估計}}
 

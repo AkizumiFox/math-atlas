@@ -50,7 +50,7 @@ flowchart TD
   AN2 --> AL3
   AN3 --> HA
   AN3 --> MT
-  HA --> CA
+  HA -.-> CA
   CA -.-> FA
   MT --> FA
   AL2 --> AL4
@@ -510,7 +510,6 @@ flowchart LR
   AN2_5["AN2.5 等度連續、Arzelà–Ascoli 與 Peano 定理"]:::ext
   AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
   AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
-  HA_2["HA.2 好核、可和性與 Fejér 定理"]:::ext
   HA_4["HA.4 Fourier 級數的應用"]:::ext
   CA_1["1 全純函數與冪級數"]
   CA_2["2 Cauchy 定理及其初步推論"]
@@ -528,7 +527,6 @@ flowchart LR
   CA_3 --> CA_4
   AN2_5 --> CA_5
   CA_4 --> CA_5
-  HA_2 --> CA_6
   CA_2 --> CA_6
   CA_4 --> CA_7
   HA_4 -.-> CA_8
