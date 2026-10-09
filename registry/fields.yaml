@@ -13,7 +13,7 @@
   - {name: 證明論, en: Proof Theory, status: branch, hook: [F1.3, F1.4]}
   - {name: 可計算性理論, en: Computability / Recursion Theory, status: branch, hook: [F1.4, F2.3]}
   - {name: 範疇論, en: Category Theory, status: partial, ch: [AL4.7]}
-  - {name: 型別論, en: Type Theory, status: out, hook: [F1.4], note: 與 Lean 對照軌相關，可在 F1 以專欄觸及}
+  - {name: 型別論, en: Type Theory, status: out, hook: [F1.4, AL4.7], note: 與 Lean 對照軌相關，可在 F1 以專欄觸及}
   - {name: 反推數學, en: Reverse Mathematics, status: out, hook: [AN1.11, F3.1]}
 
 代數:
@@ -102,7 +102,7 @@
 資訊與計算:
   - {name: 資訊理論, en: Information Theory, status: out, hook: [PR.1]}
   - {name: 編碼理論, en: Coding Theory, status: out, hook: [AL2.9, LA1.3]}
-  - {name: 密碼學, en: Cryptography, status: out, hook: [F3.5, AL2.9], note: analysis-book 已刪 VEL.7}
+  - {name: 密碼學, en: Cryptography, status: out, hook: [F3.5, AL2.9, PR.1], note: analysis-book 已刪 VEL.7}
   - {name: 計算理論, en: Theory of Computation, status: out, hook: [F1.4]}
   - {name: 計算複雜度, en: Computational Complexity, status: out}
   - {name: 數值分析, en: Numerical Analysis, status: partial, ch: [NLA.24], hook: [AN1.7, AN2.4]}
@@ -114,7 +114,7 @@
   - {name: 線性／凸／非線性最佳化, en: Optimization, status: partial, ch: [MA.18, AN3.2]}
   - {name: 整數與組合最佳化, en: Integer & Combinatorial Optimization, status: out}
   - {name: 控制理論與最優控制, en: Control Theory, status: out, hook: [AN3.3]}
-  - {name: 賽局理論, en: Game Theory, status: out, hook: [MA.18]}
+  - {name: 賽局理論, en: Game Theory, status: out, hook: [MA.18, PR.1]}
   - {name: 作業研究, en: Operations Research, status: out}
   - {name: 排隊理論, en: Queueing Theory, status: out, hook: [PR.3]}
   - {name: 訊號處理與小波, en: Signal Processing & Wavelets, status: out, hook: [HA.6]}
@@ -123,7 +123,7 @@
   - {name: 數學生物學, en: Mathematical Biology, status: out}
 
 數學物理:
-  - {name: 古典力學, en: Classical Mechanics, status: out, hook: [AN3.6]}
+  - {name: 古典力學, en: Classical Mechanics, status: out, hook: [AN3.3, AN3.6]}
   - {name: 量子力學的數學基礎, en: Mathematical Quantum Mechanics, status: out, hook: [FA.7, HA.6]}
   - {name: 統計力學, en: Statistical Mechanics, status: out, hook: [PR.1]}
   - {name: 廣義相對論的數學, en: Mathematical General Relativity, status: out}
