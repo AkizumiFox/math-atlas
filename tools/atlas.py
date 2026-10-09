@@ -197,10 +197,12 @@ def volume_preds(at, types):
     return out
 
 
-def volume_edge_type(at):
-    """(to_vol, from_vol) -> 's' if any chapter s-edge, else 'b'."""
+def volume_edge_type(at, main=False):
+    """(to_vol, from_vol) -> 's' if any chapter s-edge, else 'b'. main=True ignores optional chapters."""
     out = {}
     for (to, frm), typ in at.edges.items():
+        if main and (at.chapters[to]["opt"] or at.chapters[frm]["opt"]):
+            continue
         a, b = at.chapters[to]["vol"], at.chapters[frm]["vol"]
         if typ in HARD and a != b:
             if out.get((a, b)) != "s":
@@ -210,11 +212,21 @@ def volume_edge_type(at):
 
 # ───────────────────────── stats ─────────────────────────
 
+def main_only(preds, at):
+    """Drop optional chapters: the statistics describe the main line unless a column says otherwise."""
+    return {c: {p for p in ps if not at.chapters[p]["opt"]}
+            for c, ps in preds.items() if not at.chapters[c]["opt"]}
+
+
 def stats(at):
-    s_only = at.preds(("s",))
-    sb = at.preds(HARD)
+    s_all = at.preds(("s",))
+    sb_all = at.preds(HARD)
+    s_only = main_only(s_all, at)
+    sb = main_only(sb_all, at)
     height, back = G.longest_paths(s_only)
     longest = max(height, key=lambda c: (height[c], -at.order.index(c)))
+    height_all, back_all = G.longest_paths(s_all)
+    longest_all = max(height_all, key=lambda c: (height_all[c], -at.order.index(c)))
     lines = ["# 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）", ""]
     n_s = sum(1 for t in at.edges.values() if t == "s")
     n_b = sum(1 for t in at.edges.values() if t == "b")
@@ -224,10 +236,13 @@ def stats(at):
               f"- 章層級邊：s {n_s}、b {n_b}、軟邊 {n_soft}；其中 {computed_s} 條 s 邊是從線代書的證明計算出來的，其餘是計畫值",
               ""]
 
+    lines += ["除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。", ""]
     lines += ["## 最長硬依賴鏈（只計 s）", ""]
     chain = G.path_to(back, longest)
     lines += [f"**{len(chain)} 章**，終點 {at.label(longest)}：", "",
               " → ".join(chain), ""]
+    if height_all[longest_all] > height[longest]:
+        lines += [f"含選讀：{height_all[longest_all]} 章，終點 {at.label(longest_all)}。", ""]
     top = sorted(height, key=lambda c: -height[c])
     seen_vol, others = set(), []
     for c in top:
@@ -240,7 +255,7 @@ def stats(at):
     hist = Counter(height.values())
     lines += ["### 章高度直方圖", "", "| 高度 | 章數 |", "|---:|---:|"]
     lines += [f"| {h} | {hist[h]} |" for h in sorted(hist)]
-    tall = [c for c in at.order if height[c] > 20]
+    tall = [c for c in at.order if height.get(c, 0) > 20]
     lines += ["", f"高度超過 20 的章（{len(tall)} 個，逐一檢查能否把 s 降成 b）：" + "、".join(tall), ""]
 
     lines += ["## 資格考目標的最短必讀集合", "",
@@ -262,7 +277,7 @@ def stats(at):
         if borrowed:
             lines += ["只借用（不必讀）：" + "、".join(borrowed), ""]
 
-    desc = {c: len(G.descendants(sb, [c])) - 1 for c in at.chapters}
+    desc = {c: len(G.descendants(sb, [c])) - 1 for c in sb}
     s_red = G.transitive_reduction(s_only)
     lines += ["## 瓶頸：後代最多的章（s ∪ b）", "", "| 章 | 後代章數 | 約簡後 s 入度 | 後代涉及冊數 |", "|---|---:|---:|---:|"]
     for c in sorted(desc, key=lambda c: (-desc[c], at.order.index(c)))[:20]:
@@ -271,15 +286,19 @@ def stats(at):
     lines.append("")
 
     lines += ["## 每冊的外部必讀量", "",
-              "開始讀該冊（整冊）之前，冊外至少要讀的章數（s 祖先閉包，扣掉本冊）。", "",
-              "| 冊 | 本冊章數 | 冊外必讀章數 | 直接上游冊（s） | 只借用的冊（b） |", "|---|---:|---:|---|---|"]
-    vt = volume_edge_type(at)
+              "讀完該冊主幹章之前，冊外至少要讀的章數（s 祖先閉包，扣掉本冊）。上游冊只計本冊非選讀章的邊。", "",
+              "| 冊 | 本冊章數（選讀） | 冊外必讀章數 | 含選讀 | 直接上游冊（s） | 只借用的冊（b） |", "|---|---:|---:|---:|---|---|"]
+    vt = volume_edge_type(at, main=True)
     for v in at.volumes:
-        mine = [c for c in at.order if at.chapters[c]["vol"] == v["id"]]
-        req = G.ancestors(s_only, mine) - set(mine)
+        mine_all = [c for c in at.order if at.chapters[c]["vol"] == v["id"]]
+        mine = [c for c in mine_all if not at.chapters[c]["opt"]]
+        req = G.ancestors(s_only, mine) - set(mine_all)
+        req_all = G.ancestors(s_all, mine_all) - set(mine_all)
         up_s = sorted(b for (a, b), t in vt.items() if a == v["id"] and t == "s")
         up_b = sorted(b for (a, b), t in vt.items() if a == v["id"] and t == "b")
-        lines.append(f"| {v['id']} {v['title']} | {len(mine)} | {len(req)} | {'、'.join(up_s) or '—'} | {'、'.join(up_b) or '—'} |")
+        n_opt = len(mine_all) - len(mine)
+        lines.append(f"| {v['id']} {v['title']} | {len(mine_all)}" + (f"（{n_opt}）" if n_opt else "")
+                     + f" | {len(req)} | {len(req_all)} | {'、'.join(up_s) or '—'} | {'、'.join(up_b) or '—'} |")
     lines.append("")
 
     if at.fields:
