@@ -1,0 +1,25 @@
+# 和外部科目圖（registry/external/subject-dag.yaml）之間已確認接受的差異。atlas.py check 只報這裡沒有的新差異；
+# 這裡列了、但已不再發生的差異會報警告，提醒刪掉。key 的格式見 tools/atlas.py 的 field_deviations。
+# 2026-10-09 第一次對照時確認。
+
+- key: [scope stat, scope toc, scope info, scope code, scope crypto, scope game, scope mech]
+  why: >-
+    本套書的範圍是純數主幹到研究所資格考。這些大學部科目屬於應用學門或統計、計算機科學，
+    只在地圖上標出入口先修（hook），不寫成冊。數理統計由迴歸書（regression）承接。
+
+- key: padic <- alg
+  why: >-
+    p 進數在地圖上只作為 AN2.2 完備化的例子（status partial），不是一門 p 進分析課；
+    把 p 進分析當成一門課時，才需要抽象代數。
+
+- key: [unmatched multilinear-algebra, unmatched noncommutative-ring-theory, unmatched universal-algebra,
+        unmatched lattice-order-theory, unmatched approximation-theory, unmatched special-functions,
+        unmatched potential-theory, unmatched projective-geometry, unmatched convex-discrete-geometry,
+        unmatched diophantine-approximation, unmatched ramsey-theory, unmatched matroid-theory,
+        unmatched design-theory, unmatched bayesian-statistics, unmatched computational-geometry,
+        unmatched computer-algebra, unmatched combinatorial-optimization, unmatched operations-research,
+        unmatched queueing-theory, unmatched signal-processing, unmatched inverse-problems,
+        unmatched mathematical-finance, unmatched mathematical-biology, unmatched statistical-mechanics]
+  why: >-
+    外部圖只列 86 科，粒度比 fields.yaml（取自使用者的領域列表）粗。這些科目在外部圖裡沒有對應，
+    不代表 fields.yaml 該刪；只列出、不改（2026-10-09 決定）。

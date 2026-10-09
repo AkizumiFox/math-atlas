@@ -143,6 +143,27 @@ class RegistryTest(unittest.TestCase):
         self.assertFalse(atlas.check(at))
         self.assertTrue(any("an3.thm.stokes (AN3.7) generalizes" in e for e in at.errors), at.errors)
 
+    def test_subject_after(self):
+        import atlas
+        at = atlas.Atlas()
+        s_only = at.preds({"s"})
+        alone = atlas.G.ancestors(s_only, at.subject["ergodic-theory"]["hook"])
+        subj, entry = atlas.subject_entry(at, ["ergodic-theory"], s_only)
+        self.assertEqual(subj, {"ergodic-theory", "dynamical-systems"})
+        self.assertIn("AN2.4", entry - alone)  # the dynamical-systems hook comes in through after
+        at.subject["dynamical-systems"]["after"] = ["ergodic-theory"]
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("fields.yaml: subject-level after cycle") for e in at.errors), at.errors)
+
+    def test_field_deviations_new_and_stale(self):
+        import atlas
+        at = atlas.Atlas()
+        del at.subject["ergodic-theory"]["after"]
+        at.deviations.append({"key": "erg <- calc", "why": "test"})
+        self.assertTrue(atlas.check(at), at.errors)
+        self.assertTrue(any("new deviations" in w and "erg <- dyn" in w for w in at.warnings), at.warnings)
+        self.assertTrue(any(w.startswith("field-deviations.yaml: erg <- calc no longer occurs") for w in at.warnings), at.warnings)
+
 
 if __name__ == "__main__":
     unittest.main()

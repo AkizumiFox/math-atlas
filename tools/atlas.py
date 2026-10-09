@@ -72,6 +72,11 @@ class Atlas:
                 self.scope[(user, m["to"])] = m.get("scope", [])
         fields = reg / "fields.yaml"
         self.fields = yaml.safe_load(fields.read_text()) if fields.exists() else {}
+        self.subject = {f["id"]: f for fs in self.fields.values() for f in fs if "id" in f}
+        ext = reg / "external" / "subject-dag.yaml"
+        self.external = yaml.safe_load(ext.read_text()) if ext.exists() else None
+        dev = reg / "field-deviations.yaml"
+        self.deviations = (yaml.safe_load(dev.read_text()) or []) if dev.exists() else []
 
     def _known(self, cid, where):
         if cid not in self.chapters:
@@ -234,13 +239,105 @@ def check(at):
         for it in t.get("items") or ():
             for c in it.get("ch") or ():
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
+    check_fields(at)
+    return not at.errors
+
+
+def check_fields(at):
+    """Subject ids, the subject-level `after` graph (must be acyclic), the external comparison and its accepted deviations."""
+    ids = Counter(f.get("id") for fs in at.fields.values() for f in fs)
     for group, subjects in at.fields.items():
         for f in subjects:
+            if not f.get("id"):
+                at.errors.append(f"fields.yaml: {f['name']} has no id")
+            elif ids[f["id"]] > 1:
+                at.errors.append(f"fields.yaml: duplicate subject id {f['id']}")
             if f.get("status") not in FIELD_STATUS:
                 at.errors.append(f"fields.yaml: {f['name']} has unknown status {f.get('status')}")
             for c in (f.get("ch") or []) + (f.get("hook") or []):
                 at._known(c, f"fields.yaml[{f['name']}]")
-    return not at.errors
+            for a in f.get("after") or ():
+                if a not in at.subject:
+                    at.errors.append(f"fields.yaml[{f.get('id')}]: after names unknown subject {a}")
+    cyc = G.find_cycle(after_preds(at))
+    if cyc:
+        at.errors.append("fields.yaml: subject-level after cycle: " + " -> ".join(cyc))
+    if not at.external:
+        return
+    ext_ids = {x["id"] for x in at.external["subjects"]}
+    for x in at.external["subjects"]:
+        for a in x.get("fields") or ():
+            if a not in at.subject:
+                at.errors.append(f"external/subject-dag.yaml[{x['id']}]: unknown fields subject {a}")
+        for c in x.get("ch") or ():
+            at._known(c, f"external/subject-dag.yaml[{x['id']}]")
+        for d in (x.get("deps") or []) + (x.get("soft") or []):
+            if d not in ext_ids:
+                at.errors.append(f"external/subject-dag.yaml[{x['id']}]: unknown dependency {d}")
+    if at.errors:
+        return
+    found = dict(field_deviations(at))
+    accepted = set()
+    for d in at.deviations:
+        keys = d["key"] if isinstance(d["key"], list) else [d["key"]]
+        if not d.get("why"):
+            at.errors.append(f"field-deviations.yaml: {keys[0]} has no `why`")
+        for k in keys:
+            accepted.add(k)
+            if k not in found:
+                at.warnings.append(f"field-deviations.yaml: {k} no longer occurs; delete it")
+    new = [k for k in found if k not in accepted]
+    if new:
+        at.warnings.append(f"{len(new)} new deviations from external/subject-dag.yaml (generated/diff.md): " + ", ".join(new))
+    at.notes.append(f"external subject DAG: {len(found)} deviations, {len(found) - len(new)} accepted in field-deviations.yaml")
+
+
+def after_preds(at):
+    return {i: set(f.get("after") or ()) & set(at.subject) for i, f in at.subject.items()}
+
+
+def subject_entry(at, ids, s_only):
+    """Entry reading for subjects `ids`: their ch and hook plus those of every `after` subject (transitively), closed under s."""
+    subj = G.ancestors(after_preds(at), ids)
+    start = {c for i in subj for c in (at.subject[i].get("ch") or []) + (at.subject[i].get("hook") or [])}
+    return subj, G.ancestors(s_only, start)
+
+
+def field_deviations(at):
+    """(key, message) for each disagreement between registry/external/subject-dag.yaml and the atlas.
+
+    edge     the external graph has hard prerequisite A of B, but B's entry reading (subject_entry)
+             contains none of A's chapters and B's after-closure does not contain A's subjects
+    after    fields.yaml says B after C, both are on the map, but no chapter of C is an s-ancestor of B's chapters
+    scope    the external graph puts the subject in layer 0-1 (undergraduate), fields.yaml marks it out
+    unmatched  a fields.yaml subject that no external subject maps to
+    """
+    s_only = at.preds({"s"})
+    X = {x["id"]: x for x in at.external["subjects"]}
+    out = []
+
+    def chapters(x):
+        return {c for i in x.get("fields") or () for c in (at.subject[i].get("ch") or []) + (at.subject[i].get("hook") or [])} \
+            | set(x.get("ch") or ())
+
+    for b in X.values():
+        subj, entry = subject_entry(at, b.get("fields") or (), s_only)
+        entry |= G.ancestors(s_only, b.get("ch") or ())
+        for dep in b.get("deps") or ():
+            a = X[dep]
+            if set(a.get("fields") or ()) & subj or chapters(a) & entry:
+                continue
+            out.append((f"{b['id']} <- {dep}", f"{b['name']} ← {a['name']}：入口必讀不含 {'、'.join(sorted(chapters(a))) or '（無章）'}"))
+        if b["layer"] <= 1 and any(at.subject[i]["status"] == "out" for i in b.get("fields") or ()):
+            out.append((f"scope {b['id']}", f"{b['name']}：外部圖為第 {b['layer']} 層（大學部），fields.yaml 標為範圍外"))
+    for i, f in at.subject.items():
+        for c in f.get("after") or ():
+            mine, theirs = set(f.get("ch") or ()), set(at.subject[c].get("ch") or ())
+            if mine and theirs and not (G.ancestors(s_only, mine) & theirs):
+                out.append((f"after {i} <- {c}", f"{f['name']} after {at.subject[c]['name']}：兩科都已在地圖上，但章層級沒有對應的 s 路徑"))
+    mapped = {i for x in X.values() for i in x.get("fields") or ()}
+    out += [(f"unmatched {i}", f"{f['name']}：外部圖沒有對應科目") for i, f in at.subject.items() if i not in mapped]
+    return out
 
 
 LOCAL_DEF_MAX = 3
@@ -450,13 +547,16 @@ def stats(at):
         for group, subjects in at.fields.items():
             cnt = Counter(f["status"] for f in subjects)
             lines.append(f"| {group} | {len(subjects)} | " + " | ".join(str(cnt[k]) for k in FIELD_STATUS) + " |")
-        lines += ["", "### 支線候選（未涵蓋，但先修已在地圖上）", "", "| 科目 | 入口先修 | 入口必讀章數 | 備註 |", "|---|---|---:|---|"]
+        lines += ["", "### 支線候選（未涵蓋，但先修已在地圖上）", "",
+                  "入口必讀＝自己的入口先修，加上 `after` 科目（遞移）的章與入口先修，再取 s 祖先閉包。", "",
+                  "| 科目 | 入口先修 | 先讀科目（after） | 入口必讀章數 | 備註 |", "|---|---|---|---:|---|"]
         for group, subjects in at.fields.items():
             for f in subjects:
                 if f["status"] == "branch":
                     hook = f.get("hook") or []
-                    n = len(G.ancestors(s_only, hook)) if hook else 0
-                    lines.append(f"| {f['name']}（{f['en']}） | {'、'.join(hook)} | {n} | {f.get('note', '')} |")
+                    n = len(subject_entry(at, [f["id"]], s_only)[1])
+                    after = "、".join(at.subject[a]["name"] for a in f.get("after") or ())
+                    lines.append(f"| {f['name']}（{f['en']}） | {'、'.join(hook)} | {after} | {n} | {f.get('note', '')} |")
         lines.append("")
 
     lines += ["## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章", ""]
@@ -513,6 +613,13 @@ def diff(at):
     noscope = [f"- {to} ← {frm}" for (to, frm), typ in sorted(at.edges.items(), key=lambda kv: at.order.index(kv[0][0]))
                if typ == "b" and (to, frm) not in at.scope]
     lines += ["## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）", ""] + (noscope or ["（無）"]) + [""]
+    if at.external:
+        accepted = {k for d in at.deviations for k in (d["key"] if isinstance(d["key"], list) else [d["key"]])}
+        found = field_deviations(at)
+        new = [f"- `{k}` {msg}" for k, msg in found if k not in accepted]
+        lines += ["## 外部科目圖的對照（registry/external/subject-dag.yaml）", "",
+                  f"共 {len(found)} 項差異，其中 {len(found) - len(new)} 項已記在 `registry/field-deviations.yaml`。以下只列新出現的：", ""] \
+            + (new or ["（無）"]) + [""]
     (OUT / "diff.md").write_text("\n".join(lines) + "\n")
     return lines
 

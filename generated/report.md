@@ -172,7 +172,7 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | 領域 | 科目數 | 已涵蓋 | 部分 | 支線候選 | 範圍外 |
 |---|---:|---:|---:|---:|---:|
 | 基礎與邏輯 | 8 | 1 | 2 | 3 | 2 |
-| 代數 | 12 | 6 | 3 | 1 | 2 |
+| 代數 | 13 | 6 | 3 | 1 | 3 |
 | 分析 | 20 | 6 | 10 | 2 | 2 |
 | 幾何與拓樸 | 13 | 1 | 2 | 4 | 6 |
 | 數論 | 8 | 0 | 3 | 1 | 4 |
@@ -184,23 +184,25 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 ### 支線候選（未涵蓋，但先修已在地圖上）
 
-| 科目 | 入口先修 | 入口必讀章數 | 備註 |
-|---|---|---:|---|
-| 模型論（Model Theory） | F1.4、ST.4 | 11 |  |
-| 證明論（Proof Theory） | F1.3、F1.4 | 4 |  |
-| 可計算性理論（Computability / Recursion Theory） | F1.4、F2.3 | 7 |  |
-| 李群與李代數（Lie Groups & Lie Algebras） | AN3.5、AL4.9、LA2.10 | 53 |  |
-| 動力系統（Dynamical Systems） | AN3.3、AN2.4 | 42 |  |
-| 遍歷理論（Ergodic Theory） | MT.11、FA.6、PR.1 | 37 |  |
-| 代數拓樸（Algebraic Topology） | AN2.7、AL1.11、AL4.11 | 39 | T3；Harvard quals 科目 |
-| 微分拓樸（Differential Topology） | AN3.5、AN3.7 | 48 |  |
-| 微分幾何（Differential Geometry） | AN3.5、AN3.6、AN3.7 | 48 | T3；Harvard quals 科目 |
-| 代數幾何（Algebraic Geometry） | AL5.4、AL5.7、AN2.7 | 44 | T3；入口是 AL5 |
-| 代數數論（Algebraic Number Theory） | AL3.3、AL5.6 | 32 |  |
-| 計數組合學（Enumerative Combinatorics） | F2.3、AL1.6 | 14 | analysis-book 已刪 HAM.3（counting） |
-| 圖論（Graph Theory） | F2.2、LA3.12、MA.19 | 29 |  |
-| 隨機過程（Stochastic Processes） | PR.3 | 37 |  |
-| 隨機微積分（Stochastic Calculus） | PR.3、FA.6 | 39 |  |
+入口必讀＝自己的入口先修，加上 `after` 科目（遞移）的章與入口先修，再取 s 祖先閉包。
+
+| 科目 | 入口先修 | 先讀科目（after） | 入口必讀章數 | 備註 |
+|---|---|---|---:|---|
+| 模型論（Model Theory） | F1.4、ST.4 |  | 11 |  |
+| 證明論（Proof Theory） | F1.3、F1.4 |  | 4 |  |
+| 可計算性理論（Computability / Recursion Theory） | F1.4、F2.3 |  | 7 |  |
+| 李群與李代數（Lie Groups & Lie Algebras） | AN3.5、AL4.9、LA2.10 |  | 53 |  |
+| 動力系統（Dynamical Systems） | AN3.3、AN2.4 |  | 42 |  |
+| 遍歷理論（Ergodic Theory） | MT.11、FA.6、PR.1 | 動力系統 | 53 |  |
+| 代數拓樸（Algebraic Topology） | AN2.7、AL1.11、AL4.11 |  | 39 | T3；Harvard quals 科目 |
+| 微分拓樸（Differential Topology） | AN3.5、AN3.7 |  | 48 |  |
+| 微分幾何（Differential Geometry） | AN3.5、AN3.6、AN3.7 |  | 48 | T3；Harvard quals 科目 |
+| 代數幾何（Algebraic Geometry） | AL5.4、AL5.7、AN2.7 |  | 44 | T3；入口是 AL5 |
+| 代數數論（Algebraic Number Theory） | AL3.3、AL5.6 |  | 32 |  |
+| 計數組合學（Enumerative Combinatorics） | F2.3、AL1.6 |  | 14 | analysis-book 已刪 HAM.3（counting） |
+| 圖論（Graph Theory） | F2.2、LA3.12、MA.19 |  | 29 |  |
+| 隨機過程（Stochastic Processes） | PR.3 |  | 37 |  |
+| 隨機微積分（Stochastic Calculus） | PR.3、FA.6 |  | 39 |  |
 
 ## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章
 

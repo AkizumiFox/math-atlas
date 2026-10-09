@@ -17,7 +17,9 @@ registry/    唯一的事實來源
   computed/           由書稿 build 計算出的邊（目前：線代書）
   statements.yaml     陳述層種子（F 系列＋九個主幹）
   exam-targets.yaml   資格考目標與考綱覆蓋
-  fields.yaml         數學各領域 → 章的覆蓋表
+  fields.yaml         數學各領域 → 章的覆蓋表；科目之間的 after 邊
+  field-deviations.yaml  與外部科目圖之間已接受的差異（附理由）
+  external/           對照用的外部來源（不是事實來源）
 tools/       atlas.py（check／stats／render／diff）、graph.py、import_la.py
 generated/   工具的產出，勿手改
 ```
