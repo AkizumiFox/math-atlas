@@ -123,7 +123,7 @@ class Atlas:
     def _load_computed(self, folder):
         out, wit = {}, {}
         self.overrides = []
-        self.vocab = {"all": {}, "stmt": {}, "term": {}}  # R1 reader: definitions needed (import_la.vocabulary, term_edges)
+        self.vocab = {"all": {}, "stmt": {}, "term": {}}  # statement reader: definitions needed (import_la.vocabulary, term_edges)
         labels = folder / "labels.yaml"
         self.labels = (yaml.safe_load(labels.read_text()) or {}) if labels.exists() else {}
         for path in sorted(folder.glob("*-edges.yaml")):
@@ -639,21 +639,21 @@ def stats(at):
                     lines.append(f"| {f['name']}（{f['en']}） | {'、'.join(hook)} | {after} | {n} | {f.get('note', '')} |")
         lines.append("")
 
-    lines += ["## R1 讀者的必讀量（spec/03 §6.2）", "",
-              "R1 讀者只讀懂並套用定理，不重現證明。他要讀的是：目標章引用到的定義、借用的定理陳述所用的定義，"
+    lines += ["## 陳述讀者必讀集（spec/03 §6.2）", "",
+              "陳述讀者只讀定義與陳述、會套用定理，不讀證明（對應 b 邊的 R ≤ R1 門檻，不是 R1 程度的讀者）。要讀的是：目標章引用到的定義、借用的定理陳述所用的定義，"
               "以及這些章的定義與陳述再引用到的定義（遞移）。這個集合只能由書稿的 crossref 算出，目前只有純線代章有資料。"
               "書稿沒有明寫引用的隱含語彙（例如定義裡直接使用「矩陣」而不引用）看不到，所以「下界」偏低。"
               "「術語比對」再加上 `registry/terms.yaml` 的術語在定義與陳述文字裡出現、卻沒有引用的情形，"
-              "常用詞會造成假陽性，所以偏高。比對只在該章的 s 閉包裡走（完整讀者讀得到的語彙，R1 讀者不會需要更多），"
+              "常用詞會造成假陽性，所以偏高。比對只在該章的 s 閉包裡走（完整讀者讀得到的語彙，陳述讀者不會需要更多），"
               "所以估計不超過上界。真實值夾在下界與估計值之間。", "",
               "結構性的章（例如 AL4.8：結合代數、自由向量空間、群作用、張量積）以定義為主，"
-              "幾乎沒有「只需套用、可以跳過證明」的定理，R1 必讀量本來就接近 s 閉包；"
+              "幾乎沒有「只需套用、可以跳過證明」的定理，陳述讀者必讀量本來就接近 s 閉包；"
               "這是指標在區分兩種讀者，不是計算出錯。", "",
-              "| 章 | R1 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |", "|---|---:|---:|---:|---|"]
+              "| 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |", "|---|---:|---:|---:|---|"]
     outside = []
     for c in at.order:
         if la_only(at, c) and not at.chapters[c]["opt"] and at.chapters[c]["vol"] in ("MA", "GEO", "NLA", "AL4"):
-            low, (est, out) = r1_lower_bound(at, c), r1_estimate(at, c, s_only)
+            low, (est, out) = stmt_reader_lower(at, c), stmt_reader_estimate(at, c, s_only)
             lines.append(f"| {at.label(c)} | {len(low)} | {len(est | low)} | {len(G.ancestors(s_only, [c])) - 1} | "
                          + "、".join(sorted(est - low, key=at.order.index)) + " |")
             if out:
@@ -708,12 +708,12 @@ def migration(at):
 
 # ───────────────────────── diff ─────────────────────────
 
-def r1_lower_bound(at, cid):
-    """Chapters an R1 reader of `cid` must read (definitions and statements only), from the computed vocab edges."""
+def stmt_reader_lower(at, cid):
+    """Chapters a statement reader of `cid` must read (definitions and statements only), from the computed vocab edges."""
     return G.ancestors(at.vocab["stmt"], at.vocab["all"].get(cid, ())) - {cid}
 
 
-def r1_estimate(at, cid, s_only):
+def stmt_reader_estimate(at, cid, s_only):
     """(estimate, outside): the lower bound plus the vocabulary found by matching registered terms
     (import_la.term_edges), traversed only inside cid's s closure. Whatever cid needs is read by the full reader too,
     so a term hit outside the closure is a homonym, a forward mention, or a missing map edge: it goes to `outside`."""

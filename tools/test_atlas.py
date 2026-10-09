@@ -180,12 +180,12 @@ class RegistryTest(unittest.TestCase):
         self.assertTrue(any(k["chapter"] == "F2.2" for k in at.constraints))
         self.assertTrue(atlas.check(at), at.errors)
 
-    def test_r1_estimate_sees_implicit_vocabulary(self):
+    def test_stmt_reader_estimate_sees_implicit_vocabulary(self):
         import atlas
         at = atlas.Atlas()
         s_only = at.preds({"s"})
-        est, _ = atlas.r1_estimate(at, "MA.16", s_only)
-        low = atlas.r1_lower_bound(at, "MA.16")
+        est, _ = atlas.stmt_reader_estimate(at, "MA.16", s_only)
+        low = atlas.stmt_reader_lower(at, "MA.16")
         self.assertNotIn("LA1.0", low)  # matrix norms, yet no explicit citation of the matrix chapter
         self.assertIn("LA1.0", est)  # regression: term matching must find it
         self.assertTrue(low <= est | low <= atlas.G.ancestors(s_only, ["MA.16"]))

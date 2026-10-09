@@ -9,7 +9,7 @@ Writes registry/computed/la-edges.yaml:
   edges: [[to, from, s|b|see, hard_count, soft_count], ...]
   (b only for citations that registry/moves.yaml reclassifies as borrows; its softened_for turns citations soft)
   witnesses: {"to<-from": [[citing_label, cited_label], ...]}  (hard, cross-volume, first few)
-  vocab: [[to, from, all|stmt|term, count], ...]  (definitions an R1 reader needs; see vocabulary(), term_edges())
+  vocab: [[to, from, all|stmt|term, count], ...]  (definitions a statement reader needs; see vocabulary(), term_edges())
 """
 import argparse
 import json
@@ -101,12 +101,12 @@ def compute(labels, moves=None, effects=None):
 
 
 def vocabulary(labels, moves=None):
-    """Chapter-level vocabulary edges for the R1 reader (spec/03 §6.2): [to, from, all|stmt, citations].
+    """Chapter-level vocabulary edges for the statement reader (spec/03 §6.2): [to, from, all|stmt, citations].
 
     all: a non-optional result in `to` cites, from a statement or a proof, a definition in `from`, or a result
          whose statement cites a definition in `from` (the reader borrows the statement and needs its words).
     stmt: a definition or result in `to` cites a definition in `from` from its statement (not its proof); this is
-          what an R1 reader of `to` needs, since they read its definitions and statements but not its proofs.
+          what a statement reader of `to` needs, since they read its definitions and statements but not its proofs.
     Only citations the book makes explicitly are seen, so closures over these edges are lower bounds.
     """
     where = {k: atlas_chapter(v.get("file")) for k, v in labels.items()}
@@ -203,7 +203,7 @@ def main(argv=None):
               + (f"# Applied planned moves from registry/moves.yaml: {', '.join(sorted(moves))}\n" if moves else "")
               + "# edges: [to, from, s|b|see, hard citations, soft citations]\n"
               + "# overrides: [label, move|softened_for|borrowed_by, chapter, citations it changed]\n"
-              + "# vocab: [to, from, all|stmt|term, count]: definitions the R1 reader needs (see vocabulary())\n")
+              + "# vocab: [to, from, all|stmt|term, count]: definitions the statement reader needs (see vocabulary())\n")
     vocab = vocabulary(labels, moves)
     if TERMS.exists():
         vocab += term_edges(labels, yaml.safe_load(TERMS.read_text()) or [], moves)
