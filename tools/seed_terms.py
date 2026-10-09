@@ -6,7 +6,9 @@ A term is a word a definition introduces in bold. Each term gets one canonical d
 Every other definition of the same words is listed under `also`, to be triaged (spec/01 rule 8): a local special
 case to register as a specializes node, a homonym to split into its own term, or a duplicate to merge in migration.
 
-Hand-maintained fields (zh, naer, forms, note, and any `also` entry already moved elsewhere) survive a refresh.
+Chinese names come from the 樂詞網 open-data CSVs in registry/external/naer (university list first, the high-school list
+only for F-volume terms); a term in neither is marked missing for the author. Hand-maintained fields (forms, note, meta,
+and zh with naer: hand) survive a refresh.
 Bold used for emphasis ("for all", "exactly one", "non-empty") is filtered by STOP.
 """
 import json
@@ -76,6 +78,55 @@ def book_definitions(chapters):
     return found
 
 
+NAER = ROOT / "registry" / "external" / "naer"
+F_VOLUMES = ("F1", "F2", "F3")
+# F1's logic vocabulary is the metalanguage of reading mathematics, not something a statement reader goes back for:
+# every term of F1.1-F1.4 (the logic chapters) and the logic definitions of F1.5.
+META_LABELS = {"def-connectives", "def-implication-converse-contrapositive", "def-quantifiers",
+               "def-negation-of-quantifiers"}
+
+
+def naer_key(en):
+    t = re.sub(r"\(.*?\)|\[.*?\]", " ", en.lower())
+    return re.sub(r"\s+", " ", t.replace("-", " ")).strip(" ,.")
+
+
+def singular(t):
+    w = t.split()
+    last = w[-1]
+    for suf, rep in (("ies", "y"), ("ses", "s"), ("xes", "x"), ("s", "")):
+        if last.endswith(suf) and len(last) > len(suf) + 2:
+            return " ".join(w[:-1] + [last[: -len(suf)] + rep])
+    return t
+
+
+def load_naer(name):
+    """English -> (Chinese, alternates) from a 樂詞網 open-data CSV (政府資料開放授權條款第 1 版)."""
+    import csv
+    out = {}
+    path = NAER / name
+    if not path.exists():
+        return out
+    with path.open(encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            names = [x.strip() for x in re.split(r"[；;]|\{|\}", row["中文名稱"]) if x.strip()]
+            if names:
+                out.setdefault(naer_key(row["英文名稱"]), (names[0], names[1:]))
+    return out
+
+
+def translate(en, ch, univ, hs):
+    """(zh, alternates, source): the university-level list first; the high-school list only for F-volume terms."""
+    for key in (naer_key(en), singular(naer_key(en))):
+        if key in univ:
+            return (*univ[key], "univ")
+    if ch.startswith(F_VOLUMES):
+        for key in (naer_key(en), singular(naer_key(en))):
+            if key in hs:
+                return (*hs[key], "hs")
+    return None, [], "missing"
+
+
 def main():
     chapters = yaml.safe_load((ROOT / "registry" / "chapters.yaml").read_text())
     order = [c["id"] for cs in chapters.values() for c in cs]
@@ -99,12 +150,23 @@ def main():
         also = [f"{label}@{ch}" for label, ch, _ in defs if label != t["def"]]
         if also:
             t["also"] = sorted(set(t.get("also", [])) | set(also), key=lambda a: order.index(a.split("@")[1]))
+    univ, hs = load_naer("univ.csv"), load_naer("hs.csv")
     out = []
     for tid in sorted(terms, key=lambda i: (order.index(terms[i]["ch"]), i)):
         t = terms[tid]
         prev = old.get(tid, {})
-        row = {"id": tid, "en": t["en"], "zh": prev.get("zh"), "naer": prev.get("naer", "pending"),
-               "def": t["def"], "ch": t["ch"]}
+        if prev.get("naer") == "hand":  # decided by the author; never overwritten
+            zh, alt, src = prev.get("zh"), prev.get("zh_alt") or [], "hand"
+        else:
+            zh, alt, src = translate(t["en"], t["ch"], univ, hs)
+            if alt:  # several senses in one 樂詞網 entry (range: 區域；範圍；值域…): the author picks
+                zh, alt, src = None, [zh, *alt], "choose"
+        row = {"id": tid, "en": t["en"], "zh": zh, "naer": src, "def": t["def"], "ch": t["ch"]}
+        if alt:
+            row["zh_alt" if src == "hand" else "zh_candidates"] = alt
+        meta = prev.get("meta", t["ch"] in ("F1.1", "F1.2", "F1.3", "F1.4") or t["def"] in META_LABELS)
+        if meta:
+            row["meta"] = True
         for k in ("forms", "note"):
             if prev.get(k):
                 row[k] = prev[k]
@@ -112,9 +174,17 @@ def main():
             row["also"] = t["also"]
         out.append(row)
     header = """# 術語表（全套共用）。由 tools/seed_terms.py 從兩本書的定義（粗體字）與 statements.yaml 產生，可重跑；
-# zh、naer、forms、note 是手填欄位，重跑會保留。
-# id: 術語 ID（statements.yaml 第 7 欄引用它）  en: 英文  zh: 中文譯名，以國家教育研究院「樂詞網」為準
-# naer: pending（未對照）| ok（與樂詞網一致）| none（樂詞網沒有，自訂）
+# forms、note、meta 是手填欄位，重跑會保留；naer: hand 的 zh 也會保留。
+# id: 術語 ID（statements.yaml 第 7 欄引用它）  en: 英文
+# zh: 中文譯名，取自國家教育研究院「樂詞網」的政府開放資料（registry/external/naer/，出處見下）
+# naer: univ（兩岸數學學術名詞）| hs（高中含以下數學學術名詞，只用於 F 冊）
+#       | choose（樂詞網同一條列了多個譯名，見 zh_candidates，待作者選）| missing（兩份都未收錄，待作者決定）
+#       | hand（作者決定的譯名，填 zh 並把 naer 改成 hand，重跑不覆寫；zh_alt 可記其他寫法）
+# meta: true＝讀數學文字的後設語言（F1 的邏輯用語），不參與陳述讀者必讀集的術語比對（spec/03 §6.2）
+#
+# 譯名出處：國家教育研究院「數學名詞—兩岸數學學術名詞」、「數學名詞—高中含以下數學學術名詞」，
+# 政府資料開放平臺 https://data.gov.tw/dataset/15445 、 https://data.gov.tw/dataset/15446 ，
+# 依政府資料開放授權條款第 1 版（https://data.gov.tw/license）使用。
 # def: 唯一的正式定義（書稿 label 或 statements.yaml 的節點）  ch: 它所在的章
 # forms: 比對用的其他英文寫法（複數會自動補）  also: 同一個詞的其他定義（label@章），待分流：
 #   就地定義（登記成 specializes 節點）、同形異義（拆成另一個術語）、或遷移時合併的重複內容

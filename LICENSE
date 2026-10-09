@@ -8,6 +8,15 @@ math-atlas is licensed in two parts.
    This covers the atlas only. The books it maps live in their own
    repositories and keep their own licence (CC BY-NC-SA 4.0).
 
+   Third-party data inside registry/: the files in registry/external/naer/ and
+   the Chinese names (zh, zh_candidates) in registry/terms.yaml come from the
+   National Academy for Educational Research (國家教育研究院) 樂詞網 open data,
+   「數學名詞—兩岸數學學術名詞」(https://data.gov.tw/dataset/15445) and
+   「數學名詞—高中含以下數學學術名詞」(https://data.gov.tw/dataset/15446),
+   used under the Open Government Data License, version 1.0
+   (政府資料開放授權條款第 1 版, https://data.gov.tw/license), which requires
+   this attribution and is compatible with CC BY 4.0.
+
 2. Code — everything under tools/ — is licensed under the MIT License:
 
 MIT License

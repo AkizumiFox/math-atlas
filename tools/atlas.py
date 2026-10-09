@@ -424,9 +424,10 @@ def check_terms(at):
         if pending:
             at.warnings.append(f"{len(pending)} terms in registry/terms.yaml have more than one definition (`also`); "
                                "triage each into a local definition, a homonym, or a duplicate to merge")
-        missing = sum(1 for t in at.terms if not t.get("zh"))
-        if missing:
-            at.notes.append(f"terms.yaml: {missing} of {len(at.terms)} terms have no Chinese name yet (樂詞網)")
+        status = Counter(t.get("naer") for t in at.terms)
+        at.notes.append(f"terms.yaml: {len(at.terms)} terms; Chinese names: " + ", ".join(
+            f"{k} {status[k]}" for k in ("univ", "hs", "hand", "choose", "missing") if status[k])
+            + " (choose and missing are the author's to decide)")
     local = defaultdict(list)
     for nid, targets in spec.items():
         n = nodes[nid]
