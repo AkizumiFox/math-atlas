@@ -23,7 +23,7 @@
   render: \langle #1, #2 \rangle
   meaning: 內積
   convention: 對第一個變數線性      # 待拍板，見下表
-  defined_at: la3.def.inner-product  # 陳述 ID
+  defined_at: def-inner-product  # 陳述 ID（與書稿 label 同一套）
   scope: global                      # 或冊／章 ID 列表
   forbid: ['\langle']                # 原始字形 lint
   outside_variants: ['(u|v)（物理與部分分析書）', 'u·v']
@@ -31,7 +31,7 @@
 
 ## 作用域與 import
 
-- 一章只能用兩類記號：自己定義的，以及沿 s ∪ b 遞移可達的上游章所定義的。
+- 一章的作用域 ＝ 自己定義的記號 ＋ 所有 s 祖先定義的記號 ＋ 本章登記的就地定義（spec/01 規則 8）。b 的來源章不在內：借用的意思是不必讀那一章，它的記號自然也不能進入作用域；被借用陳述的語彙必須已經在這個作用域裡（spec/01 規則 1）。
 - 每冊開頭由 build 自動產生「本冊沿用的記號」表。
 - 同一字形在重疊作用域裡有兩種語意時，build 報錯，除非記號表明文宣告這個重載和各自的作用域。例如 $(a,b)$ 可以是開區間、有序對或 gcd。
 

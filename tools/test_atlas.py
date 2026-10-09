@@ -106,7 +106,7 @@ class RegistryTest(unittest.TestCase):
         import atlas
         at = atlas.Atlas()
         at.scope[("MA.21", "AN3.3")] = ["AN3.1"]  # MA readers never read multivariable calculus
-        at.statements["edges"].append(["f2.thm.zorn", "f2.def.ac", "borrows", "A1/R2"])
+        at.statements["edges"].append(["thm-zorn", "def-ac", "borrows", "A1/R2"])
         self.assertFalse(atlas.check(at))
         self.assertTrue(any(e.startswith("scope lint: MA.21") for e in at.errors), at.errors)
         self.assertTrue(any("a borrow needs at most R1" in e for e in at.errors), at.errors)
@@ -140,23 +140,35 @@ class RegistryTest(unittest.TestCase):
         import atlas
         at = atlas.Atlas()
         nodes, edges = at.statements["nodes"], at.statements["edges"]
-        nodes.append(["x.def.cont", "MA.17", "def", "second definition", "A1", "R1", "continuous"])
+        nodes.append(["def-x-cont", "MA.17", "def", "second definition", "A1", "R1", "continuous"])
         for i in range(3):  # LA2.10 already defines three terms in place
-            nodes.append([f"x.def.extra{i}", "LA2.10", "def", "extra", "A1", "R1", "continuous"])
-            edges.append([f"x.def.extra{i}", "an1.def.continuous", "specializes"])
-        nodes.append(["x.def.deep", "LA2.6", "def", "too deep", "A1", "R2", "derivative"])
-        edges.append(["x.def.deep", "an1.def.derivative", "specializes"])
+            nodes.append([f"def-x-extra{i}", "LA2.10", "def", "extra", "A1", "R1", "continuous"])
+            edges.append([f"def-x-extra{i}", "def-continuous", "specializes"])
+        nodes.append(["def-x-deep", "LA2.6", "def", "too deep", "A1", "R2", "derivative"])
+        edges.append(["def-x-deep", "def-derivative", "specializes"])
         self.assertFalse(atlas.check(at))
         self.assertTrue(any(e.startswith("term `continuous` has 2 definitions") for e in at.errors), at.errors)
         self.assertTrue(any(e.startswith("LA2.10 defines 6 terms in place") for e in at.errors), at.errors)
-        self.assertTrue(any(e.startswith("local definition x.def.deep is taught at R2") for e in at.errors), at.errors)
+        self.assertTrue(any(e.startswith("local definition def-x-deep is taught at R2") for e in at.errors), at.errors)
 
     def test_generalization_must_be_linked(self):
         import atlas
         at = atlas.Atlas()
         del at.edges[("AN3.7", "MT.6")]  # Stokes on manifolds vs the divergence theorem
         self.assertFalse(atlas.check(at))
-        self.assertTrue(any("an3.thm.stokes (AN3.7) generalizes" in e for e in at.errors), at.errors)
+        self.assertTrue(any("thm-stokes (AN3.7) generalizes" in e for e in at.errors), at.errors)
+
+    def test_computed_replaces_plan_where_written(self):
+        import atlas
+        at = atlas.Atlas()
+        at.plan[("LA1.4", "MA.20")] = ("s", None)  # a stale planned s edge between written chapters
+        at.plan[("LA3.11", "MA.16")] = ("see", None)  # a planned pointer the proofs do not contradict
+        at.plan[("AN3.1", "MA.16")] = ("s", None)  # AN3 is not written: the plan stands
+        eff = at._merge()
+        self.assertNotIn(("LA1.4", "MA.20"), at.computed)
+        self.assertNotIn(("LA1.4", "MA.20"), eff)
+        self.assertEqual(eff.get(("LA3.11", "MA.16")), "see")
+        self.assertEqual(eff.get(("AN3.1", "MA.16")), "s")
 
     def test_subject_after(self):
         import atlas

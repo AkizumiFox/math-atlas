@@ -1,5 +1,5 @@
 # 計畫中的結果搬家：書稿還沒改之前，匯入計算邊時就先把這些 label 算在新的章。
-# 書稿完成搬家後，刪掉對應的列（import_la.py 會警告已經不在原處的列）。
+# 書稿完成搬家後，刪掉對應的列（import_la.py 會警告已經不在原處的列）。線代書已發布：搬家時舊位置要留「已移至⋯⋯」的錨點（spec/01）。
 # label: 書稿裡的 label；book: la | ab；from／to: 章 ID；leave: 原處留下的軟邊（see）
 # borrowed_by: 搬家後改以 b 借用這個結果的章
 # todo: spec/06 的待辦 ID（`todo:<id>`）；書稿改完、勾掉待辦後，這一列必須刪掉，atlas.py check 會檢查

@@ -7,14 +7,16 @@
 | L0 冊 | `F1`、`AN2`… | 25 | 全圖（`generated/volumes.mmd`） |
 | L1 章 | `AN2.3` | 172 | 每冊一張圖，另有全套互動圖（`generated/atlas.html`） |
 | L2 節 | 由書稿 build 產生 | 推估約 1,800 | 只畫 ego graph |
-| L3 陳述 | `an2.thm.metric-compact-equiv` | 推估上萬 | 只畫 ego graph |
+| L3 陳述 | `thm-metric-compact-equiv` | 推估上萬 | 只畫 ego graph |
 | 概念 | 由 revisits／generalizes 連起來的等價類 | — | 概念頁 |
 
 ## ID 規則
 
 - **章 ID**：`冊.號`，例如 `AN2.3`。線代各冊沿用線代書的原章號（`LA3.11`），所以 LA 的章號不從 1 開始。一章拆成兩章時加字母後綴（`FA.1a`、`FA.1b`），後面各章的 ID 不動。
-- **陳述 ID**：`冊小寫.種類.slug`，例如 `fa.thm.hb-analytic`。種類為 `def | thm | cor | lem | ex | cex | concept | ax`。
+- **陳述 ID**：和書稿 label 同一套格式 `種類-slug`，例如 `thm-hb-analytic`、`def-determinant`。種類前綴為 `def | thm | prp | cor | lem | cpt`（書稿另有 `exm`、`exr`、`eq`）。冊與章只是節點的屬性，不寫進 ID，所以陳述搬家時 ID 不變（例：`thm-unitary-exponential` 從 LA3.12 搬到 AN3.3）。已在書稿裡的陳述，atlas 直接用書稿的 label。
+- **全套唯一**：同一個 label 不能在兩本書裡指不同的結果。`tools/import_labels.py` 收集各書的 label，`atlas.py` 報出跨書重複（`generated/diff.md`）：同一章的重複是遷移時要合併的同一份內容；不同章的重複要決定歸屬，意義不同時改名。引擎端的強制檢查見 spec/05 第 11 項。
 - ID **不帶語意**，一經發布就不能刪除。改名或合併時，要在重導表（old → new）留一行，CI 檢查「已發布的 ID 不能消失」。
+- **發布**＝部署到公開網站。線代書已經上線，它的 label 與章節網址現在就算已發布。因此每次搬家或拆章，書稿的舊位置都要留一個錨點（至少一句「此定理已移至⋯⋯」並連過去），不能只在 registry 登記；`moves.yaml` 的每一列在書稿改完、勾掉待辦之前，都要確認舊錨點已留下。
 - 顯示編號（例如「定理 11.5.2」）由 build 根據位置產生，與 ID 無關。
 
 ## 邊型別
@@ -53,7 +55,9 @@
 ```
 plan-edges.yaml   手寫，章層級，附 why
 computed/*.yaml   build 回溯得到（目前只有線代：tools/import_la.py）
-      └─ 合併規則：同一對章取最強的型別（s > b > revisits > see）
+      └─ 合併規則：兩章都有書稿時，計算值取代計畫值：計畫的 s／b 若證明沒用到就丟掉（diff 列出），
+                   計畫的 see／revisits 只在證明完全沒有這條邊時保留。
+                   其餘情形計畫邊補上還沒寫的部分，同一對章取最強的型別（s > b > revisits > see）。
 ```
 
 `atlas.py diff` 輸出三份清單（MIPRE blueprint 稽核的教訓）：

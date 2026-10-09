@@ -20,7 +20,7 @@ registry/    唯一的事實來源
   fields.yaml         數學各領域 → 章的覆蓋表；科目之間的 after 邊
   field-deviations.yaml  與外部科目圖之間已接受的差異（附理由）
   external/           對照用的外部來源（不是事實來源）
-tools/       atlas.py（check／stats／render／diff）、graph.py、import_la.py
+tools/       atlas.py（check／stats／render／diff）、graph.py、import_la.py、import_labels.py（跨書 label）
 generated/   工具的產出，勿手改
 ```
 
@@ -30,6 +30,7 @@ generated/   工具的產出，勿手改
 
 ```sh
 python3 tools/import_la.py          # 從 ../linear-algebra/_build/crossref_labels.json 重算線代邊
+python3 tools/import_labels.py      # 收集各書的 label，找出跨書重複
 python3 tools/atlas.py check        # 無環、章序、選讀、b 的 why；失敗時結束碼為 1
 python3 tools/atlas.py all          # check＋stats＋diff＋render，寫入 generated/
 python3 -m unittest discover -s tools -p "test_*.py"

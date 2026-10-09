@@ -11,7 +11,7 @@
 
 （無）
 
-## 計畫中有、證明沒用
+## 計畫中有、證明沒用（兩端都有書稿：已由計算值取代，不進入圖）
 
 （無）
 
@@ -28,6 +28,38 @@
 ## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）
 
 （無）
+
+## 跨書重複的 label（registry/computed/labels.yaml）
+
+同一章的重複是遷移時要合併的同一份內容；不同章的重複是撞名。
+
+- `def-cartesian-product`：la F2.1、ab F2.1
+- `def-composition`：la F2.1、ab F2.1
+- `def-empty-set`：la F2.1、ab F2.1
+- `def-function`：la F2.1、ab F2.1
+- `def-image`：la LA1.2、ab F2.1　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名
+- `def-indexed-family`：la F2.1、ab F2.1
+- `def-inverse-function`：la F2.1、ab F2.1
+- `def-left-right-inverse`：la F2.1、ab F2.1
+- `def-power-set`：la F2.1、ab F2.1
+- `def-relation`：la F2.2、ab F2.1　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名
+- `def-set-builder`：la F2.1、ab F2.1
+- `def-set-equality`：la F2.1、ab F2.1
+- `def-subset`：la F2.1、ab F2.1
+- `exr-functions-a1`：la F2.1、ab F2.1
+- `exr-functions-b1`：la F2.1、ab F2.1
+- `exr-functions-b2`：la F2.1、ab F2.1
+- `exr-functions-b3`：la F2.1、ab F2.1
+- `exr-functions-c1`：la F2.1、ab F2.1
+- `exr-functions-c2`：la F2.1、ab F2.1
+- `thm-left-inverse-iff-injective`：la F2.1、ab F2.1
+- `thm-sqrt2-irrational`：la F1.5、ab F1.2　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名
+- `thm-strong-induction`：la F1.5、ab F1.3　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名
+
+## 陳述 ID 對到的書稿 label 不在同一章
+
+- `thm-induction`：地圖放在 F2.2，書稿目前在 la F1.5
+- `thm-zorn`：地圖放在 F2.4，書稿目前在 la LA1.1
 
 ## 外部科目圖的對照（registry/external/subject-dag.yaml）
 

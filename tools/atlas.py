@@ -117,6 +117,8 @@ class Atlas:
         out, wit = {}, {}
         self.overrides = []
         self.vocab = {"all": {}, "stmt": {}}  # R1 reader: definitions needed (import_la.vocabulary)
+        labels = folder / "labels.yaml"
+        self.labels = (yaml.safe_load(labels.read_text()) or {}) if labels.exists() else {}
         for path in sorted(folder.glob("*-edges.yaml")):
             data = yaml.safe_load(path.read_text())
             for to, frm, typ, hard, soft in data["edges"]:
@@ -130,14 +132,25 @@ class Atlas:
         return out, wit
 
     def _merge(self):
-        """Effective edge type per (to, from): the strongest of plan and computed."""
+        """Effective edge type per (to, from).
+
+        Where both chapters have a manuscript with computed edges, the computed type replaces the plan: a planned
+        hard edge the proofs never use is dropped (diff lists it), and a planned soft edge survives only when the
+        proofs have no edge at all. Elsewhere the plan fills in what is not written yet, and the stronger type wins.
+        """
         eff = {}
         for key, (typ, _) in self.plan.items():
+            if self.written(*key) and typ in HARD:
+                continue
             eff[key] = typ
         for key, (typ, *_rest) in self.computed.items():
-            if key not in eff or STRENGTH[typ] > STRENGTH[eff[key]]:
+            if self.written(*key) or key not in eff or STRENGTH[typ] > STRENGTH[eff[key]]:
                 eff[key] = typ
         return eff
+
+    def written(self, to, frm):
+        """Both chapters come from a manuscript whose citation graph is imported (today: the linear-algebra book)."""
+        return all(all(str(s).startswith("la:") for s in self.chapters[c]["src"]) for c in (to, frm))
 
     def _load_statements(self, path):
         if not path.exists():
@@ -244,7 +257,24 @@ def check(at):
             for c in it.get("ch") or ():
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
+    check_ids(at)
     return not at.errors
+
+
+STATEMENT_PREFIX = {"def": "def", "thm": "thm", "prp": "prp", "cor": "cor", "lem": "lem", "concept": "cpt"}
+
+
+def check_ids(at):
+    """Statement ids use the books' label format `kind-slug` (spec/01); labels must be unique across books."""
+    for n in at.statements["nodes"]:
+        pre = STATEMENT_PREFIX.get(n[2])
+        if not pre or not re.fullmatch(rf"{pre}-[a-z0-9]+(-[a-z0-9]+)*", n[0]):
+            at.errors.append(f"statements.yaml: {n[0]} ({n[2]}) is not a `{pre or n[2]}-slug` id")
+    dup = at.labels.get("duplicates") or []
+    clash = [lbl for lbl, where in dup if len({c for _, c in where}) > 1]
+    if dup:
+        at.warnings.append(f"{len(dup)} labels are defined in more than one book (generated/diff.md)"
+                           + (f"; with different chapters: {', '.join(clash)}" if clash else ""))
 
 
 def check_fields(at):
@@ -619,7 +649,7 @@ def diff(at):
         if ctyp == "s" and not la_only(at, key[0]) and at.plan.get(key, (None,))[0] != "s":
             added.append(f"- {key[0]} ← {key[1]}：計算為 s（硬引用 {h}），計畫為 {at.plan.get(key, ('無',))[0]}")
     lines += ["## b 被當成 s 使用", ""] + (b_as_s or ["（無）"]) + [""]
-    lines += ["## 計畫中有、證明沒用", ""] + (plan_unused or ["（無）"]) + [""]
+    lines += ["## 計畫中有、證明沒用（兩端都有書稿：已由計算值取代，不進入圖）", ""] + (plan_unused or ["（無）"]) + [""]
     lines += ["## 證明有用、計畫中沒有（只列混合來源的章；純線代章本來就以計算值為準）", ""] + (added or ["（無）"]) + [""]
 
     stmt_ch = {n[0]: n[1] for n in at.statements["nodes"]}
@@ -635,6 +665,16 @@ def diff(at):
     noscope = [f"- {to} ← {frm}" for (to, frm), typ in sorted(at.edges.items(), key=lambda kv: at.order.index(kv[0][0]))
                if typ == "b" and (to, frm) not in at.scope]
     lines += ["## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）", ""] + (noscope or ["（無）"]) + [""]
+    dup = [f"- `{lbl}`：" + "、".join(f"{b} {c or '（無對應章）'}" for b, c in where)
+           + ("　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名" if len({c for _, c in where}) > 1 else "")
+           for lbl, where in at.labels.get("duplicates") or ()]
+    lines += ["## 跨書重複的 label（registry/computed/labels.yaml）", "",
+              "同一章的重複是遷移時要合併的同一份內容；不同章的重複是撞名。", ""] + (dup or ["（無）"]) + [""]
+    stmt_ch = {n[0]: n[1] for n in at.statements["nodes"]}
+    off = [f"- `{sid}`：地圖放在 {stmt_ch[sid]}，書稿目前在 " + "、".join(f"{b} {c}" for b, c in where)
+           for sid, where in sorted((at.labels.get("statements") or {}).items())
+           if all(c != stmt_ch.get(sid) for _, c in where)]
+    lines += ["## 陳述 ID 對到的書稿 label 不在同一章", ""] + (off or ["（無）"]) + [""]
     if at.external:
         accepted = {k for d in at.deviations for k in (d["key"] if isinstance(d["key"], list) else [d["key"]])}
         found = field_deviations(at)
