@@ -1,6 +1,7 @@
 # 陳述層（L3）種子：F 系列與九個主幹的關鍵定義／定理。
-# 節點：[id, 章, kind, 標題, A, R]；A／R 是「教完時」的目標深度（定義見 spec/03，待確認）。
-# 邊：[使用者, 被用者, uses|borrows|revisits|generalizes, 需要的 A/R（選填）, assessed（選填）]。
+# 節點：[id, 章, kind, 標題, A, R, 術語（選填）]；同一術語只能有一個正式定義，其餘是以 specializes 指向它的就地定義（spec/01 規則 8）。
+# 原節點說明：A／R 是「教完時」的目標深度（定義見 spec/03，待確認）。
+# 邊：[使用者, 被用者, uses|borrows|revisits|generalizes|specializes, 需要的 A/R（選填）, assessed（選填）]。
 # 節點上的 A／R＝教到；邊上的 A／R＝下游需要；uses 邊要滿足「需要 ≤ 教到」（spec/03）。
 # 章欄位已改成新章號（分析線以 analysis-book 為準）。atlas.py diff 會檢查每條 uses／borrows
 # 在章層級都有硬路徑；一旦書稿有了 crossref，這份檔改由 build 產生。
@@ -102,7 +103,48 @@ nodes:
   - [al4.cor.fgag, AL4.4, cor, "有限生成 Abel 群分類", A1, R1]
   - [al4.cor.jordan-module, AL4.4, cor, "有理與 Jordan 標準形作為 F[x]-模分解", A2, R2]
 
+  # 術語：正式定義與就地定義（spec/01 規則 8，2026-10-09）
+  - [an1.def.seq-limit, AN1.2, def, "數列極限；級數收斂＝部分和收斂", A1, R1, sequence-limit]
+  - [an1.def.cauchy, AN1.2, def, "Cauchy 列", A1, R1, cauchy-sequence]
+  - [an1.def.fn-limit, AN1.5, def, "函數極限（含 x→∞）", A1, R2, function-limit]
+  - [an1.def.continuous, AN1.5, def, "連續（ε-δ 與序列式）", A1, R2, continuous]
+  - [an1.def.derivative, AN1.7, def, "導數", A1, R1, derivative]
+  - [an2.def.closed, AN2.1, def, "度量空間的開集與閉集", A2, R1, closed-set]
+  - [an3.def.frechet, AN3.1, def, "ℝⁿ→ℝᵐ 的（Fréchet）可微與全導數", A1, R2, total-derivative]
+  - [an3.def.partial, AN3.1, def, "偏導數與 Jacobian 矩陣", A1, R1, partial-derivative]
+  - [la2.def.det, LA2.7, def, "行列式（交錯多線性、det I=1）", A2, R2, determinant]
+  - [la1.def.elementary, LA1.3, def, "初等矩陣與列運算", A1, R0, elementary-matrix]
+  - [la4.def.posdef, LA4.14, def, "正定、負定、不定的二次型", A1, R1, positive-definite]
+  - [ha.def.fourier, HA.5, def, "ℝ 與 ℝᵈ 上的 Fourier 變換", A1, R2, fourier-transform]
+  # 就地定義：借用章只為讀懂被借用的陳述而定義，限特例
+  - [la2.def.continuous-local, LA2.6, def, "連續（序列式，限 ℂ 的子集上的實值函數；§6.05）", A1, R1, continuous]
+  - [la2.def.seq-limit-local, LA2.10, def, "複數數列與級數的收斂（§10.9）", A1, R1, sequence-limit]
+  - [la2.def.derivative-local, LA2.10, def, "ℝ→ℂ 函數的導數（§10.9）", A1, R1, derivative]
+  - [la2.def.limit-infinity-local, LA2.10, def, "t→∞ 時函數的極限（§10.9）", A1, R1, function-limit]
+  - [ma.def.cauchy-local, MA.16, def, "範數空間中的 Cauchy 列（§16）", A1, R1, cauchy-sequence]
+  - [ma.def.closed-local, MA.16, def, "範數空間中的閉集（序列式；§16）", A1, R1, closed-set]
+  - [an3.def.det-local, AN3.1, def, "n×n 矩陣的行列式（Leibniz 公式；AN3.1）", A1, R0, determinant]
+  - [an3.def.posdef-local, AN3.1, def, "二次型 h ↦ hᵀAh 的正定、負定、不定（AN3.1）", A1, R1, positive-definite]
+  - [an3.def.det-local-int, AN3.4, def, "n×n 矩陣的行列式（Leibniz 公式；AN3.4）", A1, R0, determinant]
+  - [an3.def.elementary-local, AN3.4, def, "初等矩陣（AN3.4）", A1, R0, elementary-matrix]
+  - [ca.def.frechet-local, CA.1, def, "ℝ²→ℝ² 的實可微（CA.1）", A1, R1, total-derivative]
+  - [ca.def.partial-local, CA.1, def, "偏導數與 2×2 Jacobian（CA.1）", A1, R1, partial-derivative]
+  - [pr.def.fourier-local, PR.4, def, "L¹ 函數的 Fourier 變換（以 Lebesgue 積分定義；PR.4）", A1, R1, fourier-transform]
+
 edges:
+  - [la2.def.continuous-local, an1.def.continuous, specializes]
+  - [la2.def.seq-limit-local, an1.def.seq-limit, specializes]
+  - [la2.def.derivative-local, an1.def.derivative, specializes]
+  - [la2.def.limit-infinity-local, an1.def.fn-limit, specializes]
+  - [ma.def.cauchy-local, an1.def.cauchy, specializes]
+  - [ma.def.closed-local, an2.def.closed, specializes]
+  - [an3.def.det-local, la2.def.det, specializes]
+  - [an3.def.posdef-local, la4.def.posdef, specializes]
+  - [an3.def.det-local-int, la2.def.det, specializes]
+  - [an3.def.elementary-local, la1.def.elementary, specializes]
+  - [ca.def.frechet-local, an3.def.frechet, specializes]
+  - [ca.def.partial-local, an3.def.partial, specializes]
+  - [pr.def.fourier-local, ha.def.fourier, specializes]
   - [f1.def.nd-rules, f1.def.connective, uses]
   - [f1.thm.raa, f1.def.nd-rules, uses]
   - [f1.thm.soundness, f1.thm.raa, uses]

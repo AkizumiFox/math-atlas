@@ -194,12 +194,16 @@ def check(at):
                                                      or b in G.ancestors(sonly, [a])):
             at.errors.append(f"{user} ({a}) generalizes {used} ({b}), but the chapters are not linked; "
                              f"add a revisits or see edge {a} <- {b}")
+    local = check_terms(at)
     # notation scope (chapter-level proxy): what a borrowed statement is written in must already be in scope
     for (to, frm), chs in sorted(at.scope.items()):
         if at.edges.get((to, frm)) != "b":
             at.errors.append(f"scope declared for {to} <- {frm}, but the effective edge is {at.edges.get((to, frm))}")
             continue
         anc = G.ancestors(sonly, [to])
+        if to in chs and not local.get(to):
+            at.errors.append(f"scope lint: {to} <- {frm} lists {to} itself, but {to} registers no local definition "
+                             "(a def node that specializes the canonical one)")
         for c in chs:
             if c not in anc:
                 at.errors.append(f"scope lint: {to} borrows from {frm} a statement written in the vocabulary of {c}, "
@@ -237,6 +241,50 @@ def check(at):
             for c in (f.get("ch") or []) + (f.get("hook") or []):
                 at._known(c, f"fields.yaml[{f['name']}]")
     return not at.errors
+
+
+LOCAL_DEF_MAX = 3
+
+
+def check_terms(at):
+    """One canonical definition per term; every other definition of it is a local special case that
+    specializes it. A local definition (one that specializes a def in another chapter) is how a borrowing
+    chapter brings vocabulary into scope: definitions only, at most three per chapter, read at R0-R1.
+    Returns {chapter: [local def ids]}."""
+    nodes = {n[0]: n for n in at.statements["nodes"]}
+    term = {n[0]: n[6] for n in at.statements["nodes"] if len(n) > 6}
+    spec = defaultdict(list)
+    for user, used, typ, *_ in at.statements["edges"]:
+        if typ == "specializes":
+            spec[user].append(used)
+            if term.get(user) != term.get(used):
+                at.errors.append(f"statements.yaml: {user} specializes {used}, but their terms differ "
+                                 f"({term.get(user)} vs {term.get(used)})")
+    by_term = defaultdict(list)
+    for nid, t in term.items():
+        if nodes[nid][2] == "def":
+            by_term[t].append(nid)
+    for t, ids in sorted(by_term.items()):
+        canonical = [i for i in ids if not spec[i]]
+        if len(canonical) != 1:
+            at.errors.append(f"term `{t}` has {len(canonical)} definitions not linked by specializes: "
+                             + ", ".join(canonical) + " (exactly one may be canonical)")
+    local = defaultdict(list)
+    for nid, targets in spec.items():
+        n = nodes[nid]
+        if any(nodes[t][1] != n[1] for t in targets):
+            if n[2] != "def":
+                at.errors.append(f"local definition {nid} must be a def, not {n[2]} (theorems cannot be defined in place)")
+            ar = parse_ar(f"{n[4]}/{n[5]}", f"statements.yaml node {nid}", at)
+            if ar and ar[1] > 1:
+                at.errors.append(f"local definition {nid} is taught at {n[5]}; in-place definitions are read at R0-R1, "
+                                 "otherwise make the edge s")
+            local[n[1]].append(nid)
+    for ch, ids in sorted(local.items()):
+        if len(ids) > LOCAL_DEF_MAX:
+            at.errors.append(f"{ch} defines {len(ids)} terms in place (> {LOCAL_DEF_MAX}): {', '.join(ids)}; "
+                             "make the borrow an s edge instead")
+    return local
 
 
 def check_overrides(at):

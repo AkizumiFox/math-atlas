@@ -121,6 +121,21 @@ class RegistryTest(unittest.TestCase):
         import_la.compute(labels, {"thm-l": {"to": "MA.21b", "softened_for": ["MA.21"]}}, effects)
         self.assertEqual(effects, {("thm-l", "softened_for", "MA.21"): 0})  # the rewrite is done: stale
 
+    def test_terms_and_local_definitions(self):
+        import atlas
+        at = atlas.Atlas()
+        nodes, edges = at.statements["nodes"], at.statements["edges"]
+        nodes.append(["x.def.cont", "MA.17", "def", "second definition", "A1", "R1", "continuous"])
+        for i in range(3):  # LA2.10 already defines three terms in place
+            nodes.append([f"x.def.extra{i}", "LA2.10", "def", "extra", "A1", "R1", "continuous"])
+            edges.append([f"x.def.extra{i}", "an1.def.continuous", "specializes"])
+        nodes.append(["x.def.deep", "LA2.6", "def", "too deep", "A1", "R2", "derivative"])
+        edges.append(["x.def.deep", "an1.def.derivative", "specializes"])
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("term `continuous` has 2 definitions") for e in at.errors), at.errors)
+        self.assertTrue(any(e.startswith("LA2.10 defines 6 terms in place") for e in at.errors), at.errors)
+        self.assertTrue(any(e.startswith("local definition x.def.deep is taught at R2") for e in at.errors), at.errors)
+
     def test_generalization_must_be_linked(self):
         import atlas
         at = atlas.Atlas()

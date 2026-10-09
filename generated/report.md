@@ -1,7 +1,7 @@
 # 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）
 
 - 冊：25；章：170（選讀 10）
-- 章層級邊：s 559、b 25、軟邊 89；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
+- 章層級邊：s 559、b 24、軟邊 90；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
 
 除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。
 
@@ -82,7 +82,7 @@ Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（
 
 必讀：F1.1、F1.2、F1.4、F1.5、F2.1、F2.2、F2.3、AN1.1、AN1.2、AN1.3、AN1.4、AN1.5、AN1.6、AN1.7、AN1.8、AN1.9、AN1.10、AN1.11、F3.5、F3.6、F3.7、F3.8、LA1.0、LA1.1、LA1.2、LA1.3、LA1.4、LA1.5、LA2.6、LA2.7、LA2.8、LA2.9、LA3.11、AN2.1、AN2.2、AN2.3、AN2.4、AN2.6、AN2.7、AN2.8、AN3.1、AN3.2、AN3.4、AL1.1、HA.1、HA.2、HA.3、HA.5、HA.6、MT.1、MT.2、MT.3、MT.4、MT.5、MT.7、MT.8、MT.9、MT.10、MT.11、FA.1a、FA.1b、FA.2、FA.3、FA.4、FA.5、FA.6
 
-只借用（不必讀）：F2.4、LA3.12、LA4.14
+只借用（不必讀）：F2.4、LA4.14
 
 ### 代數（Harvard 版）
 
