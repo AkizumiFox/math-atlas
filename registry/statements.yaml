@@ -17,6 +17,8 @@ nodes:
   - [cpt-counterexample, F1.5, concept, "反例與病態情形", A1, R3]
   # F2
   - [def-function, F2.1, def, "函數作為關係；像與原像", A2, R1]
+  - [def-image, F2.1, def, "集合在函數下的像 f(A)", A2, R1, image]
+  - [def-image-linear-map, LA1.2, def, "線性映射的像 im T = T(V)（線代書現行 label def-image，待改名）", A2, R1, image]
   - [thm-bijection-iff-inverse, F2.1, thm, "雙射 ⇔ 有雙邊反函數；左右反函數", A2, R2]
   - [def-equivalence, F2.2, def, "等價關係與分割的一一對應", A2, R2]
   - [thm-quotient-up, F2.2, thm, "商集的泛性質（良定義的函數可通過商）", A2, R2]
@@ -136,6 +138,7 @@ nodes:
   - [def-fourier-local, PR.4, def, "L¹ 函數的 Fourier 變換（以 Lebesgue 積分定義；PR.4）", A1, R1, fourier-transform]
 
 edges:
+  - [def-image-linear-map, def-image, specializes]   # 特例關係，見 registry/label-triage.yaml
   - [def-continuous-local, def-continuous, specializes]
   - [def-seq-limit-local, def-seq-limit, specializes]
   - [def-derivative-local, def-derivative, specializes]

@@ -77,6 +77,9 @@ class Atlas:
         self.external = yaml.safe_load(ext.read_text()) if ext.exists() else None
         terms = reg / "terms.yaml"
         self.terms = (yaml.safe_load(terms.read_text()) or []) if terms.exists() else []
+        triage = reg / "label-triage.yaml"
+        rows = (yaml.safe_load(triage.read_text()) or []) if triage.exists() else []
+        self.label_triage = {lbl: row for row in rows for lbl in row["labels"]}
         cons = reg / "chapter-constraints.yaml"
         self.constraints = (yaml.safe_load(cons.read_text()) or []) if cons.exists() else []
         dev = reg / "field-deviations.yaml"
@@ -262,10 +265,12 @@ def check(at):
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
     check_ids(at)
-    written = {c for cs in (at.labels.get("written") or {}).values() for c in cs}
+    written = at.labels.get("written") or {}
     for k in at.constraints:
-        if at._known(k["chapter"], "chapter-constraints.yaml") and k["chapter"] in written:
-            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} is already written; "
+        book = str(k.get("book", "")).split(":")[0]
+        done = {c for b, cs in written.items() if book in (b, "new") for c in cs}  # a new chapter: no book may have it
+        if at._known(k["chapter"], "chapter-constraints.yaml") and k["chapter"] in done:
+            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} is already written in {k.get('book')}; "
                              "a change to it is a rewrite and belongs in spec/06")
         if not k.get("rule") or not k.get("decided"):
             at.errors.append(f"chapter-constraints.yaml: {k['chapter']} needs `rule` and `decided`")
@@ -281,11 +286,20 @@ def check_ids(at):
         pre = STATEMENT_PREFIX.get(n[2])
         if not pre or not re.fullmatch(rf"{pre}-[a-z0-9]+(-[a-z0-9]+)*", n[0]):
             at.errors.append(f"statements.yaml: {n[0]} ({n[2]}) is not a `{pre or n[2]}-slug` id")
-    dup = at.labels.get("duplicates") or []
-    clash = [lbl for lbl, where in dup if len({c for _, c in where}) > 1]
+    dup = {lbl for lbl, _ in at.labels.get("duplicates") or []}
+    open_ = sorted(dup - set(at.label_triage))
+    if open_:
+        at.warnings.append(f"{len(open_)} labels defined in more than one book are not triaged in "
+                           f"registry/label-triage.yaml: {', '.join(open_)}")
+    for lbl in sorted(set(at.label_triage) - dup):
+        at.warnings.append(f"label-triage.yaml: {lbl} is no longer defined in two books; delete it")
+    for row in {id(r): r for r in at.label_triage.values()}.values():
+        if row.get("kind") not in ("same", "special", "clash") or not row.get("why"):
+            at.errors.append(f"label-triage.yaml: {row['labels'][0]} needs kind same|special|clash and a why")
     if dup:
-        at.warnings.append(f"{len(dup)} labels are defined in more than one book (generated/diff.md)"
-                           + (f"; with different chapters: {', '.join(clash)}" if clash else ""))
+        kinds = Counter(at.label_triage[lbl]["kind"] for lbl in dup if lbl in at.label_triage)
+        at.notes.append(f"{len(dup)} labels defined in two books: " + ", ".join(f"{k} {n}" for k, n in sorted(kinds.items()))
+                        + (f", untriaged {len(open_)}" if open_ else ""))
 
 
 def check_fields(at):
@@ -743,13 +757,16 @@ def diff(at):
     noscope = [f"- {to} ← {frm}" for (to, frm), typ in sorted(at.edges.items(), key=lambda kv: at.order.index(kv[0][0]))
                if typ == "b" and (to, frm) not in at.scope]
     lines += ["## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）", ""] + (noscope or ["（無）"]) + [""]
-    dup = [f"- `{lbl}`：" + "、".join(f"{b} {c or '（無對應章）'}" for b, c in where)
-           + ("　**不同章**：同一結果就在遷移時決定歸屬；意義不同（例如線性映射的像 vs 集合的像）就要改名" if len({c for _, c in where}) > 1 else "")
+    kind_name = {"same": "同一內容，遷移時合併", "special": "特例，改名並以 specializes 指回", "clash": "撞名，改名"}
+    dup = [f"- `{lbl}`：" + "、".join(f"{b} {c or '（無對應章）'}" for b, c in where) + "　"
+           + (kind_name[at.label_triage[lbl]["kind"]] if lbl in at.label_triage else "**未分流**")
            for lbl, where in at.labels.get("duplicates") or ()]
-    lines += ["## 跨書重複的 label（registry/computed/labels.yaml）", "",
-              "同一章的重複是遷移時要合併的同一份內容；不同章的重複是撞名。", ""] + (dup or ["（無）"]) + [""]
+    lines += ["## 跨書重複的 label（registry/computed/labels.yaml，分流見 registry/label-triage.yaml）", ""] \
+        + (dup or ["（無）"]) + [""]
     stmt_ch = {n[0]: n[1] for n in at.statements["nodes"]}
+    takes = {lbl: k["chapter"] for k in at.constraints for lbl in k.get("takes") or ()}
     off = [f"- `{sid}`：地圖放在 {stmt_ch[sid]}，書稿目前在 " + "、".join(f"{b} {c}" for b, c in where)
+           + (f"　已知：{takes[sid]} 寫好後接手（chapter-constraints.yaml）" if takes.get(sid) == stmt_ch[sid] else "")
            for sid, where in sorted((at.labels.get("statements") or {}).items())
            if all(c != stmt_ch.get(sid) for _, c in where)]
     lines += ["## 陳述 ID 對到的書稿 label 不在同一章", ""] + (off or ["（無）"]) + [""]

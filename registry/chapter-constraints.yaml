@@ -2,7 +2,8 @@
 # 生成管線的 Spec 步驟（spec/04 圖 1）讀這份檔，把約束放進該章的生成規格，審查步驟逐條核對。
 # 已經寫好的章不能掛約束：那是改寫，屬於 spec/06 的「書稿改寫」。atlas.py check 會檢查
 # （依 registry/computed/labels.yaml 的 written，由 tools/import_labels.py 產生）。
-# 每條：chapter（atlas 章）、book（書稿章）、decided、rule（要照做的事）、why（選填）。
+# 每條：chapter（atlas 章）、book（書稿章）、decided、rule（要照做的事）、why（選填）、
+# takes（選填：這一章寫好後接手的既有書稿 label，原處留錨點；在那之前 diff 把 label 的位置差異列為已知）。
 
 - chapter: AN3.1
   book: ab:30
@@ -92,3 +93,17 @@
     證明「𝒟′ 序列完備」時，在 Fréchet 空間 C_c^∞(K) 上重跑第 68 章（FA.4）的 Baire 論證，並明寫依賴第 68 章。
     分佈與半範數的正式定義在本章（def-distribution、def-seminorm）。另加一段 see，指向第 69 章（FA.5）的
     拓樸向量空間觀點。
+
+- chapter: F2.2
+  book: ab:7
+  decided: 2026-10-10
+  rule: >-
+    歸納法沿用線代書第 0 章的 label thm-induction（不另取新 label），線代書原處留錨點。
+  takes: [thm-induction]
+
+- chapter: F2.4
+  book: new
+  decided: 2026-10-10
+  rule: >-
+    Zorn 引理的陳述與使用模式在這裡，沿用線代書 §1.8 的 label thm-zorn；線代書原處改成 b 借用 F2.4，留錨點。
+  takes: [thm-zorn]

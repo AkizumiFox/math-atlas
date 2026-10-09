@@ -173,6 +173,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  F2_4["F2.4 Zorn 引理（使用者層級）"]:::ext
   F3_8["F3.8 形式多項式"]:::ext
   LA1_0["0 矩陣"]
   LA1_1["1 向量空間"]
@@ -181,6 +182,7 @@ flowchart LR
   LA1_4["4 映射的矩陣"]
   LA1_5["5 對偶"]
   F3_8 --> LA1_0
+  F2_4 -.-> LA1_1
   F3_8 --> LA1_1
   LA1_0 --> LA1_2
   LA1_1 --> LA1_2
@@ -547,7 +549,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_4["F2.4 Zorn 引理（使用者層級）"]:::ext
   AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
   AN2_5["AN2.5 等度連續、Arzelà–Ascoli 與 Peano 定理"]:::ext
   AN2_6["AN2.6 C(K) 的稠密與範疇：Stone–Weierstrass 與 Baire"]:::ext
@@ -571,7 +572,6 @@ flowchart LR
   AN2_8 --> FA_2
   MT_3 --> FA_2
   FA_1a --> FA_2
-  F2_4 -.-> FA_3
   FA_1a --> FA_3
   AN2_6 --> FA_4
   FA_1a --> FA_4
@@ -592,7 +592,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_4["F2.4 Zorn 引理（使用者層級）"]:::ext
   LA1_2["LA1.2 線性映射"]:::ext
   LA2_10["LA2.10 標準形"]:::ext
   LA4_15["LA4.15 張量與外代數"]:::ext
@@ -618,7 +617,6 @@ flowchart LR
   AL4_2 --> AL4_3
   AL4_3 --> AL4_4
   AL4_2 --> AL4_5
-  F2_4 -.-> AL4_6
   AL4_5 --> AL4_6
   AL4_5 --> AL4_7
   LA2_10 --> AL4_8

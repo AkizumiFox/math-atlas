@@ -1,0 +1,32 @@
+# 跨書重複 label 的分流（registry/computed/labels.yaml 的 duplicates）。atlas.py check 對還沒分流的重複報警告；
+# 這裡列了、但已不再重複的 label 也會報警告，提醒刪掉。2026-10-10 第一次分流。
+# kind: same     兩本書是同一份內容（第 0 章與 analysis-book Part 0 的重疊）：遷移到 F 冊時合併，keep 那本的版本留下
+#       special  一邊是另一邊的特例：一般版本當正式定義（keep），特例那邊的 label 改名並以 specializes 指回去
+#       clash    同一個 label 指完全不同的東西：rename 那本改名
+# 改名都會碰到「已發布」規則（spec/01）：線代書已上線，舊 label 要留「已移至⋯⋯」的錨點。
+
+- labels: [def-image]
+  kind: special
+  keep: ab
+  rename: {la: def-image-linear-map}
+  why: 線性映射的像 im T = T(V) 就是集合的像取整個定義域。正式定義在 F2.1；statements.yaml 已登記特例節點。
+
+- labels: [def-relation]
+  kind: special
+  keep: ab
+  rename: {la: def-relation-on-set}
+  why: 線代書第 0 章的「X 上的關係」是 analysis-book「從 A 到 B 的關係」取 A = B = X。
+
+- labels: [exr-functions-a1, exr-functions-b1, exr-functions-b2, exr-functions-b3, exr-functions-c1, exr-functions-c2]
+  kind: clash
+  rename: {la: exr-ch00-functions-*}
+  why: 兩本書的函數一節各自從 a1 編號，題目完全不同。線代書第 0 章遷移到 F 冊時本來就要重編，在那時改名。
+
+- labels: [def-cartesian-product, def-composition, def-empty-set, def-function, def-indexed-family, def-inverse-function,
+           def-left-right-inverse, def-power-set, def-set-builder, def-set-equality, def-subset,
+           thm-left-inverse-iff-injective, thm-sqrt2-irrational, thm-strong-induction]
+  kind: same
+  keep: ab
+  why: >-
+    線代書第 0 章是集合與函數的速成版，和 analysis-book Part 0（F1、F2 的書稿來源）定義相同。遷移時以 analysis-book 為準；
+    thm-strong-induction 線代版從任意整數 n₀ 起算，併入時寫成推論。

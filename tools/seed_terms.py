@@ -147,7 +147,7 @@ def main():
         if tid in terms and terms[tid]["en"].lower() != text:
             tid = slug(text)
         t = terms.setdefault(tid, {"id": tid, "en": text, "def": defs[0][0], "ch": defs[0][1]})
-        also = [f"{label}@{ch}" for label, ch, _ in defs if label != t["def"]]
+        also = [f"{label}@{ch}" for label, ch, _ in defs if (label, ch) != (t["def"], t["ch"])]
         if also:
             t["also"] = sorted(set(t.get("also", [])) | set(also), key=lambda a: order.index(a.split("@")[1]))
     univ, hs = load_naer("univ.csv"), load_naer("hs.csv")

@@ -93,7 +93,7 @@
   def: def-rules-implication
   ch: F1.1
   meta: true
-  also: [def-rules-biconditional@F1.2, def-rule-raa@F1.2]
+  also: [def-rule-raa@F1.2, def-rules-biconditional@F1.2]
 - {id: one-inside-the-other, en: one inside the other, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: or-elimination, en: or-elimination, zh: null, naer: missing, def: def-rules-disjunction, ch: F1.1, meta: true}
 - {id: or-introduction, en: or-introduction, zh: null, naer: missing, def: def-rule-disjunction-introduction, ch: F1.1, meta: true}
@@ -243,7 +243,7 @@
   ch: F1.4
   zh_candidates: ['[區]域', 定義域]
   meta: true
-  also: [def-function@F2.1, def-relation@F2.1, def-kernel@LA1.2]
+  also: [def-relation@F2.1, def-function@F2.1, def-kernel@LA1.2]
 - {id: equality-elimination, en: equality elimination, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: equality-introduction, en: equality introduction, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: first-order-formulas, en: first-order formulas, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
@@ -318,7 +318,7 @@
   naer: missing
   def: def-parity
   ch: F1.5
-  also: [def-sign-permutation@LA2.7, def-alternating-group@LA2.7]
+  also: [def-alternating-group@LA2.7, def-sign-permutation@LA2.7]
 - {id: existential, en: existential, zh: null, naer: missing, def: def-quantifiers, ch: F1.5, meta: true}
 - {id: existential-quantifiers, en: existential quantifiers, zh: 存在量詞, naer: univ, def: def-quantifiers, ch: F1.5, meta: true}
 - {id: hypothesis, en: hypothesis, zh: 假設, naer: univ, def: def-implication-converse-contrapositive, ch: F1.5, meta: true}
@@ -425,7 +425,7 @@
   def: def-image
   ch: F2.1
   zh_candidates: [像點, 像, 鏡像]
-  also: [def-image-preimage@F2.1, def-algebra-homomorphism@AL4.8]
+  also: [def-image-preimage@F2.1, def-image@LA1.2, def-algebra-homomorphism@AL4.8]
 - {id: includes, en: includes, zh: null, naer: missing, def: def-common-number-sets, ch: F2.1}
 - {id: index-set, en: index set, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: indexed-family, en: indexed family, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
@@ -451,7 +451,7 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [相交, 交集]
-  also: [def-intersection@F2.1, def-indexed-family@F2.1, def-set-operations@F2.1]
+  also: [def-intersection@F2.1, def-set-operations@F2.1, def-indexed-family@F2.1]
 - id: inverse
   en: inverse
   zh: null
@@ -474,7 +474,7 @@
   naer: missing
   def: def-inverse-function
   ch: F2.1
-  also: [def-invertible-matrix@LA1.0, def-invertible-linear-map@LA1.2, def-similar-matrices@LA1.4, def-schur-complement@LA2.8, def-diagonalizable@LA2.9, def-triangularizable@LA2.9,
+  also: [def-invertible-matrix@LA1.0, def-invertible-linear-map@LA1.2, def-similar-matrices@LA1.4, def-schur-complement@LA2.8, def-triangularizable@LA2.9, def-diagonalizable@LA2.9,
     def-congruent@LA4.14, def-m-matrix@MA.19]
 - {id: left-inverse, en: left inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
 - {id: member, en: member, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
@@ -513,7 +513,13 @@
   zh_candidates: [區域, 範圍, 值域, 全距, 列]
 - {id: rational-numbers, en: rational numbers, zh: 有理數, naer: univ, def: def-common-number-sets, ch: F2.1}
 - {id: real-numbers, en: real numbers, zh: 實數, naer: univ, def: def-common-number-sets, ch: F2.1}
-- {id: relation, en: relation, zh: 關係, naer: univ, def: def-relation, ch: F2.1}
+- id: relation
+  en: relation
+  zh: 關係
+  naer: univ
+  def: def-relation
+  ch: F2.1
+  also: [def-relation@F2.2]
 - {id: right-inverse, en: right inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
 - {id: second-coordinate, en: second coordinate, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - {id: subset, en: subset, zh: '子集[合]', naer: univ, def: def-subset, ch: F2.1}
@@ -540,7 +546,7 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [聯, 併]
-  also: [def-indexed-family@F2.1, def-set-operations@F2.1, def-union@F2.1]
+  also: [def-union@F2.1, def-set-operations@F2.1, def-indexed-family@F2.1]
 - {id: blocks, en: blocks, zh: null, naer: missing, def: def-partition, ch: F2.2}
 - {id: equivalence-class, en: equivalence class, zh: 等價類, naer: univ, def: def-equivalence-class, ch: F2.2}
 - {id: equivalence-relation, en: equivalence relation, zh: 等價關係, naer: univ, def: def-equivalence-relation, ch: F2.2}
@@ -574,8 +580,8 @@
   naer: missing
   def: def-equivalence-relation
   ch: F2.2
-  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-symmetric-form@LA4.14, def-quadratic-form@LA4.14, def-symmetric-power@LA4.15, def-symmetric-tensor@LA4.15,
-    def-symmetric-multilinear-map@LA4.15]
+  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-symmetric-form@LA4.14, def-quadratic-form@LA4.14, def-symmetric-multilinear-map@LA4.15, def-symmetric-tensor@LA4.15,
+    def-symmetric-power@LA4.15]
 - {id: transitive, en: transitive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.2}
 - id: absolute-value
   en: absolute value
@@ -790,7 +796,7 @@
   def: def-dimension
   ch: LA1.1
   zh_candidates: ['維[度]', 維數, 因次, 量綱, 尺寸大小]
-  also: [def-affine-hull@MA.18, def-affine-space@GEO.22, def-projective-subspace@GEO.22, def-projective-space@GEO.22]
+  also: [def-affine-hull@MA.18, def-projective-space@GEO.22, def-projective-subspace@GEO.22, def-affine-space@GEO.22]
 - id: direct
   en: direct
   zh: null
@@ -833,7 +839,7 @@
   naer: missing
   def: def-restriction-of-scalars
   ch: LA1.1
-  also: [def-linear-transformation@LA1.2, def-linear-system@LA1.3, def-divisibility-polynomials@LA2.6, def-coprime@LA2.6, def-orientation@LA2.7, def-inner-product@LA3.11,
+  also: [def-linear-transformation@LA1.2, def-linear-system@LA1.3, def-coprime@LA2.6, def-divisibility-polynomials@LA2.6, def-orientation@LA2.7, def-inner-product@LA3.11,
     def-norm@MA.16, def-convex-set@MA.18]
 - {id: partial-order, en: partial order, zh: null, naer: missing, def: def-partial-order, ch: LA1.1}
 - {id: restriction-of-scalars, en: restriction of scalars, zh: null, naer: missing, def: def-restriction-of-scalars, ch: LA1.1}
@@ -868,7 +874,7 @@
   naer: univ
   def: def-subspace
   ch: LA1.1
-  also: [def-left-ideal@AL4.8, def-subalgebra@AL4.8]
+  also: [def-subalgebra@AL4.8, def-left-ideal@AL4.8]
 - {id: uncountable, en: uncountable, zh: null, naer: missing, def: def-countable, ch: LA1.1}
 - {id: vector-space, en: vector space, zh: null, naer: missing, def: def-vector-space, ch: LA1.1}
 - {id: vectors, en: vectors, zh: 向量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
@@ -1072,7 +1078,7 @@
   naer: missing
   def: def-irreducible-polynomial
   ch: LA2.6
-  also: [def-character@AL4.8, def-simple-module@AL4.8, def-irreducible-representation@AL4.8, def-irreducible@MA.19]
+  also: [def-simple-module@AL4.8, def-character@AL4.8, def-irreducible-representation@AL4.8, def-irreducible@MA.19]
 - {id: lagrange-basis, en: lagrange basis, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
 - {id: lagrange-polynomial, en: lagrange polynomial, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
 - {id: least-common-multiple, en: least common multiple, zh: 最小公倍數, naer: univ, def: def-lcm-polynomials, ch: LA2.6}
@@ -1344,7 +1350,7 @@
   naer: univ
   def: def-isometry
   ch: LA3.11
-  also: [def-isometry-group-of-form@LA4.14, def-form-isometry@LA4.14, def-matrix-contraction@MA.21]
+  also: [def-form-isometry@LA4.14, def-isometry-group-of-form@LA4.14, def-matrix-contraction@MA.21]
 - id: non-negative
   en: non-negative
   zh: null
@@ -1384,7 +1390,7 @@
   naer: missing
   def: def-orthonormal-list
   ch: LA3.11
-  also: [def-compression@MA.17, def-flag-adapted-list@MA.17]
+  also: [def-flag-adapted-list@MA.17, def-compression@MA.17]
 - {id: orthonormal-basis, en: orthonormal basis, zh: 單範正交基底, naer: univ, def: def-orthonormal-basis, ch: LA3.11}
 - id: positive-definiteness
   en: positive definiteness
@@ -1557,7 +1563,7 @@
   naer: univ
   def: def-clifford-algebra
   ch: LA4.14
-  also: [def-tensor-product@LA4.15, def-exterior-power@LA4.15, def-tensor-power@LA4.15, def-symmetric-power@LA4.15]
+  also: [def-tensor-product@LA4.15, def-symmetric-power@LA4.15, def-exterior-power@LA4.15, def-tensor-power@LA4.15]
 - {id: witt-index, en: witt index, zh: null, naer: missing, def: def-witt-index, ch: LA4.14}
 - {id: all-but-finitely-many, en: all but finitely many, zh: null, naer: missing, def: def-tensor-algebra, ch: LA4.15}
 - {id: blade, en: -blade, zh: null, naer: missing, def: def-decomposable, ch: LA4.15}
@@ -2239,7 +2245,7 @@
   def: def-energy-norm
   ch: NLA.24
   zh_candidates: [正交, 直交]
-  also: [def-unitary-orthogonal@LA3.11, def-orthonormal-list@LA3.11, def-orthogonal@LA3.11, def-spectral-resolution@LA3.12, def-orthogonal-basis-form@LA4.14]
+  also: [def-orthogonal@LA3.11, def-orthonormal-list@LA3.11, def-unitary-orthogonal@LA3.11, def-spectral-resolution@LA3.12, def-orthogonal-basis-form@LA4.14]
 - {id: power-iteration, en: power iteration, zh: null, naer: missing, def: def-power-iteration, ch: NLA.24}
 - {id: principal-components, en: principal components, zh: null, naer: missing, def: def-principal-directions, ch: NLA.24}
 - {id: principal-directions, en: principal directions, zh: 主方向, naer: univ, def: def-principal-directions, ch: NLA.24}

@@ -74,6 +74,9 @@ statements:
   def-function:
   - [la, F2.1]
   - [ab, F2.1]
+  def-image:
+  - [la, LA1.2]
+  - [ab, F2.1]
   thm-bijection-iff-inverse:
   - [ab, F2.1]
   thm-induction:

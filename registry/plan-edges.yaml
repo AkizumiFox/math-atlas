@@ -204,3 +204,10 @@ ST.4: {s: [ST.2], revisits: [F2.4], see: [AN2.7, FA.3, AL2.8]}
 ST.5: {s: [ST.4]}
 ST.6a: {s: [MT.1, F2.3]}   # 只需要 Lebesgue 測度與選擇公理
 ST.6b: {s: [ST.6a, AL1.11, AL1.6, LA1.0]}   # SO(3) 中自由子群的計算只用 LA1.0 的矩陣運算
+
+# 線代書 §1.8（無限維向量空間）目前自己陳述 Zorn 引理（label thm-zorn）。改以 b 借用 F2.4；F2.4 寫好後接手這個 label，
+# 線代書原處留錨點（chapter-constraints.yaml 的 takes）。在那之前 diff 把它列為已知差異（2026-10-10）。
+LA1.1:
+  b: [F2.4]
+  scope: {F2.4: [F2.2]}
+  why: {F2.4: "Zorn 引理只用來證明每個向量空間都有基底；陳述的語彙是偏序、鏈、上界（F2.2）"}

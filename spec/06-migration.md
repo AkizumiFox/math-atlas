@@ -109,7 +109,11 @@
    - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
    - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
    - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
-10. - [ ] **跨書 label 撞名**（2026-10-09 發現）：線代書的 `def-image`（線性映射的像，第 2 章）與 analysis-book 的 `def-image`（集合在函數下的像，第 6 章）撞名，線代書那邊改名（例如 `def-image-linear-map`），舊 label 留錨點。其餘跨書重複（`generated/diff.md`）是第 0 章與 analysis-book Part 0 的同一份內容，遷移到 F 冊時合併。
+10. - [ ] **跨書重複的 label**（2026-10-10 分流，見 `registry/label-triage.yaml`）：
+    - `def-image`、`def-relation` 是**特例**：集合的像、「從 A 到 B 的關係」當正式定義（F2.1）；線代書的 label 改名為 `def-image-linear-map`、`def-relation-on-set`，以 `specializes` 指回，舊 label 留錨點。
+    - `exr-functions-*` 六題是**撞名**：題目完全不同，線代書第 0 章遷移到 F 冊重編時改名。
+    - 其餘 14 個是**同一內容**：遷移時以 analysis-book 為準合併。
+11. - [ ] **`thm-zorn`、`thm-induction` 的接手**（2026-10-10）：線代書 §1.8 改成以 b 借用 F2.4 的 Zorn 引理（地圖已記 LA1.1 ← F2.4，scope F2.2）。F2.4、F2.2 寫好後接手這兩個 label（`chapter-constraints.yaml` 的 `takes`），線代書原處留錨點。
 
 ## 授權的待辦
 
