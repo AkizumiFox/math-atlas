@@ -61,6 +61,16 @@ class ImportLATest(unittest.TestCase):
         self.assertEqual(got[("LA1.3", "LA1.1")], "see")
         self.assertEqual(got[("LA1.4", "LA1.1")], "see")  # citations from optional results are soft
 
+    def test_moves(self):
+        labels = {
+            "thm-m": {"file": "ch12-spectral/01-x.html", "uses": [], "uses_kinds": {}},
+            "thm-u": {"file": "ch21-inequalities/01-x.html", "uses": ["thm-m"], "uses_kinds": {"thm-m": ["proof"]}},
+        }
+        moves = {"thm-m": {"to": "AN3.3", "borrowed_by": ["MA.21"]}}
+        edges, _ = import_la.compute(labels, moves)
+        got = {(e[0], e[1]): e[2] for e in edges}
+        self.assertEqual(got, {("MA.21", "AN3.3"): "b"})
+
 
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):

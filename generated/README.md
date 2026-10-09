@@ -262,12 +262,10 @@ flowchart LR
 ```mermaid
 flowchart LR
   LA2_9["LA2.9 特徵值與對角化"]:::ext
-  LA2_10["LA2.10 標準形"]:::ext
   LA3_11["11 內積空間"]
   LA3_12["12 譜理論"]
   LA3_13["13 正定矩陣與奇異值分解"]
   LA2_9 --> LA3_11
-  LA2_10 --> LA3_12
   LA3_11 --> LA3_12
   LA3_12 --> LA3_13
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
@@ -326,6 +324,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  LA2_10["LA2.10 標準形"]:::ext
   LA4_14["LA4.14 雙線性形式與二次型"]:::ext
   LA4_15["LA4.15 張量與外代數"]:::ext
   AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
@@ -341,6 +340,7 @@ flowchart LR
   AN2_3 --> AN3_1
   AN2_4 --> AN3_2
   AN3_1 --> AN3_2
+  LA2_10 --> AN3_3
   AN2_4 --> AN3_3
   AN3_1 --> AN3_3
   AN2_3 --> AN3_4
@@ -506,6 +506,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  AN1_10["AN1.10 冪級數、Taylor 級數與初等函數"]:::ext
   AN2_5["AN2.5 等度連續、Arzelà–Ascoli 與 Peano 定理"]:::ext
   AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
   AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
@@ -519,6 +520,7 @@ flowchart LR
   CA_6["6 調和函數與次調和函數"]
   CA_7["7 無窮乘積與整函數"]
   CA_8["8 解析延拓、單值性與 Picard 定理"]
+  AN1_10 --> CA_1
   AN3_1 -.-> CA_1
   AN3_4 -.-> CA_2
   CA_1 --> CA_2
@@ -609,6 +611,7 @@ flowchart LR
   F2_4 -.-> AL4_6
   AL4_5 --> AL4_6
   AL4_5 --> AL4_7
+  LA2_10 --> AL4_8
   LA4_15 --> AL4_8
   AL1_6 --> AL4_9
   AL4_8 --> AL4_9
@@ -657,8 +660,10 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  LA2_10["LA2.10 標準形"]:::ext
   LA3_13["LA3.13 正定矩陣與奇異值分解"]:::ext
   AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
+  AN3_3["AN3.3 線性微分方程組、矩陣指數與流"]:::ext
   CA_2["CA.2 Cauchy 定理及其初步推論"]:::ext
   MA_16["16 範數與矩陣分析"]
   MA_17["17 變分原理與交錯"]
@@ -666,12 +671,14 @@ flowchart LR
   MA_19["19 非負矩陣"]
   MA_20["20 擾動理論"]
   MA_21["21 矩陣不等式"]
+  LA2_10 --> MA_16
   LA3_13 --> MA_16
   AN2_3 -.-> MA_16
   MA_16 --> MA_17
   MA_17 --> MA_18
   MA_18 --> MA_19
   MA_19 --> MA_20
+  AN3_3 -.-> MA_21
   CA_2 -.-> MA_21
   MA_20 --> MA_21
   classDef ext fill:#e6e6e6,stroke:#999,color:#555

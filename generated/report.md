@@ -1,7 +1,7 @@
 # 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）
 
 - 冊：25；章：167（選讀 8）
-- 章層級邊：s 545、b 29、軟邊 78；其中 281 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
+- 章層級邊：s 547、b 30、軟邊 79；其中 283 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
 
 除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。
 
@@ -34,9 +34,9 @@ F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 
 | 15 | 6 |
 | 16 | 8 |
 | 17 | 13 |
-| 18 | 12 |
+| 18 | 11 |
 | 19 | 12 |
-| 20 | 7 |
+| 20 | 8 |
 | 21 | 8 |
 | 22 | 6 |
 | 23 | 8 |
@@ -146,19 +146,19 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | LA1 空間與映射 | 6 | 9 | 9 | F1、F2、F3 | — |
 | AL1 群 | 11 | 7 | 7 | F1、F2、F3 | — |
 | LA2 行列式與算子的結構 | 5 | 17 | 17 | AL1、F1、F2、F3、LA1 | AN1 |
-| LA3 內積與譜理論 | 3 | 22 | 22 | F2、F3、LA1、LA2 | — |
-| LA4 形式與多線性代數 | 2 | 25 | 25 | AL1、F3、LA1、LA2、LA3 | — |
+| LA3 內積與譜理論 | 3 | 21 | 21 | F2、F3、LA1、LA2 | — |
+| LA4 形式與多線性代數 | 2 | 24 | 24 | AL1、F3、LA1、LA2、LA3 | — |
 | AN2 度量空間與拓樸 | 8 | 24 | 24 | AN1、F2、LA1 | LA3 |
-| AN3 多變數分析 | 7 | 43 | 43 | AN1、AN2、LA1、LA2、LA4 | LA3 |
+| AN3 多變數分析 | 7 | 43 | 43 | AN1、AN2、LA1、LA2、LA3、LA4 | — |
 | AL2 環與體 | 10 | 14 | 14 | AL1、F3、LA1 | F2 |
 | AL3 Galois 理論 | 9（1） | 26 | 43 | AL1、AL2、LA1 | — |
-| HA Fourier 分析 | 9（2） | 39 | 41 | AN1、AN2、AN3、F3、LA3 | — |
+| HA Fourier 分析 | 9（2） | 39 | 40 | AN1、AN2、AN3、F3、LA3 | — |
 | MT 測度與積分 | 11 | 41 | 41 | AN1、AN2、AN3、F2、LA2、LA3 | — |
 | CA 複分析 | 8 | 32 | 32 | AN1、AN2、F3、HA | AN3 |
 | FA 泛函分析 | 8（1） | 39 | 39 | AN2、MT | CA、F2 |
 | AL4 模、表示與同調入門 | 11 | 36 | 36 | AL1、AL2、F1、F3、LA1、LA2、LA3、LA4 | F2 |
 | AL5 交換代數 | 7 | 24 | 24 | AL2、AL4 | — |
-| MA 矩陣分析 | 6 | 25 | 25 | F1、F3、LA1、LA2、LA3 | AN1、AN2、CA |
+| MA 矩陣分析 | 6 | 25 | 25 | F1、F3、LA1、LA2、LA3 | AN1、AN2、AN3、CA |
 | PR 測度論機率 | 4 | 34 | 34 | MT | AN1、HA |
 | PDE 分佈與 Sobolev 空間 | 6 | 60 | 60 | AN2、FA、HA、MT | CA |
 | GEO 仿射與射影幾何 | 1 | 30 | 30 | AL1、F2、LA1、LA2、LA3、LA4、MA | — |
@@ -190,11 +190,11 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | 證明論（Proof Theory） | F1.3、F1.4 | 4 |  |
 | 可計算性理論（Computability / Recursion Theory） | F1.4、F2.3 | 7 |  |
 | 李群與李代數（Lie Groups & Lie Algebras） | AN3.5、AL4.9、LA2.10 | 53 |  |
-| 動力系統（Dynamical Systems） | AN3.3、AN2.4 | 39 |  |
+| 動力系統（Dynamical Systems） | AN3.3、AN2.4 | 42 |  |
 | 遍歷理論（Ergodic Theory） | MT.11、FA.6、PR.1 | 37 |  |
 | 代數拓樸（Algebraic Topology） | AN2.7、AL1.11、AL4.11 | 39 | T3；Harvard quals 科目 |
-| 微分拓樸（Differential Topology） | AN3.5、AN3.7 | 49 |  |
-| 微分幾何（Differential Geometry） | AN3.5、AN3.6、AN3.7 | 49 | T3；Harvard quals 科目 |
+| 微分拓樸（Differential Topology） | AN3.5、AN3.7 | 48 |  |
+| 微分幾何（Differential Geometry） | AN3.5、AN3.6、AN3.7 | 48 | T3；Harvard quals 科目 |
 | 代數幾何（Algebraic Geometry） | AL5.4、AL5.7、AN2.7 | 44 | T3；入口是 AL5 |
 | 代數數論（Algebraic Number Theory） | AL3.3、AL5.6 | 32 |  |
 | 計數組合學（Enumerative Combinatorics） | F2.3、AL1.6 | 14 | analysis-book 已刪 HAM.3（counting） |
@@ -202,9 +202,9 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | 隨機過程（Stochastic Processes） | PR.3 | 37 |  |
 | 隨機微積分（Stochastic Calculus） | PR.3、FA.6 | 39 |  |
 
-## 線代書計算邊的抽查
+## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章
 
-- LA3.12 ← LA2.10：s，硬引用 2、軟引用 9。 硬引用來自 `thm-unitary-exponential` 引用 `def-matrix-exponential`；`thm-unitary-exponential` 引用 `thm-exponential-properties`
+- LA3.12 ← LA2.10：see，硬引用 0、軟引用 9。
 
-結論：LA3 對 LA2 第 10 章的硬依賴只來自上列引用。只要把這幾個結果改成 b（借用矩陣指數的性質）或移到 LA2 第 10 章之後，LA3 就可以跳過第 10 章。
+結論：LA3 的 s 祖先閉包不含 LA2.10，可以跳過第 10 章（已套用 registry/moves.yaml 的計畫搬家，書稿尚未改）。
 

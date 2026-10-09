@@ -62,6 +62,11 @@ class Atlas:
         self.edges = self._merge()
         self.statements = self._load_statements(reg / "statements.yaml")
         self.targets = yaml.safe_load((reg / "exam-targets.yaml").read_text())
+        moves = reg / "moves.yaml"
+        self.moves = (yaml.safe_load(moves.read_text()) or []) if moves.exists() else []
+        for m in self.moves:
+            for c in [m["from"], m["to"], *m.get("borrowed_by", [])]:
+                self._known(c, f"moves.yaml[{m['label']}]")
         fields = reg / "fields.yaml"
         self.fields = yaml.safe_load(fields.read_text()) if fields.exists() else {}
 
@@ -316,15 +321,17 @@ def stats(at):
                     lines.append(f"| {f['name']}（{f['en']}） | {'、'.join(hook)} | {n} | {f.get('note', '')} |")
         lines.append("")
 
-    lines += ["## 線代書計算邊的抽查", ""]
-    la3 = [(k, v) for k, v in at.computed.items() if k[0].startswith("LA3") and k[1] == "LA2.10"]
-    if la3:
-        for (to, frm), (typ, h, s, _) in sorted(la3):
-            w = at.witnesses.get(f"{to}<-{frm}") or []
-            lines.append(f"- {to} ← {frm}：{typ}，硬引用 {h}、軟引用 {s}。" +
-                         (" 硬引用來自 " + "；".join(f"`{a}` 引用 `{b}`" for a, b in w) if w else ""))
-        lines += ["", "結論：LA3 對 LA2 第 10 章的硬依賴只來自上列引用。只要把這幾個結果改成 b（借用矩陣指數的性質）"
-                  "或移到 LA2 第 10 章之後，LA3 就可以跳過第 10 章。", ""]
+    lines += ["## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章", ""]
+    la3 = [c for c in at.order if at.chapters[c]["vol"] == "LA3"]
+    needs = "LA2.10" in G.ancestors(s_only, la3)
+    for (to, frm), (typ, h, s, _) in sorted((k, v) for k, v in at.computed.items()
+                                             if k[0] in la3 and k[1] == "LA2.10"):
+        w = at.witnesses.get(f"{to}<-{frm}") or []
+        lines.append(f"- {to} ← {frm}：{typ}，硬引用 {h}、軟引用 {s}。" +
+                     (" 硬引用來自 " + "；".join(f"`{a}` 引用 `{b}`" for a, b in w) if w else ""))
+    lines += ["", ("結論：LA3 仍然需要 LA2 第 10 章。" if needs else
+                   "結論：LA3 的 s 祖先閉包不含 LA2.10，可以跳過第 10 章"
+                   + ("（已套用 registry/moves.yaml 的計畫搬家，書稿尚未改）" if at.moves else "") + "。"), ""]
     (OUT / "report.md").write_text("\n".join(lines) + "\n")
     return lines
 
@@ -344,6 +351,10 @@ def diff(at):
             b_as_s.append(f"- {key[0]} ← {key[1]}：計畫為 b，證明裡是 s（{why}）")
         if ptyp == "s" and la_only(at, key[0]) and la_only(at, key[1]) and ctyp != "s":
             plan_unused.append(f"- {key[0]} ← {key[1]}：計畫為 s，計算值為 {ctyp or '無'}")
+    moved = [f"- `{m['label']}`：{m['from']} → {m['to']}（{m.get('decided', '')}）"
+             + (f"；改以 b 借用的章：{'、'.join(m['borrowed_by'])}" if m.get("borrowed_by") else "")
+             for m in at.moves]
+    lines += ["## 計畫中的搬家（registry/moves.yaml，已套用在計算邊上，書稿尚未改）", ""] + (moved or ["（無）"]) + [""]
     for key, (ctyp, h, s, _) in sorted(at.computed.items()):
         if ctyp == "s" and not la_only(at, key[0]) and at.plan.get(key, (None,))[0] != "s":
             added.append(f"- {key[0]} ← {key[1]}：計算為 s（硬引用 {h}），計畫為 {at.plan.get(key, ('無',))[0]}")

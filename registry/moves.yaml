@@ -1,0 +1,15 @@
+# 計畫中的結果搬家：書稿還沒改之前，匯入計算邊時就先把這些 label 算在新的章。
+# 書稿完成搬家後，刪掉對應的列（import_la.py 會警告已經不在原處的列）。
+# label: 書稿裡的 label；book: la | ab；from／to: 章 ID；leave: 原處留下的軟邊（see）
+# borrowed_by: 搬家後改以 b 借用這個結果的章（引用者的作用域裡已有它的記號，符合 b 的合法性規則）
+
+- label: thm-unitary-exponential
+  book: la
+  from: LA3.12
+  to: AN3.3
+  leave: see
+  borrowed_by: [MA.21]   # MA 讀者已讀 LA2.10，矩陣指數在作用域內；否則 MA 會被迫讀 AN3
+  decided: 2026-10-09
+  why: >-
+    LA3 對 LA2.10 的硬依賴只來自這個定理引用 §10.9 的矩陣指數。不能改成 b：跳過 LA2.10 的讀者，
+    作用域裡沒有矩陣指數的記號（b 的合法性規則）。搬到 AN3.3（矩陣指數與流）之後，LA3 可以跳過第 10 章。
