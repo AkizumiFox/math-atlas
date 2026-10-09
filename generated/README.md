@@ -7,7 +7,7 @@ Solid arrow: s (read first). Dashed arrow: b (a named result is borrowed; readin
 ```mermaid
 flowchart TD
   F1["F1 Logic and Proof"]:::found
-  F2["F2 Sets, Functions and Relations"]:::found
+  F2["F2 Sets, Functions, and Relations"]:::found
   AN1["AN1 Analysis on the Real Line"]:::analysis
   F3["F3 Number Systems and Algebraic Preliminaries"]:::found
   LA1["LA1 Spaces and Maps"]:::linalg
@@ -23,7 +23,7 @@ flowchart TD
   MT["MT Measure and Integration"]:::analysis
   CA["CA Complex Analysis"]:::analysis
   FA["FA Functional Analysis"]:::analysis
-  AL4["AL4 Modules, Representations and Homological Algebra"]:::algebra
+  AL4["AL4 Modules, Representations, and Homological Algebra"]:::algebra
   AL5["AL5 Commutative Algebra"]:::algebra
   MA["MA Matrix Analysis"]:::linalg
   PR["PR Measure-Theoretic Probability"]:::side
@@ -72,8 +72,8 @@ flowchart TD
 ```mermaid
 flowchart LR
   F1_1["1 Connectives and Derivations"]
-  F1_2["2 Negation, Classical Logic and Finding Derivations"]
-  F1_3["3 Truth, Soundness and Completeness"]
+  F1_2["2 Negation, Classical Logic, and Finding Derivations"]
+  F1_3["3 Truth, Soundness, and Completeness"]
   F1_4["4 Predicate Logic and the Quantifier Rules"]
   F1_5["5 From Derivations to Mathematical Prose"]
   F1_1 --> F1_2
@@ -85,12 +85,12 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F2 Sets, Functions and Relations
+## F2 Sets, Functions, and Relations
 
 ```mermaid
 flowchart LR
   F1_5["F1.5 From Derivations to Mathematical Prose"]:::ext
-  F2_1["1 Sets, Functions, Images and Preimages"]
+  F2_1["1 Sets, Functions, Images, and Preimages"]
   F2_2["2 Equivalence Relations, Orders, and Induction"]
   F2_3["3 Cardinality: Countable and Uncountable Sets"]
   F2_4["4 Zorn's Lemma"]
@@ -110,15 +110,15 @@ flowchart LR
   F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
   F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
   AN1_1["1 Ordered Fields and the Least Upper Bound Axiom"]
-  AN1_2["2 Sequences, Subsequences and Cauchy Sequences"]
+  AN1_2["2 Sequences, Subsequences, and Cauchy Sequences"]
   AN1_3["3 Infinite Series"]
-  AN1_4["4 Open, Closed and Compact Subsets of ℝ"]
+  AN1_4["4 Open, Closed, and Compact Subsets of ℝ"]
   AN1_5["5 Limits of Functions and Continuity"]
   AN1_6["6 Continuous Functions on Compact Sets and Intervals"]
   AN1_7["7 The Derivative and the Mean Value Theorem"]
   AN1_8["8 The Riemann–Darboux Integral"]
   AN1_9["9 Sequences and Series of Functions"]
-  AN1_10["10 Power Series, Taylor Series and the Elementary Functions"]
+  AN1_10["10 Power Series, Taylor Series, and the Elementary Functions"]
   AN1_11["11 The Forms of Completeness"]
   F2_2 --> AN1_1
   AN1_1 --> AN1_2
@@ -146,11 +146,11 @@ flowchart LR
   F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
   F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
   AN1_1["AN1.1 Ordered Fields and the Least Upper Bound Axiom"]:::ext
-  F3_1["1 The Von Neumann Natural Numbers (the Fragment of ZF They Need)"]:::opt
+  F3_1["1 The von Neumann Natural Numbers"]:::opt
   F3_2["2 Building ℤ and ℚ from Equivalence Classes"]:::opt
   F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
   F3_4["4 The Complete Ordered Field Is Unique"]:::opt
-  F3_5["5 Divisibility, Division with Remainder and ℤ/nℤ"]
+  F3_5["5 Divisibility, Division with Remainder, and ℤ/nℤ"]
   F3_6["6 Complex Numbers"]
   F3_7["7 Fields"]
   F3_8["8 Formal Polynomials"]
@@ -199,16 +199,16 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F3_5["F3.5 Divisibility, Division with Remainder and ℤ/nℤ"]:::ext
-  AL1_1["1 Groups, Subgroups and Homomorphisms"]
+  F3_5["F3.5 Divisibility, Division with Remainder, and ℤ/nℤ"]:::ext
+  AL1_1["1 Groups, Subgroups, and Homomorphisms"]
   AL1_2["2 Cyclic Groups"]
   AL1_3["3 Symmetric Groups and the Sign of a Permutation"]
   AL1_4["4 Cosets and Lagrange's Theorem"]
-  AL1_5["5 Normal Subgroups, Quotient Groups and the Isomorphism Theorems"]
-  AL1_6["6 Group Actions, Orbit–Stabilizer and the Class Equation"]
+  AL1_5["5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems"]
+  AL1_6["6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]
   AL1_7["7 The Sylow Theorems"]
   AL1_8["8 Direct and Semidirect Products, and Finite Abelian Groups"]
-  AL1_9["9 Composition Series, Solvable and Nilpotent Groups"]
+  AL1_9["9 Composition Series, Solvable Groups, and Nilpotent Groups"]
   AL1_10["10 The Simplicity of Aₙ"]
   AL1_11["11 Free Groups and Presentations"]
   F3_5 --> AL1_1
@@ -233,10 +233,10 @@ flowchart LR
 ```mermaid
 flowchart LR
   AN1_6["AN1.6 Continuous Functions on Compact Sets and Intervals"]:::ext
-  AN1_10["AN1.10 Power Series, Taylor Series and the Elementary Functions"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F3_6["F3.6 Complex Numbers"]:::ext
   LA1_5["LA1.5 Duality"]:::ext
-  AL1_1["AL1.1 Groups, Subgroups and Homomorphisms"]:::ext
+  AL1_1["AL1.1 Groups, Subgroups, and Homomorphisms"]:::ext
   LA2_6["6 Polynomials"]
   LA2_7["7 Determinants"]
   LA2_8["8 Block Matrices"]
@@ -291,17 +291,17 @@ flowchart LR
 ```mermaid
 flowchart LR
   AN1_9["AN1.9 Sequences and Series of Functions"]:::ext
-  AN1_10["AN1.10 Power Series, Taylor Series and the Elementary Functions"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   AN1_11["AN1.11 The Forms of Completeness"]:::ext
   LA3_11["LA3.11 Inner Product Spaces"]:::ext
-  AN2_1["1 Metric Spaces, Open Sets and Continuity"]
+  AN2_1["1 Metric Spaces, Open Sets, and Continuity"]
   AN2_2["2 Completeness and the Completion of a Metric Space"]
   AN2_3["3 Compactness and Connectedness in Metric Spaces"]
   AN2_4["4 Contraction Mappings and the Picard–Lindelöf Theorem"]
-  AN2_5["5 Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem"]
+  AN2_5["5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]
   AN2_6["6 Density and Category in C(K): Stone–Weierstrass and Baire"]
-  AN2_7["7 Topological Spaces, Products and Compactness"]:::segb
-  AN2_8["8 Separation, Urysohn–Tietze and Locally Compact Spaces"]:::segb
+  AN2_7["7 Topological Spaces, Products, and Compactness"]:::segb
+  AN2_8["8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::segb
   LA3_11 -.-> AN2_1
   AN1_9 --> AN2_2
   AN1_11 --> AN2_2
@@ -330,7 +330,7 @@ flowchart LR
   AN2_4["AN2.4 Contraction Mappings and the Picard–Lindelöf Theorem"]:::ext
   AN3_1["1 The Derivative in ℝⁿ"]
   AN3_2["2 Inverse and Implicit Functions, and Lagrange Multipliers"]
-  AN3_3["3 Linear Systems, the Matrix Exponential and the Flow"]
+  AN3_3["3 Linear Systems, the Matrix Exponential, and the Flow"]
   AN3_4["4 The Riemann Integral on ℝⁿ"]
   AN3_5["5 Submanifolds of ℝⁿ and Tangent Spaces"]:::segb
   AN3_6["6 Differential Forms and the Exterior Derivative"]:::segb
@@ -362,15 +362,15 @@ flowchart LR
   F3_7["F3.7 Fields"]:::ext
   F3_8["F3.8 Formal Polynomials"]:::ext
   LA1_1["LA1.1 Vector Spaces"]:::ext
-  AL1_5["AL1.5 Normal Subgroups, Quotient Groups and the Isomorphism Theorems"]:::ext
-  AL2_1["1 Rings, Ideals and Quotient Rings"]
+  AL1_5["AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems"]:::ext
+  AL2_1["1 Rings, Ideals, and Quotient Rings"]
   AL2_2["2 Integral Domains and Fields of Fractions"]
   AL2_3["3 Maximal and Prime Ideals"]
   AL2_4["4 The Chinese Remainder Theorem"]
-  AL2_5["5 Euclidean Domains, PIDs and UFDs"]
-  AL2_6["6 Polynomial Rings, Gauss's Lemma and Eisenstein's Criterion"]
+  AL2_5["5 Euclidean Domains, PIDs, and UFDs"]
+  AL2_6["6 Polynomial Rings, Gauss's Lemma, and Eisenstein's Criterion"]
   AL2_7["7 Field Extensions and Degree"]
-  AL2_8["8 Algebraic Extensions, Splitting Fields and Algebraic Closure"]
+  AL2_8["8 Algebraic Extensions, Splitting Fields, and Algebraic Closure"]
   AL2_9["9 Finite Fields"]
   AL2_10["10 Ruler-and-Compass Constructions"]
   AL1_5 --> AL2_1
@@ -397,10 +397,10 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN2_7["AN2.7 Topological Spaces, Products and Compactness"]:::ext
+  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
   AL1_7["AL1.7 The Sylow Theorems"]:::ext
-  AL1_9["AL1.9 Composition Series, Solvable and Nilpotent Groups"]:::ext
-  AL2_8["AL2.8 Algebraic Extensions, Splitting Fields and Algebraic Closure"]:::ext
+  AL1_9["AL1.9 Composition Series, Solvable Groups, and Nilpotent Groups"]:::ext
+  AL2_8["AL2.8 Algebraic Extensions, Splitting Fields, and Algebraic Closure"]:::ext
   AL2_9["AL2.9 Finite Fields"]:::ext
   AL3_1["1 Normal and Separable Extensions"]
   AL3_2["2 Galois Groups and Artin's Theorem"]
@@ -433,14 +433,14 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series and the Elementary Functions"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F3_6["F3.6 Complex Numbers"]:::ext
   LA3_12["LA3.12 Spectral Theory"]:::ext
   AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
   AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
   HA_1["1 Fourier Series: Origins and Basic Properties"]
-  HA_2["2 Good Kernels, Summability and Fejér's Theorem"]
+  HA_2["2 Good Kernels, Summability, and Fejér's Theorem"]
   HA_3["3 Mean-Square and Pointwise Convergence"]
   HA_4["4 Applications of Fourier Series"]
   HA_5["5 The Fourier Transform on ℝ"]
@@ -477,13 +477,13 @@ flowchart LR
   MT_2["2 The Lebesgue Integral and the Convergence Theorems"]
   MT_3["3 Abstract Measure Spaces and Carathéodory's Construction"]
   MT_4["4 Product Measures and the Fubini–Tonelli Theorem"]
-  MT_5["5 Linear Maps, Change of Variables and Polar Coordinates"]
-  MT_6["6 Surfaces, Surface Measure and the Divergence Theorem"]
-  MT_7["7 Lᵖ Spaces, Convolution and Mollifiers"]
-  MT_8["8 Modes of Convergence, Uniform Integrability and Weak Lᵖ"]
+  MT_5["5 Linear Maps, Change of Variables, and Polar Coordinates"]
+  MT_6["6 Surfaces, Surface Measure, and the Divergence Theorem"]
+  MT_7["7 Lᵖ Spaces, Convolution, and Mollifiers"]
+  MT_8["8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]
   MT_9["9 The Maximal Function and Lebesgue Differentiation"]
-  MT_10["10 Bounded Variation, Absolute Continuity and the Fundamental Theorem"]
-  MT_11["11 Signed Measures, Radon–Nikodym and Lebesgue Decomposition"]
+  MT_10["10 Bounded Variation, Absolute Continuity, and the Fundamental Theorem"]
+  MT_11["11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]
   AN3_4 --> MT_1
   MT_1 --> MT_2
   MT_2 --> MT_3
@@ -505,18 +505,18 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series and the Elementary Functions"]:::ext
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
   AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
   HA_4["HA.4 Applications of Fourier Series"]:::ext
   FA_2["FA.2 Radon Measures and the Dual of C₀(X)"]:::ext
-  FA_5["FA.5 Weak Topologies, Tychonoff and Banach–Alaoglu"]:::ext
+  FA_5["FA.5 Weak Topologies, Tychonoff, and Banach–Alaoglu"]:::ext
   CA_1["1 Holomorphic Functions and Power Series"]
   CA_2["2 Cauchy's Theorem and Its First Consequences"]
-  CA_3["3 Laurent Series, Singularities and Residues"]
-  CA_4["4 Winding Numbers, the Global Cauchy Theorem and Counting Zeros"]
-  CA_5["5 Conformal Maps, Normal Families and the Riemann Mapping Theorem"]
+  CA_3["3 Laurent Series, Singularities, and Residues"]
+  CA_4["4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]
+  CA_5["5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]
   CA_6["6 Harmonic and Subharmonic Functions"]
   CA_7["7 Infinite Products and Entire Functions"]
   CA_8a["8a Analytic Continuation and Monodromy"]
@@ -549,21 +549,21 @@ flowchart LR
 ```mermaid
 flowchart LR
   AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
   AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
-  AN2_7["AN2.7 Topological Spaces, Products and Compactness"]:::ext
-  AN2_8["AN2.8 Separation, Urysohn–Tietze and Locally Compact Spaces"]:::ext
+  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
+  AN2_8["AN2.8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::ext
   MT_3["MT.3 Abstract Measure Spaces and Carathéodory's Construction"]:::ext
-  MT_11["MT.11 Signed Measures, Radon–Nikodym and Lebesgue Decomposition"]:::ext
+  MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
   CA_2["CA.2 Cauchy's Theorem and Its First Consequences"]:::ext
-  FA_1a["1a Banach Spaces, Bounded Operators and Dual Spaces (ℓᵖ, C(K))"]
+  FA_1a["1a Banach Spaces, Bounded Operators, and Dual Spaces"]
   FA_1b["1b The Dual of Lᵖ"]
   FA_2["2 Radon Measures and the Dual of C₀(X)"]
   FA_3["3 The Hahn–Banach Theorems"]
   FA_4["4 Baire Category and the Fundamental Theorems for Operators"]
-  FA_5["5 Weak Topologies, Tychonoff and Banach–Alaoglu"]
+  FA_5["5 Weak Topologies, Tychonoff, and Banach–Alaoglu"]
   FA_6["6 Hilbert Spaces"]
-  FA_7["7 Compact Operators, the Fredholm Alternative and the Spectral Theorem"]
+  FA_7["7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]
   FA_8["8 Banach Algebras and Gelfand Theory"]:::opt
   AN2_3 --> FA_1a
   MT_11 --> FA_1b
@@ -587,27 +587,27 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## AL4 Modules, Representations and Homological Algebra
+## AL4 Modules, Representations, and Homological Algebra
 
 ```mermaid
 flowchart LR
   LA1_2["LA1.2 Linear Maps"]:::ext
   LA2_10["LA2.10 Canonical Forms"]:::ext
   LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
-  AL1_6["AL1.6 Group Actions, Orbit–Stabilizer and the Class Equation"]:::ext
-  AL2_1["AL2.1 Rings, Ideals and Quotient Rings"]:::ext
-  AL2_5["AL2.5 Euclidean Domains, PIDs and UFDs"]:::ext
-  AL4_1["1 Modules, Submodules, Quotients and Homomorphisms"]
-  AL4_2["2 Free Modules, Direct Sums and Exact Sequences"]
+  AL1_6["AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]:::ext
+  AL2_1["AL2.1 Rings, Ideals, and Quotient Rings"]:::ext
+  AL2_5["AL2.5 Euclidean Domains, PIDs, and UFDs"]:::ext
+  AL4_1["1 Modules, Submodules, Quotients, and Homomorphisms"]
+  AL4_2["2 Free Modules, Direct Sums, and Exact Sequences"]
   AL4_3["3 Finitely Generated Modules over a PID"]
   AL4_4["4 Applications: Finitely Generated Abelian Groups and Canonical Forms"]
-  AL4_5["5 Tensor Products, Hom and Adjunction"]
-  AL4_6["6 Projective, Injective and Flat Modules"]
-  AL4_7["7 Categories, Functors and Universal Properties"]
+  AL4_5["5 Tensor Products, Hom, and Adjunction"]
+  AL4_6["6 Projective, Injective, and Flat Modules"]
+  AL4_7["7 Categories, Functors, and Universal Properties"]
   AL4_8["8 Algebras and Representations"]
   AL4_9["9 Representations of Finite Groups: Maschke and Schur"]
   AL4_10["10 Character Theory"]
-  AL4_11["11 Complexes, Homology, Tor and Ext: An Introduction"]
+  AL4_11["11 Complexes, Homology, Tor, and Ext: An Introduction"]
   LA1_2 --> AL4_1
   AL2_1 --> AL4_1
   AL4_1 --> AL4_2
@@ -635,12 +635,12 @@ flowchart LR
 ```mermaid
 flowchart LR
   AL2_3["AL2.3 Maximal and Prime Ideals"]:::ext
-  AL2_6["AL2.6 Polynomial Rings, Gauss's Lemma and Eisenstein's Criterion"]:::ext
+  AL2_6["AL2.6 Polynomial Rings, Gauss's Lemma, and Eisenstein's Criterion"]:::ext
   AL2_7["AL2.7 Field Extensions and Degree"]:::ext
-  AL4_2["AL4.2 Free Modules, Direct Sums and Exact Sequences"]:::ext
+  AL4_2["AL4.2 Free Modules, Direct Sums, and Exact Sequences"]:::ext
   AL5_1["1 Localization and Modules of Fractions"]
   AL5_2["2 Noetherian Rings and the Hilbert Basis Theorem"]
-  AL5_3["3 Integral Extensions, Going Up and Going Down"]
+  AL5_3["3 Integral Extensions, Going Up, and Going Down"]
   AL5_4["4 Hilbert's Nullstellensatz"]
   AL5_5["5 Primary Decomposition"]
   AL5_6["6 Dedekind Domains"]
@@ -670,7 +670,7 @@ flowchart LR
   LA2_10["LA2.10 Canonical Forms"]:::ext
   LA3_13["LA3.13 Positive Matrices and the Singular Value Decomposition"]:::ext
   AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
-  AN3_3["AN3.3 Linear Systems, the Matrix Exponential and the Flow"]:::ext
+  AN3_3["AN3.3 Linear Systems, the Matrix Exponential, and the Flow"]:::ext
   CA_9["CA.9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::ext
   MA_16["16 Norms and Matrix Analysis"]
   MA_17["17 Variational Principles and Interlacing"]
@@ -700,8 +700,8 @@ flowchart LR
 ```mermaid
 flowchart LR
   HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
-  MT_8["MT.8 Modes of Convergence, Uniform Integrability and Weak Lᵖ"]:::ext
-  MT_11["MT.11 Signed Measures, Radon–Nikodym and Lebesgue Decomposition"]:::ext
+  MT_8["MT.8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]:::ext
+  MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
   PR_1["1 Probability on Measure Spaces"]
   PR_2["2 Conditional Expectation"]
   PR_3["3 Discrete-Time Martingales"]
@@ -721,21 +721,21 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
   HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
-  MT_6["MT.6 Surfaces, Surface Measure and the Divergence Theorem"]:::ext
-  MT_7["MT.7 Lᵖ Spaces, Convolution and Mollifiers"]:::ext
-  MT_8["MT.8 Modes of Convergence, Uniform Integrability and Weak Lᵖ"]:::ext
-  MT_10["MT.10 Bounded Variation, Absolute Continuity and the Fundamental Theorem"]:::ext
-  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem and Counting Zeros"]:::ext
+  MT_6["MT.6 Surfaces, Surface Measure, and the Divergence Theorem"]:::ext
+  MT_7["MT.7 Lᵖ Spaces, Convolution, and Mollifiers"]:::ext
+  MT_8["MT.8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]:::ext
+  MT_10["MT.10 Bounded Variation, Absolute Continuity, and the Fundamental Theorem"]:::ext
+  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]:::ext
   FA_1b["FA.1b The Dual of Lᵖ"]:::ext
   FA_4["FA.4 Baire Category and the Fundamental Theorems for Operators"]:::ext
-  FA_7["FA.7 Compact Operators, the Fredholm Alternative and the Spectral Theorem"]:::ext
+  FA_7["FA.7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]:::ext
   PDE_1["1 Distributions"]
-  PDE_2["2 Tempered Distributions, the Fourier Transform and Plancherel"]
-  PDE_3["3 Interpolation: Riesz–Thorin, Young and Hausdorff–Young"]
+  PDE_2["2 Tempered Distributions, the Fourier Transform, and Plancherel"]
+  PDE_3["3 Interpolation: Riesz–Thorin, Young, and Hausdorff–Young"]
   PDE_4["4 Sobolev Spaces"]
-  PDE_5["5 H¹₀, the Poincaré Inequality and Rellich Compactness"]
+  PDE_5["5 H¹₀, the Poincaré Inequality, and Rellich Compactness"]
   PDE_6["6 Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis"]
   MT_6 --> PDE_1
   MT_7 --> PDE_1
@@ -787,7 +787,7 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn's Lemma"]:::ext
-  AL1_6["AL1.6 Group Actions, Orbit–Stabilizer and the Class Equation"]:::ext
+  AL1_6["AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]:::ext
   AL1_11["AL1.11 Free Groups and Presentations"]:::ext
   MT_1["MT.1 Lebesgue Measure on ℝᵈ and Measurable Functions"]:::ext
   ST_1["1 The Axioms of ZF"]
