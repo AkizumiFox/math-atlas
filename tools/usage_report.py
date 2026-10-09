@@ -40,7 +40,7 @@ def prose(text):
 
 
 def files(book):
-    return sorted((ROOT.parent / BOOKS[book] / "src").glob("ch*/*.md"))
+    return sorted((ROOT.parent / BOOKS[book] / "src").rglob("*.md"))
 
 
 def pattern(form):

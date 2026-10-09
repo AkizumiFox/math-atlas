@@ -54,8 +54,10 @@
   status: confirmed
   use: [map, maps, linear map*, function, functions]
   avoid: [a mapping, the mapping, mappings, linear mapping*, linear transformation*]
-  keep: [spectral mapping theorem, open mapping theorem, riemann mapping theorem, contraction mapping*]
+  keep: [spectral mapping theorem, open mapping theorem, riemann mapping theorem, contraction mapping*,
+         "re:\\(or \\*\\*linear transformations?\\*\\*\\)"]
   why: >-
+    定義裡介紹同義詞的「a linear map (or linear transformation)」保留（keep），理由同 one-to-one。
     map 用於保持結構的映射（linear map 511 次），function 用於集合論與分析的一般函數（1,705 次）；operator 指 V → V 的線性映射。
     名詞 mapping 不用（現況 0 次）；linear transformation 1 次改成 linear map。動名詞 mapping（mapping X onto Y）照常使用，
     固定名稱列在 keep，不受 avoid 影響：spectral mapping theorem、open mapping theorem、Riemann mapping theorem、contraction mapping。
@@ -125,9 +127,9 @@
   title: 複數形
   status: confirmed
   use: [zeros, formulas, lemmas, indices]
-  avoid: [zeroes, formulae, lemmata]
+  avoid: [formulae, lemmata]
   why: >-
-    zeros 188 比 zeroes 1；formulas 338 比 formulae 0；lemmas 10 比 lemmata 0；indices 171 比 indexes 2
+    zeros 188 比 zeroes 1，但那一處是動詞（a reflection zeroes a column），所以 zeroes 不列入 avoid；formulas 338 比 formulae 0；lemmas 10 比 lemmata 0；indices 171 比 indexes 2
     （indexes 也可能是動詞，不列入 avoid）。
 
 - id: us-spelling
@@ -135,10 +137,12 @@
   status: confirmed
   use: [neighborhood*, behavior*, center*, fiber*, color*, favor*, analyze*, labeled, labeling, modeling, modeled,
         canceled, canceling]
-  avoid: [neighbourhood*, behaviour*, centre*, fibre*, colour*, favour*, analyse*, labelled, labelling, modelling,
+  avoid: [neighbourhood*, behaviour*, centre*, fibre*, colour*, favour*, analyse, analysed, analysing, labelled, labelling,
+          modelling,
           modelled, cancelled, cancelling]
   why: >-
-    兩本書都是美式拼寫：-ize 2,287 次，詞幹相同的 -ise 0 次。例外只有 analyse 2 次（線代書）與 labelled 1 次（analysis-book）。
+    兩本書都是美式拼寫：-ize 2,287 次，詞幹相同的 -ise 0 次。例外只有 labelled 1 次（analysis-book）。
+    （2026-10-10 修正：原先以 analyse* 比對，把名詞複數 analyses 也算成英式拼寫；只禁動詞形 analyse、analysed、analysing。）
 
 - id: serial-comma
   title: 序列逗號（Oxford comma）
