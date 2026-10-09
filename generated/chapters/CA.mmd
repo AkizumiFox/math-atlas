@@ -4,6 +4,8 @@ flowchart LR
   AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
   AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
   HA_4["HA.4 Fourier 級數的應用"]:::ext
+  FA_2["FA.2 Radon 測度與 C₀(X) 的對偶"]:::ext
+  FA_5["FA.5 弱拓樸、Tychonoff 與 Banach–Alaoglu"]:::ext
   CA_1["1 全純函數與冪級數"]
   CA_2["2 Cauchy 定理及其初步推論"]
   CA_3["3 Laurent 級數、奇點與留數"]
@@ -12,6 +14,7 @@ flowchart LR
   CA_6["6 調和函數與次調和函數"]
   CA_7["7 無窮乘積與整函數"]
   CA_8["8 解析延拓、單值性與 Picard 定理"]
+  CA_9["9 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）"]:::opt
   AN1_10 --> CA_1
   AN3_1 -.-> CA_1
   AN3_4 -.-> CA_2
@@ -24,6 +27,10 @@ flowchart LR
   CA_4 --> CA_7
   HA_4 -.-> CA_8
   CA_7 --> CA_8
+  CA_5 --> CA_9
+  CA_6 --> CA_9
+  FA_2 --> CA_9
+  FA_5 --> CA_9
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

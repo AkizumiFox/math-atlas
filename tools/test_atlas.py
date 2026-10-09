@@ -71,6 +71,15 @@ class ImportLATest(unittest.TestCase):
         got = {(e[0], e[1]): e[2] for e in edges}
         self.assertEqual(got, {("MA.21", "AN3.3"): "b"})
 
+    def test_softened_for(self):
+        labels = {
+            "thm-l": {"file": "ch21-inequalities/10-x.html", "uses": [], "uses_kinds": {}},
+            "cor-c": {"file": "ch21-inequalities/10-x.html", "uses": ["thm-l"], "uses_kinds": {"thm-l": ["proof"]}},
+        }
+        moves = {"thm-l": {"to": "MA.21b", "softened_for": ["MA.21"]}}
+        edges, _ = import_la.compute(labels, moves)
+        self.assertEqual({(e[0], e[1]): e[2] for e in edges}, {("MA.21", "MA.21b"): "see"})
+
 
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):

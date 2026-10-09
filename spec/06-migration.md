@@ -63,7 +63,7 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 | 4 | ~~LA4 §14.6 二階判別法~~ | **已定：移到 AN3.1**（2026-10-09；舊章號的「AN3.2 高階導數與極值」＝現在的 AN3.1） | 冊層級的環消失 |
 | 5 | ~~LA3 是否要能跳過第 10 章~~ | **已定：`thm-unitary-exponential` 搬到 AN3.3**（2026-10-09） | 不能改成 b（跳過 LA2.10 的讀者沒有矩陣指數的記號）；MA.21 對它的引用改為 b，合法：MA.21 本身就以 s 引用 LA2.10（`thm-exponential-properties`，4 處），矩陣指數在作用域內；`moves.yaml` 的 `scope` 讓 lint 持續檢查這件事 |
 | 6 | ~~交換代數~~ | **已定：獨立成支線冊 AL5**（2026-10-09） | 不增加代數資格考的必讀量；代數幾何與代數數論從 AL5 進入 |
-| 7 | ~~MA 的 (A7)~~ | **已查：Pick–Nevanlinna**（線代書 `ch21-inequalities/index.md`，2026-10-09） | MA.21 改為 b 借用 CA.6（Herglotz 表示屬於調和函數）；CA.6 要補 Herglotz，見下方待辦 |
+| 7 | ~~MA 的 (A7)~~ | **已定：Pick–Nevanlinna，移到選讀交會章 MA.21b**（2026-10-09） | 陳述跨 MA、CA、測度三套語彙，不能是 b。Herglotz 放新的選讀章 CA.9（依賴 CA.5、CA.6、FA.2、FA.5）。主線必讀量不變 |
 | 8 | ~~授權~~ | **已定：書稿 CC BY-NC-SA 4.0；atlas 的 registry／spec CC BY 4.0；tools MIT**（2026-10-09） | 三本既有的書已是 NC-SA，不必遷移；Napkin（BY-SA）不能改編進書稿 |
 | 9 | ~~AN3.5–3.7 流形三章~~ | **已定：保留，維持 B 段**（2026-10-09） | 它們是微分幾何、微分拓樸兩條支線（Harvard 資格考科目）唯一的入口，刪掉的話支線要自己重寫 Stokes。MT.6 的散度定理與 AN3.7 的 Stokes 以 generalizes 連起來（陳述層），章層級是 AN3.7 revisits MT.6 |
 | 10 | ~~ZF 出現兩次~~ | **已定：分工**（2026-10-09） | F3.1 只放建構 ω 所需的 ZF 片段與 von Neumann 自然數（$0=\varnothing$），ST.1 是完整的公理系統，以 revisits 指回 F3.1 |
@@ -82,9 +82,12 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 - [ ] **FA.1 拆章**（2026-10-09 定案）：analysis-book 第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；ℓᵖ 的 Hölder 與 Minkowski 要在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。FA.1b 是 Lᵖ 的對偶，依賴 MT.7、MT.11。第 70 章（FA.6 Hilbert 空間）的主例改成 ℓ²，L² 與三角系完備性改成回顧，指向 Part IV。拆完之後 FA.3–FA.7（Hahn–Banach、Baire 三定理、弱拓樸、Hilbert、緊算子）都可以和 MT 平行閱讀；FA.1b、FA.2 照舊排在 MT 之後。
 
-- [ ] **CA.6 補 Herglotz 表示**（2026-10-09）：(A7) 借用的是 Pick 函數的 Herglotz 積分表示，analysis-book 第 60 章目前沒有。它需要對正測度積分（Poisson–Stieltjes 積分，或經 Helly 選取），超出 Ahlfors 程度。做法二選一：在第 60 章加一個選讀節，s 依賴 MT（不影響 CA 的主線）；或把 (A7) 的出處改到 FA.2（Riesz–Markov）之後。另外，(A7) 的陳述用到「解析」「上半平面」「正測度」，MA 讀者的 s 祖先裡沒有 CA 和 MT，依 spec/03 §6 規則 3 這條借用寫不出來；線代書第 21 章目前是在原處把這些詞當作已知。所以 MA.21 ← CA.6 暫不宣告 `scope`，等作者決定。
-
-- [ ] **散度定理與 Stokes 不各寫各的**（2026-10-09）：analysis-book 第 48 章（MT.6）的散度定理結尾加一條 see 指向 AN3.7；AN3.7 證完 Stokes 之後，把散度定理當作特例推回來，並指出兩者的假設差在哪裡（C¹ 邊界與曲面測度，對上光滑流形與微分形式）。
+- [ ] **第 21 章沿作用域切開**（2026-10-09 定案）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。
+  - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
+  - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
+  - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
+- [ ] **MA.17 §11 的 `thm-loewner-statement` 也違反規則 3**（2026-10-09 發現）：它在第 17 章就陳述了條件 (ii) 的正測度與條件 (iii) 的上半平面解析性，雖然不證、本章也不依賴它，但讀者一樣讀不懂陳述。建議：主線只留矩陣語言的版本（「算子單調函數恰是仿射函數加上平移倒數的非負疊加」的非正式說法，或連續密度版），完整陳述移到 MA.21b，原處留 see。
+- [ ] **CA.9 正調和函數與 Herglotz–Nevanlinna 表示**（新的選讀章，2026-10-09）：圓盤上的正調和函數取 \( u_r\,\dd\theta \)，以 Banach–Alaoglu 取弱\* 極限得到測度（Riesz–Markov），再經 Cayley 變換推到半平面。CA.6 留一條 see 指向它。
 
 ## 授權的待辦
 

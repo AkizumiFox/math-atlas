@@ -2,6 +2,7 @@
 # 書稿完成搬家後，刪掉對應的列（import_la.py 會警告已經不在原處的列）。
 # label: 書稿裡的 label；book: la | ab；from／to: 章 ID；leave: 原處留下的軟邊（see）
 # borrowed_by: 搬家後改以 b 借用這個結果的章
+# softened_for: 書稿改寫後只以 see 指向它的章（原本的硬引用不再成立）
 # scope: 陳述用到的語彙來自哪些章；每一章都必須是每個 borrowed_by 章的 s 祖先（atlas.py check 的 scope lint）
 
 - label: thm-unitary-exponential
@@ -15,3 +16,24 @@
   why: >-
     LA3 對 LA2.10 的硬依賴只來自這個定理引用 §10.9 的矩陣指數。不能改成 b：跳過 LA2.10 的讀者，
     作用域裡沒有矩陣指數的記號（b 的合法性規則）。搬到 AN3.3（矩陣指數與流）之後，LA3 可以跳過第 10 章。
+
+# (A7) 與 Löwner 定理的 Pick 形式移到選讀交會章 MA.21b（2026-10-09）。主線 MA.21 只留矩陣語言可陳述的部分。
+- label: thm-pick-nevanlinna
+  book: la
+  from: MA.21
+  to: MA.21b
+  decided: 2026-10-09
+  why: 陳述用到上半平面上的解析性與正測度，不在 MA 讀者的作用域內（spec/03 §6 規則 3）。
+- label: thm-loewner
+  book: la
+  from: MA.21
+  to: MA.21b
+  softened_for: [MA.21]   # cor-operator-convex-log 只借用 Step 1 的手法，改引主線的連續密度版易方向引理
+  decided: 2026-10-09
+  why: 三條件等價本身含 Pick 形式；易方向（連續密度）改寫成主線的引理，留在 MA.21。
+- label: exr-loewners-theorem-a1
+  book: la
+  from: MA.21
+  to: MA.21b
+  decided: 2026-10-09
+  why: 習題直接考 (A7) 與 thm-loewner。

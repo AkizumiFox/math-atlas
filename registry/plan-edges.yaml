@@ -52,7 +52,7 @@ LA2.6: {b: [AN1.6], why: {AN1.6: 第 6 章代數基本定理證明所隔離的�
 LA2.10: {b: [AN1.10], why: {AN1.10: §10.9 矩陣函數所借用的五個分析事實（冪級數、逐項微分）}}
 LA4.14: {see: [AN3.1]}  # §14.6 二階導數判別法移到 AN3.1（2026-10-09）；LA4 只留純代數的定性判準
 MA.16: {b: [AN1.11, AN2.3], why: {AN1.11: (A1)–(A2) 完備性、單調收斂, AN2.3: (A3)–(A6) 閉有界集的緊緻性、極值、中間值、均值定理（有限維）}}
-MA.21: {b: [CA.6], why: {CA.6: (A7) Pick–Nevanlinna：Loewner 矩陣恆半正定的函數延拓為 Pick 函數，且有 Herglotz 積分表示（只用於 Loewner 定理的難方向，§21.10）}}
+MA.21b: {s: [MA.21, CA.9]}   # (A7) Pick–Nevanlinna 與 Löwner 定理的難方向；陳述跨 MA、CA、測度三套語彙，所以是交會章而非 b
 
 # ───────────── AN2 度量空間與拓樸 ─────────────
 AN2.1: {s: [AN1.2, AN1.5, LA1.1], b: [LA3.11], why: {LA3.11: ℝⁿ 上的內積與 Cauchy–Schwarz}}
@@ -147,9 +147,10 @@ CA.2: {s: [CA.1, AN1.8], b: [AN3.4], see: [MT.6], why: {AN3.4: 積分號下微�
 CA.3: {s: [CA.2]}
 CA.4: {s: [CA.3, AN2.3]}
 CA.5: {s: [CA.4, AN2.5]}
-CA.6: {s: [CA.2], revisits: [HA.2], see: [MT.6]}   # Poisson 核由 Cauchy 積分公式導出（Ahlfors）；好核觀點以 revisits 指回 HA.2
+CA.6: {s: [CA.2], revisits: [HA.2], see: [MT.6, CA.9]}   # Poisson 核由 Cauchy 積分公式導出（Ahlfors）；好核觀點以 revisits 指回 HA.2
 CA.7: {s: [CA.3, CA.4]}
 CA.8: {s: [CA.4, CA.7], b: [HA.4, AN1.10], why: {HA.4: theta 函數與 Poisson 求和, AN1.10: Γ 積分與 Stirling 型估計}}
+CA.9: {s: [CA.5, CA.6, FA.2, FA.5]}   # 圓盤上 u_r dθ 取弱* 極限得測度，再以 Cayley 變換推到半平面（Rudin RCA 的順序）
 
 # ───────────── FA 泛函分析 ─────────────
 FA.1a: {s: [AN2.2, AN2.3], see: [AN3.1]}   # 例子只用 ℓᵖ 與 C(K)；有限維的算子範數先見於 AN3.1

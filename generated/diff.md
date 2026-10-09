@@ -3,6 +3,9 @@
 ## 計畫中的搬家（registry/moves.yaml，已套用在計算邊上，書稿尚未改）
 
 - `thm-unitary-exponential`：LA3.12 → AN3.3（2026-10-09）；改以 b 借用的章：MA.21
+- `thm-pick-nevanlinna`：MA.21 → MA.21b（2026-10-09）
+- `thm-loewner`：MA.21 → MA.21b（2026-10-09）
+- `exr-loewners-theorem-a1`：MA.21 → MA.21b（2026-10-09）
 
 ## b 被當成 s 使用
 
@@ -47,7 +50,6 @@
 - AL4.6 ← F2.4
 - MA.16 ← AN1.11
 - MA.16 ← AN2.3
-- MA.21 ← CA.6
 - PR.1 ← AN1.7
 - PR.4 ← HA.6
 - PDE.1 ← CA.6

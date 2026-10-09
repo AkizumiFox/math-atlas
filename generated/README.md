@@ -50,16 +50,14 @@ flowchart TD
   AN2 --> AL3
   AN3 --> HA
   AN3 --> MT
-  HA -.-> CA
+  FA --> CA
   CA -.-> FA
-  MT --> FA
   AL2 --> AL4
   LA4 --> AL4
   AL4 --> AL5
-  CA -.-> MA
+  CA --> MA
   HA -.-> PR
   MT --> PR
-  FA --> PDE
   MA --> GEO
   MA --> NLA
   MT --> ST
@@ -511,6 +509,8 @@ flowchart LR
   AN3_1["AN3.1 ℝⁿ 上的導數"]:::ext
   AN3_4["AN3.4 ℝⁿ 上的 Riemann 積分"]:::ext
   HA_4["HA.4 Fourier 級數的應用"]:::ext
+  FA_2["FA.2 Radon 測度與 C₀(X) 的對偶"]:::ext
+  FA_5["FA.5 弱拓樸、Tychonoff 與 Banach–Alaoglu"]:::ext
   CA_1["1 全純函數與冪級數"]
   CA_2["2 Cauchy 定理及其初步推論"]
   CA_3["3 Laurent 級數、奇點與留數"]
@@ -519,6 +519,7 @@ flowchart LR
   CA_6["6 調和函數與次調和函數"]
   CA_7["7 無窮乘積與整函數"]
   CA_8["8 解析延拓、單值性與 Picard 定理"]
+  CA_9["9 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）"]:::opt
   AN1_10 --> CA_1
   AN3_1 -.-> CA_1
   AN3_4 -.-> CA_2
@@ -531,6 +532,10 @@ flowchart LR
   CA_4 --> CA_7
   HA_4 -.-> CA_8
   CA_7 --> CA_8
+  CA_5 --> CA_9
+  CA_6 --> CA_9
+  FA_2 --> CA_9
+  FA_5 --> CA_9
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -668,13 +673,14 @@ flowchart LR
   LA3_13["LA3.13 正定矩陣與奇異值分解"]:::ext
   AN2_3["AN2.3 度量空間的緊緻性與連通性"]:::ext
   AN3_3["AN3.3 線性微分方程組、矩陣指數與流"]:::ext
-  CA_6["CA.6 調和函數與次調和函數"]:::ext
+  CA_9["CA.9 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）"]:::ext
   MA_16["16 範數與矩陣分析"]
   MA_17["17 變分原理與交錯"]
   MA_18["18 凸性"]
   MA_19["19 非負矩陣"]
   MA_20["20 擾動理論"]
   MA_21["21 矩陣不等式"]
+  MA_21b["21b Löwner 定理的 Pick 函數形式（交會章：MA × CA × FA）"]:::opt
   LA2_10 --> MA_16
   LA3_13 --> MA_16
   AN2_3 -.-> MA_16
@@ -683,8 +689,9 @@ flowchart LR
   MA_18 --> MA_19
   MA_19 --> MA_20
   AN3_3 -.-> MA_21
-  CA_6 -.-> MA_21
   MA_20 --> MA_21
+  CA_9 --> MA_21b
+  MA_21 --> MA_21b
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

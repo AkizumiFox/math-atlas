@@ -7,7 +7,7 @@ block of a non-optional result; everything else is soft.
 
 Writes registry/computed/la-edges.yaml:
   edges: [[to, from, s|b|see, hard_count, soft_count], ...]
-  (b only for citations that registry/moves.yaml reclassifies as borrows)
+  (b only for citations that registry/moves.yaml reclassifies as borrows; its softened_for turns citations soft)
   witnesses: {"to<-from": [[citing_label, cited_label], ...]}  (hard, cross-volume, first few)
 """
 import argparse
@@ -74,7 +74,10 @@ def compute(labels, moves=None):
                 continue
             kinds = set(kinds_by.get(cited) or ())
             is_hard = not rec.get("optional") and bool(kinds & HARD_KINDS)
-            is_borrow = is_hard and dst in (moves.get(cited) or {}).get("borrowed_by", ())
+            mv = moves.get(cited) or {}
+            if dst in mv.get("softened_for", ()):  # the planned rewrite cites it only as a pointer
+                is_hard = False
+            is_borrow = is_hard and dst in mv.get("borrowed_by", ())
             (borrow if is_borrow else hard if is_hard else soft)[(dst, src)] += 1
             if is_hard and dst.split(".")[0] != src.split(".")[0] and len(witnesses[(dst, src)]) < 3:
                 witnesses[(dst, src)].append([name, cited])

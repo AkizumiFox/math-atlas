@@ -202,13 +202,13 @@ def check(at):
                 at.errors.append(f"scope lint: {to} borrows from {frm} a statement written in the vocabulary of {c}, "
                                  f"which is not an s-ancestor of {to}")
     # volume level
-    vpreds = volume_preds(at, HARD)
+    vpreds = volume_preds(at, HARD, main=True)
     vcyc = G.find_cycle(vpreds)
     if vcyc:
         at.warnings.append("volume-level cycle (chapters are fine, but no volume order works): "
                            + " -> ".join(reversed(vcyc)))
     pos = {v["id"]: i for i, v in enumerate(at.volumes)}
-    for v, ps in volume_preds(at, ("s",)).items():
+    for v, ps in volume_preds(at, ("s",), main=True).items():
         for p in ps:
             if pos[p] > pos[v]:
                 at.warnings.append(f"volumes.yaml lists {v} before {p}, which it s-depends on")
@@ -246,9 +246,12 @@ def parse_ar(text, where, at):
         return None
 
 
-def volume_preds(at, types):
+def volume_preds(at, types, main=False):
+    """main=True ignores optional chapters: a crossing chapter sits downstream of two branches by design."""
     out = {v["id"]: set() for v in at.volumes}
     for (to, frm), typ in at.edges.items():
+        if main and (at.chapters[to]["opt"] or at.chapters[frm]["opt"]):
+            continue
         a, b = at.chapters[to]["vol"], at.chapters[frm]["vol"]
         if typ in types and a != b:
             out[a].add(b)

@@ -154,6 +154,7 @@ CA:
   - {id: CA.6, title: 調和函數與次調和函數, src: ab:60}
   - {id: CA.7, title: 無窮乘積與整函數, src: ab:61}
   - {id: CA.8, title: 解析延拓、單值性與 Picard 定理, src: ab:62}
+  - {id: CA.9, title: 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）, src: new, opt: true}
 
 FA:
   - {id: FA.1a, title: Banach 空間、有界算子與對偶空間（ℓᵖ、C(K)）, src: ab:65}
@@ -195,6 +196,7 @@ MA:
   - {id: MA.19, title: 非負矩陣, src: la:ch19}
   - {id: MA.20, title: 擾動理論, src: la:ch20}
   - {id: MA.21, title: 矩陣不等式, src: la:ch21}
+  - {id: MA.21b, title: Löwner 定理的 Pick 函數形式（交會章：MA × CA × FA）, src: la:ch21/10, opt: true}
 
 PR:
   - {id: PR.1, title: 測度空間上的機率, src: ab:54}
