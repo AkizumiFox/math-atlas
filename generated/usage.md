@@ -2,32 +2,26 @@
 
 約定在 `registry/usage.yaml`。每組選一個（use），其餘列為 avoid；status 為 proposed 的組待作者確認，confirmed 的組列出書稿裡每一處 avoid 寫法（將來由引擎在 build 時檢查，spec/05）。統計只看散文：數學式、程式碼、TikZ、label 與參照都已去掉。
 
-## 單射（`injective`，confirmed）
+## 單射（`injective`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
 | injective | 489 | 118 | 607 | **use** |
 | injection* | 7 | 5 | 12 | **use** |
 | injectivity | 61 | 41 | 102 | **use** |
-| one-to-one | 11 | 1 | 12 | avoid |
+| is one-to-one | 1 | 0 | 1 | avoid |
+| are one-to-one | 0 | 0 | 0 | avoid |
+| be one-to-one | 0 | 0 | 0 | avoid |
+| not one-to-one | 0 | 0 | 0 | avoid |
 | one-one | 0 | 0 | 0 | avoid |
 
-injective 系列 721 次，one-to-one 12 次（線代書 11、analysis-book 1）。injective／surjective／bijective 成組，不會和 one-to-one correspondence（＝bijection）混淆。
+injective 系列 721 次。one-to-one 只禁形容詞用法（is one-to-one 等）：副詞用法（matches it one-to-one with、correspond one-to-one to）是正確的英文，定義裡介紹同義詞的「injective (one-to-one)」也保留，讓讀者認得其他書的寫法。（2026-10-10 修正：原提案把 one-to-one 整個列為 avoid。）
 
-avoid 寫法出現處（10 個檔案）：
+avoid 寫法出現處（1 個檔案）：
 
-- `analysis-book/src/ch06-sets-and-functions/04-functions.md`：1 處，行 283
-- `linear-algebra/src/ch00-foundations/03-sets.md`：1 處，行 553
-- `linear-algebra/src/ch00-foundations/04-functions.md`：1 處，行 112
-- `linear-algebra/src/ch01-vector-spaces/05-basis.md`：1 處，行 220
-- `linear-algebra/src/ch01-vector-spaces/08-infinite-dimensional.md`：1 處，行 241
-- `linear-algebra/src/ch02-linear-maps/01-linear-maps.md`：1 處，行 223
-- `linear-algebra/src/ch02-linear-maps/02-kernel-image.md`：1 處，行 213
-- `linear-algebra/src/ch02-linear-maps/05-isomorphisms.md`：1 處，行 11
-- `linear-algebra/src/ch03-linear-systems/03-rref-uniqueness.md`：2 處，行 208, 363
 - `linear-algebra/src/ch05-duality/04-dual-map.md`：1 處，行 507
 
-## 滿射（`surjective`，confirmed）
+## 滿射（`surjective`，confirmed，逐處判斷）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -59,7 +53,7 @@ avoid 寫法出現處（15 個檔案）：
 - `linear-algebra/src/ch22-geometry/04-euclidean-motions.md`：1 處，行 3
 - `linear-algebra/src/ch24-applied/09-vibrations.md`：1 處，行 401
 
-## 雙射（`bijective`，confirmed）
+## 雙射（`bijective`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -73,7 +67,7 @@ avoid 寫法出現處（1 個檔案）：
 
 - `linear-algebra/src/ch01-vector-spaces/05-basis.md`：1 處，行 220
 
-## 像（`image`，confirmed）
+## 像（`image`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -83,7 +77,7 @@ f(X) 一律稱 image（482 次）。range 出現 161 次，幾乎都是別的意
 
 書稿裡沒有 avoid 寫法。
 
-## 核與零空間（`kernel`，confirmed）
+## 核與零空間（`kernel`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -95,7 +89,7 @@ f(X) 一律稱 image（482 次）。range 出現 161 次，幾乎都是別的意
 
 書稿裡沒有 avoid 寫法。
 
-## 映射與函數（`map`，confirmed）
+## 映射與函數（`map`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -104,32 +98,19 @@ f(X) 一律稱 image（482 次）。range 出現 161 次，幾乎都是別的意
 | linear map* | 511 | 0 | 511 | **use** |
 | function | 921 | 288 | 1209 | **use** |
 | functions | 400 | 96 | 496 | **use** |
-| mapping | 21 | 0 | 21 | avoid |
+| a mapping | 0 | 0 | 0 | avoid |
+| the mapping | 0 | 0 | 0 | avoid |
 | mappings | 0 | 0 | 0 | avoid |
 | linear mapping* | 0 | 0 | 0 | avoid |
 | linear transformation* | 1 | 0 | 1 | avoid |
 
-map 用於保持結構的映射（linear map 511 次），function 用於集合論與分析的一般函數（1,705 次）；operator 指 V → V 的線性映射。mapping 21 次、linear transformation 1 次是同一意思的第三種寫法，改成 map。
+map 用於保持結構的映射（linear map 511 次），function 用於集合論與分析的一般函數（1,705 次）；operator 指 V → V 的線性映射。名詞 mapping 不用（現況 0 次）；linear transformation 1 次改成 linear map。動名詞 mapping（mapping X onto Y）照常使用，固定名稱列在 keep，不受 avoid 影響：spectral mapping theorem、open mapping theorem、Riemann mapping theorem、contraction mapping。（2026-10-10 修正：原提案把 mapping 整個列為 avoid，但書稿裡的 21 次全是定理名或動名詞。）
 
-avoid 寫法出現處（15 個檔案）：
+avoid 寫法出現處（1 個檔案）：
 
 - `linear-algebra/src/ch02-linear-maps/01-linear-maps.md`：1 處，行 28
-- `linear-algebra/src/ch09-eigenvalues/10-spectral-mapping.md`：5 處，行 1, 14, 90, 94, 344
-- `linear-algebra/src/ch09-eigenvalues/index.md`：1 處，行 20
-- `linear-algebra/src/ch12-spectral-theory/08-spectral-resolutions-and-functional-calculus.md`：1 處，行 267
-- `linear-algebra/src/ch13-psd-and-svd/02-square-roots-and-cholesky.md`：1 處，行 50
-- `linear-algebra/src/ch14-forms/12-clifford-algebras.md`：1 處，行 276
-- `linear-algebra/src/ch16-norms/04-spectral-radius.md`：1 處，行 205
-- `linear-algebra/src/ch16-norms/index.md`：1 處，行 39
-- `linear-algebra/src/ch19-nonnegative/03-perron-frobenius.md`：3 處，行 90, 109, 113
-- `linear-algebra/src/ch19-nonnegative/05-primitive-matrices.md`：1 處，行 73
-- `linear-algebra/src/ch19-nonnegative/index.md`：1 處，行 25
-- `linear-algebra/src/ch21-inequalities/10-loewners-theorem.md`：1 處，行 211
-- `linear-algebra/src/ch22-geometry/07-projective-transformations.md`：1 處，行 527
-- `linear-algebra/src/ch23-algebras/04-schurs-lemma.md`：1 處，行 13
-- `linear-algebra/src/ch23-algebras/06-wedderburn.md`：1 處，行 87
 
-## non- 字首（`non-prefix`，confirmed）
+## non- 字首（`non-prefix`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -440,7 +421,7 @@ avoid 寫法出現處（289 個檔案）：
 - `linear-algebra/src/ch24-applied/13-fast-matrix-multiplication.md`：3 處，行 49, 58, 283
 - `linear-algebra/src/ch24a-notation/index.md`：14 處，行 98, 108, 149, 176, 242, 247, 251, 265, 270, 271, 288, 294, 355, 388
 
-## 連寫的複合詞（`closed-compounds`，confirmed）
+## 連寫的複合詞（`closed-compounds`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -455,7 +436,7 @@ avoid 寫法出現處（289 個檔案）：
 
 書稿裡沒有 avoid 寫法。
 
-## finite-dimensional（`dimensional`，confirmed）
+## finite-dimensional（`dimensional`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -468,7 +449,7 @@ avoid 寫法出現處（289 個檔案）：
 
 書稿裡沒有 avoid 寫法。
 
-## 正定與半正定（`definite`，confirmed）
+## 正定與半正定（`definite`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -486,7 +467,7 @@ avoid 寫法出現處（289 個檔案）：
 
 書稿裡沒有 avoid 寫法。
 
-## 自伴（`self-adjoint`，confirmed）
+## 自伴（`self-adjoint`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -498,7 +479,7 @@ self-adjoint 237 次，其他寫法 0 次。
 
 書稿裡沒有 avoid 寫法。
 
-## well-defined（`well-defined`，confirmed）
+## well-defined（`well-defined`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -516,7 +497,7 @@ Chicago 規則：放在名詞前加連字號（a well-defined map，36 次），
 
 書稿裡沒有 avoid 寫法。
 
-## if and only if（`iff`，confirmed）
+## if and only if（`iff`，confirmed，逐處判斷）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -544,7 +525,7 @@ avoid 寫法出現處（16 個檔案）：
 - `linear-algebra/src/ch05-duality/04-dual-map.md`：9 處，行 215, 250, 308, 310, 412, 424, 460, 469, 471
 - `linear-algebra/src/ch10-canonical-forms/10-convergent-matrices.md`：1 處，行 342
 
-## 複數形（`plurals`，confirmed）
+## 複數形（`plurals`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|
@@ -562,7 +543,7 @@ avoid 寫法出現處（1 個檔案）：
 
 - `linear-algebra/src/ch11-inner-products/08-qr-and-householder.md`：1 處，行 366
 
-## 美式拼寫（`us-spelling`，confirmed）
+## 美式拼寫（`us-spelling`，confirmed，機械替換）
 
 | 寫法 | 線代書 | analysis-book | 合計 | |
 |---|---:|---:|---:|---|

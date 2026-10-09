@@ -272,6 +272,7 @@ def check(at):
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
     check_ids(at)
+    check_titles(at)
     for g in at.usage:
         if g.get("status") not in ("proposed", "confirmed") or not g.get("use") or not g.get("why"):
             at.errors.append(f"usage.yaml: {g.get('id')} needs status proposed|confirmed, a use list and a why")
@@ -296,6 +297,53 @@ def check(at):
         if not k.get("rule") or not k.get("decided"):
             at.errors.append(f"chapter-constraints.yaml: {k['chapter']} needs `rule` and `decided`")
     return not at.errors
+
+
+# Title Case as the manuscripts write it: minor words lowercase except at the start or after a colon; every other word
+# (and every part of a hyphenated compound) starts with a capital, or with a symbol (ℝⁿ, Lᵖ, H¹₀, C(K)).
+MINOR = {"a", "an", "the", "and", "or", "nor", "but", "of", "in", "on", "for", "by", "at", "from", "to", "with", "as",
+         "over", "under", "into", "onto", "via", "versus", "between", "through", "without", "per", "than"}
+
+
+def title_problems(title):
+    """Ways `title` breaks the manuscripts' Title Case."""
+    out = []
+    first = True
+    for raw in title.split():
+        for i, part in enumerate(raw.split("-")):
+            word = re.sub(r"^[^\w]+|[^\w'’]+$", "", part)
+            m = re.match(r"[A-Za-z]", word)
+            if m and m.start() == 0:
+                lower = word.lower() in MINOR
+                start = first and i == 0
+                if (start or not lower) and word[0].islower():
+                    out.append(f"'{word}' should be capitalised")
+                elif lower and not start and word[0].isupper():
+                    out.append(f"'{word}' should be lowercase")
+            first = False
+        first = raw.endswith(":")
+    return out
+
+
+def check_titles(at):
+    """Reader-facing names: Title Case as in the manuscripts, unique across the series, and the confirmed English
+    usage (registry/usage.yaml) applies to them too."""
+    import usage_report
+    avoid = [(g["id"], f, usage_report.pattern(f), [usage_report.pattern(k) for k in g.get("keep") or ()])
+             for g in at.usage if g.get("status") == "confirmed" for f in g.get("avoid") or ()]
+    seen = {}
+    for kind, items in (("chapter", [(c, at.chapters[c]["title"]) for c in at.order]),
+                        ("volume", [(v["id"], v["title"]) for v in at.volumes])):
+        for cid, title in items:
+            for p in title_problems(title):
+                at.errors.append(f"{kind} {cid} title \"{title}\": {p} (Title Case, as in the manuscripts)")
+            for gid, form, pat, kept in avoid:
+                if pat.search(usage_report.without_kept(title, kept)):
+                    at.errors.append(f"{kind} {cid} title \"{title}\" uses an avoided form ({gid}: {form.removeprefix('re:')})")
+            key = (kind, title.casefold())
+            if key in seen:
+                at.errors.append(f"{kind} titles must be unique: {seen[key]} and {cid} are both \"{title}\"")
+            seen[key] = cid
 
 
 STATEMENT_PREFIX = {"def": "def", "thm": "thm", "prp": "prp", "cor": "cor", "lem": "lem", "concept": "cpt"}

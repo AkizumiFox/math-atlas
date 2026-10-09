@@ -52,16 +52,24 @@ def pattern(form):
     return re.compile(rf"(?<![\w-]){body}(?![\w-])", re.I)
 
 
+def without_kept(line, kept):
+    """The line with every fixed name (a group's keep list) blanked out, so it cannot match an avoided form."""
+    for pat in kept:
+        line = pat.sub(lambda m: " " * len(m.group(0)), line)
+    return line
+
+
 def scan(groups):
     """{(group id, form): {book: count}}, and {(group id, form): [(path, line)]} for every occurrence."""
     counts, where = defaultdict(Counter), defaultdict(list)
     pats = {(g["id"], f): pattern(f) for g in groups for f in [*g["use"], *g.get("avoid", [])]}
+    kept = {g["id"]: [pattern(k) for k in g.get("keep") or ()] for g in groups}
     for book in BOOKS:
         for path in files(book):
             lines = prose(path.read_text(encoding="utf-8")).split("\n")
             for n, line in enumerate(lines, 1):
                 for key, pat in pats.items():
-                    hits = len(pat.findall(line))
+                    hits = len(pat.findall(without_kept(line, kept[key[0]])))
                     if hits:
                         counts[key][book] += hits
                         where[key].append((path.relative_to(ROOT.parent), n))
@@ -76,7 +84,8 @@ def main():
              "confirmed 的組列出書稿裡每一處 avoid 寫法（將來由引擎在 build 時檢查，spec/05）。"
              "統計只看散文：數學式、程式碼、TikZ、label 與參照都已去掉。", ""]
     for g in groups:
-        lines += [f"## {g['title']}（`{g['id']}`，{g['status']}）", "", "| 寫法 | 線代書 | analysis-book | 合計 | |", "|---|---:|---:|---:|---|"]
+        how = "逐處判斷" if g.get("review") else "機械替換"
+        lines += [f"## {g['title']}（`{g['id']}`，{g['status']}，{how}）", "", "| 寫法 | 線代書 | analysis-book | 合計 | |", "|---|---:|---:|---:|---|"]
         for f in [*g["use"], *g.get("avoid", [])]:
             c = counts[(g["id"], f)]
             mark = "**use**" if f in g["use"] else "avoid"

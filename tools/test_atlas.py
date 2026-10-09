@@ -128,6 +128,28 @@ class UsageTest(unittest.TestCase):
         self.assertEqual(len(u.pattern("injection*").findall("injections and injection")), 2)
 
 
+class TitleTest(unittest.TestCase):
+    def test_title_case(self):
+        from atlas import title_problems
+        ok = ["Contraction Mappings and the Picard–Lindelöf Theorem", "Capstone: The Dirichlet Problem",
+              "Ruler-and-Compass Constructions", "Lᵖ Spaces, Convolution and Mollifiers", "Finitely Generated Modules over a PID",
+              "The Von Neumann Natural Numbers (the Fragment of ZF They Need)", "H¹₀, the Poincaré Inequality"]
+        for t in ok:
+            self.assertEqual(title_problems(t), [], t)
+        self.assertTrue(title_problems("Groups And Rings"))
+        self.assertTrue(title_problems("the Spectral theorem"))
+        self.assertTrue(title_problems("Mean-square Convergence"))
+
+    def test_titles_unique_and_follow_usage(self):
+        import atlas
+        at = atlas.Atlas()
+        at.chapters["LA2.6"] = dict(at.chapters["LA2.6"], title="Formal Polynomials")  # F3.8's title
+        at.chapters["MA.18"] = dict(at.chapters["MA.18"], title="Non-negative Cones")
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any("titles must be unique" in e for e in at.errors), at.errors)
+        self.assertTrue(any("MA.18" in e and "avoided form" in e for e in at.errors), at.errors)
+
+
 class RegistryTest(unittest.TestCase):
     def test_registry_passes_check(self):
         import atlas

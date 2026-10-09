@@ -675,7 +675,7 @@ flowchart LR
   MA_16["16 Norms and Matrix Analysis"]
   MA_17["17 Variational Principles and Interlacing"]
   MA_18["18 Convexity"]
-  MA_19["19 Non-negative Matrices"]
+  MA_19["19 Nonnegative Matrices"]
   MA_20["20 Perturbation Theory"]
   MA_21["21 Matrix Inequalities"]
   MA_21b["21b Löwner's Theorem in Pick-Function Form"]:::opt
@@ -795,7 +795,7 @@ flowchart LR
   ST_3["3 Cardinal Arithmetic"]
   ST_4["4 Equivalents of the Axiom of Choice"]
   ST_5["5 The Constructible Universe and Independence: An Overview"]
-  ST_6a["6a Vitali's Non-measurable Set"]
+  ST_6a["6a Vitali's Nonmeasurable Set"]
   ST_6b["6b The Banach–Tarski Paradox"]:::opt
   F2_4 --> ST_1
   ST_1 --> ST_2

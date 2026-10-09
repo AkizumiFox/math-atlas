@@ -7,16 +7,18 @@
   title: 單射
   status: confirmed
   use: [injective, injection*, injectivity]
-  avoid: [one-to-one, one-one]
+  avoid: [is one-to-one, are one-to-one, be one-to-one, not one-to-one, one-one]
   why: >-
-    injective 系列 721 次，one-to-one 12 次（線代書 11、analysis-book 1）。injective／surjective／bijective 成組，
-    不會和 one-to-one correspondence（＝bijection）混淆。
+    injective 系列 721 次。one-to-one 只禁形容詞用法（is one-to-one 等）：副詞用法（matches it one-to-one with、
+    correspond one-to-one to）是正確的英文，定義裡介紹同義詞的「injective (one-to-one)」也保留，讓讀者認得其他書的寫法。
+    （2026-10-10 修正：原提案把 one-to-one 整個列為 avoid。）
 
 - id: surjective
   title: 滿射
   status: confirmed
   use: [surjective, surjection*, surjectivity]
   avoid: [is onto, are onto, be onto, not onto]
+  review: true
   why: >-
     surjective 系列 521 次。onto 出現 368 次，但絕大多數是介系詞（projection onto a subspace），不能整個禁用；
     只禁用形容詞用法（is onto 等，共 23 次）。
@@ -51,10 +53,13 @@
   title: 映射與函數
   status: confirmed
   use: [map, maps, linear map*, function, functions]
-  avoid: [mapping, mappings, linear mapping*, linear transformation*]
+  avoid: [a mapping, the mapping, mappings, linear mapping*, linear transformation*]
+  keep: [spectral mapping theorem, open mapping theorem, riemann mapping theorem, contraction mapping*]
   why: >-
     map 用於保持結構的映射（linear map 511 次），function 用於集合論與分析的一般函數（1,705 次）；operator 指 V → V 的線性映射。
-    mapping 21 次、linear transformation 1 次是同一意思的第三種寫法，改成 map。
+    名詞 mapping 不用（現況 0 次）；linear transformation 1 次改成 linear map。動名詞 mapping（mapping X onto Y）照常使用，
+    固定名稱列在 keep，不受 avoid 影響：spectral mapping theorem、open mapping theorem、Riemann mapping theorem、contraction mapping。
+    （2026-10-10 修正：原提案把 mapping 整個列為 avoid，但書稿裡的 21 次全是定理名或動名詞。）
 
 - id: non-prefix
   title: non- 字首
@@ -111,6 +116,7 @@
   status: confirmed
   use: [if and only if]
   avoid: [iff]
+  review: true
   why: >-
     if and only if 861 次，iff 80 次。iff 多半出現在 F1 談連接詞本身的地方（an "iff"、iff-introduction），那是在講符號，不是縮寫；
     其餘當縮寫用的改成 if and only if。lint 會把 F1 的用法也列出來，由作者逐處判斷。

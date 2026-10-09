@@ -99,7 +99,7 @@
 
 1. - [ ] **ℕ 含 0**（2026-10-09 定案）：analysis-book 的 `\nN` 改為含 0；凡是「$n \in \mathbb{N}$」作為數列索引、從 1 開始的地方，改寫成 $(x_n)_{n \ge 1}$ 或 $n \in \mathbb{Z}_{>0}$。`\nNz` 巨集退役。已寫的第 1–4、6、11 章要重審。
 2. - [ ] **粗體依型別**（2026-10-09 定案）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 拆成 `\coord{}`（$\mathbb{F}^n$ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。第 1–5 章的抽象向量要拿掉粗體；每一處由 AI 依上下文分類，再人工抽審。矩陣巨集 `\A … \Z` 不變。analysis-book 不受影響。
-3. - [ ] **英文用詞遷移**（2026-10-10 定案，`registry/usage.yaml` 15 組全部 confirmed）：兩本書稿裡每一處 avoid 寫法換成 use 寫法，清單在 `generated/usage.md`（`tools/usage_report.py`，依檔案列出行號）。大宗是 non- 改連寫（non-zero → nonzero 等，3,628 處；non- 後接大寫字時保留連字號，例如 non-Euclidean），其次是 one-to-one、is onto、mapping、iff、analyse、labelled。純機械替換，用 regex 改寫後由 lint 守住；陳述雜湊先正規化 avoid 寫法（spec/04 圖 3），所以不觸發重審。iff 在 F1 談連接詞本身的地方保留，要逐處看。
+3. - [ ] **英文用詞遷移**（2026-10-10 定案，`registry/usage.yaml` 15 組全部 confirmed）：兩本書稿裡每一處 avoid 寫法換成 use 寫法，清單在 `generated/usage.md`（`tools/usage_report.py`，依檔案列出行號）。大宗是 non- 改連寫（non-zero → nonzero 等，3,628 處；non- 後接大寫字時保留連字號，例如 non-Euclidean），其次是形容詞的 is one-to-one、linear transformation、analyse、labelled，都是純機械替換：用 regex 改寫後由 lint 守住；陳述雜湊先正規化 avoid 寫法（spec/04 圖 3），所以不觸發重審。標為 `review` 的兩組（is onto、iff）要逐處判斷：is onto 也可能是介系詞片語（the projections are onto U），iff 在 F1 談連接詞本身的地方保留。
 4. - [ ] **第 6 章 §6.05 的連續**（2026-10-09）：就地定義「連續」，限 ℂ 的子集上的實值函數，註明完整定義在 AN1.5（`def-continuous-local`）。
 5. - [ ] **第 10 章 §10.9**（2026-10-09）：就地定義複數數列與級數的收斂、ℝ→ℂ 的導數、t→∞ 的極限（`def-seq-limit-local`、`def-derivative-local`、`def-limit-infinity-local`），各自註明完整定義的位置。
 6. - [ ] **第 12 章：`thm-unitary-exponential` 移出**（2026-10-09 定案，`todo:unitary-exp`）：移到 analysis-book 第 32 章（AN3.3，見 chapter-constraints），原處留一條 see 與「已移至⋯⋯」的錨點（線代書已發布）。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。

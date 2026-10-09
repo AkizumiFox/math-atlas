@@ -117,7 +117,7 @@
 | la:ch16 | MA.16 Norms and Matrix Analysis |
 | la:ch17 | MA.17 Variational Principles and Interlacing |
 | la:ch18 | MA.18 Convexity |
-| la:ch19 | MA.19 Non-negative Matrices |
+| la:ch19 | MA.19 Nonnegative Matrices |
 | la:ch20 | MA.20 Perturbation Theory |
 | la:ch21 | MA.21 Matrix Inequalities |
 | la:ch21/10 | MA.21b Löwner's Theorem in Pick-Function Form（選讀） |
@@ -137,4 +137,4 @@
 - **AL4**：AL4.1 Modules, Submodules, Quotients and Homomorphisms、AL4.2 Free Modules, Direct Sums and Exact Sequences、AL4.3 Finitely Generated Modules over a PID、AL4.4 Applications: Finitely Generated Abelian Groups and Canonical Forms、AL4.5 Tensor Products, Hom and Adjunction、AL4.6 Projective, Injective and Flat Modules、AL4.7 Categories, Functors and Universal Properties、AL4.9 Representations of Finite Groups: Maschke and Schur、AL4.10 Character Theory、AL4.11 Complexes, Homology, Tor and Ext: An Introduction
 - **AL5**：AL5.1 Localization and Modules of Fractions、AL5.2 Noetherian Rings and the Hilbert Basis Theorem、AL5.3 Integral Extensions, Going Up and Going Down、AL5.4 Hilbert's Nullstellensatz、AL5.5 Primary Decomposition、AL5.6 Dedekind Domains、AL5.7 Krull Dimension: An Introduction
 - **PR**：PR.2 Conditional Expectation、PR.3 Discrete-Time Martingales、PR.4 Weak Convergence and Characteristic Functions
-- **ST**：ST.1 The Axioms of ZF、ST.2 Ordinals and Transfinite Induction、ST.3 Cardinal Arithmetic、ST.4 Equivalents of the Axiom of Choice、ST.5 The Constructible Universe and Independence: An Overview、ST.6a Vitali's Non-measurable Set、ST.6b The Banach–Tarski Paradox（選讀）
+- **ST**：ST.1 The Axioms of ZF、ST.2 Ordinals and Transfinite Induction、ST.3 Cardinal Arithmetic、ST.4 Equivalents of the Axiom of Choice、ST.5 The Constructible Universe and Independence: An Overview、ST.6a Vitali's Nonmeasurable Set、ST.6b The Banach–Tarski Paradox（選讀）

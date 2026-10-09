@@ -195,7 +195,7 @@ MA:
   - {id: MA.16, title: "Norms and Matrix Analysis", title_zh: 範數與矩陣分析, src: la:ch16}
   - {id: MA.17, title: "Variational Principles and Interlacing", title_zh: 變分原理與交錯, src: la:ch17}
   - {id: MA.18, title: "Convexity", title_zh: 凸性, src: la:ch18}
-  - {id: MA.19, title: "Non-negative Matrices", title_zh: 非負矩陣, src: la:ch19}
+  - {id: MA.19, title: "Nonnegative Matrices", title_zh: 非負矩陣, src: la:ch19}
   - {id: MA.20, title: "Perturbation Theory", title_zh: 擾動理論, src: la:ch20}
   - {id: MA.21, title: "Matrix Inequalities", title_zh: 矩陣不等式, src: la:ch21}
   - {id: MA.21b, title: "Löwner's Theorem in Pick-Function Form", title_zh: Löwner 定理的 Pick 函數形式（交會章：MA × CA × FA）, src: la:ch21/10, opt: true}
@@ -226,5 +226,5 @@ ST:
   - {id: ST.3, title: "Cardinal Arithmetic", title_zh: 基數算術, src: new}
   - {id: ST.4, title: "Equivalents of the Axiom of Choice", title_zh: 選擇公理的等價形式, src: new}
   - {id: ST.5, title: "The Constructible Universe and Independence: An Overview", title_zh: 可構造宇宙與獨立性概觀, src: new}
-  - {id: ST.6a, title: "Vitali's Non-measurable Set", title_zh: Vitali 不可測集, src: new}
+  - {id: ST.6a, title: "Vitali's Nonmeasurable Set", title_zh: Vitali 不可測集, src: new}
   - {id: ST.6b, title: "The Banach–Tarski Paradox", title_zh: Banach–Tarski 悖論（交會章：ST × AL）, src: new, opt: true}
