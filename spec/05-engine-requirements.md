@@ -30,7 +30,7 @@
 5. **匯出 atlas 格式**：每次 build 都輸出 `atlas-edges.yaml`，格式和 `registry/computed/la-edges.yaml` 相同。這樣 math-atlas 可以直接收下計算邊，取代 `tools/import_la.py` 的手動 section 對照。
 6. **共用記號表**：從 `registry/notation.yaml` 產生 `macros.tex` 和 MathJax 巨集，加上作用域 lint、原始字形 lint 和重載宣告。
    - **作用域 lint 也要檢查借用**：被 `borrows` 引用的陳述，其中每個語意巨集與術語都必須在借用處的作用域內（spec/03 §6 規則 3）。math-atlas 目前只能在章層級用手寫的 `scope` 代理，宣告漏寫就抓不到。例：`thm-unitary-exponential` 搬到 AN3.3 後，MA.21 借用它是否合法，取決於 MA.21 的作用域裡有沒有矩陣指數；這一點在 2026-10-09 是人工查出來的（有，經由 MA.21 ← LA2.10 的 s 邊），引擎上線後應由 build 自動判定。
-7. **陳述雜湊**：每條 uses 邊存被引用陳述正規化後的雜湊，用來驅動 04 圖 3 的重審流程。
+7. **陳述雜湊**：每條 uses 邊存被引用陳述正規化後的雜湊，用來驅動 04 圖 3 的重審流程。正規化包括把 `registry/usage.yaml` 的 avoid 寫法換成 use 寫法，讓純拼寫的遷移不觸發重審。
 8. **符號 hover**：語意巨集渲染時帶上 `data-sym` 屬性，前端顯示符號的定義位置。
 9. **先備頁由 registry 產生**：每冊列出「需要／借用／不需要」三欄，不手寫。
 10. **定義必須引用它用到的定義**：定義與定理陳述裡出現的既有術語，要以 crossref 或語意巨集連到其定義，並由 lint 檢查（未連結的已登記術語報錯）。atlas 的陳述讀者必讀集（spec/03 §6.2）目前只看得到明寫的引用，是下界；有了這條才會是精確值。原型是 `tools/import_la.py` 的 `term_edges`：拿 `registry/terms.yaml` 比對定義與陳述的文字，找出出現了術語卻沒有引用的地方。比對規則在 `tools/lexicon.py`：去掉數學式與 label 參照後切詞，最長比對，詞形還原（fields → field、matrices → matrix、Cauchy sequences → Cauchy sequence），不分大小寫；但含專有名詞的術語（Cauchy、Jordan、Hermitian，依兩本書中句中大寫的頻率判定）只比對原本的大小寫，人名也不還原（Givens 不會變成 Given）。

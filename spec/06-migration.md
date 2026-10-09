@@ -95,25 +95,26 @@
 
 已寫的章以 `registry/computed/labels.yaml` 的 `written` 為準（`tools/import_labels.py`）：線代書全部；analysis-book 第 1–4、6、11 章。
 
-**順序**：約定變更（1、2）最先做。它們會改到陳述本身、觸發重審，拖得越久，受影響的已寫章越多。其餘各項彼此獨立。
+**順序**：約定變更（1–3）最先做。它們會改到陳述本身、觸發重審，拖得越久，受影響的已寫章越多。其餘各項彼此獨立。
 
 1. - [ ] **ℕ 含 0**（2026-10-09 定案）：analysis-book 的 `\nN` 改為含 0；凡是「$n \in \mathbb{N}$」作為數列索引、從 1 開始的地方，改寫成 $(x_n)_{n \ge 1}$ 或 $n \in \mathbb{Z}_{>0}$。`\nNz` 巨集退役。已寫的第 1–4、6、11 章要重審。
 2. - [ ] **粗體依型別**（2026-10-09 定案）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 拆成 `\coord{}`（$\mathbb{F}^n$ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。第 1–5 章的抽象向量要拿掉粗體；每一處由 AI 依上下文分類，再人工抽審。矩陣巨集 `\A … \Z` 不變。analysis-book 不受影響。
-3. - [ ] **第 6 章 §6.05 的連續**（2026-10-09）：就地定義「連續」，限 ℂ 的子集上的實值函數，註明完整定義在 AN1.5（`def-continuous-local`）。
-4. - [ ] **第 10 章 §10.9**（2026-10-09）：就地定義複數數列與級數的收斂、ℝ→ℂ 的導數、t→∞ 的極限（`def-seq-limit-local`、`def-derivative-local`、`def-limit-infinity-local`），各自註明完整定義的位置。
-5. - [ ] **第 12 章：`thm-unitary-exponential` 移出**（2026-10-09 定案，`todo:unitary-exp`）：移到 analysis-book 第 32 章（AN3.3，見 chapter-constraints），原處留一條 see 與「已移至⋯⋯」的錨點（線代書已發布）。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
-6. - [ ] **第 14 章 §14.6**（2026-10-09 定案）：刪除二階導數判別法的應用，只保留純代數的定性判準，留一條 see 指向 AN3.1（判別法寫進 analysis-book 第 30 章，見 chapter-constraints）。
-7. - [ ] **第 16 章**（2026-10-09）：就地定義範數空間的 Cauchy 列與閉集（`def-cauchy-local`、`def-closed-local`）；刪掉「本書至此不需要連續」，改為回指 §6.05。
-8. - [ ] **第 17 章 §11 的 `thm-loewner-statement`**（2026-10-09 發現，違反 spec/03 §6 規則 3）：它在第 17 章就陳述了條件 (ii) 的正測度與條件 (iii) 的上半平面解析性，讀者讀不懂。主線只留矩陣語言的版本（非正式說法，或連續密度版），完整陳述移到 MA.21b，原處留 see 與錨點。
-9. - [ ] **第 21 章沿作用域切開**（2026-10-09 定案，`todo:ch21-split`）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。搬走的 label 在原處留「已移至⋯⋯」的錨點。
+3. - [ ] **英文用詞遷移**（2026-10-10 定案，`registry/usage.yaml` 15 組全部 confirmed）：兩本書稿裡每一處 avoid 寫法換成 use 寫法，清單在 `generated/usage.md`（`tools/usage_report.py`，依檔案列出行號）。大宗是 non- 改連寫（non-zero → nonzero 等，3,628 處；non- 後接大寫字時保留連字號，例如 non-Euclidean），其次是 one-to-one、is onto、mapping、iff、analyse、labelled。純機械替換，用 regex 改寫後由 lint 守住；陳述雜湊先正規化 avoid 寫法（spec/04 圖 3），所以不觸發重審。iff 在 F1 談連接詞本身的地方保留，要逐處看。
+4. - [ ] **第 6 章 §6.05 的連續**（2026-10-09）：就地定義「連續」，限 ℂ 的子集上的實值函數，註明完整定義在 AN1.5（`def-continuous-local`）。
+5. - [ ] **第 10 章 §10.9**（2026-10-09）：就地定義複數數列與級數的收斂、ℝ→ℂ 的導數、t→∞ 的極限（`def-seq-limit-local`、`def-derivative-local`、`def-limit-infinity-local`），各自註明完整定義的位置。
+6. - [ ] **第 12 章：`thm-unitary-exponential` 移出**（2026-10-09 定案，`todo:unitary-exp`）：移到 analysis-book 第 32 章（AN3.3，見 chapter-constraints），原處留一條 see 與「已移至⋯⋯」的錨點（線代書已發布）。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
+7. - [ ] **第 14 章 §14.6**（2026-10-09 定案）：刪除二階導數判別法的應用，只保留純代數的定性判準，留一條 see 指向 AN3.1（判別法寫進 analysis-book 第 30 章，見 chapter-constraints）。
+8. - [ ] **第 16 章**（2026-10-09）：就地定義範數空間的 Cauchy 列與閉集（`def-cauchy-local`、`def-closed-local`）；刪掉「本書至此不需要連續」，改為回指 §6.05。
+9. - [ ] **第 17 章 §11 的 `thm-loewner-statement`**（2026-10-09 發現，違反 spec/03 §6 規則 3）：它在第 17 章就陳述了條件 (ii) 的正測度與條件 (iii) 的上半平面解析性，讀者讀不懂。主線只留矩陣語言的版本（非正式說法，或連續密度版），完整陳述移到 MA.21b，原處留 see 與錨點。
+10. - [ ] **第 21 章沿作用域切開**（2026-10-09 定案，`todo:ch21-split`）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。搬走的 label 在原處留「已移至⋯⋯」的錨點。
    - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
    - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
    - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
-10. - [ ] **跨書重複的 label**（2026-10-10 分流，見 `registry/label-triage.yaml`）：
+11. - [ ] **跨書重複的 label**（2026-10-10 分流，見 `registry/label-triage.yaml`）：
     - `def-image`、`def-relation` 是**特例**：集合的像、「從 A 到 B 的關係」當正式定義（F2.1）；線代書的 label 改名為 `def-image-linear-map`、`def-relation-on-set`，以 `specializes` 指回，舊 label 留錨點。
     - `exr-functions-*` 六題是**撞名**：題目完全不同，線代書第 0 章遷移到 F 冊重編時改名。
     - 其餘 14 個是**同一內容**：遷移時以 analysis-book 為準合併。
-11. - [ ] **`thm-zorn`、`thm-induction` 的接手**（2026-10-10）：線代書 §1.8 改成以 b 借用 F2.4 的 Zorn 引理（地圖已記 LA1.1 ← F2.4，scope F2.2）。F2.4、F2.2 寫好後接手這兩個 label（`chapter-constraints.yaml` 的 `takes`），線代書原處留錨點。
+12. - [ ] **`thm-zorn`、`thm-induction` 的接手**（2026-10-10）：線代書 §1.8 改成以 b 借用 F2.4 的 Zorn 引理（地圖已記 LA1.1 ← F2.4，scope F2.2）。F2.4、F2.2 寫好後接手這兩個 label（`chapter-constraints.yaml` 的 `takes`），線代書原處留錨點。
 
 ## 授權的待辦
 

@@ -44,7 +44,10 @@ def files(book):
 
 
 def pattern(form):
-    """A variant as a case-insensitive whole-word regex; '*' is a word stem wildcard, spaces match any whitespace."""
+    """A variant as a case-insensitive whole-word regex; '*' is a word stem wildcard, spaces match any whitespace.
+    A form starting with 're:' is a case-sensitive regular expression, for rules with a case exception."""
+    if form.startswith("re:"):
+        return re.compile(form[3:])
     body = r"\s+".join(re.escape(w).replace(r"\*", r"\w*") for w in form.split())
     return re.compile(rf"(?<![\w-]){body}(?![\w-])", re.I)
 
@@ -77,11 +80,16 @@ def main():
         for f in [*g["use"], *g.get("avoid", [])]:
             c = counts[(g["id"], f)]
             mark = "**use**" if f in g["use"] else "avoid"
-            lines.append(f"| {f} | {c['la']} | {c['ab']} | {c['la'] + c['ab']} | {mark} |")
+            shown = f"`{f[3:]}`（正規表示式）" if f.startswith("re:") else f
+            lines.append(f"| {shown} | {c['la']} | {c['ab']} | {c['la'] + c['ab']} | {mark} |")
         lines += ["", tidy(g["why"]), ""]
         if g["status"] == "confirmed":
-            hits = [f"- `{p}:{n}`：{f}" for f in g.get("avoid", []) for p, n in where[(g["id"], f)]]
-            lines += (["avoid 寫法出現處：", ""] + hits + [""]) if hits else ["書稿裡沒有 avoid 寫法。", ""]
+            by_file = defaultdict(list)
+            for f in g.get("avoid", []):
+                for path, n in where[(g["id"], f)]:
+                    by_file[path].append(n)
+            hits = [f"- `{p}`：{len(ns)} 處，行 {', '.join(map(str, sorted(set(ns))))}" for p, ns in sorted(by_file.items())]
+            lines += ([f"avoid 寫法出現處（{len(by_file)} 個檔案）：", ""] + hits + [""]) if hits else ["書稿裡沒有 avoid 寫法。", ""]
     OUT.write_text("\n".join(lines) + "\n")
     print(f"{len(groups)} groups -> {OUT.relative_to(ROOT)}")
 

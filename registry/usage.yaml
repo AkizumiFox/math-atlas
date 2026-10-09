@@ -1,11 +1,11 @@
 # 英文用詞約定（書稿用英文，spec/00 原則 7；說明見 spec/02「英文用詞約定」）。
 # 每組選定 use，其餘寫法列在 avoid。寫法是不分大小寫的整詞比對；* 是詞幹萬用字元，空白可對到換行。
-# status: proposed（agent 依兩本書稿的頻率提案，待作者確認）| confirmed（tools/usage_report.py 列出書稿裡每一處 avoid）
+# status: confirmed（agent 依兩本書稿的頻率提案，待作者確認）| confirmed（tools/usage_report.py 列出書稿裡每一處 avoid）
 # 頻率見 generated/usage.md（tools/usage_report.py 產生）。2026-10-10 首次統計。
 
 - id: injective
   title: 單射
-  status: proposed
+  status: confirmed
   use: [injective, injection*, injectivity]
   avoid: [one-to-one, one-one]
   why: >-
@@ -14,7 +14,7 @@
 
 - id: surjective
   title: 滿射
-  status: proposed
+  status: confirmed
   use: [surjective, surjection*, surjectivity]
   avoid: [is onto, are onto, be onto, not onto]
   why: >-
@@ -23,14 +23,14 @@
 
 - id: bijective
   title: 雙射
-  status: proposed
+  status: confirmed
   use: [bijective, bijection*]
   avoid: [one-to-one correspondence*]
   why: bijective／bijection 398 次，one-to-one correspondence 1 次。
 
 - id: image
   title: 像
-  status: proposed
+  status: confirmed
   use: [image*]
   avoid: []
   why: >-
@@ -40,7 +40,7 @@
 
 - id: kernel
   title: 核與零空間
-  status: proposed
+  status: confirmed
   use: [kernel*, null space*]
   avoid: [nullspace*]
   why: >-
@@ -49,7 +49,7 @@
 
 - id: map
   title: 映射與函數
-  status: proposed
+  status: confirmed
   use: [map, maps, linear map*, function, functions]
   avoid: [mapping, mappings, linear mapping*, linear transformation*]
   why: >-
@@ -58,46 +58,47 @@
 
 - id: non-prefix
   title: non- 字首
-  status: proposed
-  use: [non-negative, non-zero, non-empty, non-singular, non-trivial, non-decreasing, non-increasing, non-degenerate,
-        non-invertible, non-positive, non-measurable]
-  avoid: [nonnegative, nonzero, nonempty, nonsingular, nontrivial, nondecreasing, nonincreasing, nondegenerate,
-          noninvertible, nonpositive, nonmeasurable]
+  status: confirmed
+  use: [nonnegative, nonzero, nonempty, nonsingular, nontrivial, nondecreasing, nonincreasing, nondegenerate,
+        noninvertible, nonpositive, nonmeasurable]
+  avoid: ["re:(?<![\\w-])[Nn]on-[a-z][\\w-]*"]
   why: >-
-    兩本書都 100% 加連字號（non-zero 1,736 次、non-negative 662 次、non-empty 378 次，連寫 0 次），提案照現況。
-    注意：美式數學出版（AMS、Chicago）多半連寫（nonnegative）；若要改成連寫，改動的是兩本書全部的既有用法，請作者決定。
+    連寫（2026-10-10 定案）。兩本書已是美式拼寫，美式數學出版（AMS、Chicago）的慣例是 non- 直接連寫；
+    原本「美式拼寫＋連字號」是混搭。例外照 Chicago：後面接專有名詞或大寫字時保留連字號（non-Euclidean、
+    non-Archimedean、non-Hausdorff），avoid 的規則只抓 non- 後接小寫字母的寫法。書稿現況是 100% 加連字號，
+    遷移是純機械替換（spec/06），陳述雜湊先正規化 avoid 寫法再計算，所以不觸發重審（spec/04 圖 3）。
 
 - id: closed-compounds
   title: 連寫的複合詞
-  status: proposed
+  status: confirmed
   use: [codomain*, preimage*, counterexample*]
   avoid: [co-domain*, pre-image*, counter-example*]
   why: 連寫 87／131／67 次，加連字號 0 次。
 
 - id: dimensional
   title: finite-dimensional
-  status: proposed
+  status: confirmed
   use: [finite-dimensional, infinite-dimensional]
   avoid: [finite dimensional, infinite dimensional]
   why: 加連字號 723 次，分寫 0 次；不論修飾名詞或當述語都加連字號。
 
 - id: definite
   title: 正定與半正定
-  status: proposed
+  status: confirmed
   use: [positive definite, positive semidefinite, negative definite, negative semidefinite]
   avoid: [positive-definite, positive semi-definite, positive-semidefinite, negative-definite, negative semi-definite]
   why: 分寫 561 次，其他寫法 0 次。
 
 - id: self-adjoint
   title: 自伴
-  status: proposed
+  status: confirmed
   use: [self-adjoint]
   avoid: [selfadjoint, self adjoint]
   why: self-adjoint 237 次，其他寫法 0 次。
 
 - id: well-defined
   title: well-defined
-  status: proposed
+  status: confirmed
   use: [well-defined, well defined]
   avoid: [is well-defined, are well-defined, be well-defined, been well-defined, a well defined, an well defined,
           the well defined]
@@ -107,7 +108,7 @@
 
 - id: iff
   title: if and only if
-  status: proposed
+  status: confirmed
   use: [if and only if]
   avoid: [iff]
   why: >-
@@ -116,7 +117,7 @@
 
 - id: plurals
   title: 複數形
-  status: proposed
+  status: confirmed
   use: [zeros, formulas, lemmas, indices]
   avoid: [zeroes, formulae, lemmata]
   why: >-
@@ -125,7 +126,7 @@
 
 - id: us-spelling
   title: 美式拼寫
-  status: proposed
+  status: confirmed
   use: [neighborhood*, behavior*, center*, fiber*, color*, favor*, analyze*, labeled, labeling, modeling, modeled,
         canceled, canceling]
   avoid: [neighbourhood*, behaviour*, centre*, fibre*, colour*, favour*, analyse*, labelled, labelling, modelling,
