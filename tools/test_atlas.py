@@ -170,6 +170,13 @@ class RegistryTest(unittest.TestCase):
         self.assertEqual(eff.get(("LA3.11", "MA.16")), "see")
         self.assertEqual(eff.get(("AN3.1", "MA.16")), "s")
 
+    def test_constraints_only_on_unwritten_chapters(self):
+        import atlas
+        at = atlas.Atlas()
+        at.constraints.append({"chapter": "LA2.6", "decided": "2026-10-09", "rule": "define continuity in place"})
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("chapter-constraints.yaml: LA2.6 is already written") for e in at.errors), at.errors)
+
     def test_subject_after(self):
         import atlas
         at = atlas.Atlas()

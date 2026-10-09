@@ -2,45 +2,14 @@
 
 逐章的對照以 `registry/chapters.yaml` 的 `src` 欄為準：`ab:N` 是 analysis-book 第 N 章，`la:chNN` 或 `la:ch00/NN` 是線代書的章或節。本文件只列摘要與決策。
 
-## analysis-book（78 章）→ 冊
+## 書稿 → 冊
 
-| analysis-book | 冊 | 備註 |
-|---|---|---|
-| Part 0 ch 1–5 | F1.1–F1.5 | |
-| Part 0 ch 6–8 | F2.1–F2.3 | 選擇公理的陳述放在 F2.3，因為「可數個可數集的聯集可數」要用到；F2.4 Zorn 引理是新章 |
-| Part 0 ch 9–10（選讀） | F3.1–F3.2 | |
-| Part I ch 11–21 | AN1.1–AN1.11 | |
-| Part I ch 22–23（選讀） | F3.3–F3.4 | 從 Part I 移到 F3，讓 ℝ 的建構路線集中在一冊 |
-| Part II ch 24–29 | AN2.1–AN2.6 | |
-| Part VI ch 63–64 | AN2.7–AN2.8（B 段） | 一般拓樸提前到 AN2，FA 與 AL3.9 從這裡取用 |
-| Part II ch 30–33 | AN3.1–AN3.4 | AN3.5–3.7（子流形、微分形式、Stokes）是新章，屬 B 段 |
-| Part III ch 34–42 | HA.1–HA.9 | ch 40–41 選讀 |
-| Part IV ch 43–53 | MT.1–MT.11 | |
-| Part IV ch 54 | PR.1 | 機率支線的入口；PR.2–4 是新章 |
-| Part V ch 55–62 | CA.1–CA.8 | |
-| Part VI ch 65–72 | FA.1a–FA.8 | ch 65 拆成 FA.1a（Banach 空間）與 FA.1b（Lᵖ 的對偶）；ch 72 選讀 |
-| Part VI ch 73–78 | PDE.1–PDE.6 | 支線冊 |
+逐章對照由 `chapters.yaml` 的 `src` 欄自動產生，見 `generated/migration.md`，這裡不再手寫表格。以下只記對照背後的決定：
 
-analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫作，冊只是 registry 上的切面。等引擎支援跨冊 ID 之後，再決定是否真的分成多本出版。
-
-## linear-algebra（25 章）→ 冊
-
-| 線代書 | 冊 |
-|---|---|
-| §0.1–0.2 邏輯、證明 | F1.5 |
-| §0.3–0.4 集合、函數 | F2.1 |
-| §0.5 關係 | F2.2 |
-| §0.6 複數、§0.7 體、§0.8 多項式 | F3.6、F3.7、F3.8 |
-| §0.9 矩陣 | LA1.0（新的第 0 章：§0.9 被第 2 章引用，所以不能併進第 3 章） |
-| §0.10 群 | AL1.1 |
-| 第 1–5 章 | LA1 |
-| 第 6–10 章 | LA2 |
-| 第 11–13 章 | LA3 |
-| 第 14–15 章 | LA4 |
-| 第 16–21 章 | MA |
-| 第 22 章 | GEO.22 |
-| 第 23 章 | AL4.8 |
-| 第 24 章 | NLA.24（之後可拆成多章） |
+- **analysis-book**：依 Part 拆冊。Part I 第 22–23 章（選讀的 ℝ 建構）移到 F3，讓 ℝ 的建構路線集中在一冊；Part VI 第 63–64 章（一般拓樸）提前到 AN2 的 B 段，FA 與 AL3.9 從這裡取用；第 54 章是機率支線 PR 的入口；第 73–78 章成為支線冊 PDE。AN3.5–3.7（子流形、微分形式、Stokes）是新章，屬 B 段。
+- **選擇公理**：陳述放在 F2.3，因為「可數個可數集的聯集可數」要用到；F2.4 Zorn 引理是新章。
+- **linear-algebra**：第 0 章拆到 F1.5、F2.1、F2.2、F3.6–3.8 與 AL1.1；§0.9 矩陣成為新的 LA1.0（它被第 2 章引用，所以不能併進第 3 章）。第 24 章之後可拆成多章。
+- analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫作，冊只是 registry 上的切面。等引擎支援跨冊 ID 之後，再決定是否真的分成多本出版。
 
 ## 由計算邊得到的發現
 
@@ -120,32 +89,27 @@ analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫�
 
 所有 b 邊現在都已宣告 `scope`。
 
-## 記號約定的書稿待辦
+## 書稿改寫（只針對已經寫好的內容）
 
-- [ ] **ℕ 含 0**（2026-10-09 定案）：analysis-book 的 `\nN` 改為含 0；凡是「$n \in \mathbb{N}$」作為數列索引、從 1 開始的地方，改寫成 $(x_n)_{n \ge 1}$ 或 $n \in \mathbb{Z}_{>0}$。`\nNz` 巨集退役。這會改到陳述本身，已寫的章（ch 1–3、11）要重審。
+還沒寫的章要照做的事不放這裡，寫在 `registry/chapter-constraints.yaml`，由生成管線的 Spec 步驟（spec/04 圖 1）帶進該章的生成規格；`atlas.py check` 會擋下掛在已寫章上的約束。這裡只列會改到已寫內容、因此要重審的工作。
 
-- [ ] **粗體依型別**（2026-10-09 定案）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 拆成 `\coord{}`（$\mathbb{F}^n$ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。第 1–5 章的抽象向量要拿掉粗體；每一處由 AI 依上下文分類，再人工抽審。矩陣巨集 `\A … \Z` 不變。analysis-book 不受影響。
+已寫的章以 `registry/computed/labels.yaml` 的 `written` 為準（`tools/import_labels.py`）：線代書全部；analysis-book 第 1–4、6、11 章。
 
-- [ ] **§14.6 → AN3.1**（2026-10-09 定案）：線代書第 14 章刪除二階導數判別法的應用，只保留純代數的定性判準，並留一條 see 指向 AN3.1。判別法本身寫進 analysis-book 第 30 章（AN3.1，ℝⁿ 上的導數），以 b 借用 LA4.14 的定性判準。不放 AN3.2（反函數與隱函數），否則 MT.5 經由 AN3.2 會被迫讀 LA4。
+**順序**：約定變更（1、2）最先做。它們會改到陳述本身、觸發重審，拖得越久，受影響的已寫章越多。其餘各項彼此獨立。
 
-- [ ] **`thm-unitary-exponential` → AN3.3**（2026-10-09 定案，`todo:unitary-exp`）：從線代書 LA3（第 12 章）移出，寫進 analysis-book 第 32 章（AN3.3 矩陣指數與流）；原處留一條 see 與「已移至⋯⋯」的錨點（線代書已發布）。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
-
-- [ ] **CA.6 自帶 Poisson 核**（2026-10-09 定案）：analysis-book 第 60 章（調和函數）照 Ahlfors，由 Cauchy 積分公式導出 Poisson 公式，不再列「Poisson 核、Abel 可和性、連續函數的 Fourier 級數（Part III）」為先修；好核的觀點寫成一段回顧，指向第 35 章（HA.2）。`book.yaml` 的 `external_prerequisites` 要刪掉那一條。
-
-- [ ] **FA.1 拆章**（2026-10-09 定案）：analysis-book 第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；ℓᵖ 的 Hölder 與 Minkowski 要在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。FA.1b 是 Lᵖ 的對偶，依賴 MT.7、MT.11。第 70 章（FA.6 Hilbert 空間）的主例改成 ℓ²，L² 與三角系完備性改成回顧，指向 Part IV。拆完之後 FA.3–FA.7（Hahn–Banach、Baire 三定理、弱拓樸、Hilbert、緊算子）都可以和 MT 平行閱讀；FA.1b、FA.2 照舊排在 MT 之後。
-
-- [ ] **第 21 章沿作用域切開**（2026-10-09 定案，`todo:ch21-split`）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。搬走的 label 在原處留「已移至⋯⋯」的錨點。
-  - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
-  - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
-  - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
-- [ ] **MA.17 §11 的 `thm-loewner-statement` 也違反規則 3**（2026-10-09 發現）：它在第 17 章就陳述了條件 (ii) 的正測度與條件 (iii) 的上半平面解析性，雖然不證、本章也不依賴它，但讀者一樣讀不懂陳述。建議：主線只留矩陣語言的版本（「算子單調函數恰是仿射函數加上平移倒數的非負疊加」的非正式說法，或連續密度版），完整陳述移到 MA.21b，原處留 see。
-- [ ] **CA.9 正調和函數與 Herglotz–Nevanlinna 表示**（新的選讀章，2026-10-09）：圓盤上的正調和函數取 \( u_r\,\dd\theta \)，以 Banach–Alaoglu 取弱\* 極限得到測度（Riesz–Markov），再經 Cayley 變換推到半平面。CA.6 留一條 see 指向它。
-
-- [ ] **就地定義寫進書稿**（2026-10-09）：`statements.yaml` 中標「就地定義」的節點，每一個都要在對應的節寫出限定特例的定義，並註明完整定義的位置。線代書：§6.05 的連續、§10.9 的三個、第 16 章的 Cauchy 列與閉集（同時刪掉「本書至此不需要連續」）。analysis-book：第 30 章（AN3.1）的行列式與正定，二階判別法改用單位球面的緊緻性；第 33 章（AN3.4）的行列式與初等矩陣；第 55 章（CA.1）的實可微與 Jacobian。
-
-- [ ] **第 3 類的書稿改動**（2026-10-09）：analysis-book 第 71 章（FA.7）刪掉對 Liouville 的使用，一般 Banach 空間上的譜非空移到第 72 章（FA.8，Gelfand–Mazur）；第 62 章拆成兩章，Picard 與 theta 函數那段成為選讀的 CA.8b。
-
-- [ ] **PDE.1 的一致有界原理**（2026-10-09 定案）：analysis-book 第 73 章證明「𝒟′ 序列完備」時，要在 Fréchet 空間 C_c^∞(K) 上重跑第 68 章（FA.4）的 Baire 論證，並明寫這一步依賴第 68 章；地圖記為 PDE.1 ← FA.4 的 s 邊（PDE 冊外必讀 65 → 67 章）。分佈與半範數的正式定義留在第 73 章。另加一段 see，指向第 69 章（FA.5）的拓樸向量空間觀點。
+1. - [ ] **ℕ 含 0**（2026-10-09 定案）：analysis-book 的 `\nN` 改為含 0；凡是「$n \in \mathbb{N}$」作為數列索引、從 1 開始的地方，改寫成 $(x_n)_{n \ge 1}$ 或 $n \in \mathbb{Z}_{>0}$。`\nNz` 巨集退役。已寫的第 1–4、6、11 章要重審。
+2. - [ ] **粗體依型別**（2026-10-09 定案）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 拆成 `\coord{}`（$\mathbb{F}^n$ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。第 1–5 章的抽象向量要拿掉粗體；每一處由 AI 依上下文分類，再人工抽審。矩陣巨集 `\A … \Z` 不變。analysis-book 不受影響。
+3. - [ ] **第 6 章 §6.05 的連續**（2026-10-09）：就地定義「連續」，限 ℂ 的子集上的實值函數，註明完整定義在 AN1.5（`def-continuous-local`）。
+4. - [ ] **第 10 章 §10.9**（2026-10-09）：就地定義複數數列與級數的收斂、ℝ→ℂ 的導數、t→∞ 的極限（`def-seq-limit-local`、`def-derivative-local`、`def-limit-infinity-local`），各自註明完整定義的位置。
+5. - [ ] **第 12 章：`thm-unitary-exponential` 移出**（2026-10-09 定案，`todo:unitary-exp`）：移到 analysis-book 第 32 章（AN3.3，見 chapter-constraints），原處留一條 see 與「已移至⋯⋯」的錨點（線代書已發布）。MA.21（第 21 章）對它的引用改成借用（等引擎支援 borrows 語法）。搬完之後刪掉 `registry/moves.yaml` 的這一列。
+6. - [ ] **第 14 章 §14.6**（2026-10-09 定案）：刪除二階導數判別法的應用，只保留純代數的定性判準，留一條 see 指向 AN3.1（判別法寫進 analysis-book 第 30 章，見 chapter-constraints）。
+7. - [ ] **第 16 章**（2026-10-09）：就地定義範數空間的 Cauchy 列與閉集（`def-cauchy-local`、`def-closed-local`）；刪掉「本書至此不需要連續」，改為回指 §6.05。
+8. - [ ] **第 17 章 §11 的 `thm-loewner-statement`**（2026-10-09 發現，違反 spec/03 §6 規則 3）：它在第 17 章就陳述了條件 (ii) 的正測度與條件 (iii) 的上半平面解析性，讀者讀不懂。主線只留矩陣語言的版本（非正式說法，或連續密度版），完整陳述移到 MA.21b，原處留 see 與錨點。
+9. - [ ] **第 21 章沿作用域切開**（2026-10-09 定案，`todo:ch21-split`）：§10 拆成兩半，搬法記在 `registry/moves.yaml`。搬走的 label 在原處留「已移至⋯⋯」的錨點。
+   - 留在 MA.21：§10 的「Integrating a matrix-valued function」、「The powers」、「The logarithm and the exponential」，以及 §§01–09、11、12。易方向（積分表示 ⇒ 算子單調）改寫成主線引理，只處理連續密度 \( w(s)\,\dd s \)，用 `def-matrix-integral` 與 `lem-integral-preserves-loewner` 即可。`cor-operator-convex-log` 目前引用 `thm-loewner` 的 Step 1，改引這個引理。`cor-log-operator-monotone` 與 `exm-exp-not-monotone` 對 Löwner 定理和 (A7) 的提及只是 remark，改成 see。
+   - 移到 MA.21b（選讀）：「The one fact this chapter quotes」（`thm-pick-nevanlinna`）、`thm-loewner` 的三條件等價與難方向、習題 A1。
+   - 第 21 章開頭的「The analysis this chapter imports」改寫：(A7) 不再是本章的借用，改說明 MA.21b 的位置。
+10. - [ ] **跨書 label 撞名**（2026-10-09 發現）：線代書的 `def-image`（線性映射的像，第 2 章）與 analysis-book 的 `def-image`（集合在函數下的像，第 6 章）撞名，線代書那邊改名（例如 `def-image-linear-map`），舊 label 留錨點。其餘跨書重複（`generated/diff.md`）是第 0 章與 analysis-book Part 0 的同一份內容，遷移到 F 冊時合併。
 
 ## 授權的待辦
 

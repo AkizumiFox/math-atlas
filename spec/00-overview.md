@@ -18,9 +18,9 @@ math-atlas 是一整套「零基礎 → 數學研究所資格考」教科書的*
 
 ## 冊
 
-25 冊，清單在 `registry/volumes.yaml`，分五個分支：
+冊的清單在 `registry/volumes.yaml`，分五個分支（冊數與章數見 `generated/report.md`；規格只寫規則，數字一律引用產出）：
 
-- **基礎**：F1 邏輯與證明、F2 集合函數與關係、F3 數系與代數預備，以及支線 ST 公理集合論。
+- **基礎**：F1 邏輯與證明、F2 集合函數與關係、F3 數系與代數預備。
 - **分析**：AN1 實數線、AN2 度量與拓樸、AN3 多變數、HA Fourier、MT 測度、CA 複分析、FA 泛函分析。
 - **線代**：LA1–LA4，以及 MA 矩陣分析。
 - **代數**：AL1 群、AL2 環與體、AL3 Galois、AL4 模、表示與同調，以及支線 AL5 交換代數。
@@ -28,8 +28,8 @@ math-atlas 是一整套「零基礎 → 數學研究所資格考」教科書的*
 
 書稿來源：
 
-- **分析線**沿用 analysis-book 的 78 章藍圖，依 Part 拆冊。對照表見 `06-migration.md`。
-- **線代線**沿用 linear-algebra 現有的 25 章，第 0 章拆到 F 冊和 AL1。
+- **分析線**沿用 analysis-book 的章節藍圖，依 Part 拆冊。逐章對照見 `generated/migration.md`，對照的理由見 `06-migration.md`。
+- **線代線**沿用 linear-algebra 現有的章，第 0 章拆到 F 冊和 AL1。
 - **代數與 ST** 目前沒有書稿，章名是計畫。
 
 ## 設計原則

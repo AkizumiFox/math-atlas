@@ -1,10 +1,10 @@
 # math-atlas
 
-一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套有 25 冊、172 章，以一張分型別的依賴圖串起來；各冊的書稿在各自的 repo（`analysis-book`、`linear-algebra` 等）。
+一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套以一張分型別的依賴圖串起來（冊數、章數與各項統計見 `generated/report.md`）；各冊的書稿在各自的 repo（`analysis-book`、`linear-algebra` 等）。
 
 - 先讀 `spec/00-overview.md`。
 - 要看圖：`generated/README.md`（Mermaid，GitHub 會直接渲染），或用瀏覽器開 `generated/atlas.html`（互動版，需要網路載入 elkjs）。
-- 要看數字：`generated/report.md`（最長鏈、資格考必讀集合、瓶頸、領域覆蓋），`generated/diff.md`（計畫邊和計算邊的差異）。
+- 要看數字：`generated/report.md`（最長鏈、資格考必讀集合、瓶頸、領域覆蓋），`generated/diff.md`（計畫邊和計算邊的差異），`generated/migration.md`（書稿章 → 冊的章）。
 
 ## 目錄
 
@@ -16,6 +16,7 @@ registry/    唯一的事實來源
   plan-edges.yaml     手寫的章層級計畫邊（s／b／see／revisits，b 要附 why）
   computed/           由書稿 build 計算出的邊（目前：線代書）
   statements.yaml     陳述層種子（F 系列＋九個主幹）
+  chapter-constraints.yaml  還沒寫的章要照做的約束（生成管線的 Spec 步驟讀它）
   exam-targets.yaml   資格考目標與考綱覆蓋
   fields.yaml         數學各領域 → 章的覆蓋表；科目之間的 after 邊
   field-deviations.yaml  與外部科目圖之間已接受的差異（附理由）

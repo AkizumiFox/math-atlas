@@ -75,6 +75,8 @@ class Atlas:
         self.subject = {f["id"]: f for fs in self.fields.values() for f in fs if "id" in f}
         ext = reg / "external" / "subject-dag.yaml"
         self.external = yaml.safe_load(ext.read_text()) if ext.exists() else None
+        cons = reg / "chapter-constraints.yaml"
+        self.constraints = (yaml.safe_load(cons.read_text()) or []) if cons.exists() else []
         dev = reg / "field-deviations.yaml"
         self.deviations = (yaml.safe_load(dev.read_text()) or []) if dev.exists() else []
 
@@ -258,6 +260,13 @@ def check(at):
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
     check_fields(at)
     check_ids(at)
+    written = {c for cs in (at.labels.get("written") or {}).values() for c in cs}
+    for k in at.constraints:
+        if at._known(k["chapter"], "chapter-constraints.yaml") and k["chapter"] in written:
+            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} is already written; "
+                             "a change to it is a rewrite and belongs in spec/06")
+        if not k.get("rule") or not k.get("decided"):
+            at.errors.append(f"chapter-constraints.yaml: {k['chapter']} needs `rule` and `decided`")
     return not at.errors
 
 
@@ -422,8 +431,8 @@ def check_overrides(at):
     """moves.yaml makes the map say what the book will say after a rewrite. Each row must point at an open
     spec/06 TODO, and must go once the book has caught up (import_la.py records a 0 effect)."""
     spec = (ROOT / "spec" / "06-migration.md").read_text()
-    open_todo = set(re.findall(r"^- \[ \].*?`todo:([a-z0-9-]+)`", spec, re.M))
-    done_todo = set(re.findall(r"^- \[x\].*?`todo:([a-z0-9-]+)`", spec, re.M))
+    open_todo = set(re.findall(r"^(?:\d+\.\s+)?- \[ \].*?`todo:([a-z0-9-]+)`", spec, re.M))
+    done_todo = set(re.findall(r"^(?:\d+\.\s+)?- \[x\].*?`todo:([a-z0-9-]+)`", spec, re.M))
     for m in at.moves:
         t = m.get("todo")
         if not t:
@@ -618,7 +627,36 @@ def stats(at):
                    "結論：LA3 的 s 祖先閉包不含 LA2.10，可以跳過第 10 章"
                    + ("（已套用 registry/moves.yaml 的計畫搬家，書稿尚未改）" if at.moves else "") + "。"), ""]
     (OUT / "report.md").write_text("\n".join(lines) + "\n")
+    migration(at)
     return lines
+
+
+def migration(at):
+    """generated/migration.md: manuscript chapter -> atlas chapters, from the src column of chapters.yaml."""
+    by_src = defaultdict(list)
+    for c in at.order:
+        for src in at.chapters[c]["src"]:
+            by_src[str(src)].append(c)
+
+    def key(src):
+        return [int(x) if x.isdigit() else x for x in re.split(r"(\d+)", src)]
+
+    def name(c):
+        ch = at.chapters[c]
+        return f"{c} {ch['title']}" + ("（選讀）" if ch["opt"] else "")
+    lines = ["# 書稿 → 冊的對照（由 `tools/atlas.py stats` 從 `registry/chapters.yaml` 的 `src` 欄產生）", "",
+             "對照的理由與決策記在 spec/06。", ""]
+    for book, title in (("ab", "analysis-book（`ab:N` ＝ blueprint/book.yaml 第 N 章）"),
+                        ("la", "linear-algebra（`la:chNN` ＝ 第 NN 章；`la:ch00/NN` ＝ 第 0 章第 NN 節）")):
+        lines += [f"## {title}", "", "| 書稿 | 冊的章 |", "|---|---|"]
+        for src in sorted((k for k in by_src if k.startswith(book + ":")), key=key):
+            lines.append(f"| {src} | {'；'.join(name(c) for c in by_src[src])} |")
+        lines.append("")
+    new = [c for c in at.order if "new" in at.chapters[c]["src"]]
+    lines += ["## 尚無書稿（`new`）", ""]
+    for vid in dict.fromkeys(at.chapters[c]["vol"] for c in new):
+        lines.append(f"- **{vid}**：" + "、".join(name(c) for c in new if at.chapters[c]["vol"] == vid))
+    (OUT / "migration.md").write_text("\n".join(lines) + "\n")
 
 
 # ───────────────────────── diff ─────────────────────────

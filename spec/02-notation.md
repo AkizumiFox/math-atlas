@@ -37,7 +37,7 @@
 
 ## 現況與待拍板的約定
 
-兩本現有書稿的記號表是 `linear-algebra/authoring/NOTATION.md` 與 `analysis-book/authoring/NOTATION.md`。下表先列它們的現況，再給全套的提案。**提案都待作者確認**；一旦拍板，之後要改就必須走 04 的「約定變更治理」流程。
+兩本現有書稿的記號表是 `linear-algebra/authoring/NOTATION.md` 與 `analysis-book/authoring/NOTATION.md`。下表先列它們的現況，再給全套的約定。標「**已定**」的是定案；其餘仍是提案，待作者確認。一旦拍板，之後要改就必須走 04 的「約定變更治理」流程。
 
 | 項目 | linear-algebra | analysis-book | 全套提案 |
 |---|---|---|---|

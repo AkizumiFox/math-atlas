@@ -1,0 +1,94 @@
+# 寫章時必須照做的約束：地圖上的決定落到還沒寫的章時，寫在這裡，不放 spec/06 的待辦。
+# 生成管線的 Spec 步驟（spec/04 圖 1）讀這份檔，把約束放進該章的生成規格，審查步驟逐條核對。
+# 已經寫好的章不能掛約束：那是改寫，屬於 spec/06 的「書稿改寫」。atlas.py check 會檢查
+# （依 registry/computed/labels.yaml 的 written，由 tools/import_labels.py 產生）。
+# 每條：chapter（atlas 章）、book（書稿章）、decided、rule（要照做的事）、why（選填）。
+
+- chapter: AN3.1
+  book: ab:30
+  decided: 2026-10-09
+  rule: >-
+    寫入二階導數判別法（原在線代書 §14.6），以 b 借用 LA4.14 的定性判準。
+    行列式與正定／負定／不定要就地定義，限定在用到的特例，並註明完整定義在 LA2.7、LA4.14
+    （statements.yaml 的 def-det-local、def-posdef-local）。
+    判別法的證明改走「二次型在單位球面上取最小值」的緊緻性路線，不經譜定理。
+  why: 不能放 AN3.2，否則 MT.5 經由 AN3.2 會被迫讀 LA4；不經譜定理，AN3.1 對 LA3.12 才只是 see。
+
+- chapter: AN3.3
+  book: ab:32
+  decided: 2026-10-09
+  rule: >-
+    收下線代書第 12 章的 thm-unitary-exponential（label 不變），作為矩陣指數與流的一個結果。
+  why: LA3 因此可以跳過第 10 章（spec/06 決策 5）。
+
+- chapter: AN3.4
+  book: ab:33
+  decided: 2026-10-09
+  rule: >-
+    行列式與初等矩陣要就地定義，指向 LA2.7、LA1.3（def-det-local-int、def-elementary-local）。
+    AN3.1 不是 AN3.4 的祖先，所以要自己再定義一次。
+
+- chapter: CA.1
+  book: ab:55
+  decided: 2026-10-09
+  rule: >-
+    ℝ² 上的實可微、偏導數與 Jacobian 就地定義，指向 AN3.1（def-frechet-local、def-partial-local）。
+
+- chapter: CA.6
+  book: ab:60
+  decided: 2026-10-09
+  rule: >-
+    照 Ahlfors，由 Cauchy 積分公式導出 Poisson 公式；不以「Poisson 核、Abel 可和性、連續函數的
+    Fourier 級數（Part III）」為先修。好核的觀點寫成一段回顧，指向第 35 章（HA.2）。另留一段 see 指向 CA.9。
+    analysis-book 的 book.yaml 的 external_prerequisites 要刪掉那一條。
+
+- chapter: CA.8a
+  book: ab:62
+  decided: 2026-10-09
+  rule: >-
+    第 62 章拆成兩章：CA.8a「解析延拓與單值性」是主線；Picard 定理與 theta 函數那段移到選讀的 CA.8b。
+
+- chapter: CA.8b
+  book: ab:62
+  decided: 2026-10-09
+  rule: 選讀交會章「Picard 定理」，s 依賴 CA.8a 與 HA.4。
+
+- chapter: CA.9
+  book: new
+  decided: 2026-10-09
+  rule: >-
+    新的選讀章「正調和函數與 Herglotz–Nevanlinna 表示」：圓盤上的正調和函數取 u_r dθ，以 Banach–Alaoglu
+    取弱* 極限得到測度（Riesz–Markov），再經 Cayley 變換推到半平面。s 依賴 CA.5、CA.6、FA.2、FA.5。
+
+- chapter: FA.1a
+  book: ab:65
+  decided: 2026-10-09
+  rule: >-
+    第 65 章拆成兩章。FA.1a 是 Banach 空間、有界算子與對偶空間，例子只用 ℓᵖ 與 C(K)，只依賴 Part II；
+    ℓᵖ 的 Hölder 與 Minkowski 在這裡自己證（Part II 只有 ℓ¹、ℓ²、ℓ^∞），C(K) 的對偶留給 FA.2。
+  why: FA.3–FA.7 因此可以和 MT 平行閱讀。
+
+- chapter: FA.1b
+  book: ab:65
+  decided: 2026-10-09
+  rule: Lᵖ 的對偶，依賴 MT.7、MT.11。
+
+- chapter: FA.6
+  book: ab:70
+  decided: 2026-10-09
+  rule: 主例改成 ℓ²；L² 與三角系的完備性改成回顧，指向 Part IV（MT.7）。
+
+- chapter: FA.7
+  book: ab:71
+  decided: 2026-10-09
+  rule: >-
+    不使用 Liouville 定理。緊自伴算子的譜定理由 ‖T‖ = sup|⟨Tx, x⟩| 取得特徵值；一般 Banach 空間上的
+    譜非空移到第 72 章（FA.8，Gelfand–Mazur）。
+
+- chapter: PDE.1
+  book: ab:73
+  decided: 2026-10-09
+  rule: >-
+    證明「𝒟′ 序列完備」時，在 Fréchet 空間 C_c^∞(K) 上重跑第 68 章（FA.4）的 Baire 論證，並明寫依賴第 68 章。
+    分佈與半範數的正式定義在本章（def-distribution、def-seminorm）。另加一段 see，指向第 69 章（FA.5）的
+    拓樸向量空間觀點。
