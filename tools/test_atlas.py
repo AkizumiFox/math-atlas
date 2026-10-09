@@ -177,6 +177,23 @@ class RegistryTest(unittest.TestCase):
         self.assertFalse(atlas.check(at))
         self.assertTrue(any(e.startswith("chapter-constraints.yaml: LA2.6 is already written") for e in at.errors), at.errors)
 
+    def test_r1_estimate_sees_implicit_vocabulary(self):
+        import atlas
+        at = atlas.Atlas()
+        s_only = at.preds({"s"})
+        est, _ = atlas.r1_estimate(at, "MA.16", s_only)
+        low = atlas.r1_lower_bound(at, "MA.16")
+        self.assertNotIn("LA1.0", low)  # matrix norms, yet no explicit citation of the matrix chapter
+        self.assertIn("LA1.0", est)  # regression: term matching must find it
+        self.assertTrue(low <= est | low <= atlas.G.ancestors(s_only, ["MA.16"]))
+
+    def test_terms_registry(self):
+        import atlas
+        at = atlas.Atlas()
+        at.terms = [t for t in at.terms if t["id"] != "continuous"]
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any("term `continuous` is not in registry/terms.yaml" in e for e in at.errors), at.errors)
+
     def test_subject_after(self):
         import atlas
         at = atlas.Atlas()

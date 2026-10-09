@@ -75,6 +75,8 @@ class Atlas:
         self.subject = {f["id"]: f for fs in self.fields.values() for f in fs if "id" in f}
         ext = reg / "external" / "subject-dag.yaml"
         self.external = yaml.safe_load(ext.read_text()) if ext.exists() else None
+        terms = reg / "terms.yaml"
+        self.terms = (yaml.safe_load(terms.read_text()) or []) if terms.exists() else []
         cons = reg / "chapter-constraints.yaml"
         self.constraints = (yaml.safe_load(cons.read_text()) or []) if cons.exists() else []
         dev = reg / "field-deviations.yaml"
@@ -118,7 +120,7 @@ class Atlas:
     def _load_computed(self, folder):
         out, wit = {}, {}
         self.overrides = []
-        self.vocab = {"all": {}, "stmt": {}}  # R1 reader: definitions needed (import_la.vocabulary)
+        self.vocab = {"all": {}, "stmt": {}, "term": {}}  # R1 reader: definitions needed (import_la.vocabulary, term_edges)
         labels = folder / "labels.yaml"
         self.labels = (yaml.safe_load(labels.read_text()) or {}) if labels.exists() else {}
         for path in sorted(folder.glob("*-edges.yaml")):
@@ -409,6 +411,22 @@ def check_terms(at):
         if len(canonical) != 1:
             at.errors.append(f"term `{t}` has {len(canonical)} definitions not linked by specializes: "
                              + ", ".join(canonical) + " (exactly one may be canonical)")
+    if at.terms:
+        registry = {t["id"]: t for t in at.terms}
+        for t, ids in sorted(by_term.items()):
+            canonical = [i for i in ids if not spec[i]]
+            if t not in registry:
+                at.errors.append(f"statements.yaml: term `{t}` is not in registry/terms.yaml")
+            elif canonical and registry[t]["def"] != canonical[0]:
+                at.errors.append(f"terms.yaml: `{t}` names {registry[t]['def']} as its definition, "
+                                 f"but statements.yaml's canonical node is {canonical[0]}")
+        pending = [t["id"] for t in at.terms if t.get("also")]
+        if pending:
+            at.warnings.append(f"{len(pending)} terms in registry/terms.yaml have more than one definition (`also`); "
+                               "triage each into a local definition, a homonym, or a duplicate to merge")
+        missing = sum(1 for t in at.terms if not t.get("zh"))
+        if missing:
+            at.notes.append(f"terms.yaml: {missing} of {len(at.terms)} terms have no Chinese name yet (樂詞網)")
     local = defaultdict(list)
     for nid, targets in spec.items():
         n = nodes[nid]
@@ -605,14 +623,24 @@ def stats(at):
     lines += ["## R1 讀者的必讀量（spec/03 §6.2）", "",
               "R1 讀者只讀懂並套用定理，不重現證明。他要讀的是：目標章引用到的定義、借用的定理陳述所用的定義，"
               "以及這些章的定義與陳述再引用到的定義（遞移）。這個集合只能由書稿的 crossref 算出，目前只有純線代章有資料。"
-              "書稿沒有明寫引用的隱含語彙（例如定義裡直接使用「矩陣」而不引用）看不到，所以下欄是**下界**；"
-              "s 祖先閉包是上界。", "",
-              "| 章 | s 閉包（上界） | R1 下界 | R1 下界的章 |", "|---|---:|---:|---|"]
+              "書稿沒有明寫引用的隱含語彙（例如定義裡直接使用「矩陣」而不引用）看不到，所以「下界」偏低。"
+              "「術語比對」再加上 `registry/terms.yaml` 的術語在定義與陳述文字裡出現、卻沒有引用的情形，"
+              "常用詞會造成假陽性，所以偏高。比對只在該章的 s 閉包裡走（完整讀者讀得到的語彙，R1 讀者不會需要更多），"
+              "所以估計不超過上界。真實值夾在下界與估計值之間。", "",
+              "結構性的章（例如 AL4.8：結合代數、自由向量空間、群作用、張量積）以定義為主，"
+              "幾乎沒有「只需套用、可以跳過證明」的定理，R1 必讀量本來就接近 s 閉包；"
+              "這是指標在區分兩種讀者，不是計算出錯。", "",
+              "| 章 | R1 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |", "|---|---:|---:|---:|---|"]
+    outside = []
     for c in at.order:
         if la_only(at, c) and not at.chapters[c]["opt"] and at.chapters[c]["vol"] in ("MA", "GEO", "NLA", "AL4"):
-            r1 = r1_lower_bound(at, c)
-            lines.append(f"| {at.label(c)} | {len(G.ancestors(s_only, [c])) - 1} | {len(r1)} | "
-                         + "、".join(sorted(r1, key=at.order.index)) + " |")
+            low, (est, out) = r1_lower_bound(at, c), r1_estimate(at, c, s_only)
+            lines.append(f"| {at.label(c)} | {len(low)} | {len(est | low)} | {len(G.ancestors(s_only, [c])) - 1} | "
+                         + "、".join(sorted(est - low, key=at.order.index)) + " |")
+            if out:
+                outside.append(f"- {c}：" + "、".join(sorted(out, key=at.order.index)))
+    lines += ["", "術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：", ""]
+    lines += outside or ["（無）"]
     lines.append("")
 
     lines += ["## 線代書計算邊的抽查：LA3 能否跳過 LA2 第 10 章", ""]
@@ -664,6 +692,17 @@ def migration(at):
 def r1_lower_bound(at, cid):
     """Chapters an R1 reader of `cid` must read (definitions and statements only), from the computed vocab edges."""
     return G.ancestors(at.vocab["stmt"], at.vocab["all"].get(cid, ())) - {cid}
+
+
+def r1_estimate(at, cid, s_only):
+    """(estimate, outside): the lower bound plus the vocabulary found by matching registered terms
+    (import_la.term_edges), traversed only inside cid's s closure. Whatever cid needs is read by the full reader too,
+    so a term hit outside the closure is a homonym, a forward mention, or a missing map edge: it goes to `outside`."""
+    closure = G.ancestors(s_only, [cid])
+    preds = {c: (at.vocab["stmt"].get(c, set()) | at.vocab["term"].get(c, set())) & closure for c in closure}
+    start = set(at.vocab["all"].get(cid, ())) | at.vocab["term"].get(cid, set())
+    outside = start - closure
+    return G.ancestors(preds, start & closure) - {cid}, outside
 
 
 def la_only(at, cid):
