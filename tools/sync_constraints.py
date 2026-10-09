@@ -71,10 +71,11 @@ def drift(constraints, book=BOOK):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--write", action="store_true")
+    ap.add_argument("--book", type=Path, default=BOOK, help="book.yaml to check or write (default: ../analysis-book)")
     args = ap.parse_args()
     constraints = yaml.safe_load(SRC.read_text()) or []
     if not args.write:
-        reason = drift(constraints)
+        reason = drift(constraints, args.book)
         print(reason or "book.yaml is in sync")
         sys.exit(1 if reason else 0)
     rel = str(SRC.relative_to(ROOT))
@@ -85,13 +86,13 @@ def main():
     body = yaml.safe_dump({"atlas_constraints": {"source": f"math-atlas@{commit} {rel}", "chapters": wanted(constraints)}},
                           allow_unicode=True, sort_keys=False, width=110)
     block = f"{BEGIN}\n{body}{END}\n"
-    text = BOOK.read_text()
+    text = args.book.read_text()
     if BEGIN in text:
         text = text[:text.index(BEGIN)] + block + text[text.index(END) + len(END) + 1:]
     else:
         text = text.rstrip("\n") + "\n\n" + block
-    BOOK.write_text(text)
-    print(f"wrote the atlas-constraints block (math-atlas@{commit}) into {BOOK}")
+    args.book.write_text(text)
+    print(f"wrote the atlas-constraints block (math-atlas@{commit}) into {args.book}")
 
 
 if __name__ == "__main__":
