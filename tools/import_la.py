@@ -149,15 +149,17 @@ def plural(word):
 
 
 def term_edges(labels, terms, moves=None):
-    """[to, from, term, count]: a definition or statement in `to` uses a registered term whose canonical definition is
+    """[to, from, term, count, [term ids, most used first]]: a definition or statement in `to` uses a registered term whose canonical definition is
     in `from`, without citing it. An estimate of the vocabulary the book leaves implicit (spec/03 §6.2); common words
-    give false positives, so closures over these edges overshoot."""
+    give false positives, so closures over these edges overshoot. Terms marked meta in terms.yaml are not matched."""
     where = {k: atlas_chapter(v.get("file")) for k, v in labels.items()}
     for label, m in (moves or {}).items():
         if label in where:
             where[label] = m["to"]
     form = {}
     for t in terms:
+        if t.get("meta"):  # the metalanguage of reading mathematics (F1's logic), not vocabulary to go back for
+            continue
         for f in [t["en"], *(t.get("forms") or [])]:
             f = f.lower()
             words = f.split()
@@ -165,6 +167,7 @@ def term_edges(labels, terms, moves=None):
                 form.setdefault(g, t)
     pat = re.compile(r"\b(" + "|".join(re.escape(f) for f in sorted(form, key=len, reverse=True)) + r")\b")
     count = defaultdict(int)
+    which = defaultdict(lambda: defaultdict(int))  # (to, from) -> term id -> statements using it
     for name, rec in labels.items():
         dst = where.get(name)
         if dst is None or rec.get("optional") or name.split("-")[0] not in STATEMENT_PREFIXES:
@@ -174,7 +177,9 @@ def term_edges(labels, terms, moves=None):
         for t in {form[m].get("id"): form[m] for m in pat.findall(text)}.values():
             if t["ch"] != dst and t["def"] not in cited:
                 count[(dst, t["ch"], "term")] += 1
-    return [[to, frm, kind, n] for (to, frm, kind), n in sorted(count.items())]
+                which[(dst, t["ch"])][t["id"]] += 1
+    return [[to, frm, kind, n, [w for w, _ in sorted(which[(to, frm)].items(), key=lambda kv: (-kv[1], kv[0]))]]
+            for (to, frm, kind), n in sorted(count.items())]
 
 
 def main(argv=None):
@@ -203,7 +208,7 @@ def main(argv=None):
               + (f"# Applied planned moves from registry/moves.yaml: {', '.join(sorted(moves))}\n" if moves else "")
               + "# edges: [to, from, s|b|see, hard citations, soft citations]\n"
               + "# overrides: [label, move|softened_for|borrowed_by, chapter, citations it changed]\n"
-              + "# vocab: [to, from, all|stmt|term, count]: definitions the statement reader needs (see vocabulary())\n")
+              + "# vocab: [to, from, all|stmt|term, count(, term ids for term edges)]: definitions the statement reader needs (see vocabulary())\n")
     vocab = vocabulary(labels, moves)
     if TERMS.exists():
         vocab += term_edges(labels, yaml.safe_load(TERMS.read_text()) or [], moves)

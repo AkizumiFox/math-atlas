@@ -123,6 +123,7 @@ class Atlas:
     def _load_computed(self, folder):
         out, wit = {}, {}
         self.overrides = []
+        self.vocab_terms = {}  # (to, from) -> term ids behind a term edge, most used first
         self.vocab = {"all": {}, "stmt": {}, "term": {}}  # statement reader: definitions needed (import_la.vocabulary, term_edges)
         labels = folder / "labels.yaml"
         self.labels = (yaml.safe_load(labels.read_text()) or {}) if labels.exists() else {}
@@ -133,9 +134,11 @@ class Atlas:
                     out[(to, frm)] = (typ, hard, soft, path.name)
             wit.update(data.get("witnesses") or {})
             self.overrides += [tuple(o) for o in data.get("overrides") or ()]
-            for to, frm, kind, _n in data.get("vocab") or ():
+            for to, frm, kind, _n, *which in data.get("vocab") or ():
                 if self._known(to, path.name) and self._known(frm, path.name):
                     self.vocab[kind].setdefault(to, set()).add(frm)
+                    if which:
+                        self.vocab_terms[(to, frm)] = which[0]
         return out, wit
 
     def _merge(self):
@@ -650,14 +653,37 @@ def stats(at):
               "幾乎沒有「只需套用、可以跳過證明」的定理，陳述讀者必讀量本來就接近 s 閉包；"
               "這是指標在區分兩種讀者，不是計算出錯。", "",
               "| 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |", "|---|---:|---:|---:|---|"]
-    outside = []
+    outside, rows = [], []
     for c in at.order:
         if la_only(at, c) and not at.chapters[c]["opt"] and at.chapters[c]["vol"] in ("MA", "GEO", "NLA", "AL4"):
-            low, (est, out) = stmt_reader_lower(at, c), stmt_reader_estimate(at, c, s_only)
+            low, (est, out, via) = stmt_reader_lower(at, c), stmt_reader_estimate(at, c, s_only)
+            rows.append((c, low, est))
+
+            def why(x):
+                frm, terms = via[x]
+                if terms:
+                    return f"{x}（{'、'.join(terms[:2])}{'' if frm == c else '，經 ' + frm}）"
+                return f"{x}（經 {frm}）"
             lines.append(f"| {at.label(c)} | {len(low)} | {len(est | low)} | {len(G.ancestors(s_only, [c])) - 1} | "
-                         + "、".join(sorted(est - low, key=at.order.index)) + " |")
+                         + "、".join(why(x) for x in sorted(est - low, key=at.order.index)) + " |")
             if out:
                 outside.append(f"- {c}：" + "、".join(sorted(out, key=at.order.index)))
+    support, sole = Counter(), Counter()  # term -> chapter entries it supports / that vanish without it
+    for c, low, est in rows:
+        closure = G.ancestors(s_only, [c])
+        for x in est - low:
+            support.update({t for (to, frm), ts in at.vocab_terms.items()
+                            if frm == x and to in closure | {c} for t in ts})
+    for t in [t for t, _ in support.most_common(15)]:
+        for c, low, est in rows:
+            sole[t] += len(est | low) - len(stmt_reader_estimate(at, c, s_only, frozenset([t]))[0] | low)
+    term_ch = {t["id"]: t["ch"] for t in at.terms}
+    lines += ["", "影響最大的術語：「支撐」＝上表多出的章裡，有幾章（各列合計）是經由這個詞的比對進來的；"
+              "「唯一」＝只拿掉這個詞，估計合計會少幾章（多數章同時被好幾個詞拉進來，所以通常很小）。"
+              "分流 terms.yaml 的 `also` 時從上面幾個詞開始：常用詞（even、over 之類）多半是假陽性，"
+              "可以加進 seed_terms.py 的 STOP 或標成 meta。F1 的邏輯用語已標為 `meta`，不參與比對。", "",
+              "| 術語 | 正式定義所在 | 支撐 | 唯一 |", "|---|---|---:|---:|"]
+    lines += [f"| {t} | {term_ch.get(t, '')} | {n} | {sole[t]} |" for t, n in support.most_common(15)] or ["| （無） | | | |"]
     lines += ["", "術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：", ""]
     lines += outside or ["（無）"]
     lines.append("")
@@ -713,15 +739,37 @@ def stmt_reader_lower(at, cid):
     return G.ancestors(at.vocab["stmt"], at.vocab["all"].get(cid, ())) - {cid}
 
 
-def stmt_reader_estimate(at, cid, s_only):
-    """(estimate, outside): the lower bound plus the vocabulary found by matching registered terms
+def stmt_reader_estimate(at, cid, s_only, skip=frozenset()):
+    """(estimate, outside, via): the lower bound plus the vocabulary found by matching registered terms
     (import_la.term_edges), traversed only inside cid's s closure. Whatever cid needs is read by the full reader too,
-    so a term hit outside the closure is a homonym, a forward mention, or a missing map edge: it goes to `outside`."""
+    so a term hit outside the closure is a homonym, a forward mention, or a missing map edge: it goes to `outside`.
+    via[chapter] = (chapter it was reached from, term ids if through a term edge) for the first path found.
+    Terms in `skip` are ignored (to measure how much each term pulls in)."""
     closure = G.ancestors(s_only, [cid])
-    preds = {c: (at.vocab["stmt"].get(c, set()) | at.vocab["term"].get(c, set())) & closure for c in closure}
-    start = set(at.vocab["all"].get(cid, ())) | at.vocab["term"].get(cid, set())
-    outside = start - closure
-    return G.ancestors(preds, start & closure) - {cid}, outside
+
+    def term_preds(c):
+        return {f for f in at.vocab["term"].get(c, ()) if set(at.vocab_terms.get((c, f), ())) - skip}
+    via, todo = {}, [cid]
+    for f in at.vocab["all"].get(cid, ()):
+        via.setdefault(f, (cid, None))
+    for f in term_preds(cid):
+        via.setdefault(f, (cid, [t for t in at.vocab_terms[(cid, f)] if t not in skip]))
+    outside = set(via) - closure
+    todo = [c for c in via if c in closure]
+    seen = set(todo)
+    while todo:
+        c = todo.pop(0)
+        for f in at.vocab["stmt"].get(c, ()):
+            if f in closure and f not in seen:
+                seen.add(f)
+                via[f] = (c, None)
+                todo.append(f)
+        for f in term_preds(c):
+            if f in closure and f not in seen:
+                seen.add(f)
+                via[f] = (c, [t for t in at.vocab_terms[(c, f)] if t not in skip])
+                todo.append(f)
+    return seen - {cid}, outside, via
 
 
 def la_only(at, cid):

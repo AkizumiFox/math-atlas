@@ -184,10 +184,11 @@ class RegistryTest(unittest.TestCase):
         import atlas
         at = atlas.Atlas()
         s_only = at.preds({"s"})
-        est, _ = atlas.stmt_reader_estimate(at, "MA.16", s_only)
+        est, _, via = atlas.stmt_reader_estimate(at, "MA.16", s_only)
         low = atlas.stmt_reader_lower(at, "MA.16")
         self.assertNotIn("LA1.0", low)  # matrix norms, yet no explicit citation of the matrix chapter
         self.assertIn("LA1.0", est)  # regression: term matching must find it
+        self.assertTrue(via["LA1.0"][1] or via["LA1.0"][0] != "MA.16")  # and say which term or path brought it in
         self.assertTrue(low <= est | low <= atlas.G.ancestors(s_only, ["MA.16"]))
 
     def test_terms_registry(self):
