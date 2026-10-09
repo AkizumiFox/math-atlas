@@ -19,3 +19,6 @@
 - {id: sym:sobolev-zero, macro: '\Hz{#1}', render: 'H^{#1}_0', unicode: 'H^{#1}_0', meaning: 跡為零的 Sobolev 空間 H¹₀, status: confirmed}
 - {id: sym:alternating-group, macro: '\AltGroup{#1}', render: 'A_{#1}', unicode: 'A_{#1}', meaning: 交錯群 Aₙ, status: confirmed,
    note: '不用 \Alt：analysis-book 的 \Alt 已是交錯形式的運算子'}
+- {id: sym:coordinate-vector, macro: '\cvec{#1}', render: '\mathbf{#1}', unicode: '#1', meaning: 𝔽ⁿ 的座標向量（粗體；純文字輸出無法加粗）, status: confirmed,
+   note: '2026-10-10 定名。不用 \coord：線代書的 \coord{\v}{\sB} 是座標向量 [v]_B'}
+- {id: sym:abstract-element, macro: '\elem{#1}', render: '#1', unicode: '#1', meaning: 抽象向量空間的元素（不加粗）, status: confirmed}

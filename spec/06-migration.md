@@ -98,7 +98,7 @@
 **順序**：約定變更（1–3）最先做。它們會改到陳述本身、觸發重審，拖得越久，受影響的已寫章越多。其餘各項彼此獨立。
 
 1. - [ ] **ℕ 含 0**（2026-10-09 定案）：analysis-book 的 `\nN` 改為含 0；凡是「$n \in \mathbb{N}$」作為數列索引、從 1 開始的地方，改寫成 $(x_n)_{n \ge 1}$ 或 $n \in \mathbb{Z}_{>0}$。`\nNz` 巨集退役。已寫的第 1–4、6、11 章要重審。
-2. - [ ] **粗體依型別**（2026-10-09 定案）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 拆成 `\coord{}`（$\mathbb{F}^n$ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。第 1–5 章的抽象向量要拿掉粗體；每一處由 AI 依上下文分類，再人工抽審。矩陣巨集 `\A … \Z` 不變。analysis-book 不受影響。
+2. - [ ] **粗體依型別**（2026-10-09 定案；2026-10-10 定名與範圍）：線代書的 `\v`、`\u`、`\w`、`\x`、`\y` 依型別拆成 `\cvec{}`（𝔽ⁿ 的座標向量，粗體）與 `\elem{}`（抽象元素，不加粗）。範圍是全書（約 3.3 萬處），逐章進行、一章一個 commit，每一處由 AI 依上下文分類，每章附抽審清單給作者人工抽審；從第 1–5 章開始。矩陣巨集 `\A … \Z`、`\0`（𝔽ⁿ 的零向量）、`\e_i` 不變；抽象空間的零向量寫 `\elem{0}`。analysis-book 不受影響。
 3. - [ ] **英文用詞遷移**（2026-10-10 定案，`registry/usage.yaml` 15 組全部 confirmed）：兩本書稿裡每一處 avoid 寫法換成 use 寫法，清單在 `generated/usage.md`（`tools/usage_report.py`，依檔案列出行號）。大宗是 non- 改連寫（non-zero → nonzero 等，3,628 處；non- 後接大寫字時保留連字號，例如 non-Euclidean），其次是形容詞的 is one-to-one、linear transformation、analyse、labelled，都是純機械替換：用 regex 改寫後由 lint 守住；陳述雜湊先正規化 avoid 寫法（spec/04 圖 3），所以不觸發重審。標為 `review` 的兩組（is onto、iff）要逐處判斷：is onto 也可能是介系詞片語（the projections are onto U），iff 在 F1 談連接詞本身的地方保留。第 16 組序列逗號在散文裡也是 review；書稿的章名則照 `chapters.yaml` 的英文章名機械更新（序列逗號、Nonnegative 等）。
 4. - [ ] **第 6 章 §6.05 的連續**（2026-10-09）：就地定義「連續」，限 ℂ 的子集上的實值函數，註明完整定義在 AN1.5（`def-continuous-local`）。
 5. - [ ] **第 10 章 §10.9**（2026-10-09）：就地定義複數數列與級數的收斂、ℝ→ℂ 的導數、t→∞ 的極限（`def-seq-limit-local`、`def-derivative-local`、`def-limit-infinity-local`），各自註明完整定義的位置。
