@@ -200,7 +200,7 @@ class RegistryTest(unittest.TestCase):
     def test_constraint_block_drift(self):
         import tempfile
         import sync_constraints as sc
-        cons = [{"chapter": "PDE.1", "book": "ab:73", "decided": "2026-10-09", "rule": "重跑 Baire\n論證"}]
+        cons = [{"chapter": "PDE.1", "book": "ab:73", "decided": "2026-10-09", "rule": "在 Fréchet 空間上重跑\nBaire 論證"}]
         with tempfile.TemporaryDirectory() as d:
             book = Path(d) / "book.yaml"
             body = sc.yaml.safe_dump({"atlas_constraints": {"source": "math-atlas@x", "chapters": sc.wanted(cons)}},

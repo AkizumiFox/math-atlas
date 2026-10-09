@@ -29,7 +29,8 @@ PUNCT = r"[\u3000-\u303f\uff00-\uffef]"
 def tidy(text):
     """Undo the spaces YAML folding leaves where a line broke inside Chinese text: between two Chinese characters or
     next to full-width punctuation. Spaces between Chinese and Latin text are house style and stay."""
-    return re.sub(rf"(?<={HAN})\s+(?={HAN})|(?<={PUNCT})\s+|\s+(?={PUNCT})", "", str(text).strip())
+    text = re.sub(rf"(?<={HAN})\s+(?={HAN})|(?<={PUNCT})\s+|\s+(?={PUNCT})", "", str(text).strip())
+    return re.sub(r"\s+", " ", text)
 
 
 def wanted(constraints):
