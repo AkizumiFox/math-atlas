@@ -7,7 +7,7 @@
 
 ## 最長硬依賴鏈（只計 s）
 
-**27 章**，終點 PDE.6 總結：Dirichlet 問題與 Dirichlet–Laplace 特徵基：
+**27 章**，終點 PDE.6 Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis：
 
 F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 → AN1.5 → AN1.6 → AN1.7 → AN1.8 → AN1.9 → AN2.2 → AN2.3 → AN3.4 → MT.1 → MT.2 → MT.3 → MT.4 → MT.5 → MT.6 → PDE.1 → PDE.4 → PDE.5 → PDE.6
 
@@ -53,14 +53,14 @@ F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 
 
 | 目標 | 目標章數 | 必讀章數 | 對話報告手算值 | 涉及的冊 |
 |---|---:|---:|---:|---|
-| 複分析（Ahlfors 程度） | 7 | **37** | 49 | F1 4、F2 3、AN1 11、F3 4、LA1 3、AN2 5、CA 7 |
-| 實分析（台大必考，最小版） | 15 | **45** | 57 | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 6、AN3 1、MT 9、FA 6 |
-| 實分析（Harvard 版，含 Fourier series） | 22 | **66** | 66 | F1 4、F2 3、AN1 11、F3 4、LA1 6、AL1 1、LA2 4、LA3 1、AN2 7、AN3 3、HA 5、MT 10、FA 7 |
-| 代數（Harvard 版） | 18 | **63** | 74 | F1 4、F2 2、F3 4、LA1 6、AL1 11、LA2 5、LA3 3、LA4 2、AL2 10、AL3 8、AL4 8 |
-| 線性代數（Berkeley prelim） | 3 | **26** | — | F1 4、F2 2、F3 4、LA1 6、AL1 1、LA2 5、LA3 3、LA4 1 |
-| 中央極限定理（對照「最長鏈」） | 1 | **34** | — | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 3、AN3 1、MT 6、PR 1 |
+| Complex Analysis (Ahlfors level) | 7 | **37** | 49 | F1 4、F2 3、AN1 11、F3 4、LA1 3、AN2 5、CA 7 |
+| Real Analysis (NTU qualifying exam, minimal) | 15 | **45** | 57 | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 6、AN3 1、MT 9、FA 6 |
+| Real Analysis (Harvard, with Fourier series) | 22 | **66** | 66 | F1 4、F2 3、AN1 11、F3 4、LA1 6、AL1 1、LA2 4、LA3 1、AN2 7、AN3 3、HA 5、MT 10、FA 7 |
+| Algebra (Harvard) | 18 | **63** | 74 | F1 4、F2 2、F3 4、LA1 6、AL1 11、LA2 5、LA3 3、LA4 2、AL2 10、AL3 8、AL4 8 |
+| Linear Algebra (Berkeley prelim) | 3 | **26** | — | F1 4、F2 2、F3 4、LA1 6、AL1 1、LA2 5、LA3 3、LA4 1 |
+| Central Limit Theorem (longest-chain check) | 1 | **34** | — | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 3、AN3 1、MT 6、PR 1 |
 
-### 複分析（Ahlfors 程度）
+### Complex Analysis (Ahlfors level)
 
 Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8b）不列入。
 
@@ -68,7 +68,7 @@ Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（
 
 只借用（不必讀）：F2.4、LA3.11、AN3.1、AN3.4
 
-### 實分析（台大必考，最小版）
+### Real Analysis (NTU qualifying exam, minimal)
 
 台大博士班資格考必考實分析；考綱原文未取得，範圍依 Folland 第 1–5 章（Wisconsin 的參考範圍）推估。
 
@@ -76,7 +76,7 @@ Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（
 
 只借用（不必讀）：F2.4、LA2.7、LA3.11
 
-### 實分析（Harvard 版，含 Fourier series）
+### Real Analysis (Harvard, with Fourier series)
 
 台大版再加 Fourier 級數與變換、弱拓樸。
 
@@ -84,7 +84,7 @@ Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（
 
 只借用（不必讀）：F2.4、LA4.14
 
-### 代數（Harvard 版）
+### Algebra (Harvard)
 
 Harvard 考綱：Sylow、p 群、可解群、自由群；張量積、行列式、Jordan 標準形、PID、UFD；分裂體、可分擴張；Serre 表示論 §1–6。
 
@@ -92,7 +92,7 @@ Harvard 考綱：Sylow、p 群、可解群、自由群；張量積、行列式�
 
 只借用（不必讀）：F2.4、AN1.1、AN1.6、AN1.10
 
-### 線性代數（Berkeley prelim）
+### Linear Algebra (Berkeley prelim)
 
 Berkeley prelim 線代題，程度為大學 honors 課。
 
@@ -100,7 +100,7 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 只借用（不必讀）：F2.4、AN1.1、AN1.6、AN1.10
 
-### 中央極限定理（對照「最長鏈」）
+### Central Limit Theorem (longest-chain check)
 
 對話報告的最長鏈終點。PR.1 已含 Lindeberg CLT。
 
@@ -112,26 +112,26 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 | 章 | 後代章數 | 約簡後 s 入度 | 後代涉及冊數 |
 |---|---:|---:|---:|
-| F1.1 連接詞與推導 | 159 | 0 | 24 |
-| F1.2 否定、古典邏輯與推導的尋找 | 158 | 1 | 24 |
-| F1.4 述詞邏輯與量詞規則 | 156 | 1 | 24 |
-| F1.5 從推導到數學文字 | 155 | 1 | 24 |
-| F2.1 集合、函數、像與原像 | 154 | 1 | 23 |
-| F2.2 等價關係、序與歸納 | 153 | 1 | 23 |
-| F2.3 基數：可數與不可數（含選擇公理的陳述） | 131 | 1 | 21 |
-| F3.5 整除、帶餘除法與 ℤ/nℤ | 131 | 1 | 21 |
-| AL1.1 群、子群與同態 | 121 | 1 | 19 |
-| F2.4 Zorn 引理（使用者層級） | 119 | 1 | 20 |
-| F3.7 體 | 116 | 1 | 20 |
-| F3.8 形式多項式 | 113 | 1 | 20 |
-| LA1.1 向量空間 | 110 | 1 | 19 |
-| LA1.0 矩陣 | 98 | 1 | 17 |
-| LA1.2 線性映射 | 96 | 2 | 17 |
-| AN1.1 有序體與最小上界公理 | 94 | 1 | 17 |
-| AN1.2 數列、子列與 Cauchy 列 | 92 | 1 | 16 |
-| AN1.4 ℝ 的開集、閉集與緊集 | 90 | 2 | 16 |
-| AN1.5 函數極限與連續 | 89 | 1 | 16 |
-| AN1.6 緊集與區間上的連續函數 | 88 | 1 | 16 |
+| F1.1 Connectives and Derivations | 159 | 0 | 24 |
+| F1.2 Negation, Classical Logic and Finding Derivations | 158 | 1 | 24 |
+| F1.4 Predicate Logic and the Quantifier Rules | 156 | 1 | 24 |
+| F1.5 From Derivations to Mathematical Prose | 155 | 1 | 24 |
+| F2.1 Sets, Functions, Images and Preimages | 154 | 1 | 23 |
+| F2.2 Equivalence Relations, Orders, and Induction | 153 | 1 | 23 |
+| F2.3 Cardinality: Countable and Uncountable Sets | 131 | 1 | 21 |
+| F3.5 Divisibility, Division with Remainder and ℤ/nℤ | 131 | 1 | 21 |
+| AL1.1 Groups, Subgroups and Homomorphisms | 121 | 1 | 19 |
+| F2.4 Zorn's Lemma | 119 | 1 | 20 |
+| F3.7 Fields | 116 | 1 | 20 |
+| F3.8 Formal Polynomials | 113 | 1 | 20 |
+| LA1.1 Vector Spaces | 110 | 1 | 19 |
+| LA1.0 Matrices | 98 | 1 | 17 |
+| LA1.2 Linear Maps | 96 | 2 | 17 |
+| AN1.1 Ordered Fields and the Least Upper Bound Axiom | 94 | 1 | 17 |
+| AN1.2 Sequences, Subsequences and Cauchy Sequences | 92 | 1 | 16 |
+| AN1.4 Open, Closed and Compact Subsets of ℝ | 90 | 2 | 16 |
+| AN1.5 Limits of Functions and Continuity | 89 | 1 | 16 |
+| AN1.6 Continuous Functions on Compact Sets and Intervals | 88 | 1 | 16 |
 
 ## 每冊的外部必讀量
 
@@ -139,31 +139,31 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 | 冊 | 本冊章數（選讀） | 冊外必讀章數 | 含選讀 | 直接上游冊（s） | 只借用的冊（b） |
 |---|---:|---:|---:|---|---|
-| F1 邏輯與證明 | 5 | 0 | 0 | — | — |
-| F2 集合、函數與關係 | 4 | 4 | 4 | F1 | — |
-| AN1 實數線上的分析 | 11 | 7 | 7 | F1、F2 | — |
-| F3 數系與代數預備 | 8（4） | 6 | 8 | F1、F2 | AN1 |
-| LA1 空間與映射 | 6 | 9 | 9 | F1、F2、F3 | — |
-| AL1 群 | 11 | 7 | 7 | F1、F2、F3 | — |
-| LA2 行列式與算子的結構 | 5 | 17 | 17 | AL1、F1、F2、F3、LA1 | AN1 |
-| LA3 內積與譜理論 | 3 | 21 | 21 | F2、F3、LA1、LA2 | — |
-| LA4 形式與多線性代數 | 2 | 24 | 24 | AL1、F3、LA1、LA2、LA3 | — |
-| AN2 度量空間與拓樸 | 8 | 24 | 24 | AN1、F2、LA1 | LA3 |
-| AN3 多變數分析 | 7 | 43 | 43 | AN1、AN2、LA1、LA2、LA3、LA4 | — |
-| AL2 環與體 | 10 | 14 | 14 | AL1、F3、LA1 | F2 |
-| AL3 Galois 理論 | 9（1） | 26 | 43 | AL1、AL2、LA1 | — |
-| HA Fourier 分析 | 9（2） | 39 | 40 | AN1、AN2、AN3、F3、LA3 | — |
-| MT 測度與積分 | 11 | 41 | 41 | AN1、AN2、AN3、F2、LA2、LA3 | — |
-| CA 複分析 | 10（2） | 30 | 55 | AN1、AN2、F3 | AN3 |
-| FA 泛函分析 | 9（1） | 39 | 42 | AN2、MT | F2 |
-| AL4 模、表示與同調入門 | 11 | 36 | 36 | AL1、AL2、F1、F3、LA1、LA2、LA3、LA4 | F2 |
-| AL5 交換代數 | 7 | 24 | 24 | AL2、AL4 | — |
-| MA 矩陣分析 | 7（1） | 25 | 61 | F1、F3、LA1、LA2、LA3 | AN1、AN2、AN3 |
-| PR 測度論機率 | 4 | 36 | 36 | AN1、F3、MT | HA |
-| PDE 分佈與 Sobolev 空間 | 6 | 67 | 67 | AN2、CA、FA、HA、MT | — |
-| GEO 仿射與射影幾何 | 1 | 30 | 30 | AL1、F2、LA1、LA2、LA3、LA4、MA | — |
-| NLA 計算與應用 | 1 | 27 | 27 | F3、LA1、LA2、LA3、MA | — |
-| ST 公理集合論 | 7（1） | 29 | 36 | F2、MT | — |
+| F1 Logic and Proof | 5 | 0 | 0 | — | — |
+| F2 Sets, Functions and Relations | 4 | 4 | 4 | F1 | — |
+| AN1 Analysis on the Real Line | 11 | 7 | 7 | F1、F2 | — |
+| F3 Number Systems and Algebraic Preliminaries | 8（4） | 6 | 8 | F1、F2 | AN1 |
+| LA1 Spaces and Maps | 6 | 9 | 9 | F1、F2、F3 | — |
+| AL1 Groups | 11 | 7 | 7 | F1、F2、F3 | — |
+| LA2 Determinants and the Structure of Operators | 5 | 17 | 17 | AL1、F1、F2、F3、LA1 | AN1 |
+| LA3 Inner Products and Spectral Theory | 3 | 21 | 21 | F2、F3、LA1、LA2 | — |
+| LA4 Forms and Multilinear Algebra | 2 | 24 | 24 | AL1、F3、LA1、LA2、LA3 | — |
+| AN2 Metric and Topological Spaces | 8 | 24 | 24 | AN1、F2、LA1 | LA3 |
+| AN3 Analysis in Several Variables | 7 | 43 | 43 | AN1、AN2、LA1、LA2、LA3、LA4 | — |
+| AL2 Rings and Fields | 10 | 14 | 14 | AL1、F3、LA1 | F2 |
+| AL3 Galois Theory | 9（1） | 26 | 43 | AL1、AL2、LA1 | — |
+| HA Fourier Analysis | 9（2） | 39 | 40 | AN1、AN2、AN3、F3、LA3 | — |
+| MT Measure and Integration | 11 | 41 | 41 | AN1、AN2、AN3、F2、LA2、LA3 | — |
+| CA Complex Analysis | 10（2） | 30 | 55 | AN1、AN2、F3 | AN3 |
+| FA Functional Analysis | 9（1） | 39 | 42 | AN2、MT | F2 |
+| AL4 Modules, Representations and Homological Algebra | 11 | 36 | 36 | AL1、AL2、F1、F3、LA1、LA2、LA3、LA4 | F2 |
+| AL5 Commutative Algebra | 7 | 24 | 24 | AL2、AL4 | — |
+| MA Matrix Analysis | 7（1） | 25 | 61 | F1、F3、LA1、LA2、LA3 | AN1、AN2、AN3 |
+| PR Measure-Theoretic Probability | 4 | 36 | 36 | AN1、F3、MT | HA |
+| PDE Distributions and Sobolev Spaces | 6 | 67 | 67 | AN2、CA、FA、HA、MT | — |
+| GEO Affine and Projective Geometry | 1 | 30 | 30 | AL1、F2、LA1、LA2、LA3、LA4、MA | — |
+| NLA Computation and Applications | 1 | 27 | 27 | F3、LA1、LA2、LA3、MA | — |
+| ST Axiomatic Set Theory | 7（1） | 29 | 36 | F2、MT | — |
 
 ## 領域覆蓋
 
@@ -212,35 +212,35 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 | 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |
 |---|---:|---:|---:|---|
-| AL4.8 代數與表示 | 19 | 23 | 27 | F1.5（divides）、F3.6（modulus，經 LA2.10）、F3.8（polynomial、degree）、LA3.13（with-multiplicity） |
-| MA.16 範數與矩陣分析 | 7 | 21 | 25 | F1.5（even，經 LA3.11）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（matrix、entries）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.8（block、direct-sum，經 LA2.10）、LA3.12（stable、symbol）、AL1.1（group、subgroup，經 LA3.11） |
-| MA.17 變分原理與交錯 | 11 | 22 | 26 | F1.5（even，經 LA3.11）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（monic、polynomial，經 LA3.11）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（dual-basis、evaluation，經 LA2.6）、AL1.1（group、subgroup，經 LA3.11） |
-| MA.18 凸性 | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entries）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（modulo，經 LA1.4）、AL1.1（associativity，經 LA1.2）、MA.17（same-number，經 LA1.3） |
-| MA.19 非負矩陣 | 15 | 24 | 28 | F1.5（prime，經 LA2.10）、F2.2（blocks、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（degree）、LA1.0（matrix、zero-matrix）、LA1.1（length、vectors）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（associativity，經 LA2.8） |
-| MA.20 擾動理論 | 15 | 25 | 29 | F1.5（even，經 LA3.11）、F2.2（symmetric，經 LA3.11）、F3.6（modulus）、F3.7（addition、multiplication，經 LA3.11）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、basis）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（group、subgroup，經 LA3.11）、MA.19（vertices，經 MA.18） |
-| MA.21 矩陣不等式 | 14 | 26 | 30 | F1.5（prime，經 LA2.10）、F2.2（symmetric、partition）、F3.6（modulus，經 LA2.10）、F3.7（field、characteristic，經 LA2.10）、F3.8（monic、polynomial，經 LA2.10）、LA1.0（matrix、entries）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、AL1.1（associativity，經 LA1.2）、MA.19（vertices、edge，經 LA1.3）、MA.20（separation，經 MA.18） |
-| GEO.22 仿射與射影幾何 | 20 | 26 | 30 | F1.5（even、odd，經 LA4.14）、F3.6（imaginary-part，經 MA.17）、F3.7（field）、F3.8（polynomial）、LA1.0（matrix、diagonal）、LA4.15（form、order） |
-| NLA.24 計算與應用 | 14 | 23 | 27 | F1.5（even、odd）、F2.2（symmetric、partition）、F3.6（modulus）、F3.7（multiplication、field）、F3.8（degree、polynomial）、LA1.1（subspace、dimension）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.7（determinant、submatrix）、AL1.1（group、subgroup，經 LA3.11） |
+| AL4.8 Algebras and Representations | 19 | 23 | 27 | F1.5（divides）、F3.6（modulus，經 LA3.12）、F3.8（polynomial、degree）、LA3.13（with-multiplicity） |
+| MA.16 Norms and Matrix Analysis | 7 | 21 | 25 | F1.5（even、odd，經 LA2.7）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（matrix、entries）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.17 Variational Principles and Interlacing | 11 | 22 | 26 | F1.5（even、odd，經 LA2.7）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（polynomial、degree，經 LA3.12）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（dual-basis、evaluation，經 LA2.6）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.18 Convexity | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entries）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（modulo，經 LA1.4）、AL1.1（associativity，經 LA1.2）、MA.17（same-number，經 LA1.3） |
+| MA.19 Non-negative Matrices | 15 | 24 | 28 | F1.5（even、odd，經 LA2.7）、F2.2（blocks、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（degree）、LA1.0（matrix、zero-matrix）、LA1.1（length、vectors）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.20 Perturbation Theory | 15 | 25 | 29 | F1.5（even、odd，經 LA2.7）、F2.2（symmetric，經 MA.17）、F3.6（modulus）、F3.7（field，經 MA.17）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、basis）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7）、MA.19（vertices，經 MA.18） |
+| MA.21 Matrix Inequalities | 14 | 26 | 30 | F1.5（prime，經 LA2.10）、F2.2（symmetric、partition）、F3.6（imaginary-part，經 MA.17）、F3.7（field，經 MA.17）、F3.8（polynomial、degree，經 LA3.12）、LA1.0（matrix、entries）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、AL1.1（associativity，經 LA1.2）、MA.19（vertices，經 MA.18）、MA.20（separation，經 MA.18） |
+| GEO.22 Affine and Projective Geometry | 20 | 26 | 30 | F1.5（even、odd，經 LA4.14）、F3.6（imaginary-part，經 MA.17）、F3.7（field）、F3.8（polynomial）、LA1.0（matrix、diagonal）、LA4.15（form、order） |
+| NLA.24 Computation and Applications | 14 | 23 | 27 | F1.5（even、odd）、F2.2（symmetric、partition）、F3.6（modulus）、F3.7（multiplication、field）、F3.8（degree、polynomial）、LA1.1（subspace、dimension）、LA1.5（dual-basis、evaluation，經 LA2.6）、LA2.7（determinant、submatrix）、AL1.1（group、subgroup，經 LA3.11） |
 
 影響最大的術語：「支撐」＝上表多出的章裡，有幾章（各列合計）是經由這個詞的比對進來的；「唯一」＝只拿掉這個詞，估計合計會少幾章（多數章同時被好幾個詞拉進來，所以通常很小）。分流 terms.yaml 的 `also` 時從上面幾個詞開始：常用詞（even、over 之類）多半是假陽性，可以加進 seed_terms.py 的 STOP 或標成 meta。F1 的邏輯用語已標為 `meta`，不參與比對。
 
 | 術語 | 正式定義所在 | 支撐 | 唯一 |
 |---|---|---:|---:|
 | modulus | F3.6 | 9 | 2 |
-| coefficient | F3.8 | 9 | 0 |
+| leading-coefficient | F3.8 | 9 | 0 |
 | polynomial | F3.8 | 9 | 0 |
+| coefficient | F3.8 | 9 | 0 |
 | monic | F3.8 | 9 | 0 |
 | degree | F3.8 | 9 | 0 |
-| leading-coefficient | F3.8 | 9 | 0 |
-| divides | F1.5 | 9 | 0 |
-| even | F1.5 | 9 | 0 |
 | prime | F1.5 | 9 | 0 |
+| even | F1.5 | 9 | 0 |
 | odd | F1.5 | 9 | 0 |
-| field | F3.7 | 8 | 0 |
+| divides | F1.5 | 9 | 0 |
 | addition | F3.7 | 8 | 0 |
-| characteristic | F3.7 | 8 | 0 |
 | multiplication | F3.7 | 8 | 0 |
-| dual-basis | LA1.5 | 7 | 0 |
+| characteristic | F3.7 | 8 | 0 |
+| field | F3.7 | 8 | 0 |
+| evaluation | LA1.5 | 7 | 0 |
 
 術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：
 

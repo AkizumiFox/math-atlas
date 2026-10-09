@@ -1,7 +1,7 @@
 # 術語表（全套共用）。由 tools/seed_terms.py 從兩本書的定義（粗體字）與 statements.yaml 產生，可重跑；
 # forms、note、meta 是手填欄位，重跑會保留；naer: hand 的 zh 也會保留。
 # id: 術語 ID（statements.yaml 第 7 欄引用它）  en: 英文術語，正式名稱（書稿用英文，spec/00 原則 7）
-# zh: 選填的中文譯名（雙語詞彙表、hover 用；目前凍結，choose 與 missing 不擋任何進度），，取自國家教育研究院「樂詞網」的政府開放資料（registry/external/naer/，出處見下）
+# zh: 選填的中文譯名（雙語詞彙表、hover 用；目前凍結，choose 與 missing 不擋任何進度），取自國家教育研究院「樂詞網」的政府開放資料（registry/external/naer/，出處見下）
 # naer: univ（兩岸數學學術名詞）| hs（高中含以下數學學術名詞，只用於 F 冊）
 #       | choose（樂詞網同一條列了多個譯名，見 zh_candidates，待作者選）| missing（兩份都未收錄，待作者決定）
 #       | hand（作者決定的譯名，填 zh 並把 naer 改成 hand，重跑不覆寫；zh_alt 可記其他寫法）
@@ -69,7 +69,7 @@
   def: def-box-free-derivation
   ch: F1.1
   meta: true
-  also: [def-formula@F1.3, def-first-order-formula@F1.4, def-term@F1.4]
+  also: [def-formula@F1.3, def-term@F1.4, def-first-order-formula@F1.4]
 - id: expressions
   en: expressions
   zh: null
@@ -93,7 +93,7 @@
   def: def-rules-implication
   ch: F1.1
   meta: true
-  also: [def-rule-raa@F1.2, def-rules-biconditional@F1.2]
+  also: [def-rules-biconditional@F1.2, def-rule-raa@F1.2]
 - {id: one-inside-the-other, en: one inside the other, zh: null, naer: missing, def: def-derivation, ch: F1.1, meta: true}
 - {id: or-elimination, en: or-elimination, zh: null, naer: missing, def: def-rules-disjunction, ch: F1.1, meta: true}
 - {id: or-introduction, en: or-introduction, zh: null, naer: missing, def: def-rule-disjunction-introduction, ch: F1.1, meta: true}
@@ -173,7 +173,7 @@
   def: def-formula
   ch: F1.3
   meta: true
-  also: [def-first-order-formula@F1.4, def-term@F1.4]
+  also: [def-term@F1.4, def-first-order-formula@F1.4]
 - id: one-or-more-literals
   en: one or more literals
   zh: null
@@ -451,7 +451,7 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [相交, 交集]
-  also: [def-indexed-family@F2.1, def-set-operations@F2.1, def-intersection@F2.1]
+  also: [def-set-operations@F2.1, def-intersection@F2.1, def-indexed-family@F2.1]
 - id: inverse
   en: inverse
   zh: null
@@ -546,7 +546,7 @@
   def: def-family-union-intersection
   ch: F2.1
   zh_candidates: [聯, 併]
-  also: [def-union@F2.1, def-indexed-family@F2.1, def-set-operations@F2.1]
+  also: [def-union@F2.1, def-set-operations@F2.1, def-indexed-family@F2.1]
 - {id: blocks, en: blocks, zh: null, naer: missing, def: def-partition, ch: F2.2}
 - {id: equivalence-class, en: equivalence class, zh: 等價類, naer: univ, def: def-equivalence-class, ch: F2.2}
 - {id: equivalence-relation, en: equivalence relation, zh: 等價關係, naer: univ, def: def-equivalence-relation, ch: F2.2}
@@ -580,7 +580,7 @@
   naer: missing
   def: def-equivalence-relation
   ch: F2.2
-  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-quadratic-form@LA4.14, def-symmetric-form@LA4.14, def-symmetric-power@LA4.15, def-symmetric-multilinear-map@LA4.15,
+  also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-symmetric-form@LA4.14, def-quadratic-form@LA4.14, def-symmetric-multilinear-map@LA4.15, def-symmetric-power@LA4.15,
     def-symmetric-tensor@LA4.15]
 - {id: transitive, en: transitive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.2}
 - id: absolute-value
@@ -796,7 +796,7 @@
   def: def-dimension
   ch: LA1.1
   zh_candidates: ['維[度]', 維數, 因次, 量綱, 尺寸大小]
-  also: [def-affine-hull@MA.18, def-affine-space@GEO.22, def-projective-subspace@GEO.22, def-projective-space@GEO.22]
+  also: [def-affine-hull@MA.18, def-affine-space@GEO.22, def-projective-space@GEO.22, def-projective-subspace@GEO.22]
 - id: direct
   en: direct
   zh: null
@@ -874,7 +874,7 @@
   naer: univ
   def: def-subspace
   ch: LA1.1
-  also: [def-subalgebra@AL4.8, def-left-ideal@AL4.8]
+  also: [def-left-ideal@AL4.8, def-subalgebra@AL4.8]
 - {id: uncountable, en: uncountable, zh: null, naer: missing, def: def-countable, ch: LA1.1}
 - {id: vector-space, en: vector space, zh: null, naer: missing, def: def-vector-space, ch: LA1.1}
 - {id: vectors, en: vectors, zh: 向量, naer: univ, def: def-vectors-scalars, ch: LA1.1}
@@ -1117,7 +1117,7 @@
   naer: missing
   def: def-alternating-form
   ch: LA2.7
-  also: [def-exterior-power@LA4.15, def-alternating-multilinear-map@LA4.15]
+  also: [def-alternating-multilinear-map@LA4.15, def-exterior-power@LA4.15]
 - {id: alternating-group, en: alternating group, zh: null, naer: missing, def: def-alternating-group, ch: LA2.7}
 - id: bilinear
   en: bilinear
@@ -1350,7 +1350,7 @@
   naer: univ
   def: def-isometry
   ch: LA3.11
-  also: [def-form-isometry@LA4.14, def-isometry-group-of-form@LA4.14, def-matrix-contraction@MA.21]
+  also: [def-isometry-group-of-form@LA4.14, def-form-isometry@LA4.14, def-matrix-contraction@MA.21]
 - id: non-negative
   en: non-negative
   zh: null
@@ -1390,7 +1390,7 @@
   naer: missing
   def: def-orthonormal-list
   ch: LA3.11
-  also: [def-flag-adapted-list@MA.17, def-compression@MA.17]
+  also: [def-compression@MA.17, def-flag-adapted-list@MA.17]
 - {id: orthonormal-basis, en: orthonormal basis, zh: 單範正交基底, naer: univ, def: def-orthonormal-basis, ch: LA3.11}
 - id: positive-definiteness
   en: positive definiteness
@@ -1563,7 +1563,7 @@
   naer: univ
   def: def-clifford-algebra
   ch: LA4.14
-  also: [def-symmetric-power@LA4.15, def-exterior-power@LA4.15, def-tensor-power@LA4.15, def-tensor-product@LA4.15]
+  also: [def-tensor-product@LA4.15, def-symmetric-power@LA4.15, def-tensor-power@LA4.15, def-exterior-power@LA4.15]
 - {id: witt-index, en: witt index, zh: null, naer: missing, def: def-witt-index, ch: LA4.14}
 - {id: all-but-finitely-many, en: all but finitely many, zh: null, naer: missing, def: def-tensor-algebra, ch: LA4.15}
 - {id: blade, en: -blade, zh: null, naer: missing, def: def-decomposable, ch: LA4.15}

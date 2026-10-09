@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,25 +79,25 @@ aside li:hover { text-decoration: underline; }
 </head>
 <body>
 <header>
-  <h1>Math Atlas · 章層級依賴圖</h1>
-  <label>目標 <select id="target"><option value="">（無）</option></select></label>
-  <label><input type="search" id="q" placeholder="搜尋章（id 或標題）"></label>
-  <label><input type="checkbox" id="soft"> 顯示 see／revisits</label>
-  <label><input type="checkbox" id="full"> 不做傳遞約簡</label>
-  <button id="collapseAll">全部收合</button>
-  <button id="expandAll">全部展開</button>
-  <button id="fit">置中</button>
+  <h1>Math Atlas · chapter dependencies</h1>
+  <label>Goal <select id="target"><option value="">(none)</option></select></label>
+  <label><input type="search" id="q" placeholder="Search chapters (id or title)"></label>
+  <label><input type="checkbox" id="soft"> Show see / revisits</label>
+  <label><input type="checkbox" id="full"> All direct edges (no reduction)</label>
+  <button id="collapseAll">Collapse all</button>
+  <button id="expandAll">Expand all</button>
+  <button id="fit">Fit</button>
   <div class="legend">
-    <span style="--c:var(--edge)">s 需讀</span>
-    <span class="dash" style="--c:var(--edge-b)">b 借用</span>
-    <span style="--c:var(--anc)">必讀祖先</span>
-    <span class="dash" style="--c:var(--borrow)">只借用</span>
-    <span style="--c:var(--desc)">後代</span>
+    <span style="--c:var(--edge)">s: read first</span>
+    <span class="dash" style="--c:var(--edge-b)">b: borrowed</span>
+    <span style="--c:var(--anc)">required</span>
+    <span class="dash" style="--c:var(--borrow)">borrowed only</span>
+    <span style="--c:var(--desc)">leads to</span>
   </div>
 </header>
 <main>
-  <div id="wrap"><svg id="svg"></svg><div id="status">排版中…</div></div>
-  <aside id="info"><p class="muted">點一章看它的先備與後代；點冊名收合或展開該冊。資料由 <code>tools/atlas.py render</code> 從 registry 產生。</p></aside>
+  <div id="wrap"><svg id="svg"></svg><div id="status">Laying out…</div></div>
+  <aside id="info"><p class="muted">Click a chapter to see what it needs and what builds on it; click a volume to collapse or expand it. Generated from the registry by <code>tools/atlas.py render</code>.</p></aside>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/elkjs@0.9.3/lib/elk.bundled.js"></script>
 <script>
@@ -182,11 +182,11 @@ function buildGraph() {
 let layoutGen = 0;
 async function layout() {
   const gen = ++layoutGen;
-  $("status").textContent = "排版中…"; $("status").style.display = "";
+  $("status").textContent = "Laying out…"; $("status").style.display = "";
   const g = buildGraph();
   const elk = new ELK();
   let res;
-  try { res = await elk.layout(g); } catch (err) { $("status").textContent = "排版失敗：" + err; return; }
+  try { res = await elk.layout(g); } catch (err) { $("status").textContent = "Layout failed: " + err; return; }
   if (gen !== layoutGen) return;
   draw(res);
   $("status").style.display = "none";
@@ -252,7 +252,7 @@ function drawNode(parent, id, x, y, w, h, fill, label, extra) {
   el("rect", { width: w, height: h, fill }, g);
   const t = el("text", { x: 8, y: h / 2 + 4 }, g); t.textContent = label;
   const tip = el("title", {}, g);
-  tip.textContent = chap[id] ? `${id} ${chap[id].title}` : `${id} ${vol[id].title}（已收合，點擊展開）`;
+  tip.textContent = chap[id] ? `${id} ${chap[id].title}` : `${id} ${vol[id].title} (collapsed; click to expand)`;
   g.addEventListener("click", (ev) => { ev.stopPropagation(); if (vol[id]) toggle(id); else select(id); });
 }
 
@@ -311,9 +311,9 @@ function info() {
   const c = chap[selected], v = vol[c.vol];
   const h = document.createElement("h2"); h.textContent = `${c.id} ${c.title}`; box.appendChild(h);
   const p = document.createElement("p"); p.className = "muted";
-  p.innerHTML = `${v.id} ${v.title}` + (c.opt ? '<span class="tag">選讀</span>' : "") + (c.seg ? `<span class="tag">${c.seg} 段</span>` : "");
+  p.innerHTML = `${v.id} ${v.title}` + (c.opt ? '<span class="tag">optional</span>' : "") + (c.seg ? `<span class="tag">part ${c.seg}</span>` : "");
   box.appendChild(p);
-  const src = document.createElement("p"); src.className = "muted"; src.textContent = "來源：" + c.src.join("、"); box.appendChild(src);
+  const src = document.createElement("p"); src.className = "muted"; src.textContent = "Source: " + c.src.join(", "); box.appendChild(src);
   const req = sAnc([selected]); req.delete(selected);
   const sec = (title, items, fmt) => {
     if (!items.length) return;
@@ -323,13 +323,13 @@ function info() {
   };
   const order = (a, b) => DATA.chapters.findIndex(x => x.id === a) - DATA.chapters.findIndex(x => x.id === b);
   const direct = DATA.edges.filter(e => e.to === selected);
-  for (const [typ, title] of [["s", "直接需讀（s）"], ["b", "借用（b）"], ["revisits", "重訪（revisits）"], ["see", "參見（see）"]]) {
+  for (const [typ, title] of [["s", "Read first (s)"], ["b", "Borrowed (b)"], ["revisits", "Revisits"], ["see", "See also"]]) {
     sec(title, direct.filter(e => e.type === typ).map(e => e).sort((a, b) => order(a.from, b.from)),
-      (ul, e) => li(ul, e.from, (e.why ? `：${e.why}` : "") + (e.origin === "computed" ? "（計算）" : "")));
+      (ul, e) => li(ul, e.from, e.origin === "computed" ? " (from the proofs)" : ""));
   }
-  const p2 = document.createElement("p"); p2.innerHTML = `<b>必讀集合：${req.size} 章</b>（s 祖先閉包）`; box.appendChild(p2);
+  const p2 = document.createElement("p"); p2.innerHTML = `<b>Required reading: ${req.size} chapters</b> (everything it needs through s edges)`; box.appendChild(p2);
   const out = DATA.edges.filter(e => e.from === selected && HARD.has(e.type)).map(e => e.to).sort(order);
-  sec("直接被誰用", out, (ul, x) => li(ul, x));
+  sec("Used directly by", out, (ul, x) => li(ul, x));
 }
 
 $("target").addEventListener("change", () => {
@@ -338,7 +338,7 @@ $("target").addEventListener("change", () => {
   const box = $("info"); box.innerHTML = "";
   if (t) {
     const req = sAnc(t.chapters), bor = allAnc(t.chapters); for (const r of req) bor.delete(r);
-    box.innerHTML = `<h2>${t.name}</h2><p class="muted">${t.note || ""}</p><p><b>必讀 ${req.size} 章</b>，另借用 ${bor.size} 章。</p>`;
+    box.innerHTML = `<h2>${t.name}</h2><p><b>Required reading: ${req.size} chapters</b>; ${bor.size} more are only borrowed from.</p>`;
     const ul = document.createElement("ul"); box.appendChild(ul);
     DATA.chapters.filter(c => req.has(c.id)).forEach(c => li(ul, c.id));
   }

@@ -1,4 +1,5 @@
-# 章（L1）。每冊內的列表順序就是該冊的章序，必須是冊內 s ∪ b 的一個線性延伸（atlas.py check 會驗）。
+# 章（L1）。title 是正式章名（英文，書稿用英文，spec/00 原則 7）；title_zh 是選填的中文章名。
+# 每冊內的列表順序就是該冊的章序，必須是冊內 s ∪ b 的一個線性延伸（atlas.py check 會驗）。
 # id 穩定、不帶語意；章搬家時 id 跟著走，顯示編號由 build 產生。
 # src: ab:N       = analysis-book/blueprint/book.yaml 的第 N 章（以該檔為章節內容的單一來源）
 #      la:chNN    = linear-algebra 的第 NN 章；la:ch00/NN = 第 0 章第 NN 節
@@ -7,223 +8,223 @@
 # seg: B          = 冊內 B 段（主幹讀者可略過，只被少數下游使用）
 
 F1:
-  - {id: F1.1, title: 連接詞與推導, src: ab:1}
-  - {id: F1.2, title: 否定、古典邏輯與推導的尋找, src: ab:2}
-  - {id: F1.3, title: 真值、健全性與完備性, src: ab:3}
-  - {id: F1.4, title: 述詞邏輯與量詞規則, src: ab:4}
-  - {id: F1.5, title: 從推導到數學文字, src: [ab:5, la:ch00/01, la:ch00/02]}
+  - {id: F1.1, title: "Connectives and Derivations", title_zh: 連接詞與推導, src: ab:1}
+  - {id: F1.2, title: "Negation, Classical Logic and Finding Derivations", title_zh: 否定、古典邏輯與推導的尋找, src: ab:2}
+  - {id: F1.3, title: "Truth, Soundness and Completeness", title_zh: 真值、健全性與完備性, src: ab:3}
+  - {id: F1.4, title: "Predicate Logic and the Quantifier Rules", title_zh: 述詞邏輯與量詞規則, src: ab:4}
+  - {id: F1.5, title: "From Derivations to Mathematical Prose", title_zh: 從推導到數學文字, src: [ab:5, la:ch00/01, la:ch00/02]}
 
 F2:
-  - {id: F2.1, title: 集合、函數、像與原像, src: [ab:6, la:ch00/03, la:ch00/04]}
-  - {id: F2.2, title: 等價關係、序與歸納, src: [ab:7, la:ch00/05]}
-  - {id: F2.3, title: 基數：可數與不可數（含選擇公理的陳述）, src: ab:8}
-  - {id: F2.4, title: Zorn 引理（使用者層級）, src: new}
+  - {id: F2.1, title: "Sets, Functions, Images and Preimages", title_zh: 集合、函數、像與原像, src: [ab:6, la:ch00/03, la:ch00/04]}
+  - {id: F2.2, title: "Equivalence Relations, Orders, and Induction", title_zh: 等價關係、序與歸納, src: [ab:7, la:ch00/05]}
+  - {id: F2.3, title: "Cardinality: Countable and Uncountable Sets", title_zh: 基數：可數與不可數（含選擇公理的陳述）, src: ab:8}
+  - {id: F2.4, title: "Zorn's Lemma", title_zh: Zorn 引理（使用者層級）, src: new}
 
 AN1:
-  - {id: AN1.1, title: 有序體與最小上界公理, src: ab:11}
-  - {id: AN1.2, title: 數列、子列與 Cauchy 列, src: ab:12}
-  - {id: AN1.3, title: 無窮級數, src: ab:13}
-  - {id: AN1.4, title: ℝ 的開集、閉集與緊集, src: ab:14}
-  - {id: AN1.5, title: 函數極限與連續, src: ab:15}
-  - {id: AN1.6, title: 緊集與區間上的連續函數, src: ab:16}
-  - {id: AN1.7, title: 導數與均值定理, src: ab:17}
-  - {id: AN1.8, title: Riemann–Darboux 積分, src: ab:18}
-  - {id: AN1.9, title: 函數列與函數級數, src: ab:19}
-  - {id: AN1.10, title: 冪級數、Taylor 級數與初等函數, src: ab:20}
-  - {id: AN1.11, title: 完備性的各種形式, src: ab:21}
+  - {id: AN1.1, title: "Ordered Fields and the Least Upper Bound Axiom", title_zh: 有序體與最小上界公理, src: ab:11}
+  - {id: AN1.2, title: "Sequences, Subsequences and Cauchy Sequences", title_zh: 數列、子列與 Cauchy 列, src: ab:12}
+  - {id: AN1.3, title: "Infinite Series", title_zh: 無窮級數, src: ab:13}
+  - {id: AN1.4, title: "Open, Closed and Compact Subsets of ℝ", title_zh: ℝ 的開集、閉集與緊集, src: ab:14}
+  - {id: AN1.5, title: "Limits of Functions and Continuity", title_zh: 函數極限與連續, src: ab:15}
+  - {id: AN1.6, title: "Continuous Functions on Compact Sets and Intervals", title_zh: 緊集與區間上的連續函數, src: ab:16}
+  - {id: AN1.7, title: "The Derivative and the Mean Value Theorem", title_zh: 導數與均值定理, src: ab:17}
+  - {id: AN1.8, title: "The Riemann–Darboux Integral", title_zh: Riemann–Darboux 積分, src: ab:18}
+  - {id: AN1.9, title: "Sequences and Series of Functions", title_zh: 函數列與函數級數, src: ab:19}
+  - {id: AN1.10, title: "Power Series, Taylor Series and the Elementary Functions", title_zh: 冪級數、Taylor 級數與初等函數, src: ab:20}
+  - {id: AN1.11, title: "The Forms of Completeness", title_zh: 完備性的各種形式, src: ab:21}
 
 F3:
-  - {id: F3.1, title: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9, opt: true}
-  - {id: F3.2, title: 以等價類建構 ℤ 與 ℚ, src: ab:10, opt: true}
-  - {id: F3.3, title: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
-  - {id: F3.4, title: 完備有序體的唯一性, src: ab:23, opt: true}
-  - {id: F3.5, title: 整除、帶餘除法與 ℤ/nℤ, src: new}
-  - {id: F3.6, title: 複數, src: la:ch00/06}
-  - {id: F3.7, title: 體, src: la:ch00/07}
-  - {id: F3.8, title: 形式多項式, src: la:ch00/08}
+  - {id: F3.1, title: "The Von Neumann Natural Numbers (the Fragment of ZF They Need)", title_zh: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9, opt: true}
+  - {id: F3.2, title: "Building ℤ and ℚ from Equivalence Classes", title_zh: 以等價類建構 ℤ 與 ℚ, src: ab:10, opt: true}
+  - {id: F3.3, title: "Constructing ℝ by Dedekind Cuts", title_zh: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
+  - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23, opt: true}
+  - {id: F3.5, title: "Divisibility, Division with Remainder and ℤ/nℤ", title_zh: 整除、帶餘除法與 ℤ/nℤ, src: new}
+  - {id: F3.6, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
+  - {id: F3.7, title: "Fields", title_zh: 體, src: la:ch00/07}
+  - {id: F3.8, title: "Formal Polynomials", title_zh: 形式多項式, src: la:ch00/08}
 
 LA1:
-  - {id: LA1.0, title: 矩陣, src: la:ch00/09}
-  - {id: LA1.1, title: 向量空間, src: la:ch01}
-  - {id: LA1.2, title: 線性映射, src: la:ch02}
-  - {id: LA1.3, title: 線性系統與矩陣, src: la:ch03}
-  - {id: LA1.4, title: 映射的矩陣, src: la:ch04}
-  - {id: LA1.5, title: 對偶, src: la:ch05}
+  - {id: LA1.0, title: "Matrices", title_zh: 矩陣, src: la:ch00/09}
+  - {id: LA1.1, title: "Vector Spaces", title_zh: 向量空間, src: la:ch01}
+  - {id: LA1.2, title: "Linear Maps", title_zh: 線性映射, src: la:ch02}
+  - {id: LA1.3, title: "Linear Systems and Matrices", title_zh: 線性系統與矩陣, src: la:ch03}
+  - {id: LA1.4, title: "Matrices of Maps", title_zh: 映射的矩陣, src: la:ch04}
+  - {id: LA1.5, title: "Duality", title_zh: 對偶, src: la:ch05}
 
 LA2:
-  - {id: LA2.6, title: 多項式, src: la:ch06}
-  - {id: LA2.7, title: 行列式, src: la:ch07}
-  - {id: LA2.8, title: 分塊矩陣, src: la:ch08}
-  - {id: LA2.9, title: 特徵值與對角化, src: la:ch09}
-  - {id: LA2.10, title: 標準形, src: la:ch10}
+  - {id: LA2.6, title: "Polynomials", title_zh: 多項式, src: la:ch06}
+  - {id: LA2.7, title: "Determinants", title_zh: 行列式, src: la:ch07}
+  - {id: LA2.8, title: "Block Matrices", title_zh: 分塊矩陣, src: la:ch08}
+  - {id: LA2.9, title: "Eigenvalues and Diagonalization", title_zh: 特徵值與對角化, src: la:ch09}
+  - {id: LA2.10, title: "Canonical Forms", title_zh: 標準形, src: la:ch10}
 
 LA3:
-  - {id: LA3.11, title: 內積空間, src: la:ch11}
-  - {id: LA3.12, title: 譜理論, src: la:ch12}
-  - {id: LA3.13, title: 正定矩陣與奇異值分解, src: la:ch13}
+  - {id: LA3.11, title: "Inner Product Spaces", title_zh: 內積空間, src: la:ch11}
+  - {id: LA3.12, title: "Spectral Theory", title_zh: 譜理論, src: la:ch12}
+  - {id: LA3.13, title: "Positive Matrices and the Singular Value Decomposition", title_zh: 正定矩陣與奇異值分解, src: la:ch13}
 
 LA4:
-  - {id: LA4.14, title: 雙線性形式與二次型, src: la:ch14}
-  - {id: LA4.15, title: 張量與外代數, src: la:ch15}
+  - {id: LA4.14, title: "Bilinear and Quadratic Forms", title_zh: 雙線性形式與二次型, src: la:ch14}
+  - {id: LA4.15, title: "Tensors and Exterior Algebra", title_zh: 張量與外代數, src: la:ch15}
 
 AN2:
-  - {id: AN2.1, title: 度量空間、開集與連續, src: ab:24}
-  - {id: AN2.2, title: 完備性與完備化, src: ab:25}
-  - {id: AN2.3, title: 度量空間的緊緻性與連通性, src: ab:26}
-  - {id: AN2.4, title: 壓縮映射與 Picard–Lindelöf 定理, src: ab:27}
-  - {id: AN2.5, title: 等度連續、Arzelà–Ascoli 與 Peano 定理, src: ab:28}
-  - {id: AN2.6, title: C(K) 的稠密與範疇：Stone–Weierstrass 與 Baire, src: ab:29}
-  - {id: AN2.7, title: 拓樸空間、積與緊緻性, src: ab:63, seg: B}
-  - {id: AN2.8, title: 分離公理、Urysohn–Tietze 與局部緊空間, src: ab:64, seg: B}
+  - {id: AN2.1, title: "Metric Spaces, Open Sets and Continuity", title_zh: 度量空間、開集與連續, src: ab:24}
+  - {id: AN2.2, title: "Completeness and the Completion of a Metric Space", title_zh: 完備性與完備化, src: ab:25}
+  - {id: AN2.3, title: "Compactness and Connectedness in Metric Spaces", title_zh: 度量空間的緊緻性與連通性, src: ab:26}
+  - {id: AN2.4, title: "Contraction Mappings and the Picard–Lindelöf Theorem", title_zh: 壓縮映射與 Picard–Lindelöf 定理, src: ab:27}
+  - {id: AN2.5, title: "Equicontinuity, the Arzelà–Ascoli Theorem and Peano's Theorem", title_zh: 等度連續、Arzelà–Ascoli 與 Peano 定理, src: ab:28}
+  - {id: AN2.6, title: "Density and Category in C(K): Stone–Weierstrass and Baire", title_zh: C(K) 的稠密與範疇：Stone–Weierstrass 與 Baire, src: ab:29}
+  - {id: AN2.7, title: "Topological Spaces, Products and Compactness", title_zh: 拓樸空間、積與緊緻性, src: ab:63, seg: B}
+  - {id: AN2.8, title: "Separation, Urysohn–Tietze and Locally Compact Spaces", title_zh: 分離公理、Urysohn–Tietze 與局部緊空間, src: ab:64, seg: B}
 
 AN3:
-  - {id: AN3.1, title: ℝⁿ 上的導數, src: ab:30}
-  - {id: AN3.2, title: 反函數、隱函數與 Lagrange 乘數, src: ab:31}
-  - {id: AN3.3, title: 線性微分方程組、矩陣指數與流, src: ab:32}
-  - {id: AN3.4, title: ℝⁿ 上的 Riemann 積分, src: ab:33}
-  - {id: AN3.5, title: ℝⁿ 的子流形與切空間, src: new, seg: B}
-  - {id: AN3.6, title: 微分形式與外微分, src: new, seg: B}
-  - {id: AN3.7, title: 流形上的積分與 Stokes 定理, src: new, seg: B}
+  - {id: AN3.1, title: "The Derivative in ℝⁿ", title_zh: ℝⁿ 上的導數, src: ab:30}
+  - {id: AN3.2, title: "Inverse and Implicit Functions, and Lagrange Multipliers", title_zh: 反函數、隱函數與 Lagrange 乘數, src: ab:31}
+  - {id: AN3.3, title: "Linear Systems, the Matrix Exponential and the Flow", title_zh: 線性微分方程組、矩陣指數與流, src: ab:32}
+  - {id: AN3.4, title: "The Riemann Integral on ℝⁿ", title_zh: ℝⁿ 上的 Riemann 積分, src: ab:33}
+  - {id: AN3.5, title: "Submanifolds of ℝⁿ and Tangent Spaces", title_zh: ℝⁿ 的子流形與切空間, src: new, seg: B}
+  - {id: AN3.6, title: "Differential Forms and the Exterior Derivative", title_zh: 微分形式與外微分, src: new, seg: B}
+  - {id: AN3.7, title: "Integration on Manifolds and Stokes' Theorem", title_zh: 流形上的積分與 Stokes 定理, src: new, seg: B}
 
 AL1:
-  - {id: AL1.1, title: 群、子群與同態, src: la:ch00/10}
-  - {id: AL1.2, title: 循環群, src: new}
-  - {id: AL1.3, title: 對稱群與置換的符號, src: new}
-  - {id: AL1.4, title: 陪集與 Lagrange 定理, src: new}
-  - {id: AL1.5, title: 正規子群、商群與同構定理, src: new}
-  - {id: AL1.6, title: 群作用、軌道—穩定子與類方程, src: new}
-  - {id: AL1.7, title: Sylow 定理, src: new}
-  - {id: AL1.8, title: 直積、半直積與有限 Abel 群, src: new}
-  - {id: AL1.9, title: 合成列、可解群與冪零群, src: new}
-  - {id: AL1.10, title: Aₙ 的單純性, src: new}
-  - {id: AL1.11, title: 自由群與表現, src: new}
+  - {id: AL1.1, title: "Groups, Subgroups and Homomorphisms", title_zh: 群、子群與同態, src: la:ch00/10}
+  - {id: AL1.2, title: "Cyclic Groups", title_zh: 循環群, src: new}
+  - {id: AL1.3, title: "Symmetric Groups and the Sign of a Permutation", title_zh: 對稱群與置換的符號, src: new}
+  - {id: AL1.4, title: "Cosets and Lagrange's Theorem", title_zh: 陪集與 Lagrange 定理, src: new}
+  - {id: AL1.5, title: "Normal Subgroups, Quotient Groups and the Isomorphism Theorems", title_zh: 正規子群、商群與同構定理, src: new}
+  - {id: AL1.6, title: "Group Actions, Orbit–Stabilizer and the Class Equation", title_zh: 群作用、軌道—穩定子與類方程, src: new}
+  - {id: AL1.7, title: "The Sylow Theorems", title_zh: Sylow 定理, src: new}
+  - {id: AL1.8, title: "Direct and Semidirect Products, and Finite Abelian Groups", title_zh: 直積、半直積與有限 Abel 群, src: new}
+  - {id: AL1.9, title: "Composition Series, Solvable and Nilpotent Groups", title_zh: 合成列、可解群與冪零群, src: new}
+  - {id: AL1.10, title: "The Simplicity of Aₙ", title_zh: Aₙ 的單純性, src: new}
+  - {id: AL1.11, title: "Free Groups and Presentations", title_zh: 自由群與表現, src: new}
 
 AL2:
-  - {id: AL2.1, title: 環、理想與商環, src: new}
-  - {id: AL2.2, title: 整環與分式體, src: new}
-  - {id: AL2.3, title: 極大理想與質理想, src: new}
-  - {id: AL2.4, title: 中國剩餘定理, src: new}
-  - {id: AL2.5, title: 歐氏整環、PID 與 UFD, src: new}
-  - {id: AL2.6, title: 多項式環、Gauss 引理與 Eisenstein 判別法, src: new}
-  - {id: AL2.7, title: 體擴張與次數, src: new}
-  - {id: AL2.8, title: 代數擴張、分裂體與代數閉包, src: new}
-  - {id: AL2.9, title: 有限體, src: new}
-  - {id: AL2.10, title: 尺規作圖, src: new}
+  - {id: AL2.1, title: "Rings, Ideals and Quotient Rings", title_zh: 環、理想與商環, src: new}
+  - {id: AL2.2, title: "Integral Domains and Fields of Fractions", title_zh: 整環與分式體, src: new}
+  - {id: AL2.3, title: "Maximal and Prime Ideals", title_zh: 極大理想與質理想, src: new}
+  - {id: AL2.4, title: "The Chinese Remainder Theorem", title_zh: 中國剩餘定理, src: new}
+  - {id: AL2.5, title: "Euclidean Domains, PIDs and UFDs", title_zh: 歐氏整環、PID 與 UFD, src: new}
+  - {id: AL2.6, title: "Polynomial Rings, Gauss's Lemma and Eisenstein's Criterion", title_zh: 多項式環、Gauss 引理與 Eisenstein 判別法, src: new}
+  - {id: AL2.7, title: "Field Extensions and Degree", title_zh: 體擴張與次數, src: new}
+  - {id: AL2.8, title: "Algebraic Extensions, Splitting Fields and Algebraic Closure", title_zh: 代數擴張、分裂體與代數閉包, src: new}
+  - {id: AL2.9, title: "Finite Fields", title_zh: 有限體, src: new}
+  - {id: AL2.10, title: "Ruler-and-Compass Constructions", title_zh: 尺規作圖, src: new}
 
 AL3:
-  - {id: AL3.1, title: 正規擴張與可分擴張, src: new}
-  - {id: AL3.2, title: Galois 群與 Artin 定理, src: new}
-  - {id: AL3.3, title: Galois 基本定理, src: new}
-  - {id: AL3.4, title: 有限體與分圓擴張, src: new}
-  - {id: AL3.5, title: 對稱多項式與判別式, src: new}
-  - {id: AL3.6, title: 原始元定理, src: new}
-  - {id: AL3.7, title: 根式可解性, src: new}
-  - {id: AL3.8, title: Galois 群的計算, src: new}
-  - {id: AL3.9, title: 無限 Galois 理論, src: new, opt: true}
+  - {id: AL3.1, title: "Normal and Separable Extensions", title_zh: 正規擴張與可分擴張, src: new}
+  - {id: AL3.2, title: "Galois Groups and Artin's Theorem", title_zh: Galois 群與 Artin 定理, src: new}
+  - {id: AL3.3, title: "The Fundamental Theorem of Galois Theory", title_zh: Galois 基本定理, src: new}
+  - {id: AL3.4, title: "Finite Fields and Cyclotomic Extensions", title_zh: 有限體與分圓擴張, src: new}
+  - {id: AL3.5, title: "Symmetric Polynomials and the Discriminant", title_zh: 對稱多項式與判別式, src: new}
+  - {id: AL3.6, title: "The Primitive Element Theorem", title_zh: 原始元定理, src: new}
+  - {id: AL3.7, title: "Solvability by Radicals", title_zh: 根式可解性, src: new}
+  - {id: AL3.8, title: "Computing Galois Groups", title_zh: Galois 群的計算, src: new}
+  - {id: AL3.9, title: "Infinite Galois Theory", title_zh: 無限 Galois 理論, src: new, opt: true}
 
 HA:
-  - {id: HA.1, title: Fourier 級數：起源與基本性質, src: ab:34}
-  - {id: HA.2, title: 好核、可和性與 Fejér 定理, src: ab:35}
-  - {id: HA.3, title: 均方收斂與逐點收斂, src: ab:36}
-  - {id: HA.4, title: Fourier 級數的應用, src: ab:37}
-  - {id: HA.5, title: ℝ 上的 Fourier 變換, src: ab:38}
-  - {id: HA.6, title: ℝᵈ 上的 Fourier 變換與波動方程, src: ab:39}
-  - {id: HA.7, title: 有限 Abel 群上的 Fourier 分析, src: ab:40, opt: true}
-  - {id: HA.8, title: 算術級數中的質數：Dirichlet 定理, src: ab:41, opt: true}
-  - {id: HA.9, title: Riemann 積分的不足, src: ab:42}
+  - {id: HA.1, title: "Fourier Series: Origins and Basic Properties", title_zh: Fourier 級數：起源與基本性質, src: ab:34}
+  - {id: HA.2, title: "Good Kernels, Summability and Fejér's Theorem", title_zh: 好核、可和性與 Fejér 定理, src: ab:35}
+  - {id: HA.3, title: "Mean-Square and Pointwise Convergence", title_zh: 均方收斂與逐點收斂, src: ab:36}
+  - {id: HA.4, title: "Applications of Fourier Series", title_zh: Fourier 級數的應用, src: ab:37}
+  - {id: HA.5, title: "The Fourier Transform on ℝ", title_zh: ℝ 上的 Fourier 變換, src: ab:38}
+  - {id: HA.6, title: "The Fourier Transform on ℝᵈ and the Wave Equation", title_zh: ℝᵈ 上的 Fourier 變換與波動方程, src: ab:39}
+  - {id: HA.7, title: "Fourier Analysis on Finite Abelian Groups", title_zh: 有限 Abel 群上的 Fourier 分析, src: ab:40, opt: true}
+  - {id: HA.8, title: "Dirichlet's Theorem on Primes in Arithmetic Progressions", title_zh: 算術級數中的質數：Dirichlet 定理, src: ab:41, opt: true}
+  - {id: HA.9, title: "What the Riemann Integral Lacks", title_zh: Riemann 積分的不足, src: ab:42}
 
 MT:
-  - {id: MT.1, title: ℝᵈ 上的 Lebesgue 測度與可測函數, src: ab:43}
-  - {id: MT.2, title: Lebesgue 積分與收斂定理, src: ab:44}
-  - {id: MT.3, title: 抽象測度空間與 Carathéodory 構造, src: ab:45}
-  - {id: MT.4, title: 乘積測度與 Fubini–Tonelli 定理, src: ab:46}
-  - {id: MT.5, title: 線性映射、變數變換與極座標, src: ab:47}
-  - {id: MT.6, title: 曲面、曲面測度與散度定理, src: ab:48}
-  - {id: MT.7, title: Lᵖ 空間、摺積與磨光子, src: ab:49}
-  - {id: MT.8, title: 收斂模式、一致可積與弱 Lᵖ, src: ab:50}
-  - {id: MT.9, title: 極大函數與 Lebesgue 微分定理, src: ab:51}
-  - {id: MT.10, title: 有界變差、絕對連續與微積分基本定理, src: ab:52}
-  - {id: MT.11, title: 符號測度、Radon–Nikodym 與 Lebesgue 分解, src: ab:53}
+  - {id: MT.1, title: "Lebesgue Measure on ℝᵈ and Measurable Functions", title_zh: ℝᵈ 上的 Lebesgue 測度與可測函數, src: ab:43}
+  - {id: MT.2, title: "The Lebesgue Integral and the Convergence Theorems", title_zh: Lebesgue 積分與收斂定理, src: ab:44}
+  - {id: MT.3, title: "Abstract Measure Spaces and Carathéodory's Construction", title_zh: 抽象測度空間與 Carathéodory 構造, src: ab:45}
+  - {id: MT.4, title: "Product Measures and the Fubini–Tonelli Theorem", title_zh: 乘積測度與 Fubini–Tonelli 定理, src: ab:46}
+  - {id: MT.5, title: "Linear Maps, Change of Variables and Polar Coordinates", title_zh: 線性映射、變數變換與極座標, src: ab:47}
+  - {id: MT.6, title: "Surfaces, Surface Measure and the Divergence Theorem", title_zh: 曲面、曲面測度與散度定理, src: ab:48}
+  - {id: MT.7, title: "Lᵖ Spaces, Convolution and Mollifiers", title_zh: Lᵖ 空間、摺積與磨光子, src: ab:49}
+  - {id: MT.8, title: "Modes of Convergence, Uniform Integrability and Weak Lᵖ", title_zh: 收斂模式、一致可積與弱 Lᵖ, src: ab:50}
+  - {id: MT.9, title: "The Maximal Function and Lebesgue Differentiation", title_zh: 極大函數與 Lebesgue 微分定理, src: ab:51}
+  - {id: MT.10, title: "Bounded Variation, Absolute Continuity and the Fundamental Theorem", title_zh: 有界變差、絕對連續與微積分基本定理, src: ab:52}
+  - {id: MT.11, title: "Signed Measures, Radon–Nikodym and Lebesgue Decomposition", title_zh: 符號測度、Radon–Nikodym 與 Lebesgue 分解, src: ab:53}
 
 CA:
-  - {id: CA.1, title: 全純函數與冪級數, src: ab:55}
-  - {id: CA.2, title: Cauchy 定理及其初步推論, src: ab:56}
-  - {id: CA.3, title: Laurent 級數、奇點與留數, src: ab:57}
-  - {id: CA.4, title: 環繞數、整體 Cauchy 定理與零點計數, src: ab:58}
-  - {id: CA.5, title: 共形映射、正規族與 Riemann 映射定理, src: ab:59}
-  - {id: CA.6, title: 調和函數與次調和函數, src: ab:60}
-  - {id: CA.7, title: 無窮乘積與整函數, src: ab:61}
-  - {id: CA.8a, title: 解析延拓與單值性, src: ab:62}
-  - {id: CA.8b, title: Picard 定理（交會章：CA × HA）, src: ab:62, opt: true}
-  - {id: CA.9, title: 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）, src: new, opt: true}
+  - {id: CA.1, title: "Holomorphic Functions and Power Series", title_zh: 全純函數與冪級數, src: ab:55}
+  - {id: CA.2, title: "Cauchy's Theorem and Its First Consequences", title_zh: Cauchy 定理及其初步推論, src: ab:56}
+  - {id: CA.3, title: "Laurent Series, Singularities and Residues", title_zh: Laurent 級數、奇點與留數, src: ab:57}
+  - {id: CA.4, title: "Winding Numbers, the Global Cauchy Theorem and Counting Zeros", title_zh: 環繞數、整體 Cauchy 定理與零點計數, src: ab:58}
+  - {id: CA.5, title: "Conformal Maps, Normal Families and the Riemann Mapping Theorem", title_zh: 共形映射、正規族與 Riemann 映射定理, src: ab:59}
+  - {id: CA.6, title: "Harmonic and Subharmonic Functions", title_zh: 調和函數與次調和函數, src: ab:60}
+  - {id: CA.7, title: "Infinite Products and Entire Functions", title_zh: 無窮乘積與整函數, src: ab:61}
+  - {id: CA.8a, title: "Analytic Continuation and Monodromy", title_zh: 解析延拓與單值性, src: ab:62}
+  - {id: CA.8b, title: "Picard's Theorems", title_zh: Picard 定理（交會章：CA × HA）, src: ab:62, opt: true}
+  - {id: CA.9, title: "Positive Harmonic Functions and the Herglotz–Nevanlinna Representation", title_zh: 正調和函數與 Herglotz–Nevanlinna 表示（交會章：CA × FA）, src: new, opt: true}
 
 FA:
-  - {id: FA.1a, title: Banach 空間、有界算子與對偶空間（ℓᵖ、C(K)）, src: ab:65}
-  - {id: FA.1b, title: Lᵖ 的對偶, src: ab:65}
-  - {id: FA.2, title: Radon 測度與 C₀(X) 的對偶, src: ab:66}
-  - {id: FA.3, title: Hahn–Banach 定理, src: ab:67}
-  - {id: FA.4, title: Baire 範疇與算子的基本定理, src: ab:68}
-  - {id: FA.5, title: 弱拓樸、Tychonoff 與 Banach–Alaoglu, src: ab:69}
-  - {id: FA.6, title: Hilbert 空間, src: ab:70}
-  - {id: FA.7, title: 緊算子、Fredholm 選擇與譜定理, src: ab:71}
-  - {id: FA.8, title: Banach 代數與 Gelfand 理論, src: ab:72, opt: true}
+  - {id: FA.1a, title: "Banach Spaces, Bounded Operators and Dual Spaces (ℓᵖ, C(K))", title_zh: Banach 空間、有界算子與對偶空間（ℓᵖ、C(K)）, src: ab:65}
+  - {id: FA.1b, title: "The Dual of Lᵖ", title_zh: Lᵖ 的對偶, src: ab:65}
+  - {id: FA.2, title: "Radon Measures and the Dual of C₀(X)", title_zh: Radon 測度與 C₀(X) 的對偶, src: ab:66}
+  - {id: FA.3, title: "The Hahn–Banach Theorems", title_zh: Hahn–Banach 定理, src: ab:67}
+  - {id: FA.4, title: "Baire Category and the Fundamental Theorems for Operators", title_zh: Baire 範疇與算子的基本定理, src: ab:68}
+  - {id: FA.5, title: "Weak Topologies, Tychonoff and Banach–Alaoglu", title_zh: 弱拓樸、Tychonoff 與 Banach–Alaoglu, src: ab:69}
+  - {id: FA.6, title: "Hilbert Spaces", title_zh: Hilbert 空間, src: ab:70}
+  - {id: FA.7, title: "Compact Operators, the Fredholm Alternative and the Spectral Theorem", title_zh: 緊算子、Fredholm 選擇與譜定理, src: ab:71}
+  - {id: FA.8, title: "Banach Algebras and Gelfand Theory", title_zh: Banach 代數與 Gelfand 理論, src: ab:72, opt: true}
 
 AL4:
-  - {id: AL4.1, title: 模、子模、商與同態, src: new}
-  - {id: AL4.2, title: 自由模、直和與正合列, src: new}
-  - {id: AL4.3, title: PID 上有限生成模的結構定理, src: new}
-  - {id: AL4.4, title: 應用：有限生成 Abel 群與標準形, src: new}
-  - {id: AL4.5, title: 張量積、Hom 與伴隨, src: new}
-  - {id: AL4.6, title: 投射模、內射模與平坦模, src: new}
-  - {id: AL4.7, title: 範疇、函子與泛性質, src: new}
-  - {id: AL4.8, title: 代數與表示, src: la:ch23}
-  - {id: AL4.9, title: 有限群表示：Maschke 與 Schur, src: new}
-  - {id: AL4.10, title: 特徵標理論, src: new}
-  - {id: AL4.11, title: 複形、同調、Tor 與 Ext 入門, src: new}
+  - {id: AL4.1, title: "Modules, Submodules, Quotients and Homomorphisms", title_zh: 模、子模、商與同態, src: new}
+  - {id: AL4.2, title: "Free Modules, Direct Sums and Exact Sequences", title_zh: 自由模、直和與正合列, src: new}
+  - {id: AL4.3, title: "Finitely Generated Modules over a PID", title_zh: PID 上有限生成模的結構定理, src: new}
+  - {id: AL4.4, title: "Applications: Finitely Generated Abelian Groups and Canonical Forms", title_zh: 應用：有限生成 Abel 群與標準形, src: new}
+  - {id: AL4.5, title: "Tensor Products, Hom and Adjunction", title_zh: 張量積、Hom 與伴隨, src: new}
+  - {id: AL4.6, title: "Projective, Injective and Flat Modules", title_zh: 投射模、內射模與平坦模, src: new}
+  - {id: AL4.7, title: "Categories, Functors and Universal Properties", title_zh: 範疇、函子與泛性質, src: new}
+  - {id: AL4.8, title: "Algebras and Representations", title_zh: 代數與表示, src: la:ch23}
+  - {id: AL4.9, title: "Representations of Finite Groups: Maschke and Schur", title_zh: 有限群表示：Maschke 與 Schur, src: new}
+  - {id: AL4.10, title: "Character Theory", title_zh: 特徵標理論, src: new}
+  - {id: AL4.11, title: "Complexes, Homology, Tor and Ext: An Introduction", title_zh: 複形、同調、Tor 與 Ext 入門, src: new}
 
 AL5:
-  - {id: AL5.1, title: 局部化與分式模, src: new}
-  - {id: AL5.2, title: Noether 環與 Hilbert 基底定理, src: new}
-  - {id: AL5.3, title: 整擴張與 going-up／going-down, src: new}
-  - {id: AL5.4, title: Hilbert 零點定理（Nullstellensatz）, src: new}
-  - {id: AL5.5, title: 準素分解, src: new}
-  - {id: AL5.6, title: Dedekind 整環, src: new}
-  - {id: AL5.7, title: Krull 維數入門, src: new}
+  - {id: AL5.1, title: "Localization and Modules of Fractions", title_zh: 局部化與分式模, src: new}
+  - {id: AL5.2, title: "Noetherian Rings and the Hilbert Basis Theorem", title_zh: Noether 環與 Hilbert 基底定理, src: new}
+  - {id: AL5.3, title: "Integral Extensions, Going Up and Going Down", title_zh: 整擴張與 going-up／going-down, src: new}
+  - {id: AL5.4, title: "Hilbert's Nullstellensatz", title_zh: Hilbert 零點定理（Nullstellensatz）, src: new}
+  - {id: AL5.5, title: "Primary Decomposition", title_zh: 準素分解, src: new}
+  - {id: AL5.6, title: "Dedekind Domains", title_zh: Dedekind 整環, src: new}
+  - {id: AL5.7, title: "Krull Dimension: An Introduction", title_zh: Krull 維數入門, src: new}
 
 MA:
-  - {id: MA.16, title: 範數與矩陣分析, src: la:ch16}
-  - {id: MA.17, title: 變分原理與交錯, src: la:ch17}
-  - {id: MA.18, title: 凸性, src: la:ch18}
-  - {id: MA.19, title: 非負矩陣, src: la:ch19}
-  - {id: MA.20, title: 擾動理論, src: la:ch20}
-  - {id: MA.21, title: 矩陣不等式, src: la:ch21}
-  - {id: MA.21b, title: Löwner 定理的 Pick 函數形式（交會章：MA × CA × FA）, src: la:ch21/10, opt: true}
+  - {id: MA.16, title: "Norms and Matrix Analysis", title_zh: 範數與矩陣分析, src: la:ch16}
+  - {id: MA.17, title: "Variational Principles and Interlacing", title_zh: 變分原理與交錯, src: la:ch17}
+  - {id: MA.18, title: "Convexity", title_zh: 凸性, src: la:ch18}
+  - {id: MA.19, title: "Non-negative Matrices", title_zh: 非負矩陣, src: la:ch19}
+  - {id: MA.20, title: "Perturbation Theory", title_zh: 擾動理論, src: la:ch20}
+  - {id: MA.21, title: "Matrix Inequalities", title_zh: 矩陣不等式, src: la:ch21}
+  - {id: MA.21b, title: "Löwner's Theorem in Pick-Function Form", title_zh: Löwner 定理的 Pick 函數形式（交會章：MA × CA × FA）, src: la:ch21/10, opt: true}
 
 PR:
-  - {id: PR.1, title: 測度空間上的機率, src: ab:54}
-  - {id: PR.2, title: 條件期望, src: new}
-  - {id: PR.3, title: 離散時間鞅, src: new}
-  - {id: PR.4, title: 弱收斂與特徵函數, src: new}
+  - {id: PR.1, title: "Probability on Measure Spaces", title_zh: 測度空間上的機率, src: ab:54}
+  - {id: PR.2, title: "Conditional Expectation", title_zh: 條件期望, src: new}
+  - {id: PR.3, title: "Discrete-Time Martingales", title_zh: 離散時間鞅, src: new}
+  - {id: PR.4, title: "Weak Convergence and Characteristic Functions", title_zh: 弱收斂與特徵函數, src: new}
 
 PDE:
-  - {id: PDE.1, title: 分佈, src: ab:73}
-  - {id: PDE.2, title: 緩增分佈、Fourier 變換與 Plancherel, src: ab:74}
-  - {id: PDE.3, title: 插值：Riesz–Thorin、Young 與 Hausdorff–Young, src: ab:75}
-  - {id: PDE.4, title: Sobolev 空間, src: ab:76}
-  - {id: PDE.5, title: H¹₀、Poincaré 不等式與 Rellich 緊緻性, src: ab:77}
-  - {id: PDE.6, title: 總結：Dirichlet 問題與 Dirichlet–Laplace 特徵基, src: ab:78}
+  - {id: PDE.1, title: "Distributions", title_zh: 分佈, src: ab:73}
+  - {id: PDE.2, title: "Tempered Distributions, the Fourier Transform and Plancherel", title_zh: 緩增分佈、Fourier 變換與 Plancherel, src: ab:74}
+  - {id: PDE.3, title: "Interpolation: Riesz–Thorin, Young and Hausdorff–Young", title_zh: 插值：Riesz–Thorin、Young 與 Hausdorff–Young, src: ab:75}
+  - {id: PDE.4, title: "Sobolev Spaces", title_zh: Sobolev 空間, src: ab:76}
+  - {id: PDE.5, title: "H¹₀, the Poincaré Inequality and Rellich Compactness", title_zh: H¹₀、Poincaré 不等式與 Rellich 緊緻性, src: ab:77}
+  - {id: PDE.6, title: "Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis", title_zh: 總結：Dirichlet 問題與 Dirichlet–Laplace 特徵基, src: ab:78}
 
 GEO:
-  - {id: GEO.22, title: 仿射與射影幾何, src: la:ch22}
+  - {id: GEO.22, title: "Affine and Projective Geometry", title_zh: 仿射與射影幾何, src: la:ch22}
 
 NLA:
-  - {id: NLA.24, title: 計算與應用, src: la:ch24}
+  - {id: NLA.24, title: "Computation and Applications", title_zh: 計算與應用, src: la:ch24}
 
 ST:
-  - {id: ST.1, title: 完整的 ZF 公理系統（重訪 F3.1）, src: new}
-  - {id: ST.2, title: 序數與超限歸納, src: new}
-  - {id: ST.3, title: 基數算術, src: new}
-  - {id: ST.4, title: 選擇公理的等價形式, src: new}
-  - {id: ST.5, title: 可構造宇宙與獨立性概觀, src: new}
-  - {id: ST.6a, title: Vitali 不可測集, src: new}
-  - {id: ST.6b, title: Banach–Tarski 悖論（交會章：ST × AL）, src: new, opt: true}
+  - {id: ST.1, title: "The Axioms of ZF", title_zh: 完整的 ZF 公理系統（重訪 F3.1）, src: new}
+  - {id: ST.2, title: "Ordinals and Transfinite Induction", title_zh: 序數與超限歸納, src: new}
+  - {id: ST.3, title: "Cardinal Arithmetic", title_zh: 基數算術, src: new}
+  - {id: ST.4, title: "Equivalents of the Axiom of Choice", title_zh: 選擇公理的等價形式, src: new}
+  - {id: ST.5, title: "The Constructible Universe and Independence: An Overview", title_zh: 可構造宇宙與獨立性概觀, src: new}
+  - {id: ST.6a, title: "Vitali's Non-measurable Set", title_zh: Vitali 不可測集, src: new}
+  - {id: ST.6b, title: "The Banach–Tarski Paradox", title_zh: Banach–Tarski 悖論（交會章：ST × AL）, src: new, opt: true}

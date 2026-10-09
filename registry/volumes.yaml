@@ -1,31 +1,32 @@
-# 冊（L0）。順序即預設的全套閱讀順序（只是建議，依賴以 plan-edges 與計算邊為準）。
+# 冊（L0）。title 是正式冊名（英文）；title_zh 是選填的中文冊名。
+# 順序即預設的全套閱讀順序（只是建議，依賴以 plan-edges 與計算邊為準）。
 # branch: found（基礎）| analysis | linalg | algebra | side（支線）
 # tier:   T1 碩士入學 | T2 資格考核心 | T3 延伸（支線）
 # repo:   書稿來源；ab = analysis-book，la = linear-algebra，new = 尚無書稿
 # status: plan | drafting | published
 
-- {id: F1,  title: 邏輯與證明,             en: Logic and Proof,                    branch: found,    tier: T1, repo: ab,  status: drafting}
-- {id: F2,  title: 集合、函數與關係,        en: Sets, Functions and Relations,      branch: found,    tier: T1, repo: ab,  status: drafting}
-- {id: AN1, title: 實數線上的分析,          en: Analysis on the Real Line,          branch: analysis, tier: T1, repo: ab,  status: drafting}
-- {id: F3,  title: 數系與代數預備,          en: Number Systems and Algebraic Preliminaries, branch: found, tier: T1, repo: ab+la, status: plan}
-- {id: LA1, title: 空間與映射,              en: Spaces and Maps,                    branch: linalg,   tier: T1, repo: la,  status: published}
-- {id: AL1, title: 群,                      en: Groups,                             branch: algebra,  tier: T1, repo: new, status: plan}
-- {id: LA2, title: 行列式與算子的結構,      en: Determinants and the Structure of Operators, branch: linalg, tier: T1, repo: la, status: published}
-- {id: LA3, title: 內積與譜理論,            en: Inner Products and Spectral Theory, branch: linalg,   tier: T1, repo: la,  status: published}
-- {id: LA4, title: 形式與多線性代數,        en: Forms and Multilinear Algebra,      branch: linalg,   tier: T1, repo: la,  status: published}
-- {id: AN2, title: 度量空間與拓樸,          en: Metric and Topological Spaces,      branch: analysis, tier: T1, repo: ab,  status: plan}
-- {id: AN3, title: 多變數分析,              en: Analysis in Several Variables,      branch: analysis, tier: T1, repo: ab,  status: plan}
-- {id: AL2, title: 環與體,                  en: Rings and Fields,                   branch: algebra,  tier: T1, repo: new, status: plan}
-- {id: AL3, title: Galois 理論,             en: Galois Theory,                      branch: algebra,  tier: T2, repo: new, status: plan}
-- {id: HA,  title: Fourier 分析,            en: Fourier Analysis,                   branch: analysis, tier: T2, repo: ab,  status: plan}
-- {id: MT,  title: 測度與積分,              en: Measure and Integration,            branch: analysis, tier: T2, repo: ab,  status: plan}
-- {id: CA,  title: 複分析,                  en: Complex Analysis,                   branch: analysis, tier: T2, repo: ab,  status: plan}
-- {id: FA,  title: 泛函分析,                en: Functional Analysis,                branch: analysis, tier: T2, repo: ab,  status: plan}
-- {id: AL4, title: 模、表示與同調入門,      en: Modules, Representations and Homological Algebra, branch: algebra, tier: T2, repo: new+la, status: plan}
-- {id: AL5, title: 交換代數,              en: Commutative Algebra,                branch: algebra,  tier: T3, repo: new, status: plan}
-- {id: MA,  title: 矩陣分析,                en: Matrix Analysis,                    branch: linalg,   tier: T2, repo: la,  status: published}
-- {id: PR,  title: 測度論機率,              en: Measure-Theoretic Probability,      branch: side,     tier: T3, repo: ab+new, status: plan}
-- {id: PDE, title: 分佈與 Sobolev 空間,     en: Distributions and Sobolev Spaces,   branch: side,     tier: T3, repo: ab,  status: plan}
-- {id: GEO, title: 仿射與射影幾何,          en: Affine and Projective Geometry,     branch: side,     tier: T3, repo: la,  status: published}
-- {id: NLA, title: 計算與應用,              en: Computation and Applications,       branch: side,     tier: T3, repo: la,  status: published}
-- {id: ST,  title: 公理集合論,              en: Axiomatic Set Theory,               branch: side,     tier: T3, repo: new, status: plan}
+- {id: F1,  title: "Logic and Proof", title_zh: 邏輯與證明,                    branch: found,    tier: T1, repo: ab,  status: drafting}
+- {id: F2,  title: "Sets, Functions and Relations", title_zh: 集合、函數與關係, branch: found,    tier: T1, repo: ab,  status: drafting}
+- {id: AN1, title: "Analysis on the Real Line", title_zh: 實數線上的分析,          branch: analysis, tier: T1, repo: ab,  status: drafting}
+- {id: F3,  title: "Number Systems and Algebraic Preliminaries", title_zh: 數系與代數預備, branch: found, tier: T1, repo: ab+la, status: plan}
+- {id: LA1, title: "Spaces and Maps", title_zh: 空間與映射,                    branch: linalg,   tier: T1, repo: la,  status: published}
+- {id: AL1, title: "Groups", title_zh: 群,                             branch: algebra,  tier: T1, repo: new, status: plan}
+- {id: LA2, title: "Determinants and the Structure of Operators", title_zh: 行列式與算子的結構, branch: linalg, tier: T1, repo: la, status: published}
+- {id: LA3, title: "Inner Products and Spectral Theory", title_zh: 內積與譜理論, branch: linalg,   tier: T1, repo: la,  status: published}
+- {id: LA4, title: "Forms and Multilinear Algebra", title_zh: 形式與多線性代數,      branch: linalg,   tier: T1, repo: la,  status: published}
+- {id: AN2, title: "Metric and Topological Spaces", title_zh: 度量空間與拓樸,      branch: analysis, tier: T1, repo: ab,  status: plan}
+- {id: AN3, title: "Analysis in Several Variables", title_zh: 多變數分析,      branch: analysis, tier: T1, repo: ab,  status: plan}
+- {id: AL2, title: "Rings and Fields", title_zh: 環與體,                   branch: algebra,  tier: T1, repo: new, status: plan}
+- {id: AL3, title: "Galois Theory", title_zh: Galois 理論,                      branch: algebra,  tier: T2, repo: new, status: plan}
+- {id: HA,  title: "Fourier Analysis", title_zh: Fourier 分析,                   branch: analysis, tier: T2, repo: ab,  status: plan}
+- {id: MT,  title: "Measure and Integration", title_zh: 測度與積分,            branch: analysis, tier: T2, repo: ab,  status: plan}
+- {id: CA,  title: "Complex Analysis", title_zh: 複分析,                   branch: analysis, tier: T2, repo: ab,  status: plan}
+- {id: FA,  title: "Functional Analysis", title_zh: 泛函分析,                branch: analysis, tier: T2, repo: ab,  status: plan}
+- {id: AL4, title: "Modules, Representations and Homological Algebra", title_zh: 模、表示與同調入門, branch: algebra, tier: T2, repo: new+la, status: plan}
+- {id: AL5, title: "Commutative Algebra", title_zh: 交換代數,                branch: algebra,  tier: T3, repo: new, status: plan}
+- {id: MA,  title: "Matrix Analysis", title_zh: 矩陣分析,                    branch: linalg,   tier: T2, repo: la,  status: published}
+- {id: PR,  title: "Measure-Theoretic Probability", title_zh: 測度論機率,      branch: side,     tier: T3, repo: ab+new, status: plan}
+- {id: PDE, title: "Distributions and Sobolev Spaces", title_zh: 分佈與 Sobolev 空間,   branch: side,     tier: T3, repo: ab,  status: plan}
+- {id: GEO, title: "Affine and Projective Geometry", title_zh: 仿射與射影幾何,     branch: side,     tier: T3, repo: la,  status: published}
+- {id: NLA, title: "Computation and Applications", title_zh: 計算與應用,       branch: side,     tier: T3, repo: la,  status: published}
+- {id: ST,  title: "Axiomatic Set Theory", title_zh: 公理集合論,               branch: side,     tier: T3, repo: new, status: plan}
