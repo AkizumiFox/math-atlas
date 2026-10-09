@@ -78,6 +78,15 @@ class RegistryTest(unittest.TestCase):
         at = atlas.Atlas()
         self.assertTrue(atlas.check(at), at.errors)
 
+    def test_borrow_lints(self):
+        import atlas
+        at = atlas.Atlas()
+        at.scope[("MA.21", "AN3.3")] = ["AN3.1"]  # MA readers never read multivariable calculus
+        at.statements["edges"].append(["f2.thm.zorn", "f2.def.ac", "borrows", "A1/R2"])
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("scope lint: MA.21") for e in at.errors), at.errors)
+        self.assertTrue(any("a borrow needs at most R1" in e for e in at.errors), at.errors)
+
 
 if __name__ == "__main__":
     unittest.main()

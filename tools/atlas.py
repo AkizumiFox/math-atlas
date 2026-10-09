@@ -65,8 +65,10 @@ class Atlas:
         moves = reg / "moves.yaml"
         self.moves = (yaml.safe_load(moves.read_text()) or []) if moves.exists() else []
         for m in self.moves:
-            for c in [m["from"], m["to"], *m.get("borrowed_by", [])]:
+            for c in [m["from"], m["to"], *m.get("borrowed_by", []), *m.get("scope", [])]:
                 self._known(c, f"moves.yaml[{m['label']}]")
+            for user in m.get("borrowed_by", []):
+                self.scope[(user, m["to"])] = m.get("scope", [])
         fields = reg / "fields.yaml"
         self.fields = yaml.safe_load(fields.read_text()) if fields.exists() else {}
 
@@ -79,6 +81,7 @@ class Atlas:
     def _load_plan(self, path):
         data = yaml.safe_load(path.read_text()) or {}
         out = {}
+        self.scope = {}  # (to, from) -> chapters whose vocabulary the borrowed statement needs
         for to, spec in data.items():
             if not self._known(to, "plan-edges.yaml"):
                 continue
@@ -98,6 +101,10 @@ class Atlas:
             for frm in why:
                 if (to, frm) not in out:
                     self.warnings.append(f"plan-edges.yaml: {to} has a `why` for {frm} but no edge")
+            for frm, chs in (spec.get("scope") or {}).items():
+                if out.get((to, frm), (None,))[0] != "b":
+                    self.errors.append(f"plan-edges.yaml: {to} has a `scope` for {frm}, which is not a b edge")
+                self.scope[(to, frm)] = [c for c in chs if self._known(c, f"plan-edges.yaml[{to}].scope")]
         return out
 
     def _load_computed(self, folder):
@@ -167,11 +174,25 @@ def check(at):
         need = parse_ar(rest[0], f"statements.yaml edge {user} -> {used}", at)
         if len(rest) > 1 and rest[1] not in ("yes", "no", True, False):  # YAML reads bare yes/no as booleans
             at.errors.append(f"statements.yaml edge {user} -> {used}: assessed must be yes or no")
+        if need and typ == "borrows" and need[1] > 1:
+            at.errors.append(f"A/R lint: {user} borrows {used} but needs {rest[0]}; a borrow needs at most R1, "
+                             "otherwise it is a uses edge")
         if need and typ == "uses":
             have = parse_ar(f"{teach[used][0]}/{teach[used][1]}", f"statements.yaml node {used}", at)
             if have and (need[0] > have[0] or need[1] > have[1]):
                 at.errors.append(f"A/R lint: {user} needs {rest[0]} of {used}, which only teaches "
                                  f"{teach[used][0]}/{teach[used][1]}")
+    # notation scope (chapter-level proxy): what a borrowed statement is written in must already be in scope
+    sonly = at.preds(("s",))
+    for (to, frm), chs in sorted(at.scope.items()):
+        if at.edges.get((to, frm)) != "b":
+            at.errors.append(f"scope declared for {to} <- {frm}, but the effective edge is {at.edges.get((to, frm))}")
+            continue
+        anc = G.ancestors(sonly, [to])
+        for c in chs:
+            if c not in anc:
+                at.errors.append(f"scope lint: {to} borrows from {frm} a statement written in the vocabulary of {c}, "
+                                 f"which is not an s-ancestor of {to}")
     # volume level
     vpreds = volume_preds(at, HARD)
     vcyc = G.find_cycle(vpreds)
@@ -396,6 +417,9 @@ def diff(at):
         if user_ch != used_ch and used_ch not in G.ancestors(sb, [user_ch]):
             missing.append(f"- `{user}`（{user_ch}）{typ} `{used}`（{used_ch}）：章層級沒有 {used_ch} ⇒ {user_ch} 的硬路徑")
     lines += ["## 陳述層的 uses／borrows 在章層級找不到路徑", ""] + (missing or ["（無）"]) + [""]
+    noscope = [f"- {to} ← {frm}" for (to, frm), typ in sorted(at.edges.items(), key=lambda kv: at.order.index(kv[0][0]))
+               if typ == "b" and (to, frm) not in at.scope]
+    lines += ["## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）", ""] + (noscope or ["（無）"]) + [""]
     (OUT / "diff.md").write_text("\n".join(lines) + "\n")
     return lines
 

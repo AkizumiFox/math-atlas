@@ -29,6 +29,7 @@
 4. **`see` 與 `revisits` 標記**：允許前向的 see；revisits 指向同一概念的舊版本，用來產生概念頁。
 5. **匯出 atlas 格式**：每次 build 都輸出 `atlas-edges.yaml`，格式和 `registry/computed/la-edges.yaml` 相同。這樣 math-atlas 可以直接收下計算邊，取代 `tools/import_la.py` 的手動 section 對照。
 6. **共用記號表**：從 `registry/notation.yaml` 產生 `macros.tex` 和 MathJax 巨集，加上作用域 lint、原始字形 lint 和重載宣告。
+   - **作用域 lint 也要檢查借用**：被 `borrows` 引用的陳述，其中每個語意巨集與術語都必須在借用處的作用域內（spec/03 §6 規則 3）。math-atlas 目前只能在章層級用手寫的 `scope` 代理，宣告漏寫就抓不到。例：`thm-unitary-exponential` 搬到 AN3.3 後，MA.21 借用它是否合法，取決於 MA.21 的作用域裡有沒有矩陣指數；這一點在 2026-10-09 是人工查出來的（有，經由 MA.21 ← LA2.10 的 s 邊），引擎上線後應由 build 自動判定。
 7. **陳述雜湊**：每條 uses 邊存被引用陳述正規化後的雜湊，用來驅動 04 圖 3 的重審流程。
 8. **符號 hover**：語意巨集渲染時帶上 `data-sym` 屬性，前端顯示符號的定義位置。
 9. **先備頁由 registry 產生**：每冊列出「需要／借用／不需要」三欄，不手寫。
