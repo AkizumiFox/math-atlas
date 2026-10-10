@@ -28,7 +28,7 @@
 3. **`borrows` 語法**：例如 `@thm-x{.borrow}` 或 `::: {.borrows}` 區塊，讓 (A1)–(A7) 這類借用事實成為真正的邊，而不是散文清單。lint 規則見 01 的「b 的合法性」。
 4. **`see` 與 `revisits` 標記**：允許前向的 see；revisits 指向同一概念的舊版本，用來產生概念頁。
 5. **匯出 atlas 格式**：每次 build 都輸出 `atlas-edges.yaml`，格式和 `registry/computed/la-edges.yaml` 相同。這樣 math-atlas 可以直接收下計算邊，取代 `tools/import_la.py` 的手動 section 對照。
-6. **共用記號表**：從 `registry/notation.yaml` 產生 `macros.tex` 和 MathJax 巨集，加上作用域 lint、原始字形 lint 和重載宣告。
+6. **共用記號表**：從 `registry/notation.yaml` 產生 `macros.tex` 和 MathJax 巨集，加上作用域 lint、原始字形 lint 和重載宣告；各書的 NOTATION.md 也由它產生，不再手寫（手寫的記號文件是第二個事實來源，會和規則脫節）。
    - **作用域 lint 也要檢查借用**：被 `borrows` 引用的陳述，其中每個語意巨集與術語都必須在借用處的作用域內（spec/03 §6 規則 3）。math-atlas 目前只能在章層級用手寫的 `scope` 代理，宣告漏寫就抓不到。例：`thm-unitary-exponential` 搬到 AN3.3 後，MA.21 借用它是否合法，取決於 MA.21 的作用域裡有沒有矩陣指數；這一點在 2026-10-09 是人工查出來的（有，經由 MA.21 ← LA2.10 的 s 邊），引擎上線後應由 build 自動判定。
 7. **陳述雜湊**：每條 uses 邊存被引用陳述正規化後的雜湊，用來驅動 04 圖 3 的重審流程。正規化包括把 `registry/usage.yaml` 的 avoid 寫法換成 use 寫法，讓純拼寫的遷移不觸發重審。
 8. **符號 hover**：語意巨集渲染時帶上 `data-sym` 屬性，前端顯示符號的定義位置。
