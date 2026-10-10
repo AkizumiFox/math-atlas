@@ -9,7 +9,25 @@
 - **analysis-book**：依 Part 拆冊。Part I 第 22–23 章（選讀的 ℝ 建構）移到 F3，讓 ℝ 的建構路線集中在一冊；Part VI 第 63–64 章（一般拓樸）提前到 AN2 的 B 段，FA 與 AL3.9 從這裡取用；第 54 章是機率支線 PR 的入口；第 73–78 章成為支線冊 PDE。AN3.5–3.7（子流形、微分形式、Stokes）是新章，屬 B 段。
 - **選擇公理**：陳述放在 F2.3，因為「可數個可數集的聯集可數」要用到；F2.4 Zorn 引理是新章。
 - **linear-algebra**：第 0 章拆到 F1.5、F2.1、F2.2、F3.6–3.8 與 AL1.1；§0.9 矩陣成為新的 LA1.0（它被第 2 章引用，所以不能併進第 3 章）。第 24 章之後可拆成多章。
-- analysis-book 本身不必拆 repo。它可以繼續以單一書稿的形式寫作，冊只是 registry 上的切面。等引擎支援跨冊 ID 之後，再決定是否真的分成多本出版。
+- ~~analysis-book 本身不必拆 repo。~~ **已改（2026-10-11，見下節）**：基礎三冊 F1–F3 獨立成書 *Foundations*，其餘仍是 analysis-book。
+
+## Foundations 獨立成書（2026-10-11 定案）
+
+基礎內容不是實分析專用，線代、代數也要用，所以 F1–F3 從 analysis-book 拆出，成為獨立的書 *Foundations*（新 repo `foundations`，`registry/volumes.yaml` 的 `repo: fd`、`book: foundations`），分兩冊：
+
+| 冊 | 書名 | atlas 冊 | 書稿來源 |
+|---|---|---|---|
+| Vol. 1 | *Logic, Sets, and Proof* | F1 + F2 | ab ch1–8（Part 0，含 Gate 0 作為全冊總考）；新章 Zorn 引理（F2.4） |
+| Vol. 2 | *Number Systems and Algebraic Preliminaries* | F3（＋進階選讀） | ab ch9–10（ZF 片段與 ℕ、ℤ 與 ℚ）、ab ch22–23（Dedekind 建構 ℝ、完備有序體唯一）、ℂ；體（含 ℤ/p）、群入門、置換與符號；la ch06 §01–06（多項式：除法、gcd、唯一分解、根、代數基本定理、插值與 CRT）、la ch00 §0.6–0.8、§0.10；進階選讀：基數運算、序數、Zorn 的應用 |
+
+- **閱讀順序**：Vol. 1 → Vol. 2 → 實分析 Vol. I（AN1）與線代 Vol. I（LA1）並行。
+- **ℝ 的路線（定案）**：實分析維持公理化起點（ab ch11 的完備有序體公理），**硬依賴只有 Vol. 1**；Vol. 2 的建構對實分析是選讀（「ℝ 從哪來」），只以 revisits／prose 指回，不進證明。線代 Vol. I 硬依賴 Vol. 1 與 Vol. 2 的 ℂ、體、多項式、置換。
+- **跨書引用**：用引擎既有的 `external-books` 機制，Foundations 的前綴是 `@fd:`（與 `@la:` 同）。label 一律不改名；書名與章號以外的東西都不動。
+- **遷移步驟**（各在新分支，合併由作者執行）：
+  1. `foundations` repo：以保留歷史的方式從 analysis-book 分出 ch1–10、22–23、對應的 `verify/`、`authoring/`（blueprints、ledger）與 build 設定；Vol. 2 的章號重排。
+  2. analysis-book：刪去搬走的章，**第三次重新編號**（ch11 → 實分析 ch1，以下類推），指向 Foundations 的 `@ref` 改 `@fd:`，散文章號指標與 STATUS 表機械改寫，lint 守住；`config.json` 加 `external-books.fd`。
+  3. linear-algebra：ch00 改成指向 Foundations 的導讀，只留 §0.9 矩陣（新的 LA1.0）；ch06 §01–06 移出，§07 算子的多項式留下；`thm-zorn`、`thm-induction` 等 label 依 `chapter-constraints.yaml` 的 `takes` 移交，原處留錨點。會改到已上線網站。
+  4. analysis-book 進行中的 Part 0 工作（ch05、ch07、ch08 起草與審稿）在步驟 1 前後內容不變，只換 repo。
 
 ## 由計算邊得到的發現
 

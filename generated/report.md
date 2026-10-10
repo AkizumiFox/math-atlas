@@ -53,12 +53,12 @@ F1.1 → F1.2 → F1.4 → F1.5 → F2.1 → F2.2 → AN1.1 → AN1.2 → AN1.4 
 
 | 目標 | 目標章數 | 必讀章數 | 對話報告手算值 | 涉及的冊 |
 |---|---:|---:|---:|---|
-| Complex Analysis (Ahlfors level) | 7 | **37** | 49 | F1 4、F2 3、AN1 11、F3 4、LA1 3、AN2 5、CA 7 |
-| Real Analysis (NTU qualifying exam, minimal) | 15 | **45** | 57 | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 6、AN3 1、MT 9、FA 6 |
-| Real Analysis (Harvard, with Fourier series) | 22 | **66** | 66 | F1 4、F2 3、AN1 11、F3 4、LA1 6、AL1 1、LA2 4、LA3 1、AN2 7、AN3 3、HA 5、MT 10、FA 7 |
+| Complex Analysis (Ahlfors level) | 7 | **37** | 49 | F1 4、F2 3、F3 4、AN1 11、LA1 3、AN2 5、CA 7 |
+| Real Analysis (NTU qualifying exam, minimal) | 15 | **45** | 57 | F1 4、F2 3、F3 3、AN1 10、LA1 3、AN2 6、AN3 1、MT 9、FA 6 |
+| Real Analysis (Harvard, with Fourier series) | 22 | **66** | 66 | F1 4、F2 3、F3 4、AN1 11、LA1 6、AL1 1、LA2 4、LA3 1、AN2 7、AN3 3、HA 5、MT 10、FA 7 |
 | Algebra (Harvard) | 18 | **63** | 74 | F1 4、F2 2、F3 4、LA1 6、AL1 11、LA2 5、LA3 3、LA4 2、AL2 10、AL3 8、AL4 8 |
 | Linear Algebra (Berkeley prelim) | 3 | **26** | — | F1 4、F2 2、F3 4、LA1 6、AL1 1、LA2 5、LA3 3、LA4 1 |
-| Central Limit Theorem (longest-chain check) | 1 | **34** | — | F1 4、F2 3、AN1 10、F3 3、LA1 3、AN2 3、AN3 1、MT 6、PR 1 |
+| Central Limit Theorem (longest-chain check) | 1 | **34** | — | F1 4、F2 3、F3 3、AN1 10、LA1 3、AN2 3、AN3 1、MT 6、PR 1 |
 
 ### Complex Analysis (Ahlfors level)
 
@@ -141,8 +141,8 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 |---|---:|---:|---:|---|---|
 | F1 Logic and Proof | 5 | 0 | 0 | — | — |
 | F2 Sets, Functions, and Relations | 4 | 4 | 4 | F1 | — |
-| AN1 Analysis on the Real Line | 11 | 7 | 7 | F1、F2 | — |
 | F3 Number Systems and Algebraic Preliminaries | 8（4） | 6 | 8 | F1、F2 | AN1 |
+| AN1 Analysis on the Real Line | 11 | 7 | 7 | F1、F2 | — |
 | LA1 Spaces and Maps | 6 | 9 | 9 | F1、F2、F3 | — |
 | AL1 Groups | 11 | 7 | 7 | F1、F2、F3 | — |
 | LA2 Determinants and the Structure of Operators | 5 | 17 | 17 | AL1、F1、F2、F3、LA1 | AN1 |
@@ -212,13 +212,13 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 
 | 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |
 |---|---:|---:|---:|---|
-| AL4.8 Algebras and Representations | 19 | 23 | 27 | F1.5（divide）、F3.6（modulus，經 LA2.10）、F3.8（degree、polynomial）、LA3.13（with-multiplicity） |
-| MA.16 Norms and Matrix Analysis | 7 | 21 | 25 | F1.5（even，經 LA3.11）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（entry、matrix）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（any-subset，經 LA3.11）、LA2.8（direct-sum、block-diagonal，經 LA2.10）、LA3.12（stable、symbol）、AL1.1（group、subgroup，經 LA3.11） |
-| MA.17 Variational Principles and Interlacing | 11 | 22 | 26 | F1.5（even，經 LA1.2）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（coefficient，經 LA1.3）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（any-subset，經 LA3.11）、AL1.1（group、subgroup，經 LA3.11） |
-| MA.18 Convexity | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entry）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol，經 MA.16）、AL1.1（subgroup、group，經 LA2.7）、MA.17（same-number，經 LA1.3） |
-| MA.19 Nonnegative Matrices | 15 | 24 | 28 | F1.5（prime，經 LA2.10）、F2.2（block、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（coefficient，經 LA1.3）、LA1.0（matrix、entry）、LA1.1（vector、length）、LA1.5（annihilator，經 LA2.10）、AL1.1（subgroup、group，經 LA2.7） |
-| MA.20 Perturbation Theory | 15 | 25 | 29 | F1.5（even，經 LA3.11）、F2.2（block）、F3.6（modulus）、F3.7（addition、multiplication，經 LA3.11）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、coordinate）、LA1.5（any-subset，經 LA3.11）、AL1.1（group、subgroup，經 LA3.11）、MA.19（edge，經 LA1.3） |
-| MA.21 Matrix Inequalities | 14 | 25 | 30 | F1.5（even，經 LA1.2）、F2.2（symmetric、partition）、F3.6（modulus，經 LA2.10）、F3.7（field，經 LA1.3）、F3.8（coefficient，經 LA1.3）、LA1.0（matrix、entry）、LA1.1（list、over）、LA1.5（annihilator，經 LA2.10）、LA2.7（increasing、inversion）、AL1.1（subgroup、group，經 LA2.7）、MA.19（edge，經 LA1.3） |
+| AL4.8 Algebras and Representations | 19 | 23 | 27 | F1.5（divide）、F3.6（modulus，經 LA3.12）、F3.8（degree、polynomial）、LA3.13（with-multiplicity） |
+| MA.16 Norms and Matrix Analysis | 7 | 21 | 25 | F1.5（even、odd，經 LA2.7）、F2.1（invertible、function）、F2.2（reflexive、symmetric）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（polynomial、coefficient）、LA1.0（entry、matrix）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（annihilator，經 LA2.10）、LA2.8（block-diagonal，經 LA2.9）、LA3.12（stable、symbol）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.17 Variational Principles and Interlacing | 11 | 22 | 26 | F1.5（even、odd，經 LA2.7）、F2.1（function、invertible）、F2.2（symmetric）、F3.6（imaginary-part）、F3.7（field）、F3.8（polynomial、degree，經 LA3.12）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（any-subset，經 LA3.11）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.18 Convexity | 10 | 23 | 27 | F1.5（even，經 LA1.4）、F3.6（modulus，經 LA2.10）、F3.7（addition）、F3.8（coefficient）、LA1.0（matrix、entry）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（modulo，經 LA1.4）、AL1.1（subgroup、group，經 LA2.7）、MA.17（same-number，經 LA1.3） |
+| MA.19 Nonnegative Matrices | 15 | 24 | 28 | F1.5（even、odd，經 LA2.7）、F2.2（block、symmetric）、F3.6（modulus、real-part）、F3.7（multiplication）、F3.8（coefficient、degree，經 LA2.7）、LA1.0（matrix、entry）、LA1.1（vector、length）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7） |
+| MA.20 Perturbation Theory | 15 | 25 | 29 | F1.5（even、odd，經 LA2.7）、F2.2（block）、F3.6（modulus）、F3.7（field，經 MA.17）、F3.8（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、coordinate）、LA1.5（linear-functional、hyperplane，經 MA.18）、AL1.1（subgroup、group，經 LA2.7）、MA.19（edge，經 LA1.3） |
+| MA.21 Matrix Inequalities | 14 | 25 | 30 | F1.5（even，經 LA1.2）、F2.2（symmetric、partition）、F3.6（modulus，經 LA3.12）、F3.7（addition，經 LA3.12）、F3.8（polynomial、degree，經 LA3.12）、LA1.0（matrix、entry）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、AL1.1（subgroup、group，經 LA2.7）、MA.19（edge，經 LA1.3） |
 | GEO.22 Affine and Projective Geometry | 20 | 26 | 30 | F1.5（even、odd，經 LA4.14）、F3.6（imaginary-part，經 MA.17）、F3.7（field）、F3.8（polynomial）、LA1.0（matrix、diagonal）、LA4.15（form、order） |
 | NLA.24 Computation and Applications | 14 | 23 | 27 | F1.5（even）、F2.2（symmetric、block）、F3.6（modulus）、F3.7（field、multiplication）、F3.8（degree、coefficient）、LA1.1（vector、dimension）、LA1.5（annihilator）、LA2.7（characteristic-polynomial、determinant）、AL1.1（group、subgroup，經 LA3.11） |
 
@@ -227,20 +227,20 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | 術語 | 正式定義所在 | 支撐 | 唯一 |
 |---|---|---:|---:|
 | modulus | F3.6 | 9 | 2 |
-| even | F1.5 | 9 | 0 |
-| divide | F1.5 | 9 | 0 |
-| odd | F1.5 | 9 | 0 |
 | prime | F1.5 | 9 | 0 |
-| coefficient | F3.8 | 9 | 0 |
+| odd | F1.5 | 9 | 0 |
+| divide | F1.5 | 9 | 0 |
+| even | F1.5 | 9 | 0 |
 | degree | F3.8 | 9 | 0 |
-| monic | F3.8 | 9 | 0 |
-| polynomial | F3.8 | 9 | 0 |
 | leading-coefficient | F3.8 | 9 | 0 |
-| field | F3.7 | 8 | 0 |
+| polynomial | F3.8 | 9 | 0 |
+| monic | F3.8 | 9 | 0 |
+| coefficient | F3.8 | 9 | 0 |
 | characteristic | F3.7 | 8 | 0 |
-| addition | F3.7 | 8 | 0 |
 | multiplication | F3.7 | 8 | 0 |
-| subgroup | AL1.1 | 7 | 0 |
+| field | F3.7 | 8 | 0 |
+| addition | F3.7 | 8 | 0 |
+| upper-triangular | LA1.0 | 7 | 0 |
 
 術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：
 

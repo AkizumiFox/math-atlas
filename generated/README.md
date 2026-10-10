@@ -8,8 +8,8 @@ Solid arrow: s (read first). Dashed arrow: b (a named result is borrowed; readin
 flowchart TD
   F1["F1 Logic and Proof"]:::found
   F2["F2 Sets, Functions, and Relations"]:::found
-  AN1["AN1 Analysis on the Real Line"]:::analysis
   F3["F3 Number Systems and Algebraic Preliminaries"]:::found
+  AN1["AN1 Analysis on the Real Line"]:::analysis
   LA1["LA1 Spaces and Maps"]:::linalg
   AL1["AL1 Groups"]:::algebra
   LA2["LA2 Determinants and the Structure of Operators"]:::linalg
@@ -32,8 +32,8 @@ flowchart TD
   NLA["NLA Computation and Applications"]:::side
   ST["ST Axiomatic Set Theory"]:::side
   F1 --> F2
-  F2 --> AN1
   AN1 --> F3
+  F2 --> AN1
   F3 --> LA1
   F3 --> AL1
   AL1 --> LA2
@@ -103,6 +103,35 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
+## F3 Number Systems and Algebraic Preliminaries
+
+```mermaid
+flowchart LR
+  F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
+  F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
+  AN1_1["AN1.1 Ordered Fields and the Least Upper Bound Axiom"]:::ext
+  F3_1["1 The von Neumann Natural Numbers"]:::opt
+  F3_2["2 Building ℤ and ℚ from Equivalence Classes"]:::opt
+  F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
+  F3_4["4 The Complete Ordered Field Is Unique"]:::opt
+  F3_5["5 Divisibility, Division with Remainder, and ℤ/nℤ"]
+  F3_6["6 Complex Numbers"]
+  F3_7["7 Fields"]
+  F3_8["8 Formal Polynomials"]
+  F2_3 --> F3_1
+  F3_1 --> F3_2
+  AN1_1 --> F3_3
+  F3_2 --> F3_3
+  AN1_1 --> F3_4
+  F2_2 --> F3_5
+  AN1_1 -.-> F3_6
+  F3_5 --> F3_7
+  F3_7 --> F3_8
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
 ## AN1 Analysis on the Real Line
 
 ```mermaid
@@ -134,35 +163,6 @@ flowchart LR
   AN1_8 --> AN1_9
   AN1_9 --> AN1_10
   AN1_6 --> AN1_11
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
-## F3 Number Systems and Algebraic Preliminaries
-
-```mermaid
-flowchart LR
-  F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
-  F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
-  AN1_1["AN1.1 Ordered Fields and the Least Upper Bound Axiom"]:::ext
-  F3_1["1 The von Neumann Natural Numbers"]:::opt
-  F3_2["2 Building ℤ and ℚ from Equivalence Classes"]:::opt
-  F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
-  F3_4["4 The Complete Ordered Field Is Unique"]:::opt
-  F3_5["5 Divisibility, Division with Remainder, and ℤ/nℤ"]
-  F3_6["6 Complex Numbers"]
-  F3_7["7 Fields"]
-  F3_8["8 Formal Polynomials"]
-  F2_3 --> F3_1
-  F3_1 --> F3_2
-  AN1_1 --> F3_3
-  F3_2 --> F3_3
-  AN1_1 --> F3_4
-  F2_2 --> F3_5
-  AN1_1 -.-> F3_6
-  F3_5 --> F3_7
-  F3_7 --> F3_8
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
