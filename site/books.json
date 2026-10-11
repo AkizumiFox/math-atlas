@@ -10,22 +10,112 @@
   "diagram": {
    "title": "Reading order",
    "intro": "Where to start, and what each volume needs.",
-   "caption": "Start with F1 and read on to F2. Gate 0, the examination at the end of F2, Chapter 3, opens AN1. F3 builds \\(\\nN\\), \\(\\nZ\\), \\(\\nQ\\) and \\(\\nR\\) out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its \\(\\nR\\) (dashed arrow). F3 leads on to F4, planned, which will collect the algebra (complex numbers, fields, polynomials) that Linear Algebra uses.",
+   "caption": "Start with F1 and read on to F2. Gate 0, the examination at the end of F2, Chapter 3, opens AN1. F3 builds \\(\\nN\\), \\(\\nZ\\), \\(\\nQ\\) and \\(\\nR\\) out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its \\(\\nR\\) (dashed arrow). F3 leads on to F4, which collects the algebra (complex numbers, fields, groups, polynomials) that Linear Algebra uses.",
    "nodes": [
-    {"id": "F1", "book": "fd1", "name": "Logic", "at": [0, 0], "at-narrow": [0, 0]},
-    {"id": "F2", "book": "fd2", "name": "Sets", "at": [1, 0], "at-narrow": [1, 0]},
-    {"id": "F3", "book": "fd3", "name": "Number systems", "at": [2, 0], "at-narrow": [2, 0]},
-    {"id": "F4", "name": "Algebra", "planned": true, "at": [3, 0], "at-narrow": [2, 1]},
-    {"id": "LA", "book": "la", "name": "Linear algebra", "at": [4, 0], "at-narrow": [2, 2]},
-    {"id": "AN1", "book": "an1", "name": "Real analysis", "at": [2, 1], "at-narrow": [1, 1]}
+    {
+     "id": "F1",
+     "book": "fd1",
+     "name": "Logic",
+     "at": [
+      0,
+      0
+     ],
+     "at-narrow": [
+      0,
+      0
+     ]
+    },
+    {
+     "id": "F2",
+     "book": "fd2",
+     "name": "Sets",
+     "at": [
+      1,
+      0
+     ],
+     "at-narrow": [
+      1,
+      0
+     ]
+    },
+    {
+     "id": "F3",
+     "book": "fd3",
+     "name": "Number systems",
+     "at": [
+      2,
+      0
+     ],
+     "at-narrow": [
+      2,
+      0
+     ]
+    },
+    {
+     "id": "F4",
+     "name": "Algebra",
+     "at": [
+      3,
+      0
+     ],
+     "at-narrow": [
+      2,
+      1
+     ]
+    },
+    {
+     "id": "LA",
+     "book": "la",
+     "name": "Linear algebra",
+     "at": [
+      4,
+      0
+     ],
+     "at-narrow": [
+      2,
+      2
+     ]
+    },
+    {
+     "id": "AN1",
+     "book": "an1",
+     "name": "Real analysis",
+     "at": [
+      2,
+      1
+     ],
+     "at-narrow": [
+      1,
+      1
+     ]
+    }
    ],
    "edges": [
-    ["F1", "F2"],
-    ["F2", "F3"],
-    ["F3", "F4"],
-    ["F4", "LA"],
-    ["F2", "AN1"],
-    {"from": "F3", "to": "AN1", "kind": "optional"}
+    [
+     "F1",
+     "F2"
+    ],
+    [
+     "F2",
+     "F3"
+    ],
+    [
+     "F3",
+     "F4"
+    ],
+    [
+     "F4",
+     "LA"
+    ],
+    [
+     "F2",
+     "AN1"
+    ],
+    {
+     "from": "F3",
+     "to": "AN1",
+     "kind": "optional"
+    }
    ]
   },
   "groups": [
@@ -58,13 +148,30 @@
   ],
   "licence": "The books are licensed under <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">CC BY-NC-SA 4.0</a>; the atlas registry and specification under <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a>; the tools and the book engine under the MIT licence.",
   "sources": [
-   {"title": "AkizumiFox/foundations", "href": "https://github.com/AkizumiFox/foundations"},
-   {"title": "AkizumiFox/analysis", "href": "https://github.com/AkizumiFox/analysis"},
-   {"title": "AkizumiFox/math-atlas", "href": "https://github.com/AkizumiFox/math-atlas"},
-   {"title": "AkizumiFox/book-engine", "href": "https://github.com/AkizumiFox/book-engine"}
+   {
+    "title": "AkizumiFox/foundations",
+    "href": "https://github.com/AkizumiFox/foundations"
+   },
+   {
+    "title": "AkizumiFox/analysis",
+    "href": "https://github.com/AkizumiFox/analysis"
+   },
+   {
+    "title": "AkizumiFox/math-atlas",
+    "href": "https://github.com/AkizumiFox/math-atlas"
+   },
+   {
+    "title": "AkizumiFox/book-engine",
+    "href": "https://github.com/AkizumiFox/book-engine"
+   }
   ]
  },
- "files": [{"from": "../generated/atlas.html", "to": "atlas/atlas.html"}],
+ "files": [
+  {
+   "from": "../generated/atlas.html",
+   "to": "atlas/atlas.html"
+  }
+ ],
  "books": [
   {
    "prefix": "fd1",
@@ -92,6 +199,15 @@
    "short": "F3",
    "blurb": "The number systems built out of sets: \\(\\nN\\) from the ZF axioms, \\(\\nZ\\) and \\(\\nQ\\) as classes of pairs, divisibility and modular arithmetic, and finally \\(\\nR\\), constructed from Cauchy sequences of rationals and proved to be a complete ordered field.",
    "planned": 7
+  },
+  {
+   "prefix": "fd4",
+   "path": "../../foundations/fd4",
+   "subdir": "fd4",
+   "series": "Foundations",
+   "short": "F4",
+   "blurb": "The algebra the later volumes take for granted: the complex numbers built on \\(\\nR\\), fields including \\(\\mathbb{F}_p\\), groups and permutations with the sign, formal polynomials, and polynomials over a field from division with remainder to the fundamental theorem of algebra.",
+   "planned": 5
   },
   {
    "prefix": "an1",
