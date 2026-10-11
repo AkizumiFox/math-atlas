@@ -206,13 +206,19 @@ mjx-mover:has(> mjx-base mjx-utext[variant="bold"]) > mjx-over {
   /* Type */
   --font-body: 'STIX Two Text', 'STIX Two', 'Times New Roman', serif;
   --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
-  --text-size: 20px;
+  /* 20px up to a 1440px window, growing to 26px at 2560px: on a large screen the
+     text, and with it the column (sized in lines of text below), scales up instead
+     of leaving wide empty margins */
+  --text-size: clamp(20px, calc(12.3px + 0.536vw), 26px);
   --line-height: 1.7;
 
   /* Layout */
-  --content-width: 39rem;   /* about 72-75 characters per line at 20px */
-  --sidebar-width: clamp(16rem, 15vw, 21rem);
-  --toc-width: clamp(15rem, 14vw, 20rem);
+  /* Column widths are multiples of the text size, so a line holds about 72-75
+     characters whatever the size (31.2 x 20px = 39rem) */
+  --content-width: calc(var(--text-size) * 31.2);
+  --sidebar-width: clamp(16rem, 16vw, 24rem);
+  --toc-width: clamp(15rem, 14vw, 22rem);
+  --pane-text: calc(var(--text-size) * 0.72);
 }
 
 /* Dark theme: data-theme is set before first paint from the saved choice or the system
@@ -1020,6 +1026,148 @@ div.equation mjx-container[display="true"] {
   }
 }
 
+/* --- Second-reading fold (components.lua: ::: {.second-reading title="..."}) ---
+   Material a first reading may skip -- a meta-proof, edge cases, a long justification.
+   A native <details>, closed by default: the summary is a quiet bar with a marker,
+   the "Second reading" kicker and the title; opened, the content sits under a dashed
+   rule so the reader sees where the fold ends. Environments inside keep their boxes. */
+details.second-reading {
+  margin: 1.4em 0;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 6px;
+  background: var(--paper);
+}
+
+details.second-reading > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55em;
+  padding: 0.5em 0.9em;
+  border-radius: 6px;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+details.second-reading > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* The chevron after the title: v while closed, ^ while open, as on folded proofs */
+details.second-reading > summary::after {
+  content: "";
+  flex: none;
+  align-self: center;
+  width: 0.42em;
+  height: 0.42em;
+  margin-left: 0.15em;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.12em) rotate(45deg);
+  transition: transform 0.22s ease;
+  opacity: 0.8;
+}
+
+details.second-reading[open] > summary::after {
+  transform: translateY(0.08em) rotate(225deg);
+}
+
+details.second-reading > summary:hover,
+details.second-reading > summary:focus-visible {
+  background: var(--hover-wash);
+  color: var(--accent);
+}
+
+details.second-reading > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.second-reading-marker {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  margin-top: 0.2em;
+  width: 1.45em;
+  height: 1.45em;
+  border-radius: 50%;
+  background: var(--subtle);
+  border: 1px solid var(--rule);
+  color: var(--faint);
+  font-size: 0.78em;
+  line-height: 1;
+}
+
+.second-reading-kicker {
+  flex: none;
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.second-reading-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--ink-strong);
+  font-style: italic;
+}
+
+details.second-reading > summary:hover .second-reading-title,
+details.second-reading > summary:focus-visible .second-reading-title {
+  color: var(--accent);
+}
+
+details.second-reading[open] > summary {
+  border-bottom: 1px dashed var(--rule-strong);
+  border-radius: 6px 6px 0 0;
+}
+
+.second-reading-body {
+  padding: 0.3em 1.1em 0.6em;
+  overflow-x: auto;
+}
+
+.second-reading-body > :last-child {
+  margin-bottom: 0.3em;
+}
+
+@media (max-width: 600px) {
+  details.second-reading > summary {
+    padding: 0.5em 0.7em;
+  }
+
+  /* The marker says it on a phone; the kicker stays for screen readers */
+  .second-reading-kicker {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .second-reading-body {
+    padding: 0.2em 0.7em 0.5em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details.second-reading > summary::after {
+    transition: none;
+  }
+}
+
+@media print {
+  details.second-reading > summary::after {
+    display: none;
+  }
+}
+
 /* A solution directly after its quick check sits close to it */
 .check.small-env + .solution.small-env {
   margin-top: -0.4em;
@@ -1315,7 +1463,7 @@ div.equation mjx-container[display="true"] {
 
 /* --- Dependency graph page --- */
 .wide-page {
-  --content-width: 60rem;
+  --content-width: calc(var(--text-size) * 48);
 }
 
 .graph-intro {
@@ -1616,8 +1764,8 @@ th {
   overflow-y: auto;
   padding: 1.5rem 1rem 2rem 1.5rem;
   border-right: 1px solid var(--rule);
-  background: var(--paper);
-  font-size: 0.9rem;
+  background: var(--subtle);
+  font-size: var(--pane-text);
   line-height: 1.35;
   scrollbar-width: thin;
   scrollbar-color: var(--rule-strong) transparent;
@@ -1921,7 +2069,9 @@ th {
   height: 100vh;
   overflow-y: auto;
   padding: 2.75rem 1.25rem 2rem;
-  font-size: 0.82rem;
+  border-left: 1px solid var(--rule);
+  background: var(--subtle);
+  font-size: calc(var(--pane-text) * 0.91);
   line-height: 1.35;
 }
 
@@ -2308,11 +2458,11 @@ th {
 /* With panes folded away, the text column widens */
 [data-sidebar="collapsed"],
 [data-toc="collapsed"] {
-  --content-width: 46rem;
+  --content-width: calc(var(--text-size) * 36.8);
 }
 
 [data-sidebar="collapsed"][data-toc="collapsed"] {
-  --content-width: 54rem;
+  --content-width: calc(var(--text-size) * 43.2);
 }
 
 @media (min-width: 1201px) {
@@ -2345,11 +2495,11 @@ th {
 
   /* Only the left pane can be folded here; the right pane's setting does not apply */
   [data-toc="collapsed"]:not([data-sidebar="collapsed"]) {
-    --content-width: 39rem;
+    --content-width: calc(var(--text-size) * 31.2);
   }
 
   [data-sidebar="collapsed"][data-toc="collapsed"] {
-    --content-width: 46rem;
+    --content-width: calc(var(--text-size) * 36.8);
   }
 }
 
@@ -2396,7 +2546,7 @@ th {
 
   :root[data-sidebar],
   :root[data-toc] {
-    --content-width: 39rem;
+    --content-width: calc(var(--text-size) * 31.2);
   }
 
   #quarto-sidebar {
@@ -2727,6 +2877,7 @@ a.xref {
 @media print {
   :root {
     --text-size: 11pt;
+    --content-width: 39rem;
   }
 
   .topbar,
