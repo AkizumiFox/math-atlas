@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found – Math Atlas</title>
+<meta name="robots" content="noindex">
+<script>(function () {
+    var theme = null;
+    try { theme = localStorage.getItem('book-theme'); } catch (e) {}
+    if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+})();</script>
+<style>
+:root { color-scheme: light; --bg: #fbfaf7; --fg: #1f1d1a; --muted: #6b665e; --card: #ffffff;
+        --line: #e4e0d8; --accent: #2f5d8a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { color-scheme: dark; --bg: #16171a; --fg: #e8e6e1; --muted: #9a958c;
+        --card: #1f2125; --line: #33363c; --accent: #8ab4e0; }
+}
+:root[data-theme="dark"] { color-scheme: dark; --bg: #16171a; --fg: #e8e6e1; --muted: #9a958c;
+        --card: #1f2125; --line: #33363c; --accent: #8ab4e0; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 Georgia, "STIX Two Text", "Times New Roman", serif; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+h1 { font-weight: 600; margin: 0 0 6px; }
+a { color: var(--accent); }
+.lede { color: var(--muted); margin: 0 0 32px; }
+.badge { display: inline-block; font: 600 12px/1 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase;
+         color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 4px 6px; margin-bottom: 18px; }
+.series { margin: 0 0 28px; }
+.series h2 { font-size: 15px; font: 600 13px/1.2 system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase;
+             color: var(--muted); margin: 0 0 10px; }
+.series > p { color: var(--muted); margin: -4px 0 12px; font-size: 15px; }
+a.card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px;
+         margin: 0 0 12px; color: inherit; text-decoration: none; }
+a.card:hover, a.card:focus-visible { border-color: var(--accent); }
+a.card h3 { margin: 0 0 4px; font-size: 20px; color: var(--accent); font-weight: 600; }
+a.card .short { font: 600 12px/1 system-ui, sans-serif; color: var(--muted); margin-left: 6px; vertical-align: 2px; }
+a.card p { margin: 0; color: var(--muted); font-size: 15px; }
+footer { margin-top: 36px; color: var(--muted); font-size: 14px; }
+.theme-toggle { position: absolute; top: 14px; right: 16px; background: none; border: 1px solid var(--line); color: var(--muted);
+                border-radius: 6px; padding: 4px 8px; font: 13px system-ui, sans-serif; cursor: pointer; }
+.theme-toggle:hover { color: var(--fg); border-color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<p><a href="/math-atlas/">Math Atlas</a></p>
+<h1>Page not found</h1>
+<p>This page does not exist, or it moved when a book was reorganized.</p>
+<p id="book-hint" hidden></p>
+<p><a href="/math-atlas/">Go to the library's front page</a>.</p>
+</main>
+<script>
+(function () {
+    var root = "/math-atlas/", books = [{"subdir": "fd1", "title": "Logic and Proof"}, {"subdir": "fd2", "title": "Sets, Relations, and Cardinality"}, {"subdir": "fd3", "title": "Number Systems: From \\(\\nN\\) to \\(\\nR\\)"}, {"subdir": "an1", "title": "Analysis on the Real Line"}, {"subdir": "linear-algebra", "title": "Linear Algebra"}];
+    var path = location.pathname;
+    if (path.indexOf(root) !== 0) return;
+    var rest = path.slice(root.length);
+    for (var i = 0; i < books.length; i++) {
+        var subdir = books[i].subdir + '/';
+        if (rest === books[i].subdir || rest.indexOf(subdir) === 0) {
+            var hint = document.getElementById('book-hint');
+            var link = document.createElement('a');
+            link.href = root + subdir;
+            link.textContent = books[i].title;
+            hint.append('Go to the start of ', link, ', or use the search in its sidebar.');
+            hint.hidden = false;
+            return;
+        }
+    }
+})();
+</script>
+</body>
+</html>

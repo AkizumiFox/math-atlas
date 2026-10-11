@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://akizumifox.github.io/math-atlas/sitemap.xml
