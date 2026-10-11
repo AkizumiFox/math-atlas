@@ -3,84 +3,379 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>Math Atlas</title>
 <link rel="canonical" href="https://akizumifox.github.io/math-atlas/">
-<meta name="description" content="A textbook series from first proofs to the graduate qualifying exam. Each volume is its own book; references between volumes link across, with hover previews. These are working drafts, rebuilt from the current branches.">
+<meta name="description" content="A series of textbooks for a reader working alone, from a first proof to the graduate qualifying exam in mathematics.">
+<meta property="og:title" content="Math Atlas">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://akizumifox.github.io/math-atlas/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fd1/mathjax.css">
 <script>(function () {
     var theme = null;
     try { theme = localStorage.getItem('book-theme'); } catch (e) {}
     if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
 })();</script>
-<style>
-:root { color-scheme: light; --bg: #fbfaf7; --fg: #1f1d1a; --muted: #6b665e; --card: #ffffff;
-        --line: #e4e0d8; --accent: #2f5d8a; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { color-scheme: dark; --bg: #16171a; --fg: #e8e6e1; --muted: #9a958c;
-        --card: #1f2125; --line: #33363c; --accent: #8ab4e0; }
+<style>@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-greek-400-italic.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
-:root[data-theme="dark"] { color-scheme: dark; --bg: #16171a; --fg: #e8e6e1; --muted: #9a958c;
-        --card: #1f2125; --line: #33363c; --accent: #8ab4e0; }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 Georgia, "STIX Two Text", "Times New Roman", serif; }
-main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
-h1 { font-weight: 600; margin: 0 0 6px; }
-a { color: var(--accent); }
-.lede { color: var(--muted); margin: 0 0 32px; }
-.badge { display: inline-block; font: 600 12px/1 system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase;
-         color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 4px 6px; margin-bottom: 18px; }
-.series { margin: 0 0 28px; }
-.series h2 { font-size: 15px; font: 600 13px/1.2 system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase;
-             color: var(--muted); margin: 0 0 10px; }
-.series > p { color: var(--muted); margin: -4px 0 12px; font-size: 15px; }
-a.card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 16px 20px;
-         margin: 0 0 12px; color: inherit; text-decoration: none; }
-a.card:hover, a.card:focus-visible { border-color: var(--accent); }
-a.card h3 { margin: 0 0 4px; font-size: 20px; color: var(--accent); font-weight: 600; }
-a.card .short { font: 600 12px/1 system-ui, sans-serif; color: var(--muted); margin-left: 6px; vertical-align: 2px; }
-a.card p { margin: 0; color: var(--muted); font-size: 15px; }
-footer { margin-top: 36px; color: var(--muted); font-size: 14px; }
-.theme-toggle { position: absolute; top: 14px; right: 16px; background: none; border: 1px solid var(--line); color: var(--muted);
-                border-radius: 6px; padding: 4px 8px; font: 13px system-ui, sans-serif; cursor: pointer; }
-.theme-toggle:hover { color: var(--fg); border-color: var(--accent); }
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-ext-400-italic.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-400-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-greek-700-italic.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-ext-700-italic.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-700-italic.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-greek-400-normal.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-ext-400-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-greek-600-normal.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-ext-600-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-600-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-greek-700-normal.woff2') format('woff2');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-ext-700-normal.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fd1/fonts/stix-two-text-latin-700-normal.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --ink: #26282d;
+  --ink-strong: #121418;
+  --muted: #5f6570;
+  --rule: #e1e4e8;
+  --rule-strong: #c9ced5;
+  --subtle: #f6f7f9;
+  --accent: #1f5bb8;
+  --accent-soft: #e8effa;
+  --hover-wash: #eaf1fb;
+  --hover-border: #9db8e3;
+
+  --font-body: 'STIX Two Text', 'STIX Two', 'Times New Roman', serif;
+  /* the books' fluid text: 20px up to a 1440px window, 26px at 2560px; 18px on phones */
+  --text-size: clamp(20px, calc(12.3px + 0.536vw), 26px);
+  --measure: calc(var(--text-size) * 31.2);     /* the books' column: about 72 characters */
+  --page-width: calc(var(--text-size) * 56);
+  --gutter: 16px;
+}
+@media (max-width: 900px) { :root { --text-size: 18px; } }
+@media (min-width: 600px) { :root { --gutter: 32px; } }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --paper: #16181c;
+  --ink: #d8dbe0;
+  --ink-strong: #f1f2f4;
+  --muted: #a1a7b1;
+  --rule: #2b2f36;
+  --rule-strong: #3a3f47;
+  --subtle: #1d2025;
+  --accent: #83adf0;
+  --accent-soft: #1f2a3b;
+  --hover-wash: #202b3c;
+  --hover-border: #4d6a94;
+} }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #16181c;
+  --ink: #d8dbe0;
+  --ink-strong: #f1f2f4;
+  --muted: #a1a7b1;
+  --rule: #2b2f36;
+  --rule-strong: #3a3f47;
+  --subtle: #1d2025;
+  --accent: #83adf0;
+  --accent-soft: #1f2a3b;
+  --hover-wash: #202b3c;
+  --hover-border: #4d6a94;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--text-size); line-height: 1.6;
+  font-kerning: normal; font-variant-numeric: lining-nums proportional-nums;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--ink-strong); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.skip-link { position: absolute; left: -9999px; top: 0; }
+.skip-link:focus { left: var(--gutter); top: 8px; background: var(--paper); padding: 4px 8px; z-index: 2; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+                   clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.page { max-width: calc(var(--page-width) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* Header */
+.masthead { position: relative; padding: clamp(2.2rem, 7vw, 4.5rem) 0 2.2rem; border-bottom: 1px solid var(--rule); }
+.masthead h1 { margin: 0 0 0.35em; font-size: 2.3em; line-height: 1.1; font-weight: 600;
+               letter-spacing: -0.01em; color: var(--ink-strong); padding-right: 2.5rem; }
+.tagline { margin: 0 0 0.6em; max-width: var(--measure); font-size: 1.22em; line-height: 1.45; color: var(--ink-strong); }
+.usage { margin: 0 0 0.9em; max-width: var(--measure); color: var(--ink); }
+.status { margin: 0; max-width: var(--measure); font-size: 0.85em; color: var(--muted); font-style: italic; }
+.theme-toggle { position: absolute; top: clamp(1.4rem, 5vw, 2.2rem); right: 0; display: inline-flex;
+                align-items: center; justify-content: center; width: 2.25rem; height: 2.25rem; padding: 0;
+                border: 1px solid var(--rule); border-radius: 8px; background: transparent;
+                color: var(--muted); cursor: pointer; }
+.theme-toggle:hover { color: var(--ink-strong); background: var(--subtle); }
+.theme-toggle svg { width: 1.05rem; height: 1.05rem; }
+.theme-toggle .moon { display: none; }
+:root[data-theme="dark"] .theme-toggle .sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .moon { display: inline; }
+
+/* Sections */
+.band { padding: 2.2rem 0 2.4rem; border-bottom: 1px solid var(--rule); }
+.band-head { max-width: var(--measure); margin-bottom: 1.1rem; }
+.band h2 { margin: 0 0 0.2em; font-size: 1.4em; line-height: 1.25; font-weight: 600; color: var(--ink-strong); }
+.band-head p { margin: 0; color: var(--muted); }
+
+/* A run of one-card sections: side by side, their heads and cards on shared rows */
+.band-row { display: grid; gap: 0 1rem; border-bottom: 1px solid var(--rule);
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--text-size) * 15.5)), 1fr)); }
+.band-row > .band { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; border-bottom: 0; }
+.band-row .band-head { margin-bottom: 1.1rem; }
+.band-row .cards { grid-template-columns: 1fr; }
+@media (max-width: 640px) { .band-row > .band + .band { border-top: 1px solid var(--rule); } }
+
+/* Book cards */
+.cards { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem;
+         grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--text-size) * 15.5)), 1fr)); }
+.card { height: 100%; display: flex; flex-direction: column; gap: 0.55em; padding: 1.05em 1.2em 1em;
+        border: 1px solid var(--rule); border-radius: 8px; background: var(--paper);
+        font-size: 0.86em; line-height: 1.55; transition: border-color 0.18s ease; }
+.card:hover { border-color: var(--hover-border); }
+.card-code { margin: 0; font-size: 0.82em; font-weight: 600; letter-spacing: 0.09em; color: var(--accent);
+             font-variant-numeric: tabular-nums; }
+.card h3 { margin: -0.2em 0 0; font-size: 1.32em; line-height: 1.25; font-weight: 600; color: var(--ink-strong); }
+.card h3 a { color: inherit; text-decoration: none; }
+.card h3 a:hover { text-decoration: underline; text-decoration-color: var(--hover-border); }
+.card-blurb { margin: 0; }
+.progress { margin: 0.15em 0 0; display: flex; flex-direction: column; align-items: flex-start; gap: 0.3em;
+            font-size: 0.9em; color: var(--muted); }
+.segments { display: inline-flex; gap: 3px; }
+.segments i { display: block; width: 1.1em; height: 0.42em; border-radius: 2px;
+              border: 1px solid var(--rule-strong); }
+.segments i.done { background: var(--accent); border-color: var(--accent); }
+.card-links { margin: auto 0 0; padding-top: 0.55em; display: flex; flex-wrap: wrap; gap: 0.3em 1.2em;
+              border-top: 1px solid var(--rule); }
+.card-links a { font-weight: 600; text-decoration: none; }
+.card-links a:hover { text-decoration: underline; }
+.nowrap { white-space: nowrap; }
+.card-note { margin: 0; font-size: 0.9em; color: var(--muted); }
+
+/* Reading order */
+.order { margin: 0; padding: 1.2rem 1.2rem 1rem; background: var(--subtle); border: 1px solid var(--rule); border-radius: 8px; }
+.order svg { display: block; width: 100%; height: auto; margin: 0 auto 0.8rem; }
+.order .narrow { display: none; }
+@media (max-width: 640px) { .order .wide { display: none; } .order .narrow, .order .wide.narrow-too { display: block; } }
+.order figcaption { max-width: var(--measure); color: var(--ink); font-size: 0.9em; }
+.order figcaption p { margin: 0 0 0.4em; }
+.node rect { fill: var(--paper); stroke: var(--rule-strong); stroke-width: 1.2; }
+.node.book rect { stroke: var(--accent); }
+.node.planned rect { stroke-dasharray: 5 4; fill: none; }
+.node .code { font-size: 17px; font-weight: 600; fill: var(--ink-strong); }
+.node.book .code { fill: var(--accent); }
+.node .name { font-size: 12.5px; fill: var(--muted); }
+.edge { stroke: var(--muted); stroke-width: 1.3; fill: none; }
+.edge.optional { stroke-dasharray: 4 4; }
+.arrowhead { fill: var(--muted); }
+
+/* Footer */
+.site-footer { padding: 1.8rem 0 3rem; font-size: 0.82em; color: var(--muted); }
+.site-footer p { margin: 0 0 0.5em; max-width: var(--measure); }
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--ink-strong); }
+.sources a { margin-right: 0.9em; white-space: nowrap; }
+
+/* Math rendered at build time (mathjax.css styles the glyphs) */
+mjx-container { letter-spacing: normal; word-spacing: normal; }
+
+/* 404 */
+.not-found { max-width: var(--measure); padding: 3rem 0; }
 </style>
 </head>
 <body>
-<main>
-<button class="theme-toggle" type="button" hidden aria-label="Switch light or dark theme">Theme</button>
-<span class="badge">Work in progress</span>
+<a class="skip-link" href="#books">Skip to the books</a>
+<div class="page">
+<header class="masthead">
+<button class="theme-toggle" type="button" hidden aria-pressed="false" aria-label="Dark mode"><svg class="sun" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></svg><svg class="moon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/></svg></button>
 <h1>Math Atlas</h1>
-<p class="lede">A textbook series from first proofs to the graduate qualifying exam. Each volume is its own book; references between volumes link across, with hover previews. These are working drafts, rebuilt from the current branches.</p>
-<section class="series">
-<h2>Foundations</h2>
-<a class="card" href="fd1/" data-book="fd1"><h3>Logic and Proof<span class="short">FD1</span></h3></a>
-<a class="card" href="fd2/" data-book="fd2"><h3>Sets, Relations, and Cardinality<span class="short">FD2</span></h3></a>
-<a class="card" href="fd3/" data-book="fd3"><h3>Number Systems: From \(\nN\) to \(\nR\)<span class="short">FD3</span></h3></a>
+<p class="tagline">A series of textbooks for a reader working alone, from a first proof to the graduate qualifying exam in mathematics.</p>
+<p class="usage">Each volume is a book of its own, with its own contents, search and exercises. A reference to another volume links straight to it, and hovering over the link shows the cited result without leaving the page.</p>
+<p class="status">Work in progress: these are drafts, rebuilt from the current branches, and chapters appear as they are written.</p>
+</header>
+<main id="books">
+<section class="band" aria-labelledby="reading-order">
+<div class="band-head"><h2 id="reading-order">Reading order</h2><p>Where to start, and what each volume needs.</p></div>
+<figure class="order"><svg class="wide" viewBox="0 0 748 150" style="max-width:860.2px" role="img" aria-labelledby="reading-order-caption" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrow-wide" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs><line class="edge" x1="121.0" y1="32.0" x2="159.0" y2="32.0" marker-end="url(#arrow-wide)"/><line class="edge" x1="277.0" y1="32.0" x2="315.0" y2="32.0" marker-end="url(#arrow-wide)"/><line class="edge" x1="433.0" y1="32.0" x2="471.0" y2="32.0" marker-end="url(#arrow-wide)"/><line class="edge" x1="589.0" y1="32.0" x2="627.0" y2="32.0" marker-end="url(#arrow-wide)"/><line class="edge" x1="270.6" y1="61.0" x2="321.4" y2="89.0" marker-end="url(#arrow-wide)"/><line class="edge optional" x1="374.0" y1="61.0" x2="374.0" y2="89.0" marker-end="url(#arrow-wide)"/><g class="node book"><rect x="6" y="6" width="112" height="52" rx="7"/><text class="code" x="62" y="30" text-anchor="middle">F1</text><text class="name" x="62" y="47" text-anchor="middle">Logic</text></g><g class="node book"><rect x="162" y="6" width="112" height="52" rx="7"/><text class="code" x="218" y="30" text-anchor="middle">F2</text><text class="name" x="218" y="47" text-anchor="middle">Sets</text></g><g class="node book"><rect x="318" y="6" width="112" height="52" rx="7"/><text class="code" x="374" y="30" text-anchor="middle">F3</text><text class="name" x="374" y="47" text-anchor="middle">Number systems</text></g><g class="node planned"><rect x="474" y="6" width="112" height="52" rx="7"/><text class="code" x="530" y="30" text-anchor="middle">F4</text><text class="name" x="530" y="47" text-anchor="middle">Algebra (planned)</text></g><g class="node book"><rect x="630" y="6" width="112" height="52" rx="7"/><text class="code" x="686" y="30" text-anchor="middle">LA</text><text class="name" x="686" y="47" text-anchor="middle">Linear algebra</text></g><g class="node book"><rect x="318" y="92" width="112" height="52" rx="7"/><text class="code" x="374" y="116" text-anchor="middle">AN1</text><text class="name" x="374" y="133" text-anchor="middle">Real analysis</text></g></svg><svg class="narrow" viewBox="0 0 392 228" style="max-width:450.8px" role="img" aria-labelledby="reading-order-caption" xmlns="http://www.w3.org/2000/svg"><defs><marker id="arrow-narrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0,0 L10,5 L0,10 z"/></marker></defs><line class="edge" x1="121.0" y1="32.0" x2="137.0" y2="32.0" marker-end="url(#arrow-narrow)"/><line class="edge" x1="255.0" y1="32.0" x2="271.0" y2="32.0" marker-end="url(#arrow-narrow)"/><line class="edge" x1="330.0" y1="61.0" x2="330.0" y2="85.0" marker-end="url(#arrow-narrow)"/><line class="edge" x1="330.0" y1="143.0" x2="330.0" y2="167.0" marker-end="url(#arrow-narrow)"/><line class="edge" x1="196.0" y1="61.0" x2="196.0" y2="85.0" marker-end="url(#arrow-narrow)"/><line class="edge optional" x1="282.6" y1="61.0" x2="243.4" y2="85.0" marker-end="url(#arrow-narrow)"/><g class="node book"><rect x="6" y="6" width="112" height="52" rx="7"/><text class="code" x="62" y="30" text-anchor="middle">F1</text><text class="name" x="62" y="47" text-anchor="middle">Logic</text></g><g class="node book"><rect x="140" y="6" width="112" height="52" rx="7"/><text class="code" x="196" y="30" text-anchor="middle">F2</text><text class="name" x="196" y="47" text-anchor="middle">Sets</text></g><g class="node book"><rect x="274" y="6" width="112" height="52" rx="7"/><text class="code" x="330" y="30" text-anchor="middle">F3</text><text class="name" x="330" y="47" text-anchor="middle">Number systems</text></g><g class="node planned"><rect x="274" y="88" width="112" height="52" rx="7"/><text class="code" x="330" y="112" text-anchor="middle">F4</text><text class="name" x="330" y="129" text-anchor="middle">Algebra (planned)</text></g><g class="node book"><rect x="274" y="170" width="112" height="52" rx="7"/><text class="code" x="330" y="194" text-anchor="middle">LA</text><text class="name" x="330" y="211" text-anchor="middle">Linear algebra</text></g><g class="node book"><rect x="140" y="88" width="112" height="52" rx="7"/><text class="code" x="196" y="112" text-anchor="middle">AN1</text><text class="name" x="196" y="129" text-anchor="middle">Real analysis</text></g></svg><figcaption id="reading-order-caption"><p>Start with F1 and read on to F2. Gate 0, the examination at the end of F2, Chapter 3, opens AN1. F3 builds <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Z}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Z</mi></mrow></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container> and <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container> out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container> (dashed arrow). F3 leads on to F4, planned, which will collect the algebra (complex numbers, fields, polynomials) that Linear Algebra uses.</p></figcaption></figure>
 </section>
-<section class="series">
-<h2>Analysis</h2>
-<a class="card" href="an1/" data-book="an1"><h3>Analysis on the Real Line<span class="short">AN1</span></h3></a>
-</section>
-<section class="series">
-<h2>Linear Algebra</h2>
-<a class="card" href="linear-algebra/" data-book="la"><h3>Linear Algebra<span class="short">LA</span></h3></a>
-</section>
-<section class="series">
-<h2>The atlas</h2>
-<a class="card" href="atlas/atlas.html"><h3>Dependency map</h3><p>Every planned volume and chapter, and how they depend on each other.</p></a>
-</section>
-<footer>Books: CC BY-NC-SA 4.0. Atlas registry and spec: CC BY 4.0. Source: <a href="https://github.com/AkizumiFox/math-atlas">github.com/AkizumiFox/math-atlas</a>.</footer>
+<section class="band" aria-labelledby="series-foundations"><div class="band-head"><h2 id="series-foundations">Foundations</h2><p>Proof, sets and numbers: what every later volume takes for granted, taught from the beginning.</p></div><ul class="cards"><li><article class="card" id="book-fd1" aria-labelledby="title-fd1" data-book="fd1">
+<p class="card-code">F1</p>
+<h3 id="title-fd1"><a href="fd1/">Logic and Proof</a></h3>
+<p class="card-blurb">Logic as the grammar of proof, for a reader who has never been asked to write one: derivations, rule by rule, for the connectives and quantifiers; truth tables, soundness and completeness; and the way back from derivations to ordinary mathematical prose.</p>
+<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span><span>5 of 5 chapters written · 39 sections</span></p>
+<p class="card-links"><a href="fd1/" aria-label="Read Logic and Proof">Read</a></p>
+</article></li><li><article class="card" id="book-fd2" aria-labelledby="title-fd2" data-book="fd2">
+<p class="card-code">F2</p>
+<h3 id="title-fd2"><a href="fd2/">Sets, Relations, and Cardinality</a></h3>
+<p class="card-blurb">Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem. Chapter 3 ends with Gate 0, the examination to pass before analysis.</p>
+<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i></i></span><span>3 of 4 chapters written · 19 sections</span></p>
+<p class="card-links"><a href="fd2/" aria-label="Read Sets, Relations, and Cardinality">Read</a></p>
+</article></li><li><article class="card" id="book-fd3" aria-labelledby="title-fd3" data-book="fd3">
+<p class="card-code">F3</p>
+<h3 id="title-fd3"><a href="fd3/">Number Systems: From <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container> to <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></a></h3>
+<p class="card-blurb">The number systems built out of sets: <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container> from the ZF axioms, <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Z}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Z</mi></mrow></math></mjx-assistive-mml></mjx-container> and <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container> as classes of pairs, divisibility and modular arithmetic, and finally <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container>, constructed from Cauchy sequences of rationals and proved to be a complete ordered field.</p>
+<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i></i><i></i></span><span>5 of 7 chapters written · 30 sections</span></p>
+<p class="card-links"><a href="fd3/" aria-label="Read Number Systems: From ℕ to ℝ">Read</a></p>
+</article></li></ul></section>
+<div class="band-row"><section class="band" aria-labelledby="series-analysis"><div class="band-head"><h2 id="series-analysis">Analysis</h2><p>Calculus made rigorous, then the analysis built on it: metric spaces, several variables, measure, Fourier and complex analysis.</p></div><ul class="cards"><li><article class="card" id="book-an1" aria-labelledby="title-an1" data-book="an1">
+<p class="card-code">AN1</p>
+<h3 id="title-an1"><a href="an1/">Analysis on the Real Line</a></h3>
+<p class="card-blurb">Analysis on the real line, from the axioms of a complete ordered field: sequences and series, limits and continuity, the derivative, the Riemann–Darboux integral and power series, each proved from the least upper bound axiom.</p>
+<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>1 of 11 chapters written · 7 sections</span></p>
+<p class="card-links"><a href="an1/" aria-label="Read Analysis on the Real Line">Read</a></p>
+</article></li></ul></section>
+<section class="band" aria-labelledby="series-linear-algebra"><div class="band-head"><h2 id="series-linear-algebra">Linear Algebra</h2><p>A companion series, written first and published on its own site; the volumes here cite it for facts about fields and matrices.</p></div><ul class="cards"><li><article class="card" id="book-la" aria-labelledby="title-la" data-book="la">
+<p class="card-code">LA</p>
+<h3 id="title-la"><a href="linear-algebra/">Linear Algebra</a></h3>
+<p class="card-blurb">Linear algebra for a reader working alone: vector spaces and linear maps, determinants and canonical forms, inner products and spectral theory, forms and tensors, and on to representations and numerical computation.</p>
+<p class="progress"><span>26 chapters · 237 sections</span></p>
+<p class="card-links"><a href="linear-algebra/" aria-label="Read Linear Algebra">Read</a> <a href="https://linear-algebra.akizumifox.com/book/book.pdf" aria-label="Linear Algebra as a PDF">PDF</a> <a href="https://linear-algebra.akizumifox.com/" aria-label="Linear Algebra on its own site">Own site</a></p>
+<p class="card-note">Mirrored here from its own site, <span class="nowrap">linear-algebra.akizumifox.com</span>, which holds the canonical copy.</p>
+</article></li></ul></section>
+<section class="band" aria-labelledby="series-the-atlas"><div class="band-head"><h2 id="series-the-atlas">The atlas</h2><p>The plan behind the series, kept as data.</p></div><ul class="cards"><li><article class="card" aria-labelledby="title-dependency-map">
+<p class="card-code">Map</p>
+<h3 id="title-dependency-map"><a href="atlas/atlas.html">Dependency map</a></h3>
+<p class="card-blurb">Every planned volume and chapter, and which chapters each one depends on, as an interactive graph.</p>
+<p class="card-links"><a href="atlas/atlas.html">Open the map</a></p>
+</article></li></ul></section></div>
 </main>
+<footer class="site-footer"><p>The books are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>; the atlas registry and specification under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; the tools and the book engine under the MIT licence.</p>
+<p class="sources">Source: <a href="https://github.com/AkizumiFox/foundations">AkizumiFox/foundations</a> <a href="https://github.com/AkizumiFox/analysis">AkizumiFox/analysis</a> <a href="https://github.com/AkizumiFox/math-atlas">AkizumiFox/math-atlas</a> <a href="https://github.com/AkizumiFox/book-engine">AkizumiFox/book-engine</a></p></footer>
+</div>
 <script>(function () {
     var button = document.querySelector('.theme-toggle');
     if (!button) return;
-    button.hidden = false;
-    button.addEventListener('click', function () {
-        var root = document.documentElement;
-        var current = root.dataset.theme
+    var root = document.documentElement;
+    function current() {
+        return root.dataset.theme
             || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        var next = current === 'dark' ? 'light' : 'dark';
+    }
+    function show() {
+        var dark = current() === 'dark';
+        button.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        button.title = dark ? 'Light mode' : 'Dark mode';
+    }
+    button.hidden = false;
+    show();
+    button.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
         try { localStorage.setItem('book-theme', next); } catch (e) {}
+        show();
     });
 })();</script>
 </body>
