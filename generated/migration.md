@@ -14,7 +14,7 @@
 | ab:6 | F2.1 Sets, Functions, Images, and Preimages |
 | ab:7 | F2.2 Equivalence Relations, Orders, and Induction |
 | ab:8 | F2.3 Cardinality: Countable and Uncountable Sets |
-| ab:9 | F3.1 The von Neumann Natural Numbers |
+| ab:9 | F3.1 The ZF Fragment and the von Neumann Natural Numbers |
 | ab:10 | F3.2 Building ℤ and ℚ from Equivalence Classes |
 | ab:11 | AN1.1 Ordered Fields and the Least Upper Bound Axiom |
 | ab:12 | AN1.2 Sequences, Subsequences, and Cauchy Sequences |
