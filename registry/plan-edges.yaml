@@ -32,7 +32,7 @@ AN1.6: {s: [AN1.4, AN1.5]}
 AN1.7: {s: [AN1.6]}
 AN1.8: {s: [AN1.6, AN1.7]}
 AN1.9: {s: [AN1.3, AN1.6, AN1.7, AN1.8]}
-AN1.10: {s: [AN1.7, AN1.9]}
+AN1.10: {s: [AN1.7, AN1.9], revisits: [F4.1]}  # ℂ 沿用 F4.1，不重新定義；F4.1 以 b 借用本章的 (T1)–(T5)，所以這裡不能有 s 邊指向 F4.1
 AN1.11: {s: [AN1.2, AN1.4, AN1.6], b: [F2.3], see: [F3.10, F3.3],
          scope: {F2.3: [F2.1]}, why: {F2.3: 序列論證中的可數選擇與超實數的超濾子（選擇公理的陳述；book.yaml 標為 flagged use）}}
 
@@ -46,13 +46,15 @@ F3.10: {s: [F3.9, F3.5]}  # thm-reals-commutative-ring: ℝ = 𝒞/𝒩 by F3.5'
 F3.3: {s: [F3.10, F3.4]}
 F3.4: {s: [F3.10, F3.9, F3.5], see: [F3.3]}  # as delivered: F3.9 throughout (ι_F, density, limits); R2 cites F3.5's thm-integers-mod-prime-field, thm-integers-mod-n-ring
 F3.5: {s: [F3.2]}
-F4.1: {s: [F2.1, F3.10]}
-F4.2: {s: [F3.5], see: [F4.1]}
-F4.4: {s: [F4.2]}
-F4.5: {s: [F4.4, F3.5]}  # 不用線代重寫 la ch06 §01–05 的多項式代數；LA2.6 之後以 revisits 指回
+F4.1: {s: [F2.1, F3.10, F3.4, F3.5], b: [AN1.10], scope: {AN1.10: [F2.1, F3.10]},
+       why: {AN1.10: cos、sin、π 的五個性質 (T1)–(T5)（ax-cosine-sine）：平方和、加法公式、cos θ = 1 ⟺ θ ∈ 2πℤ、單位圓的參數化、sin 在 0 與 π 之間為正}}
+       # F3.4：實數平方根（模長、複數平方根）；F3.5：帶餘除法與奇偶（n 次方根的計數）。代數基本定理的證明不經過 (T1)–(T5)，所以 F4.5 不依賴 AN1.10
+F4.2: {s: [F3.5], see: [F4.1, F3.10, F3.4, F3.9]}  # see：例題與解答裡的 ℝ、ℚ(√2)、ℚ(t)
+F4.4: {s: [F4.2], see: [F4.1, F4.3]}  # see：只有 R1（群同態）與 R2（共軛）用到
+F4.5: {s: [F4.4, F3.5, F4.1, F3.10, F3.4]}  # §06 代數基本定理只用 ℂ 的模長、平方根與 ℝ 的完備性（Liouville 證明見 CA.2 的 revisits）；不用線代重寫 la ch06 §01–05 的多項式代數；LA2.6 之後以 revisits 指回
 
 # ───────────── LA 系列：補計算圖看不到的借用 ─────────────
-LA2.6: {b: [AN1.6], scope: {AN1.6: [LA2.6]}, why: {AN1.6: 第 6 章代數基本定理證明所隔離的兩個分析事實（極值定理等）}}
+LA2.6: {revisits: [F4.5], b: [AN1.6], scope: {AN1.6: [LA2.6]}, why: {AN1.6: 第 6 章代數基本定理證明所隔離的兩個分析事實（極值定理等）}}
 LA2.10: {b: [AN1.10], scope: {AN1.10: [LA2.10, F4.1]}, why: {AN1.10: §10.9 矩陣函數所借用的五個分析事實（冪級數、逐項微分）}}
 LA4.14: {see: [AN3.1]}  # §14.6 二階導數判別法移到 AN3.1（2026-10-09）；LA4 只留純代數的定性判準
 MA.16: {b: [AN1.11, AN2.3], scope: {AN1.11: [MA.16], AN2.3: [MA.16, LA2.6]}, why: {AN1.11: (A1)–(A2) 完備性、單調收斂, AN2.3: (A3)–(A6) 閉有界集的緊緻性、極值、中間值、均值定理（有限維）}}
@@ -82,7 +84,7 @@ AN3.7: {s: [AN3.4, AN3.5, AN3.6], revisits: [MT.6]}
 
 # ───────────── AL1 群 ─────────────
 F4.3: {s: [F2.1, F3.5]}
-AL1.2: {s: [F4.3, F3.5]}
+AL1.2: {s: [F4.3, F3.5], revisits: [F4.5]}  # F^× 的有限子群是循環群：根的個數（F4.5 thm-polynomial-root-count）
 AL1.3: {s: [F4.3]}
 AL1.4: {s: [AL1.2, F2.2]}
 AL1.5: {s: [AL1.4]}
@@ -98,8 +100,8 @@ AL2.1: {s: [AL1.5]}
 AL2.2: {s: [AL2.1, F4.2]}
 AL2.3: {s: [AL2.1], b: [F2.4], scope: {F2.4: [F2.2]}, why: {F2.4: 極大理想的存在用 Zorn 引理}}
 AL2.4: {s: [AL2.1]}
-AL2.5: {s: [AL2.2, AL2.3], revisits: [F3.5]}
-AL2.6: {s: [AL2.5, F4.4]}
+AL2.5: {s: [AL2.2, AL2.3], revisits: [F3.5, F4.5]}
+AL2.6: {s: [AL2.5, F4.4], revisits: [F4.5]}  # Gauss 引理與 Eisenstein 判別法留在這裡，不放進 F4.5
 AL2.7: {s: [AL2.6, LA1.1]}
 AL2.8: {s: [AL2.7], b: [F2.4], scope: {F2.4: [F2.2]}, why: {F2.4: 代數閉包的存在用 Zorn 引理}}
 AL2.9: {s: [AL2.8, AL1.2]}
@@ -148,7 +150,7 @@ PR.4: {s: [PR.1, F4.1, AN1.10], b: [HA.6], scope: {HA.6: [PR.4, MT.2, AN1.10, F4
 
 # ───────────── CA 複分析 ─────────────
 CA.1: {s: [F4.1, AN1.10, AN2.3], b: [AN3.1], scope: {AN3.1: [CA.1]}, why: {AN3.1: ℝ²→ℝ² 的 Fréchet 導數與 Jacobian}}
-CA.2: {s: [CA.1, AN1.8], b: [AN3.4], see: [MT.6], scope: {AN3.4: [AN1.7, AN1.8, AN2.3]}, why: {AN3.4: 積分號下微分（連續被積函數）}}
+CA.2: {s: [CA.1, AN1.8], b: [AN3.4], see: [MT.6], revisits: [F4.5], scope: {AN3.4: [AN1.7, AN1.8, AN2.3]}, why: {AN3.4: 積分號下微分（連續被積函數）}}  # Liouville 證明代數基本定理，revisits F4.5 的初等證明
 CA.3: {s: [CA.2]}
 CA.4: {s: [CA.3, AN2.3]}
 CA.5: {s: [CA.4, AN2.5]}

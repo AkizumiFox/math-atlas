@@ -393,6 +393,8 @@ def check_ids(at):
         at.warnings.append(f"{len(open_)} labels defined in more than one book are not triaged in "
                            f"registry/label-triage.yaml: {', '.join(open_)}")
     for lbl in sorted(set(at.label_triage) - dup):
+        if at.label_triage[lbl].get("restates"):
+            continue  # a restatement of a foundations label under another name: not a duplicate by construction
         at.warnings.append(f"label-triage.yaml: {lbl} is no longer defined in two books; delete it")
     for row in {id(r): r for r in at.label_triage.values()}.values():
         if row.get("kind") not in ("same", "special", "clash") or not row.get("why"):

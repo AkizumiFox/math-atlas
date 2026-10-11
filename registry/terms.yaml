@@ -1067,7 +1067,7 @@
 - {id: infinite-codimension, en: infinite codimension, zh: null, naer: missing, def: def-codimension, ch: LA1.5}
 - {id: linear-functional, en: linear functional, zh: 線性泛函, naer: univ, def: def-linear-functional, ch: LA1.5}
 - {id: annihilate, en: annihilate, zh: null, naer: missing, def: def-annihilating-polynomial, ch: LA2.6}
-- {id: associate, en: associate, zh: null, naer: missing, def: def-divisibility-polynomials, ch: LA2.6}
+- {id: associate, en: associate, zh: null, naer: missing, def: def-polynomial-divides, ch: F4.5, also: [def-divisibility-polynomials@LA2.6]}
 - {id: congruent-modulo, en: congruent modulo, zh: null, naer: missing, def: def-congruence-polynomials, ch: LA2.6}
 - {id: coprime, en: coprime, zh: 互質, naer: univ, def: def-coprime, ch: LA2.6}
 - id: divisor
@@ -1083,9 +1083,10 @@
   en: greatest common divisor
   zh: null
   naer: choose
-  def: def-gcd-polynomials
-  ch: LA2.6
+  def: def-polynomial-gcd
+  ch: F4.5
   zh_candidates: [最大公因子, 最大公因數]
+  also: [def-gcd-polynomials@LA2.6]
 - id: ideal
   en: ideal
   zh: 理想[子環]
@@ -1097,11 +1098,11 @@
   en: irreducible
   zh: null
   naer: missing
-  def: def-irreducible-polynomial
-  ch: LA2.6
-  also: [def-simple-module@AL4.8, def-irreducible-representation@AL4.8, def-character@AL4.8, def-irreducible@MA.19]
+  def: def-irreducible-over-field
+  ch: F4.5
+  also: [def-irreducible-polynomial@LA2.6, def-simple-module@AL4.8, def-irreducible-representation@AL4.8, def-character@AL4.8, def-irreducible@MA.19]
 - {id: lagrange-basis, en: Lagrange basis, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
-- {id: lagrange-polynomial, en: Lagrange polynomial, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
+- {id: lagrange-polynomial, en: Lagrange polynomial, zh: null, naer: missing, def: def-lagrange-polynomials-for-nodes, ch: F4.5, also: [def-lagrange-basis@LA2.6]}
 - {id: least-common-multiple, en: least common multiple, zh: 最小公倍數, naer: univ, def: def-lcm-polynomials, ch: LA2.6}
 - id: multiple
   en: multiple

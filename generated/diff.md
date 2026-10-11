@@ -26,7 +26,6 @@
 - `thm-dedekind-lub`（F3.3）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.3 的硬路徑
 - `thm-r-unique`（F3.4）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
 - `thm-r-unique`（F3.4）uses `thm-naturals-unbounded`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
-- `def-complex-numbers`（F4.1）borrows `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F4.1 的硬路徑
 
 ## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）
 

@@ -34,11 +34,11 @@ flowchart TD
   ST["ST Axiomatic Set Theory"]:::side
   F1 --> F2
   F2 --> F3
+  AN1 -.-> F4
   F3 --> F4
   F2 --> AN1
   F4 --> LA1
   F4 --> AL1
-  AN1 -.-> LA2
   LA1 --> LA2
   LA2 --> LA3
   LA3 --> LA4
@@ -135,17 +135,20 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
-  F3_10["F3.10 Constructing the Real Numbers from Cauchy Sequences"]:::ext
+  F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
   F4_1["1 Complex Numbers"]
   F4_2["2 Fields"]
   F4_3["3 Groups, Subgroups, and Homomorphisms"]
   F4_4["4 Formal Polynomials"]
   F4_5["5 Polynomials over a Field"]
-  F3_10 --> F4_1
+  AN1_10 -.-> F4_1
+  F3_4 --> F4_1
   F3_5 --> F4_2
   F3_5 --> F4_3
   F4_2 --> F4_4
+  F4_1 --> F4_5
   F4_4 --> F4_5
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -250,8 +253,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_6["AN1.6 Continuous Functions on Compact Sets and Intervals"]:::ext
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F4_1["F4.1 Complex Numbers"]:::ext
   F4_3["F4.3 Groups, Subgroups, and Homomorphisms"]:::ext
   LA1_5["LA1.5 Duality"]:::ext
@@ -260,14 +261,12 @@ flowchart LR
   LA2_8["8 Block Matrices"]
   LA2_9["9 Eigenvalues and Diagonalization"]
   LA2_10["10 Canonical Forms"]
-  AN1_6 -.-> LA2_6
   F4_1 --> LA2_6
   LA1_5 --> LA2_6
   F4_3 --> LA2_7
   LA2_6 --> LA2_7
   LA2_7 --> LA2_8
   LA2_8 --> LA2_9
-  AN1_10 -.-> LA2_10
   LA2_9 --> LA2_10
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -308,8 +307,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_9["AN1.9 Sequences and Series of Functions"]:::ext
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   AN1_11["AN1.11 The Forms of Completeness"]:::ext
   LA3_11["LA3.11 Inner Product Spaces"]:::ext
   AN2_1["1 Metric Spaces, Open Sets, and Continuity"]
@@ -321,11 +318,9 @@ flowchart LR
   AN2_7["7 Topological Spaces, Products, and Compactness"]:::segb
   AN2_8["8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::segb
   LA3_11 -.-> AN2_1
-  AN1_9 --> AN2_2
   AN1_11 --> AN2_2
   AN2_1 --> AN2_2
   AN2_2 --> AN2_3
-  AN1_10 --> AN2_4
   AN2_2 --> AN2_4
   AN2_3 --> AN2_5
   AN2_4 --> AN2_5
@@ -451,7 +446,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F4_1["F4.1 Complex Numbers"]:::ext
   LA3_12["LA3.12 Spectral Theory"]:::ext
   AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
@@ -466,7 +460,6 @@ flowchart LR
   HA_7["7 Fourier Analysis on Finite Abelian Groups"]:::opt
   HA_8["8 Dirichlet's Theorem on Primes in Arithmetic Progressions"]:::opt
   HA_9["9 What the Riemann Integral Lacks"]
-  AN1_10 --> HA_1
   F4_1 --> HA_1
   HA_1 --> HA_2
   AN2_2 --> HA_3
@@ -523,7 +516,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
   AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
@@ -540,7 +532,6 @@ flowchart LR
   CA_8a["8a Analytic Continuation and Monodromy"]
   CA_8b["8b Picard's Theorems"]:::opt
   CA_9["9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::opt
-  AN1_10 --> CA_1
   AN3_1 -.-> CA_1
   AN3_4 -.-> CA_2
   CA_1 --> CA_2

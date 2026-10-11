@@ -38,7 +38,8 @@ STATEMENT_EN = {"seminorm": "seminorm", "distribution": "distribution", "sequenc
                 "continuous": "continuous", "derivative": "derivative", "closed-set": "closed set",
                 "total-derivative": "total derivative", "partial-derivative": "partial derivative",
                 "determinant": "determinant", "elementary-matrix": "elementary matrix",
-                "positive-definite": "positive definite", "fourier-transform": "Fourier transform"}
+                "positive-definite": "positive definite", "fourier-transform": "Fourier transform",
+                "lagrange-polynomial": "Lagrange polynomial"}
 
 
 def norm(text):

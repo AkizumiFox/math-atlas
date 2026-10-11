@@ -3,6 +3,8 @@
 # kind: same     兩本書是同一份內容（第 0 章與 analysis-book Part 0 的重疊）：遷移到 F 冊時合併，keep 那本的版本留下
 #       special  一邊是另一邊的特例：一般版本當正式定義（keep），特例那邊的 label 改名並以 specializes 指回去
 #       clash    同一個 label 指完全不同的東西：rename 那本改名
+# restates: 另一個 label（`冊:label`）陳述同一個定義：兩個 label 都保留（各自有書在引用），這一列記錄它們是同一個概念；
+#           這類列不是重複 label，atlas.py 不會要求刪掉
 # 改名都會碰到「已發布」規則（spec/01）：線代書已上線，舊 label 要留「已移至⋯⋯」的錨點。
 
 - labels: [def-image]
@@ -30,3 +32,13 @@
   why: >-
     線代書第 0 章是集合與函數的速成版，和 analysis-book Part 0（F1、F2 的書稿來源）定義相同。遷移時以 analysis-book 為準；
     thm-strong-induction 線代版從任意整數 n₀ 起算，併入時寫成推論。
+
+- labels: [def-field]
+  kind: same
+  restates: fd3:def-commutative-ring-and-field
+  keep: both
+  decided: 2026-10-12
+  why: >-
+    F4.2 的 def-field（從線代書 §0.7 遷移，線代書已發布的引用需要這個 label）重述 fd3 F3.2 的
+    def-commutative-ring-and-field（fd3 各章引用它）：同一組公理 (F1)–(F9)，只是 1 ≠ 0 在 F4.2 收在 (F7) 裡、
+    在 fd3 單獨列出；F4.2 定義之後的 remark 證明兩者一致。F4.1 的「ℂ 是體」與 F4.2 的「體」因此是同一個概念。

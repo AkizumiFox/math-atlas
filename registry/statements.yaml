@@ -44,6 +44,11 @@ nodes:
   - [def-complex-numbers, F4.1, def, "ℂ := ℝ² 與乘法", A1, R1]
   - [def-field, F4.2, def, "體公理", A2, R1]
   - [def-polynomial-ring, F4.4, def, "形式多項式 F[x]", A2, R1]
+  # F4.5 是 F[x] 整除語彙的正式定義（2026-10-12 作者決定；LA2.6 的同名定義列在 terms.yaml 的 also）
+  - [def-polynomial-divides, F4.5, def, "F[x] 的整除與相伴", A2, R1, associate]
+  - [def-polynomial-gcd, F4.5, def, "多項式的（首一）最大公因式", A2, R1, greatest-common-divisor]
+  - [def-irreducible-over-field, F4.5, def, "體上的不可約多項式", A2, R1, irreducible]
+  - [def-lagrange-polynomials-for-nodes, F4.5, def, "給定節點的 Lagrange 多項式", A1, R1, lagrange-polynomial]
   # 主幹：完備性
   - [thm-completeness-equiv, AN1.11, thm, "LUB ⇔ 單調收斂 ⇔ 區間套＋阿基米德 ⇔ BW ⇔ Cauchy 完備＋阿基米德", A1, R3]
   - [def-complete-metric, AN2.2, def, "完備度量空間；完備化", A2, R2]
