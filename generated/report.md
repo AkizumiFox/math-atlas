@@ -1,7 +1,7 @@
 # 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）
 
 - 冊：26；章：175（選讀 9）
-- 章層級邊：s 572、b 20、軟邊 95；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
+- 章層級邊：s 573、b 20、軟邊 95；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
 
 除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。
 
@@ -125,7 +125,7 @@ Berkeley prelim 線代題，程度為大學 honors 課。
 | F2.3 Cardinality: Countable and Uncountable Sets | 156 | 1 | 24 |
 | F3.1 The ZF Fragment and the von Neumann Natural Numbers | 140 | 1 | 22 |
 | F3.2 Building the Integers and the Rationals from Equivalence Classes | 139 | 1 | 22 |
-| F3.5 Divisibility, Division with Remainder, and Modular Arithmetic | 132 | 1 | 22 |
+| F3.5 Divisibility, Division with Remainder, and Modular Arithmetic | 137 | 1 | 22 |
 | F4.3 Groups, Subgroups, and Homomorphisms | 121 | 1 | 20 |
 | F2.4 Zorn's Lemma | 119 | 1 | 20 |
 | F4.2 Fields | 117 | 1 | 20 |

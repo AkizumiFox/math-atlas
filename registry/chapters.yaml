@@ -38,7 +38,7 @@ F3:
   - {id: F3.2, title: 'Building the Integers and the Rationals from Equivalence Classes', title_zh: 以等價類建構 ℤ 與 ℚ, src: ab:10}
   - {id: F3.5, title: 'Divisibility, Division with Remainder, and Modular Arithmetic', title_zh: 整除、帶餘除法與模運算, src: new}
   - {id: F3.9, title: "Ordered Fields and Sequences in an Ordered Field", title_zh: 有序體與其中的數列, src: new}
-  - {id: F3.10, title: 'Constructing \(\nR\) from Cauchy Sequences', title_zh: 以 Cauchy 數列建構 ℝ, src: new}
+  - {id: F3.10, title: "Constructing the Real Numbers from Cauchy Sequences", title_zh: 以 Cauchy 數列建構實數, src: new}
   - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23}
   - {id: F3.3, title: 'Constructing \(\nR\) by Dedekind Cuts', title_zh: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
 
