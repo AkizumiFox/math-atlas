@@ -128,7 +128,7 @@
 ## 尚無書稿（`new`）
 
 - **F2**：F2.4 Zorn's Lemma
-- **F3**：F3.5 Divisibility, Division with Remainder, and ℤ/nℤ、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing ℝ from Cauchy Sequences
+- **F3**：F3.5 Divisibility, Division with Remainder, and Modular Arithmetic、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing ℝ from Cauchy Sequences
 - **F4**：F4.5 Polynomials over a Field
 - **AN3**：AN3.5 Submanifolds of ℝⁿ and Tangent Spaces、AN3.6 Differential Forms and the Exterior Derivative、AN3.7 Integration on Manifolds and Stokes' Theorem
 - **AL1**：AL1.2 Cyclic Groups、AL1.3 Symmetric Groups and the Sign of a Permutation、AL1.4 Cosets and Lagrange's Theorem、AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems、AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation、AL1.7 The Sylow Theorems、AL1.8 Direct and Semidirect Products, and Finite Abelian Groups、AL1.9 Composition Series, Solvable Groups, and Nilpotent Groups、AL1.10 The Simplicity of Aₙ、AL1.11 Free Groups and Presentations

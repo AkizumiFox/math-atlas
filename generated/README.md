@@ -113,7 +113,7 @@ flowchart LR
   F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
   F3_1["1 The ZF Fragment and the von Neumann Natural Numbers"]
   F3_2["2 Building the Integers and the Rationals from Equivalence Classes"]
-  F3_5["5 Divisibility, Division with Remainder, and ℤ/nℤ"]
+  F3_5["5 Divisibility, Division with Remainder, and Modular Arithmetic"]
   F3_9["9 Ordered Fields and Sequences in an Ordered Field"]
   F3_10["10 Constructing ℝ from Cauchy Sequences"]
   F3_4["4 The Complete Ordered Field Is Unique"]
@@ -134,7 +134,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F3_5["F3.5 Divisibility, Division with Remainder, and ℤ/nℤ"]:::ext
+  F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
   F3_10["F3.10 Constructing ℝ from Cauchy Sequences"]:::ext
   F4_1["1 Complex Numbers"]
   F4_2["2 Fields"]
