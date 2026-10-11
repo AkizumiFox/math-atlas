@@ -27,7 +27,7 @@
 | ab:19 | AN1.9 Sequences and Series of Functions |
 | ab:20 | AN1.10 Power Series, Taylor Series, and the Elementary Functions |
 | ab:21 | AN1.11 The Forms of Completeness |
-| ab:22 | F3.3 Constructing ℝ by Dedekind Cuts（選讀） |
+| ab:22 | F3.3 Constructing the Real Numbers by Dedekind Cuts（選讀） |
 | ab:23 | F3.4 The Complete Ordered Field Is Unique |
 | ab:24 | AN2.1 Metric Spaces, Open Sets, and Continuity |
 | ab:25 | AN2.2 Completeness and the Completion of a Metric Space |

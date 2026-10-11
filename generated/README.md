@@ -117,7 +117,7 @@ flowchart LR
   F3_9["9 Ordered Fields and Sequences in an Ordered Field"]
   F3_10["10 Constructing the Real Numbers from Cauchy Sequences"]
   F3_4["4 The Complete Ordered Field Is Unique"]
-  F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
+  F3_3["3 Constructing the Real Numbers by Dedekind Cuts"]:::opt
   F2_3 --> F3_1
   F3_1 --> F3_2
   F3_2 --> F3_5

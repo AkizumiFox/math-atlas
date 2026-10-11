@@ -40,7 +40,7 @@ F3:
   - {id: F3.9, title: "Ordered Fields and Sequences in an Ordered Field", title_zh: 有序體與其中的數列, src: new}
   - {id: F3.10, title: "Constructing the Real Numbers from Cauchy Sequences", title_zh: 以 Cauchy 數列建構實數, src: new}
   - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23}
-  - {id: F3.3, title: 'Constructing \(\nR\) by Dedekind Cuts', title_zh: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
+  - {id: F3.3, title: "Constructing the Real Numbers by Dedekind Cuts", title_zh: 以 Dedekind 分割建構實數, src: ab:22, opt: true}
 
 F4:
   - {id: F4.1, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
