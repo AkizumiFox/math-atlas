@@ -2,7 +2,7 @@
 # 順序即預設的全套閱讀順序（只是建議，依賴以 plan-edges 與計算邊為準）。
 # branch: found（基礎）| analysis | linalg | algebra | side（支線）
 # tier:   T1 碩士入學 | T2 資格考核心 | T3 延伸（支線）
-# repo:   書稿來源；fd = foundations，ab = analysis-book，la = linear-algebra，new = 尚無書稿
+# repo:   書稿來源；fd = foundations，ab = analysis（GitHub AkizumiFox/analysis，本機 analysis-series；2026-10-12 自 analysis-book 切出，ab:N 章號仍指原 book.yaml），la = linear-algebra，new = 尚無書稿
 # book:   出版的系列（每個系列一個 repo）；prefix：該冊作為一本書的跨書引用前綴（@prefix:label），一冊一書，見 spec/06「系列與冊」
 # status: plan | drafting | published
 

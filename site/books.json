@@ -1,0 +1,25 @@
+{
+ "site-url": "https://akizumifox.github.io/math-atlas/",
+ "out": "../../math-atlas-site",
+ "build-dir": "_build/library",
+ "landing": {
+  "title": "Math Atlas",
+  "badge": "Work in progress",
+  "intro": "A textbook series from first proofs to the graduate qualifying exam. Each volume is its own book; references between volumes link across, with hover previews. These are working drafts, rebuilt from the current branches.",
+  "footer": "Books: CC BY-NC-SA 4.0. Atlas registry and spec: CC BY 4.0. Source: <a href=\"https://github.com/AkizumiFox/math-atlas\">github.com/AkizumiFox/math-atlas</a>.",
+  "groups": [
+   {"series": "Foundations"},
+   {"series": "Analysis"},
+   {"series": "Linear Algebra"},
+   {"title": "The atlas", "links": [{"title": "Dependency map", "href": "atlas/atlas.html", "blurb": "Every planned volume and chapter, and how they depend on each other."}]}
+  ]
+ },
+ "files": [{"from": "../generated/atlas.html", "to": "atlas/atlas.html"}],
+ "books": [
+  {"prefix": "fd1", "path": "../../foundations/fd1", "subdir": "fd1", "series": "Foundations", "short": "FD1"},
+  {"prefix": "fd2", "path": "../../foundations/fd2", "subdir": "fd2", "series": "Foundations", "short": "FD2"},
+  {"prefix": "fd3", "path": "../../foundations/fd3", "subdir": "fd3", "series": "Foundations", "short": "FD3"},
+  {"prefix": "an1", "path": "../../analysis-series/an1", "subdir": "an1", "series": "Analysis", "short": "AN1"},
+  {"prefix": "la", "path": "../../linear-algebra-engine", "subdir": "linear-algebra", "series": "Linear Algebra", "short": "LA", "canonical": "https://linear-algebra.akizumifox.com/"}
+ ]
+}
