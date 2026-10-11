@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructing the Real Numbers by Dedekind Cuts – Number
+Systems: From ℕ to ℝ</title>
+
+    <meta name="asset-prefix" content="../">
+    <meta name="page-path" content="ch07-reals-dedekind-cuts/index.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+            <meta name="description" content="The question behind the
+chapter is: if two people build the real numbers in different ways, in
+what sense do they have the same numbers?">
+            <link rel="canonical" href="https://akizumifox.github.io/math-atlas/fd3/ch07-reals-dedekind-cuts/index.html">
+    <meta property="og:url" content="https://akizumifox.github.io/math-atlas/fd3/ch07-reals-dedekind-cuts/index.html">
+        <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Number Systems: From ℕ to ℝ">
+    <meta property="og:title" content="Constructing the Real Numbers by
+Dedekind Cuts">
+        <meta property="og:description" content="The question behind the
+chapter is: if two people build the real numbers in different ways, in
+what sense do they have the same numbers?">
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="bbbb9839ec">
+    <link rel="stylesheet" href="../styles.css?v=bbbb9839ec">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="../mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-title">
+                    Number Systems: From <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span> to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
+                </a>
+                <div class="sidebar-tools">
+                    <a href="../book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="../index.html">Preface</a></li><li class="nav-item nav-extra"><a href="../paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra"><a href="../results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="../graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="../ch01-zf-and-natural-numbers/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">The ZF Fragment and the von Neumann Natural Numbers</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/01-sets-from-axioms.html" title="Axioms for Sets"><span class="nav-section-number">1.1</span><span class="nav-section-title">Axioms for Sets</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/02-pairs-as-sets.html" title="Ordered Pairs Built from Sets"><span class="nav-section-number">1.2</span><span class="nav-section-title">Ordered Pairs Built from Sets</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/03-the-set-omega.html" title="Successors, Inductive Sets and the Natural Numbers"><span class="nav-section-number">1.3</span><span class="nav-section-title">Successors, Inductive Sets and the Natural Numbers</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/04-peano-properties.html" title="The Natural Numbers Satisfy Peano's Axioms"><span class="nav-section-number">1.4</span><span class="nav-section-title">The Natural Numbers Satisfy Peano's Axioms</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/05-recursion-and-arithmetic.html" title="The Recursion Theorem; Addition and Multiplication"><span class="nav-section-number">1.5</span><span class="nav-section-title">The Recursion Theorem; Addition and Multiplication</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/06-order-on-omega.html" title="Order and Well-Ordering of the Natural Numbers"><span class="nav-section-number">1.6</span><span class="nav-section-title">Order and Well-Ordering of the Natural Numbers</span></a></li><li class="nav-section-item"><a href="../ch01-zf-and-natural-numbers/07-categoricity.html" title="All Peano Systems Are Alike"><span class="nav-section-number">1.7</span><span class="nav-section-title">All Peano Systems Are Alike</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="1"><a href="../ch02-integers-and-rationals/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Building the Integers and the Rationals from Equivalence Classes</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch02-integers-and-rationals/01-integers-as-classes.html" title="The Integers as Classes of Pairs"><span class="nav-section-number">2.1</span><span class="nav-section-title">The Integers as Classes of Pairs</span></a></li><li class="nav-section-item"><a href="../ch02-integers-and-rationals/02-well-defined-operations.html" title="Well-Definedness, and the Arithmetic of the Integers"><span class="nav-section-number">2.2</span><span class="nav-section-title">Well-Definedness, and the Arithmetic of the Integers</span></a></li><li class="nav-section-item"><a href="../ch02-integers-and-rationals/03-ordered-rings.html" title="The Integers as an Ordered Ring"><span class="nav-section-number">2.3</span><span class="nav-section-title">The Integers as an Ordered Ring</span></a></li><li class="nav-section-item"><a href="../ch02-integers-and-rationals/04-rationals-as-classes.html" title="The Rationals as Classes of Fractions"><span class="nav-section-number">2.4</span><span class="nav-section-title">The Rationals as Classes of Fractions</span></a></li><li class="nav-section-item"><a href="../ch02-integers-and-rationals/05-ordered-field-of-rationals.html" title="The Rationals as an Ordered Field; the Archimedean Property"><span class="nav-section-number">2.5</span><span class="nav-section-title">The Rationals as an Ordered Field; the Archimedean Property</span></a></li><li class="nav-section-item"><a href="../ch02-integers-and-rationals/06-gaps-in-the-rationals.html" title="The Gaps in the Rationals"><span class="nav-section-number">2.6</span><span class="nav-section-title">The Gaps in the Rationals</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="2"><a href="../ch03-divisibility-and-congruences/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Divisibility, Division with Remainder, and Modular Arithmetic</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch03-divisibility-and-congruences/01-division-with-remainder.html" title="Divisibility and Division with Remainder"><span class="nav-section-number">3.1</span><span class="nav-section-title">Divisibility and Division with Remainder</span></a></li><li class="nav-section-item"><a href="../ch03-divisibility-and-congruences/02-gcd-and-bezout.html" title="The Greatest Common Divisor, Bézout, and the Euclidean Algorithm"><span class="nav-section-number">3.2</span><span class="nav-section-title">The Greatest Common Divisor, Bézout, and the Euclidean Algorithm</span></a></li><li class="nav-section-item"><a href="../ch03-divisibility-and-congruences/03-unique-factorization.html" title="Euclid's Lemma and the Fundamental Theorem of Arithmetic"><span class="nav-section-number">3.3</span><span class="nav-section-title">Euclid's Lemma and the Fundamental Theorem of Arithmetic</span></a></li><li class="nav-section-item"><a href="../ch03-divisibility-and-congruences/04-quotient-rings.html" title="Ideals, Quotient Rings, and the Integers Modulo n"><span class="nav-section-number">3.4</span><span class="nav-section-title">Ideals, Quotient Rings, and the Integers Modulo n</span></a></li><li class="nav-section-item"><a href="../ch03-divisibility-and-congruences/05-units-and-crt.html" title="Units, Prime Moduli, and the Chinese Remainder Theorem"><span class="nav-section-number">3.5</span><span class="nav-section-title">Units, Prime Moduli, and the Chinese Remainder Theorem</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="3"><a href="../ch04-ordered-field-sequences/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Ordered Fields and Sequences in an Ordered Field</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/01-rules-and-absolute-value.html" title="Working in an Ordered Field"><span class="nav-section-number">4.1</span><span class="nav-section-title">Working in an Ordered Field</span></a></li><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/02-naturals-and-archimedes.html" title="The Rationals inside an Ordered Field; the Archimedean Property"><span class="nav-section-number">4.2</span><span class="nav-section-title">The Rationals inside an Ordered Field; the Archimedean Property</span></a></li><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/03-limits.html" title="Sequences and Limits in an Ordered Field"><span class="nav-section-number">4.3</span><span class="nav-section-title">Sequences and Limits in an Ordered Field</span></a></li><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/04-limit-laws.html" title="The Algebra and Order of Limits"><span class="nav-section-number">4.4</span><span class="nav-section-title">The Algebra and Order of Limits</span></a></li><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/05-cauchy-sequences.html" title="Cauchy Sequences"><span class="nav-section-number">4.5</span><span class="nav-section-title">Cauchy Sequences</span></a></li><li class="nav-section-item"><a href="../ch04-ordered-field-sequences/06-a-cauchy-sequence-without-a-limit.html" title="A Cauchy Sequence with No Rational Limit"><span class="nav-section-number">4.6</span><span class="nav-section-title">A Cauchy Sequence with No Rational Limit</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="4"><a href="../ch05-reals-from-cauchy/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Constructing the Real Numbers from Cauchy Sequences</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/01-cauchy-sequences-of-rationals.html" title="Sequences That Should Converge"><span class="nav-section-number">5.1</span><span class="nav-section-title">Sequences That Should Converge</span></a></li><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/02-the-field-of-reals.html" title="The Real Numbers and Their Arithmetic"><span class="nav-section-number">5.2</span><span class="nav-section-title">The Real Numbers and Their Arithmetic</span></a></li><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/03-ordering-the-reals.html" title="Positive Classes and the Order"><span class="nav-section-number">5.3</span><span class="nav-section-title">Positive Classes and the Order</span></a></li><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/04-rationals-inside-the-reals.html" title="The Rationals Inside the Reals"><span class="nav-section-number">5.4</span><span class="nav-section-title">The Rationals Inside the Reals</span></a></li><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/05-completeness.html" title="Every Cauchy Sequence of Reals Converges"><span class="nav-section-number">5.5</span><span class="nav-section-title">Every Cauchy Sequence of Reals Converges</span></a></li><li class="nav-section-item"><a href="../ch05-reals-from-cauchy/06-the-least-upper-bound-property.html" title="The Real Numbers Form a Complete Ordered Field"><span class="nav-section-number">5.6</span><span class="nav-section-title">The Real Numbers Form a Complete Ordered Field</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="5"><a href="../ch06-complete-ordered-field/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">The Complete Ordered Field Is Unique</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch06-complete-ordered-field/01-completeness-and-archimedes.html" title="What Completeness Gives at Once"><span class="nav-section-number">6.1</span><span class="nav-section-title">What Completeness Gives at Once</span></a></li><li class="nav-section-item"><a href="../ch06-complete-ordered-field/02-measuring-by-rationals.html" title="Building the Map from the Rationals Below"><span class="nav-section-number">6.2</span><span class="nav-section-title">Building the Map from the Rationals Below</span></a></li><li class="nav-section-item"><a href="../ch06-complete-ordered-field/03-the-uniqueness-theorem.html" title="Two Complete Ordered Fields, One Isomorphism"><span class="nav-section-number">6.3</span><span class="nav-section-title">Two Complete Ordered Fields, One Isomorphism</span></a></li><li class="nav-section-item"><a href="../ch06-complete-ordered-field/04-two-non-examples.html" title="Two Non-Examples"><span class="nav-section-number">6.4</span><span class="nav-section-title">Two Non-Examples</span></a></li><li class="nav-section-item"><a href="../ch06-complete-ordered-field/05-axioms-or-model.html" title="Assume the Axioms or Build a Model"><span class="nav-section-number">6.5</span><span class="nav-section-title">Assume the Axioms or Build a Model</span></a></li></ul></li><li class="nav-chapter active"><div class="nav-chapter-header" data-chapter="6"><a href="../ch07-reals-dedekind-cuts/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Constructing the Real Numbers by Dedekind Cuts</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/01-cuts.html" title="Cuts"><span class="nav-section-number">7.1</span><span class="nav-section-title">Cuts</span></a></li><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/02-order-and-completeness.html" title="Order by Inclusion, and Least Upper Bounds by Unions"><span class="nav-section-number">7.2</span><span class="nav-section-title">Order by Inclusion, and Least Upper Bounds by Unions</span></a></li><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/03-addition.html" title="Addition and Negatives"><span class="nav-section-number">7.3</span><span class="nav-section-title">Addition and Negatives</span></a></li><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/04-multiplication.html" title="Multiplication"><span class="nav-section-number">7.4</span><span class="nav-section-title">Multiplication</span></a></li><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/05-rationals-inside.html" title="The Rationals Inside the Cuts, and a Complete Ordered Field"><span class="nav-section-number">7.5</span><span class="nav-section-title">The Rationals Inside the Cuts, and a Complete Ordered Field</span></a></li><li class="nav-section-item"><a href="../ch07-reals-dedekind-cuts/06-two-roads.html" title="The Two Roads Give the Same Real Numbers"><span class="nav-section-number">7.6</span><span class="nav-section-title">The Two Roads Give the Same Real Numbers</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="topbar-title">Number
+Systems: From <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span> to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span></a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../ch07-reals-dedekind-cuts/index.html">Constructing the Real Numbers by Dedekind Cuts</a></li>
+                        <li class="breadcrumb-item"><a href="../ch07-reals-dedekind-cuts/index.html"><span class="chapter-title">Constructing the Real Numbers by Dedekind Cuts</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">Constructing the
+Real Numbers by Dedekind Cuts</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="constructing-the-real-numbers-by-dedekind-cuts">
+
+                </div>
+                <p>This chapter is optional: nothing outside it depends
+                on it, and the volume’s main line ended with Chapter 6.
+                Chapter 5 built a real number as a class of Cauchy
+                sequences of rationals, many rational approximations
+                identified when they agree in the limit. Dedekind’s
+                idea, published in 1872, is shorter to state: a real
+                number is the set of all rationals
+                <strong>below</strong> it. The gap that Section 2.6
+                found in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> splits
+                the rationals into a lower piece, those that are
+                negative or have square below <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>, and the rest, and
+                Dedekind takes the lower piece <strong>as</strong> the
+                square root of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>.
+                The chapter makes this precise. It says which sets of
+                rationals qualify (the cuts), orders them by inclusion,
+                adds and multiplies them, and proves that they form a
+                complete ordered field <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}_{\mathrm D}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c44"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-TeXAtom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">D</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container></span> in which
+                the rationals sit as the rational cuts and the cut of
+                the gap squares to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
+                <p>The question behind the chapter is: <em>if two people
+                build the real numbers in different ways, in what sense
+                do they have the same numbers?</em> On this road the
+                costs fall the other way round from Chapter 5. The least
+                upper bound of a bounded set of cuts is its union,
+                checked in a few lines with no arithmetic at all, while
+                negatives need a margin and multiplication needs a
+                detour through positive cuts and signs; on the Cauchy
+                road the arithmetic was termwise and completeness took
+                two sections. The last section applies the uniqueness
+                theorem of Chapter 6 to the two models. There is exactly
+                one order-preserving field isomorphism from Chapter 5’s
+                field to the cuts, and it can be written down: it sends
+                a Cauchy real to the set of rationals below it. So the
+                two roads give the same real numbers, and Dedekind’s
+                definition is what the Cauchy model sees when it looks
+                at one of its elements through the rationals.</p>
+                <p><strong>What you need.</strong> Chapter 2 above all,
+                and Chapter 4; for Sections 7.5 and 7.6, Chapters 5 and
+                6; <em>Sets, Relations, and Cardinality</em>, Chapters 1
+                and 2, chiefly Section 2.6; and <em>Logic and
+                Proof</em>, Chapters 4 and 5. From Chapter 2: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> as an ordered field,
+                with the axioms (F1)–(F9) and (O1)–(O4) and their rules
+                (<a href="../ch02-integers-and-rationals/05-ordered-field-of-rationals.html#thm-rationals-ordered-field" class="xref" data-ref="thm-rationals-ordered-field" data-shard="ch02-integers-and-rationals">Theorem 2.5.1</a>,
+                <a href="../ch02-integers-and-rationals/03-ordered-rings.html#def-commutative-ring-and-field" class="xref" data-ref="def-commutative-ring-and-field" data-shard="ch02-integers-and-rationals">Definition 2.3.1</a>,
+                <a href="../ch02-integers-and-rationals/03-ordered-rings.html#def-ordered-ring-and-field" class="xref" data-ref="def-ordered-ring-and-field" data-shard="ch02-integers-and-rationals">Definition 2.3.2</a>,
+                <a href="../ch02-integers-and-rationals/03-ordered-rings.html#prp-ring-algebra" class="xref" data-ref="prp-ring-algebra" data-shard="ch02-integers-and-rationals">Proposition 2.3.2</a>,
+                <a href="../ch02-integers-and-rationals/03-ordered-rings.html#prp-ordered-ring-rules" class="xref" data-ref="prp-ordered-ring-rules" data-shard="ch02-integers-and-rationals">Proposition 2.3.5</a>,
+                <a href="../ch02-integers-and-rationals/05-ordered-field-of-rationals.html#prp-reciprocal-order" class="xref" data-ref="prp-reciprocal-order" data-shard="ch02-integers-and-rationals">Proposition 2.5.2</a>);
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> Archimedean (<a href="../ch02-integers-and-rationals/05-ordered-field-of-rationals.html#thm-rationals-archimedean" class="xref" data-ref="thm-rationals-archimedean" data-shard="ch02-integers-and-rationals">Theorem 2.5.3</a>,
+                <a href="../ch02-integers-and-rationals/05-ordered-field-of-rationals.html#cor-rationals-archimedean-epsilon" class="xref" data-ref="cor-rationals-archimedean-epsilon" data-shard="ch02-integers-and-rationals">Corollary 2.5.4</a>);
+                least elements and discreteness of the integers, for the
+                walk up by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch02-integers-and-rationals/03-ordered-rings.html#prp-integer-least-element" class="xref" data-ref="prp-integer-least-element" data-shard="ch02-integers-and-rationals">Proposition 2.3.6</a>,
+                <a href="../ch02-integers-and-rationals/03-ordered-rings.html#thm-integers-ordered-ring" class="xref" data-ref="thm-integers-ordered-ring" data-shard="ch02-integers-and-rationals">Theorem 2.3.4</a>);
+                and the gap at <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sqrt
+                2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-n"><mjx-c class="mjx-c221A"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.174em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch02-integers-and-rationals/06-gaps-in-the-rationals.html#thm-no-rational-square-two" class="xref" data-ref="thm-no-rational-square-two" data-shard="ch02-integers-and-rationals">Theorem 2.6.1</a>,
+                <a href="../ch02-integers-and-rationals/06-gaps-in-the-rationals.html#thm-rationals-gap-sqrt2" class="xref" data-ref="thm-rationals-gap-sqrt2" data-shard="ch02-integers-and-rationals">Theorem 2.6.2</a>).
+                From Chapter 4: halves and fractions in an ordered field
+                and the absolute value (<a href="../ch04-ordered-field-sequences/01-rules-and-absolute-value.html#prp-ordered-field-halves" class="xref" data-ref="prp-ordered-field-halves" data-shard="ch04-ordered-field-sequences">Proposition 4.1.2</a>,
+                <a href="../ch04-ordered-field-sequences/01-rules-and-absolute-value.html#lem-field-fraction-rules" class="xref" data-ref="lem-field-fraction-rules" data-shard="ch04-ordered-field-sequences">Lemma 4.1.1</a>,
+                <a href="../ch04-ordered-field-sequences/01-rules-and-absolute-value.html#def-absolute-value-ordered-field" class="xref" data-ref="def-absolute-value-ordered-field" data-shard="ch04-ordered-field-sequences">Definition 4.1.1</a>);
+                the one copy <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\iota_F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D704 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ι</mi><mi>F</mi></msub></math></mjx-assistive-mml></mjx-container></span> of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> in an ordered field,
+                with its uniqueness clause (<a href="../ch04-ordered-field-sequences/02-naturals-and-archimedes.html#thm-rationals-embed-ordered-field" class="xref" data-ref="thm-rationals-embed-ordered-field" data-shard="ch04-ordered-field-sequences">Theorem 4.2.2</a>);
+                the Archimedean property and density of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch04-ordered-field-sequences/02-naturals-and-archimedes.html#def-archimedean-ordered-field" class="xref" data-ref="def-archimedean-ordered-field" data-shard="ch04-ordered-field-sequences">Definition 4.2.2</a>,
+                <a href="../ch04-ordered-field-sequences/02-naturals-and-archimedes.html#thm-rationals-dense-ordered-field" class="xref" data-ref="thm-rationals-dense-ordered-field" data-shard="ch04-ordered-field-sequences">Theorem 4.2.5</a>);
+                and, for exercises of Section 7.6, limits and Cauchy
+                sequences (<a href="../ch04-ordered-field-sequences/03-limits.html#def-sequence-limit-ordered-field" class="xref" data-ref="def-sequence-limit-ordered-field" data-shard="ch04-ordered-field-sequences">Definition 4.3.2</a>,
+                <a href="../ch04-ordered-field-sequences/05-cauchy-sequences.html#def-cauchy-sequence-ordered-field" class="xref" data-ref="def-cauchy-sequence-ordered-field" data-shard="ch04-ordered-field-sequences">Definition 4.5.1</a>).
+                From Chapter 5: complete ordered fields (<a href="../ch05-reals-from-cauchy/06-the-least-upper-bound-property.html#def-complete-ordered-field" class="xref" data-ref="def-complete-ordered-field" data-shard="ch05-reals-from-cauchy">Definition 5.6.1</a>),
+                the Cauchy model and the theorem that it is one (<a href="../ch05-reals-from-cauchy/02-the-field-of-reals.html#def-reals-cauchy-classes" class="xref" data-ref="def-reals-cauchy-classes" data-shard="ch05-reals-from-cauchy">Definition 5.2.1</a>,
+                <a href="../ch05-reals-from-cauchy/06-the-least-upper-bound-property.html#thm-reals-complete-ordered-field" class="xref" data-ref="thm-reals-complete-ordered-field" data-shard="ch05-reals-from-cauchy">Theorem 5.6.3</a>),
+                its copy of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch05-reals-from-cauchy/04-rationals-inside-the-reals.html#thm-rational-embedding" class="xref" data-ref="thm-rational-embedding" data-shard="ch05-reals-from-cauchy">Theorem 5.4.1</a>),
+                and the Newton class whose square is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch05-reals-from-cauchy/04-rationals-inside-the-reals.html#exm-sqrt2-class" class="xref" data-ref="exm-sqrt2-class" data-shard="ch05-reals-from-cauchy">Example (The Class of the Newton Sequence)</a>).
+                From Chapter 6: order-preserving field maps and the
+                rationals below an element (<a href="../ch06-complete-ordered-field/01-completeness-and-archimedes.html#def-cof-order-preserving-map" class="xref" data-ref="def-cof-order-preserving-map" data-shard="ch06-complete-ordered-field">Definition 6.1.1</a>,
+                <a href="../ch06-complete-ordered-field/01-completeness-and-archimedes.html#def-cof-rationals-below" class="xref" data-ref="def-cof-rationals-below" data-shard="ch06-complete-ordered-field">Definition 6.1.2</a>,
+                <a href="../ch06-complete-ordered-field/01-completeness-and-archimedes.html#prp-cof-map-fixes-rationals" class="xref" data-ref="prp-cof-map-fixes-rationals" data-shard="ch06-complete-ordered-field">Proposition 6.1.1</a>),
+                and the rationals below a sum (<a href="../ch06-complete-ordered-field/02-measuring-by-rationals.html#lem-cof-below-sum" class="xref" data-ref="lem-cof-below-sum" data-shard="ch06-complete-ordered-field">Lemma 6.2.1</a>),
+                for the remark after the proof in Section 7.6 and
+                Exercise B1; the uniqueness theorem (<a href="../ch06-complete-ordered-field/03-the-uniqueness-theorem.html#thm-cof-uniqueness" class="xref" data-ref="thm-cof-uniqueness" data-shard="ch06-complete-ordered-field">Theorem 6.3.1</a>),
+                which Section 7.6 applies; that complete ordered fields
+                are Archimedean (<a href="../ch06-complete-ordered-field/01-completeness-and-archimedes.html#thm-cof-complete-archimedean" class="xref" data-ref="thm-cof-complete-archimedean" data-shard="ch06-complete-ordered-field">Theorem 6.1.2</a>),
+                for the second proof in Section 7.5; and the embedding
+                of an Archimedean field into a complete one, with its
+                property (⋆) and uniqueness clause (<a href="../ch06-complete-ordered-field/02-measuring-by-rationals.html#thm-cof-embedding-into-complete" class="xref" data-ref="thm-cof-embedding-into-complete" data-shard="ch06-complete-ordered-field">Theorem 6.2.3</a>),
+                together with the fold after <a href="../ch06-complete-ordered-field/03-the-uniqueness-theorem.html#cor-cof-isomorphic-to-cauchy-reals" class="xref" data-ref="cor-cof-isomorphic-to-cauchy-reals" data-shard="ch06-complete-ordered-field">Corollary 6.3.2</a>
+                on inverses of isomorphisms, for the inverse map in
+                Section 7.6. Chapter 1 supplies the axioms that make the
+                set of all cuts a set (<a href="../ch01-zf-and-natural-numbers/01-sets-from-axioms.html#ax-zf-fragment" class="xref" data-ref="ax-zf-fragment" data-shard="ch01-zf-and-natural-numbers">Axiom 1.1.1</a>).
+                From <em>Sets, Relations, and Cardinality</em>: power
+                sets, unions of families and inclusion, Sections 1.1 and
+                1.2 (<a href="../../fd2/ch01-sets-and-functions/02-set-operations.html#def-power-set" class="xref xref-external" data-ref="def-power-set" data-shard="ch01-sets-and-functions" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Definition 1.2.2</a>,
+                <a href="../../fd2/ch01-sets-and-functions/02-set-operations.html#def-family-union-intersection" class="xref xref-external" data-ref="def-family-union-intersection" data-shard="ch01-sets-and-functions" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Definition 1.2.4</a>,
+                <a href="../../fd2/ch01-sets-and-functions/01-sets-and-subsets.html#prp-subset-antisymmetric" class="xref xref-external" data-ref="prp-subset-antisymmetric" data-shard="ch01-sets-and-functions" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Proposition 1.1.1</a>,
+                <a href="../../fd2/ch01-sets-and-functions/01-sets-and-subsets.html#prp-subset-transitive" class="xref xref-external" data-ref="prp-subset-transitive" data-shard="ch01-sets-and-functions" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Proposition 1.1.2</a>);
+                sums of sets of numbers, Section 1.6 (<a href="../../fd2/ch01-sets-and-functions/06-images-and-preimages.html#exm-sets-of-numbers-as-images" class="xref xref-external" data-ref="exm-sets-of-numbers-as-images" data-shard="ch01-sets-and-functions" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Example (Reflections, scalings and sums as images)</a>);
+                partial orders, upper bounds and suprema, Section 2.6
+                (<a href="../../fd2/ch02-relations-and-induction/06-orders.html#def-partial-order" class="xref xref-external" data-ref="def-partial-order" data-shard="ch02-relations-and-induction" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Definition 2.6.1</a>,
+                <a href="../../fd2/ch02-relations-and-induction/06-orders.html#def-order-bounds" class="xref xref-external" data-ref="def-order-bounds" data-shard="ch02-relations-and-induction" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Definition 2.6.2</a>,
+                <a href="../../fd2/ch02-relations-and-induction/06-orders.html#def-order-supremum" class="xref xref-external" data-ref="def-order-supremum" data-shard="ch02-relations-and-induction" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Definition 2.6.5</a>);
+                and, for one review exercise, countable sets, Chapter 3
+                (<a href="../../fd2/ch03-countable-and-uncountable/02-countable-sets.html#thm-countable-characterizations" class="xref xref-external" data-ref="thm-countable-characterizations" data-shard="ch03-countable-and-uncountable" data-base="../../fd2/" data-book="Sets, Relations, and Cardinality">Sets, Relations, and Cardinality, Theorem 3.2.2</a>).
+                From <em>Logic and Proof</em>: the quantifier rules and
+                the negation of quantified statements, Chapter 4 (<a href="../../fd1/ch04-predicate-logic/04-universal-introduction.html#def-rules-universal" class="xref xref-external" data-ref="def-rules-universal" data-shard="ch04-predicate-logic" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Definition 4.4.1</a>,
+                <a href="../../fd1/ch04-predicate-logic/05-existential-introduction.html#def-rule-existential-introduction" class="xref xref-external" data-ref="def-rule-existential-introduction" data-shard="ch04-predicate-logic" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Definition 4.5.1</a>,
+                <a href="../../fd1/ch04-predicate-logic/06-existential-elimination.html#def-rules-existential" class="xref xref-external" data-ref="def-rules-existential" data-shard="ch04-predicate-logic" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Definition 4.6.1</a>,
+                <a href="../../fd1/ch04-predicate-logic/09-quantifier-laws.html#prp-bounded-quantifier-negation" class="xref xref-external" data-ref="prp-bounded-quantifier-negation" data-shard="ch04-predicate-logic" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Proposition 4.9.3</a>,
+                <a href="../../fd1/ch04-predicate-logic/09-quantifier-laws.html#prp-negated-implication" class="xref xref-external" data-ref="prp-negated-implication" data-shard="ch04-predicate-logic" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Proposition 4.9.2</a>),
+                and the catalogue of illegal steps, Chapter 5, for the
+                find-the-error exercises (<a href="../../fd1/ch05-from-derivations-to-prose/06-checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch05-from-derivations-to-prose" data-base="../../fd1/" data-book="Logic and Proof">Logic and Proof, Example (What is not allowed)</a>).</p>
+                <p><strong>Time.</strong> About 25 hours on the core
+                track (all of A, one B and one C per section, the exit
+                checks); about 30 hours for everything.</p>
+                <h2 id="roadmap">Roadmap</h2>
+                <ul>
+                <li><strong>Cuts.</strong> The set below the gap at
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sqrt 2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-n"><mjx-c class="mjx-c221A"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.174em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt></math></mjx-assistive-mml></mjx-container></span>; the
+                definition of a cut by three conditions, non-empty and
+                not all of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span>,
+                closed downward, no largest element, and the set <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}_{\mathrm D}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c44"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-TeXAtom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">D</mi></mrow></mrow></msub></math></mjx-assistive-mml></mjx-container></span> of all
+                cuts; the rational cuts <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="D_q"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45E TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mi>q</mi></msub></math></mjx-assistive-mml></mjx-container></span> and the cut <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span> of the gap; why
+                each condition is there, with a set that has a largest
+                element as the cautionary case; and the two lemmas the
+                rest of the chapter rests on, separation of inside and
+                outside and the walk up by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span>.</li>
+                <li><strong>Order by Inclusion, and Least Upper Bounds
+                by Unions.</strong> Cuts ordered by inclusion, which
+                recovers the order of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> on rational cuts and
+                is total because of separation; and the theorem that a
+                non-empty set of cuts bounded above has a supremum, its
+                union, with each hypothesis shown to be needed.</li>
+                <li><strong>Addition and Negatives.</strong> The sum of
+                two cuts as the set of sums, and the zero cut <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="D_0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mn>0</mn></msub></math></mjx-assistive-mml></mjx-container></span>; the natural recipe
+                for a negative, which fails on the rational cuts, and
+                its repair by a positive margin; the key proof that a
+                cut plus its negative is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="D_0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mn>0</mn></msub></math></mjx-assistive-mml></mjx-container></span>, by walking up; and
+                the cuts as an ordered abelian group.</li>
+                <li><strong>Multiplication.</strong> Why the set of all
+                products fails; the product of positive cuts, its laws
+                and the walk up in multiplicative form; the extension to
+                all cuts by absolute value and sign, through one lemma
+                of sign rules; distributivity, the reciprocal, and the
+                theorem that the cuts form an ordered field.</li>
+                <li><strong>The Rationals Inside the Cuts, and a
+                Complete Ordered Field.</strong> The rational cuts as
+                the copy of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span>,
+                with its order and arithmetic; density of the rational
+                cuts and the Archimedean property; the cut <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span> squares to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="D_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>D</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span> and is not rational;
+                and the cuts as a complete ordered field, by the union
+                theorem of Section 7.2.</li>
+                <li><strong>The Two Roads Give the Same Real
+                Numbers.</strong> The unique order-preserving field
+                isomorphism from Chapter 5’s field to the cuts, computed
+                explicitly as “the rationals below”, and its inverse as
+                a supremum; the two square roots of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span> matched; a table of
+                what each construction pays for; and review exercises
+                that return to separation by rationals (Chapter 6),
+                limits and Cauchy sequences in an ordered field (Chapter
+                4), and countability (<em>Sets, Relations, and
+                Cardinality</em>, Chapter 3).</li>
+                </ul>
+                <h2 id="named-moves">Named moves</h2>
+                <ul>
+                <li><strong>Walk up by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span>.</strong>
+                From a point inside a cut, add <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span> until you
+                leave; the last step inside and the first step outside
+                are <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span>
+                apart (<a href="../ch07-reals-dedekind-cuts/01-cuts.html#lem-cut-step" class="xref" data-ref="lem-cut-step" data-shard="ch07-reals-dedekind-cuts">Lemma 7.1.3</a>,
+                Section 7.1). It proves the hard <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\supseteq"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2287"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>⊇</mo></math></mjx-assistive-mml></mjx-container></span> halves of the
+                chapter: in full for the additive inverse in Section
+                7.3, and in a multiplicative form (<a href="../ch07-reals-dedekind-cuts/04-multiplication.html#lem-cut-multiplicative-step" class="xref" data-ref="lem-cut-multiplicative-step" data-shard="ch07-reals-dedekind-cuts">Lemma 7.4.2</a>)
+                for the reciprocal in Section 7.4 and for <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sigma\sigma = D_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi><mi>σ</mi><mo>=</mo><msub><mi>D</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span> in
+                Section 7.5. Exercise B2 of Section 7.4 leaves you its
+                last step, and Exercise C2 of Section 7.5 (a cube root
+                of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>) its last
+                half.</li>
+                <li><strong>A cut is a downset with an open
+                top.</strong> Inside is closed downward, outside is
+                closed upward, everything inside lies below everything
+                outside, and the inside has no largest element (<a href="../ch07-reals-dedekind-cuts/01-cuts.html#lem-cut-separation" class="xref" data-ref="lem-cut-separation" data-shard="ch07-reals-dedekind-cuts">Lemma 7.1.1</a>,
+                Section 7.1). Most “is it a cut?” checks are this
+                sentence read clause by clause; it also makes inclusion
+                a total order in Section 7.2 and bounds sums and
+                products from above in Sections 7.3 and 7.4.</li>
+                <li><strong>Reduce to the positive case.</strong> Define
+                and prove for positive cuts, then extend to all cuts by
+                signs once, through one lemma (<a href="../ch07-reals-dedekind-cuts/04-multiplication.html#lem-cut-sign-rules" class="xref" data-ref="lem-cut-sign-rules" data-shard="ch07-reals-dedekind-cuts">Lemma 7.4.4</a>,
+                Section 7.4), never axiom by axiom. It gives the product
+                and the reciprocal of Section 7.4, distributivity by
+                moving the negative summand to the other side, and the
+                products of rational cuts in Section 7.5.</li>
+                </ul>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                        <a href="../ch06-complete-ordered-field/05-axioms-or-model.html" class="pagination-link" aria-label="Assume
+the Axioms or Build a Model">
+                        <i class="bi bi-arrow-left-short" aria-hidden="true"></i>
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Previous</span>
+                            <span class="nav-page-text">6.5 Assume the
+Axioms or Build a Model</span>
+                        </span>
+                    </a>
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                        <a href="../ch07-reals-dedekind-cuts/01-cuts.html" class="pagination-link" aria-label="Cuts">
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Next</span>
+                            <span class="nav-page-text">7.1 Cuts</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                    </a>
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="../pdf/ch07-reals-dedekind-cuts/index.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="../book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="../main.js?v=bbbb9839ec"></script>
+            </body>
+
+</html>
