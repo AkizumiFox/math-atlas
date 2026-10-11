@@ -4,22 +4,113 @@
  "build-dir": "_build/library",
  "landing": {
   "title": "Math Atlas",
-  "badge": "Work in progress",
-  "intro": "A textbook series from first proofs to the graduate qualifying exam. Each volume is its own book; references between volumes link across, with hover previews. These are working drafts, rebuilt from the current branches.",
-  "footer": "Books: CC BY-NC-SA 4.0. Atlas registry and spec: CC BY 4.0. Source: <a href=\"https://github.com/AkizumiFox/math-atlas\">github.com/AkizumiFox/math-atlas</a>.",
+  "tagline": "A series of textbooks for a reader working alone, from a first proof to the graduate qualifying exam in mathematics.",
+  "usage": "Each volume is a book of its own, with its own contents, search and exercises. A reference to another volume links straight to it, and hovering over the link shows the cited result without leaving the page.",
+  "status": "Work in progress: these are drafts, rebuilt from the current branches, and chapters appear as they are written.",
+  "diagram": {
+   "title": "Reading order",
+   "intro": "Where to start, and what each volume needs.",
+   "caption": "Start with F1 and read on to F2. Gate 0, the examination at the end of F2, Chapter 3, opens AN1. F3 builds \\(\\nN\\), \\(\\nZ\\), \\(\\nQ\\) and \\(\\nR\\) out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its \\(\\nR\\) (dashed arrow). F3 leads on to F4, planned, which will collect the algebra (complex numbers, fields, polynomials) that Linear Algebra uses.",
+   "nodes": [
+    {"id": "F1", "book": "fd1", "name": "Logic", "at": [0, 0], "at-narrow": [0, 0]},
+    {"id": "F2", "book": "fd2", "name": "Sets", "at": [1, 0], "at-narrow": [1, 0]},
+    {"id": "F3", "book": "fd3", "name": "Number systems", "at": [2, 0], "at-narrow": [2, 0]},
+    {"id": "F4", "name": "Algebra", "planned": true, "at": [3, 0], "at-narrow": [2, 1]},
+    {"id": "LA", "book": "la", "name": "Linear algebra", "at": [4, 0], "at-narrow": [2, 2]},
+    {"id": "AN1", "book": "an1", "name": "Real analysis", "at": [2, 1], "at-narrow": [1, 1]}
+   ],
+   "edges": [
+    ["F1", "F2"],
+    ["F2", "F3"],
+    ["F3", "F4"],
+    ["F4", "LA"],
+    ["F2", "AN1"],
+    {"from": "F3", "to": "AN1", "kind": "optional"}
+   ]
+  },
   "groups": [
-   {"series": "Foundations"},
-   {"series": "Analysis"},
-   {"series": "Linear Algebra"},
-   {"title": "The atlas", "links": [{"title": "Dependency map", "href": "atlas/atlas.html", "blurb": "Every planned volume and chapter, and how they depend on each other."}]}
+   {
+    "series": "Foundations",
+    "blurb": "Proof, sets and numbers: what every later volume takes for granted, taught from the beginning."
+   },
+   {
+    "series": "Analysis",
+    "blurb": "Calculus made rigorous, then the analysis built on it: metric spaces, several variables, measure, Fourier and complex analysis."
+   },
+   {
+    "series": "Linear Algebra",
+    "title": "Linear Algebra",
+    "blurb": "A companion series, written first and published on its own site; the volumes here cite it for facts about fields and matrices."
+   },
+   {
+    "title": "The atlas",
+    "blurb": "The plan behind the series, kept as data.",
+    "links": [
+     {
+      "title": "Dependency map",
+      "href": "atlas/atlas.html",
+      "label": "Map",
+      "action": "Open the map",
+      "blurb": "Every planned volume and chapter, and which chapters each one depends on, as an interactive graph."
+     }
+    ]
+   }
+  ],
+  "licence": "The books are licensed under <a href=\"https://creativecommons.org/licenses/by-nc-sa/4.0/\">CC BY-NC-SA 4.0</a>; the atlas registry and specification under <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY 4.0</a>; the tools and the book engine under the MIT licence.",
+  "sources": [
+   {"title": "AkizumiFox/foundations", "href": "https://github.com/AkizumiFox/foundations"},
+   {"title": "AkizumiFox/analysis", "href": "https://github.com/AkizumiFox/analysis"},
+   {"title": "AkizumiFox/math-atlas", "href": "https://github.com/AkizumiFox/math-atlas"},
+   {"title": "AkizumiFox/book-engine", "href": "https://github.com/AkizumiFox/book-engine"}
   ]
  },
  "files": [{"from": "../generated/atlas.html", "to": "atlas/atlas.html"}],
  "books": [
-  {"prefix": "fd1", "path": "../../foundations/fd1", "subdir": "fd1", "series": "Foundations", "short": "FD1"},
-  {"prefix": "fd2", "path": "../../foundations/fd2", "subdir": "fd2", "series": "Foundations", "short": "FD2"},
-  {"prefix": "fd3", "path": "../../foundations/fd3", "subdir": "fd3", "series": "Foundations", "short": "FD3"},
-  {"prefix": "an1", "path": "../../analysis-series/an1", "subdir": "an1", "series": "Analysis", "short": "AN1"},
-  {"prefix": "la", "path": "../../linear-algebra-engine", "subdir": "linear-algebra", "series": "Linear Algebra", "short": "LA", "canonical": "https://linear-algebra.akizumifox.com/"}
+  {
+   "prefix": "fd1",
+   "path": "../../foundations/fd1",
+   "subdir": "fd1",
+   "series": "Foundations",
+   "short": "F1",
+   "blurb": "Logic as the grammar of proof, for a reader who has never been asked to write one: derivations, rule by rule, for the connectives and quantifiers; truth tables, soundness and completeness; and the way back from derivations to ordinary mathematical prose.",
+   "planned": 5
+  },
+  {
+   "prefix": "fd2",
+   "path": "../../foundations/fd2",
+   "subdir": "fd2",
+   "series": "Foundations",
+   "short": "F2",
+   "blurb": "Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem. Chapter 3 ends with Gate 0, the examination to pass before analysis.",
+   "planned": 4
+  },
+  {
+   "prefix": "fd3",
+   "path": "../../foundations/fd3",
+   "subdir": "fd3",
+   "series": "Foundations",
+   "short": "F3",
+   "blurb": "The number systems built out of sets: \\(\\nN\\) from the ZF axioms, \\(\\nZ\\) and \\(\\nQ\\) as classes of pairs, divisibility and modular arithmetic, and finally \\(\\nR\\), constructed from Cauchy sequences of rationals and proved to be a complete ordered field.",
+   "planned": 7
+  },
+  {
+   "prefix": "an1",
+   "path": "../../analysis-series/an1",
+   "subdir": "an1",
+   "series": "Analysis",
+   "short": "AN1",
+   "blurb": "Analysis on the real line, from the axioms of a complete ordered field: sequences and series, limits and continuity, the derivative, the Riemann–Darboux integral and power series, each proved from the least upper bound axiom.",
+   "planned": 11
+  },
+  {
+   "prefix": "la",
+   "path": "../../linear-algebra-engine",
+   "subdir": "linear-algebra",
+   "series": "Linear Algebra",
+   "short": "LA",
+   "canonical": "https://linear-algebra.akizumifox.com/",
+   "blurb": "Linear algebra for a reader working alone: vector spaces and linear maps, determinants and canonical forms, inner products and spectral theory, forms and tensors, and on to representations and numerical computation.",
+   "pdf": "https://linear-algebra.akizumifox.com/book/book.pdf"
+  }
  ]
 }
