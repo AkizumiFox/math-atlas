@@ -44,7 +44,7 @@ F3.2: {s: [F3.1]}
 F3.9: {s: [F3.2], see: [F3.5]}  # R1 uses F3.5's quotient-by-an-ideal method
 F3.10: {s: [F3.9, F3.5]}  # thm-reals-commutative-ring: ℝ = 𝒞/𝒩 by F3.5's thm-quotient-ring-by-ideal
 F3.3: {s: [F3.10, F3.4]}
-F3.4: {s: [F3.10], see: [F3.3]}
+F3.4: {s: [F3.10, F3.9, F3.5], see: [F3.3]}  # as delivered: F3.9 throughout (ι_F, density, limits); R2 cites F3.5's thm-integers-mod-prime-field, thm-integers-mod-n-ring
 F3.5: {s: [F3.2]}
 F4.1: {s: [F2.1, F3.10]}
 F4.2: {s: [F3.5], see: [F4.1]}
