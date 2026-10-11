@@ -110,7 +110,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
   F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
   F3_1["1 The ZF Fragment and the von Neumann Natural Numbers"]
   F3_2["2 Building ℤ and ℚ from Equivalence Classes"]
@@ -121,7 +120,7 @@ flowchart LR
   F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
   F2_3 --> F3_1
   F3_1 --> F3_2
-  F2_2 --> F3_5
+  F3_2 --> F3_5
   F3_2 --> F3_9
   F3_9 --> F3_10
   F3_10 --> F3_4
