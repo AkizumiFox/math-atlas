@@ -33,7 +33,7 @@ STATEMENT_PREFIXES = {"def", "thm", "prp", "cor", "lem"}
 SECTION = re.compile(r"^(ch\d+[a-z]*)[^/]*/(\d+|index)")
 
 CH00 = {"01": "F1.5", "02": "F1.5", "03": "F2.1", "04": "F2.1", "05": "F2.2",
-        "06": "F3.6", "07": "F3.7", "08": "F3.8", "09": "LA1.0", "10": "AL1.1"}
+        "06": "F4.1", "07": "F4.2", "08": "F4.4", "09": "LA1.0", "10": "F4.3"}
 CHAPTER = {**{f"ch{n:02d}": f"LA1.{n}" for n in range(1, 6)},
            **{f"ch{n:02d}": f"LA2.{n}" for n in range(6, 11)},
            **{f"ch{n:02d}": f"LA3.{n}" for n in range(11, 14)},

@@ -34,14 +34,20 @@ AN1:
   - {id: AN1.11, title: "The Forms of Completeness", title_zh: 完備性的各種形式, src: ab:21}
 
 F3:
-  - {id: F3.1, title: "The von Neumann Natural Numbers", title_zh: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9, opt: true}
-  - {id: F3.2, title: 'Building \(\nZ\) and \(\nQ\) from Equivalence Classes', title_zh: 以等價類建構 ℤ 與 ℚ, src: ab:10, opt: true}
-  - {id: F3.3, title: 'Constructing \(\nR\) by Dedekind Cuts', title_zh: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
-  - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23, opt: true}
+  - {id: F3.1, title: "The von Neumann Natural Numbers", title_zh: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9}
+  - {id: F3.2, title: 'Building \(\nZ\) and \(\nQ\) from Equivalence Classes', title_zh: 以等價類建構 ℤ 與 ℚ, src: ab:10}
   - {id: F3.5, title: 'Divisibility, Division with Remainder, and \(\nZ/n\nZ\)', title_zh: 整除、帶餘除法與 ℤ/nℤ, src: new}
-  - {id: F3.6, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
-  - {id: F3.7, title: "Fields", title_zh: 體, src: la:ch00/07}
-  - {id: F3.8, title: "Formal Polynomials", title_zh: 形式多項式, src: la:ch00/08}
+  - {id: F3.9, title: "Ordered Fields and Sequences in an Ordered Field", title_zh: 有序體與其中的數列, src: new}
+  - {id: F3.10, title: 'Constructing \(\nR\) from Cauchy Sequences', title_zh: 以 Cauchy 數列建構 ℝ, src: new}
+  - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23}
+  - {id: F3.3, title: 'Constructing \(\nR\) by Dedekind Cuts', title_zh: 以 Dedekind 分割建構 ℝ, src: ab:22, opt: true}
+
+F4:
+  - {id: F4.1, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
+  - {id: F4.2, title: "Fields", title_zh: 體, src: la:ch00/07}
+  - {id: F4.3, title: "Groups, Subgroups, and Homomorphisms", title_zh: 群、子群與同態, src: la:ch00/10}
+  - {id: F4.4, title: "Formal Polynomials", title_zh: 形式多項式, src: la:ch00/08}
+  - {id: F4.5, title: "Polynomials over a Field", title_zh: 體上的多項式, src: new}
 
 LA1:
   - {id: LA1.0, title: "Matrices", title_zh: 矩陣, src: la:ch00/09}
@@ -87,7 +93,6 @@ AN3:
   - {id: AN3.7, title: "Integration on Manifolds and Stokes' Theorem", title_zh: 流形上的積分與 Stokes 定理, src: new, seg: B}
 
 AL1:
-  - {id: AL1.1, title: "Groups, Subgroups, and Homomorphisms", title_zh: 群、子群與同態, src: la:ch00/10}
   - {id: AL1.2, title: "Cyclic Groups", title_zh: 循環群, src: new}
   - {id: AL1.3, title: "Symmetric Groups and the Sign of a Permutation", title_zh: 對稱群與置換的符號, src: new}
   - {id: AL1.4, title: "Cosets and Lagrange's Theorem", title_zh: 陪集與 Lagrange 定理, src: new}

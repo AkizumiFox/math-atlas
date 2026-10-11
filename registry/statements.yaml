@@ -41,9 +41,9 @@ nodes:
   - [thm-bezout, F3.5, thm, "Bézout 與 Euclid 引理", A1, R2]
   - [thm-fta-arith, F3.5, thm, "算術基本定理", A1, R2]
   - [def-zn, F3.5, def, "ℤ/nℤ 與其運算的良定義", A2, R1]
-  - [def-complex-numbers, F3.6, def, "ℂ := ℝ² 與乘法", A1, R1]
-  - [def-field, F3.7, def, "體公理", A2, R1]
-  - [def-polynomial-ring, F3.8, def, "形式多項式 F[x]", A2, R1]
+  - [def-complex-numbers, F4.1, def, "ℂ := ℝ² 與乘法", A1, R1]
+  - [def-field, F4.2, def, "體公理", A2, R1]
+  - [def-polynomial-ring, F4.4, def, "形式多項式 F[x]", A2, R1]
   # 主幹：完備性
   - [thm-completeness-equiv, AN1.11, thm, "LUB ⇔ 單調收斂 ⇔ 區間套＋阿基米德 ⇔ BW ⇔ Cauchy 完備＋阿基米德", A1, R3]
   - [def-complete-metric, AN2.2, def, "完備度量空間；完備化", A2, R2]
@@ -57,7 +57,7 @@ nodes:
   - [thm-tychonoff, FA.5, thm, "Tychonoff", A2, R3]
   - [thm-alaoglu, FA.5, thm, "Banach–Alaoglu", A2, R3]
   # 主幹：行列式
-  - [thm-transpositions-generate, AL1.1, thm, "對換生成 Sₙ（原 §0.10）", A1, R2]
+  - [thm-transpositions-generate, F4.3, thm, "對換生成 Sₙ（原 §0.10）", A1, R2]
   - [thm-sign, AL1.3, thm, "置換符號為良定義的同態 Sₙ→{±1}", A2, R2]
   - [thm-alternating-form-uniqueness, LA2.7, thm, "交錯多線性且 det I=1 的函數唯一", A2, R2]
   - [thm-det-multiplicative, LA2.7, thm, "det(AB)=det A det B；可逆 ⇔ det≠0", A1, R2]

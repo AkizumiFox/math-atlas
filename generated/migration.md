@@ -14,8 +14,8 @@
 | ab:6 | F2.1 Sets, Functions, Images, and Preimages |
 | ab:7 | F2.2 Equivalence Relations, Orders, and Induction |
 | ab:8 | F2.3 Cardinality: Countable and Uncountable Sets |
-| ab:9 | F3.1 The von Neumann Natural Numbers（選讀） |
-| ab:10 | F3.2 Building ℤ and ℚ from Equivalence Classes（選讀） |
+| ab:9 | F3.1 The von Neumann Natural Numbers |
+| ab:10 | F3.2 Building ℤ and ℚ from Equivalence Classes |
 | ab:11 | AN1.1 Ordered Fields and the Least Upper Bound Axiom |
 | ab:12 | AN1.2 Sequences, Subsequences, and Cauchy Sequences |
 | ab:13 | AN1.3 Infinite Series |
@@ -28,7 +28,7 @@
 | ab:20 | AN1.10 Power Series, Taylor Series, and the Elementary Functions |
 | ab:21 | AN1.11 The Forms of Completeness |
 | ab:22 | F3.3 Constructing ℝ by Dedekind Cuts（選讀） |
-| ab:23 | F3.4 The Complete Ordered Field Is Unique（選讀） |
+| ab:23 | F3.4 The Complete Ordered Field Is Unique |
 | ab:24 | AN2.1 Metric Spaces, Open Sets, and Continuity |
 | ab:25 | AN2.2 Completeness and the Completion of a Metric Space |
 | ab:26 | AN2.3 Compactness and Connectedness in Metric Spaces |
@@ -94,11 +94,11 @@
 | la:ch00/03 | F2.1 Sets, Functions, Images, and Preimages |
 | la:ch00/04 | F2.1 Sets, Functions, Images, and Preimages |
 | la:ch00/05 | F2.2 Equivalence Relations, Orders, and Induction |
-| la:ch00/06 | F3.6 Complex Numbers |
-| la:ch00/07 | F3.7 Fields |
-| la:ch00/08 | F3.8 Formal Polynomials |
+| la:ch00/06 | F4.1 Complex Numbers |
+| la:ch00/07 | F4.2 Fields |
+| la:ch00/08 | F4.4 Formal Polynomials |
 | la:ch00/09 | LA1.0 Matrices |
-| la:ch00/10 | AL1.1 Groups, Subgroups, and Homomorphisms |
+| la:ch00/10 | F4.3 Groups, Subgroups, and Homomorphisms |
 | la:ch01 | LA1.1 Vector Spaces |
 | la:ch02 | LA1.2 Linear Maps |
 | la:ch03 | LA1.3 Linear Systems and Matrices |
@@ -128,7 +128,8 @@
 ## 尚無書稿（`new`）
 
 - **F2**：F2.4 Zorn's Lemma
-- **F3**：F3.5 Divisibility, Division with Remainder, and ℤ/nℤ
+- **F3**：F3.5 Divisibility, Division with Remainder, and ℤ/nℤ、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing ℝ from Cauchy Sequences
+- **F4**：F4.5 Polynomials over a Field
 - **AN3**：AN3.5 Submanifolds of ℝⁿ and Tangent Spaces、AN3.6 Differential Forms and the Exterior Derivative、AN3.7 Integration on Manifolds and Stokes' Theorem
 - **AL1**：AL1.2 Cyclic Groups、AL1.3 Symmetric Groups and the Sign of a Permutation、AL1.4 Cosets and Lagrange's Theorem、AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems、AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation、AL1.7 The Sylow Theorems、AL1.8 Direct and Semidirect Products, and Finite Abelian Groups、AL1.9 Composition Series, Solvable Groups, and Nilpotent Groups、AL1.10 The Simplicity of Aₙ、AL1.11 Free Groups and Presentations
 - **AL2**：AL2.1 Rings, Ideals, and Quotient Rings、AL2.2 Integral Domains and Fields of Fractions、AL2.3 Maximal and Prime Ideals、AL2.4 The Chinese Remainder Theorem、AL2.5 Euclidean Domains, PIDs, and UFDs、AL2.6 Polynomial Rings, Gauss's Lemma, and Eisenstein's Criterion、AL2.7 Field Extensions and Degree、AL2.8 Algebraic Extensions, Splitting Fields, and Algebraic Closure、AL2.9 Finite Fields、AL2.10 Ruler-and-Compass Constructions

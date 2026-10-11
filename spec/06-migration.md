@@ -9,25 +9,30 @@
 - **analysis-book**：依 Part 拆冊。Part I 第 22–23 章（選讀的 ℝ 建構）移到 F3，讓 ℝ 的建構路線集中在一冊；Part VI 第 63–64 章（一般拓樸）提前到 AN2 的 B 段，FA 與 AL3.9 從這裡取用；第 54 章是機率支線 PR 的入口；第 73–78 章成為支線冊 PDE。AN3.5–3.7（子流形、微分形式、Stokes）是新章，屬 B 段。
 - **選擇公理**：陳述放在 F2.3，因為「可數個可數集的聯集可數」要用到；F2.4 Zorn 引理是新章。
 - **linear-algebra**：第 0 章拆到 F1.5、F2.1、F2.2、F3.6–3.8 與 AL1.1；§0.9 矩陣成為新的 LA1.0（它被第 2 章引用，所以不能併進第 3 章）。第 24 章之後可拆成多章。
-- ~~analysis-book 本身不必拆 repo。~~ **已改（2026-10-11，見下節）**：基礎三冊 F1–F3 獨立成書 *Foundations*，其餘仍是 analysis-book。
+- ~~analysis-book 本身不必拆 repo。~~ **已改（2026-10-11，見「系列與冊」）**：一冊一書，分 foundations、analysis、linear-algebra 三個系列 repo。
 
-## Foundations 獨立成書（2026-10-11 定案）
+## 系列與冊（2026-10-11 定案，取代同日稍早的「Foundations 獨立成書」）
 
-基礎內容不是實分析專用，線代、代數也要用，所以 F1–F3 從 analysis-book 拆出，成為獨立的書 *Foundations*（新 repo `foundations`，`registry/volumes.yaml` 的 `repo: fd`、`book: foundations`），分兩冊：
+**一冊＝一本書。** 每一冊都是引擎裡獨立的一本書，有自己的跨書引用前綴（`registry/volumes.yaml` 的 `prefix`，如 `@fd2:`、`@an1:`、`@la3:`）；引用別冊的結果時有 hover 預覽（引擎的 `external-books`；合併網站上各書是兄弟路徑，同源抓取）。冊依系列放在三個 repo，每冊是 repo 裡的一個子目錄，引擎以 submodule 共用（spec/07）：
 
-| 冊 | 書名 | atlas 冊 | 書稿來源 |
-|---|---|---|---|
-| Vol. 1 | *Logic, Sets, and Proof* | F1 + F2 | ab ch1–8（Part 0，含 Gate 0 作為全冊總考）；新章 Zorn 引理（F2.4） |
-| Vol. 2 | *Number Systems and Algebraic Preliminaries* | F3（＋進階選讀） | ab ch9–10（ZF 片段與 ℕ、ℤ 與 ℚ）、ab ch22–23（Dedekind 建構 ℝ、完備有序體唯一）、ℂ；體（含 ℤ/p）、群入門、置換與符號；la ch06 §01–06（多項式：除法、gcd、唯一分解、根、代數基本定理、插值與 CRT）、la ch00 §0.6–0.8、§0.10；進階選讀：基數運算、序數、Zorn 的應用 |
+| 系列（repo） | 冊 |
+|---|---|
+| `foundations` | fd1 *Logic and Proof*（F1，ab ch1–5）；fd2 *Sets, Relations, and Cardinality*（F2，ab ch6–8 ＋ Zorn 新章；Gate 0 作冊末總考）；fd3 *Number Systems: From ℕ to ℝ*（F3）；fd4 *Algebraic Preliminaries*（F4） |
+| `analysis`（由 analysis-book 改名） | an1 *Analysis on the Real Line*（AN1，ab ch11–21）；an2、an3、HA、MT、CA、FA、PR、PDE 動筆時才建 |
+| `linear-algebra` | la1–la4、ma、geo、nla（照 `chapters.yaml` 的 `src` 分配） |
 
-- **閱讀順序**：Vol. 1 → Vol. 2 → 實分析 Vol. I（AN1）與線代 Vol. I（LA1）並行。
-- **ℝ 的路線（定案）**：實分析維持公理化起點（ab ch11 的完備有序體公理），**硬依賴只有 Vol. 1**；Vol. 2 的建構對實分析是選讀（「ℝ 從哪來」），只以 revisits／prose 指回，不進證明。線代 Vol. I 硬依賴 Vol. 1 與 Vol. 2 的 ℂ、體、多項式、置換。
-- **跨書引用**：用引擎既有的 `external-books` 機制，Foundations 的前綴是 `@fd:`（與 `@la:` 同）。label 一律不改名；書名與章號以外的東西都不動。
+- **基礎書以 ℝ 的建構收尾。** F3 是主線（不再選讀）：ZF 片段與 ℕ（F3.1）、ℤ 與 ℚ（F3.2）、整除與 ℤ/n（F3.5）、有序體與其中的數列（F3.9，新章：極限運算、Cauchy 數列，ε 取有理數，不預設 ℝ）、**以 Cauchy 數列建構 ℝ 並證明它是完備有序體**（F3.10，新章，取材自 ab ch25 的 spiral node 與 ab ch22 §6）、完備有序體唯一（F3.4，ab ch23）、Dedekind 分割（F3.3，ab ch22，選讀對照，說明兩條路得到同一個 ℝ）。
+- **實分析自成一體。** AN1 從有序體公理與完備性公理出發（ab ch11），硬依賴只有 F1、F2；數列在 ℝ 裡重新證明，以 revisits 指回 F3.9、F3.10、F3.4（`plan-edges.yaml`）。讀者可以跳過 fd3 直接讀 an1。ab ch25 的「ℚ 的完備化」改成 revisits F3.10，再推廣到一般度量空間。
+- **F4 代數預備是線代的入口。** ℂ（F4.1）、體（F4.2）、群入門與置換（F4.3，原 AL1.1）、形式多項式（F4.4）、體上的多項式（F4.5，新章）。F4.1 以 F3.10 的 ℝ 為基礎，所以讀者順序是 fd1 → fd2 → fd3 → fd4 → la1，實分析可在 fd2（或 fd3）之後並行。
+  - **F4.5 是新寫，不是搬家。** 線代書 ch06 §01–06 的證明大量用到線代 ch01–05（因式定理的線性映射寫法、以維度給根數上界、插值的對偶基底），直接搬會造成 F4 ↔ LA1 的冊層級環。所以 F4.5 以純代數重寫除法、gcd、唯一分解、根與重數、代數基本定理；線代 ch06 維持原樣，之後以 revisits 指回 F4.5。
+- **章 id 重新命名**（atlas 規定章 id 帶冊前綴）：F3.6 → F4.1、F3.7 → F4.2、AL1.1 → F4.3、F3.8 → F4.4；新章 F3.9、F3.10、F4.5。`import_la.py` 的對照已更新，AL1 從 AL1.2 開始。
 - **遷移步驟**（各在新分支，合併由作者執行）：
-  1. `foundations` repo：以保留歷史的方式從 analysis-book 分出 ch1–10、22–23、對應的 `verify/`、`authoring/`（blueprints、ledger）與 build 設定；Vol. 2 的章號重排。
-  2. analysis-book：刪去搬走的章，**第三次重新編號**（ch11 → 實分析 ch1，以下類推），指向 Foundations 的 `@ref` 改 `@fd:`，散文章號指標與 STATUS 表機械改寫，lint 守住；`config.json` 加 `external-books.fd`。
-  3. linear-algebra：ch00 改成指向 Foundations 的導讀，只留 §0.9 矩陣（新的 LA1.0）；ch06 §01–06 移出，§07 算子的多項式留下；`thm-zorn`、`thm-induction` 等 label 依 `chapter-constraints.yaml` 的 `takes` 移交，原處留錨點。會改到已上線網站。
-  4. analysis-book 進行中的 Part 0 工作（ch05、ch07、ch08 起草與審稿）在步驟 1 前後內容不變，只換 repo。
+  1. 統一引擎（spec/07 步驟 1–10），再做 library 組裝器（步驟 16–18），合併網站由 math-atlas 的 manifest 組成。
+  2. `foundations` repo：以保留歷史的方式從 analysis-book 分出 ch1–5 → fd1、ch6–8 → fd2、ch9、10、22、23 → fd3；各冊自第 1 章編號；冊間引用改成 `@fd1:` 等前綴（以 crossref 表判斷 label 歸屬的機械改寫工具，lint 守住）；ledger、blueprint、STATUS 隨章搬家。
+  3. `analysis` repo：只留 ch11–21 成為 an1（ch11 → 第 1 章），指向 Part 0 的引用改成 `@fd1:`／`@fd2:`。
+  4. fd3 的新章 F3.9、F3.10 寫 blueprint；ab ch9、10、22、23 的生成式 blueprint 改寫成手寫版；走 S2 → S8。
+  5. fd4：搬入線代 ch00 §0.6–0.8、§0.10（label 依 `chapter-constraints.yaml` 的 `takes` 移交，原處留錨點），新寫 F4.5。
+  6. 線代拆冊：la1–la4、ma、geo、nla 七個子目錄各自編號；正式站先維持舊的單本，新版只在預覽站，切換時舊網址以 moved-ids 的重導頁對到新冊。
 
 ## 由計算邊得到的發現
 

@@ -42,7 +42,7 @@ class GraphTest(unittest.TestCase):
 class ImportLATest(unittest.TestCase):
     def test_section_mapping(self):
         f = import_la.atlas_chapter
-        self.assertEqual(f("ch00-foundations/10-groups.html"), "AL1.1")
+        self.assertEqual(f("ch00-foundations/10-groups.html"), "F4.3")
         self.assertEqual(f("ch07-determinants/03-x.html"), "LA2.7")
         self.assertEqual(f("ch24-applied/01-x.html"), "NLA.24")
         self.assertIsNone(f("ch24a-notation/index.html"))
@@ -156,7 +156,7 @@ class TitleTest(unittest.TestCase):
     def test_titles_unique_and_follow_usage(self):
         import atlas
         at = atlas.Atlas()
-        at.chapters["LA2.6"] = dict(at.chapters["LA2.6"], title="Formal Polynomials")  # F3.8's title
+        at.chapters["LA2.6"] = dict(at.chapters["LA2.6"], title="Formal Polynomials")  # F4.4's title
         at.chapters["MA.18"] = dict(at.chapters["MA.18"], title="Non-negative Cones")
         self.assertFalse(atlas.check(at))
         self.assertTrue(any("titles must be unique" in e for e in at.errors), at.errors)

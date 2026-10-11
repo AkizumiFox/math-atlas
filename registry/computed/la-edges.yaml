@@ -4,15 +4,11 @@
 # overrides: [label, move|softened_for|borrowed_by, chapter, citations it changed]
 # vocab: [to, from, all|stmt|term, count(, term ids for term edges)]: definitions the statement reader needs (see vocabulary())
 edges:
-- [AL1.1, F1.5, s, 1, 0]
-- [AL1.1, F2.1, s, 1, 4]
-- [AL1.1, F3.7, see, 0, 3]
-- [AL1.1, LA1.0, see, 0, 4]
-- [AL4.8, AL1.1, s, 10, 10]
 - [AL4.8, F1.5, s, 1, 1]
-- [AL4.8, F3.6, s, 4, 2]
-- [AL4.8, F3.7, s, 2, 0]
-- [AL4.8, F3.8, see, 0, 1]
+- [AL4.8, F4.1, s, 4, 2]
+- [AL4.8, F4.2, s, 2, 0]
+- [AL4.8, F4.3, s, 10, 10]
+- [AL4.8, F4.4, see, 0, 1]
 - [AL4.8, LA1.0, s, 5, 2]
 - [AL4.8, LA1.1, s, 15, 5]
 - [AL4.8, LA1.2, s, 8, 4]
@@ -34,16 +30,20 @@ edges:
 - [F2.1, F1.5, s, 3, 4]
 - [F2.2, F1.5, see, 0, 3]
 - [F2.2, F2.1, s, 2, 1]
-- [F3.6, F1.5, s, 1, 0]
-- [F3.7, F1.5, s, 3, 2]
-- [F3.7, F2.2, see, 0, 1]
-- [F3.7, F3.6, see, 0, 3]
-- [F3.8, F1.5, see, 0, 1]
-- [F3.8, F2.1, see, 0, 1]
-- [F3.8, F3.7, s, 2, 3]
-- [GEO.22, AL1.1, s, 8, 2]
+- [F4.1, F1.5, s, 1, 0]
+- [F4.2, F1.5, s, 3, 2]
+- [F4.2, F2.2, see, 0, 1]
+- [F4.2, F4.1, see, 0, 3]
+- [F4.3, F1.5, s, 1, 0]
+- [F4.3, F2.1, s, 1, 4]
+- [F4.3, F4.2, see, 0, 3]
+- [F4.3, LA1.0, see, 0, 4]
+- [F4.4, F1.5, see, 0, 1]
+- [F4.4, F2.1, see, 0, 1]
+- [F4.4, F4.2, s, 2, 3]
 - [GEO.22, F2.1, s, 2, 0]
 - [GEO.22, F2.2, s, 1, 1]
+- [GEO.22, F4.3, s, 8, 2]
 - [GEO.22, LA1.0, s, 2, 0]
 - [GEO.22, LA1.1, s, 23, 8]
 - [GEO.22, LA1.2, s, 23, 8]
@@ -62,40 +62,40 @@ edges:
 - [GEO.22, MA.18, s, 14, 26]
 - [LA1.0, F1.5, s, 1, 1]
 - [LA1.0, F2.2, see, 0, 1]
-- [LA1.0, F3.7, s, 2, 1]
-- [LA1.0, F3.8, s, 3, 0]
-- [LA1.1, AL1.1, see, 0, 2]
+- [LA1.0, F4.2, s, 2, 1]
+- [LA1.0, F4.4, s, 3, 0]
 - [LA1.1, F1.5, s, 1, 4]
 - [LA1.1, F2.1, s, 3, 6]
 - [LA1.1, F2.2, see, 0, 1]
-- [LA1.1, F3.6, see, 0, 6]
-- [LA1.1, F3.7, s, 2, 7]
-- [LA1.1, F3.8, s, 2, 18]
+- [LA1.1, F4.1, see, 0, 6]
+- [LA1.1, F4.2, s, 2, 7]
+- [LA1.1, F4.3, see, 0, 2]
+- [LA1.1, F4.4, s, 2, 18]
 - [LA1.1, LA1.0, see, 0, 13]
 - [LA1.2, F1.5, s, 1, 0]
 - [LA1.2, F2.1, s, 8, 0]
-- [LA1.2, F3.6, see, 0, 2]
-- [LA1.2, F3.7, see, 0, 1]
-- [LA1.2, F3.8, s, 2, 10]
+- [LA1.2, F4.1, see, 0, 2]
+- [LA1.2, F4.2, see, 0, 1]
+- [LA1.2, F4.4, s, 2, 10]
 - [LA1.2, LA1.0, s, 1, 8]
 - [LA1.2, LA1.1, s, 26, 31]
 - [LA1.3, F1.5, s, 2, 1]
 - [LA1.3, F2.1, s, 1, 0]
 - [LA1.3, F2.2, see, 0, 3]
-- [LA1.3, F3.7, s, 5, 1]
-- [LA1.3, F3.8, s, 4, 1]
+- [LA1.3, F4.2, s, 5, 1]
+- [LA1.3, F4.4, s, 4, 1]
 - [LA1.3, LA1.0, s, 32, 17]
 - [LA1.3, LA1.1, s, 25, 19]
 - [LA1.3, LA1.2, see, 0, 3]
 - [LA1.4, F2.1, see, 0, 1]
 - [LA1.4, F2.2, s, 7, 0]
-- [LA1.4, F3.7, s, 3, 0]
-- [LA1.4, F3.8, see, 0, 1]
+- [LA1.4, F4.2, s, 3, 0]
+- [LA1.4, F4.4, see, 0, 1]
 - [LA1.4, LA1.0, s, 14, 14]
 - [LA1.4, LA1.1, s, 25, 22]
 - [LA1.4, LA1.2, s, 36, 15]
 - [LA1.4, LA1.3, s, 11, 11]
-- [LA1.5, F3.8, s, 1, 3]
+- [LA1.5, F4.4, s, 1, 3]
 - [LA1.5, LA1.0, s, 4, 9]
 - [LA1.5, LA1.1, s, 27, 47]
 - [LA1.5, LA1.2, s, 33, 31]
@@ -103,9 +103,9 @@ edges:
 - [LA1.5, LA1.4, s, 11, 12]
 - [LA2.10, F1.5, s, 2, 1]
 - [LA2.10, F2.1, s, 2, 0]
-- [LA2.10, F3.6, s, 3, 0]
-- [LA2.10, F3.7, s, 1, 0]
-- [LA2.10, F3.8, s, 1, 0]
+- [LA2.10, F4.1, s, 3, 0]
+- [LA2.10, F4.2, s, 1, 0]
+- [LA2.10, F4.4, s, 1, 0]
 - [LA2.10, LA1.0, s, 6, 7]
 - [LA2.10, LA1.1, s, 23, 9]
 - [LA2.10, LA1.2, s, 7, 7]
@@ -116,22 +116,22 @@ edges:
 - [LA2.10, LA2.8, s, 11, 4]
 - [LA2.10, LA2.9, s, 68, 37]
 - [LA2.6, F1.5, s, 3, 7]
-- [LA2.6, F3.6, s, 5, 7]
-- [LA2.6, F3.7, s, 8, 7]
-- [LA2.6, F3.8, s, 33, 34]
+- [LA2.6, F4.1, s, 5, 7]
+- [LA2.6, F4.2, s, 8, 7]
+- [LA2.6, F4.4, s, 33, 34]
 - [LA2.6, LA1.0, see, 0, 1]
 - [LA2.6, LA1.1, s, 9, 7]
 - [LA2.6, LA1.2, s, 12, 3]
 - [LA2.6, LA1.3, s, 6, 3]
 - [LA2.6, LA1.4, s, 7, 3]
 - [LA2.6, LA1.5, s, 3, 3]
-- [LA2.7, AL1.1, s, 3, 3]
 - [LA2.7, F1.5, s, 1, 3]
 - [LA2.7, F2.1, s, 2, 1]
 - [LA2.7, F2.2, s, 1, 0]
-- [LA2.7, F3.6, see, 0, 1]
-- [LA2.7, F3.7, s, 3, 1]
-- [LA2.7, F3.8, s, 6, 3]
+- [LA2.7, F4.1, see, 0, 1]
+- [LA2.7, F4.2, s, 3, 1]
+- [LA2.7, F4.3, s, 3, 3]
+- [LA2.7, F4.4, s, 6, 3]
 - [LA2.7, LA1.0, s, 19, 11]
 - [LA2.7, LA1.1, s, 6, 5]
 - [LA2.7, LA1.2, s, 2, 1]
@@ -139,8 +139,8 @@ edges:
 - [LA2.7, LA1.4, s, 6, 2]
 - [LA2.7, LA2.6, s, 2, 4]
 - [LA2.8, F1.5, s, 1, 0]
-- [LA2.8, F3.7, s, 6, 3]
-- [LA2.8, F3.8, s, 2, 1]
+- [LA2.8, F4.2, s, 6, 3]
+- [LA2.8, F4.4, s, 2, 1]
 - [LA2.8, LA1.0, s, 25, 11]
 - [LA2.8, LA1.1, s, 13, 5]
 - [LA2.8, LA1.2, s, 2, 5]
@@ -149,9 +149,9 @@ edges:
 - [LA2.8, LA2.6, see, 0, 2]
 - [LA2.8, LA2.7, s, 17, 14]
 - [LA2.9, F2.1, s, 1, 2]
-- [LA2.9, F3.6, s, 1, 2]
-- [LA2.9, F3.7, s, 3, 2]
-- [LA2.9, F3.8, s, 10, 0]
+- [LA2.9, F4.1, s, 1, 2]
+- [LA2.9, F4.2, s, 3, 2]
+- [LA2.9, F4.4, s, 10, 0]
 - [LA2.9, LA1.0, s, 11, 7]
 - [LA2.9, LA1.1, s, 28, 13]
 - [LA2.9, LA1.2, s, 7, 7]
@@ -162,8 +162,8 @@ edges:
 - [LA2.9, LA2.7, s, 50, 37]
 - [LA2.9, LA2.8, s, 5, 4]
 - [LA3.11, F2.1, s, 1, 0]
-- [LA3.11, F3.6, s, 5, 0]
-- [LA3.11, F3.8, s, 2, 1]
+- [LA3.11, F4.1, s, 5, 0]
+- [LA3.11, F4.4, s, 2, 1]
 - [LA3.11, LA1.0, s, 2, 1]
 - [LA3.11, LA1.1, s, 8, 4]
 - [LA3.11, LA1.2, s, 9, 3]
@@ -176,7 +176,7 @@ edges:
 - [LA3.11, LA2.9, s, 2, 2]
 - [LA3.12, AN3.3, see, 0, 2]
 - [LA3.12, F1.5, see, 0, 1]
-- [LA3.12, F3.6, s, 1, 1]
+- [LA3.12, F4.1, s, 1, 1]
 - [LA3.12, LA1.0, s, 8, 5]
 - [LA3.12, LA1.1, s, 8, 1]
 - [LA3.12, LA1.2, s, 4, 3]
@@ -199,12 +199,12 @@ edges:
 - [LA3.13, LA2.9, s, 8, 3]
 - [LA3.13, LA3.11, s, 53, 35]
 - [LA3.13, LA3.12, s, 30, 14]
-- [LA4.14, AL1.1, s, 1, 0]
 - [LA4.14, F1.5, see, 0, 1]
 - [LA4.14, F2.2, see, 0, 1]
-- [LA4.14, F3.6, see, 0, 2]
-- [LA4.14, F3.7, s, 1, 0]
-- [LA4.14, F3.8, see, 0, 1]
+- [LA4.14, F4.1, see, 0, 2]
+- [LA4.14, F4.2, s, 1, 0]
+- [LA4.14, F4.3, s, 1, 0]
+- [LA4.14, F4.4, see, 0, 1]
 - [LA4.14, LA1.0, s, 9, 5]
 - [LA4.14, LA1.1, s, 12, 3]
 - [LA4.14, LA1.2, s, 9, 1]
@@ -216,9 +216,9 @@ edges:
 - [LA4.14, LA3.11, s, 4, 3]
 - [LA4.14, LA3.12, s, 3, 3]
 - [LA4.14, LA3.13, s, 2, 1]
-- [LA4.15, AL1.1, s, 1, 0]
-- [LA4.15, F3.7, s, 2, 0]
-- [LA4.15, F3.8, see, 0, 1]
+- [LA4.15, F4.2, s, 2, 0]
+- [LA4.15, F4.3, s, 1, 0]
+- [LA4.15, F4.4, see, 0, 1]
 - [LA4.15, LA1.0, s, 1, 2]
 - [LA4.15, LA1.1, s, 14, 3]
 - [LA4.15, LA1.2, s, 20, 12]
@@ -230,7 +230,7 @@ edges:
 - [LA4.15, LA3.11, s, 7, 5]
 - [LA4.15, LA3.13, s, 3, 13]
 - [LA4.15, LA4.14, s, 5, 26]
-- [MA.16, F3.6, s, 1, 2]
+- [MA.16, F4.1, s, 1, 2]
 - [MA.16, LA1.0, s, 1, 5]
 - [MA.16, LA1.2, s, 3, 1]
 - [MA.16, LA1.4, see, 0, 1]
@@ -255,7 +255,7 @@ edges:
 - [MA.17, LA3.13, s, 24, 57]
 - [MA.17, LA4.14, see, 0, 4]
 - [MA.17, MA.16, s, 8, 9]
-- [MA.18, F3.6, s, 2, 1]
+- [MA.18, F4.1, s, 2, 1]
 - [MA.18, LA1.0, s, 1, 0]
 - [MA.18, LA1.1, s, 13, 3]
 - [MA.18, LA1.2, s, 1, 0]
@@ -268,7 +268,7 @@ edges:
 - [MA.18, MA.16, s, 18, 16]
 - [MA.18, MA.17, s, 2, 5]
 - [MA.19, F1.5, s, 3, 0]
-- [MA.19, F3.6, s, 8, 2]
+- [MA.19, F4.1, s, 8, 2]
 - [MA.19, LA1.0, s, 7, 2]
 - [MA.19, LA1.1, s, 2, 0]
 - [MA.19, LA1.2, s, 1, 0]
@@ -283,7 +283,7 @@ edges:
 - [MA.19, MA.16, s, 20, 10]
 - [MA.19, MA.17, s, 2, 2]
 - [MA.19, MA.18, s, 13, 6]
-- [MA.20, F3.6, s, 7, 3]
+- [MA.20, F4.1, s, 7, 3]
 - [MA.20, LA1.0, s, 2, 1]
 - [MA.20, LA1.1, s, 1, 2]
 - [MA.20, LA1.2, see, 0, 1]
@@ -301,7 +301,7 @@ edges:
 - [MA.20, MA.18, s, 2, 3]
 - [MA.20, MA.19, s, 2, 5]
 - [MA.21, AN3.3, b, 1, 3]
-- [MA.21, F3.6, s, 1, 2]
+- [MA.21, F4.1, s, 1, 2]
 - [MA.21, LA1.0, s, 5, 6]
 - [MA.21, LA1.3, s, 6, 1]
 - [MA.21, LA2.10, s, 4, 5]
@@ -322,7 +322,7 @@ edges:
 - [MA.21b, LA3.13, see, 0, 1]
 - [MA.21b, MA.17, s, 2, 3]
 - [MA.21b, MA.21, s, 2, 8]
-- [NLA.24, F3.6, s, 2, 1]
+- [NLA.24, F4.1, s, 2, 1]
 - [NLA.24, LA1.0, s, 7, 6]
 - [NLA.24, LA1.1, s, 2, 0]
 - [NLA.24, LA1.3, s, 15, 9]
@@ -341,23 +341,19 @@ edges:
 - [NLA.24, MA.19, see, 0, 2]
 - [NLA.24, MA.20, see, 0, 8]
 witnesses:
-  AL1.1<-F1.5:
-  - [thm-transpositions-generate, thm-induction]
-  AL1.1<-F2.1:
-  - [thm-transpositions-generate, thm-finite-injective-iff-surjective]
-  AL4.8<-AL1.1:
-  - [lem-average-projection, thm-group-basic-properties]
-  - [lem-element-has-finite-order, def-subgroup]
-  - [lem-element-has-finite-order, thm-group-basic-properties]
   AL4.8<-F1.5:
   - [cor-complete-reducibility, thm-strong-induction]
-  AL4.8<-F3.6:
+  AL4.8<-F4.1:
   - [prp-character-basic, exm-roots-of-unity]
   - [prp-character-basic, thm-complex-triangle-inequality]
   - [thm-abelian-characters-are-homomorphisms, exm-roots-of-unity]
-  AL4.8<-F3.7:
+  AL4.8<-F4.2:
   - [lem-group-order-invertible, def-characteristic]
   - [lem-group-order-invertible, lem-integer-multiples]
+  AL4.8<-F4.3:
+  - [lem-average-projection, thm-group-basic-properties]
+  - [lem-element-has-finite-order, def-subgroup]
+  - [lem-element-has-finite-order, thm-group-basic-properties]
   AL4.8<-LA1.0:
   - [lem-matrix-units, thm-three-views-of-product]
   - [lem-trace-of-sandwich, def-matrix-multiplication]
@@ -417,21 +413,25 @@ witnesses:
   - [thm-de-morgan-sets, thm-de-morgan-logic]
   - [thm-double-inclusion, def-quantifiers]
   - [thm-finite-injective-iff-surjective, thm-contrapositive-equivalent]
-  F3.6<-F1.5:
+  F4.1<-F1.5:
   - [thm-de-moivre, thm-induction]
-  F3.7<-F1.5:
+  F4.2<-F1.5:
   - [lem-bezout-integers, exr-proofs-c2]
   - [lem-bezout-integers, thm-well-ordering]
   - [lem-integer-multiples, thm-induction]
-  GEO.22<-AL1.1:
-  - [lem-chasles-consequences, thm-group-basic-properties]
-  - [prp-motion-group, def-group-homomorphism]
-  - [prp-motion-group, def-subgroup]
+  F4.3<-F1.5:
+  - [thm-transpositions-generate, thm-induction]
+  F4.3<-F2.1:
+  - [thm-transpositions-generate, thm-finite-injective-iff-surjective]
   GEO.22<-F2.1:
   - [prp-motion-group, thm-bijective-iff-invertible]
   - [prp-motion-group, thm-composition-associative]
   GEO.22<-F2.2:
   - [prp-projective-point-count, thm-partition]
+  GEO.22<-F4.3:
+  - [lem-chasles-consequences, thm-group-basic-properties]
+  - [prp-motion-group, def-group-homomorphism]
+  - [prp-motion-group, def-subgroup]
   GEO.22<-LA1.0:
   - [prp-centre-exists-iff, thm-matrix-times-vector-columns]
   - [prp-stabilizer-of-coordinate-points, thm-three-views-of-product]
@@ -484,10 +484,10 @@ witnesses:
   - [prp-edge-is-segment, def-face]
   LA1.0<-F1.5:
   - [thm-polynomial-of-matrix-properties, thm-induction]
-  LA1.0<-F3.7:
+  LA1.0<-F4.2:
   - [thm-matrix-addition-properties, def-field]
   - [thm-matrix-multiplication-properties, thm-field-basic-properties]
-  LA1.0<-F3.8:
+  LA1.0<-F4.4:
   - [thm-polynomial-of-matrix-properties, def-polynomial-ring]
   - [thm-polynomial-of-matrix-properties, thm-evaluation-respects-operations]
   - [thm-polynomial-of-matrix-properties, thm-polynomial-ring-laws]
@@ -497,10 +497,10 @@ witnesses:
   - [cor-span-intersection, def-indexed-family]
   - [cor-span-intersection, thm-double-inclusion]
   - [lem-countable-sets, thm-composition-preserves]
-  LA1.1<-F3.7:
+  LA1.1<-F4.2:
   - [thm-linear-dependence-lemma, def-field]
   - [thm-polynomials-infinite-dimensional, thm-field-basic-properties]
-  LA1.1<-F3.8:
+  LA1.1<-F4.4:
   - [thm-polynomials-infinite-dimensional, def-degree]
   - [thm-polynomials-infinite-dimensional, thm-degree-of-sum]
   LA1.2<-F1.5:
@@ -509,7 +509,7 @@ witnesses:
   - [thm-composition-linear, def-identity-function]
   - [thm-composition-linear, thm-composition-associative]
   - [thm-inverse-is-linear, def-inverse-function]
-  LA1.2<-F3.8:
+  LA1.2<-F4.4:
   - [thm-polynomial-of-operator-properties, def-polynomial-ring]
   - [thm-polynomial-of-operator-properties, thm-polynomial-ring-laws]
   LA1.3<-F1.5:
@@ -517,11 +517,11 @@ witnesses:
   - [thm-rref-exists, thm-induction]
   LA1.3<-F2.1:
   - [thm-general-solution-structure, thm-double-inclusion]
-  LA1.3<-F3.7:
+  LA1.3<-F4.2:
   - [cor-pivot-columns-well-defined, thm-field-basic-properties]
   - [lem-root-bound, thm-field-basic-properties]
   - [lem-row-ops-act-on-columns, thm-field-basic-properties]
-  LA1.3<-F3.8:
+  LA1.3<-F4.4:
   - [lem-factor-theorem-linear, thm-evaluation-respects-operations]
   - [lem-root-bound, thm-degree-of-product]
   - [lem-root-bound, thm-evaluation-respects-operations]
@@ -529,11 +529,11 @@ witnesses:
   - [lem-coset-equality, def-equivalence-class]
   - [lem-coset-equality, def-equivalence-relation]
   - [lem-coset-equality, lem-classes-equal-or-disjoint]
-  LA1.4<-F3.7:
+  LA1.4<-F4.2:
   - [thm-involution-decomposition, def-characteristic]
   - [thm-rank-equals-trace-projection, def-characteristic]
   - [thm-rank-equals-trace-projection, lem-integer-multiples]
-  LA1.5<-F3.8:
+  LA1.5<-F4.4:
   - [prp-coordinate-functionals-do-not-span, def-polynomial]
   LA2.10<-F1.5:
   - [cor-generalized-eigenspace-is-kernel, thm-well-ordering]
@@ -541,13 +541,13 @@ witnesses:
   LA2.10<-F2.1:
   - [thm-nilpotent-structure, thm-composition-preserves]
   - [thm-primary-cyclic-decomposition, thm-composition-preserves]
-  LA2.10<-F3.6:
+  LA2.10<-F4.1:
   - [lem-real-null-space-complexifies, def-complex-numbers]
   - [lem-realify-jordan-chain, def-complex-numbers]
   - [lem-realify-jordan-chain, thm-conjugate-properties]
-  LA2.10<-F3.7:
+  LA2.10<-F4.2:
   - [thm-generalized-eigenspace-decomposition, thm-field-basic-properties]
-  LA2.10<-F3.8:
+  LA2.10<-F4.4:
   - [prp-polynomial-matrix-invertible, thm-degree-of-product]
   LA2.10<-LA1.0:
   - [cor-a-similar-to-transpose, def-transpose]
@@ -573,15 +573,15 @@ witnesses:
   - [thm-ideals-principal, thm-well-ordering]
   - [thm-polynomial-division, thm-strong-induction]
   - [thm-unique-factorization-polynomials, thm-strong-induction]
-  LA2.6<-F3.6:
+  LA2.6<-F4.1:
   - [lem-dalembert, thm-complex-triangle-inequality]
   - [lem-dalembert, thm-conjugate-properties]
   - [lem-dalembert, thm-de-moivre]
-  LA2.6<-F3.7:
+  LA2.6<-F4.2:
   - [cor-root-bound-general, thm-field-basic-properties]
   - [thm-formal-derivative-rules, lem-integer-multiples]
   - [thm-multiplicity-of-product, thm-field-basic-properties]
-  LA2.6<-F3.8:
+  LA2.6<-F4.4:
   - [cor-complex-polynomial-splits, thm-degree-of-product]
   - [cor-real-factorization, thm-degree-of-product]
   - [cor-real-irreducibles, thm-degree-of-product]
@@ -605,10 +605,6 @@ witnesses:
   - [cor-evaluations-dual-to-lagrange, exm-linear-functionals]
   - [cor-evaluations-dual-to-lagrange, thm-dual-basis]
   - [thm-polynomial-taylor, thm-dual-basis]
-  LA2.7<-AL1.1:
-  - [lem-alternating-permute-arguments, thm-transpositions-generate]
-  - [thm-det-homomorphism, def-group-homomorphism]
-  - [thm-det-homomorphism, thm-homomorphism-basic-properties]
   LA2.7<-F1.5:
   - [thm-vandermonde-determinant, thm-induction]
   LA2.7<-F2.1:
@@ -616,11 +612,15 @@ witnesses:
   - [thm-sign-multiplicative, thm-bijective-iff-invertible]
   LA2.7<-F2.2:
   - [thm-two-orientations, def-equivalence-relation]
-  LA2.7<-F3.7:
+  LA2.7<-F4.2:
   - [cor-vandermonde-nonzero, thm-field-basic-properties]
   - [thm-det-nonzero-iff-invertible, thm-field-basic-properties]
   - [thm-skew-symmetric-alternating, def-characteristic]
-  LA2.7<-F3.8:
+  LA2.7<-F4.3:
+  - [lem-alternating-permute-arguments, thm-transpositions-generate]
+  - [thm-det-homomorphism, def-group-homomorphism]
+  - [thm-det-homomorphism, thm-homomorphism-basic-properties]
+  LA2.7<-F4.4:
   - [lem-charpoly-evaluation, thm-evaluation-respects-operations]
   - [thm-charpoly-coefficients, def-polynomial-evaluation]
   - [thm-charpoly-coefficients, thm-degree-of-product]
@@ -645,11 +645,11 @@ witnesses:
   - [thm-det-operator-properties, thm-matrix-of-composition]
   LA2.8<-F1.5:
   - [lem-trace-zero-similar-zero-diagonal, thm-induction]
-  LA2.8<-F3.7:
+  LA2.8<-F4.2:
   - [lem-trace-zero-similar-zero-diagonal, def-characteristic]
   - [lem-trace-zero-similar-zero-diagonal, lem-integer-multiples]
   - [thm-block-diagonal-arithmetic, thm-field-basic-properties]
-  LA2.8<-F3.8:
+  LA2.8<-F4.4:
   - [lem-evaluate-polynomial-matrix, thm-evaluation-respects-operations]
   - [thm-det-commuting-blocks, cor-polynomial-no-zero-divisors]
   LA2.8<-LA1.0:
@@ -673,13 +673,13 @@ witnesses:
   - [thm-invariant-subspace-block-triangular, def-matrix-of-linear-map]
   LA2.9<-F2.1:
   - [thm-nilpotent-trace-powers, thm-composition-preserves]
-  LA2.9<-F3.6:
+  LA2.9<-F4.1:
   - [thm-real-matrix-complex-eigenvalues, thm-conjugate-properties]
-  LA2.9<-F3.7:
+  LA2.9<-F4.2:
   - [thm-diagonal-of-triangular-form, thm-field-basic-properties]
   - [thm-left-right-biorthogonal, thm-field-basic-properties]
   - [thm-nilpotent-trace-powers, thm-field-basic-properties]
-  LA2.9<-F3.8:
+  LA2.9<-F4.4:
   - [cor-minimal-divides-characteristic, thm-degree-of-product]
   - [lem-invariant-charpoly-splits, thm-evaluation-respects-operations]
   - [thm-ab-ba-eigenvalues, cor-polynomial-no-zero-divisors]
@@ -705,11 +705,11 @@ witnesses:
   - [prp-multiplicities-similarity-invariant, prp-similarity-invariants]
   LA3.11<-F2.1:
   - [cor-riesz-isomorphism, thm-bijective-iff-invertible]
-  LA3.11<-F3.6:
+  LA3.11<-F4.1:
   - [cor-triangle-inequality, thm-complex-triangle-inequality]
   - [thm-gram-matrix-properties, thm-conjugate-properties]
   - [thm-inner-product-basic-properties, thm-conjugate-properties]
-  LA3.11<-F3.8:
+  LA3.11<-F4.4:
   - [thm-gaussian-quadrature, thm-degree-of-product]
   - [thm-orthogonal-polynomial-roots, thm-degree-of-product]
   LA3.11<-LA1.0:
@@ -747,7 +747,7 @@ witnesses:
   LA3.11<-LA2.9:
   - [prp-isometry-eigenvalues-modulus-one, def-eigenvalue]
   - [thm-so3-rotation, thm-eigenvalue-characterizations]
-  LA3.12<-F3.6:
+  LA3.12<-F4.1:
   - [thm-fourier-matrix-unitary, exm-roots-of-unity]
   LA3.12<-LA1.0:
   - [cor-circulants-algebra, thm-polynomial-of-matrix-properties]
@@ -812,10 +812,10 @@ witnesses:
   - [cor-fischer-inequality, thm-invertible-tfae-eigen]
   - [thm-block-psd-schur, thm-invertible-tfae-eigen]
   - [thm-loewner-basic, thm-trace-det-eigenvalues]
-  LA4.14<-AL1.1:
-  - [thm-lorentz-boost-form, def-subgroup]
-  LA4.14<-F3.7:
+  LA4.14<-F4.2:
   - [thm-alternating-vs-skew, def-characteristic]
+  LA4.14<-F4.3:
+  - [thm-lorentz-boost-form, def-subgroup]
   LA4.14<-LA1.0:
   - [prp-congruence-equivalence, thm-transpose-properties]
   - [prp-congruence-preserves-symmetry, thm-transpose-properties]
@@ -856,11 +856,11 @@ witnesses:
   LA4.14<-LA3.13:
   - [lem-definite-form-bounded-below, thm-pd-characterizations]
   - [prp-definiteness-tests-for-forms, thm-pd-characterizations]
-  LA4.15<-AL1.1:
-  - [lem-alternating-map-properties, thm-transpositions-generate]
-  LA4.15<-F3.7:
+  LA4.15<-F4.2:
   - [prp-alternating-relation-contains-skew, def-characteristic]
   - [thm-symmetric-tensors-vs-symmetric-power, def-characteristic]
+  LA4.15<-F4.3:
+  - [lem-alternating-map-properties, thm-transpositions-generate]
   LA4.15<-LA1.0:
   - [thm-tensor-fn-matrices, thm-matrix-multiplication-properties]
   LA4.15<-LA1.1:
@@ -895,7 +895,7 @@ witnesses:
   - [thm-schmidt-decomposition, def-singular-values]
   - [thm-schmidt-decomposition, thm-compact-svd]
   - [thm-schmidt-decomposition, thm-svd]
-  MA.16<-F3.6:
+  MA.16<-F4.1:
   - [lem-entrywise-polynomial-continuous, thm-complex-triangle-inequality]
   MA.16<-LA1.0:
   - [thm-derivative-of-det, thm-trace-properties]
@@ -968,7 +968,7 @@ witnesses:
   - [cor-block-psd-by-inertia, thm-pd-characterizations]
   - [cor-block-psd-by-inertia, thm-psd-characterizations]
   - [cor-capture-bound-revisited, thm-svd]
-  MA.18<-F3.6:
+  MA.18<-F4.1:
   - [cor-minkowski-inequality, thm-complex-triangle-inequality]
   - [thm-holder, thm-complex-triangle-inequality]
   MA.18<-LA1.0:
@@ -1000,7 +1000,7 @@ witnesses:
   - [lem-walk-contains-path, thm-well-ordering]
   - [thm-perron, thm-well-ordering]
   - [thm-reducible-normal-form, thm-strong-induction]
-  MA.19<-F3.6:
+  MA.19<-F4.1:
   - [lem-entrywise-absolute-value, thm-complex-triangle-inequality]
   - [lem-entrywise-absolute-value, thm-conjugate-properties]
   - [lem-triangle-equality-complex, thm-complex-triangle-inequality]
@@ -1038,7 +1038,7 @@ witnesses:
   - [lem-absorbing-transient-decay, prp-stochastic-properties]
   MA.19<-LA3.13:
   - [cor-symmetric-m-matrix-positive-definite, thm-pd-characterizations]
-  MA.20<-F3.6:
+  MA.20<-F4.1:
   - [cor-eigenvector-perturbation, thm-complex-triangle-inequality]
   - [lem-cauchy-root-bound, thm-complex-triangle-inequality]
   - [prp-numerical-range-basic, thm-complex-triangle-inequality]
@@ -1080,7 +1080,7 @@ witnesses:
   - [prp-principal-angles-well-defined, def-singular-values]
   MA.21<-AN3.3:
   - [thm-golden-thompson, thm-unitary-exponential]
-  MA.21<-F3.6:
+  MA.21<-F4.1:
   - [thm-von-neumann-trace, thm-complex-triangle-inequality]
   MA.21<-LA1.0:
   - [lem-trace-of-a-function, thm-trace-properties]
@@ -1119,7 +1119,7 @@ witnesses:
   MA.21b<-LA3.12:
   - [thm-loewner, def-function-of-normal-operator]
   - [thm-loewner, thm-spectral-resolution]
-  NLA.24<-F3.6:
+  NLA.24<-F4.1:
   - [lem-chebyshev-extremal, thm-complex-triangle-inequality]
   - [lem-chebyshev-extremal, thm-conjugate-properties]
   NLA.24<-LA1.0:
@@ -1179,8 +1179,8 @@ overrides:
 - [thm-loewner, softened_for, MA.21, 1]
 - [thm-unitary-exponential, borrowed_by, MA.21, 1]
 vocab:
-- [AL4.8, AL1.1, all, 2]
-- [AL4.8, F3.7, all, 1]
+- [AL4.8, F4.2, all, 1]
+- [AL4.8, F4.3, all, 2]
 - [AL4.8, LA1.0, all, 1]
 - [AL4.8, LA1.1, all, 1]
 - [AL4.8, LA1.4, all, 6]
@@ -1200,10 +1200,10 @@ vocab:
 - [AN3.3, LA3.11, all, 1]
 - [AN3.3, LA3.12, all, 1]
 - [F2.1, F1.5, all, 1]
-- [F3.8, F3.7, all, 1]
-- [GEO.22, AL1.1, all, 6]
+- [F4.4, F4.2, all, 1]
 - [GEO.22, F2.2, all, 2]
 - [GEO.22, F2.2, stmt, 1]
+- [GEO.22, F4.3, all, 6]
 - [GEO.22, LA1.1, all, 1]
 - [GEO.22, LA1.5, all, 5]
 - [GEO.22, LA1.5, stmt, 2]
@@ -1211,35 +1211,35 @@ vocab:
 - [GEO.22, LA4.14, stmt, 2]
 - [GEO.22, MA.17, all, 1]
 - [GEO.22, MA.18, all, 3]
-- [LA1.0, F3.7, all, 1]
-- [LA1.0, F3.8, all, 1]
+- [LA1.0, F4.2, all, 1]
+- [LA1.0, F4.4, all, 1]
 - [LA1.1, F2.1, all, 1]
 - [LA1.1, F2.2, all, 1]
 - [LA1.1, F2.2, stmt, 1]
-- [LA1.1, F3.7, all, 1]
-- [LA1.1, F3.8, all, 1]
+- [LA1.1, F4.2, all, 1]
+- [LA1.1, F4.4, all, 1]
 - [LA1.2, F2.1, all, 4]
-- [LA1.2, F3.8, all, 1]
+- [LA1.2, F4.4, all, 1]
 - [LA1.2, LA1.1, all, 3]
-- [LA1.3, F3.7, all, 2]
-- [LA1.3, F3.8, all, 1]
+- [LA1.3, F4.2, all, 2]
+- [LA1.3, F4.4, all, 1]
 - [LA1.3, LA1.0, all, 2]
 - [LA1.3, LA1.1, all, 7]
 - [LA1.4, F2.1, all, 1]
 - [LA1.4, F2.1, stmt, 1]
 - [LA1.4, F2.2, all, 2]
-- [LA1.4, F3.7, all, 2]
+- [LA1.4, F4.2, all, 2]
 - [LA1.4, LA1.0, all, 4]
 - [LA1.4, LA1.1, all, 4]
 - [LA1.4, LA1.2, all, 8]
 - [LA1.4, LA1.3, all, 3]
-- [LA1.5, F3.8, all, 1]
+- [LA1.5, F4.4, all, 1]
 - [LA1.5, LA1.0, all, 1]
 - [LA1.5, LA1.1, all, 1]
 - [LA1.5, LA1.2, all, 5]
 - [LA1.5, LA1.3, all, 2]
 - [LA1.5, LA1.4, all, 2]
-- [LA2.10, F3.6, all, 2]
+- [LA2.10, F4.1, all, 2]
 - [LA2.10, LA1.0, all, 3]
 - [LA2.10, LA1.1, all, 1]
 - [LA2.10, LA1.2, all, 1]
@@ -1249,24 +1249,24 @@ vocab:
 - [LA2.10, LA2.7, all, 6]
 - [LA2.10, LA2.9, all, 9]
 - [LA2.10, LA2.9, stmt, 1]
-- [LA2.6, F3.7, all, 1]
+- [LA2.6, F4.2, all, 1]
 - [LA2.6, LA1.1, all, 1]
 - [LA2.6, LA1.2, all, 4]
 - [LA2.6, LA1.4, all, 1]
-- [LA2.7, AL1.1, all, 1]
 - [LA2.7, F2.2, all, 1]
-- [LA2.7, F3.7, all, 1]
-- [LA2.7, F3.8, all, 1]
+- [LA2.7, F4.2, all, 1]
+- [LA2.7, F4.3, all, 1]
+- [LA2.7, F4.4, all, 1]
 - [LA2.7, LA1.0, all, 3]
 - [LA2.7, LA1.3, all, 7]
 - [LA2.7, LA1.3, stmt, 1]
 - [LA2.7, LA1.4, all, 2]
-- [LA2.8, F3.7, all, 2]
+- [LA2.8, F4.2, all, 2]
 - [LA2.8, LA1.0, all, 12]
 - [LA2.8, LA1.3, all, 3]
 - [LA2.8, LA1.4, all, 4]
 - [LA2.8, LA2.7, all, 2]
-- [LA2.9, F3.8, all, 1]
+- [LA2.9, F4.4, all, 1]
 - [LA2.9, LA1.0, all, 4]
 - [LA2.9, LA1.1, all, 1]
 - [LA2.9, LA1.2, all, 1]
@@ -1296,17 +1296,17 @@ vocab:
 - [LA3.13, LA3.11, all, 12]
 - [LA3.13, LA3.11, stmt, 1]
 - [LA3.13, LA3.12, all, 3]
-- [LA4.14, AL1.1, all, 1]
 - [LA4.14, F2.2, all, 5]
 - [LA4.14, F2.2, stmt, 1]
-- [LA4.14, F3.7, all, 1]
+- [LA4.14, F4.2, all, 1]
+- [LA4.14, F4.3, all, 1]
 - [LA4.14, LA1.0, all, 2]
 - [LA4.14, LA1.3, all, 2]
 - [LA4.14, LA1.4, all, 2]
 - [LA4.14, LA2.7, all, 1]
 - [LA4.14, LA2.7, stmt, 1]
 - [LA4.14, LA3.11, all, 1]
-- [LA4.15, F3.7, all, 2]
+- [LA4.15, F4.2, all, 2]
 - [LA4.15, LA1.1, all, 1]
 - [LA4.15, LA1.4, all, 9]
 - [LA4.15, LA1.4, stmt, 2]
@@ -1395,21 +1395,6 @@ vocab:
 - [NLA.24, MA.16, all, 5]
 - [NLA.24, MA.17, all, 5]
 - [NLA.24, MA.17, stmt, 1]
-- - AL1.1
-  - F2.1
-  - term
-  - 5
-  - [inverse, bijective, function, subset]
-- - AL1.1
-  - LA1.2
-  - term
-  - 2
-  - [isomorphism, kernel]
-- - AL4.8
-  - AL1.1
-  - term
-  - 43
-  - [group, abelian, homomorphism]
 - - AL4.8
   - F1.5
   - term
@@ -1426,12 +1411,17 @@ vocab:
   - 3
   - [block, partition, representative]
 - - AL4.8
-  - F3.7
+  - F4.2
   - term
   - 21
   - [field, multiplication, addition, characteristic]
 - - AL4.8
-  - F3.8
+  - F4.3
+  - term
+  - 43
+  - [group, abelian, homomorphism]
+- - AL4.8
+  - F4.4
   - term
   - 8
   - [degree, polynomial, coefficient, monic]
@@ -1531,11 +1521,6 @@ vocab:
   - 1
   - [spectral-resolution]
 - - F1.5
-  - AL1.1
-  - term
-  - 1
-  - [binary-operation]
-- - F1.5
   - AN1.1
   - term
   - 1
@@ -1545,6 +1530,11 @@ vocab:
   - term
   - 15
   - [integer, natural-number, range, rational-number]
+- - F1.5
+  - F4.3
+  - term
+  - 1
+  - [binary-operation]
 - - F1.5
   - LA1.0
   - term
@@ -1590,66 +1580,71 @@ vocab:
   - term
   - 1
   - [every-symmetric]
-- - F3.6
+- - F4.1
   - AN1.1
   - term
   - 1
   - [absolute-value]
-- - F3.6
+- - F4.1
   - F2.1
   - term
   - 2
   - [complex-number, real-number]
-- - F3.6
-  - F3.7
+- - F4.1
+  - F4.2
   - term
   - 2
   - [addition, multiplication]
-- - F3.6
+- - F4.1
   - LA1.0
   - term
   - 1
   - [square]
-- - F3.6
+- - F4.1
   - LA3.11
   - term
   - 2
   - [non-negative, real]
-- - F3.7
+- - F4.2
   - F1.5
   - term
   - 2
   - [prime]
-- - F3.7
+- - F4.2
   - F2.1
   - term
   - 5
   - [integer, function, inverse]
-- - F3.8
+- - F4.3
+  - F2.1
+  - term
+  - 5
+  - [inverse, bijective, function, subset]
+- - F4.3
+  - LA1.2
+  - term
+  - 2
+  - [isomorphism, kernel]
+- - F4.4
   - F2.1
   - term
   - 1
   - [function]
-- - F3.8
-  - F3.7
+- - F4.4
+  - F4.2
   - term
   - 9
   - [field]
-- - F3.8
+- - F4.4
   - LA1.1
   - term
   - 4
   - [over]
-- - F3.8
+- - F4.4
   - NLA.24
   - term
   - 1
   - [indeterminate]
-- - GEO.22
-  - AL1.1
-  - term
-  - 2
-  - [group]
 - - GEO.22
   - AL4.8
   - term
@@ -1672,12 +1667,17 @@ vocab:
   - 9
   - [representative, symmetric, block, equivalence-class, equivalence-relation]
 - - GEO.22
-  - F3.7
+  - F4.2
   - term
   - 5
   - [field]
 - - GEO.22
-  - F3.8
+  - F4.3
+  - term
+  - 2
+  - [group]
+- - GEO.22
+  - F4.4
   - term
   - 1
   - [polynomial]
@@ -1782,12 +1782,12 @@ vocab:
   - 1
   - [symmetric]
 - - LA1.0
-  - F3.7
+  - F4.2
   - term
   - 1
   - [field]
 - - LA1.0
-  - F3.8
+  - F4.4
   - term
   - 1
   - [polynomial]
@@ -1832,12 +1832,12 @@ vocab:
   - 2
   - [reflexive, transitive]
 - - LA1.1
-  - F3.7
+  - F4.2
   - term
   - 12
   - [field, addition, multiplication]
 - - LA1.1
-  - F3.8
+  - F4.4
   - term
   - 4
   - [degree, coefficient, polynomial]
@@ -1922,12 +1922,12 @@ vocab:
   - 2
   - [equivalence-relation, symmetric]
 - - LA1.3
-  - F3.7
+  - F4.2
   - term
   - 4
   - [field]
 - - LA1.3
-  - F3.8
+  - F4.4
   - term
   - 1
   - [coefficient]
@@ -2012,12 +2012,12 @@ vocab:
   - 6
   - [quotient-map, representative]
 - - LA1.4
-  - F3.7
+  - F4.2
   - term
   - 3
   - [addition, field]
 - - LA1.4
-  - F3.8
+  - F4.4
   - term
   - 1
   - [polynomial]
@@ -2182,17 +2182,17 @@ vocab:
   - 20
   - [block, partition, equivalence-relation]
 - - LA2.10
-  - F3.6
+  - F4.1
   - term
   - 1
   - [modulus]
 - - LA2.10
-  - F3.7
+  - F4.2
   - term
   - 10
   - [field, characteristic]
 - - LA2.10
-  - F3.8
+  - F4.4
   - term
   - 23
   - [monic, polynomial, degree]
@@ -2297,12 +2297,12 @@ vocab:
   - 10
   - [integer, map, composition, image, onto, subset]
 - - LA2.6
-  - F3.7
+  - F4.2
   - term
   - 35
   - [field, characteristic]
 - - LA2.6
-  - F3.8
+  - F4.4
   - term
   - 35
   - [polynomial, degree, monic, leading-coefficient]
@@ -2352,11 +2352,6 @@ vocab:
   - 1
   - [as-long-as]
 - - LA2.7
-  - AL1.1
-  - term
-  - 3
-  - [subgroup, group]
-- - LA2.7
   - F1.5
   - term
   - 8
@@ -2372,7 +2367,12 @@ vocab:
   - 1
   - [equivalence-class]
 - - LA2.7
-  - F3.8
+  - F4.3
+  - term
+  - 3
+  - [subgroup, group]
+- - LA2.7
+  - F4.4
   - term
   - 3
   - [coefficient, degree, monic]
@@ -2432,7 +2432,7 @@ vocab:
   - 12
   - [block, partition]
 - - LA2.8
-  - F3.7
+  - F4.2
   - term
   - 5
   - [field]
@@ -2497,7 +2497,7 @@ vocab:
   - 2
   - [block, partition]
 - - LA2.9
-  - F3.8
+  - F4.4
   - term
   - 9
   - [polynomial, monic, degree]
@@ -2562,11 +2562,6 @@ vocab:
   - 1
   - [not-an-eigenvalue]
 - - LA3.11
-  - AL1.1
-  - term
-  - 2
-  - [group, subgroup]
-- - LA3.11
   - F1.5
   - term
   - 2
@@ -2582,12 +2577,17 @@ vocab:
   - 1
   - [symmetric]
 - - LA3.11
-  - F3.7
+  - F4.2
   - term
   - 3
   - [addition, multiplication]
 - - LA3.11
-  - F3.8
+  - F4.3
+  - term
+  - 2
+  - [group, subgroup]
+- - LA3.11
+  - F4.4
   - term
   - 13
   - [monic, polynomial, degree, leading-coefficient]
@@ -2682,17 +2682,17 @@ vocab:
   - 8
   - [symmetric, block, partition]
 - - LA3.12
-  - F3.6
+  - F4.1
   - term
   - 1
   - [modulus]
 - - LA3.12
-  - F3.7
+  - F4.2
   - term
   - 1
   - [addition]
 - - LA3.12
-  - F3.8
+  - F4.4
   - term
   - 4
   - [polynomial, degree]
@@ -2782,7 +2782,7 @@ vocab:
   - 5
   - [symmetric, reflexive, transitive]
 - - LA3.13
-  - F3.8
+  - F4.4
   - term
   - 2
   - [coefficient, polynomial]
@@ -2862,11 +2862,6 @@ vocab:
   - 2
   - [mean, unit]
 - - LA4.14
-  - AL1.1
-  - term
-  - 6
-  - [group, subgroup, homomorphism]
-- - LA4.14
   - AL4.8
   - term
   - 3
@@ -2892,10 +2887,15 @@ vocab:
   - 34
   - [symmetric]
 - - LA4.14
-  - F3.7
+  - F4.2
   - term
   - 10
   - [field]
+- - LA4.14
+  - F4.3
+  - term
+  - 6
+  - [group, subgroup, homomorphism]
 - - LA4.14
   - GEO.22
   - term
@@ -2992,12 +2992,12 @@ vocab:
   - 11
   - [symmetric, quotient-map]
 - - LA4.15
-  - F3.7
+  - F4.2
   - term
   - 18
   - [field, multiplication, addition]
 - - LA4.15
-  - F3.8
+  - F4.4
   - term
   - 2
   - [degree, only-finitely-many]
@@ -3102,12 +3102,12 @@ vocab:
   - 3
   - [reflexive, symmetric, transitive]
 - - MA.16
-  - F3.7
+  - F4.2
   - term
   - 1
   - [addition]
 - - MA.16
-  - F3.8
+  - F4.4
   - term
   - 5
   - [polynomial, coefficient, degree, monic]
@@ -3197,12 +3197,12 @@ vocab:
   - 3
   - [symmetric]
 - - MA.17
-  - F3.6
+  - F4.1
   - term
   - 1
   - [imaginary-part]
 - - MA.17
-  - F3.7
+  - F4.2
   - term
   - 1
   - [field]
@@ -3312,12 +3312,12 @@ vocab:
   - 3
   - [symmetric]
 - - MA.18
-  - F3.7
+  - F4.2
   - term
   - 1
   - [addition]
 - - MA.18
-  - F3.8
+  - F4.4
   - term
   - 1
   - [coefficient]
@@ -3407,12 +3407,12 @@ vocab:
   - 3
   - [block, symmetric]
 - - MA.19
-  - F3.6
+  - F4.1
   - term
   - 6
   - [modulus, real-part]
 - - MA.19
-  - F3.7
+  - F4.2
   - term
   - 1
   - [multiplication]
@@ -3512,12 +3512,12 @@ vocab:
   - 1
   - [block]
 - - MA.20
-  - F3.6
+  - F4.1
   - term
   - 1
   - [modulus]
 - - MA.20
-  - F3.8
+  - F4.4
   - term
   - 3
   - [monic, degree]
@@ -3707,7 +3707,7 @@ vocab:
   - 3
   - [function, map]
 - - MA.21b
-  - F3.6
+  - F4.1
   - term
   - 2
   - [imaginary-part]
@@ -3782,17 +3782,17 @@ vocab:
   - 19
   - [symmetric, block, partition]
 - - NLA.24
-  - F3.6
+  - F4.1
   - term
   - 3
   - [modulus]
 - - NLA.24
-  - F3.7
+  - F4.2
   - term
   - 3
   - [field, multiplication]
 - - NLA.24
-  - F3.8
+  - F4.4
   - term
   - 9
   - [degree, coefficient, polynomial]

@@ -23,7 +23,10 @@
 
 ## 陳述層的 uses／borrows 在章層級找不到路徑
 
-（無）
+- `thm-dedekind-lub`（F3.3）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.3 的硬路徑
+- `thm-r-unique`（F3.4）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
+- `thm-r-unique`（F3.4）uses `thm-naturals-unbounded`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
+- `def-complex-numbers`（F4.1）borrows `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F4.1 的硬路徑
 
 ## b 邊尚未宣告記號作用域（`scope`，spec/03 §6.1）
 
@@ -56,7 +59,11 @@
 
 ## 陳述 ID 對到的書稿 label 不在同一章
 
+- `def-complex-numbers`：地圖放在 F4.1，書稿目前在 la F3.6
+- `def-field`：地圖放在 F4.2，書稿目前在 la F3.7
+- `def-polynomial-ring`：地圖放在 F4.4，書稿目前在 la F3.8
 - `thm-induction`：地圖放在 F2.2，書稿目前在 la F1.5　已知：F2.2 寫好後接手（chapter-constraints.yaml）
+- `thm-transpositions-generate`：地圖放在 F4.3，書稿目前在 la AL1.1
 - `thm-zorn`：地圖放在 F2.4，書稿目前在 la LA1.1　已知：F2.4 寫好後接手（chapter-constraints.yaml）
 
 ## 外部科目圖的對照（registry/external/subject-dag.yaml）

@@ -7,8 +7,9 @@ Solid arrow: s (read first). Dashed arrow: b (a named result is borrowed; readin
 ```mermaid
 flowchart TD
   F1["F1 Logic and Proof"]:::found
-  F2["F2 Sets, Functions, and Relations"]:::found
-  F3["F3 Number Systems and Algebraic Preliminaries"]:::found
+  F2["F2 Sets, Relations, and Cardinality"]:::found
+  F3["F3 Number Systems: From ℕ to ℝ"]:::found
+  F4["F4 Algebraic Preliminaries"]:::found
   AN1["AN1 Analysis on the Real Line"]:::analysis
   LA1["LA1 Spaces and Maps"]:::linalg
   AL1["AL1 Groups"]:::algebra
@@ -32,11 +33,12 @@ flowchart TD
   NLA["NLA Computation and Applications"]:::side
   ST["ST Axiomatic Set Theory"]:::side
   F1 --> F2
-  AN1 --> F3
+  F2 --> F3
+  F3 --> F4
   F2 --> AN1
-  F3 --> LA1
-  F3 --> AL1
-  AL1 --> LA2
+  F4 --> LA1
+  F4 --> AL1
+  AN1 -.-> LA2
   LA1 --> LA2
   LA2 --> LA3
   LA3 --> LA4
@@ -59,6 +61,7 @@ flowchart TD
   MT --> PR
   MA --> GEO
   MA --> NLA
+  AL1 --> ST
   MT --> ST
   classDef found fill:#e8e2f4,stroke:#888,color:#222
   classDef analysis fill:#dcebf7,stroke:#888,color:#222
@@ -85,7 +88,7 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F2 Sets, Functions, and Relations
+## F2 Sets, Relations, and Cardinality
 
 ```mermaid
 flowchart LR
@@ -103,30 +106,47 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F3 Number Systems and Algebraic Preliminaries
+## F3 Number Systems: From ℕ to ℝ
 
 ```mermaid
 flowchart LR
   F2_2["F2.2 Equivalence Relations, Orders, and Induction"]:::ext
   F2_3["F2.3 Cardinality: Countable and Uncountable Sets"]:::ext
-  AN1_1["AN1.1 Ordered Fields and the Least Upper Bound Axiom"]:::ext
-  F3_1["1 The von Neumann Natural Numbers"]:::opt
-  F3_2["2 Building ℤ and ℚ from Equivalence Classes"]:::opt
-  F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
-  F3_4["4 The Complete Ordered Field Is Unique"]:::opt
+  F3_1["1 The von Neumann Natural Numbers"]
+  F3_2["2 Building ℤ and ℚ from Equivalence Classes"]
   F3_5["5 Divisibility, Division with Remainder, and ℤ/nℤ"]
-  F3_6["6 Complex Numbers"]
-  F3_7["7 Fields"]
-  F3_8["8 Formal Polynomials"]
+  F3_9["9 Ordered Fields and Sequences in an Ordered Field"]
+  F3_10["10 Constructing ℝ from Cauchy Sequences"]
+  F3_4["4 The Complete Ordered Field Is Unique"]
+  F3_3["3 Constructing ℝ by Dedekind Cuts"]:::opt
   F2_3 --> F3_1
   F3_1 --> F3_2
-  AN1_1 --> F3_3
-  F3_2 --> F3_3
-  AN1_1 --> F3_4
   F2_2 --> F3_5
-  AN1_1 -.-> F3_6
-  F3_5 --> F3_7
-  F3_7 --> F3_8
+  F3_2 --> F3_9
+  F3_9 --> F3_10
+  F3_10 --> F3_4
+  F3_9 --> F3_3
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## F4 Algebraic Preliminaries
+
+```mermaid
+flowchart LR
+  F3_5["F3.5 Divisibility, Division with Remainder, and ℤ/nℤ"]:::ext
+  F3_10["F3.10 Constructing ℝ from Cauchy Sequences"]:::ext
+  F4_1["1 Complex Numbers"]
+  F4_2["2 Fields"]
+  F4_3["3 Groups, Subgroups, and Homomorphisms"]
+  F4_4["4 Formal Polynomials"]
+  F4_5["5 Polynomials over a Field"]
+  F3_10 --> F4_1
+  F3_5 --> F4_2
+  F3_5 --> F4_3
+  F4_2 --> F4_4
+  F4_4 --> F4_5
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -173,16 +193,16 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn's Lemma"]:::ext
-  F3_8["F3.8 Formal Polynomials"]:::ext
+  F4_4["F4.4 Formal Polynomials"]:::ext
   LA1_0["0 Matrices"]
   LA1_1["1 Vector Spaces"]
   LA1_2["2 Linear Maps"]
   LA1_3["3 Linear Systems and Matrices"]
   LA1_4["4 Matrices of Maps"]
   LA1_5["5 Duality"]
-  F3_8 --> LA1_0
+  F4_4 --> LA1_0
   F2_4 -.-> LA1_1
-  F3_8 --> LA1_1
+  F4_4 --> LA1_1
   LA1_0 --> LA1_2
   LA1_1 --> LA1_2
   LA1_0 --> LA1_3
@@ -199,8 +219,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F3_5["F3.5 Divisibility, Division with Remainder, and ℤ/nℤ"]:::ext
-  AL1_1["1 Groups, Subgroups, and Homomorphisms"]
+  F4_3["F4.3 Groups, Subgroups, and Homomorphisms"]:::ext
   AL1_2["2 Cyclic Groups"]
   AL1_3["3 Symmetric Groups and the Sign of a Permutation"]
   AL1_4["4 Cosets and Lagrange's Theorem"]
@@ -211,9 +230,8 @@ flowchart LR
   AL1_9["9 Composition Series, Solvable Groups, and Nilpotent Groups"]
   AL1_10["10 The Simplicity of Aₙ"]
   AL1_11["11 Free Groups and Presentations"]
-  F3_5 --> AL1_1
-  AL1_1 --> AL1_2
-  AL1_1 --> AL1_3
+  F4_3 --> AL1_2
+  F4_3 --> AL1_3
   AL1_2 --> AL1_4
   AL1_4 --> AL1_5
   AL1_3 --> AL1_6
@@ -234,19 +252,19 @@ flowchart LR
 flowchart LR
   AN1_6["AN1.6 Continuous Functions on Compact Sets and Intervals"]:::ext
   AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
-  F3_6["F3.6 Complex Numbers"]:::ext
+  F4_1["F4.1 Complex Numbers"]:::ext
+  F4_3["F4.3 Groups, Subgroups, and Homomorphisms"]:::ext
   LA1_5["LA1.5 Duality"]:::ext
-  AL1_1["AL1.1 Groups, Subgroups, and Homomorphisms"]:::ext
   LA2_6["6 Polynomials"]
   LA2_7["7 Determinants"]
   LA2_8["8 Block Matrices"]
   LA2_9["9 Eigenvalues and Diagonalization"]
   LA2_10["10 Canonical Forms"]
   AN1_6 -.-> LA2_6
-  F3_6 --> LA2_6
+  F4_1 --> LA2_6
   LA1_5 --> LA2_6
+  F4_3 --> LA2_7
   LA2_6 --> LA2_7
-  AL1_1 --> LA2_7
   LA2_7 --> LA2_8
   LA2_8 --> LA2_9
   AN1_10 -.-> LA2_10
@@ -359,8 +377,8 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn's Lemma"]:::ext
-  F3_7["F3.7 Fields"]:::ext
-  F3_8["F3.8 Formal Polynomials"]:::ext
+  F4_2["F4.2 Fields"]:::ext
+  F4_4["F4.4 Formal Polynomials"]:::ext
   LA1_1["LA1.1 Vector Spaces"]:::ext
   AL1_5["AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems"]:::ext
   AL2_1["1 Rings, Ideals, and Quotient Rings"]
@@ -374,14 +392,14 @@ flowchart LR
   AL2_9["9 Finite Fields"]
   AL2_10["10 Ruler-and-Compass Constructions"]
   AL1_5 --> AL2_1
-  F3_7 --> AL2_2
+  F4_2 --> AL2_2
   AL2_1 --> AL2_2
   F2_4 -.-> AL2_3
   AL2_1 --> AL2_3
   AL2_1 --> AL2_4
   AL2_2 --> AL2_5
   AL2_3 --> AL2_5
-  F3_8 --> AL2_6
+  F4_4 --> AL2_6
   AL2_5 --> AL2_6
   LA1_1 --> AL2_7
   AL2_6 --> AL2_7
@@ -434,7 +452,7 @@ flowchart LR
 ```mermaid
 flowchart LR
   AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
-  F3_6["F3.6 Complex Numbers"]:::ext
+  F4_1["F4.1 Complex Numbers"]:::ext
   LA3_12["LA3.12 Spectral Theory"]:::ext
   AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
   AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
@@ -449,7 +467,7 @@ flowchart LR
   HA_8["8 Dirichlet's Theorem on Primes in Arithmetic Progressions"]:::opt
   HA_9["9 What the Riemann Integral Lacks"]
   AN1_10 --> HA_1
-  F3_6 --> HA_1
+  F4_1 --> HA_1
   HA_1 --> HA_2
   AN2_2 --> HA_3
   HA_2 --> HA_3

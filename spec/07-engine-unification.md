@@ -1,5 +1,7 @@
 # 07 統一引擎與合併網站（計畫，2026-10-11）
 
+**2026-10-11 補充：一冊一書。** 每一冊是一本獨立的書（`registry/volumes.yaml` 的 `prefix`），依系列放在 foundations、analysis、linear-algebra 三個 repo 的子目錄；library 組裝器依 math-atlas 的 manifest 建所有冊，各書的 `external-books` 由 manifest 產生、`url` 指向兄弟路徑，跨書 hover 走同源（spec/06「系列與冊」）。
+
 由只讀調查產生的英文計畫原文如下；決策摘要：book-template 改名 book-engine，各書以 git submodule 掛在 engine/，`BOOK_ENGINE` 環境變數可指向工作副本；書專屬檢查改由 config 的 checks 清單掛入；合併網站由 `./build.py library` 依 math-atlas 的 manifest 組成。
 
 # One engine, one site: unification plan

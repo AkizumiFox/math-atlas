@@ -192,7 +192,7 @@
   def: def-parse-tree
   ch: F1.3
   meta: true
-  also: [def-polynomial-evaluation@F3.8]
+  also: [def-polynomial-evaluation@F4.4]
 - {id: row, en: row, zh: 列, naer: hs, def: def-truth-table, ch: F1.3, meta: true}
 - {id: satisfiable, en: satisfiable, zh: null, naer: missing, def: def-satisfiable, ch: F1.3, meta: true}
 - id: semantically-entail
@@ -364,7 +364,7 @@
   naer: missing
   def: def-bijective
   ch: F2.1
-  also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@AL1.1, def-intertwining-map@AL4.8]
+  also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@F4.3, def-intertwining-map@AL4.8]
 - {id: cartesian-product, en: Cartesian product, zh: 笛卡兒積, naer: univ, def: def-cartesian-product, ch: F2.1}
 - {id: characteristic-property, en: characteristic property, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - id: codomain
@@ -388,7 +388,7 @@
   naer: univ
   def: def-common-number-sets
   ch: F2.1
-  also: [def-complex-numbers@F3.6]
+  also: [def-complex-numbers@F4.1]
 - {id: composite, en: composite, zh: null, naer: missing, def: def-composition, ch: F2.1}
 - {id: composition, en: composition, zh: 合成, naer: univ, def: def-composition, ch: F2.1}
 - {id: contain, en: contain, zh: null, naer: missing, def: def-subset, ch: F2.1}
@@ -645,51 +645,51 @@
 - {id: continuous, en: continuous, zh: 連續, naer: univ, def: def-continuous, ch: AN1.5}
 - {id: function-limit, en: limit of a function, zh: null, naer: missing, def: def-fn-limit, ch: AN1.5}
 - {id: derivative, en: derivative, zh: null, naer: missing, def: def-derivative, ch: AN1.7}
-- {id: complex-conjugate, en: complex conjugate, zh: 共軛複數, naer: univ, def: def-conjugate-modulus, ch: F3.6}
-- {id: imaginary-part, en: imaginary part, zh: 虛部, naer: univ, def: def-complex-numbers, ch: F3.6}
+- {id: complex-conjugate, en: complex conjugate, zh: 共軛複數, naer: univ, def: def-conjugate-modulus, ch: F4.1}
+- {id: imaginary-part, en: imaginary part, zh: 虛部, naer: univ, def: def-complex-numbers, ch: F4.1}
 - id: modulus
   en: modulus
   zh: null
   naer: choose
   def: def-conjugate-modulus
-  ch: F3.6
+  ch: F4.1
   zh_candidates: [模, 模數, 絕對值, 尺度]
-- {id: real-part, en: real part, zh: 實部, naer: univ, def: def-complex-numbers, ch: F3.6}
+- {id: real-part, en: real part, zh: 實部, naer: univ, def: def-complex-numbers, ch: F4.1}
 - id: addition
   en: addition
   zh: 加法
   naer: univ
   def: def-field
-  ch: F3.7
+  ch: F4.2
   also: [def-vector-space@LA1.1]
 - id: characteristic
   en: characteristic
   zh: null
   naer: choose
   def: def-characteristic
-  ch: F3.7
+  ch: F4.2
   zh_candidates: [特徵的, 特性的, 示性的, 特徵數, 示性數]
 - id: field
   en: field
   zh: null
   naer: choose
   def: def-field
-  ch: F3.7
+  ch: F4.2
   zh_candidates: [體, 場, 範圍, 域]
-- {id: multiplication, en: multiplication, zh: 乘法, naer: univ, def: def-field, ch: F3.7}
+- {id: multiplication, en: multiplication, zh: 乘法, naer: univ, def: def-field, ch: F4.2}
 - id: coefficient
   en: coefficient
   zh: 係數
   naer: univ
   def: def-polynomial
-  ch: F3.8
+  ch: F4.4
   also: [def-linear-combination@LA1.1]
 - id: degree
   en: degree
   zh: null
   naer: choose
   def: def-degree
-  ch: F3.8
+  ch: F4.4
   zh_candidates: ['次[數]', '度[數]']
   also: [def-restriction-of-scalars@LA1.1, def-polynomial-algebra-several-variables@LA4.15, def-character@AL4.8, def-representation@AL4.8]
 - id: leading-coefficient
@@ -697,18 +697,18 @@
   zh: null
   naer: choose
   def: def-degree
-  ch: F3.8
+  ch: F4.4
   zh_candidates: [領導係數, 首項係數]
 - id: monic
   en: monic
   zh: null
   naer: missing
   def: def-degree
-  ch: F3.8
+  ch: F4.4
   also: [def-minimal-polynomial@LA2.9, def-t-annihilator@LA2.10, def-companion-matrix@LA2.10, def-orthogonal-polynomial-sequence@LA3.11]
-- {id: only-finitely-many, en: only finitely many, zh: null, naer: missing, def: def-polynomial, ch: F3.8}
-- {id: polynomial, en: polynomial, zh: 多項式, naer: univ, def: def-polynomial, ch: F3.8}
-- {id: polynomial-function, en: polynomial function, zh: 多項式函數, naer: hs, def: def-polynomial-evaluation, ch: F3.8}
+- {id: only-finitely-many, en: only finitely many, zh: null, naer: missing, def: def-polynomial, ch: F4.4}
+- {id: polynomial, en: polynomial, zh: 多項式, naer: univ, def: def-polynomial, ch: F4.4}
+- {id: polynomial-function, en: polynomial function, zh: 多項式函數, naer: hs, def: def-polynomial-evaluation, ch: F4.4}
 - id: additive-inverse
   en: additive inverse
   zh: null
@@ -908,14 +908,14 @@
   naer: univ
   def: def-isomorphism
   ch: LA1.2
-  also: [def-algebra-over-field@LA4.14, def-group-homomorphism@AL1.1, def-projective-transformation@GEO.22]
+  also: [def-algebra-over-field@LA4.14, def-group-homomorphism@F4.3, def-projective-transformation@GEO.22]
 - id: kernel
   en: kernel
   zh: null
   naer: missing
   def: def-kernel
   ch: LA1.2
-  also: [def-group-homomorphism@AL1.1, def-algebra-homomorphism@AL4.8]
+  also: [def-group-homomorphism@F4.3, def-algebra-homomorphism@AL4.8]
 - {id: linear-map, en: linear map, zh: null, naer: missing, def: def-linear-transformation, ch: LA1.2}
 - {id: linear-operator, en: linear operator, zh: 線性算子, naer: univ, def: def-linear-transformation, ch: LA1.2}
 - id: linear-transformation
@@ -1715,17 +1715,17 @@
 - {id: closed-set, en: closed set, zh: 閉集, naer: univ, def: def-closed, ch: AN2.1}
 - {id: partial-derivative, en: partial derivative, zh: 偏導數, naer: univ, def: def-partial, ch: AN3.1}
 - {id: total-derivative, en: total derivative, zh: null, naer: missing, def: def-frechet, ch: AN3.1}
-- {id: abelian, en: abelian, zh: null, naer: missing, def: def-group, ch: AL1.1}
-- {id: binary-operation, en: binary operation, zh: 二元運算, naer: univ, def: def-group, ch: AL1.1}
+- {id: abelian, en: abelian, zh: null, naer: missing, def: def-group, ch: F4.3}
+- {id: binary-operation, en: binary operation, zh: 二元運算, naer: univ, def: def-group, ch: F4.3}
 - id: group
   en: group
   zh: null
   naer: choose
   def: def-group
-  ch: AL1.1
+  ch: F4.3
   zh_candidates: [群, 組]
-- {id: homomorphism, en: homomorphism, zh: '同態[映射]', naer: univ, def: def-group-homomorphism, ch: AL1.1}
-- {id: subgroup, en: subgroup, zh: null, naer: missing, def: def-subgroup, ch: AL1.1}
+- {id: homomorphism, en: homomorphism, zh: '同態[映射]', naer: univ, def: def-group-homomorphism, ch: F4.3}
+- {id: subgroup, en: subgroup, zh: null, naer: missing, def: def-subgroup, ch: F4.3}
 - id: fourier-transform
   en: Fourier transform
   zh: Fourier變換
