@@ -13,7 +13,7 @@ nodes:
   - [thm-raa, F1.2, thm, "反證規則 RAA 與古典邏輯", A1, R2]
   - [thm-soundness, F1.3, thm, "命題邏輯的健全性與完備性", A2, R2]
   - [def-free-variable, F1.4, def, "量詞、自由與約束變數", A1, R1]
-  - [thm-quant-negation, F1.4, thm, "量詞否定律與 ∀∃/∃∀ 不可交換", A1, R3]
+  - [thm-quant-negation, F1.8, thm, "量詞否定律與 ∀∃/∃∀ 不可交換", A1, R3]
   - [cpt-counterexample, F1.5, concept, "反例與病態情形", A1, R3]
   # F2
   - [def-function, F2.1, def, "函數作為關係；像與原像", A2, R1]

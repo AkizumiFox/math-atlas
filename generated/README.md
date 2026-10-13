@@ -75,14 +75,20 @@ flowchart TD
 ```mermaid
 flowchart LR
   F1_1["1 Connectives and Derivations"]
-  F1_2["2 Negation, Classical Logic, and Finding Derivations"]
+  F1_2["2 Negation and Classical Logic"]
+  F1_7["7 Finding Derivations"]
   F1_3["3 Truth, Soundness, and Completeness"]
   F1_4["4 Predicate Logic and the Quantifier Rules"]
+  F1_8["8 Working with Quantifiers: Translation, Laws, and Search"]
+  F1_6["6 Models and Theories"]
   F1_5["5 From Derivations to Mathematical Prose"]
   F1_1 --> F1_2
-  F1_2 --> F1_3
-  F1_2 --> F1_4
-  F1_4 --> F1_5
+  F1_2 --> F1_7
+  F1_7 --> F1_3
+  F1_3 --> F1_4
+  F1_4 --> F1_8
+  F1_8 --> F1_6
+  F1_6 -.-> F1_5
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

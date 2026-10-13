@@ -7,7 +7,7 @@ layers: [第 0 層　大一基礎, 第 1 層　大學核心（大二～大三）
 subjects:
   - {id: calc, name: 微積分, layer: 0, group: 基礎與邏輯, deps: [], ch: [AN1.5, AN1.7, AN1.8]}
   - {id: la0, name: 線性代數（計算）, layer: 0, group: 基礎與邏輯, deps: [], fields: [linear-algebra]}
-  - {id: proof, name: 證明入門／離散數學, layer: 0, group: 基礎與邏輯, deps: [], ch: [F1.1, F1.2, F1.3, F1.4]}
+  - {id: proof, name: 證明入門／離散數學, layer: 0, group: 基礎與邏輯, deps: [], ch: [F1.1, F1.2, F1.7, F1.3, F1.4, F1.8, F1.6]}
   - {id: logic, name: 數理邏輯, layer: 1, group: 基礎與邏輯, deps: [proof], fields: [mathematical-logic]}
   - {id: set, name: 公理化集合論, layer: 1, group: 基礎與邏輯, deps: [proof], fields: [set-theory]}
   - {id: ra1, name: 實分析 I, layer: 1, group: 分析, deps: [calc, proof], fields: [real-analysis]}

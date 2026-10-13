@@ -9,9 +9,12 @@
 
 F1:
   - {id: F1.1, title: "Connectives and Derivations", title_zh: 連接詞與推導, src: ab:1}
-  - {id: F1.2, title: "Negation, Classical Logic, and Finding Derivations", title_zh: 否定、古典邏輯與推導的尋找, src: ab:2}
+  - {id: F1.2, title: "Negation and Classical Logic", title_zh: 否定與古典邏輯, src: ab:2}
+  - {id: F1.7, title: "Finding Derivations", title_zh: 推導的尋找, src: new}
   - {id: F1.3, title: "Truth, Soundness, and Completeness", title_zh: 真值、健全性與完備性, src: ab:3}
   - {id: F1.4, title: "Predicate Logic and the Quantifier Rules", title_zh: 述詞邏輯與量詞規則, src: ab:4}
+  - {id: F1.8, title: "Working with Quantifiers: Translation, Laws, and Search", title_zh: 量詞的運用：翻譯、定律與搜尋, src: new}
+  - {id: F1.6, title: "Models and Theories", title_zh: 模型與理論, src: new}
   - {id: F1.5, title: "From Derivations to Mathematical Prose", title_zh: 從推導到數學文字, src: [ab:5, la:ch00/01, la:ch00/02]}
 
 F2:

@@ -180,7 +180,7 @@
    "series": "Foundations",
    "short": "F1",
    "blurb": "Logic as the grammar of proof, for a reader who has never been asked to write one: derivations, rule by rule, for the connectives and quantifiers; truth tables, soundness and completeness; and the way back from derivations to ordinary mathematical prose.",
-   "planned": 5
+   "planned": 8
   },
   {
    "prefix": "fd2",

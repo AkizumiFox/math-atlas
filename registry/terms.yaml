@@ -114,17 +114,17 @@
 - {id: symbol-for-symbol, en: symbol for symbol, zh: null, naer: missing, def: def-rule-schema, ch: F1.1, meta: true}
 - {id: already-been-derived, en: already been derived, zh: null, naer: missing, def: def-derived-rule, ch: F1.2, meta: true}
 - {id: contradiction-elimination, en: contradiction-elimination, zh: null, naer: missing, def: def-rules-contradiction, ch: F1.2, meta: true}
-- {id: current-goal, en: current goal, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
+- {id: current-goal, en: current goal, zh: null, naer: missing, def: def-partial-derivation, ch: F1.7, meta: true}
 - {id: derived-rule, en: derived rule, zh: null, naer: missing, def: def-derived-rule, ch: F1.2, meta: true}
-- {id: gap, en: gap, zh: 空隙, naer: univ, def: def-partial-derivation, ch: F1.2, meta: true}
+- {id: gap, en: gap, zh: 空隙, naer: univ, def: def-partial-derivation, ch: F1.7, meta: true}
 - {id: iff-elimination, en: iff-elimination, zh: null, naer: missing, def: def-rules-biconditional, ch: F1.2, meta: true}
 - {id: iff-introduction, en: iff-introduction, zh: null, naer: missing, def: def-rules-biconditional, ch: F1.2, meta: true}
 - {id: not-elimination, en: not-elimination, zh: null, naer: missing, def: def-rules-contradiction, ch: F1.2, meta: true}
 - {id: not-introduction, en: not-introduction, zh: null, naer: missing, def: def-rules-negation, ch: F1.2, meta: true}
-- {id: partial-derivation, en: partial derivation, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
+- {id: partial-derivation, en: partial derivation, zh: null, naer: missing, def: def-partial-derivation, ch: F1.7, meta: true}
 - {id: provably-equivalent, en: provably equivalent, zh: null, naer: missing, def: def-provable-equivalence, ch: F1.2, meta: true}
 - {id: reductio-ad-absurdum, en: reductio ad absurdum, zh: null, naer: missing, def: def-rule-raa, ch: F1.2, meta: true}
-- {id: resource, en: resource, zh: null, naer: missing, def: def-partial-derivation, ch: F1.2, meta: true}
+- {id: resource, en: resource, zh: null, naer: missing, def: def-partial-derivation, ch: F1.7, meta: true}
 - {id: adequate, en: adequate, zh: null, naer: missing, def: def-adequate, ch: F1.3, meta: true}
 - {id: agree-with-the-row, en: agree with the row, zh: null, naer: missing, def: def-truth-table, ch: F1.3, meta: true}
 - id: branch
@@ -202,7 +202,7 @@
   def: def-valid-argument
   ch: F1.3
   meta: true
-  also: [def-first-order-entailment@F1.4]
+  also: [def-first-order-entailment@F1.6]
 - {id: semantically-equivalent, en: semantically equivalent, zh: null, naer: missing, def: def-semantic-equivalence, ch: F1.3, meta: true}
 - {id: subformula, en: subformula, zh: null, naer: missing, def: def-subformula, ch: F1.3, meta: true}
 - id: tautology
@@ -227,19 +227,19 @@
 - {id: unsatisfiable, en: unsatisfiable, zh: null, naer: missing, def: def-satisfiable, ch: F1.3, meta: true}
 - {id: valid, en: valid, zh: null, naer: missing, def: def-valid-argument, ch: F1.3, meta: true}
 - {id: valuation, en: valuation, zh: 賦值, naer: univ, def: def-valuation, ch: F1.3, meta: true}
-- {id: assignment, en: assignment, zh: null, naer: missing, def: def-assignment, ch: F1.4, meta: true}
+- {id: assignment, en: assignment, zh: null, naer: missing, def: def-assignment, ch: F1.6, meta: true}
 - {id: atomic-formula, en: atomic formula, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
 - {id: bind, en: bind, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
 - {id: both-and-are-free, en: both and are free, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: bound, en: bound, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
 - {id: bounded-quantifier, en: bounded quantifier, zh: 約束量詞, naer: univ, def: def-bounded-quantifier, ch: F1.4, meta: true}
-- {id: counter-model, en: counter-model, zh: null, naer: missing, def: def-first-order-entailment, ch: F1.4, meta: true}
+- {id: counter-model, en: counter-model, zh: null, naer: missing, def: def-first-order-entailment, ch: F1.6, meta: true}
 - id: domain
   en: domain
   zh: null
   naer: choose
   def: def-structure
-  ch: F1.4
+  ch: F1.6
   zh_candidates: ['[區]域', 定義域]
   meta: true
   also: [def-function@F2.1, def-relation@F2.1, def-kernel@LA1.2]
@@ -267,7 +267,7 @@
   zh: null
   naer: choose
   def: def-structure
-  ch: F1.4
+  ch: F1.6
   zh_candidates: ['恆等[式]', '單位[元素]', 同一]
   meta: true
 - id: model
@@ -275,10 +275,10 @@
   zh: null
   naer: choose
   def: def-structure
-  ch: F1.4
+  ch: F1.6
   zh_candidates: [模型, 模式]
   meta: true
-- {id: never, en: never, zh: null, naer: missing, def: def-satisfaction, ch: F1.4, meta: true}
+- {id: never, en: never, zh: null, naer: missing, def: def-satisfaction, ch: F1.6, meta: true}
 - {id: occurrence, en: occurrence, zh: null, naer: missing, def: def-free-variable, ch: F1.4, meta: true}
 - id: scope
   en: scope
@@ -289,7 +289,7 @@
   zh_candidates: [分野, 轄域]
   meta: true
 - {id: sentence, en: sentence, zh: 語句, naer: univ, def: def-sentence, ch: F1.4, meta: true}
-- {id: structure, en: structure, zh: 結構, naer: univ, def: def-structure, ch: F1.4, meta: true}
+- {id: structure, en: structure, zh: 結構, naer: univ, def: def-structure, ch: F1.6, meta: true}
 - {id: term, en: term, zh: 項, naer: univ, def: def-term, ch: F1.4, meta: true}
 - id: variable
   en: variable

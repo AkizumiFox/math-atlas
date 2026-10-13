@@ -7,7 +7,7 @@
 | 書稿 | 冊的章 |
 |---|---|
 | ab:1 | F1.1 Connectives and Derivations |
-| ab:2 | F1.2 Negation, Classical Logic, and Finding Derivations |
+| ab:2 | F1.2 Negation and Classical Logic |
 | ab:3 | F1.3 Truth, Soundness, and Completeness |
 | ab:4 | F1.4 Predicate Logic and the Quantifier Rules |
 | ab:5 | F1.5 From Derivations to Mathematical Prose |
@@ -127,6 +127,7 @@
 
 ## 尚無書稿（`new`）
 
+- **F1**：F1.7 Finding Derivations、F1.8 Working with Quantifiers: Translation, Laws, and Search、F1.6 Models and Theories
 - **F2**：F2.4 Zorn's Lemma
 - **F3**：F3.5 Divisibility, Division with Remainder, and Modular Arithmetic、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing the Real Numbers from Cauchy Sequences
 - **F4**：F4.5 Polynomials over a Field

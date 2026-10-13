@@ -178,7 +178,7 @@ def main():
         row = {"id": tid, "en": t["en"], "zh": zh, "naer": src, "def": t["def"], "ch": t["ch"]}
         if alt:
             row["zh_alt" if src == "hand" else "zh_candidates"] = alt
-        meta = prev.get("meta", t["ch"] in ("F1.1", "F1.2", "F1.3", "F1.4") or t["def"] in META_LABELS)
+        meta = prev.get("meta", t["ch"] in ("F1.1", "F1.2", "F1.3", "F1.4", "F1.6", "F1.7", "F1.8") or t["def"] in META_LABELS)
         if meta:
             row["meta"] = True
         for k in ("forms", "note"):

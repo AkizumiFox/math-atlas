@@ -67,7 +67,7 @@
 
 ## 外部科目圖的對照（registry/external/subject-dag.yaml）
 
-共 32 項差異，其中 32 項已記在 `registry/field-deviations.yaml`。以下只列新出現的：
+共 33 項差異，其中 33 項已記在 `registry/field-deviations.yaml`。以下只列新出現的：
 
 （無）
 

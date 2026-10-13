@@ -12,14 +12,17 @@
 
 # ───────────── F1 邏輯與證明 ─────────────
 F1.2: {s: [F1.1]}
-F1.3: {s: [F1.2]}
-F1.4: {s: [F1.2], see: [F1.3]}
-F1.5: {s: [F1.4]}
+F1.7: {s: [F1.2]}
+F1.3: {s: [F1.7]}          # 4.5/4.7/4.8 pair "satisfiable" with 3.2's def-inconsistent-set; 4.6 answers 3.2's withheld verdicts
+F1.4: {s: [F1.7, F1.3]}    # 5.2 builds syntax by 4.3's recursion; the searches use 3.1's moves
+F1.8: {s: [F1.4, F1.3]}    # 6.3's TAUT licence is 4.8's completeness; 6.2 cites 4.5
+F1.6: {s: [F1.8], see: [F1.3]}
+F1.5: {s: [F1.8], b: [F1.6], scope: {F1.6: [F1.4, F1.3]}, why: {F1.6: "8.7 cites 7.2's statement that a counter-model rules out every first-order derivation, as a black box"}}
 
 # ───────────── F2 集合、函數與關係 ─────────────
 F2.1: {s: [F1.5]}
-F2.2: {s: [F2.1]}
-F2.3: {s: [F2.2]}
+F2.2: {s: [F2.1], see: [F1.6]}   # orders and relations as theories (C3)
+F2.3: {s: [F2.2, F1.6]}    # fd2 3.1 cites exr-models-c1/c2; 3.6 builds a counter-model by 7.2's procedure
 F2.4: {s: [F2.2, F2.3]}
 
 # ───────────── AN1 實數線 ─────────────
@@ -44,9 +47,9 @@ F3.2: {s: [F3.1]}
 F3.9: {s: [F3.2], see: [F3.5]}  # R1 uses F3.5's quotient-by-an-ideal method
 F3.10: {s: [F3.9, F3.5]}  # thm-reals-commutative-ring: ℝ = 𝒞/𝒩 by F3.5's thm-quotient-ring-by-ideal
 F3.3: {s: [F3.10, F3.4, F3.9, F3.2]}  # as delivered: F3.2's ordered field ℚ throughout §01–§04; F3.9's ι_F, density and limits in §05–§06; F3.10 and F3.4 in §05–§06
-F3.4: {s: [F3.10, F3.9, F3.5], see: [F3.3]}  # as delivered: F3.9 throughout (ι_F, density, limits); R2 cites F3.5's thm-integers-mod-prime-field, thm-integers-mod-n-ring
+F3.4: {s: [F3.10, F3.9, F3.5], see: [F3.3, F1.6]}  # as delivered: F3.9 throughout (ι_F, density, limits); R2 cites F3.5's thm-integers-mod-prime-field, thm-integers-mod-n-ring
 F3.5: {s: [F3.2]}
-F4.1: {s: [F2.1, F3.10, F3.4, F3.5], b: [AN1.10], scope: {AN1.10: [F2.1, F3.10]},
+F4.1: {s: [F2.1, F3.10, F3.4, F3.5], b: [AN1.10], see: [F1.6], scope: {AN1.10: [F2.1, F3.10]},
        why: {AN1.10: cos、sin、π 的五個性質 (T1)–(T5)（ax-cosine-sine）：平方和、加法公式、cos θ = 1 ⟺ θ ∈ 2πℤ、單位圓的參數化、sin 在 0 與 π 之間為正}}
        # F3.4：實數平方根（模長、複數平方根）；F3.5：帶餘除法與奇偶（n 次方根的計數）。代數基本定理的證明不經過 (T1)–(T5)，所以 F4.5 不依賴 AN1.10
 F4.2: {s: [F3.5], see: [F4.1, F3.10, F3.4, F3.9]}  # see：例題與解答裡的 ℝ、ℚ(√2)、ℚ(t)
@@ -83,7 +86,7 @@ AN3.6: {s: [AN3.1, LA4.15]}
 AN3.7: {s: [AN3.4, AN3.5, AN3.6], revisits: [MT.6]}
 
 # ───────────── AL1 群 ─────────────
-F4.3: {s: [F2.1, F3.5]}
+F4.3: {s: [F2.1, F3.5], see: [F1.6]}   # groups as models (C3)
 AL1.2: {s: [F4.3, F3.5], revisits: [F4.5]}  # F^× 的有限子群是循環群：根的個數（F4.5 thm-polynomial-root-count）
 AL1.3: {s: [F4.3]}
 AL1.4: {s: [AL1.2, F2.2]}
