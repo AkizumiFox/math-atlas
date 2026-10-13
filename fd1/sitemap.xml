@@ -14,36 +14,42 @@
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch02-negation-and-classical-logic/03-derived-rules.html</loc></url>
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch02-negation-and-classical-logic/04-biconditional-and-definitions.html</loc></url>
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch02-negation-and-classical-logic/05-reductio-and-classical-rules.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch02-negation-and-classical-logic/06-finding-derivations.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/index.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/01-formulas-and-parse-trees.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/02-induction.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/03-valuations-and-truth-tables.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/04-entailment-and-equivalence.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/05-soundness.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/06-completeness.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-semantics-soundness-completeness/07-normal-forms.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/index.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/01-predicates-and-quantifiers.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/02-terms-formulas-substitution.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/03-universal-elimination.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/04-universal-introduction.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/05-existential-introduction.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/06-existential-elimination.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/07-equality-and-uniqueness.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/08-translation.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/09-quantifier-laws.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/10-uniform-continuity-rule-by-rule.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/11-models.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-predicate-logic/12-first-order-soundness.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/index.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/01-connective-rhetoric.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/02-quantifier-rhetoric.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/03-levels-of-abbreviation.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/04-reading-proofs.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/05-writing-proofs.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/06-checking-proofs.html</loc></url>
-  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-from-derivations-to-prose/07-excluded-middle.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-finding-derivations/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch03-finding-derivations/01-finding-derivations.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/01-formulas-and-parse-trees.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/02-induction.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/03-structural-induction.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/04-valuations-and-truth-tables.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/05-entailment-and-equivalence.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/07-soundness.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/08-completeness.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch04-semantics-soundness-completeness/09-normal-forms.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/01-predicates-and-quantifiers.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/02-terms-formulas-substitution.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/03-universal-elimination.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/04-universal-introduction.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/05-existential-introduction.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/06-existential-elimination.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/07-equality-and-uniqueness.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch05-predicate-logic/08-counting-and-descriptions.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch06-working-with-quantifiers/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch06-working-with-quantifiers/01-translation.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch06-working-with-quantifiers/02-quantifier-laws.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch06-working-with-quantifiers/04-uniform-continuity-rule-by-rule.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch07-models-and-theories/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch07-models-and-theories/01-structures-and-satisfaction.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch07-models-and-theories/02-counter-models.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch07-models-and-theories/03-first-order-soundness.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/index.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/01-connective-rhetoric.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/02-quantifier-rhetoric.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/03-levels-of-abbreviation.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/04-reading-proofs.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/05-writing-proofs.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/06-checking-proofs.html</loc></url>
+  <url><loc>https://akizumifox.github.io/math-atlas/fd1/ch08-from-derivations-to-prose/07-excluded-middle.html</loc></url>
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/results.html</loc></url>
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/graph.html</loc></url>
   <url><loc>https://akizumifox.github.io/math-atlas/fd1/paths.html</loc></url>
