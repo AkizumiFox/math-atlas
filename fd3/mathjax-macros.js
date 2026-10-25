@@ -84,6 +84,7 @@ window.BOOK_MACROS = {
  "esssup": "\\operatorname*{ess\\,sup}",
  "f": "\\mathbf{f}",
  "fM": "\\mathfrak{M}",
+ "fN": "\\mathfrak{N}",
  "floor": [
   "\\left\\lfloor #1 \\right\\rfloor",
   1
