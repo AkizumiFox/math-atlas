@@ -10,7 +10,7 @@
   "diagram": {
    "title": "Reading order",
    "intro": "Where to start, and what each volume needs.",
-   "caption": "Start with F1 and read on to F2. Gate 0, the examination at the end of F2, Chapter 3, opens AN1. F3 builds \\(\\nN\\), \\(\\nZ\\), \\(\\nQ\\) and \\(\\nR\\) out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its \\(\\nR\\) (dashed arrow). F3 leads on to F4, which collects the algebra (complex numbers, fields, groups, polynomials) that Linear Algebra uses.",
+   "caption": "Start with F1 and read on to F2; its first three chapters open AN1. F3 builds \\(\\nN\\), \\(\\nZ\\), \\(\\nQ\\) and \\(\\nR\\) out of sets; AN1 does not need it, since it starts from the axioms that F3 proves for its \\(\\nR\\) (dashed arrow). F3 leads on to F4, which collects the algebra (complex numbers, fields, groups, polynomials) that Linear Algebra uses.",
    "nodes": [
     {
      "id": "F1",
@@ -194,7 +194,7 @@
    "subdir": "sets-relations-and-cardinality",
    "series": "Foundations",
    "short": "F2",
-   "blurb": "Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem. Chapter 3 ends with Gate 0, the examination to pass before analysis.",
+   "blurb": "Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem.",
    "planned": 4,
    "aliases": [
     "fd2"

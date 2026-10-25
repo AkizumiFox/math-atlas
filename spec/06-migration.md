@@ -17,7 +17,7 @@
 
 | 系列（repo） | 冊 |
 |---|---|
-| `foundations` | fd1 *Logic and Proof*（F1，ab ch1–5）；fd2 *Sets, Relations, and Cardinality*（F2，ab ch6–8 ＋ Zorn 新章；Gate 0 作冊末總考）；fd3 *Number Systems: From ℕ to ℝ*（F3）；fd4 *Algebraic Preliminaries*（F4） |
+| `foundations` | fd1 *Logic and Proof*（F1，ab ch1–5）；fd2 *Sets, Relations, and Cardinality*（F2，ab ch6–8 ＋ Zorn 新章；Gate 0 已於 2026-10-25 移除）；fd3 *Number Systems: From ℕ to ℝ*（F3）；fd4 *Algebraic Preliminaries*（F4） |
 | `analysis`（由 analysis-book 改名） | an1 *Analysis on the Real Line*（AN1，ab ch11–21）；an2、an3、HA、MT、CA、FA、PR、PDE 動筆時才建 |
 | `linear-algebra` | la1–la4、ma、geo、nla（照 `chapters.yaml` 的 `src` 分配） |
 
