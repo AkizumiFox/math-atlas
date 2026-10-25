@@ -11,9 +11,9 @@
 | ab:3 | F1.3 Truth, Soundness, and Completeness |
 | ab:4 | F1.4 Predicate Logic and the Quantifier Rules |
 | ab:5 | F1.5 From Derivations to Mathematical Prose |
-| ab:6 | F2.1 Sets, Functions, Images, and Preimages |
-| ab:7 | F2.2 Equivalence Relations, Orders, and Induction |
-| ab:8 | F2.3 Cardinality: Countable and Uncountable Sets |
+| ab:6 | F2.1 Sets and Functions: Proofs from Definitions |
+| ab:7 | F2.2 Induction, Contradiction, and Finite Sets；F2.5 Relations: Equivalence and Order |
+| ab:8 | F2.2 Induction, Contradiction, and Finite Sets；F2.3 Countable and Uncountable Sets |
 | ab:9 | F3.1 The ZF Fragment and the von Neumann Natural Numbers |
 | ab:10 | F3.2 Building the Integers and the Rationals from Equivalence Classes |
 | ab:11 | AN1.1 Ordered Fields and the Least Upper Bound Axiom |
@@ -91,9 +91,9 @@
 |---|---|
 | la:ch00/01 | F1.5 From Derivations to Mathematical Prose |
 | la:ch00/02 | F1.5 From Derivations to Mathematical Prose |
-| la:ch00/03 | F2.1 Sets, Functions, Images, and Preimages |
-| la:ch00/04 | F2.1 Sets, Functions, Images, and Preimages |
-| la:ch00/05 | F2.2 Equivalence Relations, Orders, and Induction |
+| la:ch00/03 | F2.1 Sets and Functions: Proofs from Definitions |
+| la:ch00/04 | F2.1 Sets and Functions: Proofs from Definitions |
+| la:ch00/05 | F2.2 Induction, Contradiction, and Finite Sets |
 | la:ch00/06 | F4.1 Complex Numbers |
 | la:ch00/07 | F4.2 Fields |
 | la:ch00/08 | F4.4 Formal Polynomials |

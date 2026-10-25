@@ -144,5 +144,5 @@
   rule: >-
     State Zorn's lemma and its usage pattern here, under the label thm-zorn that the linear algebra book already
     uses in Section 1.8.
-  why: 線代書 §1.8 改成以 b 借用 F2.4（scope F2.2）；F2.4 寫好後接手 label，線代書原處留錨點。
+  why: 線代書 §1.8 改成以 b 借用 F2.4（scope F2.5）；F2.4 寫好後接手 label，線代書原處留錨點。
   takes: [thm-zorn]

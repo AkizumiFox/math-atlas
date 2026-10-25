@@ -1,13 +1,15 @@
 flowchart LR
   F1_5["F1.5 From Derivations to Mathematical Prose"]:::ext
-  F2_1["1 Sets, Functions, Images, and Preimages"]
-  F2_2["2 Equivalence Relations, Orders, and Induction"]
-  F2_3["3 Cardinality: Countable and Uncountable Sets"]
+  F2_1["1 Sets and Functions: Proofs from Definitions"]
+  F2_2["2 Induction, Contradiction, and Finite Sets"]
+  F2_3["3 Countable and Uncountable Sets"]
+  F2_5["5 Relations: Equivalence and Order"]
   F2_4["4 Zorn's Lemma"]
   F1_5 --> F2_1
   F2_1 --> F2_2
   F2_2 --> F2_3
-  F2_3 --> F2_4
+  F2_3 --> F2_5
+  F2_5 --> F2_4
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

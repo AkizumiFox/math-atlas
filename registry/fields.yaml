@@ -11,7 +11,7 @@
 
 基礎與邏輯:
   - {id: mathematical-logic, name: 數理邏輯, en: Mathematical Logic, status: partial, ch: [F1.1, F1.2, F1.7, F1.3, F1.4, F1.8, F1.6], note: 命題邏輯的健全與完備；一階邏輯的完備性與緊緻性定理不在主幹（analysis-book 已刪 VDL.3）}
-  - {id: set-theory, name: 集合論, en: Set Theory, status: core, ch: [F2.1, F2.2, F2.3, F2.4, F3.1, ST.1, ST.2, ST.3, ST.4, ST.5, ST.6a, ST.6b]}
+  - {id: set-theory, name: 集合論, en: Set Theory, status: core, ch: [F2.1, F2.2, F2.3, F2.5, F2.4, F3.1, ST.1, ST.2, ST.3, ST.4, ST.5, ST.6a, ST.6b]}
   - {id: model-theory, name: 模型論, en: Model Theory, status: branch, hook: [F1.6, ST.4]}
   - {id: proof-theory, name: 證明論, en: Proof Theory, status: branch, hook: [F1.3, F1.7, F1.4]}
   - {id: computability, name: 可計算性理論, en: Computability / Recursion Theory, status: branch, hook: [F1.6, F2.3]}
@@ -32,7 +32,7 @@
   - {id: lie-group-representations, name: 李群表示論, en: Representation Theory of Lie Groups, status: out, hook: [AL4.9, FA.7], after: [lie-groups-lie-algebras]}
   - {id: geometric-group-theory, name: 幾何群論, en: Geometric Group Theory, status: out, hook: [AL1.11, AN2.1]}
   - {id: universal-algebra, name: 泛代數, en: Universal Algebra, status: out, hook: [AL4.7]}
-  - {id: lattice-order-theory, name: 格論與序理論, en: Lattice & Order Theory, status: partial, ch: [F2.2, F2.4]}
+  - {id: lattice-order-theory, name: 格論與序理論, en: Lattice & Order Theory, status: partial, ch: [F2.5, F2.4]}
 
 分析:
   - {id: real-analysis, name: 實分析, en: Real Analysis, status: core, ch: [AN1.1, AN1.11, MT.1, MT.2, MT.7, MT.11]}
@@ -86,7 +86,7 @@
   - {id: algebraic-combinatorics, name: 代數組合學, en: Algebraic Combinatorics, status: out, hook: [AL4.10]}
   - {id: extremal-combinatorics, name: 極值組合學, en: Extremal Combinatorics, status: out, hook: [F2.3]}
   - {id: probabilistic-method, name: 機率方法, en: Probabilistic Method, status: out, hook: [PR.1]}
-  - {id: graph-theory, name: 圖論, en: Graph Theory, status: branch, hook: [F2.2, LA3.12, MA.19]}
+  - {id: graph-theory, name: 圖論, en: Graph Theory, status: branch, hook: [F2.5, LA3.12, MA.19]}
   - {id: ramsey-theory, name: 拉姆齊理論, en: Ramsey Theory, status: out, hook: [F2.3]}
   - {id: matroid-theory, name: 擬陣理論, en: Matroid Theory, status: out, hook: [LA1.1]}
   - {id: design-theory, name: 組合設計, en: Design Theory, status: out, hook: [AL2.9]}

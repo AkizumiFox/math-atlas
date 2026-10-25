@@ -524,7 +524,7 @@
   naer: univ
   def: def-relation
   ch: F2.1
-  also: [def-relation@F2.2]
+  also: [def-relation@F2.5]
 - {id: right-inverse, en: right inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
 - {id: second-coordinate, en: second coordinate, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - {id: subset, en: subset, zh: '子集[合]', naer: univ, def: def-subset, ch: F2.1}
@@ -557,43 +557,43 @@
   zh: null
   naer: missing
   def: def-partition
-  ch: F2.2
+  ch: F2.5
   also: [def-block-partition@LA2.8]
-- {id: equivalence-class, en: equivalence class, zh: 等價類, naer: univ, def: def-equivalence-class, ch: F2.2}
-- {id: equivalence-relation, en: equivalence relation, zh: 等價關係, naer: univ, def: def-equivalence-relation, ch: F2.2}
-- {id: is-related, en: is related, zh: null, naer: missing, def: def-relation, ch: F2.2}
+- {id: equivalence-class, en: equivalence class, zh: 等價類, naer: univ, def: def-equivalence-class, ch: F2.5}
+- {id: equivalence-relation, en: equivalence relation, zh: 等價關係, naer: univ, def: def-equivalence-relation, ch: F2.5}
+- {id: is-related, en: is related, zh: null, naer: missing, def: def-relation, ch: F2.5}
 - id: partition
   en: partition
   zh: 分割
   naer: univ
   def: def-partition
-  ch: F2.2
+  ch: F2.5
   also: [def-partition-of-n@LA2.10]
 - id: quotient-map
   en: quotient map
   zh: null
   naer: missing
   def: def-quotient-set
-  ch: F2.2
+  ch: F2.5
   also: [def-quotient-space@LA1.4]
-- {id: quotient-set, en: quotient set, zh: 商集, naer: univ, def: def-quotient-set, ch: F2.2}
-- {id: reflexive, en: reflexive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.2}
+- {id: quotient-set, en: quotient set, zh: 商集, naer: univ, def: def-quotient-set, ch: F2.5}
+- {id: reflexive, en: reflexive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.5}
 - id: representative
   en: representative
   zh: null
   naer: missing
   def: def-equivalence-class
-  ch: F2.2
+  ch: F2.5
   also: [def-coset@LA1.4]
 - id: symmetric
   en: symmetric
   zh: null
   naer: missing
   def: def-equivalence-relation
-  ch: F2.2
+  ch: F2.5
   also: [def-symmetric-matrix@LA1.0, def-self-adjoint@LA3.11, def-quadratic-form@LA4.14, def-symmetric-form@LA4.14, def-symmetric-tensor@LA4.15, def-symmetric-multilinear-map@LA4.15,
     def-symmetric-power@LA4.15]
-- {id: transitive, en: transitive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.2}
+- {id: transitive, en: transitive, zh: null, naer: missing, def: def-equivalence-relation, ch: F2.5}
 - id: absolute-value
   en: absolute value
   zh: 絕對值
