@@ -1,19 +1,22 @@
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
-  F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
   F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
+  F4_6["6 Inequalities, Finite Sums, and Real Powers"]
+  F4_7["7 Real Functions and Their Graphs"]
+  F4_8["8 Coordinates and Vectors in ℝⁿ"]
+  F4_9["9 Lines, Convexity, and Isometries of ℝⁿ"]
   F4_1["1 Complex Numbers"]
-  F4_2["2 Fields"]
-  F4_3["3 Groups, Subgroups, and Homomorphisms"]
-  F4_4["4 Formal Polynomials"]
-  F4_5["5 Polynomials over a Field"]
+  F4_10["10 Rotations, Angles, and the Complex Plane"]
+  F4_11["11 Metrics and Norms"]
+  F3_4 --> F4_6
+  F4_6 --> F4_7
+  F4_6 --> F4_8
+  F4_8 --> F4_9
   AN1_10 -.-> F4_1
-  F3_4 --> F4_1
-  F3_5 --> F4_2
-  F3_5 --> F4_3
-  F4_2 --> F4_4
-  F4_1 --> F4_5
-  F4_4 --> F4_5
+  F4_9 --> F4_10
+  F4_1 --> F4_10
+  F4_7 --> F4_11
+  F4_8 --> F4_11
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

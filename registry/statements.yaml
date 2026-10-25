@@ -42,13 +42,13 @@ nodes:
   - [thm-fta-arith, F3.5, thm, "算術基本定理", A1, R2]
   - [def-zn, F3.5, def, "ℤ/nℤ 與其運算的良定義", A2, R1]
   - [def-complex-numbers, F4.1, def, "ℂ := ℝ² 與乘法", A1, R1]
-  - [def-field, F4.2, def, "體公理", A2, R1]
-  - [def-polynomial-ring, F4.4, def, "形式多項式 F[x]", A2, R1]
-  # F4.5 是 F[x] 整除語彙的正式定義（2026-10-12 作者決定；LA2.6 的同名定義列在 terms.yaml 的 also）
-  - [def-polynomial-divides, F4.5, def, "F[x] 的整除與相伴", A2, R1, associate]
-  - [def-polynomial-gcd, F4.5, def, "多項式的（首一）最大公因式", A2, R1, greatest-common-divisor]
-  - [def-irreducible-over-field, F4.5, def, "體上的不可約多項式", A2, R1, irreducible]
-  - [def-lagrange-polynomials-for-nodes, F4.5, def, "給定節點的 Lagrange 多項式", A1, R1, lagrange-polynomial]
+  - [def-field, F5.2, def, "體公理", A2, R1]
+  - [def-polynomial-ring, F5.4, def, "形式多項式 F[x]", A2, R1]
+  # F5.5 是 F[x] 整除語彙的正式定義（2026-10-12 作者決定；LA2.6 的同名定義列在 terms.yaml 的 also）
+  - [def-polynomial-divides, F5.5, def, "F[x] 的整除與相伴", A2, R1, associate]
+  - [def-polynomial-gcd, F5.5, def, "多項式的（首一）最大公因式", A2, R1, greatest-common-divisor]
+  - [def-irreducible-over-field, F5.5, def, "體上的不可約多項式", A2, R1, irreducible]
+  - [def-lagrange-polynomials-for-nodes, F5.5, def, "給定節點的 Lagrange 多項式", A1, R1, lagrange-polynomial]
   # 主幹：完備性
   - [thm-completeness-equiv, AN1.11, thm, "LUB ⇔ 單調收斂 ⇔ 區間套＋阿基米德 ⇔ BW ⇔ Cauchy 完備＋阿基米德", A1, R3]
   - [def-complete-metric, AN2.2, def, "完備度量空間；完備化", A2, R2]
@@ -62,7 +62,7 @@ nodes:
   - [thm-tychonoff, FA.5, thm, "Tychonoff", A2, R3]
   - [thm-alaoglu, FA.5, thm, "Banach–Alaoglu", A2, R3]
   # 主幹：行列式
-  - [thm-transpositions-generate, F4.3, thm, "對換生成 Sₙ（原 §0.10）", A1, R2]
+  - [thm-transpositions-generate, F5.3, thm, "對換生成 Sₙ（原 §0.10）", A1, R2]
   - [thm-sign, AL1.3, thm, "置換符號為良定義的同態 Sₙ→{±1}", A2, R2]
   - [thm-alternating-form-uniqueness, LA2.7, thm, "交錯多線性且 det I=1 的函數唯一", A2, R2]
   - [thm-det-multiplicative, LA2.7, thm, "det(AB)=det A det B；可逆 ⇔ det≠0", A1, R2]
@@ -120,6 +120,7 @@ nodes:
   - [def-fn-limit, AN1.5, def, "函數極限（含 x→∞）", A1, R2, function-limit]
   - [def-continuous, AN1.5, def, "連續（ε-δ 與序列式）", A1, R2, continuous]
   - [def-derivative, AN1.7, def, "導數", A1, R1, derivative]
+  - [def-bounded-variation, AN2.9, def, "有界變差函數與全變差", A2, R2, bounded-variation]
   - [def-closed, AN2.1, def, "度量空間的開集與閉集", A2, R1, closed-set]
   - [def-frechet, AN3.1, def, "ℝⁿ→ℝᵐ 的（Fréchet）可微與全導數", A1, R2, total-derivative]
   - [def-partial, AN3.1, def, "偏導數與 Jacobian 矩陣", A1, R1, partial-derivative]
@@ -140,6 +141,7 @@ nodes:
   - [def-elementary-local, AN3.4, def, "初等矩陣（AN3.4）", A1, R0, elementary-matrix]
   - [def-frechet-local, CA.1, def, "ℝ²→ℝ² 的實可微（CA.1）", A1, R1, total-derivative]
   - [def-partial-local, CA.1, def, "偏導數與 2×2 Jacobian（CA.1）", A1, R1, partial-derivative]
+  - [def-bounded-variation-local, HA.3, def, "[a,b] 上實值函數的有界變差（HA.3，只為 Dirichlet–Jordan 判準）", A1, R1, bounded-variation]
   - [def-fourier-local, PR.4, def, "L¹ 函數的 Fourier 變換（以 Lebesgue 積分定義；PR.4）", A1, R1, fourier-transform]
 
 edges:
@@ -150,6 +152,7 @@ edges:
   - [def-limit-infinity-local, def-fn-limit, specializes]
   - [def-cauchy-local, def-cauchy, specializes]
   - [def-closed-local, def-closed, specializes]
+  - [def-bounded-variation-local, def-bounded-variation, specializes]   # HA.3 對 AN2.9 是 b 借用（spec/08 §C6）
   - [def-det-local, def-determinant, specializes]
   - [def-posdef-local, def-definiteness-of-a-form, specializes]
   - [def-det-local-int, def-determinant, specializes]
@@ -211,7 +214,7 @@ edges:
   - [def-characteristic-polynomial, thm-det-multiplicative, uses]
   - [thm-det-is-top-exterior, thm-alternating-form-uniqueness, revisits]
   - [thm-change-of-variables, thm-det-multiplicative, uses]
-  - [thm-stokes, thm-divergence, generalizes]   # 同一件事的兩個版本；章層級以 AN3.7 revisits MT.6 連起來
+  - [thm-stokes, thm-divergence, generalizes]   # 同一件事的兩個版本；章層級以 MT.6 revisits AN3.7 連起來（2026-10-25 反轉，spec/08 §D3）
   - [def-adjoint, thm-gram-schmidt, uses]
   - [thm-spectral-complex, def-adjoint, uses]
   - [thm-spectral-complex, def-characteristic-polynomial, uses]

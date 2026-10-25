@@ -1,0 +1,28 @@
+flowchart LR
+  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
+  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
+  AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
+  AN3_2["AN3.2 Inverse and Implicit Functions, and Lagrange Multipliers"]:::ext
+  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  AN3_3["AN3.3 Linear Systems, the Matrix Exponential, and the Flow"]:::ext
+  AM_1["1 Partitions of Unity, Improper Integrals, and Change of Variables"]
+  AN3_5["5 Submanifolds of ℝⁿ and Tangent Spaces"]
+  AN3_6["6 Differential Forms and the Exterior Derivative"]
+  AN3_7["7 Integration on Manifolds and Stokes' Theorem"]
+  AM_2["2 Closed and Exact Forms: Poincaré Lemma and de Rham Cohomology of Punctured ℝⁿ"]
+  AM_3["3 Abstract Smooth Manifolds, Vector Fields, and Flows"]:::segb
+  AN3_2 --> AM_1
+  AN3_4 --> AM_1
+  AN3_2 --> AN3_5
+  LA4_15 --> AN3_6
+  AN3_1 --> AN3_6
+  AM_1 --> AN3_7
+  AN3_5 --> AN3_7
+  AN3_6 --> AN3_7
+  AN3_7 --> AM_2
+  AN2_7 --> AM_3
+  AN3_3 --> AM_3
+  AN3_5 --> AM_3
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

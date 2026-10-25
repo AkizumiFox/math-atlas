@@ -59,10 +59,10 @@
 ## 陳述 ID 對到的書稿 label 不在同一章
 
 - `def-complex-numbers`：地圖放在 F4.1，書稿目前在 la F3.6
-- `def-field`：地圖放在 F4.2，書稿目前在 la F3.7
-- `def-polynomial-ring`：地圖放在 F4.4，書稿目前在 la F3.8
+- `def-field`：地圖放在 F5.2，書稿目前在 la F3.7
+- `def-polynomial-ring`：地圖放在 F5.4，書稿目前在 la F3.8
 - `thm-induction`：地圖放在 F2.2，書稿目前在 la F1.5　已知：F2.2 寫好後接手（chapter-constraints.yaml）
-- `thm-transpositions-generate`：地圖放在 F4.3，書稿目前在 la AL1.1
+- `thm-transpositions-generate`：地圖放在 F5.3，書稿目前在 la AL1.1
 - `thm-zorn`：地圖放在 F2.4，書稿目前在 la LA1.1　已知：F2.4 寫好後接手（chapter-constraints.yaml）
 
 ## 外部科目圖的對照（registry/external/subject-dag.yaml）

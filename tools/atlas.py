@@ -45,6 +45,11 @@ class Atlas:
         self.vol = {v["id"]: v for v in self.volumes}
         raw = yaml.safe_load((reg / "chapters.yaml").read_text())
         self.errors, self.warnings, self.notes = [], [], []
+        ren = reg / "renames.yaml"
+        self.renames = (yaml.safe_load(ren.read_text()) or {}) if ren.exists() else {}
+        moved_to = {m["id"]: m for m in self.renames.get("moves") or ()}
+        moved_to.update({n["id"]: dict(n, to=n["vol"], **{"from": n["id"].split(".")[0]})
+                         for n in self.renames.get("numbering") or ()})
         self.chapters, self.order = {}, []
         for vid, chs in raw.items():
             if vid not in self.vol:
@@ -56,8 +61,12 @@ class Atlas:
                 ch["src"] = src if isinstance(src, list) else [src]
                 if ch["id"] in self.chapters:
                     self.errors.append(f"chapters.yaml: duplicate id {ch['id']}")
-                if not ch["id"].startswith(vid + "."):
-                    self.errors.append(f"chapters.yaml: {ch['id']} is listed under {vid}")
+                prefix = ch["id"].split(".")[0]
+                if prefix != vid:  # a chapter that moved volume keeps its id (spec/01); renames.yaml records the move
+                    m = moved_to.get(ch["id"])
+                    if not m or m.get("to") != vid or m.get("from") != prefix:
+                        self.errors.append(f"chapters.yaml: {ch['id']} is listed under {vid}, but registry/renames.yaml "
+                                           f"has neither a move {prefix} -> {vid} nor a numbering row for it")
                 self.chapters[ch["id"]] = ch
                 self.order.append(ch["id"])
         for v in self.volumes:
@@ -268,9 +277,14 @@ def check(at):
     roots = [c for c, ps in sb.items() if not ps and c != at.order[0]]
     for c in roots:
         at.warnings.append(f"{c} has no prerequisites at all")
+    check_purity(at)
+    check_renames(at)
     for t in at.targets:
         for c in t["chapters"]:
             at._known(c, f"exam-targets.yaml[{t['id']}]")
+        for key in ("branch_cover", "deferred_cover"):
+            for c in t.get(key) or ():
+                at._known(c, f"exam-targets.yaml[{t['id']}].{key}")
         for it in t.get("items") or ():
             for c in it.get("ch") or ():
                 at._known(c, f"exam-targets.yaml[{t['id']}].items")
@@ -311,6 +325,44 @@ def check(at):
             at.errors.append(f"chapter-constraints.yaml: {k['chapter']}'s rule contains Chinese; the rule is the English "
                              "instruction the drafting pipeline follows, the reasons go in why")
     return not at.errors
+
+
+def check_purity(at):
+    """Main-line purity (spec/08 §E2 item 1): a non-optional chapter of a volume whose branch is not side must not
+    depend on a chapter of a side volume by s or b. see and revisits may point anywhere. Optional chapters are exempt:
+    a crossing chapter (spec/01 rule 7) sits downstream of two branches by design."""
+    side = {v["id"] for v in at.volumes if v.get("branch") == "side"}
+    for (to, frm), typ in sorted(at.edges.items()):
+        a, b = at.chapters[to], at.chapters[frm]
+        if typ in HARD and a["vol"] not in side and not a["opt"] and b["vol"] in side:
+            at.errors.append(f"main-line purity: {to} ({a['vol']}) <-{typ}- {frm}, but {b['vol']} is a side volume; "
+                             "a main-line chapter may point at a branch only with see or revisits")
+
+
+def check_renames(at):
+    """registry/renames.yaml (spec/01's redirect table): a renamed id is gone and its chain ends at a live chapter;
+    moves and title changes name live chapters, and a title change's new title is the current one."""
+    ids = {r["old"]: r["new"] for r in at.renames.get("ids") or ()}
+    for old in ids:
+        if old in at.chapters:
+            at.errors.append(f"renames.yaml: {old} was renamed to {ids[old]} but is still a chapter")
+        cur, seen = old, set()
+        while cur in ids and cur not in seen:
+            seen.add(cur)
+            cur = ids[cur]
+        if cur not in at.chapters:
+            at.errors.append(f"renames.yaml: {old} renames to {cur}, which is not a chapter")
+    for m in at.renames.get("moves") or ():
+        if at._known(m["id"], "renames.yaml moves") and at.chapters[m["id"]]["vol"] != m["to"]:
+            at.warnings.append(f"renames.yaml: {m['id']} moved to {m['to']}, but chapters.yaml lists it under "
+                               f"{at.chapters[m['id']]['vol']}")
+    for n in at.renames.get("numbering") or ():
+        if at._known(n["id"], "renames.yaml numbering") and at.chapters[n["id"]]["vol"] != n["vol"]:
+            at.warnings.append(f"renames.yaml: {n['id']} is numbered for {n['vol']}, but chapters.yaml lists it under "
+                               f"{at.chapters[n['id']]['vol']}")
+    for r in at.renames.get("titles") or ():
+        if at._known(r["id"], "renames.yaml titles") and at.chapters[r["id"]]["title_src"] != r["new"]:
+            at.warnings.append(f"renames.yaml: {r['id']}'s new title is not its current title in chapters.yaml")
 
 
 # Title Case as the manuscripts write it: minor words lowercase except at the start or after a colon; every other word
@@ -682,7 +734,8 @@ def stats(at):
               "| 目標 | 目標章數 | 必讀章數 | 對話報告手算值 | 涉及的冊 |", "|---|---:|---:|---:|---|"]
     details = []
     for t in at.targets:
-        req = G.ancestors(s_only, t["chapters"])
+        # optional target chapters (F3.3 for PMA, CA.15 for Ahlfors) are listed in the details, not in the main-line count
+        req = G.ancestors(s_only, [c for c in t["chapters"] if not at.chapters[c]["opt"]])
         vols = Counter(at.chapters[c]["vol"] for c in req)
         vol_ids = [x["id"] for x in at.volumes]
         vol_txt = "、".join(f"{v} {n}" for v, n in sorted(vols.items(), key=lambda kv: vol_ids.index(kv[0])))
@@ -695,6 +748,12 @@ def stats(at):
                   "必讀：" + "、".join(sorted(req, key=at.order.index)), ""]
         if borrowed:
             lines += ["只借用（不必讀）：" + "、".join(borrowed), ""]
+        opt = [c for c in t["chapters"] if at.chapters[c]["opt"]]
+        if opt:
+            lines += ["選讀的目標章（不計入必讀）：" + "、".join(opt), ""]
+        for key, name in (("branch_cover", "支線覆蓋"), ("deferred_cover", "延後覆蓋")):
+            if t.get(key):
+                lines += [f"{name}（不計入必讀）：" + "、".join(t[key]), ""]
 
     desc = {c: len(G.descendants(sb, [c])) - 1 for c in sb}
     s_red = G.transitive_reduction(s_only)

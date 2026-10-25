@@ -22,7 +22,7 @@
 代數:
   - {id: linear-algebra, name: 線性代數, en: Linear Algebra, status: core, ch: [LA1.1, LA1.2, LA1.3, LA1.4, LA1.5, LA2.6, LA2.7, LA2.8, LA2.9, LA2.10, LA3.11, LA3.12, LA3.13]}
   - {id: multilinear-algebra, name: 多重線性代數, en: Multilinear Algebra, status: core, ch: [LA4.14, LA4.15]}
-  - {id: abstract-algebra, name: 抽象代數, en: Abstract Algebra, status: core, ch: [F4.3, AL1.7, AL2.1, AL2.5, AL2.8, AL4.1, AL4.3]}
+  - {id: abstract-algebra, name: 抽象代數, en: Abstract Algebra, status: core, ch: [F5.3, AL1.7, AL2.1, AL2.5, AL2.8, AL4.1, AL4.3]}
   - {id: galois-theory, name: Galois 理論, en: Galois Theory, status: core, ch: [AL3.1, AL3.2, AL3.3, AL3.7, AL3.8]}
   - {id: commutative-algebra, name: 交換代數, en: Commutative Algebra, status: core, ch: [AL5.1, AL5.2, AL5.3, AL5.4, AL5.5, AL5.6, AL5.7], note: 支線冊 AL5（T3），不在代數資格考的必讀路徑上}
   - {id: noncommutative-ring-theory, name: 非交換環論, en: Noncommutative Ring Theory, status: partial, ch: [AL4.8]}

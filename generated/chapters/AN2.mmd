@@ -1,24 +1,49 @@
 flowchart LR
-  AN1_11["AN1.11 The Forms of Completeness"]:::ext
-  LA3_11["LA3.11 Inner Product Spaces"]:::ext
-  AN2_1["1 Metric Spaces, Open Sets, and Continuity"]
-  AN2_2["2 Completeness and the Completion of a Metric Space"]
-  AN2_3["3 Compactness and Connectedness in Metric Spaces"]
+  AN1_2["AN1.2 Sequences, Subsequences, and Cauchy Sequences"]:::ext
+  AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  AN1_7["AN1.7 The Derivative and the Mean Value Theorem"]:::ext
+  AN2_9["9 Functions of Bounded Variation and Rectifiable Curves"]
+  AN1_8["8 The Riemann–Darboux Integral"]
+  AN2_10["10 The Riemann–Stieltjes Integral"]
+  AN1_3["3 Infinite Series"]
+  AN2_12["12 Double Series, Infinite Products, and the Euler Product"]
+  AN1_9["9 Sequences and Series of Functions"]
+  AN1_10["10 Power Series, Taylor Series, and the Elementary Functions"]
+  AN2_11["11 Integrals with a Parameter, Euler Summation, and the Gamma Function"]
+  AN2_13["13 Summability and Tauberian Theorems"]
   AN2_4["4 Contraction Mappings and the Picard–Lindelöf Theorem"]
   AN2_5["5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]
   AN2_6["6 Density and Category in C(K): Stone–Weierstrass and Baire"]
   AN2_7["7 Topological Spaces, Products, and Compactness"]:::segb
   AN2_8["8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::segb
-  LA3_11 -.-> AN2_1
-  AN1_11 --> AN2_2
-  AN2_1 --> AN2_2
-  AN2_2 --> AN2_3
-  AN2_2 --> AN2_4
+  AN2_14["14 The Gauge Integral"]:::opt
+  AN2_15["15 A Gallery of Pathological Functions"]:::opt
+  AN1_7 --> AN2_9
+  AN1_7 --> AN1_8
+  AN2_9 --> AN2_10
+  AN1_8 --> AN2_10
+  AN1_2 --> AN1_3
+  AN1_3 --> AN2_12
+  AN2_2 --> AN1_9
+  AN1_8 --> AN1_9
+  AN1_3 --> AN1_9
+  AN1_9 --> AN1_10
+  AN2_10 --> AN2_11
+  AN1_10 --> AN2_11
+  AN2_12 --> AN2_13
+  AN1_10 --> AN2_13
+  AN1_10 --> AN2_4
   AN2_3 --> AN2_5
   AN2_4 --> AN2_5
   AN2_3 --> AN2_6
+  AN1_9 --> AN2_6
   AN2_3 --> AN2_7
+  AN1_9 --> AN2_8
   AN2_7 --> AN2_8
+  AN2_10 --> AN2_14
+  AN2_9 --> AN2_15
+  AN1_9 --> AN2_15
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

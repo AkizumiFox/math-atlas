@@ -1,19 +1,32 @@
 # 資格考目標：每個目標是一組「讀完就算涵蓋該科」的章。必讀集合由 atlas.py stats 以 s 祖先閉包計算。
 # items 是考綱條目 → 章的覆蓋矩陣；找不到章的條目寫 gap。reported 是先前對話報告手算的章數（舊章節清單），只供對照。
+# 2026-10-25 起（spec/08 §E1）另有：
+#   level: undergrad | grad
+#   branch_cover:   支線章（例如 HA）覆蓋的部分；不計入必讀閉包，只列在 report
+#   deferred_cover: 主線後段的章覆蓋的部分（例如 Apostol 10、15 → MT）；同樣不計入必讀閉包
+#   backbone: true  這本書是冊與章序的骨架（目前只有 apostol-ma）：items 依原書章序排列，對應的主線章在讀序上應單調不減
+#   deviations:     骨架順序允許的例外，每條附理由
 
 - id: complex
   name: "Complex Analysis (Ahlfors level)"
   name_zh: 複分析（Ahlfors 程度）
+  level: grad
   reported: 49
-  note: Berkeley prelim、Harvard quals、Princeton generals 的共同科目。Picard（CA.8b）不列入。
-  chapters: [CA.1, CA.2, CA.3, CA.4, CA.5, CA.6, CA.7]
+  note: Berkeley prelim、Harvard quals、Princeton generals 的共同科目，以 UCLA／Cambridge 型的第二層為出口。Picard 走 Bloch 路線（CA.14）列入；theta 函數路線（CA.8b）是選讀，不列入。
+  chapters: [CA.1, CA.2, CA.3, CA.4, CA.5, CA.6, CA.10, CA.7, CA.12, CA.11, CA.8a, CA.14]
   items:
     - {topic: Cauchy 積分公式、Liouville、最大模, ch: [CA.2]}
     - {topic: Laurent、留數、實積分計算, ch: [CA.3]}
     - {topic: 輻角原理、Rouché, ch: [CA.4]}
+    - {topic: Möbius 變換與 Riemann 球面, ch: [CA.10]}
     - {topic: 共形映射、Schwarz 引理、Riemann 映射定理, ch: [CA.5]}
+    - {topic: 正規族（Montel）, ch: [CA.5]}
     - {topic: 調和函數、Poisson 積分, ch: [CA.6]}
-    - {topic: Weierstrass 乘積、Mittag-Leffler, ch: [CA.7]}
+    - {topic: 次調和函數、Harnack、Perron 方法, ch: [CA.11]}
+    - {topic: Weierstrass 乘積、Hadamard, ch: [CA.7]}
+    - {topic: Runge、Mittag-Leffler, ch: [CA.12]}
+    - {topic: 解析延拓與單值性定理, ch: [CA.8a]}
+    - {topic: Picard 小定理與大定理, ch: [CA.14]}
 
 - id: real-ntu
   name: "Real Analysis (NTU qualifying exam, minimal)"
@@ -78,3 +91,110 @@
   note: 對話報告的最長鏈終點。PR.1 已含 Lindeberg CLT。
   chapters: [PR.1]
   items: []
+
+# ───────────── 大學部分析的覆蓋檢查（spec/08 §E1） ─────────────
+
+- id: apostol-ma
+  name: "Apostol, Mathematical Analysis, 2nd ed. (backbone)"
+  name_zh: Apostol《Mathematical Analysis》第二版（骨架）
+  level: undergrad
+  backbone: true
+  note: 大學部分析的冊與章序照 Apostol MA 的章序與廣度走（作者 2026-10-25 更正）；10、15 延後到 MT，11 是支線 HA。
+  chapters: [F2.1, F2.3, F4.1, F4.10, AN1.1, AN1.4, AN2.1, AN1.2, AN2.2, AN1.5, AN1.6, AN2.3, AN1.7, AN2.9, AN1.8, AN2.10, AN2.11, AN1.3, AN2.12, AN2.13, AN1.9, AN1.10, AN2.6, AN3.1, AN3.2, AN3.4, CA.1, CA.2, CA.3, CA.4, CA.5]
+  branch_cover: [HA.1, HA.2, HA.3, HA.4, HA.5]
+  deferred_cover: [MT.1, MT.2, MT.4, MT.5, MT.7]
+  deviations:
+    - {ch: AN2.11, after: AN1.10, why: 參數積分（Apostol 7.17–7.20）排在 AN1.10 之後，因為 Γ 要用 exp}
+    - {ch: AN1.10, item: Apostol 1, why: Apostol 1 的複數 exp、log 與複數冪在 AN1.10 證明（F4.1、F4.10 只陳述）}
+  items:
+    - {topic: "Apostol 1 實數與複數", ch: [AN1.1, F4.1, F4.10, AN1.10]}
+    - {topic: "Apostol 2 集合論、可數性", ch: [F2.1, F2.3]}
+    - {topic: "Apostol 3 ℝⁿ 的點集拓樸、度量空間", ch: [AN1.4, AN2.1]}
+    - {topic: "Apostol 4 度量空間中的極限與連續", ch: [AN1.2, AN2.2, AN1.5, AN1.6, AN2.3]}
+    - {topic: "Apostol 5 導數（含向量值與複變數）", ch: [AN1.7]}
+    - {topic: "Apostol 6 有界變差與可求長曲線", ch: [AN2.9]}
+    - {topic: "Apostol 7 Riemann–Stieltjes 積分", ch: [AN1.8, AN2.10, AN2.11]}
+    - {topic: "Apostol 8 級數與無窮乘積", ch: [AN1.3, AN2.12, AN2.13]}
+    - {topic: "Apostol 9 函數列（含 Tauber、Bernstein）", ch: [AN1.9, AN1.10, AN2.13, AN2.6]}
+    - {topic: "Apostol 10 Lebesgue 積分（延後）", ch: [MT.1, MT.2, MT.7]}
+    - {topic: "Apostol 11 Fourier 級數與積分（支線）", ch: [HA.1, HA.2, HA.3, HA.4, HA.5]}
+    - {topic: "Apostol 12 多變數微分", ch: [AN3.1]}
+    - {topic: "Apostol 13 隱函數與極值", ch: [AN3.2]}
+    - {topic: "Apostol 14 多重 Riemann 積分", ch: [AN3.4]}
+    - {topic: "Apostol 15 多重 Lebesgue 積分（延後）", ch: [MT.4, MT.5]}
+    - {topic: "Apostol 16 Cauchy 定理與留數", ch: [CA.1, CA.2, CA.3, CA.4, CA.5]}
+
+- id: pma
+  name: "Rudin, Principles of Mathematical Analysis"
+  name_zh: Rudin《Principles of Mathematical Analysis》
+  level: undergrad
+  note: 讀完 AN1、AN2、AN3、CA 應已吸收 PMA 1–7、9；PMA 8 的 Fourier 部分由支線 HA 覆蓋，10、11 延後。
+  chapters: [F3.3, F4.1, F5.5, LA2.7, AN1.1, AN1.2, AN1.3, AN1.4, AN1.5, AN1.6, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.10, AN2.11, AN3.1, AN3.2]
+  branch_cover: [HA.1, HA.2, HA.3]
+  deferred_cover: [AN3.6, AN3.7, AM.1, MT.1, MT.2, MT.7]
+  items:
+    - {topic: "PMA 1 實數與複數（Dedekind 分割附錄）", ch: [AN1.1, F3.3, F4.1]}
+    - {topic: "PMA 2 基本拓樸", ch: [F2.3, AN1.4, AN2.1, AN2.3]}
+    - {topic: "PMA 3 數列與級數", ch: [AN1.2, AN1.3, AN2.2]}
+    - {topic: "PMA 4 連續", ch: [AN1.5, AN1.6, AN2.3]}
+    - {topic: "PMA 5 微分", ch: [AN1.7]}
+    - {topic: "PMA 6 Riemann–Stieltjes 積分", ch: [AN1.8, AN2.10]}
+    - {topic: "PMA 7 函數列、等度連續、Stone–Weierstrass", ch: [AN1.9, AN2.5, AN2.6]}
+    - {topic: "PMA 8 特殊函數（exp、Γ、代數基本定理）", ch: [AN1.10, AN2.11, F5.5]}
+    - {topic: "PMA 8 Fourier 級數（支線）", ch: [HA.1, HA.2, HA.3]}
+    - {topic: "PMA 9 多變數函數（含行列式）", ch: [AN3.1, AN3.2, LA2.7]}
+    - {topic: "PMA 10 微分形式的積分（延後）", ch: [AM.1, AN3.6, AN3.7]}
+    - {topic: "PMA 11 Lebesgue 理論（延後）", ch: [MT.1, MT.2, MT.7]}
+
+- id: pugh
+  name: "Pugh, Real Mathematical Analysis"
+  name_zh: Pugh《Real Mathematical Analysis》
+  level: undergrad
+  note: Pugh 1–5（不含 forms、Stokes、Brouwer）在主線上覆蓋；Brouwer 屬 FX 支線，不列入。
+  chapters: [F2.3, F3.3, AN1.1, AN1.2, AN1.3, AN1.4, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.12, AN3.1, AN3.2, AN3.4]
+  deferred_cover: [AM.1, AN3.6, AN3.7, MT.1, MT.2, MT.4, MT.9, MT.10]
+  items:
+    - {topic: "Pugh 1 實數（切割、基數）", ch: [F3.3, F2.3, AN1.1]}
+    - {topic: "Pugh 2 拓樸初步（度量空間、緊緻、連通、Cantor 集）", ch: [AN1.4, AN2.1, AN2.2, AN2.3]}
+    - {topic: "Pugh 3 實函數（微分、Riemann 積分、級數、無窮乘積）", ch: [AN1.7, AN1.8, AN1.3, AN2.12]}
+    - {topic: "Pugh 4 函數空間（一致收斂、Arzelà–Ascoli、壓縮、Stone–Weierstrass）", ch: [AN1.9, AN1.10, AN2.4, AN2.5, AN2.6]}
+    - {topic: "Pugh 5 多變數微積分前半（導數、反函數、隱函數、多重積分）", ch: [AN3.1, AN3.2, AN3.4]}
+    - {topic: "Pugh 5 後半（形式、Stokes；延後）", ch: [AM.1, AN3.6, AN3.7]}
+    - {topic: "Pugh 6 Lebesgue 理論（延後）", ch: [MT.1, MT.2, MT.4, MT.9, MT.10]}
+
+# ───────────── 研究所層（spec/08 §E1） ─────────────
+
+- id: mira
+  name: "Axler, Measure, Integration & Real Analysis"
+  name_zh: Axler《Measure, Integration & Real Analysis》
+  level: grad
+  note: MT 冊照 MIRA 1–10 的骨架重劃（spec/08 決策 8）；11 Fourier、12 機率屬支線。
+  chapters: [HA.9, MT.1, MT.2, MT.3, MT.4, MT.7, MT.9, MT.11, FA.1a, FA.1b, FA.3, FA.4, FA.6, FA.9, FA.7]
+  branch_cover: [HA.10, PR.1]
+  items:
+    - {topic: "MIRA 1 Riemann 積分及其不足", ch: [HA.9]}
+    - {topic: "MIRA 2–3 測度、積分與收斂定理（含 Egorov、Luzin）", ch: [MT.1, MT.3, MT.2]}
+    - {topic: "MIRA 4 極大函數與微分", ch: [MT.9, MT.10]}
+    - {topic: "MIRA 5 乘積測度", ch: [MT.4, MT.5]}
+    - {topic: "MIRA 6 Banach 空間、Baire、Hahn–Banach", ch: [FA.1a, FA.4, FA.3]}
+    - {topic: "MIRA 7 Lᵖ 空間", ch: [MT.7, MT.8]}
+    - {topic: "MIRA 8 Hilbert 空間", ch: [FA.6]}
+    - {topic: "MIRA 9 實測度與複測度", ch: [MT.11, FA.1b]}
+    - {topic: "MIRA 10 Hilbert 空間上的算子", ch: [FA.9, FA.7]}
+    - {topic: "MIRA 11 Fourier 分析（支線）", ch: [HA.10]}
+    - {topic: "MIRA 12 機率（支線）", ch: [PR.1]}
+
+- id: ahlfors
+  name: "Ahlfors, Complex Analysis, 3rd ed."
+  name_zh: Ahlfors《Complex Analysis》第三版
+  level: grad
+  note: CA 與 CA2 兩冊合起來覆蓋 Ahlfors 1–8；橢圓函數（CA.15）是選讀。
+  chapters: [CA.1, CA.10, CA.2, CA.3, CA.4, CA.6, CA.5, CA.11, CA.7, CA.12, CA.13, CA.15, CA.8a, CA.14]
+  items:
+    - {topic: "Ahlfors 1–2 複數、解析函數、冪級數", ch: [CA.1]}
+    - {topic: "Ahlfors 3 共形性與線性變換", ch: [CA.10]}
+    - {topic: "Ahlfors 4 複積分（Cauchy 定理、留數、調和函數）", ch: [CA.2, CA.3, CA.4, CA.6]}
+    - {topic: "Ahlfors 5 級數與乘積展開（Mittag-Leffler、Weierstrass、Γ、ζ）", ch: [CA.7, CA.12, CA.13]}
+    - {topic: "Ahlfors 6 共形映射與 Dirichlet 問題（Riemann 映射、Perron）", ch: [CA.5, CA.11]}
+    - {topic: "Ahlfors 7 橢圓函數", ch: [CA.15]}
+    - {topic: "Ahlfors 8 整體解析函數（延拓、單值性、Picard）", ch: [CA.8a, CA.14]}

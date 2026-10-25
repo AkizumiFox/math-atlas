@@ -1,38 +1,41 @@
 flowchart LR
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
-  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
   AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
   AN2_8["AN2.8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::ext
-  MT_3["MT.3 Abstract Measure Spaces and Carathéodory's Construction"]:::ext
-  MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
   CA_2["CA.2 Cauchy's Theorem and Its First Consequences"]:::ext
-  FA_1a["1a Banach Spaces, Bounded Operators, and Dual Spaces"]
-  FA_1b["1b The Dual of Lᵖ"]
+  CA_5["CA.5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]:::ext
+  MT_3["MT.3 Abstract Measure Spaces and Carathéodory's Construction"]:::ext
+  FA_1a["FA.1a Banach Spaces, Bounded Operators, and Dual Spaces"]:::ext
+  FA_4["FA.4 Baire Category and the Fundamental Theorems for Operators"]:::ext
+  FA_3["FA.3 The Hahn–Banach Theorems"]:::ext
+  FA_1b["FA.1b The Dual of Lᵖ"]:::ext
+  FA_7["FA.7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]:::ext
   FA_2["2 Radon Measures and the Dual of C₀(X)"]
-  FA_3["3 The Hahn–Banach Theorems"]
-  FA_4["4 Baire Category and the Fundamental Theorems for Operators"]
   FA_5["5 Weak Topologies, Tychonoff, and Banach–Alaoglu"]
-  FA_6["6 Hilbert Spaces"]
-  FA_7["7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]
-  FA_8["8 Banach Algebras and Gelfand Theory"]:::opt
-  AN2_3 --> FA_1a
-  MT_11 --> FA_1b
-  FA_1a --> FA_1b
+  FA_10["10 Reflexivity, Uniform Convexity, and Separability"]
+  FA_11["11 Locally Convex Spaces and Fréchet Spaces"]
+  FA_8["8 Banach Algebras and Gelfand Theory"]
+  FA_12["12 The Spectral Theorem for Bounded Normal Operators"]
+  FA_13["13 Unbounded Operators and Self-Adjointness"]
+  FA_14["14 Fredholm Operators and the Index"]
+  CA_9["9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::opt
   AN2_8 --> FA_2
   MT_3 --> FA_2
   FA_1a --> FA_2
-  FA_1a --> FA_3
-  AN2_6 --> FA_4
-  FA_1a --> FA_4
   AN2_7 --> FA_5
-  FA_3 --> FA_5
   FA_4 --> FA_5
-  FA_1a --> FA_6
-  AN2_5 --> FA_7
-  FA_6 --> FA_7
+  FA_3 --> FA_5
+  FA_1b --> FA_10
+  FA_5 --> FA_10
+  FA_5 --> FA_11
   CA_2 --> FA_8
   FA_7 --> FA_8
+  FA_8 --> FA_12
+  FA_12 --> FA_13
+  FA_4 --> FA_14
+  FA_7 --> FA_14
+  CA_5 --> CA_9
+  FA_2 --> CA_9
+  FA_5 --> CA_9
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

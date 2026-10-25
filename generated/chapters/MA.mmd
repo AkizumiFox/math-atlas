@@ -1,7 +1,8 @@
 flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  AN1_11["AN1.11 The Forms of Completeness"]:::ext
   LA2_10["LA2.10 Canonical Forms"]:::ext
   LA3_13["LA3.13 Positive Matrices and the Singular Value Decomposition"]:::ext
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
   AN3_3["AN3.3 Linear Systems, the Matrix Exponential, and the Flow"]:::ext
   CA_9["CA.9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::ext
   MA_16["16 Norms and Matrix Analysis"]
@@ -11,9 +12,10 @@ flowchart LR
   MA_20["20 Perturbation Theory"]
   MA_21["21 Matrix Inequalities"]
   MA_21b["21b Löwner's Theorem in Pick-Function Form"]:::opt
+  AN2_3 -.-> MA_16
+  AN1_11 -.-> MA_16
   LA2_10 --> MA_16
   LA3_13 --> MA_16
-  AN2_3 -.-> MA_16
   MA_16 --> MA_17
   MA_17 --> MA_18
   MA_18 --> MA_19

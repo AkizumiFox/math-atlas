@@ -1,31 +1,30 @@
 flowchart LR
   F2_2["F2.2 Induction, Contradiction, and Finite Sets"]:::ext
-  F2_3["F2.3 Countable and Uncountable Sets"]:::ext
+  F4_8["F4.8 Coordinates and Vectors in ℝⁿ"]:::ext
+  F4_11["F4.11 Metrics and Norms"]:::ext
   AN1_1["1 Ordered Fields and the Least Upper Bound Axiom"]
+  AN1_4["4 Open, Closed, and Compact Subsets of ℝⁿ"]
+  AN2_1["1 Metric Spaces and Their Topology"]
   AN1_2["2 Sequences, Subsequences, and Cauchy Sequences"]
-  AN1_3["3 Infinite Series"]
-  AN1_4["4 Open, Closed, and Compact Subsets of ℝ"]
+  AN2_2["2 Completeness and the Completion of a Metric Space"]
   AN1_5["5 Limits of Functions and Continuity"]
   AN1_6["6 Continuous Functions on Compact Sets and Intervals"]
+  AN2_3["3 Compactness and Connectedness in Metric Spaces"]
   AN1_7["7 The Derivative and the Mean Value Theorem"]
-  AN1_8["8 The Riemann–Darboux Integral"]
-  AN1_9["9 Sequences and Series of Functions"]
-  AN1_10["10 Power Series, Taylor Series, and the Elementary Functions"]
   AN1_11["11 The Forms of Completeness"]
   F2_2 --> AN1_1
-  AN1_1 --> AN1_2
-  F2_3 --> AN1_3
-  AN1_2 --> AN1_3
-  F2_3 --> AN1_4
-  AN1_2 --> AN1_4
-  AN1_4 --> AN1_5
+  F4_8 --> AN1_4
+  AN1_1 --> AN1_4
+  F4_11 --> AN2_1
+  AN1_4 --> AN2_1
+  AN2_1 --> AN1_2
+  AN1_2 --> AN2_2
+  AN1_2 --> AN1_5
   AN1_5 --> AN1_6
+  AN2_2 --> AN2_3
+  AN1_6 --> AN2_3
   AN1_6 --> AN1_7
-  AN1_7 --> AN1_8
-  AN1_3 --> AN1_9
-  AN1_8 --> AN1_9
-  AN1_9 --> AN1_10
-  AN1_6 --> AN1_11
+  AN1_7 --> AN1_11
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

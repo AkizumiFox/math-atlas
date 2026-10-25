@@ -192,7 +192,7 @@
   def: def-parse-tree
   ch: F1.3
   meta: true
-  also: [def-polynomial-evaluation@F4.4]
+  also: [def-polynomial-evaluation@F5.4]
 - {id: row, en: row, zh: 列, naer: hs, def: def-truth-table, ch: F1.3, meta: true}
 - {id: satisfiable, en: satisfiable, zh: null, naer: missing, def: def-satisfiable, ch: F1.3, meta: true}
 - id: semantically-entail
@@ -364,7 +364,7 @@
   naer: missing
   def: def-bijective
   ch: F2.1
-  also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@F4.3, def-intertwining-map@AL4.8]
+  also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@F5.3, def-intertwining-map@AL4.8]
 - {id: cartesian-product, en: Cartesian product, zh: 笛卡兒積, naer: univ, def: def-cartesian-product, ch: F2.1}
 - {id: characteristic-property, en: characteristic property, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - id: codomain
@@ -609,6 +609,7 @@
   ch: AN1.1
   also: [def-entrywise-convergence@LA2.10]
 - {id: bounded-above, en: bounded above, zh: null, naer: missing, def: def-bounded-above, ch: AN1.1}
+- {id: bounded-variation, en: function of bounded variation, zh: 有界變差函數, naer: univ, def: def-bounded-variation, ch: AN2.9, forms: [bounded variation]}
 - {id: bounded-below, en: bounded below, zh: null, naer: missing, def: def-bounded-above, ch: AN1.1}
 - {id: field-axiom, en: field axiom, zh: null, naer: missing, def: def-ordered-field, ch: AN1.1}
 - {id: greatest-lower-bound, en: greatest lower bound, zh: 最大下界, naer: univ, def: def-infimum, ch: AN1.1}
@@ -660,36 +661,36 @@
   zh: 加法
   naer: univ
   def: def-field
-  ch: F4.2
+  ch: F5.2
   also: [def-vector-space@LA1.1]
 - id: characteristic
   en: characteristic
   zh: null
   naer: choose
   def: def-characteristic
-  ch: F4.2
+  ch: F5.2
   zh_candidates: [特徵的, 特性的, 示性的, 特徵數, 示性數]
 - id: field
   en: field
   zh: null
   naer: choose
   def: def-field
-  ch: F4.2
+  ch: F5.2
   zh_candidates: [體, 場, 範圍, 域]
-- {id: multiplication, en: multiplication, zh: 乘法, naer: univ, def: def-field, ch: F4.2}
+- {id: multiplication, en: multiplication, zh: 乘法, naer: univ, def: def-field, ch: F5.2}
 - id: coefficient
   en: coefficient
   zh: 係數
   naer: univ
   def: def-polynomial
-  ch: F4.4
+  ch: F5.4
   also: [def-linear-combination@LA1.1]
 - id: degree
   en: degree
   zh: null
   naer: choose
   def: def-degree
-  ch: F4.4
+  ch: F5.4
   zh_candidates: ['次[數]', '度[數]']
   also: [def-restriction-of-scalars@LA1.1, def-polynomial-algebra-several-variables@LA4.15, def-character@AL4.8, def-representation@AL4.8]
 - id: leading-coefficient
@@ -697,18 +698,18 @@
   zh: null
   naer: choose
   def: def-degree
-  ch: F4.4
+  ch: F5.4
   zh_candidates: [領導係數, 首項係數]
 - id: monic
   en: monic
   zh: null
   naer: missing
   def: def-degree
-  ch: F4.4
+  ch: F5.4
   also: [def-minimal-polynomial@LA2.9, def-t-annihilator@LA2.10, def-companion-matrix@LA2.10, def-orthogonal-polynomial-sequence@LA3.11]
-- {id: only-finitely-many, en: only finitely many, zh: null, naer: missing, def: def-polynomial, ch: F4.4}
-- {id: polynomial, en: polynomial, zh: 多項式, naer: univ, def: def-polynomial, ch: F4.4}
-- {id: polynomial-function, en: polynomial function, zh: 多項式函數, naer: hs, def: def-polynomial-evaluation, ch: F4.4}
+- {id: only-finitely-many, en: only finitely many, zh: null, naer: missing, def: def-polynomial, ch: F5.4}
+- {id: polynomial, en: polynomial, zh: 多項式, naer: univ, def: def-polynomial, ch: F5.4}
+- {id: polynomial-function, en: polynomial function, zh: 多項式函數, naer: hs, def: def-polynomial-evaluation, ch: F5.4}
 - id: additive-inverse
   en: additive inverse
   zh: null
@@ -908,14 +909,14 @@
   naer: univ
   def: def-isomorphism
   ch: LA1.2
-  also: [def-algebra-over-field@LA4.14, def-group-homomorphism@F4.3, def-projective-transformation@GEO.22]
+  also: [def-algebra-over-field@LA4.14, def-group-homomorphism@F5.3, def-projective-transformation@GEO.22]
 - id: kernel
   en: kernel
   zh: null
   naer: missing
   def: def-kernel
   ch: LA1.2
-  also: [def-group-homomorphism@F4.3, def-algebra-homomorphism@AL4.8]
+  also: [def-group-homomorphism@F5.3, def-algebra-homomorphism@AL4.8]
 - {id: linear-map, en: linear map, zh: null, naer: missing, def: def-linear-transformation, ch: LA1.2}
 - {id: linear-operator, en: linear operator, zh: 線性算子, naer: univ, def: def-linear-transformation, ch: LA1.2}
 - id: linear-transformation
@@ -1067,7 +1068,7 @@
 - {id: infinite-codimension, en: infinite codimension, zh: null, naer: missing, def: def-codimension, ch: LA1.5}
 - {id: linear-functional, en: linear functional, zh: 線性泛函, naer: univ, def: def-linear-functional, ch: LA1.5}
 - {id: annihilate, en: annihilate, zh: null, naer: missing, def: def-annihilating-polynomial, ch: LA2.6}
-- {id: associate, en: associate, zh: null, naer: missing, def: def-polynomial-divides, ch: F4.5, also: [def-divisibility-polynomials@LA2.6]}
+- {id: associate, en: associate, zh: null, naer: missing, def: def-polynomial-divides, ch: F5.5, also: [def-divisibility-polynomials@LA2.6]}
 - {id: congruent-modulo, en: congruent modulo, zh: null, naer: missing, def: def-congruence-polynomials, ch: LA2.6}
 - {id: coprime, en: coprime, zh: 互質, naer: univ, def: def-coprime, ch: LA2.6}
 - id: divisor
@@ -1084,7 +1085,7 @@
   zh: null
   naer: choose
   def: def-polynomial-gcd
-  ch: F4.5
+  ch: F5.5
   zh_candidates: [最大公因子, 最大公因數]
   also: [def-gcd-polynomials@LA2.6]
 - id: ideal
@@ -1099,10 +1100,10 @@
   zh: null
   naer: missing
   def: def-irreducible-over-field
-  ch: F4.5
+  ch: F5.5
   also: [def-irreducible-polynomial@LA2.6, def-simple-module@AL4.8, def-irreducible-representation@AL4.8, def-character@AL4.8, def-irreducible@MA.19]
 - {id: lagrange-basis, en: Lagrange basis, zh: null, naer: missing, def: def-lagrange-basis, ch: LA2.6}
-- {id: lagrange-polynomial, en: Lagrange polynomial, zh: null, naer: missing, def: def-lagrange-polynomials-for-nodes, ch: F4.5, also: [def-lagrange-basis@LA2.6]}
+- {id: lagrange-polynomial, en: Lagrange polynomial, zh: null, naer: missing, def: def-lagrange-polynomials-for-nodes, ch: F5.5, also: [def-lagrange-basis@LA2.6]}
 - {id: least-common-multiple, en: least common multiple, zh: 最小公倍數, naer: univ, def: def-lcm-polynomials, ch: LA2.6}
 - id: multiple
   en: multiple
@@ -1716,17 +1717,17 @@
 - {id: closed-set, en: closed set, zh: 閉集, naer: univ, def: def-closed, ch: AN2.1}
 - {id: partial-derivative, en: partial derivative, zh: 偏導數, naer: univ, def: def-partial, ch: AN3.1}
 - {id: total-derivative, en: total derivative, zh: null, naer: missing, def: def-frechet, ch: AN3.1}
-- {id: abelian, en: abelian, zh: null, naer: missing, def: def-group, ch: F4.3}
-- {id: binary-operation, en: binary operation, zh: 二元運算, naer: univ, def: def-group, ch: F4.3}
+- {id: abelian, en: abelian, zh: null, naer: missing, def: def-group, ch: F5.3}
+- {id: binary-operation, en: binary operation, zh: 二元運算, naer: univ, def: def-group, ch: F5.3}
 - id: group
   en: group
   zh: null
   naer: choose
   def: def-group
-  ch: F4.3
+  ch: F5.3
   zh_candidates: [群, 組]
-- {id: homomorphism, en: homomorphism, zh: '同態[映射]', naer: univ, def: def-group-homomorphism, ch: F4.3}
-- {id: subgroup, en: subgroup, zh: null, naer: missing, def: def-subgroup, ch: F4.3}
+- {id: homomorphism, en: homomorphism, zh: '同態[映射]', naer: univ, def: def-group-homomorphism, ch: F5.3}
+- {id: subgroup, en: subgroup, zh: null, naer: missing, def: def-subgroup, ch: F5.3}
 - id: fourier-transform
   en: Fourier transform
   zh: Fourier變換

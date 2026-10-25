@@ -9,24 +9,27 @@ flowchart TD
   F1["F1 Logic and Proof"]:::found
   F2["F2 Sets, Relations, and Cardinality"]:::found
   F3["F3 Number Systems: From ℕ to ℝ"]:::found
-  F4["F4 Algebraic Preliminaries"]:::found
-  AN1["AN1 Analysis on the Real Line"]:::analysis
+  F4["F4 Analytic Preliminaries"]:::found
+  F5["F5 Algebraic Preliminaries"]:::found
+  AN1["AN1 Real Numbers, Metric Spaces, and Derivatives"]:::analysis
   LA1["LA1 Spaces and Maps"]:::linalg
   AL1["AL1 Groups"]:::algebra
   LA2["LA2 Determinants and the Structure of Operators"]:::linalg
   LA3["LA3 Inner Products and Spectral Theory"]:::linalg
-  LA4["LA4 Forms and Multilinear Algebra"]:::linalg
-  AN2["AN2 Metric and Topological Spaces"]:::analysis
-  AN3["AN3 Analysis in Several Variables"]:::analysis
   AL2["AL2 Rings and Fields"]:::algebra
-  AL3["AL3 Galois Theory"]:::algebra
-  HA["HA Fourier Analysis"]:::analysis
-  MT["MT Measure and Integration"]:::analysis
+  LA4["LA4 Forms and Multilinear Algebra"]:::linalg
+  AN2["AN2 Integration, Series, and Function Spaces"]:::analysis
+  AN3["AN3 Analysis in Several Variables"]:::analysis
   CA["CA Complex Analysis"]:::analysis
+  AL3["AL3 Galois Theory"]:::algebra
+  CA2["CA2 Complex Analysis II: Global Theory"]:::analysis
+  AM["AM Analysis on Manifolds"]:::analysis
+  MT["MT Measure, Integration, and Real Analysis"]:::analysis
   FA["FA Functional Analysis"]:::analysis
   AL4["AL4 Modules, Representations, and Homological Algebra"]:::algebra
   AL5["AL5 Commutative Algebra"]:::algebra
   MA["MA Matrix Analysis"]:::linalg
+  HA["HA Fourier Analysis"]:::side
   PR["PR Measure-Theoretic Probability"]:::side
   PDE["PDE Distributions and Sobolev Spaces"]:::side
   GEO["GEO Affine and Projective Geometry"]:::side
@@ -34,34 +37,35 @@ flowchart TD
   ST["ST Axiomatic Set Theory"]:::side
   F1 --> F2
   F2 --> F3
-  AN1 -.-> F4
-  F3 --> F4
-  F2 --> AN1
-  F4 --> LA1
-  F4 --> AL1
+  AN2 -.-> F4
+  F4 --> F5
+  F4 --> AN1
+  F5 --> LA1
+  F5 --> AL1
   LA1 --> LA2
   LA2 --> LA3
-  LA3 --> LA4
-  LA3 -.-> AN2
-  AN2 --> AN3
-  LA4 --> AN3
   AL1 --> AL2
   LA1 --> AL2
+  AL2 --> LA4
+  LA3 --> LA4
+  LA4 -.-> AN3
+  AN3 -.-> CA
   AL2 --> AL3
-  AN2 --> AL3
-  AN3 --> HA
+  CA --> CA2
+  HA --> CA2
+  AN3 --> AM
   AN3 --> MT
-  FA --> CA
   CA --> FA
-  AL2 --> AL4
+  MT --> FA
   LA4 --> AL4
   AL4 --> AL5
-  CA --> MA
+  FA --> MA
+  MT --> HA
   HA -.-> PR
-  MT --> PR
+  CA --> PDE
+  HA --> PDE
   MA --> GEO
   MA --> NLA
-  AL1 --> ST
   MT --> ST
   classDef found fill:#e8e2f4,stroke:#888,color:#222
   classDef analysis fill:#dcebf7,stroke:#888,color:#222
@@ -139,61 +143,83 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F4 Algebraic Preliminaries
+## F4 Analytic Preliminaries
 
 ```mermaid
 flowchart LR
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
-  F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
   F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
+  F4_6["6 Inequalities, Finite Sums, and Real Powers"]
+  F4_7["7 Real Functions and Their Graphs"]
+  F4_8["8 Coordinates and Vectors in ℝⁿ"]
+  F4_9["9 Lines, Convexity, and Isometries of ℝⁿ"]
   F4_1["1 Complex Numbers"]
-  F4_2["2 Fields"]
-  F4_3["3 Groups, Subgroups, and Homomorphisms"]
-  F4_4["4 Formal Polynomials"]
-  F4_5["5 Polynomials over a Field"]
+  F4_10["10 Rotations, Angles, and the Complex Plane"]
+  F4_11["11 Metrics and Norms"]
+  F3_4 --> F4_6
+  F4_6 --> F4_7
+  F4_6 --> F4_8
+  F4_8 --> F4_9
   AN1_10 -.-> F4_1
-  F3_4 --> F4_1
-  F3_5 --> F4_2
-  F3_5 --> F4_3
-  F4_2 --> F4_4
-  F4_1 --> F4_5
-  F4_4 --> F4_5
+  F4_9 --> F4_10
+  F4_1 --> F4_10
+  F4_7 --> F4_11
+  F4_8 --> F4_11
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## AN1 Analysis on the Real Line
+## F5 Algebraic Preliminaries
+
+```mermaid
+flowchart LR
+  F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
+  F4_1["F4.1 Complex Numbers"]:::ext
+  F5_2["2 Fields"]
+  F5_3["3 Groups, Subgroups, and Homomorphisms"]
+  F5_4["4 Formal Polynomials"]
+  F5_5["5 Polynomials over a Field"]
+  F3_5 --> F5_2
+  F3_5 --> F5_3
+  F5_2 --> F5_4
+  F4_1 --> F5_5
+  F5_4 --> F5_5
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## AN1 Real Numbers, Metric Spaces, and Derivatives
 
 ```mermaid
 flowchart LR
   F2_2["F2.2 Induction, Contradiction, and Finite Sets"]:::ext
-  F2_3["F2.3 Countable and Uncountable Sets"]:::ext
+  F4_8["F4.8 Coordinates and Vectors in ℝⁿ"]:::ext
+  F4_11["F4.11 Metrics and Norms"]:::ext
   AN1_1["1 Ordered Fields and the Least Upper Bound Axiom"]
+  AN1_4["4 Open, Closed, and Compact Subsets of ℝⁿ"]
+  AN2_1["1 Metric Spaces and Their Topology"]
   AN1_2["2 Sequences, Subsequences, and Cauchy Sequences"]
-  AN1_3["3 Infinite Series"]
-  AN1_4["4 Open, Closed, and Compact Subsets of ℝ"]
+  AN2_2["2 Completeness and the Completion of a Metric Space"]
   AN1_5["5 Limits of Functions and Continuity"]
   AN1_6["6 Continuous Functions on Compact Sets and Intervals"]
+  AN2_3["3 Compactness and Connectedness in Metric Spaces"]
   AN1_7["7 The Derivative and the Mean Value Theorem"]
-  AN1_8["8 The Riemann–Darboux Integral"]
-  AN1_9["9 Sequences and Series of Functions"]
-  AN1_10["10 Power Series, Taylor Series, and the Elementary Functions"]
   AN1_11["11 The Forms of Completeness"]
   F2_2 --> AN1_1
-  AN1_1 --> AN1_2
-  F2_3 --> AN1_3
-  AN1_2 --> AN1_3
-  F2_3 --> AN1_4
-  AN1_2 --> AN1_4
-  AN1_4 --> AN1_5
+  F4_8 --> AN1_4
+  AN1_1 --> AN1_4
+  F4_11 --> AN2_1
+  AN1_4 --> AN2_1
+  AN2_1 --> AN1_2
+  AN1_2 --> AN2_2
+  AN1_2 --> AN1_5
   AN1_5 --> AN1_6
+  AN2_2 --> AN2_3
+  AN1_6 --> AN2_3
   AN1_6 --> AN1_7
-  AN1_7 --> AN1_8
-  AN1_3 --> AN1_9
-  AN1_8 --> AN1_9
-  AN1_9 --> AN1_10
-  AN1_6 --> AN1_11
+  AN1_7 --> AN1_11
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -204,16 +230,16 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn's Lemma"]:::ext
-  F4_4["F4.4 Formal Polynomials"]:::ext
+  F5_4["F5.4 Formal Polynomials"]:::ext
   LA1_0["0 Matrices"]
   LA1_1["1 Vector Spaces"]
   LA1_2["2 Linear Maps"]
   LA1_3["3 Linear Systems and Matrices"]
   LA1_4["4 Matrices of Maps"]
   LA1_5["5 Duality"]
-  F4_4 --> LA1_0
+  F5_4 --> LA1_0
   F2_4 -.-> LA1_1
-  F4_4 --> LA1_1
+  F5_4 --> LA1_1
   LA1_0 --> LA1_2
   LA1_1 --> LA1_2
   LA1_0 --> LA1_3
@@ -230,7 +256,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F4_3["F4.3 Groups, Subgroups, and Homomorphisms"]:::ext
+  F5_3["F5.3 Groups, Subgroups, and Homomorphisms"]:::ext
   AL1_2["2 Cyclic Groups"]
   AL1_3["3 Symmetric Groups and the Sign of a Permutation"]
   AL1_4["4 Cosets and Lagrange's Theorem"]
@@ -241,8 +267,8 @@ flowchart LR
   AL1_9["9 Composition Series, Solvable Groups, and Nilpotent Groups"]
   AL1_10["10 The Simplicity of Aₙ"]
   AL1_11["11 Free Groups and Presentations"]
-  F4_3 --> AL1_2
-  F4_3 --> AL1_3
+  F5_3 --> AL1_2
+  F5_3 --> AL1_3
   AL1_2 --> AL1_4
   AL1_4 --> AL1_5
   AL1_3 --> AL1_6
@@ -262,7 +288,7 @@ flowchart LR
 ```mermaid
 flowchart LR
   F4_1["F4.1 Complex Numbers"]:::ext
-  F4_3["F4.3 Groups, Subgroups, and Homomorphisms"]:::ext
+  F5_3["F5.3 Groups, Subgroups, and Homomorphisms"]:::ext
   LA1_5["LA1.5 Duality"]:::ext
   LA2_6["6 Polynomials"]
   LA2_7["7 Determinants"]
@@ -271,7 +297,7 @@ flowchart LR
   LA2_10["10 Canonical Forms"]
   F4_1 --> LA2_6
   LA1_5 --> LA2_6
-  F4_3 --> LA2_7
+  F5_3 --> LA2_7
   LA2_6 --> LA2_7
   LA2_7 --> LA2_8
   LA2_8 --> LA2_9
@@ -297,91 +323,13 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## LA4 Forms and Multilinear Algebra
-
-```mermaid
-flowchart LR
-  LA3_13["LA3.13 Positive Matrices and the Singular Value Decomposition"]:::ext
-  LA4_14["14 Bilinear and Quadratic Forms"]
-  LA4_15["15 Tensors and Exterior Algebra"]
-  LA3_13 --> LA4_14
-  LA4_14 --> LA4_15
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
-## AN2 Metric and Topological Spaces
-
-```mermaid
-flowchart LR
-  AN1_11["AN1.11 The Forms of Completeness"]:::ext
-  LA3_11["LA3.11 Inner Product Spaces"]:::ext
-  AN2_1["1 Metric Spaces, Open Sets, and Continuity"]
-  AN2_2["2 Completeness and the Completion of a Metric Space"]
-  AN2_3["3 Compactness and Connectedness in Metric Spaces"]
-  AN2_4["4 Contraction Mappings and the Picard–Lindelöf Theorem"]
-  AN2_5["5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]
-  AN2_6["6 Density and Category in C(K): Stone–Weierstrass and Baire"]
-  AN2_7["7 Topological Spaces, Products, and Compactness"]:::segb
-  AN2_8["8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::segb
-  LA3_11 -.-> AN2_1
-  AN1_11 --> AN2_2
-  AN2_1 --> AN2_2
-  AN2_2 --> AN2_3
-  AN2_2 --> AN2_4
-  AN2_3 --> AN2_5
-  AN2_4 --> AN2_5
-  AN2_3 --> AN2_6
-  AN2_3 --> AN2_7
-  AN2_7 --> AN2_8
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
-## AN3 Analysis in Several Variables
-
-```mermaid
-flowchart LR
-  LA2_10["LA2.10 Canonical Forms"]:::ext
-  LA4_14["LA4.14 Bilinear and Quadratic Forms"]:::ext
-  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
-  AN2_4["AN2.4 Contraction Mappings and the Picard–Lindelöf Theorem"]:::ext
-  AN3_1["1 The Derivative in ℝⁿ"]
-  AN3_2["2 Inverse and Implicit Functions, and Lagrange Multipliers"]
-  AN3_3["3 Linear Systems, the Matrix Exponential, and the Flow"]
-  AN3_4["4 The Riemann Integral on ℝⁿ"]
-  AN3_5["5 Submanifolds of ℝⁿ and Tangent Spaces"]:::segb
-  AN3_6["6 Differential Forms and the Exterior Derivative"]:::segb
-  AN3_7["7 Integration on Manifolds and Stokes' Theorem"]:::segb
-  LA4_14 -.-> AN3_1
-  AN2_3 --> AN3_1
-  AN2_4 --> AN3_2
-  AN3_1 --> AN3_2
-  LA2_10 --> AN3_3
-  AN2_4 --> AN3_3
-  AN3_1 --> AN3_3
-  AN2_3 --> AN3_4
-  AN3_2 --> AN3_5
-  LA4_15 --> AN3_6
-  AN3_1 --> AN3_6
-  AN3_4 --> AN3_7
-  AN3_5 --> AN3_7
-  AN3_6 --> AN3_7
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
 ## AL2 Rings and Fields
 
 ```mermaid
 flowchart LR
   F2_4["F2.4 Zorn's Lemma"]:::ext
-  F4_2["F4.2 Fields"]:::ext
-  F4_4["F4.4 Formal Polynomials"]:::ext
+  F5_2["F5.2 Fields"]:::ext
+  F5_4["F5.4 Formal Polynomials"]:::ext
   LA1_1["LA1.1 Vector Spaces"]:::ext
   AL1_5["AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems"]:::ext
   AL2_1["1 Rings, Ideals, and Quotient Rings"]
@@ -395,14 +343,14 @@ flowchart LR
   AL2_9["9 Finite Fields"]
   AL2_10["10 Ruler-and-Compass Constructions"]
   AL1_5 --> AL2_1
-  F4_2 --> AL2_2
+  F5_2 --> AL2_2
   AL2_1 --> AL2_2
   F2_4 -.-> AL2_3
   AL2_1 --> AL2_3
   AL2_1 --> AL2_4
   AL2_2 --> AL2_5
   AL2_3 --> AL2_5
-  F4_4 --> AL2_6
+  F5_4 --> AL2_6
   AL2_5 --> AL2_6
   LA1_1 --> AL2_7
   AL2_6 --> AL2_7
@@ -414,15 +362,144 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
+## LA4 Forms and Multilinear Algebra
+
+```mermaid
+flowchart LR
+  AL1_6["AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]:::ext
+  LA3_13["LA3.13 Positive Matrices and the Singular Value Decomposition"]:::ext
+  AL2_1["AL2.1 Rings, Ideals, and Quotient Rings"]:::ext
+  LA4_14["14 Bilinear and Quadratic Forms"]
+  LA4_15["15 Tensors and Exterior Algebra"]
+  AL1_6 --> LA4_14
+  LA3_13 --> LA4_14
+  AL2_1 --> LA4_14
+  LA4_14 --> LA4_15
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## AN2 Integration, Series, and Function Spaces
+
+```mermaid
+flowchart LR
+  AN1_2["AN1.2 Sequences, Subsequences, and Cauchy Sequences"]:::ext
+  AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  AN1_7["AN1.7 The Derivative and the Mean Value Theorem"]:::ext
+  AN2_9["9 Functions of Bounded Variation and Rectifiable Curves"]
+  AN1_8["8 The Riemann–Darboux Integral"]
+  AN2_10["10 The Riemann–Stieltjes Integral"]
+  AN1_3["3 Infinite Series"]
+  AN2_12["12 Double Series, Infinite Products, and the Euler Product"]
+  AN1_9["9 Sequences and Series of Functions"]
+  AN1_10["10 Power Series, Taylor Series, and the Elementary Functions"]
+  AN2_11["11 Integrals with a Parameter, Euler Summation, and the Gamma Function"]
+  AN2_13["13 Summability and Tauberian Theorems"]
+  AN2_4["4 Contraction Mappings and the Picard–Lindelöf Theorem"]
+  AN2_5["5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]
+  AN2_6["6 Density and Category in C(K): Stone–Weierstrass and Baire"]
+  AN2_7["7 Topological Spaces, Products, and Compactness"]:::segb
+  AN2_8["8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::segb
+  AN2_14["14 The Gauge Integral"]:::opt
+  AN2_15["15 A Gallery of Pathological Functions"]:::opt
+  AN1_7 --> AN2_9
+  AN1_7 --> AN1_8
+  AN2_9 --> AN2_10
+  AN1_8 --> AN2_10
+  AN1_2 --> AN1_3
+  AN1_3 --> AN2_12
+  AN2_2 --> AN1_9
+  AN1_8 --> AN1_9
+  AN1_3 --> AN1_9
+  AN1_9 --> AN1_10
+  AN2_10 --> AN2_11
+  AN1_10 --> AN2_11
+  AN2_12 --> AN2_13
+  AN1_10 --> AN2_13
+  AN1_10 --> AN2_4
+  AN2_3 --> AN2_5
+  AN2_4 --> AN2_5
+  AN2_3 --> AN2_6
+  AN1_9 --> AN2_6
+  AN2_3 --> AN2_7
+  AN1_9 --> AN2_8
+  AN2_7 --> AN2_8
+  AN2_10 --> AN2_14
+  AN2_9 --> AN2_15
+  AN1_9 --> AN2_15
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## AN3 Analysis in Several Variables
+
+```mermaid
+flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  LA2_7["LA2.7 Determinants"]:::ext
+  LA2_10["LA2.10 Canonical Forms"]:::ext
+  LA4_14["LA4.14 Bilinear and Quadratic Forms"]:::ext
+  AN2_4["AN2.4 Contraction Mappings and the Picard–Lindelöf Theorem"]:::ext
+  AN3_1["1 The Derivative in ℝⁿ"]
+  AN3_2["2 Inverse and Implicit Functions, and Lagrange Multipliers"]
+  AN3_4["4 The Riemann Integral on ℝⁿ"]
+  AN3_3["3 Linear Systems, the Matrix Exponential, and the Flow"]:::segb
+  AN2_3 --> AN3_1
+  LA4_14 -.-> AN3_1
+  AN3_1 --> AN3_2
+  AN2_3 --> AN3_4
+  LA2_7 -.-> AN3_4
+  LA2_10 --> AN3_3
+  AN2_4 --> AN3_3
+  AN3_1 --> AN3_3
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## CA Complex Analysis
+
+```mermaid
+flowchart LR
+  F4_10["F4.10 Rotations, Angles, and the Complex Plane"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
+  AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
+  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  CA_1["1 Holomorphic Functions and Power Series"]
+  CA_10["10 Möbius Transformations and the Riemann Sphere"]
+  CA_2["2 Cauchy's Theorem and Its First Consequences"]
+  CA_3["3 Laurent Series, Singularities, and Residues"]
+  CA_4["4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]
+  CA_6["6 Harmonic Functions and the Poisson Integral"]
+  CA_5["5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]
+  F4_10 --> CA_1
+  AN3_1 -.-> CA_1
+  CA_1 --> CA_10
+  AN3_4 -.-> CA_2
+  CA_1 --> CA_2
+  CA_2 --> CA_3
+  CA_3 --> CA_4
+  CA_2 --> CA_6
+  AN2_5 --> CA_5
+  CA_4 --> CA_5
+  CA_6 --> CA_5
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
 ## AL3 Galois Theory
 
 ```mermaid
 flowchart LR
-  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
   AL1_7["AL1.7 The Sylow Theorems"]:::ext
   AL1_9["AL1.9 Composition Series, Solvable Groups, and Nilpotent Groups"]:::ext
   AL2_8["AL2.8 Algebraic Extensions, Splitting Fields, and Algebraic Closure"]:::ext
   AL2_9["AL2.9 Finite Fields"]:::ext
+  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
   AL3_1["1 Normal and Separable Extensions"]
   AL3_2["2 Galois Groups and Artin's Theorem"]
   AL3_3["3 The Fundamental Theorem of Galois Theory"]
@@ -450,112 +527,125 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## HA Fourier Analysis
+## CA2 Complex Analysis II: Global Theory
 
 ```mermaid
 flowchart LR
-  F4_1["F4.1 Complex Numbers"]:::ext
-  LA3_12["LA3.12 Spectral Theory"]:::ext
-  AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
-  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
-  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
-  HA_1["1 Fourier Series: Origins and Basic Properties"]
-  HA_2["2 Good Kernels, Summability, and Fejér's Theorem"]
-  HA_3["3 Mean-Square and Pointwise Convergence"]
-  HA_4["4 Applications of Fourier Series"]
-  HA_5["5 The Fourier Transform on ℝ"]
-  HA_6["6 The Fourier Transform on ℝᵈ and the Wave Equation"]
-  HA_7["7 Fourier Analysis on Finite Abelian Groups"]:::opt
-  HA_8["8 Dirichlet's Theorem on Primes in Arithmetic Progressions"]:::opt
-  HA_9["9 What the Riemann Integral Lacks"]
-  F4_1 --> HA_1
-  HA_1 --> HA_2
-  AN2_2 --> HA_3
-  HA_2 --> HA_3
-  HA_3 --> HA_4
-  AN3_4 --> HA_5
-  HA_2 --> HA_5
-  HA_5 --> HA_6
-  LA3_12 --> HA_7
-  HA_3 --> HA_7
-  HA_7 --> HA_8
-  AN2_6 --> HA_9
-  HA_3 --> HA_9
+  AN2_11["AN2.11 Integrals with a Parameter, Euler Summation, and the Gamma Function"]:::ext
+  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]:::ext
+  CA_5["CA.5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]:::ext
+  HA_4["HA.4 Applications of Fourier Series"]:::ext
+  CA_11["11 Subharmonic Functions, Harnack, and the Perron Method"]
+  CA_7["7 Infinite Products and Entire Functions"]
+  CA_12["12 Runge's Theorem, Mittag-Leffler, and Simply Connected Regions"]
+  CA_8a["8a Analytic Continuation and Monodromy"]
+  CA_13["13 The Gamma and Zeta Functions"]
+  CA_14["14 Bloch, Landau, Schottky, and the Picard Theorems"]
+  CA_15["15 Elliptic Functions"]:::opt
+  CA_8b["8b Picard's Theorems via Theta Functions"]:::opt
+  CA_5 --> CA_11
+  CA_4 --> CA_7
+  CA_7 --> CA_12
+  AN2_11 -.-> CA_8a
+  CA_7 --> CA_8a
+  CA_8a --> CA_13
+  CA_5 --> CA_14
+  CA_8a --> CA_14
+  CA_7 --> CA_15
+  CA_8a --> CA_8b
+  HA_4 --> CA_8b
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## MT Measure and Integration
+## AM Analysis on Manifolds
 
 ```mermaid
 flowchart LR
+  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
+  AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
+  AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
   AN3_2["AN3.2 Inverse and Implicit Functions, and Lagrange Multipliers"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  AN3_3["AN3.3 Linear Systems, the Matrix Exponential, and the Flow"]:::ext
+  AM_1["1 Partitions of Unity, Improper Integrals, and Change of Variables"]
+  AN3_5["5 Submanifolds of ℝⁿ and Tangent Spaces"]
+  AN3_6["6 Differential Forms and the Exterior Derivative"]
+  AN3_7["7 Integration on Manifolds and Stokes' Theorem"]
+  AM_2["2 Closed and Exact Forms: Poincaré Lemma and de Rham Cohomology of Punctured ℝⁿ"]
+  AM_3["3 Abstract Smooth Manifolds, Vector Fields, and Flows"]:::segb
+  AN3_2 --> AM_1
+  AN3_4 --> AM_1
+  AN3_2 --> AN3_5
+  LA4_15 --> AN3_6
+  AN3_1 --> AN3_6
+  AM_1 --> AN3_7
+  AN3_5 --> AN3_7
+  AN3_6 --> AN3_7
+  AN3_7 --> AM_2
+  AN2_7 --> AM_3
+  AN3_3 --> AM_3
+  AN3_5 --> AM_3
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
+## MT Measure, Integration, and Real Analysis
+
+```mermaid
+flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  LA1_2["LA1.2 Linear Maps"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
+  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
+  AN3_2["AN3.2 Inverse and Implicit Functions, and Lagrange Multipliers"]:::ext
+  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  HA_9["9 Riemann Integration and Its Failures"]
   MT_1["1 Lebesgue Measure on ℝᵈ and Measurable Functions"]
   MT_2["2 The Lebesgue Integral and the Convergence Theorems"]
   MT_3["3 Abstract Measure Spaces and Carathéodory's Construction"]
   MT_4["4 Product Measures and the Fubini–Tonelli Theorem"]
   MT_5["5 Linear Maps, Change of Variables, and Polar Coordinates"]
   MT_6["6 Surfaces, Surface Measure, and the Divergence Theorem"]
+  FA_1a["1a Banach Spaces, Bounded Operators, and Dual Spaces"]
+  FA_4["4 Baire Category and the Fundamental Theorems for Operators"]
+  FA_3["3 The Hahn–Banach Theorems"]
   MT_7["7 Lᵖ Spaces, Convolution, and Mollifiers"]
   MT_8["8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]
   MT_9["9 The Maximal Function and Lebesgue Differentiation"]
   MT_10["10 Bounded Variation, Absolute Continuity, and the Fundamental Theorem"]
+  FA_6["6 Hilbert Spaces"]
   MT_11["11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]
+  FA_1b["1b The Dual of Lᵖ"]
+  FA_9["9 Bounded Operators on Hilbert Space"]
+  FA_7["7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]
+  AN2_6 --> HA_9
   AN3_4 --> MT_1
+  HA_9 --> MT_1
   MT_1 --> MT_2
   MT_2 --> MT_3
   MT_3 --> MT_4
   AN3_2 --> MT_5
   MT_4 --> MT_5
   MT_5 --> MT_6
+  AN2_3 --> FA_1a
+  LA1_2 --> FA_1a
+  AN2_6 --> FA_4
+  FA_1a --> FA_4
+  FA_1a --> FA_3
   MT_4 --> MT_7
   MT_7 --> MT_8
   MT_7 --> MT_9
   MT_9 --> MT_10
+  FA_1a --> FA_6
   MT_7 --> MT_11
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
-## CA Complex Analysis
-
-```mermaid
-flowchart LR
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
-  AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
-  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
-  HA_4["HA.4 Applications of Fourier Series"]:::ext
-  FA_2["FA.2 Radon Measures and the Dual of C₀(X)"]:::ext
-  FA_5["FA.5 Weak Topologies, Tychonoff, and Banach–Alaoglu"]:::ext
-  CA_1["1 Holomorphic Functions and Power Series"]
-  CA_2["2 Cauchy's Theorem and Its First Consequences"]
-  CA_3["3 Laurent Series, Singularities, and Residues"]
-  CA_4["4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]
-  CA_5["5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]
-  CA_6["6 Harmonic and Subharmonic Functions"]
-  CA_7["7 Infinite Products and Entire Functions"]
-  CA_8a["8a Analytic Continuation and Monodromy"]
-  CA_8b["8b Picard's Theorems"]:::opt
-  CA_9["9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::opt
-  AN3_1 -.-> CA_1
-  AN3_4 -.-> CA_2
-  CA_1 --> CA_2
-  CA_2 --> CA_3
-  CA_3 --> CA_4
-  AN2_5 --> CA_5
-  CA_4 --> CA_5
-  CA_2 --> CA_6
-  CA_4 --> CA_7
-  CA_7 --> CA_8a
-  HA_4 --> CA_8b
-  CA_8a --> CA_8b
-  CA_5 --> CA_9
-  CA_6 --> CA_9
-  FA_2 --> CA_9
-  FA_5 --> CA_9
+  FA_1a --> FA_1b
+  MT_11 --> FA_1b
+  FA_6 --> FA_9
+  AN2_5 --> FA_7
+  FA_9 --> FA_7
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -565,40 +655,43 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
-  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
-  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
   AN2_7["AN2.7 Topological Spaces, Products, and Compactness"]:::ext
   AN2_8["AN2.8 Separation, Urysohn–Tietze, and Locally Compact Spaces"]:::ext
-  MT_3["MT.3 Abstract Measure Spaces and Carathéodory's Construction"]:::ext
-  MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
   CA_2["CA.2 Cauchy's Theorem and Its First Consequences"]:::ext
-  FA_1a["1a Banach Spaces, Bounded Operators, and Dual Spaces"]
-  FA_1b["1b The Dual of Lᵖ"]
+  CA_5["CA.5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]:::ext
+  MT_3["MT.3 Abstract Measure Spaces and Carathéodory's Construction"]:::ext
+  FA_1a["FA.1a Banach Spaces, Bounded Operators, and Dual Spaces"]:::ext
+  FA_4["FA.4 Baire Category and the Fundamental Theorems for Operators"]:::ext
+  FA_3["FA.3 The Hahn–Banach Theorems"]:::ext
+  FA_1b["FA.1b The Dual of Lᵖ"]:::ext
+  FA_7["FA.7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]:::ext
   FA_2["2 Radon Measures and the Dual of C₀(X)"]
-  FA_3["3 The Hahn–Banach Theorems"]
-  FA_4["4 Baire Category and the Fundamental Theorems for Operators"]
   FA_5["5 Weak Topologies, Tychonoff, and Banach–Alaoglu"]
-  FA_6["6 Hilbert Spaces"]
-  FA_7["7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]
-  FA_8["8 Banach Algebras and Gelfand Theory"]:::opt
-  AN2_3 --> FA_1a
-  MT_11 --> FA_1b
-  FA_1a --> FA_1b
+  FA_10["10 Reflexivity, Uniform Convexity, and Separability"]
+  FA_11["11 Locally Convex Spaces and Fréchet Spaces"]
+  FA_8["8 Banach Algebras and Gelfand Theory"]
+  FA_12["12 The Spectral Theorem for Bounded Normal Operators"]
+  FA_13["13 Unbounded Operators and Self-Adjointness"]
+  FA_14["14 Fredholm Operators and the Index"]
+  CA_9["9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::opt
   AN2_8 --> FA_2
   MT_3 --> FA_2
   FA_1a --> FA_2
-  FA_1a --> FA_3
-  AN2_6 --> FA_4
-  FA_1a --> FA_4
   AN2_7 --> FA_5
-  FA_3 --> FA_5
   FA_4 --> FA_5
-  FA_1a --> FA_6
-  AN2_5 --> FA_7
-  FA_6 --> FA_7
+  FA_3 --> FA_5
+  FA_1b --> FA_10
+  FA_5 --> FA_10
+  FA_5 --> FA_11
   CA_2 --> FA_8
   FA_7 --> FA_8
+  FA_8 --> FA_12
+  FA_12 --> FA_13
+  FA_4 --> FA_14
+  FA_7 --> FA_14
+  CA_5 --> CA_9
+  FA_2 --> CA_9
+  FA_5 --> CA_9
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -610,10 +703,9 @@ flowchart LR
 flowchart LR
   LA1_2["LA1.2 Linear Maps"]:::ext
   LA2_10["LA2.10 Canonical Forms"]:::ext
-  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
-  AL1_6["AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]:::ext
   AL2_1["AL2.1 Rings, Ideals, and Quotient Rings"]:::ext
   AL2_5["AL2.5 Euclidean Domains, PIDs, and UFDs"]:::ext
+  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
   AL4_1["1 Modules, Submodules, Quotients, and Homomorphisms"]
   AL4_2["2 Free Modules, Direct Sums, and Exact Sequences"]
   AL4_3["3 Finitely Generated Modules over a PID"]
@@ -637,7 +729,6 @@ flowchart LR
   AL4_5 --> AL4_7
   LA2_10 --> AL4_8
   LA4_15 --> AL4_8
-  AL1_6 --> AL4_9
   AL4_8 --> AL4_9
   AL4_9 --> AL4_10
   AL4_6 --> AL4_11
@@ -684,9 +775,10 @@ flowchart LR
 
 ```mermaid
 flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  AN1_11["AN1.11 The Forms of Completeness"]:::ext
   LA2_10["LA2.10 Canonical Forms"]:::ext
   LA3_13["LA3.13 Positive Matrices and the Singular Value Decomposition"]:::ext
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
   AN3_3["AN3.3 Linear Systems, the Matrix Exponential, and the Flow"]:::ext
   CA_9["CA.9 Positive Harmonic Functions and the Herglotz–Nevanlinna Representation"]:::ext
   MA_16["16 Norms and Matrix Analysis"]
@@ -696,9 +788,10 @@ flowchart LR
   MA_20["20 Perturbation Theory"]
   MA_21["21 Matrix Inequalities"]
   MA_21b["21b Löwner's Theorem in Pick-Function Form"]:::opt
+  AN2_3 -.-> MA_16
+  AN1_11 -.-> MA_16
   LA2_10 --> MA_16
   LA3_13 --> MA_16
-  AN2_3 -.-> MA_16
   MA_16 --> MA_17
   MA_17 --> MA_18
   MA_18 --> MA_19
@@ -712,23 +805,68 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
+## HA Fourier Analysis
+
+```mermaid
+flowchart LR
+  F4_1["F4.1 Complex Numbers"]:::ext
+  LA3_11["LA3.11 Inner Product Spaces"]:::ext
+  LA3_12["LA3.12 Spectral Theory"]:::ext
+  AN2_9["AN2.9 Functions of Bounded Variation and Rectifiable Curves"]:::ext
+  AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  MT_7["MT.7 Lᵖ Spaces, Convolution, and Mollifiers"]:::ext
+  FA_6["FA.6 Hilbert Spaces"]:::ext
+  HA_1["1 Fourier Series: Origins and Basic Properties"]
+  HA_2["2 Good Kernels, Summability, and Fejér's Theorem"]
+  HA_3["3 Mean-Square and Pointwise Convergence"]
+  HA_4["4 Applications of Fourier Series"]
+  HA_5["5 The Fourier Transform on ℝ"]
+  HA_6["6 The Fourier Transform on ℝᵈ and the Wave Equation"]
+  HA_7["7 Fourier Analysis on Finite Abelian Groups"]:::opt
+  HA_8["8 Dirichlet's Theorem on Primes in Arithmetic Progressions"]:::opt
+  HA_10["10 Fourier Analysis in L¹ and L²"]
+  F4_1 --> HA_1
+  HA_1 --> HA_2
+  LA3_11 --> HA_3
+  AN2_9 -.-> HA_3
+  HA_2 --> HA_3
+  HA_3 --> HA_4
+  AN3_4 --> HA_5
+  HA_2 --> HA_5
+  HA_5 --> HA_6
+  LA3_12 --> HA_7
+  HA_3 --> HA_7
+  HA_7 --> HA_8
+  MT_7 --> HA_10
+  FA_6 --> HA_10
+  HA_3 --> HA_10
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
+```
+
 ## PR Measure-Theoretic Probability
 
 ```mermaid
 flowchart LR
-  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
   MT_8["MT.8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]:::ext
+  FA_6["FA.6 Hilbert Spaces"]:::ext
   MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
+  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
   PR_1["1 Probability on Measure Spaces"]
   PR_2["2 Conditional Expectation"]
   PR_3["3 Discrete-Time Martingales"]
   PR_4["4 Weak Convergence and Characteristic Functions"]
+  PR_5["5 Brownian Motion"]
   MT_8 --> PR_1
   MT_11 --> PR_2
   PR_1 --> PR_2
   PR_2 --> PR_3
   HA_6 -.-> PR_4
   PR_1 --> PR_4
+  FA_6 --> PR_5
+  PR_3 --> PR_5
+  PR_4 --> PR_5
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -739,15 +877,15 @@ flowchart LR
 ```mermaid
 flowchart LR
   AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
-  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
+  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]:::ext
   MT_6["MT.6 Surfaces, Surface Measure, and the Divergence Theorem"]:::ext
+  FA_4["FA.4 Baire Category and the Fundamental Theorems for Operators"]:::ext
   MT_7["MT.7 Lᵖ Spaces, Convolution, and Mollifiers"]:::ext
   MT_8["MT.8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]:::ext
   MT_10["MT.10 Bounded Variation, Absolute Continuity, and the Fundamental Theorem"]:::ext
-  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]:::ext
   FA_1b["FA.1b The Dual of Lᵖ"]:::ext
-  FA_4["FA.4 Baire Category and the Fundamental Theorems for Operators"]:::ext
   FA_7["FA.7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]:::ext
+  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
   PDE_1["1 Distributions"]
   PDE_2["2 Tempered Distributions, the Fourier Transform, and Plancherel"]
   PDE_3["3 Interpolation: Riesz–Thorin, Young, and Hausdorff–Young"]
@@ -755,12 +893,12 @@ flowchart LR
   PDE_5["5 H¹₀, the Poincaré Inequality, and Rellich Compactness"]
   PDE_6["6 Capstone: The Dirichlet Problem and the Dirichlet-Laplacian Eigenbasis"]
   MT_6 --> PDE_1
-  MT_7 --> PDE_1
   FA_4 --> PDE_1
+  MT_7 --> PDE_1
   HA_6 --> PDE_2
   PDE_1 --> PDE_2
-  MT_8 --> PDE_3
   CA_4 --> PDE_3
+  MT_8 --> PDE_3
   FA_1b --> PDE_3
   MT_10 --> PDE_4
   PDE_1 --> PDE_4

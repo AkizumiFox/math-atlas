@@ -1,0 +1,27 @@
+flowchart LR
+  AN2_11["AN2.11 Integrals with a Parameter, Euler Summation, and the Gamma Function"]:::ext
+  CA_4["CA.4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]:::ext
+  CA_5["CA.5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]:::ext
+  HA_4["HA.4 Applications of Fourier Series"]:::ext
+  CA_11["11 Subharmonic Functions, Harnack, and the Perron Method"]
+  CA_7["7 Infinite Products and Entire Functions"]
+  CA_12["12 Runge's Theorem, Mittag-Leffler, and Simply Connected Regions"]
+  CA_8a["8a Analytic Continuation and Monodromy"]
+  CA_13["13 The Gamma and Zeta Functions"]
+  CA_14["14 Bloch, Landau, Schottky, and the Picard Theorems"]
+  CA_15["15 Elliptic Functions"]:::opt
+  CA_8b["8b Picard's Theorems via Theta Functions"]:::opt
+  CA_5 --> CA_11
+  CA_4 --> CA_7
+  CA_7 --> CA_12
+  AN2_11 -.-> CA_8a
+  CA_7 --> CA_8a
+  CA_8a --> CA_13
+  CA_5 --> CA_14
+  CA_8a --> CA_14
+  CA_7 --> CA_15
+  CA_8a --> CA_8b
+  HA_4 --> CA_8b
+  classDef ext fill:#e6e6e6,stroke:#999,color:#555
+  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
+  classDef segb fill:#f6f6fb,stroke:#99a,color:#333

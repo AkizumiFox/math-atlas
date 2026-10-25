@@ -1,30 +1,21 @@
 flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  LA2_7["LA2.7 Determinants"]:::ext
   LA2_10["LA2.10 Canonical Forms"]:::ext
   LA4_14["LA4.14 Bilinear and Quadratic Forms"]:::ext
-  LA4_15["LA4.15 Tensors and Exterior Algebra"]:::ext
-  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
   AN2_4["AN2.4 Contraction Mappings and the Picard–Lindelöf Theorem"]:::ext
   AN3_1["1 The Derivative in ℝⁿ"]
   AN3_2["2 Inverse and Implicit Functions, and Lagrange Multipliers"]
-  AN3_3["3 Linear Systems, the Matrix Exponential, and the Flow"]
   AN3_4["4 The Riemann Integral on ℝⁿ"]
-  AN3_5["5 Submanifolds of ℝⁿ and Tangent Spaces"]:::segb
-  AN3_6["6 Differential Forms and the Exterior Derivative"]:::segb
-  AN3_7["7 Integration on Manifolds and Stokes' Theorem"]:::segb
-  LA4_14 -.-> AN3_1
+  AN3_3["3 Linear Systems, the Matrix Exponential, and the Flow"]:::segb
   AN2_3 --> AN3_1
-  AN2_4 --> AN3_2
+  LA4_14 -.-> AN3_1
   AN3_1 --> AN3_2
+  AN2_3 --> AN3_4
+  LA2_7 -.-> AN3_4
   LA2_10 --> AN3_3
   AN2_4 --> AN3_3
   AN3_1 --> AN3_3
-  AN2_3 --> AN3_4
-  AN3_2 --> AN3_5
-  LA4_15 --> AN3_6
-  AN3_1 --> AN3_6
-  AN3_4 --> AN3_7
-  AN3_5 --> AN3_7
-  AN3_6 --> AN3_7
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

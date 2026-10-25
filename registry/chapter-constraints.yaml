@@ -146,3 +146,252 @@
     uses in Section 1.8.
   why: 線代書 §1.8 改成以 b 借用 F2.4（scope F2.5）；F2.4 寫好後接手 label，線代書原處留錨點。
   takes: [thm-zorn]
+
+# ───────────── 地圖 v2（2026-10-25，spec/08）：F4 分析預備、分析主線照 Apostol MA 的骨架 ─────────────
+# 分析各章另照 spec/08 §C5 的 Cummings 動機手法寫（伏筆與回收、Scratch Work 與證明分開、用失敗引入定義、病態例子表）；
+# 那是全冊的版型，由 blueprint 帶，這裡只放落到個別章的地圖決定。
+
+- chapter: F4.6
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Cover manipulation of finite sums and products, finite geometric sums, the binomial theorem, Bernoulli's
+    inequality, AM-GM, and the finite Cauchy-Schwarz inequality proved by Lagrange's identity. Construct \(n\)th roots
+    and rational powers by a supremum. Write the estimation techniques as Named moves, so that the epsilon-N proofs of
+    the analysis volume can cite them.
+  why: AN1.2 起的 ε-N 證明直接引用這裡的估計手法；AN1.2 s 依賴本章（spec/08 §A2、決策 2）。
+
+- chapter: F4.7
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Prove the factor theorem and the bound of at most \(n\) roots directly, without the algebraic preliminaries
+    volume. Introduce the exponential function through a borrowed box (E1)-(E4), to be cashed in by the chapter on power
+    series and the elementary functions. Start a table of pathological functions that the analysis volumes extend.
+  why: >-
+    F4 是 AN、CA 的入口，不得依賴 F5。exp 的借用框不能登記成 b 邊（AN1.5 s 依賴本章，b AN1.10 會成環），
+    所以地圖上是 see，AN1.10 以 revisits 兌現；病態函數表最後收束在 AN2.15。
+
+- chapter: F4.8
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Define \(\nR^n\) as the set of \(n\)-tuples, with the inner product, the Cauchy-Schwarz inequality and its equality
+    case, the norm, the triangle inequality, projection, and the cosine of an angle. Do not introduce abstract vector
+    spaces; they belong to the linear algebra volumes.
+  why: AN1.4、AN1.7、AN2.3 只需要座標化的 ℝⁿ；抽象向量空間屬 LA1.1，否則 AN1 又要依賴 LA（spec/08 決策 17）。
+
+- chapter: F4.9
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Prove that an isometry of \(\nR^n\) fixing the origin preserves the inner product, hence is linear and given by a
+    matrix with orthonormal columns, without using the linear algebra volumes.
+  why: 主定理只靠內積就能證，保持 F4 不依賴 LA（spec/08 §A2）。
+
+- chapter: F4.10
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Use the trigonometric borrowed box (T1)-(T5) of the chapter on complex numbers; leave radians to the analysis
+    volumes. Treat rotation as multiplication by a unit complex number, note that the argument is not unique as a
+    first hint of branches, and classify the isometries of \(\nC\) as \(az+b\) and \(a\bar z+b\) with \(|a|=1\).
+  why: 弧度要用到極限；arg 的不唯一是 CA 分支的伏筆（spec/08 §A2）。
+
+- chapter: F4.11
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Cover the metric axioms, the metrics \(d_1\), \(d_2\) and \(d_\infty\) and their comparison, the discrete metric,
+    the sup metric on bounded functions, normed spaces, open balls, diameter, subspace metrics, and product metrics;
+    the Hamming distance only in exercises. Do not treat convergence or open sets; they begin in the chapter on metric
+    spaces and their topology.
+  why: 概念螺旋 ℝ → ℝⁿ → metric 的前兩層在 F4 落地，收斂與開集留給 AN2.1，避免重複定義（spec/08 §A2）。
+
+- chapter: AN1.4
+  book: ab:14
+  decided: 2026-10-25
+  rule: >-
+    Work in \(\nR^n\) (coordinates from the foundations volume), not only in \(\nR\). Prove the Bolzano-Weierstrass and
+    Heine-Borel theorems with accumulation points, as Apostol does; the sequential versions come in Chapter 12. Introduce
+    the Cantor set here as a seed for the chapters on bounded variation and on pathological functions.
+  why: Apostol 3.1–3.12 的骨架；本章排在數列之前，所以不能用序列論證（spec/08 §C2）。
+
+- chapter: AN2.1
+  book: ab:24
+  decided: 2026-10-25
+  rule: >-
+    This chapter now follows Chapter 14 in the first analysis volume and is titled Metric Spaces and Their Topology.
+    Take the metric axioms and examples from the foundations chapter on metrics and norms; do not use the linear algebra
+    book. Leave continuity to Chapter 15.
+  why: AN2.1 搬進 AN1，刪掉 s LA1.1 與 b LA3.11；連續改在 AN1.5 一次處理（spec/08 §C2、決策 17）。
+
+- chapter: AN1.2
+  book: ab:12
+  decided: 2026-10-25
+  rule: >-
+    Do one pass in \(\nR\) first, then move to metric spaces. Monotone convergence and limit superior, which are
+    special to \(\nR\), stay in this chapter.
+  why: Apostol 4.1–4.4 與 8.2–8.3；本章排在 AN2.1 之後（spec/08 §C2）。
+
+- chapter: AN2.2
+  book: ab:25
+  decided: 2026-10-25
+  rule: >-
+    Prove the Banach fixed-point theorem here (Apostol 4.48); Chapter 27 reuses it. Move the completeness of
+    \(B(S)\) and \(\Cont{K}\) to Chapter 19, so that this chapter does not depend on Chapters 19 or 21.
+  why: AN2.2 搬到 AN1 的第 5 章，排在 AN1.9、AN1.11 之前；AN3.2 只需要 Banach 不動點（spec/08 §C2）。
+
+- chapter: AN1.5
+  book: ab:15
+  decided: 2026-10-25
+  rule: Add the classification of discontinuities (removable, jump, essential) and continuity between metric spaces.
+  why: Apostol 4.5–4.12、4.22–4.23；AN2.1 的連續移到這裡（spec/08 §C2）。
+
+- chapter: AN2.3
+  book: ab:26
+  decided: 2026-10-25
+  rule: >-
+    Use coordinates on \(\nR^n\) from the foundations volume instead of the linear algebra book. Move the equivalence of
+    norms on a general finite-dimensional space to Chapter 30.
+  why: AN2.3 的 s LA1.2 改為 F4.8，AN1 因此不依賴 LA（spec/08 §C2）。
+
+- chapter: AN1.7
+  book: ab:17
+  decided: 2026-10-25
+  rule: >-
+    Add a section on vector-valued functions, a first look at partial derivatives, and the complex derivative with
+    the Cauchy-Riemann equations (Apostol 5.14-5.22).
+  why: Apostol 5 的完整範圍；CA.1 以 revisits 指回這一節（spec/08 §C2、§D1）。
+
+- chapter: AN1.11
+  book: ab:21
+  decided: 2026-10-25
+  rule: This chapter closes the first analysis volume and may use the derivative (Chapter 17).
+  why: AN1.11 移到 AN1 冊末，加 s AN1.7（spec/08 §C6）。
+
+- chapter: AN1.8
+  book: ab:18
+  decided: 2026-10-25
+  rule: >-
+    Keep the Riemann-Darboux integral as a chapter of its own; the chapter on the Riemann-Stieltjes integral
+    generalizes it. Motivate by area, so that the Stieltjes chapter can open with the failure of a jumping integrator.
+  why: 決策 16：與 Apostol 7 的兩處節序差異之一，記在 apostol-ma 的 deviations。
+
+- chapter: AN1.9
+  book: ab:19
+  decided: 2026-10-25
+  rule: Take over the completeness of \(B(S)\) and \(\Cont{K}\) from Chapter 25.
+  why: 配合 AN2.2 提早到 AN1（spec/08 §C2）。
+
+- chapter: AN1.10
+  book: ab:20
+  decided: 2026-10-25
+  rule: >-
+    Cash in the borrowed boxes of the foundations volume: the exponential function (E1)-(E4) and the trigonometric
+    properties (T1)-(T5), with a look back at the chapters that stated them.
+  why: AN1.10 revisits F4.1、F4.7、F4.10（spec/08 §A4）。
+
+- chapter: AN2.4
+  book: ab:27
+  decided: 2026-10-25
+  rule: Cite the Banach fixed-point theorem from Chapter 25 instead of proving it here.
+  why: Banach 不動點移到 AN2.2（spec/08 §C6）。
+
+- chapter: AN2.6
+  book: ab:29
+  decided: 2026-10-25
+  rule: Give Bernstein's proof of the Weierstrass approximation theorem as the first proof.
+  why: Apostol 9 的 Bernstein 證明；AN2 照 Apostol 的廣度（spec/08 §C3）。
+
+- chapter: AN2.9
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Introduce bounded variation through the failure of a curve of infinite length, and use the Cantor set and the
+    Cantor function from the chapter on open, closed, and compact sets.
+  why: Cummings 的「用失敗引入定義」；Cantor 集的伏筆在 AN1.4（spec/08 §C5）。
+
+- chapter: AN2.10
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    End with a full proof of Lebesgue's criterion for Riemann integrability, and close with a short look ahead at what
+    the Riemann integral still lacks.
+  why: 決策 4：Lebesgue 延後到 MT，伏筆由 HA.9 回收。
+
+- chapter: AN2.15
+  book: new
+  decided: 2026-10-25
+  rule: >-
+    Optional gallery that closes the table of pathological functions begun in the foundations volume: Thomae's
+    function, Volterra's function, the Cantor function, a continuous nowhere differentiable function, a space-filling
+    curve, and \(e^{-1/x^2}\). No other chapter may depend on it.
+  why: 選讀章不得被 s 依賴；病態函數表從 F4.7 起、在這裡收束（spec/08 §C3）。
+
+- chapter: AN3.1
+  book: ab:30
+  decided: 2026-10-25
+  rule: Prove that all norms on a finite-dimensional real vector space are equivalent.
+  why: 從 AN2.3 移來，AN1 才不必依賴 LA（spec/08 §C2）。
+
+- chapter: AN3.2
+  book: ab:31
+  decided: 2026-10-25
+  rule: >-
+    Use only the Banach fixed-point theorem from Chapter 25, not the Picard-Lindelöf chapter. The rank theorem is
+    part of the main text, not optional.
+  why: AN3.2 的 s AN2.4 改為 AN2.2；秩定理改為必讀（spec/08 §C4）。
+
+- chapter: AN3.4
+  book: ab:33
+  decided: 2026-10-25
+  rule: >-
+    In the section on change of variables, state the nonlinear change of variables formula without proof; the proof
+    is in the first chapter of the volume on analysis on manifolds. Close with a short look ahead at what the Riemann
+    integral still lacks.
+  why: AM.1 證明非線性變數變換；Apostol 15 延後到 MT，伏筆由 HA.9／MT 回收（spec/08 §C4）。
+
+- chapter: CA.1
+  book: ab:55
+  decided: 2026-10-25
+  rule: >-
+    Look back at the complex derivative and the Cauchy-Riemann equations of Chapter 17, and use the rotations and
+    the argument from the foundations chapter on the complex plane.
+  why: CA.1 revisits AN1.7，s 加 F4.10（spec/08 §A4、§D1）。
+
+- chapter: CA.5
+  book: ab:59
+  decided: 2026-10-25
+  rule: Prove the Schwarz reflection principle by harmonic continuation, after the chapter on harmonic functions.
+  why: CA.5 加 s CA.6，依 Ahlfors 6.5 的順序（spec/08 §D1）。
+
+- chapter: CA.6
+  book: ab:60
+  decided: 2026-10-25
+  rule: >-
+    Treat harmonic functions and the Poisson integral only; move subharmonic functions, Harnack's principle, and the
+    Perron method to a new chapter in the second complex analysis volume.
+  why: CA.6 改名，後半拆成 CA.11（spec/08 §D1、§D2）。
+
+- chapter: HA.3
+  book: ab:36
+  decided: 2026-10-25
+  rule: >-
+    Add Riemann localization and the Dirichlet-Jordan test. Define bounded variation in place for that section only,
+    and point to the chapter on functions of bounded variation for the full definition.
+  why: HA.3 對 AN2.9 是 b 借用（scope 限那一節），就地定義有界變差（spec/01 規則 8；spec/08 §C6、§D6）。
+
+- chapter: HA.9
+  book: ab:42
+  decided: 2026-10-25
+  rule: >-
+    This chapter opens the measure theory volume as Riemann Integration and Its Failures. Do not depend on the
+    Fourier series chapters; point to them only as further reading.
+  why: HA.9 搬入 MT，刪 s HA.3：主線不得依賴支線（spec/08 §D4）。
+
+- chapter: MT.1
+  book: ab:43
+  decided: 2026-10-25
+  rule: Add Egorov's theorem and Luzin's theorem.
+  why: MIRA 2–3 的範圍（spec/08 §D4）。

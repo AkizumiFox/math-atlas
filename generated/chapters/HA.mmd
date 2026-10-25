@@ -1,9 +1,11 @@
 flowchart LR
   F4_1["F4.1 Complex Numbers"]:::ext
+  LA3_11["LA3.11 Inner Product Spaces"]:::ext
   LA3_12["LA3.12 Spectral Theory"]:::ext
-  AN2_2["AN2.2 Completeness and the Completion of a Metric Space"]:::ext
-  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
+  AN2_9["AN2.9 Functions of Bounded Variation and Rectifiable Curves"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  MT_7["MT.7 Lᵖ Spaces, Convolution, and Mollifiers"]:::ext
+  FA_6["FA.6 Hilbert Spaces"]:::ext
   HA_1["1 Fourier Series: Origins and Basic Properties"]
   HA_2["2 Good Kernels, Summability, and Fejér's Theorem"]
   HA_3["3 Mean-Square and Pointwise Convergence"]
@@ -12,10 +14,11 @@ flowchart LR
   HA_6["6 The Fourier Transform on ℝᵈ and the Wave Equation"]
   HA_7["7 Fourier Analysis on Finite Abelian Groups"]:::opt
   HA_8["8 Dirichlet's Theorem on Primes in Arithmetic Progressions"]:::opt
-  HA_9["9 What the Riemann Integral Lacks"]
+  HA_10["10 Fourier Analysis in L¹ and L²"]
   F4_1 --> HA_1
   HA_1 --> HA_2
-  AN2_2 --> HA_3
+  LA3_11 --> HA_3
+  AN2_9 -.-> HA_3
   HA_2 --> HA_3
   HA_3 --> HA_4
   AN3_4 --> HA_5
@@ -24,8 +27,9 @@ flowchart LR
   LA3_12 --> HA_7
   HA_3 --> HA_7
   HA_7 --> HA_8
-  AN2_6 --> HA_9
-  HA_3 --> HA_9
+  MT_7 --> HA_10
+  FA_6 --> HA_10
+  HA_3 --> HA_10
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

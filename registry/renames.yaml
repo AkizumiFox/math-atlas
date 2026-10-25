@@ -1,0 +1,67 @@
+# 章與冊的重導表（spec/01「改名或合併時，要在重導表 old → new 留一行」）。label 層級的搬家在 moves.yaml，這裡只管章與冊。
+# atlas.py check：
+#   ids    章 id 改名。old 不能再是現存的章；沿著 old → new 一路走下去，終點必須是現存的章（F3.7 → F4.2 → F5.2）。
+#   moves  id 不變、搬到另一冊。chapters.yaml 裡 id 前綴和所在冊不同的章，都要在這裡有一列，且 to 等於所在冊。
+#   numbering 新章沿用另一冊的編號序列（CA2 接著 CA 編 CA.11 起，MT 的 FA.9 接著 FA 的序列）；這些章沒有搬過冊，
+#          但 id 前綴和所在冊不同，所以也要登記，vol 等於所在冊。
+#   titles 章名改動（英文正式章名），只供對照與書稿改名；check 只核對 id 存在、new 等於現行章名。
+#   volumes 冊名改動；alias 是舊的網站子目錄（books.json 要保留的別名），只是紀錄，check 不讀。
+# 每列附 decided 與 spec（決定出處）。
+
+ids:
+  # 2026-10-11，F 冊加冊前綴（spec/06「系列與冊」）
+  - {old: F3.6, new: F4.1, decided: 2026-10-11, spec: spec/06}
+  - {old: F3.7, new: F4.2, decided: 2026-10-11, spec: spec/06}
+  - {old: AL1.1, new: F4.3, decided: 2026-10-11, spec: spec/06}
+  - {old: F3.8, new: F4.4, decided: 2026-10-11, spec: spec/06}
+  # 2026-10-25，地圖 v2：fd4 的四個代數章整批搬到新冊 F5，內容不改（spec/08 §A3）
+  - {old: F4.2, new: F5.2, decided: 2026-10-25, spec: spec/08 §A3}
+  - {old: F4.3, new: F5.3, decided: 2026-10-25, spec: spec/08 §A3}
+  - {old: F4.4, new: F5.4, decided: 2026-10-25, spec: spec/08 §A3}
+  - {old: F4.5, new: F5.5, decided: 2026-10-25, spec: spec/08 §A3}
+
+moves:
+  # 地圖 v2（2026-10-25）：分析主線改走 Apostol MA 的骨架（spec/08 §C、決策 3、17）
+  - {id: AN2.1, from: AN2, to: AN1, decided: 2026-10-25, spec: spec/08 §C2}
+  - {id: AN2.2, from: AN2, to: AN1, decided: 2026-10-25, spec: spec/08 §C2}
+  - {id: AN2.3, from: AN2, to: AN1, decided: 2026-10-25, spec: spec/08 §C2}
+  - {id: AN1.3, from: AN1, to: AN2, decided: 2026-10-25, spec: spec/08 §C3}
+  - {id: AN1.8, from: AN1, to: AN2, decided: 2026-10-25, spec: spec/08 §C3}
+  - {id: AN1.9, from: AN1, to: AN2, decided: 2026-10-25, spec: spec/08 §C3}
+  - {id: AN1.10, from: AN1, to: AN2, decided: 2026-10-25, spec: spec/08 §C3}
+  # 研究所層（spec/08 §D）
+  - {id: AN3.5, from: AN3, to: AM, decided: 2026-10-25, spec: spec/08 §D3}
+  - {id: AN3.6, from: AN3, to: AM, decided: 2026-10-25, spec: spec/08 §D3}
+  - {id: AN3.7, from: AN3, to: AM, decided: 2026-10-25, spec: spec/08 §D3}
+  - {id: CA.7, from: CA, to: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.8a, from: CA, to: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.8b, from: CA, to: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.9, from: CA, to: FA, decided: 2026-10-25, spec: spec/08 §D2、§D5}
+  - {id: HA.9, from: HA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.1a, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.1b, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.3, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.4, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.6, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+  - {id: FA.7, from: FA, to: MT, decided: 2026-10-25, spec: spec/08 §D4}
+
+numbering:
+  - {id: CA.11, vol: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.12, vol: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.13, vol: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.14, vol: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: CA.15, vol: CA2, decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: FA.9, vol: MT, decided: 2026-10-25, spec: spec/08 §D4}
+
+titles:
+  - {id: AN1.4, old: 'Open, Closed, and Compact Subsets of \(\nR\)', new: 'Open, Closed, and Compact Subsets of \(\nR^n\)', decided: 2026-10-25, spec: spec/08 §C6}
+  - {id: AN2.1, old: "Metric Spaces, Open Sets, and Continuity", new: "Metric Spaces and Their Topology", decided: 2026-10-25, spec: spec/08 §C6}
+  - {id: CA.6, old: "Harmonic and Subharmonic Functions", new: "Harmonic Functions and the Poisson Integral", decided: 2026-10-25, spec: spec/08 §D1}
+  - {id: CA.8b, old: "Picard's Theorems", new: "Picard's Theorems via Theta Functions", decided: 2026-10-25, spec: spec/08 §D2}
+  - {id: HA.9, old: "What the Riemann Integral Lacks", new: "Riemann Integration and Its Failures", decided: 2026-10-25, spec: spec/08 §D4}
+
+volumes:
+  - {id: F4, old: "Algebraic Preliminaries", new: "Analytic Preliminaries", alias: algebraic-preliminaries, decided: 2026-10-25, spec: spec/08 §A3, note: 舊的 algebraic-preliminaries 子目錄改指 F5（fd5）}
+  - {id: AN1, old: "Analysis on the Real Line", new: "Real Numbers, Metric Spaces, and Derivatives", alias: analysis-on-the-real-line, decided: 2026-10-25, spec: spec/08 §C6}
+  - {id: AN2, old: "Metric and Topological Spaces", new: "Integration, Series, and Function Spaces", decided: 2026-10-25, spec: spec/08 §C6}
+  - {id: MT, old: "Measure and Integration", new: "Measure, Integration, and Real Analysis", decided: 2026-10-25, spec: spec/08 §D4}

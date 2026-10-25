@@ -39,6 +39,6 @@
   keep: both
   decided: 2026-10-12
   why: >-
-    F4.2 的 def-field（從線代書 §0.7 遷移，線代書已發布的引用需要這個 label）重述 fd3 F3.2 的
-    def-commutative-ring-and-field（fd3 各章引用它）：同一組公理 (F1)–(F9)，只是 1 ≠ 0 在 F4.2 收在 (F7) 裡、
-    在 fd3 單獨列出；F4.2 定義之後的 remark 證明兩者一致。F4.1 的「ℂ 是體」與 F4.2 的「體」因此是同一個概念。
+    F5.2 的 def-field（從線代書 §0.7 遷移，線代書已發布的引用需要這個 label）重述 fd3 F3.2 的
+    def-commutative-ring-and-field（fd3 各章引用它）：同一組公理 (F1)–(F9)，只是 1 ≠ 0 在 F5.2 收在 (F7) 裡、
+    在 fd3 單獨列出；F5.2 定義之後的 remark 證明兩者一致。F4.1 的「ℂ 是體」與 F5.2 的「體」因此是同一個概念。

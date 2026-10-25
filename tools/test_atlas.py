@@ -1,4 +1,6 @@
+import shutil
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -42,7 +44,7 @@ class GraphTest(unittest.TestCase):
 class ImportLATest(unittest.TestCase):
     def test_section_mapping(self):
         f = import_la.atlas_chapter
-        self.assertEqual(f("ch00-foundations/10-groups.html"), "F4.3")
+        self.assertEqual(f("ch00-foundations/10-groups.html"), "F5.3")
         self.assertEqual(f("ch07-determinants/03-x.html"), "LA2.7")
         self.assertEqual(f("ch24-applied/01-x.html"), "NLA.24")
         self.assertIsNone(f("ch24a-notation/index.html"))
@@ -156,7 +158,7 @@ class TitleTest(unittest.TestCase):
     def test_titles_unique_and_follow_usage(self):
         import atlas
         at = atlas.Atlas()
-        at.chapters["LA2.6"] = dict(at.chapters["LA2.6"], title="Formal Polynomials")  # F4.4's title
+        at.chapters["LA2.6"] = dict(at.chapters["LA2.6"], title="Formal Polynomials")  # F5.4's title
         at.chapters["MA.18"] = dict(at.chapters["MA.18"], title="Non-negative Cones")
         self.assertFalse(atlas.check(at))
         self.assertTrue(any("titles must be unique" in e for e in at.errors), at.errors)
@@ -221,9 +223,38 @@ class RegistryTest(unittest.TestCase):
     def test_generalization_must_be_linked(self):
         import atlas
         at = atlas.Atlas()
-        del at.edges[("AN3.7", "MT.6")]  # Stokes on manifolds vs the divergence theorem
+        del at.edges[("MT.6", "AN3.7")]  # the divergence theorem looks back at Stokes on manifolds (spec/08 §D3)
         self.assertFalse(atlas.check(at))
         self.assertTrue(any("thm-stokes (AN3.7) generalizes" in e for e in at.errors), at.errors)
+
+    def test_main_line_purity(self):
+        import atlas
+        at = atlas.Atlas()
+        at.edges[("MT.1", "HA.3")] = "s"  # main line hard-depends on the Fourier branch
+        at.edges[("CA.6", "HA.2")] = "revisits"  # a look back is allowed
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("main-line purity: MT.1 (MT) <-s- HA.3") for e in at.errors), at.errors)
+        self.assertFalse(any("CA.6" in e and "purity" in e for e in at.errors), at.errors)
+        self.assertFalse(any("CA.8b" in e and "purity" in e for e in at.errors), at.errors)  # optional crossing chapter
+
+    def test_moved_chapters_need_a_renames_row(self):
+        import atlas
+        at = atlas.Atlas()
+        self.assertEqual(at.chapters["AN2.1"]["vol"], "AN1")  # moved with its id (spec/08 §C2)
+        at.renames["ids"].append({"old": "F4.9", "new": "F9.9"})
+        self.assertFalse(atlas.check(at))
+        self.assertTrue(any(e.startswith("renames.yaml: F4.9 was renamed") for e in at.errors), at.errors)
+        self.assertTrue(any("F9.9, which is not a chapter" in e for e in at.errors), at.errors)
+        reg = Path(atlas.REG)
+        with tempfile.TemporaryDirectory() as d:
+            for f in reg.iterdir():
+                if f.is_file():
+                    shutil.copy(f, Path(d) / f.name)
+            shutil.copytree(reg / "computed", Path(d) / "computed")
+            ren = Path(d) / "renames.yaml"
+            ren.write_text(ren.read_text().replace("- {id: AN2.1, from: AN2, to: AN1", "- {id: AN2.1, from: AN2, to: AN3"))
+            at = atlas.Atlas(Path(d))
+            self.assertTrue(any(e.startswith("chapters.yaml: AN2.1 is listed under AN1") for e in at.errors), at.errors)
 
     def test_computed_replaces_plan_where_written(self):
         import atlas

@@ -1,17 +1,22 @@
 flowchart LR
-  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
   MT_8["MT.8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]:::ext
+  FA_6["FA.6 Hilbert Spaces"]:::ext
   MT_11["MT.11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]:::ext
+  HA_6["HA.6 The Fourier Transform on ℝᵈ and the Wave Equation"]:::ext
   PR_1["1 Probability on Measure Spaces"]
   PR_2["2 Conditional Expectation"]
   PR_3["3 Discrete-Time Martingales"]
   PR_4["4 Weak Convergence and Characteristic Functions"]
+  PR_5["5 Brownian Motion"]
   MT_8 --> PR_1
   MT_11 --> PR_2
   PR_1 --> PR_2
   PR_2 --> PR_3
   HA_6 -.-> PR_4
   PR_1 --> PR_4
+  FA_6 --> PR_5
+  PR_3 --> PR_5
+  PR_4 --> PR_5
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

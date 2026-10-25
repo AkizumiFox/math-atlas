@@ -17,13 +17,13 @@
 
 | 系列（repo） | 冊 |
 |---|---|
-| `foundations` | fd1 *Logic and Proof*（F1，ab ch1–5）；fd2 *Sets, Relations, and Cardinality*（F2，ab ch6–8 ＋ Zorn 新章；Gate 0 已於 2026-10-25 移除）；fd3 *Number Systems: From ℕ to ℝ*（F3）；fd4 *Algebraic Preliminaries*（F4） |
-| `analysis`（由 analysis-book 改名） | an1 *Analysis on the Real Line*（AN1，ab ch11–21）；an2、an3、HA、MT、CA、FA、PR、PDE 動筆時才建 |
+| `foundations` | fd1 *Logic and Proof*（F1，ab ch1–5）；fd2 *Sets, Relations, and Cardinality*（F2，ab ch6–8 ＋ Zorn 新章；Gate 0 已於 2026-10-25 移除）；fd3 *Number Systems: From ℕ to ℝ*（F3）；fd4 *Analytic Preliminaries*（F4，2026-10-25 起；原本的代數預備搬到 fd5 *Algebraic Preliminaries*（F5），見〈地圖 v2〉） |
+| `analysis`（由 analysis-book 改名） | an1 *Real Numbers, Metric Spaces, and Derivatives*（AN1，2026-10-25 前名為 *Analysis on the Real Line*，見〈地圖 v2〉）；an2、an3、CA、CA2、AM、HA、MT、FA、PR、PDE 動筆時才建 |
 | `linear-algebra` | la1–la4、ma、geo、nla（照 `chapters.yaml` 的 `src` 分配） |
 
 - **基礎書以 ℝ 的建構收尾。** F3 是主線（不再選讀）：ZF 片段與 ℕ（F3.1）、ℤ 與 ℚ（F3.2）、整除與 ℤ/n（F3.5）、有序體與其中的數列（F3.9，新章：極限運算、Cauchy 數列，ε 取有理數，不預設 ℝ）、**以 Cauchy 數列建構 ℝ 並證明它是完備有序體**（F3.10，新章，取材自 ab ch25 的 spiral node 與 ab ch22 §6）、完備有序體唯一（F3.4，ab ch23）、Dedekind 分割（F3.3，ab ch22，選讀對照，說明兩條路得到同一個 ℝ）。
 - **實分析自成一體。** AN1 從有序體公理與完備性公理出發（ab ch11），硬依賴只有 F1、F2；數列在 ℝ 裡重新證明，以 revisits 指回 F3.9、F3.10、F3.4（`plan-edges.yaml`）。讀者可以跳過 fd3 直接讀 an1。ab ch25 的「ℚ 的完備化」改成 revisits F3.10，再推廣到一般度量空間。
-- **F4 代數預備是線代的入口。** ℂ（F4.1）、體（F4.2）、群入門與置換（F4.3，原 AL1.1）、形式多項式（F4.4）、體上的多項式（F4.5，新章）。F4.1 以 F3.10 的 ℝ 為基礎，所以讀者順序是 fd1 → fd2 → fd3 → fd4 → la1，實分析可在 fd2（或 fd3）之後並行。
+- **F4 代數預備是線代的入口。**（2026-10-25 起這幾章改屬 F5，id 改為 F5.2–F5.5；F4 改為分析預備，見〈地圖 v2〉。） ℂ（F4.1）、體（F4.2）、群入門與置換（F4.3，原 AL1.1）、形式多項式（F4.4）、體上的多項式（F4.5，新章）。F4.1 以 F3.10 的 ℝ 為基礎，所以讀者順序是 fd1 → fd2 → fd3 → fd4 → la1，實分析可在 fd2（或 fd3）之後並行。
   - **F4.5 是新寫，不是搬家。** 線代書 ch06 §01–06 的證明大量用到線代 ch01–05（因式定理的線性映射寫法、以維度給根數上界、插值的對偶基底），直接搬會造成 F4 ↔ LA1 的冊層級環。所以 F4.5 以純代數重寫除法、gcd、唯一分解、根與重數、代數基本定理；線代 ch06 維持原樣，之後以 revisits 指回 F4.5。
 - **章 id 重新命名**（atlas 規定章 id 帶冊前綴）：F3.6 → F4.1、F3.7 → F4.2、AL1.1 → F4.3、F3.8 → F4.4；新章 F3.9、F3.10、F4.5。`import_la.py` 的對照已更新，AL1 從 AL1.2 開始。
 - **遷移步驟**（各在新分支，合併由作者執行）：
@@ -33,6 +33,33 @@
   4. fd3 的新章 F3.9、F3.10 寫 blueprint；ab ch9、10、22、23 的生成式 blueprint 改寫成手寫版；走 S2 → S8。
   5. fd4：搬入線代 ch00 §0.6–0.8、§0.10（label 依 `chapter-constraints.yaml` 的 `takes` 移交，原處留錨點），新寫 F4.5。
   6. 線代拆冊：la1–la4、ma、geo、nla 七個子目錄各自編號；正式站先維持舊的單本，新版只在預覽站，切換時舊網址以 moved-ids 的重導頁對到新冊。
+
+## 地圖 v2（2026-10-25，spec/08 第 1 步：registry）
+
+作者核准 spec/08（決策 1–3 明確核准，§C 依「Apostol 的骨架、Cummings 的動機」更正；其餘決策照建議）。registry 的改動：
+
+- **冊**（`volumes.yaml`）：F4 改名 *Analytic Preliminaries*（分析預備，prefix 仍為 fd4）；新冊 F5 *Algebraic Preliminaries*（fd5）；AN1 改名 *Real Numbers, Metric Spaces, and Derivatives*、AN2 改名 *Integration, Series, and Function Spaces*、MT 改名 *Measure, Integration, and Real Analysis*；新冊 CA2 *Complex Analysis II: Global Theory*（ca2）、AM *Analysis on Manifolds*（am）；HA 的 branch 改為 side；CA 改為 T1（大學部最後一冊）。冊序改為 F1–F5 → AN1 → LA1 → AL1 → LA2 → LA3 → AL2 → LA4 → AN2 → AN3 → CA → …（AL2 要排在 LA4 之前，因為 LA4.14 s 依賴 AL）。
+- **重導表**：新檔 `registry/renames.yaml`，記錄章 id 改名（F4.2–F4.5 → F5.2–F5.5，連同 2026-10-11 的 F3.6 → F4.1 等）、搬冊（AN2.1–AN2.3 → AN1；AN1.3、AN1.8–AN1.10 → AN2；AN3.5–AN3.7 → AM；CA.7、CA.8a、CA.8b → CA2；CA.9 → FA；HA.9、FA.1a、FA.1b、FA.3、FA.4、FA.6、FA.7 → MT）、沿用別冊編號的新章（CA.11–CA.15 在 CA2、FA.9 在 MT）、章名與冊名改動。`atlas.py check` 不再要求章 id 前綴等於所在冊，改為要求前綴不同的章在重導表有一列。
+- **章**（`chapters.yaml`）：新章 F4.6–F4.11、AN2.9–AN2.15（提案中的 CL.1–CL.6 與 AN1.12 直接改號）、CA.10–CA.15、AM.1–AM.3、FA.9–FA.14、HA.10、PR.5；冊內順序照 spec/08 C2、C3、C4、D1–D5；改名 AN1.4、AN2.1、CA.6、CA.8b、HA.9；FA.8 去掉選讀；AN3.3 改為 B 段、AN3.5–AN3.7 取消 B 段；AL4.8 加 `hosted: LA4`。線代書 §0.5 的 `src` 從 F2.2 移到 F2.5。
+- **邊**（`plan-edges.yaml`）：照 spec/08 各節。AN1 不再依賴 LA；主線對 HA 只剩軟邊（HA.9 的 s HA.3 刪掉，MT.1 的 see HA.9 升為 s）；AN3.7 revisits MT.6 反轉為 MT.6 revisits AN3.7；B4 的 AL 邊（LA4.14、LA4.15、GEO.22、AL4.8、LA2.10）。F4.2–F4.5 的所有引用改成 F5（AL1.2、AL1.3、AL2.2、AL2.5、AL2.6、LA2.6、CA.2，以及 statements、terms、fields、label-triage）。
+- **計算邊**：`import_la.py` 的 `CH00` 改為 §05 → F2.5、§07 → F5.2、§08 → F5.4、§10 → F5.3，依 README 的方式重跑（`python3 tools/import_la.py`）。重跑另含 2026-10-25 之前 terms.yaml 的改動造成的術語邊差異。
+- **考綱**（`exam-targets.yaml`）：新增 `apostol-ma`（骨架）、`pma`、`pugh`、`mira`、`ahlfors`，`complex` 改為兩冊十二章並列入 Picard（CA.14）；新欄位 `level`、`branch_cover`、`deferred_cover`、`backbone`、`deviations`。`stats` 對選讀的目標章（PMA 的 F3.3、Ahlfors 的 CA.15）與兩種 cover 只列出、不計入必讀。
+- **約束**（`chapter-constraints.yaml`）：31 條新約束，落到 F4 新章與受影響的分析章（`book: ab:N` 的那些要等 analysis 的 blueprint 依 C2 重排後再用 `sync_constraints.py --write` 同步；目前 `../analysis-book` 不在本機，drift 檢查略過）。
+- **檢查**（`tools/atlas.py`）：加上 E2 第 1 項主線純度（error；選讀的交會章豁免）與重導表檢查，各附測試。E2 第 2–4 項（undergrad 閉包、gap 表、骨架單調）還沒做。
+- **陳述**：為 HA.3 對 AN2.9 的 b 借用登記就地定義 `def-bounded-variation-local`（specializes AN2.9 的 `def-bounded-variation`），terms.yaml 加 `bounded-variation`。
+
+套用時發現 spec/08 有三處和既有規則衝突，registry 照下面的方式處理（請作者確認）：
+
+1. **F4.7 的 b AN1.10 會成環**：AN1.5 s F4.7、AN2.1 s F4.11 s F4.7，而 AN1.10 在 AN1.5 下游。改記為 F4.7 see AN1.10，exp 的借用框 (E1)–(E4) 照寫，AN1.10 以 revisits 兌現。F4.1 原本的 b AN1.10（三角借用框）不成環但造成冊層級的環 F4 → AN1 → AN2 → F4（警告，不擋 check）。
+2. **CA.13 s CA.8a，但表上 CA.13 排在 CA.8a 之前**：CA2 的冊內順序改為 CA.11 → CA.7 → CA.12 → CA.8a → CA.13 → CA.14 → CA.15 → CA.8b。
+3. **AN1 不依賴 LA 之後，三處失去遞移得到的 LA**：AN3.4 的 scope lint 需要 LA1.0（加 s LA1.2，符合 C4「AN3 冊外依賴 LA1.2、LA1.4」）；FA.1a 需要抽象向量空間與線性映射（加 s LA1.2；外部科目圖的 fa ← la1 因此不變）；F2.5 加上計算出的 s F2.1。
+
+另外幾處 spec/08 沒寫、registry 補上的：AN2.15（選讀）給了 s [AN1.9, AN2.9]，避免「沒有任何先修」的警告；CA.8a 的 b 借用改指 AN2.11（Γ 與 Stirling 現在在那裡）；LA4.15 的 b AL2.1 的 scope 寫成 [LA4.14, LA2.6]（代數與理想的語彙）；HA 的 tier 維持 T2（spec 只改 branch）。
+
+後續（不在第 1 步）：
+
+- [ ] AN1.1 已成稿，地圖加了 revisits F4.6；書稿要補一句回指，屬 analysis 的 blueprint 重排（spec/08 F 第 3 步）。
+- [ ] `registry/computed/labels.yaml` 還是 2026-10-10 的舊章號（F3.6、F3.7、AL1.1…），要等 analysis 的 crossref 在本機時用 `import_labels.py` 重跑（現在重跑會丟掉 ab 的資料）。
 
 ## 由計算邊得到的發現
 

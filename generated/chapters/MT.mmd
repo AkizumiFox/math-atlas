@@ -1,29 +1,54 @@
 flowchart LR
+  AN2_3["AN2.3 Compactness and Connectedness in Metric Spaces"]:::ext
+  LA1_2["LA1.2 Linear Maps"]:::ext
+  AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
+  AN2_6["AN2.6 Density and Category in C(K): Stone–Weierstrass and Baire"]:::ext
   AN3_2["AN3.2 Inverse and Implicit Functions, and Lagrange Multipliers"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
+  HA_9["9 Riemann Integration and Its Failures"]
   MT_1["1 Lebesgue Measure on ℝᵈ and Measurable Functions"]
   MT_2["2 The Lebesgue Integral and the Convergence Theorems"]
   MT_3["3 Abstract Measure Spaces and Carathéodory's Construction"]
   MT_4["4 Product Measures and the Fubini–Tonelli Theorem"]
   MT_5["5 Linear Maps, Change of Variables, and Polar Coordinates"]
   MT_6["6 Surfaces, Surface Measure, and the Divergence Theorem"]
+  FA_1a["1a Banach Spaces, Bounded Operators, and Dual Spaces"]
+  FA_4["4 Baire Category and the Fundamental Theorems for Operators"]
+  FA_3["3 The Hahn–Banach Theorems"]
   MT_7["7 Lᵖ Spaces, Convolution, and Mollifiers"]
   MT_8["8 Modes of Convergence, Uniform Integrability, and Weak Lᵖ"]
   MT_9["9 The Maximal Function and Lebesgue Differentiation"]
   MT_10["10 Bounded Variation, Absolute Continuity, and the Fundamental Theorem"]
+  FA_6["6 Hilbert Spaces"]
   MT_11["11 Signed Measures, Radon–Nikodym, and Lebesgue Decomposition"]
+  FA_1b["1b The Dual of Lᵖ"]
+  FA_9["9 Bounded Operators on Hilbert Space"]
+  FA_7["7 Compact Operators, the Fredholm Alternative, and the Spectral Theorem"]
+  AN2_6 --> HA_9
   AN3_4 --> MT_1
+  HA_9 --> MT_1
   MT_1 --> MT_2
   MT_2 --> MT_3
   MT_3 --> MT_4
   AN3_2 --> MT_5
   MT_4 --> MT_5
   MT_5 --> MT_6
+  AN2_3 --> FA_1a
+  LA1_2 --> FA_1a
+  AN2_6 --> FA_4
+  FA_1a --> FA_4
+  FA_1a --> FA_3
   MT_4 --> MT_7
   MT_7 --> MT_8
   MT_7 --> MT_9
   MT_9 --> MT_10
+  FA_1a --> FA_6
   MT_7 --> MT_11
+  FA_1a --> FA_1b
+  MT_11 --> FA_1b
+  FA_6 --> FA_9
+  AN2_5 --> FA_7
+  FA_9 --> FA_7
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333

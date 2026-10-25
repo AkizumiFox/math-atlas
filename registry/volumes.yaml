@@ -5,28 +5,33 @@
 # repo:   書稿來源；fd = foundations，ab = analysis（GitHub AkizumiFox/analysis，本機 analysis-series；2026-10-12 自 analysis-book 切出，ab:N 章號仍指原 book.yaml），la = linear-algebra，new = 尚無書稿
 # book:   出版的系列（每個系列一個 repo）；prefix：該冊作為一本書的跨書引用前綴（@prefix:label），一冊一書，見 spec/06「系列與冊」
 # status: plan | drafting | published
+# 2026-10-25 地圖 v2（spec/08）：F4 改為分析預備、舊代數章搬到新冊 F5；AN1／AN2／MT 改名；新冊 CA2、AM；HA 改為支線；CA 改為 T1（大學部最後一冊）。
+# 改名與搬冊的 old → new 記在 registry/renames.yaml。
 
 - {id: F1,  title: "Logic and Proof", title_zh: 邏輯與證明,                    branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd1}
 - {id: F2,  title: "Sets, Relations, and Cardinality", title_zh: 集合、關係與基數, branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd2}
 - {id: F3,  title: 'Number Systems: From \(\nN\) to \(\nR\)', title_zh: 數系：從 ℕ 到 ℝ, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd3}
-- {id: F4,  title: "Algebraic Preliminaries", title_zh: 代數預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd4}
-- {id: AN1, title: "Analysis on the Real Line", title_zh: 實數線上的分析,          branch: analysis, tier: T1, repo: ab,  status: drafting, book: analysis, prefix: an1}
+- {id: F4,  title: "Analytic Preliminaries", title_zh: 分析預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd4}
+- {id: F5,  title: "Algebraic Preliminaries", title_zh: 代數預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd5}
+- {id: AN1, title: "Real Numbers, Metric Spaces, and Derivatives", title_zh: 實數、度量空間與導數, branch: analysis, tier: T1, repo: ab,  status: drafting, book: analysis, prefix: an1}
 - {id: LA1, title: "Spaces and Maps", title_zh: 空間與映射,                    branch: linalg,   tier: T1, repo: la,  status: published, book: linear-algebra, prefix: la1}
 - {id: AL1, title: "Groups", title_zh: 群,                             branch: algebra,  tier: T1, repo: new, status: plan, book: algebra, prefix: al1}
 - {id: LA2, title: "Determinants and the Structure of Operators", title_zh: 行列式與算子的結構, branch: linalg, tier: T1, repo: la, status: published, book: linear-algebra, prefix: la2}
 - {id: LA3, title: "Inner Products and Spectral Theory", title_zh: 內積與譜理論, branch: linalg,   tier: T1, repo: la,  status: published, book: linear-algebra, prefix: la3}
-- {id: LA4, title: "Forms and Multilinear Algebra", title_zh: 形式與多線性代數,      branch: linalg,   tier: T1, repo: la,  status: published, book: linear-algebra, prefix: la4}
-- {id: AN2, title: "Metric and Topological Spaces", title_zh: 度量空間與拓樸,      branch: analysis, tier: T1, repo: ab,  status: plan, book: analysis, prefix: an2}
-- {id: AN3, title: "Analysis in Several Variables", title_zh: 多變數分析,      branch: analysis, tier: T1, repo: ab,  status: plan, book: analysis, prefix: an3}
 - {id: AL2, title: "Rings and Fields", title_zh: 環與體,                   branch: algebra,  tier: T1, repo: new, status: plan, book: algebra, prefix: al2}
+- {id: LA4, title: "Forms and Multilinear Algebra", title_zh: 形式與多線性代數,      branch: linalg,   tier: T1, repo: la,  status: published, book: linear-algebra, prefix: la4}
+- {id: AN2, title: "Integration, Series, and Function Spaces", title_zh: 積分、級數與函數空間, branch: analysis, tier: T1, repo: ab,  status: plan, book: analysis, prefix: an2}
+- {id: AN3, title: "Analysis in Several Variables", title_zh: 多變數分析,      branch: analysis, tier: T1, repo: ab,  status: plan, book: analysis, prefix: an3}
+- {id: CA,  title: "Complex Analysis", title_zh: 複分析,                   branch: analysis, tier: T1, repo: ab,  status: plan, book: analysis, prefix: ca}
 - {id: AL3, title: "Galois Theory", title_zh: Galois 理論,                      branch: algebra,  tier: T2, repo: new, status: plan, book: algebra, prefix: al3}
-- {id: HA,  title: "Fourier Analysis", title_zh: Fourier 分析,                   branch: analysis, tier: T2, repo: ab,  status: plan, book: analysis, prefix: ha}
-- {id: MT,  title: "Measure and Integration", title_zh: 測度與積分,            branch: analysis, tier: T2, repo: ab,  status: plan, book: analysis, prefix: mt}
-- {id: CA,  title: "Complex Analysis", title_zh: 複分析,                   branch: analysis, tier: T2, repo: ab,  status: plan, book: analysis, prefix: ca}
+- {id: CA2, title: "Complex Analysis II: Global Theory", title_zh: 複分析 II：整體理論, branch: analysis, tier: T2, repo: ab, status: plan, book: analysis, prefix: ca2}
+- {id: AM,  title: "Analysis on Manifolds", title_zh: 流形上的分析, branch: analysis, tier: T2, repo: ab, status: plan, book: analysis, prefix: am}
+- {id: MT,  title: "Measure, Integration, and Real Analysis", title_zh: 測度、積分與實分析, branch: analysis, tier: T2, repo: ab,  status: plan, book: analysis, prefix: mt}
 - {id: FA,  title: "Functional Analysis", title_zh: 泛函分析,                branch: analysis, tier: T2, repo: ab,  status: plan, book: analysis, prefix: fa}
 - {id: AL4, title: "Modules, Representations, and Homological Algebra", title_zh: 模、表示與同調入門, branch: algebra, tier: T2, repo: new+la, status: plan, book: algebra, prefix: al4}
 - {id: AL5, title: "Commutative Algebra", title_zh: 交換代數,                branch: algebra,  tier: T3, repo: new, status: plan, book: algebra, prefix: al5}
 - {id: MA,  title: "Matrix Analysis", title_zh: 矩陣分析,                    branch: linalg,   tier: T2, repo: la,  status: published, book: linear-algebra, prefix: ma}
+- {id: HA,  title: "Fourier Analysis", title_zh: Fourier 分析,                   branch: side,     tier: T2, repo: ab,  status: plan, book: analysis, prefix: ha}
 - {id: PR,  title: "Measure-Theoretic Probability", title_zh: 測度論機率,      branch: side,     tier: T3, repo: ab+new, status: plan, book: analysis, prefix: pr}
 - {id: PDE, title: "Distributions and Sobolev Spaces", title_zh: 分佈與 Sobolev 空間,   branch: side,     tier: T3, repo: ab,  status: plan, book: analysis, prefix: pde}
 - {id: GEO, title: "Affine and Projective Geometry", title_zh: 仿射與射影幾何,     branch: side,     tier: T3, repo: la,  status: published, book: linear-algebra, prefix: geo}
