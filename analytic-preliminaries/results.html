@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of results – Analytic Preliminaries</title>
+
+    <meta name="asset-prefix" content="./">
+    <meta name="page-path" content="results.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+                <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Analytic Preliminaries">
+    <meta property="og:title" content="List of results">
+        <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="./fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="7d60f8c8f0">
+    <link rel="stylesheet" href="./styles.css?v=7d60f8c8f0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="./mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="./index.html" class="sidebar-title">
+                    Analytic Preliminaries
+                </a>
+                <div class="sidebar-tools">
+                    <a href="./book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="./index.html">Preface</a></li><li class="nav-item nav-extra"><a href="./paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra active"><a href="./results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="./graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="./ch1/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Complex Numbers</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="./ch1/pairs-of-reals.html" title="The Complex Numbers as Pairs of Reals"><span class="nav-section-number">1.1</span><span class="nav-section-title">The Complex Numbers as Pairs of Reals</span></a></li><li class="nav-section-item"><a href="./ch1/conjugate-and-modulus.html" title="Conjugate, Modulus, and Division"><span class="nav-section-number">1.2</span><span class="nav-section-title">Conjugate, Modulus, and Division</span></a></li><li class="nav-section-item"><a href="./ch1/triangle-inequality.html" title="The Triangle Inequality"><span class="nav-section-number">1.3</span><span class="nav-section-title">The Triangle Inequality</span></a></li><li class="nav-section-item"><a href="./ch1/square-roots-and-order.html" title="Square Roots, Quadratic Equations, and the Missing Order"><span class="nav-section-number">1.4</span><span class="nav-section-title">Square Roots, Quadratic Equations, and the Missing Order</span></a></li><li class="nav-section-item"><a href="./ch1/polar-form.html" title="The Unit Circle and Polar Form"><span class="nav-section-number">1.5</span><span class="nav-section-title">The Unit Circle and Polar Form</span></a></li><li class="nav-section-item"><a href="./ch1/roots-of-unity.html" title="Higher Roots, Roots of Unity, and a Look Ahead"><span class="nav-section-number">1.6</span><span class="nav-section-title">Higher Roots, Roots of Unity, and a Look Ahead</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="./index.html" class="topbar-title">Analytic
+Preliminaries</a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.html">Analytic Preliminaries</a></li>
+                        <li class="breadcrumb-item"><a href="./results.html"><span class="chapter-title">List of results</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">List of
+results</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="page-title">
+
+                </div>
+                <div class="results-filters" role="group" aria-label="Filter results">
+                <label class="results-filter"><input type="checkbox" value="statements" checked=""> Theorems and lemmas <span class="results-count">23</span></label>
+                <label class="results-filter"><input type="checkbox" value="definitions" checked=""> Definitions <span class="results-count">3</span></label>
+                <label class="results-filter"><input type="checkbox" value="examples" checked=""> Examples <span class="results-count">6</span></label>
+                <label class="results-filter"><input type="checkbox" value="exercises" checked=""> Exercises <span class="results-count">39</span></label>
+                <input type="search" class="results-search" placeholder="Filter by name or number" aria-label="Filter results by name or number">
+                </div>
+                <section class="results-chapter">
+                <h2 id="chapter-ch01-complex-numbers">Complex Numbers</h2>
+                <div class="results-section">
+                <h3><a href="ch1/pairs-of-reals.html">1.1 The Complex Numbers as Pairs of Reals</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="definitions" data-search="definition 1.1.1 complex numbers" style="--env-color: #b0414f"><a class="xref result-name" href="ch1/pairs-of-reals.html#def-complex-numbers" data-ref="def-complex-numbers" data-shard="ch01-complex-numbers">Definition 1.1.1</a> <span class="result-title">Complex Numbers</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.1.1 the real numbers inside the complex numbers" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/pairs-of-reals.html#prp-reals-embed-complex" data-ref="prp-reals-embed-complex" data-shard="ch01-complex-numbers">Proposition 1.1.1</a> <span class="result-title">The Real Numbers inside the Complex Numbers</span></li>
+                <li class="result" data-group="examples" data-search="example first computations in \nc" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exm-complex-arithmetic" data-ref="exm-complex-arithmetic" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">First Computations in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span></span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.1.2 arithmetic laws in \nc" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/pairs-of-reals.html#prp-complex-arithmetic-laws" data-ref="prp-complex-arithmetic-laws" data-shard="ch01-complex-numbers">Proposition 1.1.2</a> <span class="result-title">Arithmetic Laws in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span></span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.1.3 laws of powers in a commutative ring" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/pairs-of-reals.html#prp-power-laws-commutative-ring" data-ref="prp-power-laws-commutative-ring" data-shard="ch01-complex-numbers">Proposition 1.1.3</a> <span class="result-title">Laws of Powers in a Commutative Ring</span></li>
+                <li class="result" data-group="statements" data-search="lemma 1.1.4 difference of powers" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/pairs-of-reals.html#lem-difference-of-powers" data-ref="lem-difference-of-powers" data-shard="ch01-complex-numbers">Lemma 1.1.4</a> <span class="result-title">Difference of Powers</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exr-pairs-of-reals-a1" data-ref="exr-pairs-of-reals-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1: powers of i" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exr-pairs-of-reals-b1" data-ref="exr-pairs-of-reals-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1: Powers of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container></span></span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exr-pairs-of-reals-b2" data-ref="exr-pairs-of-reals-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3: the zero divisors of the minimal change" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exr-pairs-of-reals-b3" data-ref="exr-pairs-of-reals-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3: The zero divisors of the minimal change</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: there is only one way to adjoin a square root of minus one" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/pairs-of-reals.html#exr-pairs-of-reals-c1" data-ref="exr-pairs-of-reals-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: There is only one way to adjoin a square root of minus one</span></li>
+                </ul></div>
+                <div class="results-section">
+                <h3><a href="ch1/conjugate-and-modulus.html">1.2 Conjugate, Modulus, and Division</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="definitions" data-search="definition 1.2.1 conjugate and modulus" style="--env-color: #b0414f"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#def-conjugate-modulus" data-ref="def-conjugate-modulus" data-shard="ch01-complex-numbers">Definition 1.2.1</a> <span class="result-title">Conjugate and Modulus</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.2.1 the modulus extends the absolute value" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#prp-modulus-of-real" data-ref="prp-modulus-of-real" data-shard="ch01-complex-numbers">Proposition 1.2.1</a> <span class="result-title">The Modulus Extends the Absolute Value</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.2.2 properties of conjugation and modulus" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#thm-conjugate-properties" data-ref="thm-conjugate-properties" data-shard="ch01-complex-numbers">Theorem 1.2.2</a> <span class="result-title">Properties of Conjugation and Modulus</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.2.3 inverse of a complex number" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#prp-complex-inverse" data-ref="prp-complex-inverse" data-shard="ch01-complex-numbers">Proposition 1.2.3</a> <span class="result-title">Inverse of a Complex Number</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.2.4 the complex numbers form a field" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#thm-complex-numbers-field" data-ref="thm-complex-numbers-field" data-shard="ch01-complex-numbers">Theorem 1.2.4</a> <span class="result-title">The Complex Numbers Form a Field</span></li>
+                <li class="result" data-group="examples" data-search="example dividing complex numbers" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exm-complex-division" data-ref="exm-complex-division" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">Dividing Complex Numbers</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-a1" data-ref="exr-conjugate-and-modulus-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1: arithmetic" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-b1" data-ref="exr-conjugate-and-modulus-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1: Arithmetic</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-b2" data-ref="exr-conjugate-and-modulus-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-b3" data-ref="exr-conjugate-and-modulus-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: exit check: the complex numbers form a field" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-c1" data-ref="exr-conjugate-and-modulus-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: Exit check: the complex numbers form a field</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c2: gaussian rationals" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/conjugate-and-modulus.html#exr-conjugate-and-modulus-c2" data-ref="exr-conjugate-and-modulus-c2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C2: Gaussian rationals</span></li>
+                </ul></div>
+                <div class="results-section">
+                <h3><a href="ch1/triangle-inequality.html">1.3 The Triangle Inequality</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="statements" data-search="lemma 1.3.1 real and imaginary parts against the modulus" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/triangle-inequality.html#lem-real-part-at-most-modulus" data-ref="lem-real-part-at-most-modulus" data-shard="ch01-complex-numbers">Lemma 1.3.1</a> <span class="result-title">Real and Imaginary Parts against the Modulus</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.3.2 triangle inequality for complex numbers" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/triangle-inequality.html#thm-complex-triangle-inequality" data-ref="thm-complex-triangle-inequality" data-shard="ch01-complex-numbers">Theorem 1.3.2</a> <span class="result-title">Triangle Inequality for Complex Numbers</span></li>
+                <li class="result" data-group="statements" data-search="corollary 1.3.3 variants of the triangle inequality" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/triangle-inequality.html#cor-complex-triangle-variants" data-ref="cor-complex-triangle-variants" data-shard="ch01-complex-numbers">Corollary 1.3.3</a> <span class="result-title">Variants of the Triangle Inequality</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-a1" data-ref="exr-triangle-inequality-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1: the equality case" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-b1" data-ref="exr-triangle-inequality-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1: The equality case</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2: a distance that does not change" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-b2" data-ref="exr-triangle-inequality-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2: A distance that does not change</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-b3" data-ref="exr-triangle-inequality-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: exit check: the triangle inequality" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-c1" data-ref="exr-triangle-inequality-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: Exit check: the triangle inequality</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c2: inside the unit disc" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/triangle-inequality.html#exr-triangle-inequality-c2" data-ref="exr-triangle-inequality-c2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C2: Inside the unit disc</span></li>
+                </ul></div>
+                <div class="results-section">
+                <h3><a href="ch1/square-roots-and-order.html">1.4 Square Roots, Quadratic Equations, and the Missing Order</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="statements" data-search="proposition 1.4.1 square roots of complex numbers" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/square-roots-and-order.html#prp-complex-square-roots" data-ref="prp-complex-square-roots" data-shard="ch01-complex-numbers">Proposition 1.4.1</a> <span class="result-title">Square Roots of Complex Numbers</span></li>
+                <li class="result" data-group="examples" data-search="example square roots of 5 - 12i" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exm-complex-square-root" data-ref="exm-complex-square-root" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">Square Roots of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="5 - 12i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>5</mn><mo>−</mo><mn>12</mn><mi>i</mi></math></mjx-assistive-mml></mjx-container></span></span></li>
+                <li class="result" data-group="statements" data-search="corollary 1.4.2 quadratic formula over the complex numbers" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/square-roots-and-order.html#cor-complex-quadratic-formula" data-ref="cor-complex-quadratic-formula" data-shard="ch01-complex-numbers">Corollary 1.4.2</a> <span class="result-title">Quadratic Formula over the Complex Numbers</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.4.3 the complex numbers cannot be ordered" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/square-roots-and-order.html#prp-complex-not-orderable" data-ref="prp-complex-not-orderable" data-shard="ch01-complex-numbers">Proposition 1.4.3</a> <span class="result-title">The Complex Numbers Cannot Be Ordered</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-a1" data-ref="exr-square-roots-and-order-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-b1" data-ref="exr-square-roots-and-order-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2: put the proof in order" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-b2" data-ref="exr-square-roots-and-order-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2: Put the proof in order</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-b3" data-ref="exr-square-roots-and-order-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: find the error" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-c1" data-ref="exr-square-roots-and-order-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: Find the error</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c2: a second proof that there is no order" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/square-roots-and-order.html#exr-square-roots-and-order-c2" data-ref="exr-square-roots-and-order-c2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C2: A second proof that there is no order</span></li>
+                </ul></div>
+                <div class="results-section">
+                <h3><a href="ch1/polar-form.html">1.5 The Unit Circle and Polar Form</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="statements" data-search="proposition 1.5.1 the unit circle" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/polar-form.html#prp-unit-circle" data-ref="prp-unit-circle" data-shard="ch01-complex-numbers">Proposition 1.5.1</a> <span class="result-title">The Unit Circle</span></li>
+                <li class="result" data-group="statements" data-search="axiom 1.5.2 what this volume borrows about cosine and sine" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/polar-form.html#ax-cosine-sine" data-ref="ax-cosine-sine" data-shard="ch01-complex-numbers">Axiom 1.5.2</a> <span class="result-title">What This Volume Borrows about Cosine and Sine</span></li>
+                <li class="result" data-group="definitions" data-search="definition 1.5.1 polar form" style="--env-color: #b0414f"><a class="xref result-name" href="ch1/polar-form.html#def-polar-form" data-ref="def-polar-form" data-shard="ch01-complex-numbers">Definition 1.5.1</a> <span class="result-title">Polar Form</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.5.3 multiplication in polar form" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/polar-form.html#thm-polar-multiplication" data-ref="thm-polar-multiplication" data-shard="ch01-complex-numbers">Theorem 1.5.3</a> <span class="result-title">Multiplication in Polar Form</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.5.4 existence and uniqueness of polar form" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/polar-form.html#prp-polar-form" data-ref="prp-polar-form" data-shard="ch01-complex-numbers">Proposition 1.5.4</a> <span class="result-title">Existence and Uniqueness of Polar Form</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.5.5 de moivre’s formula" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/polar-form.html#thm-de-moivre" data-ref="thm-de-moivre" data-shard="ch01-complex-numbers">Theorem 1.5.5</a> <span class="result-title">De Moivre’s Formula</span></li>
+                <li class="result" data-group="examples" data-search="example special angles" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/polar-form.html#exm-special-angles" data-ref="exm-special-angles" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">Special Angles</span></li>
+                <li class="result" data-group="examples" data-search="example a power via polar form" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/polar-form.html#exm-polar-power" data-ref="exm-polar-power" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">A Power via Polar Form</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-a1" data-ref="exr-polar-form-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-b1" data-ref="exr-polar-form-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2: symmetries of cosine and sine" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-b2" data-ref="exr-polar-form-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2: Symmetries of Cosine and Sine</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-b3" data-ref="exr-polar-form-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: triple angles and negative powers" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-c1" data-ref="exr-polar-form-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: Triple Angles and Negative Powers</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c2: points on the circle without angles" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/polar-form.html#exr-polar-form-c2" data-ref="exr-polar-form-c2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C2: Points on the Circle without Angles</span></li>
+                </ul></div>
+                <div class="results-section">
+                <h3><a href="ch1/roots-of-unity.html">1.6 Higher Roots, Roots of Unity, and a Look Ahead</a></h3>
+                <ul class="results-list">
+                <li class="result" data-group="statements" data-search="lemma 1.6.1 real n-th roots" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/roots-of-unity.html#lem-reals-nth-root" data-ref="lem-reals-nth-root" data-shard="ch01-complex-numbers">Lemma 1.6.1</a> <span class="result-title">Real n-th Roots</span></li>
+                <li class="result" data-group="statements" data-search="theorem 1.6.2 n-th roots of a complex number" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/roots-of-unity.html#thm-complex-nth-roots" data-ref="thm-complex-nth-roots" data-shard="ch01-complex-numbers">Theorem 1.6.2</a> <span class="result-title">n-th Roots of a Complex Number</span></li>
+                <li class="result" data-group="examples" data-search="example roots of unity" style="--env-color: #3b7a4c"><a class="xref result-name" href="ch1/roots-of-unity.html#exm-roots-of-unity" data-ref="exm-roots-of-unity" data-shard="ch01-complex-numbers">Example</a> <span class="result-title">Roots of Unity</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.6.3 sums of roots of unity" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/roots-of-unity.html#prp-roots-of-unity-sum" data-ref="prp-roots-of-unity-sum" data-shard="ch01-complex-numbers">Proposition 1.6.3</a> <span class="result-title">Sums of Roots of Unity</span></li>
+                <li class="result" data-group="statements" data-search="proposition 1.6.4 real coefficients and conjugate roots" style="--env-color: #2f62b5"><a class="xref result-name" href="ch1/roots-of-unity.html#prp-real-coefficients-conjugate-roots" data-ref="prp-real-coefficients-conjugate-roots" data-shard="ch01-complex-numbers">Proposition 1.6.4</a> <span class="result-title">Real Coefficients and Conjugate Roots</span></li>
+                <li class="result" data-group="exercises" data-search="exercise a1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-a1" data-ref="exr-roots-of-unity-a1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">A1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-b1" data-ref="exr-roots-of-unity-b1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b2" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-b2" data-ref="exr-roots-of-unity-b2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B2</span></li>
+                <li class="result" data-group="exercises" data-search="exercise b3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-b3" data-ref="exr-roots-of-unity-b3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">B3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c1: exit check: n-th roots" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-c1" data-ref="exr-roots-of-unity-c1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C1: Exit check: n-th roots</span></li>
+                <li class="result" data-group="exercises" data-search="exercise c2: find the error" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-c2" data-ref="exr-roots-of-unity-c2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">C2: Find the error</span></li>
+                <li class="result" data-group="exercises" data-search="exercise r1" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-r1" data-ref="exr-roots-of-unity-r1" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">R1</span></li>
+                <li class="result" data-group="exercises" data-search="exercise r2" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-r2" data-ref="exr-roots-of-unity-r2" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">R2</span></li>
+                <li class="result" data-group="exercises" data-search="exercise r3" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-r3" data-ref="exr-roots-of-unity-r3" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">R3</span></li>
+                <li class="result" data-group="exercises" data-search="exercise r4" style="--env-color: #a8670c"><a class="xref result-name" href="ch1/roots-of-unity.html#exr-roots-of-unity-r4" data-ref="exr-roots-of-unity-r4" data-shard="ch01-complex-numbers">Exercise</a> <span class="result-title">R4</span></li>
+                </ul></div>
+                </section>
+                <p class="results-empty" hidden="">No results match the filter.</p>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="./pdf/results.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="./book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="./main.js?v=7d60f8c8f0"></script>
+            </body>
+
+</html>
