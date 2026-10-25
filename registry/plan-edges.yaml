@@ -32,7 +32,7 @@ F2.1: {s: [F1.5]}
 F2.2: {s: [F2.1, F1.6]}    # 2.5 (finite sets, ex-3.1) cites exr-models-c1/c2
 F2.3: {s: [F2.2, F1.6]}    # 3.5 builds a counter-model by 7.2's procedure
 F2.5: {s: [F2.2, F2.3, F2.1], see: [F1.6]}   # orders and relations as theories (C3)；s F2.1 是線代書 §0.5（商集）併入後的計算邊（2026-10-25）
-F2.6: {s: [F2.5, F2.2]}
+F2.6: {s: [F2.5, F2.2, F2.3]}   # 5.1 cites 3.6 (thm-power-set-two-power, cor-cantor-two-power), thm-cantor and thm-binary-sequences-uncountable
 F2.4: {s: [F2.5, F2.3]}
 
 # ───────────── AN1 實數、度量空間與導數（Apostol 1–5，spec/08 §C2） ─────────────
