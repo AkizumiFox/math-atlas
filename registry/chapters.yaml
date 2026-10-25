@@ -20,12 +20,14 @@ F1:
   - {id: F1.5, title: "From Derivations to Mathematical Prose", title_zh: 從推導到數學文字, src: [ab:5, la:ch00/01, la:ch00/02]}
 
 F2:
-  - {id: F2.1, title: "Proofs from Definitions: Sets and Functions", title_zh: 從定義出發的證明：集合與函數, src: [ab:6, la:ch00/03, la:ch00/04]}
-  - {id: F2.2, title: "Induction, Contradiction, and Finite Sets", title_zh: 歸納、反證與有限集, src: [ab:7, ab:8]}
-  - {id: F2.3, title: "Countable and Uncountable Sets", title_zh: 可數與不可數集（含選擇公理的陳述）, src: ab:8}
-  - {id: F2.5, title: "Relations: Equivalence and Order", title_zh: 關係：等價與序, src: [ab:7, la:ch00/05]}
-  - {id: F2.6, title: "Building Functions", title_zh: 函數的構造, src: new}
-  - {id: F2.4, title: "Zorn's Lemma", title_zh: Zorn 引理（使用者層級）, src: new}
+  # fd2 六章重切（2026-10-26 作者核准，fd2/authoring/design/layout-six-chapters.md）：集合、函數、歸納與遞迴、基數、關係、選擇公理。
+  # F2.6 沿用 id、改名為 Functions（舊名 Building Functions 退役）；ab:6 的函數那一半與 la:ch00/04 搬到 F2.6。
+  - {id: F2.1, title: "Sets", title_zh: 集合, src: [ab:6, la:ch00/03]}
+  - {id: F2.6, title: "Functions", title_zh: 函數, src: [ab:6, la:ch00/04]}
+  - {id: F2.2, title: "Induction and Recursion", title_zh: 歸納與遞迴, src: [ab:7, ab:8]}
+  - {id: F2.3, title: "Cardinality", title_zh: 基數, src: ab:8}
+  - {id: F2.5, title: "Relations", title_zh: 關係, src: [ab:7, la:ch00/05]}
+  - {id: F2.4, title: "The Axiom of Choice", title_zh: 選擇公理, src: new}
 
 F3:
   - {id: F3.1, title: "The ZF Fragment and the von Neumann Natural Numbers", title_zh: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9}
@@ -279,6 +281,11 @@ NLA:
   - {id: NLA.24, title: "Computation and Applications", title_zh: 計算與應用, src: la:ch24}
 
 ST:
+  # fd2 六章重切（2026-10-26）停放的材料，原文在 foundations/fd2/authoring/parked/st/（不在任何書的 src）：
+  #   ST.1 收商集的泛性質（thm-functions-out-of-quotient、exm-method-factor-through-quotient、exm-clock-maps；from-5.2）；
+  #   ST.3 收代數數可數與超越數存在（thm-algebraic-countable、cor-transcendental-exist、exm-choice-free-unions）、
+  #        ℕ^ℕ ≈ ℝ 與實數列（thm-baire-space-reals、cor-real-sequences、exm-interleaving-decimals）；
+  #   ST.4 收 AC ⇒ Zorn 的證明、可比較性 ⇒ 良序（Hartogs），以及「障礙，一條一條規則看」（from-3.2）。
   - {id: ST.1, title: "The Axioms of ZF", title_zh: 完整的 ZF 公理系統（重訪 F3.1）, src: new}
   - {id: ST.2, title: "Ordinals and Transfinite Induction", title_zh: 序數與超限歸納, src: new}
   - {id: ST.3, title: "Cardinal Arithmetic", title_zh: 基數算術, src: new}

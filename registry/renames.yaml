@@ -59,6 +59,13 @@ titles:
   - {id: CA.6, old: "Harmonic and Subharmonic Functions", new: "Harmonic Functions and the Poisson Integral", decided: 2026-10-25, spec: spec/08 §D1}
   - {id: CA.8b, old: "Picard's Theorems", new: "Picard's Theorems via Theta Functions", decided: 2026-10-25, spec: spec/08 §D2}
   - {id: HA.9, old: "What the Riemann Integral Lacks", new: "Riemann Integration and Its Failures", decided: 2026-10-25, spec: spec/08 §D4}
+  # fd2 六章重切（2026-10-26 作者核准）：id 都留在 F2 冊，只改章名
+  - {id: F2.1, old: "Proofs from Definitions: Sets and Functions", new: "Sets", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+  - {id: F2.6, old: "Building Functions", new: "Functions", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+  - {id: F2.2, old: "Induction, Contradiction, and Finite Sets", new: "Induction and Recursion", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+  - {id: F2.3, old: "Countable and Uncountable Sets", new: "Cardinality", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+  - {id: F2.5, old: "Relations: Equivalence and Order", new: "Relations", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+  - {id: F2.4, old: "Zorn's Lemma", new: "The Axiom of Choice", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
 
 volumes:
   - {id: F4, old: "Algebraic Preliminaries", new: "Analytic Preliminaries", alias: algebraic-preliminaries, decided: 2026-10-25, spec: spec/08 §A3, note: 舊的 algebraic-preliminaries 子目錄改指 F5（fd5）}

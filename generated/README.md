@@ -103,17 +103,17 @@ flowchart LR
 ```mermaid
 flowchart LR
   F1_5["F1.5 From Derivations to Mathematical Prose"]:::ext
-  F2_1["1 Proofs from Definitions: Sets and Functions"]
-  F2_2["2 Induction, Contradiction, and Finite Sets"]
-  F2_3["3 Countable and Uncountable Sets"]
-  F2_5["5 Relations: Equivalence and Order"]
-  F2_6["6 Building Functions"]
-  F2_4["4 Zorn's Lemma"]
+  F2_1["1 Sets"]
+  F2_6["6 Functions"]
+  F2_2["2 Induction and Recursion"]
+  F2_3["3 Cardinality"]
+  F2_5["5 Relations"]
+  F2_4["4 The Axiom of Choice"]
   F1_5 --> F2_1
-  F2_1 --> F2_2
+  F2_1 --> F2_6
+  F2_6 --> F2_2
   F2_2 --> F2_3
   F2_3 --> F2_5
-  F2_5 --> F2_6
   F2_5 --> F2_4
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -124,7 +124,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_5["F2.5 Relations: Equivalence and Order"]:::ext
+  F2_5["F2.5 Relations"]:::ext
   F3_1["1 The ZF Fragment and the von Neumann Natural Numbers"]
   F3_2["2 Building the Integers and the Rationals from Equivalence Classes"]
   F3_5["5 Divisibility, Division with Remainder, and Modular Arithmetic"]
@@ -196,7 +196,8 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_2["F2.2 Induction, Contradiction, and Finite Sets"]:::ext
+  F2_2["F2.2 Induction and Recursion"]:::ext
+  F2_4["F2.4 The Axiom of Choice"]:::ext
   F4_8["F4.8 Coordinates and Vectors in ℝⁿ"]:::ext
   F4_11["F4.11 Metrics and Norms"]:::ext
   AN1_1["1 Ordered Fields and the Least Upper Bound Axiom"]
@@ -221,6 +222,7 @@ flowchart LR
   AN2_2 --> AN2_3
   AN1_6 --> AN2_3
   AN1_6 --> AN1_7
+  F2_4 -.-> AN1_11
   AN1_7 --> AN1_11
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
@@ -231,7 +233,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_4["F2.4 Zorn's Lemma"]:::ext
+  F2_4["F2.4 The Axiom of Choice"]:::ext
   F5_4["F5.4 Formal Polynomials"]:::ext
   LA1_0["0 Matrices"]
   LA1_1["1 Vector Spaces"]
@@ -329,7 +331,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_4["F2.4 Zorn's Lemma"]:::ext
+  F2_4["F2.4 The Axiom of Choice"]:::ext
   F5_2["F5.2 Fields"]:::ext
   F5_4["F5.4 Formal Polynomials"]:::ext
   LA1_1["LA1.1 Vector Spaces"]:::ext
@@ -943,7 +945,7 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F2_4["F2.4 Zorn's Lemma"]:::ext
+  F2_4["F2.4 The Axiom of Choice"]:::ext
   AL1_6["AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation"]:::ext
   AL1_11["AL1.11 Free Groups and Presentations"]:::ext
   MT_1["MT.1 Lebesgue Measure on ℝᵈ and Measurable Functions"]:::ext

@@ -194,7 +194,7 @@
    "subdir": "sets-and-functions",
    "series": "Foundations",
    "short": "F2",
-   "blurb": "Sets and functions, with proofs straight from their definitions: induction and recursion, the sizes of infinite sets from diagonal arguments to Schröder–Bernstein and cardinal arithmetic, relations and orders, functions built by gluing, factorization, operations and permutations, and Zorn's lemma.",
+   "blurb": "Sets and functions, with proofs straight from their definitions: injections, surjections, gluing and inverses; induction and recursion; cardinality, from finite sets and the pigeonhole principle through diagonal arguments and Schröder–Bernstein to cardinal arithmetic; relations, quotients and orders; and the axiom of choice with Zorn's lemma and its equivalent forms.",
    "planned": 6,
    "aliases": [
     "fd2",

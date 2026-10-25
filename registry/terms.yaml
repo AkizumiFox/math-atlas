@@ -242,7 +242,7 @@
   ch: F1.6
   zh_candidates: ['[區]域', 定義域]
   meta: true
-  also: [def-function@F2.1, def-relation@F2.1, def-kernel@LA1.2]
+  also: [def-function@F2.6, def-relation@F2.1, def-kernel@LA1.2]
 - {id: equality-elimination, en: equality elimination, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: equality-introduction, en: equality introduction, zh: null, naer: missing, def: def-rules-equality, ch: F1.4, meta: true}
 - {id: first-order-formula, en: first-order formula, zh: null, naer: missing, def: def-first-order-formula, ch: F1.4, meta: true}
@@ -356,15 +356,15 @@
   zh: 對射
   naer: univ
   def: def-bijective
-  ch: F2.1
+  ch: F2.6
   also: [def-form-isometry@LA4.14, def-affine-space@GEO.22]
 - id: bijective
   en: bijective
   zh: null
   naer: missing
   def: def-bijective
-  ch: F2.1
-  also: [def-injective-surjective-bijective@F2.1, def-isomorphism@LA1.2, def-group-homomorphism@F5.3, def-intertwining-map@AL4.8]
+  ch: F2.6
+  also: [def-injective-surjective-bijective@F2.6, def-isomorphism@LA1.2, def-group-homomorphism@F5.3, def-intertwining-map@AL4.8]
 - {id: cartesian-product, en: Cartesian product, zh: 笛卡兒積, naer: univ, def: def-cartesian-product, ch: F2.1}
 - {id: characteristic-property, en: characteristic property, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - id: codomain
@@ -372,7 +372,7 @@
   zh: 對應域
   naer: hs
   def: def-function
-  ch: F2.1
+  ch: F2.6
   also: [def-image@LA1.2]
 - id: complement
   en: complement
@@ -389,8 +389,8 @@
   def: def-common-number-sets
   ch: F2.1
   also: [def-complex-numbers@F4.1]
-- {id: composite, en: composite, zh: null, naer: missing, def: def-composition, ch: F2.1}
-- {id: composition, en: composition, zh: 合成, naer: univ, def: def-composition, ch: F2.1}
+- {id: composite, en: composite, zh: null, naer: missing, def: def-composition, ch: F2.6}
+- {id: composition, en: composition, zh: 合成, naer: univ, def: def-composition, ch: F2.6}
 - {id: contain, en: contain, zh: null, naer: missing, def: def-subset, ch: F2.1}
 - {id: contained, en: contained, zh: null, naer: missing, def: def-subset, ch: F2.1}
 - id: difference
@@ -413,17 +413,17 @@
 - {id: family-of-set-indexed, en: family of set indexed, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: family-of-subset, en: family of subset, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: first-coordinate, en: first coordinate, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
-- {id: function, en: function, zh: 函數, naer: univ, def: def-function, ch: F2.1}
-- {id: graph, en: graph, zh: '圖[形]', naer: univ, def: def-function, ch: F2.1}
-- {id: identity-function, en: identity function, zh: null, naer: missing, def: def-identity-function, ch: F2.1}
+- {id: function, en: function, zh: 函數, naer: univ, def: def-function, ch: F2.6}
+- {id: graph, en: graph, zh: '圖[形]', naer: univ, def: def-function, ch: F2.6}
+- {id: identity-function, en: identity function, zh: null, naer: missing, def: def-identity-function, ch: F2.6}
 - id: image
   en: image
   zh: null
   naer: choose
   def: def-image
-  ch: F2.1
+  ch: F2.6
   zh_candidates: [像點, 像, 鏡像]
-  also: [def-image-preimage@F2.1, def-image@LA1.2, def-algebra-homomorphism@AL4.8]
+  also: [def-image-preimage@F2.6, def-image@LA1.2, def-algebra-homomorphism@AL4.8]
 - {id: include, en: include, zh: null, naer: missing, def: def-common-number-sets, ch: F2.1}
 - {id: index-set, en: index set, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: indexed-family, en: indexed family, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
@@ -432,15 +432,15 @@
   zh: null
   naer: choose
   def: def-injective
-  ch: F2.1
+  ch: F2.6
   zh_candidates: [嵌射, 單射]
 - id: injective
   en: injective
   zh: null
   naer: missing
   def: def-injective
-  ch: F2.1
-  also: [def-injective-surjective-bijective@F2.1]
+  ch: F2.6
+  also: [def-injective-surjective-bijective@F2.6]
 - {id: integer, en: integer, zh: 整數, naer: univ, def: def-common-number-sets, ch: F2.1}
 - id: intersection
   en: intersection
@@ -455,7 +455,7 @@
   zh: null
   naer: choose
   def: def-inverse-function
-  ch: F2.1
+  ch: F2.6
   zh_candidates: [反, 逆]
   also: [def-invertible-matrix@LA1.0]
 - id: inverse-image
@@ -463,7 +463,7 @@
   zh: null
   naer: choose
   def: def-preimage
-  ch: F2.1
+  ch: F2.6
   zh_candidates: [原像, 逆像]
 - {id: inverse-relation, en: inverse relation, zh: null, naer: missing, def: def-relation, ch: F2.1}
 - id: invertible
@@ -471,21 +471,21 @@
   zh: null
   naer: missing
   def: def-inverse-function
-  ch: F2.1
+  ch: F2.6
   also: [def-invertible-matrix@LA1.0, def-invertible-linear-map@LA1.2, def-similar-matrices@LA1.4, def-schur-complement@LA2.8, def-triangularizable@LA2.9, def-diagonalizable@LA2.9,
     def-congruent@LA4.14, def-m-matrix@MA.19]
-- {id: left-inverse, en: left inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
+- {id: left-inverse, en: left inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.6}
 - id: map
   en: map
   zh: 映射
   naer: univ
   def: def-function
-  ch: F2.1
+  ch: F2.6
   also: [def-intertwining-map@AL4.8]
 - {id: member, en: member, zh: null, naer: missing, def: def-indexed-family, ch: F2.1}
 - {id: natural-number, en: natural number, zh: 自然數, naer: hs, def: def-common-number-sets, ch: F2.1}
-- {id: one-to-one, en: one-to-one, zh: null, naer: missing, def: def-injective, ch: F2.1}
-- {id: onto, en: onto, zh: null, naer: missing, def: def-surjective, ch: F2.1}
+- {id: one-to-one, en: one-to-one, zh: null, naer: missing, def: def-injective, ch: F2.6}
+- {id: onto, en: onto, zh: null, naer: missing, def: def-surjective, ch: F2.6}
 - id: ordered-pair
   en: ordered pair
   zh: null
@@ -499,8 +499,8 @@
   zh: null
   naer: missing
   def: def-preimage
-  ch: F2.1
-  also: [def-image-preimage@F2.1]
+  ch: F2.6
+  also: [def-image-preimage@F2.6]
 - id: proper
   en: proper
   zh: null
@@ -525,7 +525,7 @@
   def: def-relation
   ch: F2.1
   also: [def-relation@F2.5]
-- {id: right-inverse, en: right inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.1}
+- {id: right-inverse, en: right inverse, zh: null, naer: missing, def: def-left-right-inverse, ch: F2.6}
 - {id: second-coordinate, en: second coordinate, zh: null, naer: missing, def: def-ordered-pair, ch: F2.1}
 - {id: subset, en: subset, zh: '子集[合]', naer: univ, def: def-subset, ch: F2.1}
 - id: surjection
@@ -533,17 +533,17 @@
   zh: null
   naer: choose
   def: def-surjective
-  ch: F2.1
+  ch: F2.6
   zh_candidates: [蓋射, 映成]
 - id: surjective
   en: surjective
   zh: null
   naer: missing
   def: def-surjective
-  ch: F2.1
-  also: [def-injective-surjective-bijective@F2.1, def-countable@LA1.1]
+  ch: F2.6
+  also: [def-injective-surjective-bijective@F2.6, def-countable@LA1.1]
 - {id: tuple, en: tuple, zh: null, naer: missing, def: def-n-tuple, ch: F2.1}
-- {id: two-sided-inverse, en: two-sided inverse, zh: null, naer: missing, def: def-inverse-function, ch: F2.1}
+- {id: two-sided-inverse, en: two-sided inverse, zh: null, naer: missing, def: def-inverse-function, ch: F2.6}
 - id: union
   en: union
   zh: null

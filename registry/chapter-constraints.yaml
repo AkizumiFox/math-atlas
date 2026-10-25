@@ -142,8 +142,10 @@
   book: new
   decided: 2026-10-10
   rule: >-
-    State Zorn's lemma and its usage pattern here, under the label thm-zorn that the linear algebra book already
-    uses in Section 1.8.
+    State the axiom of choice, Zorn's lemma (under the label thm-zorn that the linear algebra book already uses in
+    Section 1.8, with its usage pattern), the well-ordering theorem, and the easy implications (Zorn gives choice,
+    Zorn gives comparability and the well-ordering theorem, well-ordering gives choice). AC implies Zorn and
+    comparability implies well-ordering are proved in ST.4 (fd2 six-chapter re-cut, 2026-10-26).
   why: 線代書 §1.8 改成以 b 借用 F2.4（scope F2.5）；F2.4 寫好後接手 label，線代書原處留錨點。
   takes: [thm-zorn]
 

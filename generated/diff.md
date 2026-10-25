@@ -20,6 +20,7 @@
 - AN3.3 ← LA2.10：計算為 s（硬引用 2），計畫為 revisits
 - AN3.3 ← LA3.11：計算為 s（硬引用 3），計畫為 無
 - AN3.3 ← LA3.12：計算為 s（硬引用 4），計畫為 無
+- F2.5 ← F2.1：計算為 s（硬引用 2），計畫為 無
 
 ## 陳述層的 uses／borrows 在章層級找不到路徑
 
@@ -60,7 +61,10 @@
 
 - `def-complex-numbers`：地圖放在 F4.1，書稿目前在 la F3.6
 - `def-field`：地圖放在 F5.2，書稿目前在 la F3.7
+- `def-function`：地圖放在 F2.6，書稿目前在 la F2.1、ab F2.1
+- `def-image`：地圖放在 F2.6，書稿目前在 la LA1.2、ab F2.1
 - `def-polynomial-ring`：地圖放在 F5.4，書稿目前在 la F3.8
+- `thm-bijection-iff-inverse`：地圖放在 F2.6，書稿目前在 ab F2.1
 - `thm-induction`：地圖放在 F2.2，書稿目前在 la F1.5　已知：F2.2 寫好後接手（chapter-constraints.yaml）
 - `thm-transpositions-generate`：地圖放在 F5.3，書稿目前在 la AL1.1
 - `thm-zorn`：地圖放在 F2.4，書稿目前在 la LA1.1　已知：F2.4 寫好後接手（chapter-constraints.yaml）
