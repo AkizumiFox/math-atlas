@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preface – Analysis on the Real Line</title>
+
+    <meta name="asset-prefix" content="./">
+    <meta name="page-path" content="index.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+            <meta name="description" content="This volume is analysis on
+the real line: sequences and series, limits and continuity, the
+derivative, the integral, and power series.">
+            <link rel="canonical" href="https://atlas.akizumifox.com/analysis-on-the-real-line/index.html">
+    <meta property="og:url" content="https://atlas.akizumifox.com/analysis-on-the-real-line/index.html">
+        <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Analysis on the Real Line">
+    <meta property="og:title" content="Preface">
+        <meta property="og:description" content="This volume is analysis
+on the real line: sequences and series, limits and continuity, the
+derivative, the integral, and power series.">
+        <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="./fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="9b6653cb13">
+    <link rel="stylesheet" href="./styles.css?v=9b6653cb13">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="./mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="./index.html" class="sidebar-title">
+                    Analysis on the Real Line
+                </a>
+                <div class="sidebar-tools">
+                    <a href="./book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="./index.html">Preface</a></li><li class="nav-item nav-extra"><a href="./paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra"><a href="./results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="./graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="./ch1/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Ordered Fields and the Least Upper Bound Axiom</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="./ch1/ordered-fields.html" title="Ordered Fields and the Gap in the Rationals"><span class="nav-section-number">1.1</span><span class="nav-section-title">Ordered Fields and the Gap in the Rationals</span></a></li><li class="nav-section-item"><a href="./ch1/suprema.html" title="Upper Bounds, Maxima and Suprema"><span class="nav-section-number">1.2</span><span class="nav-section-title">Upper Bounds, Maxima and Suprema</span></a></li><li class="nav-section-item"><a href="./ch1/the-axiom.html" title="The Least Upper Bound Axiom"><span class="nav-section-number">1.3</span><span class="nav-section-title">The Least Upper Bound Axiom</span></a></li><li class="nav-section-item"><a href="./ch1/epsilon-characterization.html" title="Working with the Supremum"><span class="nav-section-number">1.4</span><span class="nav-section-title">Working with the Supremum</span></a></li><li class="nav-section-item"><a href="./ch1/archimedean-property.html" title="The Archimedean Property"><span class="nav-section-number">1.5</span><span class="nav-section-title">The Archimedean Property</span></a></li><li class="nav-section-item"><a href="./ch1/density-and-roots.html" title="Density of the Rationals and the Existence of Roots"><span class="nav-section-number">1.6</span><span class="nav-section-title">Density of the Rationals and the Existence of Roots</span></a></li><li class="nav-section-item"><a href="./ch1/nested-intervals.html" title="Nested Intervals and the Uncountability of the Reals"><span class="nav-section-number">1.7</span><span class="nav-section-title">Nested Intervals and the Uncountability of the Reals</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="./index.html" class="topbar-title">Analysis on
+the Real Line</a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./index.html">Preface</a></li>
+                        <li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">Preface</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">Preface</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="preface">
+
+                </div>
+                <p>This volume is analysis on the real line: sequences
+                and series, limits and continuity, the derivative, the
+                integral, and power series. It starts from a short list
+                of axioms for the real numbers, the axioms of a complete
+                ordered field, and proves everything else from them.</p>
+                <p><strong>Who it is for.</strong> The reader we have in
+                mind can already read and write proofs: negate a
+                quantified statement, name a witness, run an induction,
+                chase an element through a preimage. <em>Logic and
+                Proof</em> and the first three chapters of <em>Sets,
+                Relations, and Cardinality</em> teach exactly these
+                skills, and this volume cites them where it uses them. A
+                reader who comes from elsewhere can test their readiness
+                with Gate 0, the examination at the end of <em>Sets,
+                Relations, and Cardinality</em>, Chapter 3. <em>Number
+                Systems: From <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
+                to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span></em> builds
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> from the
+                rationals and proves that the axioms hold for it; this
+                volume does not need that construction, since it takes
+                the axioms as its starting point.</p>
+                <p><strong>What it covers.</strong></p>
+                <table>
+                <thead>
+                <tr class="header">
+                <th>Chapter</th>
+                <th>Title</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="odd">
+                <td>1</td>
+                <td>Ordered Fields and the Least Upper Bound Axiom</td>
+                </tr>
+                <tr class="even">
+                <td>2</td>
+                <td>Sequences, Subsequences, and Cauchy Sequences</td>
+                </tr>
+                <tr class="odd">
+                <td>3</td>
+                <td>Infinite Series</td>
+                </tr>
+                <tr class="even">
+                <td>4</td>
+                <td>Open, Closed, and Compact Subsets of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span></td>
+                </tr>
+                <tr class="odd">
+                <td>5</td>
+                <td>Limits of Functions and Continuity</td>
+                </tr>
+                <tr class="even">
+                <td>6</td>
+                <td>Continuous Functions on Compact Sets and
+                Intervals</td>
+                </tr>
+                <tr class="odd">
+                <td>7</td>
+                <td>The Derivative and the Mean Value Theorem</td>
+                </tr>
+                <tr class="even">
+                <td>8</td>
+                <td>The Riemann–Darboux Integral</td>
+                </tr>
+                <tr class="odd">
+                <td>9</td>
+                <td>Sequences and Series of Functions</td>
+                </tr>
+                <tr class="even">
+                <td>10</td>
+                <td>Power Series, Taylor Series, and the Elementary
+                Functions</td>
+                </tr>
+                <tr class="odd">
+                <td>11</td>
+                <td>The Forms of Completeness</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Chapter 1 states the axioms and draws the first
+                consequences of the one that separates <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> from <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, the least upper
+                bound axiom. Chapters 2–10 build the analysis of one
+                real variable on it. Chapter 11 returns to the axiom and
+                shows which other “no gaps” properties could replace it.
+                Only Chapter 1 is written so far; the others will follow
+                in the order of the table.</p>
+                <p><strong>How to read it.</strong> Read the chapters in
+                order: each uses the ones before it. Every section has
+                Quick checks with folded answers; answer each one before
+                you unfold it. The exercises of a section come in three
+                groups, A to check understanding, B for practice and C
+                to go deeper, and the last section of each chapter adds
+                R items that reach back to earlier chapters. A chapter’s
+                opening page lists what it needs, with links, and the
+                time it takes. Results marked optional can be skipped,
+                and nothing outside them depends on them.</p>
+                <p><strong>What else you need.</strong> Besides the two
+                volumes named above, only school algebra is assumed. A
+                few facts about fields are quoted from the companion
+                <em>Linear Algebra</em> book, each with a link.</p>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                        <a href="./ch1/index.html" class="pagination-link" aria-label="Ordered
+Fields and the Least Upper Bound Axiom">
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Next</span>
+                            <span class="nav-page-text">Ordered Fields
+and the Least Upper Bound Axiom</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                    </a>
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="./pdf/index.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="./book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="./main.js?v=9b6653cb13"></script>
+            </body>
+
+</html>

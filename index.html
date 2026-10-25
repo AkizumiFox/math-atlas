@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>Math Atlas</title>
-<link rel="canonical" href="https://akizumifox.github.io/math-atlas/">
+<link rel="canonical" href="https://atlas.akizumifox.com/">
 <meta name="description" content="A series of textbooks for a reader working alone, from a first proof to the graduate qualifying exam in mathematics.">
 <meta property="og:title" content="Math Atlas">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://akizumifox.github.io/math-atlas/">
+<meta property="og:url" content="https://atlas.akizumifox.com/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="fd1/mathjax.css">
+<link rel="stylesheet" href="logic-and-proof/mathjax.css">
 <script>(function () {
     var theme = null;
     try { theme = localStorage.getItem('book-theme'); } catch (e) {}
@@ -22,7 +22,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-greek-400-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-greek-400-italic.woff2') format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 @font-face {
@@ -30,7 +30,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-ext-400-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-ext-400-italic.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -38,7 +38,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-400-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-400-italic.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -46,7 +46,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-greek-700-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-greek-700-italic.woff2') format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 @font-face {
@@ -54,7 +54,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-ext-700-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-ext-700-italic.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -62,7 +62,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-700-italic.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-700-italic.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-greek-400-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-greek-400-normal.woff2') format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 @font-face {
@@ -78,7 +78,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-ext-400-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-ext-400-normal.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -86,7 +86,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-400-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-400-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -94,7 +94,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-greek-600-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-greek-600-normal.woff2') format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 @font-face {
@@ -102,7 +102,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-ext-600-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-ext-600-normal.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -110,7 +110,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-600-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-600-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -118,7 +118,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-greek-700-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-greek-700-normal.woff2') format('woff2');
   unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
 }
 @font-face {
@@ -126,7 +126,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-ext-700-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-ext-700-normal.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -134,7 +134,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('fd1/fonts/stix-two-text-latin-700-normal.woff2') format('woff2');
+  src: url('logic-and-proof/fonts/stix-two-text-latin-700-normal.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -314,35 +314,35 @@ mjx-container { letter-spacing: normal; word-spacing: normal; }
 </section>
 <section class="band" aria-labelledby="series-foundations"><div class="band-head"><h2 id="series-foundations">Foundations</h2><p>Proof, sets and numbers: what every later volume takes for granted, taught from the beginning.</p></div><ul class="cards"><li><article class="card" id="book-fd1" aria-labelledby="title-fd1" data-book="fd1">
 <p class="card-code">F1</p>
-<h3 id="title-fd1"><a href="fd1/">Logic and Proof</a></h3>
+<h3 id="title-fd1"><a href="logic-and-proof/">Logic and Proof</a></h3>
 <p class="card-blurb">Logic as the grammar of proof, for a reader who has never been asked to write one: derivations, rule by rule, for the connectives and quantifiers; truth tables, soundness and completeness; and the way back from derivations to ordinary mathematical prose.</p>
-<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span><span>8 of 8 chapters written · 49 sections</span></p>
-<p class="card-links"><a href="fd1/" aria-label="Read Logic and Proof">Read</a> <a href="fd1/book/book.pdf" aria-label="Logic and Proof as a PDF">PDF</a></p>
+<p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span><span>8 of 8 chapters written · 50 sections</span></p>
+<p class="card-links"><a href="logic-and-proof/" aria-label="Read Logic and Proof">Read</a> <a href="logic-and-proof/book/book.pdf" aria-label="Logic and Proof as a PDF">PDF</a></p>
 </article></li><li><article class="card" id="book-fd2" aria-labelledby="title-fd2" data-book="fd2">
 <p class="card-code">F2</p>
-<h3 id="title-fd2"><a href="fd2/">Sets, Relations, and Cardinality</a></h3>
+<h3 id="title-fd2"><a href="sets-relations-and-cardinality/">Sets, Relations, and Cardinality</a></h3>
 <p class="card-blurb">Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem. Chapter 3 ends with Gate 0, the examination to pass before analysis.</p>
 <p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i></i></span><span>3 of 4 chapters written · 19 sections</span></p>
-<p class="card-links"><a href="fd2/" aria-label="Read Sets, Relations, and Cardinality">Read</a> <a href="fd2/book/book.pdf" aria-label="Sets, Relations, and Cardinality as a PDF">PDF</a></p>
+<p class="card-links"><a href="sets-relations-and-cardinality/" aria-label="Read Sets, Relations, and Cardinality">Read</a> <a href="sets-relations-and-cardinality/book/book.pdf" aria-label="Sets, Relations, and Cardinality as a PDF">PDF</a></p>
 </article></li><li><article class="card" id="book-fd3" aria-labelledby="title-fd3" data-book="fd3">
 <p class="card-code">F3</p>
-<h3 id="title-fd3"><a href="fd3/">Number Systems: From <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container> to <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></a></h3>
+<h3 id="title-fd3"><a href="number-systems/">Number Systems: From <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container> to <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></a></h3>
 <p class="card-blurb">The number systems built out of sets: <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container> from the ZF axioms, <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Z}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Z</mi></mrow></math></mjx-assistive-mml></mjx-container> and <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container> as classes of pairs, divisibility and modular arithmetic, and finally <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container>, constructed from Cauchy sequences of rationals and proved to be a complete ordered field.</p>
 <p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span><span>7 of 7 chapters written · 41 sections</span></p>
-<p class="card-links"><a href="fd3/" aria-label="Read Number Systems: From ℕ to ℝ">Read</a> <a href="fd3/book/book.pdf" aria-label="Number Systems: From ℕ to ℝ as a PDF">PDF</a></p>
+<p class="card-links"><a href="number-systems/" aria-label="Read Number Systems: From ℕ to ℝ">Read</a> <a href="number-systems/book/book.pdf" aria-label="Number Systems: From ℕ to ℝ as a PDF">PDF</a></p>
 </article></li><li><article class="card" id="book-fd4" aria-labelledby="title-fd4" data-book="fd4">
 <p class="card-code">F4</p>
-<h3 id="title-fd4"><a href="fd4/">Algebraic Preliminaries</a></h3>
+<h3 id="title-fd4"><a href="algebraic-preliminaries/">Algebraic Preliminaries</a></h3>
 <p class="card-blurb">The algebra the later volumes take for granted: the complex numbers built on <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container>, fields including <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{F}_p"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c1D53D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">F</mi></mrow><mi>p</mi></msub></math></mjx-assistive-mml></mjx-container>, groups and permutations with the sign, formal polynomials, and polynomials over a field from division with remainder to the fundamental theorem of algebra.</p>
 <p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i></span><span>5 of 5 chapters written · 28 sections</span></p>
-<p class="card-links"><a href="fd4/" aria-label="Read Algebraic Preliminaries">Read</a> <a href="fd4/book/book.pdf" aria-label="Algebraic Preliminaries as a PDF">PDF</a></p>
+<p class="card-links"><a href="algebraic-preliminaries/" aria-label="Read Algebraic Preliminaries">Read</a> <a href="algebraic-preliminaries/book/book.pdf" aria-label="Algebraic Preliminaries as a PDF">PDF</a></p>
 </article></li></ul></section>
 <div class="band-row"><section class="band" aria-labelledby="series-analysis"><div class="band-head"><h2 id="series-analysis">Analysis</h2><p>Calculus made rigorous, then the analysis built on it: metric spaces, several variables, measure, Fourier and complex analysis.</p></div><ul class="cards"><li><article class="card" id="book-an1" aria-labelledby="title-an1" data-book="an1">
 <p class="card-code">AN1</p>
-<h3 id="title-an1"><a href="an1/">Analysis on the Real Line</a></h3>
+<h3 id="title-an1"><a href="analysis-on-the-real-line/">Analysis on the Real Line</a></h3>
 <p class="card-blurb">Analysis on the real line, from the axioms of a complete ordered field: sequences and series, limits and continuity, the derivative, the Riemann–Darboux integral and power series, each proved from the least upper bound axiom.</p>
 <p class="progress"><span class="segments" aria-hidden="true"><i class="done"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>1 of 11 chapters written · 7 sections</span></p>
-<p class="card-links"><a href="an1/" aria-label="Read Analysis on the Real Line">Read</a> <a href="an1/book/book.pdf" aria-label="Analysis on the Real Line as a PDF">PDF</a></p>
+<p class="card-links"><a href="analysis-on-the-real-line/" aria-label="Read Analysis on the Real Line">Read</a> <a href="analysis-on-the-real-line/book/book.pdf" aria-label="Analysis on the Real Line as a PDF">PDF</a></p>
 </article></li></ul></section>
 <section class="band" aria-labelledby="series-linear-algebra"><div class="band-head"><h2 id="series-linear-algebra">Linear Algebra</h2><p>A companion series, written first and published on its own site; the volumes here cite it for facts about fields and matrices.</p></div><ul class="cards"><li><article class="card" id="book-la" aria-labelledby="title-la" data-book="la">
 <p class="card-code">LA</p>

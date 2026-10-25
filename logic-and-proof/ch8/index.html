@@ -1,0 +1,501 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Derivations to Mathematical Prose – Logic and
+Proof</title>
+
+    <meta name="asset-prefix" content="../">
+    <meta name="page-path" content="ch8/index.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+            <meta name="description" content="Words such as “let”,
+“choose”, “suppose” and “in either case” are the boxes, spoken. This
+chapter makes that correspondence exact in both directions.">
+            <link rel="canonical" href="https://atlas.akizumifox.com/logic-and-proof/ch8/index.html">
+    <meta property="og:url" content="https://atlas.akizumifox.com/logic-and-proof/ch8/index.html">
+        <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Logic and Proof">
+    <meta property="og:title" content="From Derivations to Mathematical
+Prose">
+        <meta property="og:description" content="Words such as “let”,
+“choose”, “suppose” and “in either case” are the boxes, spoken. This
+chapter makes that correspondence exact in both directions.">
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="7d60f8c8f0">
+    <link rel="stylesheet" href="../styles.css?v=7d60f8c8f0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="../mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-title">
+                    Logic and Proof
+                </a>
+                <div class="sidebar-tools">
+                    <a href="../book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="../index.html">Preface</a></li><li class="nav-item nav-extra"><a href="../paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra"><a href="../results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="../graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="../ch1/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Connectives and Derivations</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch1/statements-and-connectives.html" title="Statements, Arguments and How to Break One"><span class="nav-section-number">1.1</span><span class="nav-section-title">Statements, Arguments and How to Break One</span></a></li><li class="nav-section-item"><a href="../ch1/derivations.html" title="Derivations, Starting with And"><span class="nav-section-number">1.2</span><span class="nav-section-title">Derivations, Starting with And</span></a></li><li class="nav-section-item"><a href="../ch1/using-an-implication.html" title="Using an Implication: Modus Ponens"><span class="nav-section-number">1.3</span><span class="nav-section-title">Using an Implication: Modus Ponens</span></a></li><li class="nav-section-item"><a href="../ch1/proving-an-implication.html" title="Proving an Implication: the Rule of the Box"><span class="nav-section-number">1.4</span><span class="nav-section-title">Proving an Implication: the Rule of the Box</span></a></li><li class="nav-section-item"><a href="../ch1/disjunction-introduction.html" title="Or, Introduced"><span class="nav-section-number">1.5</span><span class="nav-section-title">Or, Introduced</span></a></li><li class="nav-section-item"><a href="../ch1/disjunction-and-cases.html" title="Using Or: Proof by Cases"><span class="nav-section-number">1.6</span><span class="nav-section-title">Using Or: Proof by Cases</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="1"><a href="../ch2/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Negation and Classical Logic</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch2/contradiction-and-vacuous-truth.html" title="Contradiction: Using a Negation"><span class="nav-section-number">2.1</span><span class="nav-section-title">Contradiction: Using a Negation</span></a></li><li class="nav-section-item"><a href="../ch2/negation-and-contradiction.html" title="Proving a Negation"><span class="nav-section-number">2.2</span><span class="nav-section-title">Proving a Negation</span></a></li><li class="nav-section-item"><a href="../ch2/derived-rules.html" title="Derived Rules: Proved Sequents as New Rules"><span class="nav-section-number">2.3</span><span class="nav-section-title">Derived Rules: Proved Sequents as New Rules</span></a></li><li class="nav-section-item"><a href="../ch2/biconditional-and-definitions.html" title="Iff, Equivalence, and What a Definition Says"><span class="nav-section-number">2.4</span><span class="nav-section-title">Iff, Equivalence, and What a Definition Says</span></a></li><li class="nav-section-item"><a href="../ch2/reductio-and-classical-rules.html" title="Proof by Contradiction and the Classical Rules"><span class="nav-section-number">2.5</span><span class="nav-section-title">Proof by Contradiction and the Classical Rules</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="2"><a href="../ch3/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Finding Derivations</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch3/finding-derivations.html" title="How to Find a Derivation"><span class="nav-section-number">3.1</span><span class="nav-section-title">How to Find a Derivation</span></a></li><li class="nav-section-item"><a href="../ch3/four-kinds-of-task.html" title="Four Kinds of Task"><span class="nav-section-number">3.2</span><span class="nav-section-title">Four Kinds of Task</span></a></li><li class="nav-section-item"><a href="../ch3/from-argument-to-derivation.html" title="From Argument to Derivation"><span class="nav-section-number">3.3</span><span class="nav-section-title">From Argument to Derivation</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="3"><a href="../ch4/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Truth, Soundness and Completeness</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch4/formulas-and-parse-trees.html" title="Formulas as Objects"><span class="nav-section-number">4.1</span><span class="nav-section-title">Formulas as Objects</span></a></li><li class="nav-section-item"><a href="../ch4/induction.html" title="Induction on the Natural Numbers"><span class="nav-section-number">4.2</span><span class="nav-section-title">Induction on the Natural Numbers</span></a></li><li class="nav-section-item"><a href="../ch4/structural-induction.html" title="Induction and Recursion on Formulas"><span class="nav-section-number">4.3</span><span class="nav-section-title">Induction and Recursion on Formulas</span></a></li><li class="nav-section-item"><a href="../ch4/valuations-and-truth-tables.html" title="Valuations and Truth Tables"><span class="nav-section-number">4.4</span><span class="nav-section-title">Valuations and Truth Tables</span></a></li><li class="nav-section-item"><a href="../ch4/entailment-and-equivalence.html" title="Tautologies, Entailment and Equivalence"><span class="nav-section-number">4.5</span><span class="nav-section-title">Tautologies, Entailment and Equivalence</span></a></li><li class="nav-section-item"><a href="../ch4/refuting-row-search.html" title="Hunting for a Refuting Row"><span class="nav-section-number">4.6</span><span class="nav-section-title">Hunting for a Refuting Row</span></a></li><li class="nav-section-item"><a href="../ch4/soundness.html" title="Soundness"><span class="nav-section-number">4.7</span><span class="nav-section-title">Soundness</span></a></li><li class="nav-section-item"><a href="../ch4/completeness.html" title="Completeness"><span class="nav-section-number">4.8</span><span class="nav-section-title">Completeness</span></a></li><li class="nav-section-item"><a href="../ch4/normal-forms.html" title="Normal Forms and Adequate Connectives"><span class="nav-section-number">4.9</span><span class="nav-section-title">Normal Forms and Adequate Connectives</span></a></li><li class="nav-section-item"><a href="../ch4/compactness.html" title="Compactness and Maximal Consistent Sets"><span class="nav-section-number">4.10</span><span class="nav-section-title">Compactness and Maximal Consistent Sets</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="4"><a href="../ch5/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Predicate Logic and the Quantifier Rules</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch5/predicates-and-quantifiers.html" title="Predicates and Quantifiers"><span class="nav-section-number">5.1</span><span class="nav-section-title">Predicates and Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch5/terms-formulas-substitution.html" title="Terms, Formulas, Free Variables and Substitution"><span class="nav-section-number">5.2</span><span class="nav-section-title">Terms, Formulas, Free Variables and Substitution</span></a></li><li class="nav-section-item"><a href="../ch5/universal-elimination.html" title="Using &quot;For Every&quot;: Instantiation"><span class="nav-section-number">5.3</span><span class="nav-section-title">Using "For Every": Instantiation</span></a></li><li class="nav-section-item"><a href="../ch5/universal-introduction.html" title="Proving &quot;For Every&quot;: Let x Be Arbitrary"><span class="nav-section-number">5.4</span><span class="nav-section-title">Proving "For Every": Let x Be Arbitrary</span></a></li><li class="nav-section-item"><a href="../ch5/existential-introduction.html" title="Proving &quot;There Exists&quot;: Exhibit a Witness"><span class="nav-section-number">5.5</span><span class="nav-section-title">Proving "There Exists": Exhibit a Witness</span></a></li><li class="nav-section-item"><a href="../ch5/existential-elimination.html" title="Using &quot;There Exists&quot;: Name a Witness"><span class="nav-section-number">5.6</span><span class="nav-section-title">Using "There Exists": Name a Witness</span></a></li><li class="nav-section-item"><a href="../ch5/equality-and-uniqueness.html" title="Equality"><span class="nav-section-number">5.7</span><span class="nav-section-title">Equality</span></a></li><li class="nav-section-item"><a href="../ch5/counting-and-descriptions.html" title="Unique Existence, Counting and Descriptions"><span class="nav-section-number">5.8</span><span class="nav-section-title">Unique Existence, Counting and Descriptions</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="5"><a href="../ch6/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Working with Quantifiers: Translation, Laws and Search</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch6/translation.html" title="Translating Mathematics: Nested and Bounded Quantifiers"><span class="nav-section-number">6.1</span><span class="nav-section-title">Translating Mathematics: Nested and Bounded Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch6/quantifier-laws.html" title="Negating and Moving Quantifiers"><span class="nav-section-number">6.2</span><span class="nav-section-title">Negating and Moving Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch6/first-order-search.html" title="Finding First-Order Derivations"><span class="nav-section-number">6.3</span><span class="nav-section-title">Finding First-Order Derivations</span></a></li><li class="nav-section-item"><a href="../ch6/uniform-continuity-rule-by-rule.html" title="Uniformly Continuous Implies Continuous, Rule by Rule"><span class="nav-section-number">6.4</span><span class="nav-section-title">Uniformly Continuous Implies Continuous, Rule by Rule</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="6"><a href="../ch7/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Models and Theories</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch7/structures-and-satisfaction.html" title="Structures and Satisfaction"><span class="nav-section-number">7.1</span><span class="nav-section-title">Structures and Satisfaction</span></a></li><li class="nav-section-item"><a href="../ch7/counter-models.html" title="Counter-models"><span class="nav-section-number">7.2</span><span class="nav-section-title">Counter-models</span></a></li><li class="nav-section-item"><a href="../ch7/first-order-soundness.html" title="Soundness for Predicate Logic"><span class="nav-section-number">7.3</span><span class="nav-section-title">Soundness for Predicate Logic</span></a></li><li class="nav-section-item"><a href="../ch7/theories-and-models.html" title="Theories and Their Models"><span class="nav-section-number">7.4</span><span class="nav-section-title">Theories and Their Models</span></a></li><li class="nav-section-item"><a href="../ch7/definability-and-isomorphism.html" title="Definability and Isomorphism"><span class="nav-section-number">7.5</span><span class="nav-section-title">Definability and Isomorphism</span></a></li><li class="nav-section-item"><a href="../ch7/limits-of-first-order-logic.html" title="What First-Order Logic Can and Cannot Say"><span class="nav-section-number">7.6</span><span class="nav-section-title">What First-Order Logic Can and Cannot Say</span></a></li></ul></li><li class="nav-chapter active"><div class="nav-chapter-header" data-chapter="7"><a href="../ch8/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">From Derivations to Mathematical Prose</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch8/connective-rhetoric.html" title="The Connective Rules in Prose"><span class="nav-section-number">8.1</span><span class="nav-section-title">The Connective Rules in Prose</span></a></li><li class="nav-section-item"><a href="../ch8/quantifier-rhetoric.html" title="The Quantifier Rules in Prose"><span class="nav-section-number">8.2</span><span class="nav-section-title">The Quantifier Rules in Prose</span></a></li><li class="nav-section-item"><a href="../ch8/levels-of-abbreviation.html" title="Four Levels of One Proof"><span class="nav-section-number">8.3</span><span class="nav-section-title">Four Levels of One Proof</span></a></li><li class="nav-section-item"><a href="../ch8/reading-proofs.html" title="Reading a Proof: Self-Explanation"><span class="nav-section-number">8.4</span><span class="nav-section-title">Reading a Proof: Self-Explanation</span></a></li><li class="nav-section-item"><a href="../ch8/writing-proofs.html" title="Writing a Proof"><span class="nav-section-number">8.5</span><span class="nav-section-title">Writing a Proof</span></a></li><li class="nav-section-item"><a href="../ch8/checking-proofs.html" title="Checking Proofs, and What Is Not Allowed"><span class="nav-section-number">8.6</span><span class="nav-section-title">Checking Proofs, and What Is Not Allowed</span></a></li><li class="nav-section-item"><a href="../ch8/excluded-middle.html" title="The Dispute over Excluded Middle"><span class="nav-section-number">8.7</span><span class="nav-section-title">The Dispute over Excluded Middle</span></a></li><li class="nav-section-item"><a href="../ch8/kripke-models.html" title="Stages of Knowledge: Kripke Models"><span class="nav-section-number">8.8</span><span class="nav-section-title">Stages of Knowledge: Kripke Models</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="topbar-title">Logic and
+Proof</a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../ch8/index.html">From Derivations to Mathematical Prose</a></li>
+                        <li class="breadcrumb-item"><a href="../ch8/index.html"><span class="chapter-title">From Derivations to Mathematical Prose</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">From Derivations
+to Mathematical Prose</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="from-derivations-to-mathematical-prose">
+
+                </div>
+                <p>Here is a proof that every schoolbook prints: for an
+                integer <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>, if <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is even, then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even.</p>
+                <blockquote>
+                <p>Suppose <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is
+                even, say <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n = 2k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn><mi>k</mi></math></mjx-assistive-mml></mjx-container></span>.
+                Then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2 = 4k^2 =
+                2(2k^2)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><msup><mi>k</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, so <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even.</p>
+                </blockquote>
+                <p>And here is the same proof as a derivation, for one
+                fixed integer <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>,
+                with “even” written out: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is even when <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n = 2k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn><mi>k</mi></math></mjx-assistive-mml></mjx-container></span> for some integer
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container></span>.</p>
+                <div class="fitch-display"><div class="fitch" role="table" aria-label="Derivation"><div class="fitch-row fitch-hypothesis" role="row"><span class="fitch-num" role="cell">1</span><span class="fitch-body" role="cell"><span class="fitch-bar fitch-bar-top" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar fitch-bar-top" aria-hidden="true"></span><span class="fitch-formula fitch-assumption"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\exists k \, (n = 2 \cdot k)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∃</mi><mi>k</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>k</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span><span class="fitch-purpose">asm, for <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{{\to}}I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mo accent="false" stretchy="false">→</mo></mrow></mrow><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span></span></span></div><div class="fitch-row fitch-hypothesis" role="row"><span class="fitch-num" role="cell">2</span><span class="fitch-body" role="cell"><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"><span class="fitch-flag"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k_0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>k</mi><mn>0</mn></msub></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-bar fitch-bar-top" aria-hidden="true"></span><span class="fitch-formula fitch-assumption"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n = 2 \cdot k_0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><msub><mi>k</mi><mn>0</mn></msub></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span><span class="fitch-purpose">asm, for <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{\exists}E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi></mrow><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span></span></span></div><div class="fitch-row" role="row"><span class="fitch-num" role="cell">3</span><span class="fitch-body" role="cell"><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-formula"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n \cdot n = 2 \cdot (2 \cdot k_0 \cdot k_0)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>⋅</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mo stretchy="false">(</mo><mn>2</mn><mo>⋅</mo><msub><mi>k</mi><mn>0</mn></msub><mo>⋅</mo><msub><mi>k</mi><mn>0</mn></msub><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span>arith 2</span></span></div><div class="fitch-row" role="row"><span class="fitch-num" role="cell">4</span><span class="fitch-body" role="cell"><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-formula"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\exists j \, (n \cdot n = 2 \cdot j)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∃</mi><mi>j</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>n</mi><mo>⋅</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>j</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{\exists}I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi></mrow><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container> 3</span></span></div><div class="fitch-row" role="row"><span class="fitch-num" role="cell">5</span><span class="fitch-body" role="cell"><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-indent"></span><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-formula"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\exists j \, (n \cdot n = 2 \cdot j)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∃</mi><mi>j</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>n</mi><mo>⋅</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>j</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{\exists}E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi></mrow><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container> 1, 2–4</span></span></div><div class="fitch-row" role="row"><span class="fitch-num" role="cell">6</span><span class="fitch-body" role="cell"><span class="fitch-bar" aria-hidden="true"></span><span class="fitch-formula"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\exists k \, (n = 2 \cdot k) \to \exists j \, (n \cdot n = 2 \cdot j)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∃</mi><mi>k</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>k</mi><mo stretchy="false">)</mo><mo accent="false" stretchy="false">→</mo><mi mathvariant="normal">∃</mi><mi>j</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>n</mi><mo>⋅</mo><mi>n</mi><mo>=</mo><mn>2</mn><mo>⋅</mo><mi>j</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span></span><span class="fitch-just" role="cell"><span><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{{\to}}I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mo accent="false" stretchy="false">→</mo></mrow></mrow><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container> 1–5</span></span></div></div></div>
+                <p>At line 5 the side condition holds: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k_0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>k</mi><mn>0</mn></msub></math></mjx-assistive-mml></mjx-container></span> is not in line 5, not
+                in line 1, and in no other open assumption. The words
+                and the lines match one for one:</p>
+                <table>
+                <colgroup>
+                <col style="width: 33%">
+                <col style="width: 33%">
+                <col style="width: 33%">
+                </colgroup>
+                <thead>
+                <tr class="header">
+                <th>Words</th>
+                <th>Lines</th>
+                <th>What they do</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="odd">
+                <td>“Suppose <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is
+                even”</td>
+                <td>1</td>
+                <td>open the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{{\to}I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mo accent="false" stretchy="false">→</mo></mrow><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
+                box</td>
+                </tr>
+                <tr class="even">
+                <td>“say <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n =
+                2k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn><mi>k</mi></math></mjx-assistive-mml></mjx-container></span>”</td>
+                <td>2</td>
+                <td>open the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span> box,
+                with a new name</td>
+                </tr>
+                <tr class="odd">
+                <td>“Then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2 = 4k^2 =
+                2(2k^2)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><msup><mi>k</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>”</td>
+                <td>3</td>
+                <td>algebra inside both boxes</td>
+                </tr>
+                <tr class="even">
+                <td>“so <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is
+                even”</td>
+                <td>4</td>
+                <td><span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists
+                I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, with the witness <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2k^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><msup><mi>k</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span></td>
+                </tr>
+                <tr class="odd">
+                <td>(the paragraph ends)</td>
+                <td>5, 6</td>
+                <td>the two boxes close</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>Words such as “let”, “choose”, “suppose” and “in
+                either case” are the boxes, spoken. This chapter makes
+                that correspondence exact in both directions. Learning
+                to hear the boxes is what lets a reader working alone
+                check a proof, by restoring the derivation underneath
+                wherever a step is in doubt; learning to speak them is
+                what makes a proof checkable by someone else.</p>
+                <p>Words can also deceive. Here is a proof whose every
+                sentence is true and which is still wrong.</p>
+                <blockquote>
+                <p><strong>Claim.</strong> For an integer <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>, if <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even, then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is even.</p>
+                <ol type="1">
+                <li>Suppose <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is
+                even. (2) Then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n =
+                2k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn><mi>k</mi></math></mjx-assistive-mml></mjx-container></span> for some integer <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container></span>. (3) So <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2 = 4k^2 = 2(2k^2)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><msup><mi>k</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mo stretchy="false">(</mo><mn>2</mn><msup><mi>k</mi><mn>2</mn></msup><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>. (4)
+                Hence <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even.
+                (5) Therefore, if <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even, then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is even.</li>
+                </ol>
+                </blockquote>
+                <p>Every sentence is true, and so is the claim. But the
+                box opens with “<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>
+                is even”, so what the lines prove is the converse, “if
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> is even, then
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>n</mi><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span> is even”.
+                Section 8.6 checks this proof line by line; by the end
+                of the chapter you will see the error at a glance.</p>
+                <p><em>The question of this chapter: when a proof is
+                written in sentences, where did its boxes go, and how
+                does a reader find them again?</em></p>
+                <p>The chapter builds a dictionary from rules to
+                phrases, writes proofs at four levels from full
+                derivation to plain prose, fixes which steps plain prose
+                may leave unsaid, and turns all of this into habits for
+                reading, writing and checking proofs, with a catalogue
+                of the errors that recur. It ends with the one rule
+                mathematicians have seriously argued about: reductio ad
+                absurdum.</p>
+                <p><strong>What you need.</strong> Chapters 1–6, core.
+                From Chapter 7, only the statement in Section 7.2 under
+                “From counter-models to non-derivability”, that a
+                derivation with the quantifier rules never leads from
+                true premises to a false conclusion; Sections 8.6 and
+                8.7 use it as a fact.</p>
+                <ul>
+                <li><strong>Boxes.</strong> An assumption opens a box,
+                the line written after it closes it, and a line may cite
+                only lines and boxes available to it (<a href="../ch1/proving-an-implication.html#def-derivation" class="xref" data-ref="def-derivation" data-shard="ch01-connectives-and-derivations">Definition 1.4.2</a>).</li>
+                <li><strong>The rules.</strong> The introduction and
+                elimination rules of every connective and quantifier,
+                and the derived rules of Chapter 2; Section 8.1 collects
+                them on one card.</li>
+                <li><strong>Choosing.</strong> “Choose” needs a fresh
+                name, and a chosen constant may depend only on the names
+                of the boxes around it (Sections 5.6 and 6.4).</li>
+                <li><strong>The classical rule.</strong> <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is the one
+                rule that belongs to no connective; <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\neg\neg E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-cAC"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-cAC"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">¬</mi><mi mathvariant="normal">¬</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span> and
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{LEM}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c4C"></mjx-c><mjx-c class="mjx-c45"></mjx-c><mjx-c class="mjx-c4D"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">LEM</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are
+                its other two forms (Section 2.5).</li>
+                </ul>
+                <details class="second-reading">
+                <summary><span class="second-reading-marker" aria-hidden="true">↺</span><span class="second-reading-kicker">Second reading</span><span class="second-reading-title">Every
+                earlier result this chapter cites</span></summary>
+                <div class="second-reading-body">
+                <p>From Chapters 1 and 2: the rules for every
+                connective, derivations with their boxes and scope rule
+                (<a href="../ch1/proving-an-implication.html#def-derivation" class="xref" data-ref="def-derivation" data-shard="ch01-connectives-and-derivations">Definition 1.4.2</a>),
+                derived rules (<a href="../ch2/derived-rules.html#def-derived-rule" class="xref" data-ref="def-derived-rule" data-shard="ch02-negation-and-classical-logic">Definition 2.3.1</a>),
+                the classical rules of Section 2.5 and their
+                interderivability (<a href="../ch2/reductio-and-classical-rules.html#thm-classical-rules-interderivable" class="xref" data-ref="thm-classical-rules-interderivable" data-shard="ch02-negation-and-classical-logic">Theorem 2.5.7</a>),
+                the cut rule (<a href="../ch2/derived-rules.html#lem-weakening-cut" class="xref" data-ref="lem-weakening-cut" data-shard="ch02-negation-and-classical-logic">Lemma 2.3.3</a>),
+                and the two running examples <a href="../ch2/contradiction-and-vacuous-truth.html#thm-square-even-implies-even" class="xref" data-ref="thm-square-even-implies-even" data-shard="ch02-negation-and-classical-logic">Theorem 2.1.3</a>
+                and <a href="../ch2/negation-and-contradiction.html#thm-sqrt2-irrational" class="xref" data-ref="thm-sqrt2-irrational" data-shard="ch02-negation-and-classical-logic">Theorem 2.2.1</a>.
+                From Chapter 4: induction (<a href="../ch4/induction.html#ax-induction" class="xref" data-ref="ax-induction" data-shard="ch04-semantics-soundness-completeness">Axiom 4.2.1</a>),
+                truth tables and refuting rows (<a href="../ch4/valuations-and-truth-tables.html#exm-backwards-from-f" class="xref" data-ref="exm-backwards-from-f" data-shard="ch04-semantics-soundness-completeness">Example (Working backwards from F)</a>,
+                <a href="../ch4/entailment-and-equivalence.html#def-valid-argument" class="xref" data-ref="def-valid-argument" data-shard="ch04-semantics-soundness-completeness">Definition 4.5.3</a>,
+                <a href="../ch4/soundness.html#cor-refuting-row" class="xref" data-ref="cor-refuting-row" data-shard="ch04-semantics-soundness-completeness">Corollary 4.7.3</a>),
+                soundness (<a href="../ch4/soundness.html#thm-soundness" class="xref" data-ref="thm-soundness" data-shard="ch04-semantics-soundness-completeness">Theorem 4.7.2</a>),
+                completeness (<a href="../ch4/completeness.html#thm-completeness" class="xref" data-ref="thm-completeness" data-shard="ch04-semantics-soundness-completeness">Theorem 4.8.4</a>,
+                <a href="../ch4/completeness.html#cor-derivable-iff-valid" class="xref" data-ref="cor-derivable-iff-valid" data-shard="ch04-semantics-soundness-completeness">Corollary 4.8.5</a>)
+                and the proof of <a href="../ch4/completeness.html#lem-atom-splitting" class="xref" data-ref="lem-atom-splitting" data-shard="ch04-semantics-soundness-completeness">Lemma 4.8.3</a>
+                (for a Challenge exercise of Section 8.4), and, for
+                Section 8.7 only, the optional <a href="../ch4/soundness.html#thm-raa-independent" class="xref" data-ref="thm-raa-independent" data-shard="ch04-semantics-soundness-completeness">Theorem 4.7.4</a>.
+                From Chapters 5 and 6: the quantifier rules and their
+                side conditions (<a href="../ch5/universal-introduction.html#def-rules-universal" class="xref" data-ref="def-rules-universal" data-shard="ch05-predicate-logic">Definition 5.4.1</a>,
+                <a href="../ch5/existential-elimination.html#def-rules-existential" class="xref" data-ref="def-rules-existential" data-shard="ch05-predicate-logic">Definition 5.6.1</a>),
+                the bounded rules (<a href="../ch6/translation.html#prp-bounded-quantifier-rules" class="xref" data-ref="prp-bounded-quantifier-rules" data-shard="ch06-working-with-quantifiers">Proposition 6.1.1</a>),
+                definitions of analysis translated into formulas
+                (Section 6.1), the laws for negating quantifiers (<a href="../ch6/quantifier-laws.html#prp-quantifier-negation" class="xref" data-ref="prp-quantifier-negation" data-shard="ch06-working-with-quantifiers">Proposition 6.2.1</a>),
+                and the derivation that uniform continuity implies
+                continuity together with the place where its converse
+                breaks down (<a href="../ch6/uniform-continuity-rule-by-rule.html#exm-uniform-implies-continuous" class="xref" data-ref="exm-uniform-implies-continuous" data-shard="ch06-working-with-quantifiers">Example (Uniformly continuous implies continuous)</a>,
+                <a href="../ch6/uniform-continuity-rule-by-rule.html#exm-converse-fails" class="xref" data-ref="exm-converse-fails" data-shard="ch06-working-with-quantifiers">Example (The search from C to UC)</a>,
+                and the counter-model <a href="../ch6/uniform-continuity-rule-by-rule.html#exm-square-not-uniform" class="xref" data-ref="exm-square-not-uniform" data-shard="ch06-working-with-quantifiers">Example (The square function on the real line)</a>).
+                School arithmetic and the order of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are used in examples
+                as facts. From Chapter 7: the statement of Section 7.2
+                named above (its proof is the optional Section 7.3). For
+                the optional Section 8.8: structural induction (<a href="../ch4/structural-induction.html#thm-structural-induction" class="xref" data-ref="thm-structural-induction" data-shard="ch04-semantics-soundness-completeness">Theorem 4.3.1</a>)
+                and the proof of <a href="../ch4/soundness.html#thm-soundness" class="xref" data-ref="thm-soundness" data-shard="ch04-semantics-soundness-completeness">Theorem 4.7.2</a>.</p>
+                </div></details>
+                <p><strong>Time.</strong> About 35 hours on the core
+                track (all of A, one B and one C per section, the exit
+                checks); about 65 hours for everything.</p>
+                <p><strong>Minimum before <em>Sets, Relations, and
+                Cardinality</em>.</strong> Chapters 1–6 and 8, core;
+                Sections 7.1–7.2 before its Chapter 3.</p>
+                <h2 id="roadmap">Roadmap</h2>
+                <ul>
+                <li><strong>The connective rules in prose.</strong> The
+                rule card for the whole chapter, and which steps may go
+                unsaid; the dictionary rows for the connectives and the
+                classical rules, each with a short proof annotated
+                phrase by phrase; the spoken purpose of a box; the
+                constructive dilemma and equivalent conditions proved by
+                a cycle; why <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\neg
+                I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-cAC"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">¬</mi><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span> and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are told
+                apart; the three faces of “proof by contradiction”; the
+                costumes.</li>
+                <li><strong>The quantifier rules in prose.</strong> The
+                rows for “for every”, “there exists”, equality and
+                unique existence; definitions, “the” and double
+                inclusion; what a chosen constant depends on, in a
+                picture and in numbers; “it suffices to show”, induction
+                and “without loss of generality”; the quantifiers that
+                English leaves unwritten or puts in the wrong
+                place.</li>
+                <li><strong>Four levels of one proof.</strong> One short
+                proof written four times; the levels named; the
+                convention on silent steps; the irrationality of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sqrt 2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-n"><mjx-c class="mjx-c221A"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.174em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt></math></mjx-assistive-mml></mjx-container></span> and “uniformly
+                continuous implies continuous” at the levels that show
+                most; which silent steps are truth-functional; “it
+                suffices to show” written as a column; how to check a
+                doubtful sentence by expanding it.</li>
+                <li><strong>Reading a proof: self-explanation.</strong>
+                The book’s training passage for the habit of naming, at
+                each line, what makes it true; four questions to ask of
+                every line; naming the unstated fact; and five
+                strategies that good readers apply to a proof as a
+                whole.</li>
+                <li><strong>Writing a proof.</strong> A seven-step
+                procedure, run at once on one example; scratch paper
+                against the page; the conventions of written
+                mathematics; two more examples; generalizing a
+                proof.</li>
+                <li><strong>Checking proofs, and what is not
+                allowed.</strong> Two questions for every line; the
+                catalogue (N1)–(N14) in seven families; four student
+                proofs checked line by line (and, in a fold, the errors’
+                traditional names).</li>
+                <li><strong>The dispute over excluded middle.</strong> A
+                proof of existence that names nothing; what a proof
+                provides under the BHK reading; reductio as the one
+                extra rule; why excluded middle cannot be refuted; which
+                laws survive without the rule; a short history; what
+                analysis would lose; proofs as programs; the book’s
+                position.</li>
+                <li><strong>Stages of knowledge: Kripke models</strong>
+                (optional). A semantics in which knowledge grows by
+                stages; the rules without <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are sound
+                for it, and two or three stages show which laws need
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</li>
+                </ul>
+                <h2 id="named-moves">Named moves</h2>
+                <ul>
+                <li><strong>Hear the rule in the phrase.</strong> “Let
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="x \in A"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>∈</mo><mi>A</mi></math></mjx-assistive-mml></mjx-container></span>” opens a
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\forall
+                I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∀</mi><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span> box and “suppose” an assumption; “choose” is
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists
+                E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span>; “take” and “let <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\delta \mathrel{:=} \dots"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FF TEX-I"></mjx-c></mjx-mi><mjx-TeXAtom space="4" texclass="REL"><mjx-mo class="mjx-n"><mjx-c class="mjx-c3A"></mjx-c><mjx-c class="mjx-c3D"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>δ</mi><mrow data-mjx-texclass="REL"><mo>:=</mo></mrow><mo>…</mo></math></mjx-assistive-mml></mjx-container></span>”
+                are <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists
+                I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span>; “suppose, for contradiction” is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> or <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\neg I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-cAC"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c49"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">¬</mi><mi mathvariant="normal">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span>; both
+                boxes end in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\bot"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A5"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">⊥</mi></math></mjx-assistive-mml></mjx-container></span>,
+                and what the box assumes and the line written after it
+                closes tell which.</li>
+                <li><strong>Expand to check.</strong> When a sentence is
+                doubtful, rewrite that stretch, and only that stretch,
+                as a skeleton, and look for the line that breaks a
+                rule.</li>
+                <li><strong>Skeleton first.</strong> Write the first and
+                the last sentence of every box before filling any.</li>
+                <li><strong>Self-explain each line</strong> by earlier
+                lines, definitions and named results, and the rule that
+                combines them; never by paraphrase.</li>
+                <li><strong>Two columns when checking:</strong> <em>is
+                the line true?</em> and <em>does it follow, and by which
+                rule?</em> The first column finds where to look; the
+                second decides.</li>
+                <li><strong>Say what depends on what.</strong> Every
+                chosen object carries its dependencies: the names in the
+                line it comes from, among the boxes open when it was
+                chosen.</li>
+                <li><strong>Write the reductions as a column.</strong>
+                Each “it suffices to show” is one row with its reason;
+                read upwards, the column is the proof. (Section
+                8.3)</li>
+                <li><strong>Generalize by a fresh name.</strong> Replace
+                the particular object by a new letter, and keep only the
+                lines that still hold for it. (Section 8.5)</li>
+                </ul>
+                <h2 id="summary">Summary</h2>
+                <p>A written proof is a derivation in sentences: every
+                rule has its phrases, and “let”, “suppose”, “choose” and
+                “in either case” are the boxes, spoken (Sections
+                8.1–8.2). The chapter named four levels of one proof (<a href="../ch8/levels-of-abbreviation.html#def-levels-of-proof" class="xref" data-ref="def-levels-of-proof" data-shard="ch08-from-derivations-to-prose">Definition 8.3.1</a>)
+                and fixed by one principle which steps plain prose may
+                leave unsaid (<a href="../ch8/levels-of-abbreviation.html#def-silent-steps" class="xref" data-ref="def-silent-steps" data-shard="ch08-from-derivations-to-prose">Definition 8.3.2</a>);
+                a doubtful sentence is checked by expanding it to a
+                skeleton. It gave a habit for reading
+                (self-explanation), a procedure for writing, and, for
+                checking, two questions and a catalogue of fourteen
+                errors (<a href="../ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose">Example (What is not allowed)</a>).
+                It ended with the one rule mathematicians have disputed.
+                Without <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, excluded
+                middle has no derivation (the optional <a href="../ch4/soundness.html#thm-raa-independent" class="xref" data-ref="thm-raa-independent" data-shard="ch04-semantics-soundness-completeness">Theorem 4.7.4</a>)
+                and yet cannot be refuted (<a href="../ch8/excluded-middle.html#prp-not-not-excluded-middle" class="xref" data-ref="prp-not-not-excluded-middle" data-shard="ch08-from-derivations-to-prose">Proposition 8.7.3</a>).
+                An irrational power of an irrational number can be shown
+                rational with or without a named witness (<a href="../ch8/excluded-middle.html#thm-irrational-power-rational" class="xref" data-ref="thm-irrational-power-rational" data-shard="ch08-from-derivations-to-prose">Theorem 8.7.1</a>,
+                <a href="../ch8/excluded-middle.html#prp-log2-9-irrational" class="xref" data-ref="prp-log2-9-irrational" data-shard="ch08-from-derivations-to-prose">Proposition 8.7.2</a>).
+                The optional Section 8.8 proves, with stages of
+                knowledge, which classical laws need the rule. What is
+                open is what the logic is for. <em>Sets, Relations, and
+                Cardinality</em> writes its proofs at levels 2 and 3
+                with these tools, and its first question is what a set
+                is.</p>
+                <h2 id="terms">Terms</h2>
+                <ul>
+                <li><strong>BHK reading</strong>: a proof as a
+                construction of what it claims (<a href="07-excluded-middle.html#what-a-proof-provides">Section
+                8.7</a>).</li>
+                <li><strong>costume</strong>: a direct or contrapositive
+                proof dressed as contradiction (<a href="../ch8/connective-rhetoric.html#exm-costume-direct" class="xref" data-ref="exm-costume-direct" data-shard="ch08-from-derivations-to-prose">Example (A direct proof in costume)</a>).</li>
+                <li><strong>double inclusion</strong>: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A = B"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo>=</mo><mi>B</mi></math></mjx-assistive-mml></mjx-container></span> shown as <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A \subseteq B"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo>⊆</mo><mi>B</mi></math></mjx-assistive-mml></mjx-container></span> and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="B \subseteq A"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi><mo>⊆</mo><mi>A</mi></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch8/quantifier-rhetoric.html#exm-rhetoric-double-inclusion" class="xref" data-ref="exm-rhetoric-double-inclusion" data-shard="ch08-from-derivations-to-prose">Example (Two inclusions)</a>).</li>
+                <li><strong>forcing</strong> (optional): what a stage of
+                knowledge makes true (<a href="../ch8/kripke-models.html#def-forcing" class="xref" data-ref="def-forcing" data-shard="ch08-from-derivations-to-prose">Definition 8.8.2</a>).</li>
+                <li><strong>heredity</strong> (optional): what a stage
+                forces, every later stage forces (<a href="../ch8/kripke-models.html#lem-heredity" class="xref" data-ref="lem-heredity" data-shard="ch08-from-derivations-to-prose">Lemma 8.8.1</a>).</li>
+                <li><strong>intuitionistic logic</strong>: the rules of
+                this book without <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="07-excluded-middle.html#one-extra-rule">Section
+                8.7</a>).</li>
+                <li><strong>Kripke model</strong> (optional): stages of
+                knowledge, with atoms that stay known (<a href="../ch8/kripke-models.html#def-kripke-model" class="xref" data-ref="def-kripke-model" data-shard="ch08-from-derivations-to-prose">Definition 8.8.1</a>).</li>
+                <li><strong>levels of proof</strong>: derivation,
+                skeleton, annotated prose, plain prose (<a href="../ch8/levels-of-abbreviation.html#def-levels-of-proof" class="xref" data-ref="def-levels-of-proof" data-shard="ch08-from-derivations-to-prose">Definition 8.3.1</a>).</li>
+                <li><strong>not-allowed catalogue</strong>, (N1)–(N14):
+                recurring errors, each with the rule broken (<a href="../ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose">Example (What is not allowed)</a>).</li>
+                <li><strong>self-explanation</strong>: naming each
+                line’s warrant, never paraphrasing it (<a href="../ch8/reading-proofs.html#exm-self-explanation" class="xref" data-ref="exm-self-explanation" data-shard="ch08-from-derivations-to-prose">Example (Explaining a proof, well and badly)</a>).</li>
+                <li><strong>silent step</strong>: a step plain prose may
+                leave unwritten (<a href="../ch8/levels-of-abbreviation.html#def-silent-steps" class="xref" data-ref="def-silent-steps" data-shard="ch08-from-derivations-to-prose">Definition 8.3.2</a>).</li>
+                </ul>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                        <a href="../ch7/limits-of-first-order-logic.html" class="pagination-link" aria-label="What
+First-Order Logic Can and Cannot Say">
+                        <i class="bi bi-arrow-left-short" aria-hidden="true"></i>
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Previous</span>
+                            <span class="nav-page-text">7.6 What
+First-Order Logic Can and Cannot Say</span>
+                        </span>
+                    </a>
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                        <a href="../ch8/connective-rhetoric.html" class="pagination-link" aria-label="The
+Connective Rules in Prose">
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Next</span>
+                            <span class="nav-page-text">8.1 The
+Connective Rules in Prose</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                    </a>
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="../pdf/ch8/index.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="../book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="../main.js?v=7d60f8c8f0"></script>
+            </body>
+
+</html>

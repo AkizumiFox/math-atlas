@@ -1,0 +1,391 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Models and Theories – Logic and Proof</title>
+
+    <meta name="asset-prefix" content="../">
+    <meta name="page-path" content="ch7/index.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+            <meta name="description" content="How to read this chapter.
+First reading: Sections 7.1, 7.2 and 7.4, and Section 7.5 up to
+“Isomorphic structures”. Second pass: the rest of Section 7.5.">
+            <link rel="canonical" href="https://atlas.akizumifox.com/logic-and-proof/ch7/index.html">
+    <meta property="og:url" content="https://atlas.akizumifox.com/logic-and-proof/ch7/index.html">
+        <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Logic and Proof">
+    <meta property="og:title" content="Models and Theories">
+        <meta property="og:description" content="How to read this
+chapter. First reading: Sections 7.1, 7.2 and 7.4, and Section 7.5 up to
+“Isomorphic structures”. Second pass: the rest of Section 7.5.">
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="7d60f8c8f0">
+    <link rel="stylesheet" href="../styles.css?v=7d60f8c8f0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="../mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-title">
+                    Logic and Proof
+                </a>
+                <div class="sidebar-tools">
+                    <a href="../book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="../index.html">Preface</a></li><li class="nav-item nav-extra"><a href="../paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra"><a href="../results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="../graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="../ch1/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Connectives and Derivations</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch1/statements-and-connectives.html" title="Statements, Arguments and How to Break One"><span class="nav-section-number">1.1</span><span class="nav-section-title">Statements, Arguments and How to Break One</span></a></li><li class="nav-section-item"><a href="../ch1/derivations.html" title="Derivations, Starting with And"><span class="nav-section-number">1.2</span><span class="nav-section-title">Derivations, Starting with And</span></a></li><li class="nav-section-item"><a href="../ch1/using-an-implication.html" title="Using an Implication: Modus Ponens"><span class="nav-section-number">1.3</span><span class="nav-section-title">Using an Implication: Modus Ponens</span></a></li><li class="nav-section-item"><a href="../ch1/proving-an-implication.html" title="Proving an Implication: the Rule of the Box"><span class="nav-section-number">1.4</span><span class="nav-section-title">Proving an Implication: the Rule of the Box</span></a></li><li class="nav-section-item"><a href="../ch1/disjunction-introduction.html" title="Or, Introduced"><span class="nav-section-number">1.5</span><span class="nav-section-title">Or, Introduced</span></a></li><li class="nav-section-item"><a href="../ch1/disjunction-and-cases.html" title="Using Or: Proof by Cases"><span class="nav-section-number">1.6</span><span class="nav-section-title">Using Or: Proof by Cases</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="1"><a href="../ch2/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Negation and Classical Logic</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch2/contradiction-and-vacuous-truth.html" title="Contradiction: Using a Negation"><span class="nav-section-number">2.1</span><span class="nav-section-title">Contradiction: Using a Negation</span></a></li><li class="nav-section-item"><a href="../ch2/negation-and-contradiction.html" title="Proving a Negation"><span class="nav-section-number">2.2</span><span class="nav-section-title">Proving a Negation</span></a></li><li class="nav-section-item"><a href="../ch2/derived-rules.html" title="Derived Rules: Proved Sequents as New Rules"><span class="nav-section-number">2.3</span><span class="nav-section-title">Derived Rules: Proved Sequents as New Rules</span></a></li><li class="nav-section-item"><a href="../ch2/biconditional-and-definitions.html" title="Iff, Equivalence, and What a Definition Says"><span class="nav-section-number">2.4</span><span class="nav-section-title">Iff, Equivalence, and What a Definition Says</span></a></li><li class="nav-section-item"><a href="../ch2/reductio-and-classical-rules.html" title="Proof by Contradiction and the Classical Rules"><span class="nav-section-number">2.5</span><span class="nav-section-title">Proof by Contradiction and the Classical Rules</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="2"><a href="../ch3/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Finding Derivations</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch3/finding-derivations.html" title="How to Find a Derivation"><span class="nav-section-number">3.1</span><span class="nav-section-title">How to Find a Derivation</span></a></li><li class="nav-section-item"><a href="../ch3/four-kinds-of-task.html" title="Four Kinds of Task"><span class="nav-section-number">3.2</span><span class="nav-section-title">Four Kinds of Task</span></a></li><li class="nav-section-item"><a href="../ch3/from-argument-to-derivation.html" title="From Argument to Derivation"><span class="nav-section-number">3.3</span><span class="nav-section-title">From Argument to Derivation</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="3"><a href="../ch4/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Truth, Soundness and Completeness</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch4/formulas-and-parse-trees.html" title="Formulas as Objects"><span class="nav-section-number">4.1</span><span class="nav-section-title">Formulas as Objects</span></a></li><li class="nav-section-item"><a href="../ch4/induction.html" title="Induction on the Natural Numbers"><span class="nav-section-number">4.2</span><span class="nav-section-title">Induction on the Natural Numbers</span></a></li><li class="nav-section-item"><a href="../ch4/structural-induction.html" title="Induction and Recursion on Formulas"><span class="nav-section-number">4.3</span><span class="nav-section-title">Induction and Recursion on Formulas</span></a></li><li class="nav-section-item"><a href="../ch4/valuations-and-truth-tables.html" title="Valuations and Truth Tables"><span class="nav-section-number">4.4</span><span class="nav-section-title">Valuations and Truth Tables</span></a></li><li class="nav-section-item"><a href="../ch4/entailment-and-equivalence.html" title="Tautologies, Entailment and Equivalence"><span class="nav-section-number">4.5</span><span class="nav-section-title">Tautologies, Entailment and Equivalence</span></a></li><li class="nav-section-item"><a href="../ch4/refuting-row-search.html" title="Hunting for a Refuting Row"><span class="nav-section-number">4.6</span><span class="nav-section-title">Hunting for a Refuting Row</span></a></li><li class="nav-section-item"><a href="../ch4/soundness.html" title="Soundness"><span class="nav-section-number">4.7</span><span class="nav-section-title">Soundness</span></a></li><li class="nav-section-item"><a href="../ch4/completeness.html" title="Completeness"><span class="nav-section-number">4.8</span><span class="nav-section-title">Completeness</span></a></li><li class="nav-section-item"><a href="../ch4/normal-forms.html" title="Normal Forms and Adequate Connectives"><span class="nav-section-number">4.9</span><span class="nav-section-title">Normal Forms and Adequate Connectives</span></a></li><li class="nav-section-item"><a href="../ch4/compactness.html" title="Compactness and Maximal Consistent Sets"><span class="nav-section-number">4.10</span><span class="nav-section-title">Compactness and Maximal Consistent Sets</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="4"><a href="../ch5/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Predicate Logic and the Quantifier Rules</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch5/predicates-and-quantifiers.html" title="Predicates and Quantifiers"><span class="nav-section-number">5.1</span><span class="nav-section-title">Predicates and Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch5/terms-formulas-substitution.html" title="Terms, Formulas, Free Variables and Substitution"><span class="nav-section-number">5.2</span><span class="nav-section-title">Terms, Formulas, Free Variables and Substitution</span></a></li><li class="nav-section-item"><a href="../ch5/universal-elimination.html" title="Using &quot;For Every&quot;: Instantiation"><span class="nav-section-number">5.3</span><span class="nav-section-title">Using "For Every": Instantiation</span></a></li><li class="nav-section-item"><a href="../ch5/universal-introduction.html" title="Proving &quot;For Every&quot;: Let x Be Arbitrary"><span class="nav-section-number">5.4</span><span class="nav-section-title">Proving "For Every": Let x Be Arbitrary</span></a></li><li class="nav-section-item"><a href="../ch5/existential-introduction.html" title="Proving &quot;There Exists&quot;: Exhibit a Witness"><span class="nav-section-number">5.5</span><span class="nav-section-title">Proving "There Exists": Exhibit a Witness</span></a></li><li class="nav-section-item"><a href="../ch5/existential-elimination.html" title="Using &quot;There Exists&quot;: Name a Witness"><span class="nav-section-number">5.6</span><span class="nav-section-title">Using "There Exists": Name a Witness</span></a></li><li class="nav-section-item"><a href="../ch5/equality-and-uniqueness.html" title="Equality"><span class="nav-section-number">5.7</span><span class="nav-section-title">Equality</span></a></li><li class="nav-section-item"><a href="../ch5/counting-and-descriptions.html" title="Unique Existence, Counting and Descriptions"><span class="nav-section-number">5.8</span><span class="nav-section-title">Unique Existence, Counting and Descriptions</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="5"><a href="../ch6/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Working with Quantifiers: Translation, Laws and Search</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch6/translation.html" title="Translating Mathematics: Nested and Bounded Quantifiers"><span class="nav-section-number">6.1</span><span class="nav-section-title">Translating Mathematics: Nested and Bounded Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch6/quantifier-laws.html" title="Negating and Moving Quantifiers"><span class="nav-section-number">6.2</span><span class="nav-section-title">Negating and Moving Quantifiers</span></a></li><li class="nav-section-item"><a href="../ch6/first-order-search.html" title="Finding First-Order Derivations"><span class="nav-section-number">6.3</span><span class="nav-section-title">Finding First-Order Derivations</span></a></li><li class="nav-section-item"><a href="../ch6/uniform-continuity-rule-by-rule.html" title="Uniformly Continuous Implies Continuous, Rule by Rule"><span class="nav-section-number">6.4</span><span class="nav-section-title">Uniformly Continuous Implies Continuous, Rule by Rule</span></a></li></ul></li><li class="nav-chapter active"><div class="nav-chapter-header" data-chapter="6"><a href="../ch7/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Models and Theories</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch7/structures-and-satisfaction.html" title="Structures and Satisfaction"><span class="nav-section-number">7.1</span><span class="nav-section-title">Structures and Satisfaction</span></a></li><li class="nav-section-item"><a href="../ch7/counter-models.html" title="Counter-models"><span class="nav-section-number">7.2</span><span class="nav-section-title">Counter-models</span></a></li><li class="nav-section-item"><a href="../ch7/first-order-soundness.html" title="Soundness for Predicate Logic"><span class="nav-section-number">7.3</span><span class="nav-section-title">Soundness for Predicate Logic</span></a></li><li class="nav-section-item"><a href="../ch7/theories-and-models.html" title="Theories and Their Models"><span class="nav-section-number">7.4</span><span class="nav-section-title">Theories and Their Models</span></a></li><li class="nav-section-item"><a href="../ch7/definability-and-isomorphism.html" title="Definability and Isomorphism"><span class="nav-section-number">7.5</span><span class="nav-section-title">Definability and Isomorphism</span></a></li><li class="nav-section-item"><a href="../ch7/limits-of-first-order-logic.html" title="What First-Order Logic Can and Cannot Say"><span class="nav-section-number">7.6</span><span class="nav-section-title">What First-Order Logic Can and Cannot Say</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="7"><a href="../ch8/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">From Derivations to Mathematical Prose</span></a><span class="nav-toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections collapsed"><li class="nav-section-item"><a href="../ch8/connective-rhetoric.html" title="The Connective Rules in Prose"><span class="nav-section-number">8.1</span><span class="nav-section-title">The Connective Rules in Prose</span></a></li><li class="nav-section-item"><a href="../ch8/quantifier-rhetoric.html" title="The Quantifier Rules in Prose"><span class="nav-section-number">8.2</span><span class="nav-section-title">The Quantifier Rules in Prose</span></a></li><li class="nav-section-item"><a href="../ch8/levels-of-abbreviation.html" title="Four Levels of One Proof"><span class="nav-section-number">8.3</span><span class="nav-section-title">Four Levels of One Proof</span></a></li><li class="nav-section-item"><a href="../ch8/reading-proofs.html" title="Reading a Proof: Self-Explanation"><span class="nav-section-number">8.4</span><span class="nav-section-title">Reading a Proof: Self-Explanation</span></a></li><li class="nav-section-item"><a href="../ch8/writing-proofs.html" title="Writing a Proof"><span class="nav-section-number">8.5</span><span class="nav-section-title">Writing a Proof</span></a></li><li class="nav-section-item"><a href="../ch8/checking-proofs.html" title="Checking Proofs, and What Is Not Allowed"><span class="nav-section-number">8.6</span><span class="nav-section-title">Checking Proofs, and What Is Not Allowed</span></a></li><li class="nav-section-item"><a href="../ch8/excluded-middle.html" title="The Dispute over Excluded Middle"><span class="nav-section-number">8.7</span><span class="nav-section-title">The Dispute over Excluded Middle</span></a></li><li class="nav-section-item"><a href="../ch8/kripke-models.html" title="Stages of Knowledge: Kripke Models"><span class="nav-section-number">8.8</span><span class="nav-section-title">Stages of Knowledge: Kripke Models</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="topbar-title">Logic and
+Proof</a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../ch7/index.html">Models and Theories</a></li>
+                        <li class="breadcrumb-item"><a href="../ch7/index.html"><span class="chapter-title">Models and Theories</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">Models and
+Theories</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="models-and-theories">
+
+                </div>
+                <p>The axioms of a partial order say that <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\le"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container></span> is reflexive,
+                antisymmetric and transitive. Do they prove that any two
+                elements are comparable, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\forall x\, \forall y\, (x \le y
+                \vee y \le x)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2228"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∀</mi><mi>x</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mi mathvariant="normal">∀</mi><mi>y</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>x</mi><mo>≤</mo><mi>y</mi><mo>∨</mo><mi>y</mi><mo>≤</mo><mi>x</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>? A search for a derivation
+                stalls, and a stalled search proves nothing. Two dots
+                settle it: a domain <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\{ a, b
+                \}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo fence="false" stretchy="false">{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo fence="false" stretchy="false">}</mo></math></mjx-assistive-mml></mjx-container></span> in which each element is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\le"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≤</mo></math></mjx-assistive-mml></mjx-container></span> itself and nothing
+                else. All three axioms are true there and comparability
+                is false, so, by a statement of Section 7.2, no
+                derivation exists. <em>What does “true there” mean, and
+                why does one picture rule out every derivation?</em>
+                This chapter answers both, and then uses such pictures
+                on whole theories: in Section 7.4, “is every group
+                commutative?” is answered by the six symmetries of a
+                triangle.</p>
+                <p><strong>How to read this chapter.</strong> First
+                reading: Sections 7.1, 7.2 and 7.4, and Section 7.5 up
+                to “Isomorphic structures”. Second pass: the rest of
+                Section 7.5. Optional: Sections 7.3 and 7.6. The
+                statement that a counter-model rules out every
+                derivation is on the trunk, in Section 7.2; its proof is
+                optional, in Section 7.3. Nothing on the first-reading
+                list uses anything off it.</p>
+                <p><strong>Before you start: five tempting
+                claims.</strong> Each is a claim this chapter corrects;
+                decide each now, and check again at the section
+                named.</p>
+                <div class="check small-env" data-env-type="check">
+                <p><em>Quick check</em><em>.</em> </p>
+                <ol type="1">
+                <li>“<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\forall x\, \exists y\,
+                (x < y)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∀</mi><mi>x</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mi mathvariant="normal">∃</mi><mi>y</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>x</mi><mo>&lt;</mo><mi>y</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> is true.”</li>
+                <li>“A search for a derivation of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\Gamma \vdash \varphi"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c393"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22A2"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D711 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Γ</mi><mo>⊢</mo><mi>φ</mi></math></mjx-assistive-mml></mjx-container></span>
+                stalled, so <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\Gamma \nvdash
+                \varphi"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c393"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22AC TEX-A"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D711 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Γ</mi><mo>⊬</mo><mi>φ</mi></math></mjx-assistive-mml></mjx-container></span>.”</li>
+                <li>“If <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span> is
+                true in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(\mathbb{N},
+                <)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo>,</mo><mo>&lt;</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, then <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span> is
+                derivable.”</li>
+                <li>“Every group is commutative: the integers under
+                addition are.”</li>
+                <li>“<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(\mathbb{N}, <)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo>,</mo><mo>&lt;</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>
+                and the even numbers with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="<"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&lt;</mo></math></mjx-assistive-mml></mjx-container></span> can be told apart by
+                some sentence, since one is part of the other.”</li>
+                </ol>
+                </div>
+                <details class="second-reading">
+                <summary><span class="second-reading-marker" aria-hidden="true">↺</span><span class="second-reading-kicker">Second reading</span><span class="second-reading-title">Answers</span></summary>
+                <div class="second-reading-body">
+                <ol type="1">
+                <li>Not until a structure is fixed: true in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(\mathbb{N}, <)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo>,</mo><mo>&lt;</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, false in
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(\{ 1, 2, 3 \},
+                <)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c7B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c7D"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mo fence="false" stretchy="false">{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo fence="false" stretchy="false">}</mo><mo>,</mo><mo>&lt;</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> (Section 7.1).</li>
+                <li>No. A stalled search proves nothing; a counter-model
+                does (Section 7.2).</li>
+                <li>No. Derivable sentences are true in
+                <strong>every</strong> structure; <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\forall x\, \exists y\, (x <
+                y)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∀</mi><mi>x</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mi mathvariant="normal">∃</mi><mi>y</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">(</mo><mi>x</mi><mo>&lt;</mo><mi>y</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> is true in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(\mathbb{N},
+                <)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo>,</mo><mo>&lt;</mo><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> and false in a three-element order
+                (Section 7.2).</li>
+                <li>No. The six symmetries of a triangle form a group in
+                which two motions done in the two orders differ (Section
+                7.4).</li>
+                <li>No. Doubling matches them element for element and
+                order for order, and matched structures satisfy the same
+                sentences (Section 7.5, second pass).</li>
+                </ol>
+                </div></details>
+                <p><strong>What you need.</strong> Chapters 1–6, above
+                all the semantics of Chapter 4 (rows, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\models"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22A8"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>⊨</mo></math></mjx-assistive-mml></mjx-container></span>, soundness) and
+                the quantifier rules of Chapter 5. Section 7.5’s second
+                half uses functions and bijections in their everyday
+                sense.</p>
+                <p><strong>Time.</strong> About 20 hours on the core
+                track (Sections 7.1, 7.2, 7.4 and the first half of 7.5:
+                all of A, one B and one C per section, the exit checks);
+                about 45 hours for everything.</p>
+                <p><strong>Minimum before <em>Sets, Relations, and
+                Cardinality</em>.</strong> Chapters 1–6 and 8, core;
+                Sections 7.1–7.2 before its Chapter 3; Sections 7.4–7.5
+                recommended.</p>
+                <h2 id="roadmap">Roadmap</h2>
+                <ul>
+                <li><strong>Structures and Satisfaction.</strong> A
+                domain and a meaning for every symbol, an assignment for
+                the free variables, clauses that decide every formula;
+                finite structures drawn; proofs by meaning.</li>
+                <li><strong>Counter-models.</strong> Three pictures, a
+                procedure for finding one, small domains by expansion,
+                each side condition of Chapter 5 broken, and the
+                statement that a counter-model rules out every
+                derivation.</li>
+                <li><strong>Soundness for Predicate Logic</strong>
+                (optional). The proof of that statement, by Chapter 4’s
+                induction.</li>
+                <li><strong>Theories and Their Models.</strong> Axioms
+                as sentences, consistency by a model, independence by
+                two models.</li>
+                <li><strong>Definability and Isomorphism.</strong> A
+                formula defines a set; <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\exists"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∃</mi></math></mjx-assistive-mml></mjx-container></span> is a projection.
+                Second pass: isomorphic structures satisfy the same
+                sentences; automorphisms move what is not
+                definable.</li>
+                <li><strong>What First-Order Logic Can and Cannot
+                Say</strong> (optional). Completeness, compactness,
+                non-standard numbers, undecidability, all stated without
+                proof.</li>
+                </ul>
+                <h2 id="named-moves">Named moves</h2>
+                <ul>
+                <li><strong>Refute with a model.</strong> One structure
+                with the premises true and the conclusion false.
+                (Section 7.2)</li>
+                <li><strong>Prove by meaning, clause by clause.</strong>
+                Unwind the premises and the conclusion through
+                (S1)–(S7). (Section 7.1)</li>
+                <li><strong>Search for a counter-model.</strong> Start
+                from the counterexample set, meet the existential
+                demands first, add only forced elements. (Section
+                7.2)</li>
+                <li><strong>Expand over a small domain.</strong> On two
+                or three elements a quantifier is a long <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\wedge"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2227"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∧</mo></math></mjx-assistive-mml></mjx-container></span> or <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\vee"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2228"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∨</mo></math></mjx-assistive-mml></mjx-container></span>. (Section 7.2)</li>
+                <li><strong>Consistent by a model; independent by two
+                models.</strong> (Section 7.4)</li>
+                <li><strong>Define by a formula.</strong> (Section
+                7.5)</li>
+                <li><strong>An automorphism moves what cannot be
+                defined.</strong> (Section 7.5, second pass)</li>
+                </ul>
+                <p><strong>Where this goes.</strong> <em>Sets,
+                Relations, and Cardinality</em>, Chapter 1 develops the
+                sets, pairs and functions that Sections 7.1 and 7.5 use
+                in their everyday sense, and its Chapter 3 builds a
+                counter-model by Section 7.2’s procedure; its Chapter 2
+                studies the relations of Section 7.4.</p>
+                <h2 id="summary">Summary</h2>
+                <p>A structure fixes a domain and a meaning for every
+                symbol, an assignment fixes the free variables, and
+                seven clauses decide every formula (<a href="../ch7/structures-and-satisfaction.html#def-satisfaction" class="xref" data-ref="def-satisfaction" data-shard="ch07-models-and-theories">Definition 7.1.3</a>);
+                a sentence is true or false in a structure, never “true”
+                alone. A counter-model makes the counterexample set
+                true; by soundness for predicate logic (stated in <a href="#from-counter-models-to-non-derivability">Section
+                7.2</a>, proved in the optional Section 7.3) it rules
+                out every derivation: the stalled searches of Chapters 5
+                and 6 become theorems of non-derivability, and each side
+                condition of the quantifier rules is shown needed. A
+                theory is a set of axioms (<a href="../ch7/theories-and-models.html#def-theory" class="xref" data-ref="def-theory" data-shard="ch07-models-and-theories">Definition 7.4.1</a>);
+                a model shows it consistent (<a href="../ch7/theories-and-models.html#prp-model-shows-consistency" class="xref" data-ref="prp-model-shows-consistency" data-shard="ch07-models-and-theories">Proposition 7.4.2</a>),
+                and two models show a sentence independent of it (<a href="../ch7/theories-and-models.html#prp-model-shows-independence" class="xref" data-ref="prp-model-shows-independence" data-shard="ch07-models-and-theories">Proposition 7.4.3</a>),
+                as the antichain does for comparability and the triangle
+                for commutativity. Formulas define sets (<a href="../ch7/definability-and-isomorphism.html#def-definable-set" class="xref" data-ref="def-definable-set" data-shard="ch07-models-and-theories">Definition 7.5.1</a>),
+                and, on the second pass, isomorphic structures satisfy
+                the same sentences (<a href="../ch7/definability-and-isomorphism.html#thm-isomorphism-invariance" class="xref" data-ref="thm-isomorphism-invariance" data-shard="ch07-models-and-theories">Theorem 7.5.1</a>).</p>
+                <p>Proved: the semantics, and every non-derivability
+                result the chapter gets from a counter-model, given the
+                soundness statement. Stated without proof: the
+                undecidability of derivability (Church and Turing;
+                Section 7.2, again in 7.6) and the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2^k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>2</mn><mi>k</mi></msup></math></mjx-assistive-mml></mjx-container></span> bound on
+                counter-models of monadic claims (Section 7.2); in the
+                optional Section 7.6, completeness (every consistent
+                theory has a model), compactness, the Löwenheim–Skolem
+                theorem and the decidability of monadic sentences; and,
+                in the solution to Exercise R2 of Section 7.5, that
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="P \wedge Q"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D443 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2227"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D444 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>P</mi><mo>∧</mo><mi>Q</mi></math></mjx-assistive-mml></mjx-container></span> cannot
+                be derived from its premise without <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{RAA}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c52"></mjx-c><mjx-c class="mjx-c41"></mjx-c><mjx-c class="mjx-c41"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-auto-op="false">RAA</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (nothing
+                depends on it). Beyond this volume: why no consistent
+                theory whose axioms a procedure can list, and which
+                derives the basic facts of arithmetic, decides every
+                sentence about <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
+                (Gödel’s incompleteness theorem, named in Section 7.6).
+                Chapter 8 turns derivations into the prose of
+                mathematics.</p>
+                <h2 id="terms">Terms</h2>
+                <ul>
+                <li><strong>assignment</strong>: a value for each
+                variable (<a href="../ch7/structures-and-satisfaction.html#def-assignment" class="xref" data-ref="def-assignment" data-shard="ch07-models-and-theories">Definition 7.1.2</a>).</li>
+                <li><strong>automorphism</strong>: an isomorphism onto
+                itself (<a href="../ch7/definability-and-isomorphism.html#def-isomorphism-of-structures" class="xref" data-ref="def-isomorphism-of-structures" data-shard="ch07-models-and-theories">Definition 7.5.2</a>).</li>
+                <li><strong>consistent, inconsistent theory</strong>: no
+                finite list of axioms derives <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\bot"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A5"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">⊥</mi></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch7/theories-and-models.html#def-inconsistent-theory" class="xref" data-ref="def-inconsistent-theory" data-shard="ch07-models-and-theories">Definition 7.4.3</a>).</li>
+                <li><strong>counter-model</strong>: premises true,
+                conclusion false (<a href="../ch7/structures-and-satisfaction.html#def-first-order-entailment" class="xref" data-ref="def-first-order-entailment" data-shard="ch07-models-and-theories">Definition 7.1.4</a>).</li>
+                <li><strong>definable set</strong>: the elements where a
+                formula holds (<a href="../ch7/definability-and-isomorphism.html#def-definable-set" class="xref" data-ref="def-definable-set" data-shard="ch07-models-and-theories">Definition 7.5.1</a>).</li>
+                <li><strong>domain</strong>: what a structure’s
+                quantifiers range over (<a href="../ch7/structures-and-satisfaction.html#def-structure" class="xref" data-ref="def-structure" data-shard="ch07-models-and-theories">Definition 7.1.1</a>).</li>
+                <li><strong>independent sentence</strong>: neither
+                derivable nor refutable (<a href="../ch7/theories-and-models.html#prp-model-shows-independence" class="xref" data-ref="prp-model-shows-independence" data-shard="ch07-models-and-theories">Proposition 7.4.3</a>).</li>
+                <li><strong>isomorphism of structures</strong>: a
+                bijection respecting every symbol (<a href="../ch7/definability-and-isomorphism.html#def-isomorphism-of-structures" class="xref" data-ref="def-isomorphism-of-structures" data-shard="ch07-models-and-theories">Definition 7.5.2</a>).</li>
+                <li><strong>model of a theory</strong>: a structure with
+                every axiom true (<a href="../ch7/theories-and-models.html#def-model-of-theory" class="xref" data-ref="def-model-of-theory" data-shard="ch07-models-and-theories">Definition 7.4.2</a>).</li>
+                <li><strong>satisfaction, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathfrak{M}, \ell \models
+                \varphi"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-fr"><mjx-c class="mjx-c1D510 TEX-FR"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c2113"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22A8"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D711 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="fraktur">M</mi></mrow><mo>,</mo><mi>ℓ</mi><mo>⊨</mo><mi>φ</mi></math></mjx-assistive-mml></mjx-container></span></strong>: the clauses (S1)–(S7) (<a href="../ch7/structures-and-satisfaction.html#def-satisfaction" class="xref" data-ref="def-satisfaction" data-shard="ch07-models-and-theories">Definition 7.1.3</a>).</li>
+                <li><strong>semantic entailment, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\Gamma \models
+                \varphi"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c393"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22A8"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D711 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">Γ</mi><mo>⊨</mo><mi>φ</mi></math></mjx-assistive-mml></mjx-container></span></strong>: no counter-model (<a href="../ch7/structures-and-satisfaction.html#def-first-order-entailment" class="xref" data-ref="def-first-order-entailment" data-shard="ch07-models-and-theories">Definition 7.1.4</a>).</li>
+                <li><strong>structure</strong>: a domain and a meaning
+                for every symbol (<a href="../ch7/structures-and-satisfaction.html#def-structure" class="xref" data-ref="def-structure" data-shard="ch07-models-and-theories">Definition 7.1.1</a>).</li>
+                <li><strong>theory, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T \vdash
+                \sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22A2"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>⊢</mo><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span></strong>: a set of axioms; derivable
+                from finitely many (<a href="../ch7/theories-and-models.html#def-theory" class="xref" data-ref="def-theory" data-shard="ch07-models-and-theories">Definition 7.4.1</a>).</li>
+                <li><strong>true in a structure, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathfrak{M} \models
+                \sigma"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-fr"><mjx-c class="mjx-c1D510 TEX-FR"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22A8"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="fraktur">M</mi></mrow><mo>⊨</mo><mi>σ</mi></math></mjx-assistive-mml></mjx-container></span></strong>: satisfied under every
+                assignment (<a href="#only-the-free-variables-matter">Section
+                7.1</a>).</li>
+                </ul>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                        <a href="../ch6/uniform-continuity-rule-by-rule.html" class="pagination-link" aria-label="Uniformly
+Continuous Implies Continuous, Rule by Rule">
+                        <i class="bi bi-arrow-left-short" aria-hidden="true"></i>
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Previous</span>
+                            <span class="nav-page-text">6.4 Uniformly
+Continuous Implies Continuous, Rule by Rule</span>
+                        </span>
+                    </a>
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                        <a href="../ch7/structures-and-satisfaction.html" class="pagination-link" aria-label="Structures
+and Satisfaction">
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Next</span>
+                            <span class="nav-page-text">7.1 Structures
+and Satisfaction</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                    </a>
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="../pdf/ch7/index.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="../book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="../main.js?v=7d60f8c8f0"></script>
+            </body>
+
+</html>
