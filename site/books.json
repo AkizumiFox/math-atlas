@@ -1,5 +1,5 @@
 {
- "site-url": "https://akizumifox.github.io/math-atlas/",
+ "site-url": "https://atlas.akizumifox.com/",
  "out": "../../math-atlas-site",
  "build-dir": "_build/library",
  "landing": {
@@ -176,47 +176,77 @@
   {
    "prefix": "fd1",
    "path": "../../foundations/fd1",
-   "subdir": "fd1",
+   "subdir": "logic-and-proof",
    "series": "Foundations",
    "short": "F1",
    "blurb": "Logic as the grammar of proof, for a reader who has never been asked to write one: derivations, rule by rule, for the connectives and quantifiers; truth tables, soundness and completeness; and the way back from derivations to ordinary mathematical prose.",
-   "planned": 8
+   "planned": 8,
+   "aliases": [
+    "fd1"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
   },
   {
    "prefix": "fd2",
    "path": "../../foundations/fd2",
-   "subdir": "fd2",
+   "subdir": "sets-relations-and-cardinality",
    "series": "Foundations",
    "short": "F2",
    "blurb": "Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem. Chapter 3 ends with Gate 0, the examination to pass before analysis.",
-   "planned": 4
+   "planned": 4,
+   "aliases": [
+    "fd2"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
   },
   {
    "prefix": "fd3",
    "path": "../../foundations/fd3",
-   "subdir": "fd3",
+   "subdir": "number-systems",
    "series": "Foundations",
    "short": "F3",
    "blurb": "The number systems built out of sets: \\(\\nN\\) from the ZF axioms, \\(\\nZ\\) and \\(\\nQ\\) as classes of pairs, divisibility and modular arithmetic, and finally \\(\\nR\\), constructed from Cauchy sequences of rationals and proved to be a complete ordered field.",
-   "planned": 7
+   "planned": 7,
+   "aliases": [
+    "fd3"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
   },
   {
    "prefix": "fd4",
    "path": "../../foundations/fd4",
-   "subdir": "fd4",
+   "subdir": "algebraic-preliminaries",
    "series": "Foundations",
    "short": "F4",
    "blurb": "The algebra the later volumes take for granted: the complex numbers built on \\(\\nR\\), fields including \\(\\mathbb{F}_p\\), groups and permutations with the sign, formal polynomials, and polynomials over a field from division with remainder to the fundamental theorem of algebra.",
-   "planned": 5
+   "planned": 5,
+   "aliases": [
+    "fd4"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
   },
   {
    "prefix": "an1",
    "path": "../../analysis-series/an1",
-   "subdir": "an1",
+   "subdir": "analysis-on-the-real-line",
    "series": "Analysis",
    "short": "AN1",
    "blurb": "Analysis on the real line, from the axioms of a complete ordered field: sequences and series, limits and continuity, the derivative, the Riemann–Darboux integral and power series, each proved from the least upper bound axiom.",
-   "planned": 11
+   "planned": 11,
+   "aliases": [
+    "an1"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
   },
   {
    "prefix": "la",
