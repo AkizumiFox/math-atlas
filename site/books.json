@@ -221,13 +221,28 @@
   {
    "prefix": "fd4",
    "path": "../../foundations/fd4",
-   "subdir": "algebraic-preliminaries",
+   "subdir": "analytic-preliminaries",
    "series": "Foundations",
    "short": "F4",
-   "blurb": "The algebra the later volumes take for granted: the complex numbers built on \\(\\nR\\), fields including \\(\\mathbb{F}_p\\), groups and permutations with the sign, formal polynomials, and polynomials over a field from division with remainder to the fundamental theorem of algebra.",
-   "planned": 5,
+   "blurb": "The tools analysis uses on every page: inequalities, finite sums and real powers, real functions and their graphs, coordinates and vectors in \\(\\mathbb{R}^n\\), lines, convexity and isometries, the complex numbers built on \\(\\nR\\) and the complex plane, and metrics and norms.",
+   "planned": 7,
    "aliases": [
     "fd4"
+   ],
+   "overlay": {
+    "short-urls": true
+   }
+  },
+  {
+   "prefix": "fd5",
+   "path": "../../foundations/fd5",
+   "subdir": "algebraic-preliminaries",
+   "series": "Foundations",
+   "short": "F5",
+   "blurb": "The algebra the later volumes take for granted: fields including \\(\\mathbb{F}_p\\), groups and permutations, formal polynomials, and polynomials over a field from division with remainder to the fundamental theorem of algebra, with the complex numbers of F4 as the main example.",
+   "planned": 4,
+   "aliases": [
+    "fd5"
    ],
    "overlay": {
     "short-urls": true
