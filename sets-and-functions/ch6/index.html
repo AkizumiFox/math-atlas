@@ -1,0 +1,337 @@
+<!DOCTYPE html><html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zorn’s Lemma – Sets and Functions</title>
+
+    <meta name="asset-prefix" content="../">
+    <meta name="page-path" content="ch6/index.html">
+
+    <meta name="color-scheme" content="light dark">
+    <!-- Theme and pane state before first paint (saved choice, else the system setting) -->
+    <script>
+        (function () {
+            var root = document.documentElement, stored = {};
+            try {
+                stored.theme = localStorage.getItem('book-theme');
+                stored.sidebar = localStorage.getItem('book-sidebar');
+                stored.toc = localStorage.getItem('book-toc');
+            } catch (e) {}
+            root.dataset.theme = stored.theme === 'light' || stored.theme === 'dark' ? stored.theme
+                : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (stored.sidebar === 'collapsed') root.dataset.sidebar = 'collapsed';
+            if (stored.toc === 'collapsed') root.dataset.toc = 'collapsed';
+        })();
+    </script>
+            <meta name="description" content="The chapter states the
+lemma and says why it is not proved here: it is equivalent to the axiom
+of choice of Chapter 3, and this volume proves only the half…">
+            <link rel="canonical" href="https://atlas.akizumifox.com/sets-and-functions/ch6/index.html">
+    <meta property="og:url" content="https://atlas.akizumifox.com/sets-and-functions/ch6/index.html">
+        <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Sets and Functions">
+    <meta property="og:title" content="Zorn’s Lemma">
+        <meta property="og:description" content="The chapter states the
+lemma and says why it is not proved here: it is equivalent to the axiom
+of choice of Chapter 3, and this volume proves only the half…">
+        <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+    <meta name="asset-version" content="7d60f8c8f0">
+    <link rel="stylesheet" href="../styles.css?v=7d60f8c8f0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
+         loads only when needed (search snippets), see main.js -->
+    <link rel="stylesheet" href="../mathjax.css?v=3.2.2">
+    <meta name="math-prerendered" content="true">
+    
+    <!-- Tippy.js for tooltips. All three scripts are deferred so neither blocks parsing;
+         deferred scripts run in document order, so main.js still sees tippy. -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/animations/shift-away.css">
+
+        </head>
+
+<body>
+    <a class="skip-link" href="#quarto-content">Skip to content</a>
+
+    <div id="quarto-container">
+        <!-- Left Sidebar Navigation -->
+        <nav id="quarto-sidebar" aria-label="Book contents">
+            <div class="sidebar-header">
+                <a href="../index.html" class="sidebar-title">
+                    Sets and Functions
+                </a>
+                <div class="sidebar-tools">
+                    <a href="../book/book.pdf" title="Full book (PDF)" target="_blank">
+                        <i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>
+                        <span class="visually-hidden">Full book (PDF)</span>
+                    </a>
+                                    </div>
+            </div>
+
+            <div class="sidebar-search">
+                <i class="bi bi-search" aria-hidden="true"></i>
+                <input type="search" class="search-input" id="search-input" placeholder="Search" aria-label="Search the book" autocomplete="off">
+                <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+            </div>
+
+            <nav class="sidebar-nav">
+                                <ul class="nav-list"><li class="nav-item nav-home"><a href="../index.html">Preface</a></li><li class="nav-item nav-extra"><a href="../paths.html"><i class="bi bi-signpost-split" aria-hidden="true"></i> Reading paths</a></li><li class="nav-item nav-extra"><a href="../results.html"><i class="bi bi-list-ol" aria-hidden="true"></i> List of results</a></li><li class="nav-item nav-extra"><a href="../graph.html"><i class="bi bi-diagram-3" aria-hidden="true"></i> Dependency graph</a></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="0"><a href="../ch1/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Proofs from Definitions: Sets and Functions</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch1/proofs-from-definitions.html" title="Proofs from Definitions"><span class="nav-section-number">1.1</span><span class="nav-section-title">Proofs from Definitions</span></a></li><li class="nav-section-item"><a href="../ch1/sets-and-subsets.html" title="Sets, Subsets and Russell's Paradox"><span class="nav-section-number">1.2</span><span class="nav-section-title">Sets, Subsets and Russell's Paradox</span></a></li><li class="nav-section-item"><a href="../ch1/set-operations.html" title="Unions, Intersections, Complements and Families"><span class="nav-section-number">1.3</span><span class="nav-section-title">Unions, Intersections, Complements and Families</span></a></li><li class="nav-section-item"><a href="../ch1/products-and-relations.html" title="Ordered Pairs, Products and Relations"><span class="nav-section-number">1.4</span><span class="nav-section-title">Ordered Pairs, Products and Relations</span></a></li><li class="nav-section-item"><a href="../ch1/functions.html" title="Functions, Composition, Injections and Surjections"><span class="nav-section-number">1.5</span><span class="nav-section-title">Functions, Composition, Injections and Surjections</span></a></li><li class="nav-section-item"><a href="../ch1/inverses.html" title="Left, Right and Two-Sided Inverses"><span class="nav-section-number">1.6</span><span class="nav-section-title">Left, Right and Two-Sided Inverses</span></a></li><li class="nav-section-item"><a href="../ch1/images-and-preimages.html" title="Images and Preimages"><span class="nav-section-number">1.7</span><span class="nav-section-title">Images and Preimages</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="1"><a href="../ch2/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Induction, Contradiction, and Finite Sets</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch2/naturals-and-well-ordering.html" title="The Natural Numbers and Well-Ordering"><span class="nav-section-number">2.1</span><span class="nav-section-title">The Natural Numbers and Well-Ordering</span></a></li><li class="nav-section-item"><a href="../ch2/induction-in-practice.html" title="Induction, Strong Induction and Divisibility"><span class="nav-section-number">2.2</span><span class="nav-section-title">Induction, Strong Induction and Divisibility</span></a></li><li class="nav-section-item"><a href="../ch2/recursion.html" title="Definition by Recursion"><span class="nav-section-number">2.3</span><span class="nav-section-title">Definition by Recursion</span></a></li><li class="nav-section-item"><a href="../ch2/contrapositive-and-contradiction.html" title="Contrapositive and Contradiction in Practice"><span class="nav-section-number">2.4</span><span class="nav-section-title">Contrapositive and Contradiction in Practice</span></a></li><li class="nav-section-item"><a href="../ch2/finite-sets.html" title="Equinumerous Sets and Finite Sets"><span class="nav-section-number">2.5</span><span class="nav-section-title">Equinumerous Sets and Finite Sets</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="2"><a href="../ch3/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Countable and Uncountable Sets</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch3/countable-sets.html" title="Countable Sets"><span class="nav-section-number">3.1</span><span class="nav-section-title">Countable Sets</span></a></li><li class="nav-section-item"><a href="../ch3/countable-unions-and-choice.html" title="Countable Unions and the Axiom of Choice"><span class="nav-section-number">3.2</span><span class="nav-section-title">Countable Unions and the Axiom of Choice</span></a></li><li class="nav-section-item"><a href="../ch3/diagonal-arguments.html" title="Diagonal Arguments: Uncountable Sets and Cantor's Theorem"><span class="nav-section-number">3.3</span><span class="nav-section-title">Diagonal Arguments: Uncountable Sets and Cantor's Theorem</span></a></li><li class="nav-section-item"><a href="../ch3/comparing-cardinalities.html" title="Comparing Sizes: the Schröder–Bernstein Theorem"><span class="nav-section-number">3.4</span><span class="nav-section-title">Comparing Sizes: the Schröder–Bernstein Theorem</span></a></li><li class="nav-section-item"><a href="../ch3/infinite-sets.html" title="Infinite Sets"><span class="nav-section-number">3.5</span><span class="nav-section-title">Infinite Sets</span></a></li><li class="nav-section-item"><a href="../ch3/cardinal-arithmetic.html" title="Cardinal Arithmetic"><span class="nav-section-number">3.6</span><span class="nav-section-title">Cardinal Arithmetic</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="3"><a href="../ch4/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Relations: Equivalence and Order</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch4/relations.html" title="Properties of Relations"><span class="nav-section-number">4.1</span><span class="nav-section-title">Properties of Relations</span></a></li><li class="nav-section-item"><a href="../ch4/equivalence-relations.html" title="Equivalence Relations and Partitions"><span class="nav-section-number">4.2</span><span class="nav-section-title">Equivalence Relations and Partitions</span></a></li><li class="nav-section-item"><a href="../ch4/orders.html" title="Partial Orders, Maximal and Greatest Elements"><span class="nav-section-number">4.3</span><span class="nav-section-title">Partial Orders, Maximal and Greatest Elements</span></a></li></ul></li><li class="nav-chapter"><div class="nav-chapter-header" data-chapter="4"><a href="../ch5/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Building Functions</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch5/restriction-extension-and-gluing.html" title="Restriction, Extension and Gluing"><span class="nav-section-number">5.1</span><span class="nav-section-title">Restriction, Extension and Gluing</span></a></li><li class="nav-section-item"><a href="../ch5/fibres-and-factorization.html" title="Fibers and the Canonical Factorization"><span class="nav-section-number">5.2</span><span class="nav-section-title">Fibers and the Canonical Factorization</span></a></li><li class="nav-section-item"><a href="../ch5/binary-operations.html" title="Binary Operations"><span class="nav-section-number">5.3</span><span class="nav-section-title">Binary Operations</span></a></li><li class="nav-section-item"><a href="../ch5/permutations-and-iteration.html" title="Permutations and Iteration"><span class="nav-section-number">5.4</span><span class="nav-section-title">Permutations and Iteration</span></a></li></ul></li><li class="nav-chapter active"><div class="nav-chapter-header" data-chapter="5"><a href="../ch6/index.html" class="nav-chapter-title-link"><span class="nav-chapter-title">Zorn's Lemma</span></a><span class="nav-toggle expanded"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></span></div><ul class="nav-sections"><li class="nav-section-item"><a href="../ch6/chains-and-zorn.html" title="Chains and Zorn's Lemma"><span class="nav-section-number">6.1</span><span class="nav-section-title">Chains and Zorn's Lemma</span></a></li><li class="nav-section-item"><a href="../ch6/using-zorn.html" title="Using Zorn's Lemma"><span class="nav-section-number">6.2</span><span class="nav-section-title">Using Zorn's Lemma</span></a></li></ul></li></ul>
+                            </nav>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="quarto-content">
+            <!-- Toolbar: book contents (drawer on phones, collapsible pane on wider screens),
+                 light/dark theme, and the "On this page" pane -->
+            <div class="topbar" role="toolbar" aria-label="Page layout">
+                <button type="button" class="icon-button sidebar-toggle" aria-controls="quarto-sidebar" aria-expanded="true" aria-label="Hide book contents" data-tooltip="Hide contents">
+                    <i class="bi bi-layout-sidebar sidebar-icon-pane" aria-hidden="true"></i>
+                    <i class="bi bi-list sidebar-icon-menu" aria-hidden="true"></i>
+                </button>
+                <a href="../index.html" class="topbar-title">Sets and
+Functions</a>
+                <div class="topbar-actions">
+                    <button type="button" class="icon-button theme-toggle" aria-pressed="false" aria-label="Dark mode" data-tooltip="Dark mode">
+                        <i class="bi bi-moon-stars theme-icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun theme-icon-sun" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="icon-button toc-toggle" aria-controls="quarto-margin-sidebar" aria-expanded="true" aria-label="Hide on this page" data-tooltip="Hide “On this page”">
+                        <i class="bi bi-layout-sidebar-reverse" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <article class="content">
+                <!-- Page title removed to avoid duplication with content H1 -->
+                <!-- Quarto-style Title Block -->
+                <header id="title-block-header" class="quarto-title-block default">
+                                        <nav class="quarto-title-breadcrumbs" aria-label="Breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../ch6/index.html">Zorn’s Lemma</a></li>
+                        <li class="breadcrumb-item"><a href="../ch6/index.html"><span class="chapter-title">Zorn’s Lemma</span></a></li>
+                        </ol>
+                    </nav>
+                                        <div class="quarto-title">
+                        <h1 class="title">
+                            
+                            <span class="chapter-title">Zorn’s
+Lemma</span>
+                        </h1>
+                    </div>
+                </header>
+
+                <div id="zorns-lemma">
+
+                </div>
+                <p>Some objects are built one piece at a time: an
+                injection one pair at a time, a set of representatives
+                one class at a time, a total order one comparison at a
+                time. When the pieces can be listed, induction finishes
+                the job, one step for each natural number. When they
+                cannot, as for the elements of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, the words “and so
+                on” stand in for a step that is never given, and that is
+                not a proof. Zorn’s lemma is the principle that replaces
+                them. <em>If every unfinished partial object can be
+                enlarged, and every growing chain of partial objects has
+                a partial object above it, then there is one that cannot
+                be enlarged, and it is complete.</em></p>
+                <p>The chapter states the lemma and says why it is not
+                proved here: it is equivalent to the axiom of choice of
+                Chapter 3, and this volume proves only the half that
+                gives choice. It turns the lemma into a single method of
+                proof, the maximality template, and runs the template
+                four times. The third run settles the question Section
+                3.4 left open: any two sets are comparable in size.</p>
+                <p><strong>What you need.</strong> <em>Logic and
+                Proof</em>, Chapters 1–8, in particular the rule <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../../logic-and-proof/ch5/existential-elimination.html#def-rules-existential" class="xref xref-external" data-ref="def-rules-existential" data-shard="ch05-predicate-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Definition 5.6.1</a>)
+                and the catalogue of what is not allowed (<a href="../../logic-and-proof/ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Example (What is not allowed)</a>),
+                above all (N13), “an ‘and so on’ needs its step”. From
+                this volume: Section 4.3 on orders (<a href="../ch4/orders.html#def-partial-order" class="xref" data-ref="def-partial-order" data-shard="ch04-relations-and-orders">Definition 4.3.1</a>,
+                <a href="../ch4/orders.html#exm-subset-order-not-total" class="xref" data-ref="exm-subset-order-not-total" data-shard="ch04-relations-and-orders">Example (Inclusion is a partial order, rarely total)</a>,
+                <a href="../ch4/orders.html#def-order-bounds" class="xref" data-ref="def-order-bounds" data-shard="ch04-relations-and-orders">Definition 4.3.2</a>,
+                <a href="../ch4/orders.html#def-greatest-element" class="xref" data-ref="def-greatest-element" data-shard="ch04-relations-and-orders">Definition 4.3.3</a>,
+                <a href="../ch4/orders.html#def-maximal-element" class="xref" data-ref="def-maximal-element" data-shard="ch04-relations-and-orders">Definition 4.3.4</a>,
+                <a href="../ch4/orders.html#prp-greatest-maximal" class="xref" data-ref="prp-greatest-maximal" data-shard="ch04-relations-and-orders">Proposition 4.3.2</a>,
+                <a href="../ch4/orders.html#exm-maximal-not-greatest" class="xref" data-ref="exm-maximal-not-greatest" data-shard="ch04-relations-and-orders">Example (Maximal elements that are not greatest)</a>,
+                <a href="../ch4/orders.html#prp-greatest-unique" class="xref" data-ref="prp-greatest-unique" data-shard="ch04-relations-and-orders">Proposition 4.3.1</a>);
+                Section 4.2 on equivalence relations (<a href="../ch4/equivalence-relations.html#def-equivalence-relation" class="xref" data-ref="def-equivalence-relation" data-shard="ch04-relations-and-orders">Definition 4.2.1</a>,
+                <a href="../ch4/equivalence-relations.html#def-equivalence-class" class="xref" data-ref="def-equivalence-class" data-shard="ch04-relations-and-orders">Definition 4.2.2</a>,
+                <a href="../ch4/equivalence-relations.html#thm-classes-partition" class="xref" data-ref="thm-classes-partition" data-shard="ch04-relations-and-orders">Theorem 4.2.1</a>,
+                <a href="../ch4/equivalence-relations.html#exm-reals-mod-integers" class="xref" data-ref="exm-reals-mod-integers" data-shard="ch04-relations-and-orders">Example (The reals modulo the integers)</a>);
+                Chapter 3 on sizes and choice (<a href="../ch3/countable-unions-and-choice.html#ax-choice" class="xref" data-ref="ax-choice" data-shard="ch03-countable-and-uncountable">Axiom 3.2.1</a>,
+                Section 3.2’s method box <a href="../ch3/countable-unions-and-choice.html#exm-method-name-the-choice" class="xref" data-ref="exm-method-name-the-choice" data-shard="ch03-countable-and-uncountable">Example (Method: name the choice)</a>,
+                <a href="../ch3/comparing-cardinalities.html#def-card-le" class="xref" data-ref="def-card-le" data-shard="ch03-countable-and-uncountable">Definition 3.4.1</a>,
+                <a href="../ch3/comparing-cardinalities.html#thm-schroder-bernstein" class="xref" data-ref="thm-schroder-bernstein" data-shard="ch03-countable-and-uncountable">Theorem 3.4.3</a>,
+                <a href="../ch3/comparing-cardinalities.html#prp-card-le-surjection" class="xref" data-ref="prp-card-le-surjection" data-shard="ch03-countable-and-uncountable">Proposition 3.4.2</a>,
+                <a href="../ch3/countable-sets.html#prp-countable-image" class="xref" data-ref="prp-countable-image" data-shard="ch03-countable-and-uncountable">Proposition 3.1.4</a>,
+                <a href="../ch3/countable-sets.html#prp-union-two-countable" class="xref" data-ref="prp-union-two-countable" data-shard="ch03-countable-and-uncountable">Proposition 3.1.5</a>,
+                <a href="../ch3/diagonal-arguments.html#thm-reals-uncountable-decimal" class="xref" data-ref="thm-reals-uncountable-decimal" data-shard="ch03-countable-and-uncountable">Theorem 3.3.4</a>);
+                Section 2.5 on finite sets (<a href="../ch2/finite-sets.html#prp-subset-finite" class="xref" data-ref="prp-subset-finite" data-shard="ch02-induction-and-finite-sets">Proposition 2.5.6</a>,
+                <a href="../ch2/finite-sets.html#exm-hilbert-hotel" class="xref" data-ref="exm-hilbert-hotel" data-shard="ch02-induction-and-finite-sets">Example (Hilbert’s Hotel)</a>,
+                <a href="../ch2/finite-sets.html#prp-disjoint-union-count" class="xref" data-ref="prp-disjoint-union-count" data-shard="ch02-induction-and-finite-sets">Proposition 2.5.5</a>,
+                <a href="../ch2/finite-sets.html#cor-pigeonhole-finite-sets" class="xref" data-ref="cor-pigeonhole-finite-sets" data-shard="ch02-induction-and-finite-sets">Corollary 2.5.3</a>,
+                <a href="../ch2/finite-sets.html#prp-equinumerous-properties" class="xref" data-ref="prp-equinumerous-properties" data-shard="ch02-induction-and-finite-sets">Proposition 2.5.1</a>);
+                Sections 2.1–2.2 (<a href="../ch2/naturals-and-well-ordering.html#thm-well-ordering" class="xref" data-ref="thm-well-ordering" data-shard="ch02-induction-and-finite-sets">Theorem 2.1.3</a>,
+                <a href="../ch2/induction-in-practice.html#thm-induction" class="xref" data-ref="thm-induction" data-shard="ch02-induction-and-finite-sets">Theorem 2.2.1</a>);
+                Chapter 1 (<a href="../ch1/proofs-from-definitions.html#def-divides" class="xref" data-ref="def-divides" data-shard="ch01-sets-and-functions">Definition 1.1.2</a>,
+                <a href="../ch1/products-and-relations.html#def-relation" class="xref" data-ref="def-relation" data-shard="ch01-sets-and-functions">Definition 1.4.3</a>,
+                <a href="../ch1/functions.html#def-function" class="xref" data-ref="def-function" data-shard="ch01-sets-and-functions">Definition 1.5.1</a>).
+                Proof methods: proof by contradiction (<a href="../ch2/contrapositive-and-contradiction.html#exm-method-choosing-the-form" class="xref" data-ref="exm-method-choosing-the-form" data-shard="ch02-induction-and-finite-sets">Example (Method: choosing direct, contrapositive or contradiction)</a>,
+                Chapter 2) and disproof by counterexample (<a href="../ch1/proofs-from-definitions.html#exm-method-counterexample" class="xref" data-ref="exm-method-counterexample" data-shard="ch01-sets-and-functions">Example (Method: disproof by counterexample, proof by example)</a>,
+                Chapter 1).</p>
+                <p><strong>Time.</strong> About 10 hours on the core
+                track (all of A, one B and one C per section, the exit
+                checks); about 15 hours for everything.</p>
+                <h2 id="roadmap">Roadmap</h2>
+                <ul>
+                <li><strong>Chains and Zorn’s lemma.</strong> A
+                pair-by-pair matching that cannot finish; chains in a
+                partially ordered set, and why finitely many elements of
+                the union of a chain of sets lie in one member; Zorn’s
+                lemma, why each hypothesis is needed, and why it is
+                stated and not proved; the axiom of choice from Zorn’s
+                lemma, as the first run of the maximality template; a
+                set of representatives for any equivalence
+                relation.</li>
+                <li><strong>Using Zorn’s lemma.</strong> Any two sets
+                are comparable, so sizes satisfy trichotomy; every
+                partial order extends to a total order, one added
+                comparison at a time; and, in an optional last
+                subsection, how the same template gives every vector
+                space a basis (<em>Linear Algebra</em>, Section
+                1.8).</li>
+                </ul>
+                <h2 id="named-moves">Named moves</h2>
+                <ul>
+                <li><strong>The maximality template</strong> (<a href="../ch6/chains-and-zorn.html#exm-method-maximality" class="xref" data-ref="exm-method-maximality" data-shard="ch06-zorns-lemma">Example (Method: the maximality template)</a>).
+                Partial objects ordered by extension; the union of a
+                chain is again a partial object, since each defining
+                condition mentions finitely many elements and these lie
+                in one member of the chain (<a href="../ch6/chains-and-zorn.html#lem-chain-union" class="xref" data-ref="lem-chain-union" data-shard="ch06-zorns-lemma">Lemma 6.1.1</a>); Zorn’s
+                lemma gives a maximal one; a maximal one is complete,
+                since a missing piece would give a strictly larger
+                partial object. (Section 6.1)</li>
+                </ul>
+                <h2 id="threads">Threads</h2>
+                <ul>
+                <li><strong>Comparing sizes.</strong> Section 3.4 asked
+                whether any two sets are comparable. Section 6.1 opens
+                with a pair-by-pair matching that does not finish, and
+                Section 6.2 finishes it with Zorn’s lemma (<a href="../ch6/using-zorn.html#thm-cardinal-comparability" class="xref" data-ref="thm-cardinal-comparability" data-shard="ch06-zorns-lemma">Theorem 6.2.1</a>).</li>
+                <li><strong>Choice.</strong> Chapter 3 stated the axiom
+                of choice. Section 6.1 derives it from Zorn’s lemma (<a href="../ch6/chains-and-zorn.html#thm-choice-from-zorn" class="xref" data-ref="thm-choice-from-zorn" data-shard="ch06-zorns-lemma">Theorem 6.1.3</a>), and
+                <em>Axiomatic Set Theory</em>, Chapter 4 proves the
+                converse.</li>
+                </ul>
+                <h2 id="summary">Summary</h2>
+                <p>A chain is a subset of a partially ordered set on
+                which the order is total (<a href="../ch6/chains-and-zorn.html#def-chain" class="xref" data-ref="def-chain" data-shard="ch06-zorns-lemma">Definition 6.1.1</a>), and
+                finitely many elements of the union of a chain of sets
+                lie in one member (<a href="../ch6/chains-and-zorn.html#lem-chain-union" class="xref" data-ref="lem-chain-union" data-shard="ch06-zorns-lemma">Lemma 6.1.1</a>). Zorn’s
+                lemma (<a href="../ch6/chains-and-zorn.html#thm-zorn" class="xref" data-ref="thm-zorn" data-shard="ch06-zorns-lemma">Theorem 6.1.2</a>): a
+                non-empty partially ordered set in which every non-empty
+                chain has an upper bound has a maximal element, usually
+                one of many and not a greatest one. It is stated without
+                proof; it implies the axiom of choice (<a href="../ch6/chains-and-zorn.html#thm-choice-from-zorn" class="xref" data-ref="thm-choice-from-zorn" data-shard="ch06-zorns-lemma">Theorem 6.1.3</a>), and
+                the converse belongs to <em>Axiomatic Set Theory</em>,
+                Chapter 4. The maximality template (<a href="../ch6/chains-and-zorn.html#exm-method-maximality" class="xref" data-ref="exm-method-maximality" data-shard="ch06-zorns-lemma">Example (Method: the maximality template)</a>)
+                gives a set of representatives for any equivalence
+                relation (<a href="../ch6/chains-and-zorn.html#exm-zorn-representatives" class="xref" data-ref="exm-zorn-representatives" data-shard="ch06-zorns-lemma">Example (A set of representatives)</a>),
+                shows that any two sets are comparable in size (<a href="../ch6/using-zorn.html#thm-cardinal-comparability" class="xref" data-ref="thm-cardinal-comparability" data-shard="ch06-zorns-lemma">Theorem 6.2.1</a>), so
+                that exactly one of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left| A \right|
+                < \left| B \right|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>A</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>&lt;</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>B</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow></math></mjx-assistive-mml></mjx-container></span>, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left| A \right| = \left| B \right|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>A</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>B</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow></math></mjx-assistive-mml></mjx-container></span>,
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left| B \right| <
+                \left| A \right|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3C"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>B</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>&lt;</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>A</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow></math></mjx-assistive-mml></mjx-container></span> holds (<a href="../ch6/using-zorn.html#cor-cardinal-trichotomy" class="xref" data-ref="cor-cardinal-trichotomy" data-shard="ch06-zorns-lemma">Corollary 6.2.2</a>), and
+                extends every partial order to a total order (<a href="../ch6/using-zorn.html#thm-order-extension" class="xref" data-ref="thm-order-extension" data-shard="ch06-zorns-lemma">Theorem 6.2.4</a>), by
+                adding one comparison at a time (<a href="../ch6/using-zorn.html#lem-one-step-order-extension" class="xref" data-ref="lem-one-step-order-extension" data-shard="ch06-zorns-lemma">Lemma 6.2.3</a>).</p>
+                <p>Every object built in this chapter is shown to exist
+                and none is written down: no formula is known for a set
+                of representatives of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> modulo <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, for an injection
+                between two arbitrary sets, or for a total order
+                containing <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\subseteq"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>⊆</mo></math></mjx-assistive-mml></mjx-container></span> on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathcal{P}\left( \mathbb{R} \right)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c50 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mrow space="2"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">P</mi></mrow><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></span>. Where a
+                formula exists, as for divisibility on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch6/using-zorn.html#exm-divisibility-linear-extension" class="xref" data-ref="exm-divisibility-linear-extension" data-shard="ch06-zorns-lemma">Example (A total order containing divisibility)</a>),
+                it is the better proof.</p>
+                <h2 id="terms">Terms</h2>
+                <ul>
+                <li><strong>chain</strong>: a subset in which any two
+                elements are comparable (<a href="../ch6/chains-and-zorn.html#def-chain" class="xref" data-ref="def-chain" data-shard="ch06-zorns-lemma">Definition 6.1.1</a>).</li>
+                <li><strong>linear extension</strong>: a total order
+                containing a given partial order; “linear order” is a
+                synonym of “total order” (<a href="../ch6/using-zorn.html#thm-order-extension" class="xref" data-ref="thm-order-extension" data-shard="ch06-zorns-lemma">Theorem 6.2.4</a>).</li>
+                <li><strong>maximality template</strong>: partial
+                objects, unions of chains, Zorn’s lemma, completeness of
+                a maximal object (<a href="../ch6/chains-and-zorn.html#exm-method-maximality" class="xref" data-ref="exm-method-maximality" data-shard="ch06-zorns-lemma">Example (Method: the maximality template)</a>).</li>
+                <li><strong>partial choice function</strong>: a set of
+                pairs <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(i, x)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>i</mi><mo>,</mo><mi>x</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> with
+                <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="x \in A_i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>∈</mo><msub><mi>A</mi><mi>i</mi></msub></math></mjx-assistive-mml></mjx-container></span>, at most
+                one for each index (<a href="../ch6/chains-and-zorn.html#thm-choice-from-zorn" class="xref" data-ref="thm-choice-from-zorn" data-shard="ch06-zorns-lemma">Theorem 6.1.3</a>).</li>
+                <li><strong>partial matching</strong>: a relation <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="G \subseteq A \times B"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>G</mi><mo>⊆</mo><mi>A</mi><mo>×</mo><mi>B</mi></math></mjx-assistive-mml></mjx-container></span> in
+                which each element of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi></math></mjx-assistive-mml></mjx-container></span> and of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="B"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math></mjx-assistive-mml></mjx-container></span> occurs in at most one
+                pair (<a href="../ch6/using-zorn.html#thm-cardinal-comparability" class="xref" data-ref="thm-cardinal-comparability" data-shard="ch06-zorns-lemma">Theorem 6.2.1</a>).</li>
+                <li><strong>set of representatives</strong>: a set
+                meeting every equivalence class in exactly one element
+                (<a href="../ch6/chains-and-zorn.html#exm-zorn-representatives" class="xref" data-ref="exm-zorn-representatives" data-shard="ch06-zorns-lemma">Example (A set of representatives)</a>).</li>
+                <li><strong>Zorn’s lemma</strong>: a non-empty partially
+                ordered set in which every non-empty chain has an upper
+                bound has a maximal element (<a href="../ch6/chains-and-zorn.html#thm-zorn" class="xref" data-ref="thm-zorn" data-shard="ch06-zorns-lemma">Theorem 6.1.2</a>).</li>
+                </ul>
+            </article>
+
+            <!-- Page Navigation -->
+            <nav class="page-navigation">
+                <div class="nav-page nav-page-previous">
+                                        <a href="../ch5/permutations-and-iteration.html" class="pagination-link" aria-label="Permutations
+and Iteration">
+                        <i class="bi bi-arrow-left-short" aria-hidden="true"></i>
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Previous</span>
+                            <span class="nav-page-text">5.4 Permutations
+and Iteration</span>
+                        </span>
+                    </a>
+                                    </div>
+                <div class="nav-page nav-page-next">
+                                        <a href="../ch6/chains-and-zorn.html" class="pagination-link" aria-label="Chains
+and Zorn’s Lemma">
+                        <span class="nav-page-body">
+                            <span class="nav-page-label">Next</span>
+                            <span class="nav-page-text">6.1 Chains and
+Zorn’s Lemma</span>
+                        </span>
+                        <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                    </a>
+                                    </div>
+            </nav>
+                    </main>
+
+        <!-- Right Sidebar (TOC) -->
+        <aside id="quarto-margin-sidebar">
+            <nav class="toc" aria-label="On this page">
+                <h2>On this page</h2>
+                            </nav>
+
+            <div class="other-formats">
+                <h3>Download</h3>
+                <ul>
+                    <li><a href="../pdf/ch6/index.pdf" target="_blank">This section (PDF)</a></li>
+                    <li><a href="../book/book.pdf" target="_blank">Full book (PDF)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Tooltip Script -->
+    <script defer="" src="../main.js?v=7d60f8c8f0"></script>
+            </body>
+
+</html>
