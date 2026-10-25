@@ -11,7 +11,7 @@
 | ab:3 | F1.3 Truth, Soundness, and Completeness |
 | ab:4 | F1.4 Predicate Logic and the Quantifier Rules |
 | ab:5 | F1.5 From Derivations to Mathematical Prose |
-| ab:6 | F2.1 Sets and Functions: Proofs from Definitions |
+| ab:6 | F2.1 Proofs from Definitions: Sets and Functions |
 | ab:7 | F2.2 Induction, Contradiction, and Finite Sets；F2.5 Relations: Equivalence and Order |
 | ab:8 | F2.2 Induction, Contradiction, and Finite Sets；F2.3 Countable and Uncountable Sets |
 | ab:9 | F3.1 The ZF Fragment and the von Neumann Natural Numbers |
@@ -91,8 +91,8 @@
 |---|---|
 | la:ch00/01 | F1.5 From Derivations to Mathematical Prose |
 | la:ch00/02 | F1.5 From Derivations to Mathematical Prose |
-| la:ch00/03 | F2.1 Sets and Functions: Proofs from Definitions |
-| la:ch00/04 | F2.1 Sets and Functions: Proofs from Definitions |
+| la:ch00/03 | F2.1 Proofs from Definitions: Sets and Functions |
+| la:ch00/04 | F2.1 Proofs from Definitions: Sets and Functions |
 | la:ch00/05 | F2.5 Relations: Equivalence and Order |
 | la:ch00/06 | F4.1 Complex Numbers |
 | la:ch00/07 | F5.2 Fields |
@@ -128,7 +128,7 @@
 ## 尚無書稿（`new`）
 
 - **F1**：F1.7 Finding Derivations、F1.8 Working with Quantifiers: Translation, Laws, and Search、F1.6 Models and Theories
-- **F2**：F2.4 Zorn's Lemma
+- **F2**：F2.6 Building Functions、F2.4 Zorn's Lemma
 - **F3**：F3.5 Divisibility, Division with Remainder, and Modular Arithmetic、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing the Real Numbers from Cauchy Sequences
 - **F4**：F4.6 Inequalities, Finite Sums, and Real Powers、F4.7 Real Functions and Their Graphs、F4.8 Coordinates and Vectors in ℝⁿ、F4.9 Lines, Convexity, and Isometries of ℝⁿ、F4.10 Rotations, Angles, and the Complex Plane、F4.11 Metrics and Norms
 - **F5**：F5.5 Polynomials over a Field

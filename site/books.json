@@ -191,13 +191,14 @@
   {
    "prefix": "fd2",
    "path": "../../foundations/fd2",
-   "subdir": "sets-relations-and-cardinality",
+   "subdir": "sets-and-functions",
    "series": "Foundations",
    "short": "F2",
-   "blurb": "Sets and functions, relations and orders, induction and recursion, and the sizes of infinite sets, from diagonal arguments to the Schröder–Bernstein theorem.",
-   "planned": 4,
+   "blurb": "Sets and functions, with proofs straight from their definitions: induction and recursion, the sizes of infinite sets from diagonal arguments to Schröder–Bernstein and cardinal arithmetic, relations and orders, functions built by gluing, factorization, operations and permutations, and Zorn's lemma.",
+   "planned": 6,
    "aliases": [
-    "fd2"
+    "fd2",
+    "sets-relations-and-cardinality"
    ],
    "overlay": {
     "short-urls": true

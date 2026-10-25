@@ -1,7 +1,7 @@
 # 地圖統計（由 `tools/atlas.py stats` 產生，勿手改）
 
-- 冊：29；章：209（選讀 11）
-- 章層級邊：s 677、b 23、軟邊 133；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
+- 冊：29；章：210（選讀 11）
+- 章層級邊：s 679、b 23、軟邊 134；其中 286 條 s 邊是從線代書的證明計算出來的，其餘是計畫值
 
 除非欄位註明「含選讀」，以下統計都排除選讀章（opt）。
 
@@ -28,7 +28,7 @@ F1.1 → F1.2 → F1.7 → F1.3 → F1.4 → F1.8 → F1.5 → F2.1 → F2.2 →
 | 9 | 1 |
 | 10 | 2 |
 | 11 | 1 |
-| 12 | 2 |
+| 12 | 3 |
 | 13 | 2 |
 | 14 | 3 |
 | 15 | 5 |
@@ -186,18 +186,18 @@ CA 與 CA2 兩冊合起來覆蓋 Ahlfors 1–8；橢圓函數（CA.15）是選�
 
 | 章 | 後代章數 | 約簡後 s 入度 | 後代涉及冊數 |
 |---|---:|---:|---:|
-| F1.1 Connectives and Derivations | 197 | 0 | 28 |
-| F1.2 Negation and Classical Logic | 196 | 1 | 28 |
-| F1.7 Finding Derivations | 195 | 1 | 28 |
-| F1.3 Truth, Soundness, and Completeness | 194 | 1 | 28 |
-| F1.4 Predicate Logic and the Quantifier Rules | 193 | 1 | 28 |
-| F1.8 Working with Quantifiers: Translation, Laws, and Search | 192 | 1 | 28 |
-| F1.6 Models and Theories | 191 | 1 | 28 |
-| F1.5 From Derivations to Mathematical Prose | 190 | 1 | 28 |
-| F2.1 Sets and Functions: Proofs from Definitions | 189 | 1 | 27 |
-| F2.2 Induction, Contradiction, and Finite Sets | 188 | 2 | 27 |
-| F2.3 Countable and Uncountable Sets | 186 | 1 | 27 |
-| F2.5 Relations: Equivalence and Order | 185 | 1 | 27 |
+| F1.1 Connectives and Derivations | 198 | 0 | 28 |
+| F1.2 Negation and Classical Logic | 197 | 1 | 28 |
+| F1.7 Finding Derivations | 196 | 1 | 28 |
+| F1.3 Truth, Soundness, and Completeness | 195 | 1 | 28 |
+| F1.4 Predicate Logic and the Quantifier Rules | 194 | 1 | 28 |
+| F1.8 Working with Quantifiers: Translation, Laws, and Search | 193 | 1 | 28 |
+| F1.6 Models and Theories | 192 | 1 | 28 |
+| F1.5 From Derivations to Mathematical Prose | 191 | 1 | 28 |
+| F2.1 Proofs from Definitions: Sets and Functions | 190 | 1 | 27 |
+| F2.2 Induction, Contradiction, and Finite Sets | 189 | 2 | 27 |
+| F2.3 Countable and Uncountable Sets | 187 | 1 | 27 |
+| F2.5 Relations: Equivalence and Order | 186 | 1 | 27 |
 | F3.1 The ZF Fragment and the von Neumann Natural Numbers | 178 | 1 | 26 |
 | F3.2 Building the Integers and the Rationals from Equivalence Classes | 177 | 1 | 26 |
 | F3.5 Divisibility, Division with Remainder, and Modular Arithmetic | 175 | 1 | 26 |
@@ -214,7 +214,7 @@ CA 與 CA2 兩冊合起來覆蓋 Ahlfors 1–8；橢圓函數（CA.15）是選�
 | 冊 | 本冊章數（選讀） | 冊外必讀章數 | 含選讀 | 直接上游冊（s） | 只借用的冊（b） |
 |---|---:|---:|---:|---|---|
 | F1 Logic and Proof | 8 | 0 | 0 | — | — |
-| F2 Sets, Relations, and Cardinality | 5 | 8 | 8 | F1 | — |
+| F2 Sets and Functions | 6 | 8 | 8 | F1 | — |
 | F3 Number Systems: From ℕ to ℝ | 7（1） | 12 | 12 | F2 | — |
 | F4 Analytic Preliminaries | 7 | 18 | 18 | F1、F2、F3 | AN2 |
 | F5 Algebraic Preliminaries | 4 | 19 | 19 | F1、F2、F3、F4 | — |
@@ -290,13 +290,13 @@ CA 與 CA2 兩冊合起來覆蓋 Ahlfors 1–8；橢圓函數（CA.15）是選�
 
 | 章 | 下界 | 術語比對估計 | s 閉包（上界） | 估計比下界多出的章 |
 |---|---:|---:|---:|---|
-| AL4.8 Algebras and Representations | 19 | 23 | 44 | F1.5（divide）、F4.1（modulus，經 LA2.10）、F5.4（degree、polynomial）、LA3.13（with-multiplicity） |
-| MA.16 Norms and Matrix Analysis | 7 | 21 | 36 | F1.5（even、odd，經 LA2.7）、F2.1（invertible、function）、F2.5（reflexive、symmetric）、F4.1（modulus，經 LA2.10）、F5.2（addition）、F5.3（subgroup、group，經 LA2.7）、F5.4（polynomial、coefficient）、LA1.0（entry、matrix）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（annihilator，經 LA2.10）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol） |
-| MA.17 Variational Principles and Interlacing | 11 | 22 | 37 | F1.5（even，經 LA3.11）、F2.1（function、invertible）、F2.5（symmetric）、F4.1（imaginary-part）、F5.2（field）、F5.3（group、subgroup，經 LA3.11）、F5.4（monic、polynomial，經 LA3.11）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（any-subset，經 LA3.11） |
-| MA.18 Convexity | 10 | 23 | 38 | F1.5（even，經 LA1.4）、F4.1（modulus，經 LA2.10）、F5.2（addition）、F5.3（subgroup、group，經 LA2.7）、F5.4（coefficient）、LA1.0（matrix、entry）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol，經 MA.16）、MA.17（same-number，經 LA1.3） |
-| MA.19 Nonnegative Matrices | 15 | 24 | 39 | F1.5（even、odd，經 LA2.7）、F2.5（block、symmetric）、F4.1（modulus、real-part）、F5.2（multiplication）、F5.3（subgroup、group，經 LA2.7）、F5.4（coefficient、polynomial，經 LA3.13）、LA1.0（matrix、entry）、LA1.1（vector、length）、LA1.5（annihilator，經 LA2.10） |
+| AL4.8 Algebras and Representations | 19 | 23 | 44 | F1.5（divide）、F4.1（modulus，經 LA3.12）、F5.4（degree、polynomial）、LA3.13（with-multiplicity） |
+| MA.16 Norms and Matrix Analysis | 7 | 21 | 36 | F1.5（even，經 LA3.11）、F2.1（invertible、function）、F2.5（reflexive、symmetric）、F4.1（modulus，經 LA2.10）、F5.2（addition）、F5.3（group、subgroup，經 LA3.11）、F5.4（polynomial、coefficient）、LA1.0（entry、matrix）、LA1.1（vector-space、over）、LA1.2（rank）、LA1.4（equivalent、entrywise）、LA1.5（any-subset，經 LA3.11）、LA2.8（block-diagonal，經 LA2.9）、LA3.12（stable、symbol） |
+| MA.17 Variational Principles and Interlacing | 11 | 22 | 37 | F1.5（even，經 LA3.11）、F2.1（function、invertible）、F2.5（symmetric）、F4.1（imaginary-part）、F5.2（field）、F5.3（group、subgroup，經 LA3.11）、F5.4（coefficient，經 LA1.3）、LA1.0（matrix、diagonal）、LA1.1（subspace、over）、LA1.4（entrywise、equivalent）、LA1.5（any-subset，經 LA3.11） |
+| MA.18 Convexity | 10 | 23 | 38 | F1.5（even，經 LA1.4）、F4.1（modulus，經 LA2.10）、F5.2（addition）、F5.3（group、subgroup，經 LA3.11）、F5.4（coefficient）、LA1.0（matrix、entry）、LA1.2（rank）、LA1.3（solution、permutation-matrix）、LA1.5（linear-functional、hyperplane）、LA2.7（increasing、linear）、LA2.8（schur-complement，經 LA3.13）、LA3.12（stable、symbol，經 MA.16）、MA.17（same-number，經 LA1.3） |
+| MA.19 Nonnegative Matrices | 15 | 24 | 39 | F1.5（even、odd，經 LA2.7）、F2.5（block、symmetric）、F4.1（modulus、real-part）、F5.2（multiplication）、F5.3（subgroup、group，經 LA2.7）、F5.4（coefficient，經 LA1.3）、LA1.0（matrix、entry）、LA1.1（vector、length）、LA1.5（linear-functional、hyperplane，經 MA.18） |
 | MA.20 Perturbation Theory | 15 | 25 | 40 | F1.5（even，經 LA3.11）、F2.5（block）、F4.1（modulus）、F5.2（addition、multiplication，經 LA3.11）、F5.3（group、subgroup，經 LA3.11）、F5.4（monic、degree）、LA1.0（matrix、diagonal）、LA1.1（over、coordinate）、LA1.5（any-subset，經 LA3.11）、MA.19（edge，經 LA1.3） |
-| MA.21 Matrix Inequalities | 14 | 25 | 41 | F1.5（prime，經 LA2.10）、F2.5（symmetric、partition）、F4.1（imaginary-part，經 MA.17）、F5.2（field，經 MA.17）、F5.3（subgroup、group，經 LA2.7）、F5.4（coefficient、polynomial，經 LA3.13）、LA1.0（matrix、entry）、LA1.1（list、over）、LA1.5（annihilator，經 LA2.10）、LA2.7（increasing、inversion）、MA.19（edge，經 LA1.3） |
+| MA.21 Matrix Inequalities | 14 | 25 | 41 | F1.5（even，經 LA1.2）、F2.5（symmetric、partition）、F4.1（imaginary-part，經 MA.17）、F5.2（field，經 LA1.3）、F5.3（group、subgroup，經 LA3.11）、F5.4（coefficient，經 LA1.3）、LA1.0（matrix、entry）、LA1.1（list、over）、LA1.5（linear-functional、hyperplane，經 MA.18）、LA2.7（increasing、inversion）、MA.19（edge，經 LA1.3） |
 | GEO.22 Affine and Projective Geometry | 20 | 26 | 47 | F1.5（even、odd，經 LA4.14）、F4.1（imaginary-part，經 MA.17）、F5.2（field）、F5.4（polynomial）、LA1.0（matrix、diagonal）、LA4.15（form、order） |
 | NLA.24 Computation and Applications | 14 | 23 | 38 | F1.5（even）、F2.5（symmetric、block）、F4.1（modulus）、F5.2（field、multiplication）、F5.3（group、subgroup，經 LA3.11）、F5.4（degree、coefficient）、LA1.1（vector、dimension）、LA1.5（annihilator）、LA2.7（characteristic-polynomial、determinant） |
 
@@ -304,21 +304,21 @@ CA 與 CA2 兩冊合起來覆蓋 Ahlfors 1–8；橢圓函數（CA.15）是選�
 
 | 術語 | 正式定義所在 | 支撐 | 唯一 |
 |---|---|---:|---:|
-| odd | F1.5 | 9 | 0 |
-| prime | F1.5 | 9 | 0 |
-| even | F1.5 | 9 | 0 |
-| divide | F1.5 | 9 | 0 |
-| monic | F5.4 | 9 | 0 |
-| leading-coefficient | F5.4 | 9 | 0 |
-| polynomial | F5.4 | 9 | 0 |
+| modulus | F4.1 | 9 | 2 |
 | coefficient | F5.4 | 9 | 0 |
 | degree | F5.4 | 9 | 0 |
-| modulus | F4.1 | 9 | 2 |
+| monic | F5.4 | 9 | 0 |
+| polynomial | F5.4 | 9 | 0 |
+| leading-coefficient | F5.4 | 9 | 0 |
+| even | F1.5 | 9 | 0 |
+| odd | F1.5 | 9 | 0 |
+| prime | F1.5 | 9 | 0 |
+| divide | F1.5 | 9 | 0 |
+| field | F5.2 | 8 | 0 |
 | characteristic | F5.2 | 8 | 0 |
 | multiplication | F5.2 | 8 | 0 |
-| field | F5.2 | 8 | 0 |
 | addition | F5.2 | 8 | 0 |
-| square | LA1.0 | 7 | 0 |
+| dual-basis | LA1.5 | 7 | 0 |
 
 術語比對找到、但不在該章 s 閉包裡的章（同形異義、前向提及，或地圖漏了一條邊；分流 terms.yaml 的 also 之後會減少）：
 

@@ -20,10 +20,11 @@ F1:
   - {id: F1.5, title: "From Derivations to Mathematical Prose", title_zh: 從推導到數學文字, src: [ab:5, la:ch00/01, la:ch00/02]}
 
 F2:
-  - {id: F2.1, title: "Sets and Functions: Proofs from Definitions", title_zh: 集合與函數：從定義出發的證明, src: [ab:6, la:ch00/03, la:ch00/04]}
+  - {id: F2.1, title: "Proofs from Definitions: Sets and Functions", title_zh: 從定義出發的證明：集合與函數, src: [ab:6, la:ch00/03, la:ch00/04]}
   - {id: F2.2, title: "Induction, Contradiction, and Finite Sets", title_zh: 歸納、反證與有限集, src: [ab:7, ab:8]}
   - {id: F2.3, title: "Countable and Uncountable Sets", title_zh: 可數與不可數集（含選擇公理的陳述）, src: ab:8}
   - {id: F2.5, title: "Relations: Equivalence and Order", title_zh: 關係：等價與序, src: [ab:7, la:ch00/05]}
+  - {id: F2.6, title: "Building Functions", title_zh: 函數的構造, src: new}
   - {id: F2.4, title: "Zorn's Lemma", title_zh: Zorn 引理（使用者層級）, src: new}
 
 F3:

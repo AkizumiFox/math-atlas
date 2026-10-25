@@ -7,7 +7,7 @@ Solid arrow: s (read first). Dashed arrow: b (a named result is borrowed; readin
 ```mermaid
 flowchart TD
   F1["F1 Logic and Proof"]:::found
-  F2["F2 Sets, Relations, and Cardinality"]:::found
+  F2["F2 Sets and Functions"]:::found
   F3["F3 Number Systems: From ℕ to ℝ"]:::found
   F4["F4 Analytic Preliminaries"]:::found
   F5["F5 Algebraic Preliminaries"]:::found
@@ -98,20 +98,22 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F2 Sets, Relations, and Cardinality
+## F2 Sets and Functions
 
 ```mermaid
 flowchart LR
   F1_5["F1.5 From Derivations to Mathematical Prose"]:::ext
-  F2_1["1 Sets and Functions: Proofs from Definitions"]
+  F2_1["1 Proofs from Definitions: Sets and Functions"]
   F2_2["2 Induction, Contradiction, and Finite Sets"]
   F2_3["3 Countable and Uncountable Sets"]
   F2_5["5 Relations: Equivalence and Order"]
+  F2_6["6 Building Functions"]
   F2_4["4 Zorn's Lemma"]
   F1_5 --> F2_1
   F2_1 --> F2_2
   F2_2 --> F2_3
   F2_3 --> F2_5
+  F2_5 --> F2_6
   F2_5 --> F2_4
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555

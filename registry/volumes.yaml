@@ -9,7 +9,7 @@
 # 改名與搬冊的 old → new 記在 registry/renames.yaml。
 
 - {id: F1,  title: "Logic and Proof", title_zh: 邏輯與證明,                    branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd1}
-- {id: F2,  title: "Sets, Relations, and Cardinality", title_zh: 集合、關係與基數, branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd2}
+- {id: F2,  title: "Sets and Functions", title_zh: 集合與函數, branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd2}
 - {id: F3,  title: 'Number Systems: From \(\nN\) to \(\nR\)', title_zh: 數系：從 ℕ 到 ℝ, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd3}
 - {id: F4,  title: "Analytic Preliminaries", title_zh: 分析預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd4}
 - {id: F5,  title: "Algebraic Preliminaries", title_zh: 代數預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd5}
