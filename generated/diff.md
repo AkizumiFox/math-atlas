@@ -24,7 +24,8 @@
 
 ## 陳述層的 uses／borrows 在章層級找不到路徑
 
-- `thm-dedekind-lub`（F3.3）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.3 的硬路徑
+- `def-dedekind`（ST.1）uses `def-integers`（F3.2）：章層級沒有 F3.2 ⇒ ST.1 的硬路徑
+- `thm-dedekind-lub`（ST.1）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ ST.1 的硬路徑
 - `thm-r-unique`（F3.4）uses `def-lub`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
 - `thm-r-unique`（F3.4）uses `thm-naturals-unbounded`（AN1.1）：章層級沒有 AN1.1 ⇒ F3.4 的硬路徑
 

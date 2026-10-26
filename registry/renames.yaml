@@ -19,6 +19,9 @@ ids:
   - {old: F4.3, new: F5.3, decided: 2026-10-25, spec: spec/08 §A3}
   - {old: F4.4, new: F5.4, decided: 2026-10-25, spec: spec/08 §A3}
   - {old: F4.5, new: F5.5, decided: 2026-10-25, spec: spec/08 §A3}
+  # 2026-10-26，fd3 re-cut：整除與同餘整章搬到 fd5 當第一章；Dedekind 分割停放到 ST.1
+  - {old: F3.5, new: F5.1, decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
+  - {old: F3.3, new: ST.1, decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
 
 moves:
   # 地圖 v2（2026-10-25）：分析主線改走 Apostol MA 的骨架（spec/08 §C、決策 3、17）
@@ -66,6 +69,12 @@ titles:
   - {id: F2.3, old: "Countable and Uncountable Sets", new: "Cardinality", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
   - {id: F2.5, old: "Relations: Equivalence and Order", new: "Relations", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
   - {id: F2.4, old: "Zorn's Lemma", new: "The Axiom of Choice", decided: 2026-10-26, spec: fd2/authoring/design/layout-six-chapters.md}
+
+  # fd3 re-cut（2026-10-26 作者核准）
+  - {id: F3.1, old: "The ZF Fragment and the von Neumann Natural Numbers", new: "The Natural Numbers", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
+  - {id: F3.2, old: "Building the Integers and the Rationals from Equivalence Classes", new: "The Integers", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
+  - {id: F3.10, old: "Constructing the Real Numbers from Cauchy Sequences", new: "The Real Numbers from Cauchy Sequences", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
+  - {id: F5.1, old: "Divisibility, Division with Remainder, and Modular Arithmetic", new: "Divisibility and Congruences", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md, note: 舊 id F3.5}
 
 volumes:
   - {id: F4, old: "Algebraic Preliminaries", new: "Analytic Preliminaries", alias: algebraic-preliminaries, decided: 2026-10-25, spec: spec/08 §A3, note: 舊的 algebraic-preliminaries 子目錄改指 F5（fd5）}

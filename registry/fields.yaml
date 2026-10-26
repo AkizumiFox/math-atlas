@@ -72,7 +72,7 @@
   - {id: low-dimensional-topology, name: 紐結理論與低維拓樸, en: Knot Theory & Low-Dimensional Topology, status: out, hook: [AN2.7, AL1.11], after: [algebraic-topology, differential-topology]}
 
 數論:
-  - {id: elementary-number-theory, name: 初等數論, en: Elementary Number Theory, status: partial, ch: [F3.5, AL2.4]}
+  - {id: elementary-number-theory, name: 初等數論, en: Elementary Number Theory, status: partial, ch: [F5.1, AL2.4]}
   - {id: algebraic-number-theory, name: 代數數論, en: Algebraic Number Theory, status: branch, hook: [AL3.3, AL5.6]}
   - {id: analytic-number-theory, name: 解析數論, en: Analytic Number Theory, status: partial, ch: [HA.8], hook: [CA.8a]}
   - {id: modular-forms, name: 模形式, en: Modular Forms, status: out, hook: [CA.8b, AL1.11]}
@@ -106,7 +106,7 @@
 資訊與計算:
   - {id: information-theory, name: 資訊理論, en: Information Theory, status: out, hook: [PR.1]}
   - {id: coding-theory, name: 編碼理論, en: Coding Theory, status: out, hook: [AL2.9, LA1.3]}
-  - {id: cryptography, name: 密碼學, en: Cryptography, status: out, hook: [F3.5, AL2.9, PR.1], note: analysis-book 已刪 VEL.7}
+  - {id: cryptography, name: 密碼學, en: Cryptography, status: out, hook: [F5.1, AL2.9, PR.1], note: analysis-book 已刪 VEL.7}
   - {id: theory-of-computation, name: 計算理論, en: Theory of Computation, status: out, hook: [F1.4]}
   - {id: computational-complexity, name: 計算複雜度, en: Computational Complexity, status: out, after: [theory-of-computation]}
   - {id: numerical-analysis, name: 數值分析, en: Numerical Analysis, status: partial, ch: [NLA.24], hook: [AN1.7, AN2.4]}

@@ -14,8 +14,8 @@
 | ab:6 | F2.1 Sets；F2.6 Functions |
 | ab:7 | F2.2 Induction and Recursion；F2.5 Relations |
 | ab:8 | F2.2 Induction and Recursion；F2.3 Cardinality |
-| ab:9 | F3.1 The ZF Fragment and the von Neumann Natural Numbers |
-| ab:10 | F3.2 Building the Integers and the Rationals from Equivalence Classes |
+| ab:9 | F3.1 The Natural Numbers |
+| ab:10 | F3.2 The Integers；F3.11 The Rationals |
 | ab:11 | AN1.1 Ordered Fields and the Least Upper Bound Axiom |
 | ab:12 | AN1.2 Sequences, Subsequences, and Cauchy Sequences |
 | ab:13 | AN1.3 Infinite Series |
@@ -27,7 +27,6 @@
 | ab:19 | AN1.9 Sequences and Series of Functions |
 | ab:20 | AN1.10 Power Series, Taylor Series, and the Elementary Functions |
 | ab:21 | AN1.11 The Forms of Completeness |
-| ab:22 | F3.3 Constructing the Real Numbers by Dedekind Cuts（選讀） |
 | ab:23 | F3.4 The Complete Ordered Field Is Unique |
 | ab:24 | AN2.1 Metric Spaces and Their Topology |
 | ab:25 | AN2.2 Completeness and the Completion of a Metric Space |
@@ -129,9 +128,9 @@
 
 - **F1**：F1.7 Finding Derivations、F1.8 Working with Quantifiers: Translation, Laws, and Search、F1.6 Models and Theories
 - **F2**：F2.4 The Axiom of Choice
-- **F3**：F3.5 Divisibility, Division with Remainder, and Modular Arithmetic、F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 Constructing the Real Numbers from Cauchy Sequences
+- **F3**：F3.9 Ordered Fields and Sequences in an Ordered Field、F3.10 The Real Numbers from Cauchy Sequences
 - **F4**：F4.6 Inequalities, Finite Sums, and Real Powers、F4.7 Real Functions and Their Graphs、F4.8 Coordinates and Vectors in ℝⁿ、F4.9 Lines, Convexity, and Isometries of ℝⁿ、F4.10 Rotations, Angles, and the Complex Plane、F4.11 Metrics and Norms
-- **F5**：F5.5 Polynomials over a Field
+- **F5**：F5.1 Divisibility and Congruences、F5.5 Polynomials over a Field
 - **AL1**：AL1.2 Cyclic Groups、AL1.3 Symmetric Groups and the Sign of a Permutation、AL1.4 Cosets and Lagrange's Theorem、AL1.5 Normal Subgroups, Quotient Groups, and the Isomorphism Theorems、AL1.6 Group Actions, the Orbit–Stabilizer Theorem, and the Class Equation、AL1.7 The Sylow Theorems、AL1.8 Direct and Semidirect Products, and Finite Abelian Groups、AL1.9 Composition Series, Solvable Groups, and Nilpotent Groups、AL1.10 The Simplicity of Aₙ、AL1.11 Free Groups and Presentations
 - **AL2**：AL2.1 Rings, Ideals, and Quotient Rings、AL2.2 Integral Domains and Fields of Fractions、AL2.3 Maximal and Prime Ideals、AL2.4 The Chinese Remainder Theorem、AL2.5 Euclidean Domains, PIDs, and UFDs、AL2.6 Polynomial Rings, Gauss's Lemma, and Eisenstein's Criterion、AL2.7 Field Extensions and Degree、AL2.8 Algebraic Extensions, Splitting Fields, and Algebraic Closure、AL2.9 Finite Fields、AL2.10 Ruler-and-Compass Constructions
 - **AN2**：AN2.9 Functions of Bounded Variation and Rectifiable Curves、AN2.10 The Riemann–Stieltjes Integral、AN2.12 Double Series, Infinite Products, and the Euler Product、AN2.11 Integrals with a Parameter, Euler Summation, and the Gamma Function、AN2.13 Summability and Tauberian Theorems、AN2.14 The Gauge Integral（選讀）、AN2.15 A Gallery of Pathological Functions（選讀）

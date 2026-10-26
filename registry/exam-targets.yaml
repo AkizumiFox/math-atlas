@@ -129,11 +129,11 @@
   name_zh: Rudin《Principles of Mathematical Analysis》
   level: undergrad
   note: 讀完 AN1、AN2、AN3、CA 應已吸收 PMA 1–7、9；PMA 8 的 Fourier 部分由支線 HA 覆蓋，10、11 延後。
-  chapters: [F3.3, F4.1, F5.5, LA2.7, AN1.1, AN1.2, AN1.3, AN1.4, AN1.5, AN1.6, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.10, AN2.11, AN3.1, AN3.2]
+  chapters: [ST.1, F4.1, F5.5, LA2.7, AN1.1, AN1.2, AN1.3, AN1.4, AN1.5, AN1.6, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.10, AN2.11, AN3.1, AN3.2]
   branch_cover: [HA.1, HA.2, HA.3]
   deferred_cover: [AN3.6, AN3.7, AM.1, MT.1, MT.2, MT.7]
   items:
-    - {topic: "PMA 1 實數與複數（Dedekind 分割附錄）", ch: [AN1.1, F3.3, F4.1]}
+    - {topic: "PMA 1 實數與複數（Dedekind 分割附錄）", ch: [AN1.1, ST.1, F4.1]}
     - {topic: "PMA 2 基本拓樸", ch: [F2.3, AN1.4, AN2.1, AN2.3]}
     - {topic: "PMA 3 數列與級數", ch: [AN1.2, AN1.3, AN2.2]}
     - {topic: "PMA 4 連續", ch: [AN1.5, AN1.6, AN2.3]}
@@ -151,10 +151,10 @@
   name_zh: Pugh《Real Mathematical Analysis》
   level: undergrad
   note: Pugh 1–5（不含 forms、Stokes、Brouwer）在主線上覆蓋；Brouwer 屬 FX 支線，不列入。
-  chapters: [F2.3, F3.3, AN1.1, AN1.2, AN1.3, AN1.4, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.12, AN3.1, AN3.2, AN3.4]
+  chapters: [F2.3, ST.1, AN1.1, AN1.2, AN1.3, AN1.4, AN1.7, AN1.8, AN1.9, AN1.10, AN2.1, AN2.2, AN2.3, AN2.4, AN2.5, AN2.6, AN2.12, AN3.1, AN3.2, AN3.4]
   deferred_cover: [AM.1, AN3.6, AN3.7, MT.1, MT.2, MT.4, MT.9, MT.10]
   items:
-    - {topic: "Pugh 1 實數（切割、基數）", ch: [F3.3, F2.3, AN1.1]}
+    - {topic: "Pugh 1 實數（切割、基數）", ch: [ST.1, F2.3, AN1.1]}
     - {topic: "Pugh 2 拓樸初步（度量空間、緊緻、連通、Cantor 集）", ch: [AN1.4, AN2.1, AN2.2, AN2.3]}
     - {topic: "Pugh 3 實函數（微分、Riemann 積分、級數、無窮乘積）", ch: [AN1.7, AN1.8, AN1.3, AN2.12]}
     - {topic: "Pugh 4 函數空間（一致收斂、Arzelà–Ascoli、壓縮、Stone–Weierstrass）", ch: [AN1.9, AN1.10, AN2.4, AN2.5, AN2.6]}

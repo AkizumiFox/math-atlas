@@ -30,13 +30,13 @@ F2:
   - {id: F2.4, title: "The Axiom of Choice", title_zh: 選擇公理, src: new}
 
 F3:
-  - {id: F3.1, title: "The ZF Fragment and the von Neumann Natural Numbers", title_zh: 自然數的 von Neumann 建構（ZF 的必要片段）, src: ab:9}
-  - {id: F3.2, title: 'Building the Integers and the Rationals from Equivalence Classes', title_zh: 以等價類建構 ℤ 與 ℚ, src: ab:10}
-  - {id: F3.5, title: 'Divisibility, Division with Remainder, and Modular Arithmetic', title_zh: 整除、帶餘除法與模運算, src: new}
+  # fd3 re-cut（2026-10-26 作者核准，fd3/authoring/design/layout-proposal.md）：ℕ 為 Peano 系統（ZF 與 ω 移到 ST.1）；ℤ、ℚ 分兩章（新 id F3.11）；F3.5 搬到 F5 成為 F5.1；F3.3（Dedekind 分割）停放到 ST.1。
+  - {id: F3.1, title: "The Natural Numbers", title_zh: 自然數：Peano 公理、遞迴與算術, src: ab:9}
+  - {id: F3.2, title: "The Integers", title_zh: 整數的建構, src: ab:10}
+  - {id: F3.11, title: "The Rationals", title_zh: 有理數的建構, src: ab:10}
   - {id: F3.9, title: "Ordered Fields and Sequences in an Ordered Field", title_zh: 有序體與其中的數列, src: new}
-  - {id: F3.10, title: "Constructing the Real Numbers from Cauchy Sequences", title_zh: 以 Cauchy 數列建構實數, src: new}
+  - {id: F3.10, title: "The Real Numbers from Cauchy Sequences", title_zh: 以 Cauchy 數列建構實數, src: new}
   - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23}
-  - {id: F3.3, title: "Constructing the Real Numbers by Dedekind Cuts", title_zh: 以 Dedekind 分割建構實數, src: ab:22, opt: true}
 
 F4:
   - {id: F4.6, title: "Inequalities, Finite Sums, and Real Powers", title_zh: 不等式、有限和與實數冪, src: new}
@@ -48,7 +48,8 @@ F4:
   - {id: F4.11, title: "Metrics and Norms", title_zh: 度量與範數, src: new}
 
 F5:
-  # 舊 F4.2–F4.5 整批搬來，內容不改、只改 id（spec/08 §A3；registry/renames.yaml）。不設 F5.1，保留後綴方便對照。
+  # 舊 F4.2–F4.5 整批搬來，內容不改、只改 id（spec/08 §A3；registry/renames.yaml）。F5.1 原本空著；2026-10-26 fd3 re-cut 把 F3.5 搬來當第一章（F3.5 → F5.1，fd3/authoring/design/layout-proposal.md）。
+  - {id: F5.1, title: "Divisibility and Congruences", title_zh: 整除與同餘, src: new}
   - {id: F5.2, title: "Fields", title_zh: 體, src: la:ch00/07}
   - {id: F5.3, title: "Groups, Subgroups, and Homomorphisms", title_zh: 群、子群與同態, src: la:ch00/10}
   - {id: F5.4, title: "Formal Polynomials", title_zh: 形式多項式, src: la:ch00/08}

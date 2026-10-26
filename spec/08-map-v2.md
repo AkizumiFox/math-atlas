@@ -77,7 +77,7 @@ flowchart LR
 
 | Lang 章 | 判定 | 歸宿 |
 |---|---|---|
-| 1 Numbers、Interlude、14 Mappings、15 Complex | 已涵蓋 | F3.2、F3.5、F1、F2.1、F4.1；置換在 F5.3 |
+| 1 Numbers、Interlude、14 Mappings、15 Complex | 已涵蓋 | F3.2、F5.1（原 F3.5）、F1、F2.1、F4.1；置換在 F5.3 |
 | 2 Linear Equations、17 Determinants | 不需要 | LA1.3、LA2.7 |
 | 3 Real Numbers（冪、根、不等式） | 收進 | F4.6；正性與絕對值已在 F3.9 |
 | 4 Quadratic Equations | 已涵蓋 | F4.1 §4 |
@@ -126,7 +126,7 @@ F4 是 AN1、AN2、CA 的入口。章序是 F4.6 → F4.7 → F4.8 → F4.9 → 
 | F5.4 | F4.4 | Formal Polynomials | F5.2；see F4.1、F5.3 |
 | F5.5 | F4.5 | Polynomials over a Field | F5.4、F3.5、F4.1、F3.10、F3.4 |
 
-- 不設 F5.1，保留後綴方便對照。要同步改名的 plan-edges 有 AL1.2、AL2.2、AL2.5、AL2.6、LA2.6、CA.2，以及 la-edges 的計算對照。
+- 不設 F5.1，保留後綴方便對照。（**2026-10-26 更新**：fd3 re-cut 把 F3.5 整章搬來當 fd5 第一章，id 改為 F5.1「Divisibility and Congruences」；上表的 F3.5 一律讀作 F5.1，fd5 的章序成為 F5.1、F5.2、F5.3、F5.4、F5.5。見 fd3/authoring/design/layout-proposal.md、registry/renames.yaml。）要同步改名的 plan-edges 有 AL1.2、AL2.2、AL2.5、AL2.6、LA2.6、CA.2，以及 la-edges 的計算對照。
 - 遷移成本：27 處 `@fd4:` 全部在 foundations repo 內。`fd4/src/ch02–05` 搬到 `fd5/` 並重新編為 ch01–04，原處留錨點。books.json 的 `algebraic-preliminaries` 改指 fd5；fd4 改用 `analytic-preliminaries`，舊路徑保留為 alias。
 - F5 跨冊只依賴 F4.1。AN、CA 都不需要 F5；LA1 與 AL1 需要。
 
@@ -484,8 +484,8 @@ S&S IV 的機率、多複變、振盪積分，以及 Kreyszig 的應用章節，
 | id | 名稱 | level | chapters（主線） | branch_cover／deferred_cover |
 |---|---|---|---|---|
 | `apostol-ma` | Apostol, *Mathematical Analysis* 2e（**backbone**） | undergrad | F2.1、F2.3、F4.1、F4.10、AN1.1、AN1.4、AN2.1、AN1.2、AN2.2、AN1.5、AN1.6、AN2.3、AN1.7、AN2.9、AN1.8、AN2.10、AN2.11、AN1.3、AN2.12、AN2.13、AN1.9、AN1.10、AN2.6、AN3.1、AN3.2、AN3.4、CA.1–CA.5 | branch：HA.1–HA.5（Apostol 11）；deferred：MT.1、MT.2、MT.4、MT.5、MT.7（Apostol 10、15） |
-| `pma` | Rudin, *Principles of Mathematical Analysis* | undergrad | F3.3、F4.1、F5.5、LA2.7、AN1.1–AN1.10、AN2.1–AN2.6、AN2.10、AN2.11、AN3.1、AN3.2 | branch：HA.1–HA.3；deferred：AN3.6、AN3.7、AM.1（PMA 10）、MT.1、MT.2、MT.7（PMA 11） |
-| `pugh` | Pugh, *Real Mathematical Analysis* | undergrad | F2.3、F3.3、AN1.1–AN1.4、AN1.7–AN1.10、AN2.1–AN2.6、AN2.12、AN3.1、AN3.2、AN3.4 | deferred：AM.1、AN3.6、AN3.7（Pugh 5 後半）、MT.1、MT.2、MT.4、MT.9、MT.10（Pugh 6）；Brouwer 不列入 |
+| `pma` | Rudin, *Principles of Mathematical Analysis* | undergrad | ST.1（Dedekind 分割附錄；2026-10-26 前為 F3.3）、F4.1、F5.5、LA2.7、AN1.1–AN1.10、AN2.1–AN2.6、AN2.10、AN2.11、AN3.1、AN3.2 | branch：HA.1–HA.3；deferred：AN3.6、AN3.7、AM.1（PMA 10）、MT.1、MT.2、MT.7（PMA 11） |
+| `pugh` | Pugh, *Real Mathematical Analysis* | undergrad | F2.3、ST.1（切割；2026-10-26 前為 F3.3）、AN1.1–AN1.4、AN1.7–AN1.10、AN2.1–AN2.6、AN2.12、AN3.1、AN3.2、AN3.4 | deferred：AM.1、AN3.6、AN3.7（Pugh 5 後半）、MT.1、MT.2、MT.4、MT.9、MT.10（Pugh 6）；Brouwer 不列入 |
 | `mira` | Axler, *Measure, Integration & Real Analysis* | grad | HA.9、MT.1–MT.4、MT.7、MT.9、MT.11、FA.1a、FA.1b、FA.3、FA.4、FA.6、FA.9、FA.7 | branch：HA.10、PR.1 |
 | `ahlfors` | Ahlfors, *Complex Analysis* 3e | grad | CA.1、CA.10、CA.2、CA.3、CA.4、CA.6、CA.5、CA.11、CA.7、CA.12、CA.13、CA.15、CA.8a、CA.14 | — |
 

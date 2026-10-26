@@ -125,21 +125,18 @@ flowchart LR
 ```mermaid
 flowchart LR
   F2_5["F2.5 Relations"]:::ext
-  F3_1["1 The ZF Fragment and the von Neumann Natural Numbers"]
-  F3_2["2 Building the Integers and the Rationals from Equivalence Classes"]
-  F3_5["5 Divisibility, Division with Remainder, and Modular Arithmetic"]
+  F3_1["1 The Natural Numbers"]
+  F3_2["2 The Integers"]
+  F3_11["11 The Rationals"]
   F3_9["9 Ordered Fields and Sequences in an Ordered Field"]
-  F3_10["10 Constructing the Real Numbers from Cauchy Sequences"]
+  F3_10["10 The Real Numbers from Cauchy Sequences"]
   F3_4["4 The Complete Ordered Field Is Unique"]
-  F3_3["3 Constructing the Real Numbers by Dedekind Cuts"]:::opt
   F2_5 --> F3_1
   F3_1 --> F3_2
-  F3_2 --> F3_5
-  F3_2 --> F3_9
-  F3_5 --> F3_10
+  F3_2 --> F3_11
+  F3_11 --> F3_9
   F3_9 --> F3_10
   F3_10 --> F3_4
-  F3_4 --> F3_3
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -176,14 +173,16 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F3_5["F3.5 Divisibility, Division with Remainder, and Modular Arithmetic"]:::ext
+  F3_11["F3.11 The Rationals"]:::ext
   F4_1["F4.1 Complex Numbers"]:::ext
+  F5_1["1 Divisibility and Congruences"]
   F5_2["2 Fields"]
   F5_3["3 Groups, Subgroups, and Homomorphisms"]
   F5_4["4 Formal Polynomials"]
   F5_5["5 Polynomials over a Field"]
-  F3_5 --> F5_2
-  F3_5 --> F5_3
+  F3_11 --> F5_1
+  F5_1 --> F5_2
+  F5_1 --> F5_3
   F5_2 --> F5_4
   F4_1 --> F5_5
   F5_4 --> F5_5
