@@ -23,7 +23,7 @@ import yaml
 from lexicon import Matcher
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_LA = ROOT.parent / "linear-algebra"
+DEFAULT_LA = ROOT / "books" / "linear-algebra"
 OUT = ROOT / "registry" / "computed" / "la-edges.yaml"
 MOVES = ROOT / "registry" / "moves.yaml"
 

@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# 各冊書稿：各自獨立的 git repo，放在這裡只是為了集中管理
+books/
+.venv/

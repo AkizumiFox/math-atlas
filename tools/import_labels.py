@@ -46,7 +46,7 @@ def main():
     locate = {"la": import_la.atlas_chapter, "ab": ab_chapter(chapters), "rg": lambda path: None}
     found = defaultdict(list)
     for book, repo in BOOKS.items():
-        path = ROOT.parent / repo / "_build" / "crossref_labels.json"
+        path = ROOT / "books" / repo / "_build" / "crossref_labels.json"
         if not path.exists():
             print(f"warning: {path} not found; skipping {book}")
             continue

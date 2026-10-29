@@ -40,7 +40,7 @@ def prose(text):
 
 
 def files(book):
-    return sorted((ROOT.parent / BOOKS[book] / "src").rglob("*.md"))
+    return sorted((ROOT / "books" / BOOKS[book] / "src").rglob("*.md"))
 
 
 def pattern(form):
@@ -72,7 +72,7 @@ def scan(groups):
                     hits = len(pat.findall(without_kept(line, kept[key[0]])))
                     if hits:
                         counts[key][book] += hits
-                        where[key].append((path.relative_to(ROOT.parent), n))
+                        where[key].append((path.relative_to(ROOT / "books"), n))
     return counts, where
 
 

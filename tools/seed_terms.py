@@ -76,7 +76,7 @@ PROPER = set()  # names, as written capitalised mid-sentence in the books (fille
 def book_definitions(chapters):
     locate = {"la": import_la.atlas_chapter, "ab": ab_chapter(chapters)}
     found = defaultdict(list)  # term text -> [(label, chapter, book)]
-    labels = {book: json.loads((ROOT.parent / BOOKS[book] / "_build" / "crossref_labels.json").read_text())
+    labels = {book: json.loads((ROOT / "books" / BOOKS[book] / "_build" / "crossref_labels.json").read_text())
               ["crossref_labels"] for book in ("la", "ab")}
     PROPER.update(lexicon.proper_nouns(r.get("html_content") or "" for ls in labels.values() for r in ls.values()))
     for book in ("la", "ab"):

@@ -1,6 +1,6 @@
 # math-atlas
 
-一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套以一張分型別的依賴圖串起來（冊數、章數與各項統計見 `generated/report.md`）；各冊的書稿在各自的 repo（`analysis-book`、`linear-algebra` 等）。
+一套「零基礎到數學研究所資格考」教科書的地圖與規格。全套以一張分型別的依賴圖串起來（冊數、章數與各項統計見 `generated/report.md`）；各冊的書稿在各自的 repo，本機放在 `books/` 底下（gitignored）。
 
 - 先讀 `spec/00-overview.md`。
 - 要看圖：`generated/README.md`（Mermaid，GitHub 會直接渲染），或用瀏覽器開 `generated/atlas.html`（互動版，需要網路載入 elkjs）。
@@ -25,6 +25,7 @@ registry/    唯一的事實來源
   external/           對照用的外部來源（不是事實來源）
 tools/       atlas.py（check／stats／render／diff）、graph.py、import_la.py、import_labels.py（跨書 label）
 generated/   工具的產出，勿手改
+books/       各冊書稿與 book-engine 的 checkout（各自獨立的 git repo，不進這個 repo）
 ```
 
 ## 指令
@@ -32,7 +33,7 @@ generated/   工具的產出，勿手改
 只需要 Python 3 和 PyYAML。
 
 ```sh
-python3 tools/import_la.py          # 從 ../linear-algebra/_build/crossref_labels.json 重算線代邊
+python3 tools/import_la.py          # 從 books/linear-algebra/_build/crossref_labels.json 重算線代邊
 python3 tools/import_labels.py      # 收集各書的 label，找出跨書重複
 python3 tools/seed_terms.py         # 由兩本書的定義更新術語表（保留手填譯名）
 python3 tools/usage_report.py       # 統計兩本書稿的英文用詞變體 → generated/usage.md
