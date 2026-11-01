@@ -144,7 +144,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F3_11["F3.11 The Rationals"]:::ext
   F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
   AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
   F4_6["6 Inequalities, Finite Sums, and Real Powers"]
@@ -158,13 +157,13 @@ flowchart LR
   F4_8["8 Coordinates and Vectors in ℝⁿ"]
   F4_9["9 Lines, Hyperplanes, and Convex Sets"]
   F3_4 --> F4_6
-  F3_11 --> F5_1
+  F4_6 --> F5_1
   AN1_10 -.-> F4_1
-  F4_6 --> F5_2
   F5_1 --> F5_2
   F5_1 --> F5_3
   F5_2 --> F5_4
   F4_1 --> F5_5
+  F5_3 --> F4_7
   F5_4 --> F4_7
   F5_2 --> F4_8
   F4_8 --> F4_9
@@ -273,7 +272,6 @@ flowchart LR
 ```mermaid
 flowchart LR
   F4_1["F4.1 Complex Numbers"]:::ext
-  F5_3["F5.3 Groups, Subgroups, and Homomorphisms"]:::ext
   LA1_5["LA1.5 Duality"]:::ext
   LA2_6["6 Polynomials"]
   LA2_7["7 Determinants"]
@@ -282,7 +280,6 @@ flowchart LR
   LA2_10["10 Canonical Forms"]
   F4_1 --> LA2_6
   LA1_5 --> LA2_6
-  F5_3 --> LA2_7
   LA2_6 --> LA2_7
   LA2_7 --> LA2_8
   LA2_8 --> LA2_9

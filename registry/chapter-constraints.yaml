@@ -160,7 +160,7 @@
     Cover manipulation of finite sums and products, finite geometric sums, the binomial theorem in a commutative
     ring, Bernoulli's inequality, and AM-GM. Construct \(n\)th roots and rational powers by a supremum; real exponents
     come later in the volume, through the exponential. Leave the finite Cauchy-Schwarz inequality and Lagrange's identity
-    to the chapter on coordinates and vectors. Write the estimation techniques as Named moves, so that the epsilon-N proofs of
+    to the chapter on coordinates and vectors. Write the estimation techniques as method boxes (listed under Proof methods on the chapter review page), so that the epsilon-N proofs of
     the analysis volume can cite them.
   why: >-
     AN1.2 起的 ε-N 證明直接引用這裡的估計手法；AN1.2 s 依賴本章（spec/08 §A2、決策 2）。2026-10-26 fd4+fd5 合冊：二項式定理只在這裡證
@@ -171,7 +171,7 @@
   decided: 2026-10-25
   rule: >-
     Cite the factor theorem and the bound of at most \(n\) roots from the polynomial chapters of the same volume
-    instead of proving them again. Introduce the exponential function through a borrowed box (E1)-(E4), to be cashed in by the chapter on power
+    instead of proving them again. Introduce the exponential function through a borrowed box (E1)-(E3), to be cashed in by the chapter on power
     series and the elementary functions. Start a table of pathological functions that the analysis volumes extend.
   why: >-
     2026-10-26 fd4+fd5 合冊後 F5.4、F5.5 在同一冊，舊 §05 的重教刪除（merge-proposal.md §3.4）；F5.5 只以 see 引用（s 會經 F4.1 的 b AN1.10 成環）。exp 的借用框不能登記成 b 邊（AN1.5 s 依賴本章，b AN1.10 會成環），
@@ -281,7 +281,7 @@
   book: ab:20
   decided: 2026-10-25
   rule: >-
-    Cash in the borrowed boxes of the foundations volume: the exponential function (E1)-(E4) and the trigonometric
+    Cash in the borrowed boxes of the foundations volume: the exponential function (E1)-(E3) and the trigonometric
     properties (T1)-(T5), with a look back at the chapters that stated them.
   why: AN1.10 revisits F4.1、F4.7（spec/08 §A4；F4.10 於 2026-10-26 退役）。
 
