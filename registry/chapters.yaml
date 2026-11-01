@@ -39,21 +39,18 @@ F3:
   - {id: F3.4, title: "The Complete Ordered Field Is Unique", title_zh: 完備有序體的唯一性, src: ab:23}
 
 F4:
+  # 2026-10-26 fd4+fd5 合冊（fd4/authoring/design/merge-proposal.md，作者核准）：共同地基（Ch1–3）→ 代數支線（Ch4–7）→ 分析支線（Ch8–10）。
+  # F5.x 保留 id（renames.yaml moves）；F4.10 併入 F4.9、F4.11 移到 AN1（併入 AN2.1）（renames.yaml ids）。
   - {id: F4.6, title: "Inequalities, Finite Sums, and Real Powers", title_zh: 不等式、有限和與實數冪, src: new}
-  - {id: F4.7, title: "Real Functions and Their Graphs", title_zh: 實函數與圖形, src: new}
-  - {id: F4.8, title: 'Coordinates and Vectors in \(\nR^n\)', title_zh: 座標與 ℝⁿ 中的向量, src: new}
-  - {id: F4.9, title: 'Lines, Convexity, and Isometries of \(\nR^n\)', title_zh: 直線、凸性與 ℝⁿ 的等距, src: new}
-  - {id: F4.1, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
-  - {id: F4.10, title: "Rotations, Angles, and the Complex Plane", title_zh: 旋轉、角與複數平面, src: new}
-  - {id: F4.11, title: "Metrics and Norms", title_zh: 度量與範數, src: new}
-
-F5:
-  # 舊 F4.2–F4.5 整批搬來，內容不改、只改 id（spec/08 §A3；registry/renames.yaml）。F5.1 原本空著；2026-10-26 fd3 re-cut 把 F3.5 搬來當第一章（F3.5 → F5.1，fd3/authoring/design/layout-proposal.md）。
   - {id: F5.1, title: "Divisibility and Congruences", title_zh: 整除與同餘, src: new}
+  - {id: F4.1, title: "Complex Numbers", title_zh: 複數, src: la:ch00/06}
   - {id: F5.2, title: "Fields", title_zh: 體, src: la:ch00/07}
   - {id: F5.3, title: "Groups, Subgroups, and Homomorphisms", title_zh: 群、子群與同態, src: la:ch00/10}
   - {id: F5.4, title: "Formal Polynomials", title_zh: 形式多項式, src: la:ch00/08}
   - {id: F5.5, title: "Polynomials over a Field", title_zh: 體上的多項式, src: new}
+  - {id: F4.7, title: "Real Functions and Their Graphs", title_zh: 實函數與圖形, src: new}
+  - {id: F4.8, title: 'Coordinates and Vectors in \(\nR^n\)', title_zh: 座標與 ℝⁿ 中的向量, src: new}
+  - {id: F4.9, title: "Lines, Hyperplanes, and Convex Sets", title_zh: 直線、超平面與凸集, src: new}
 
 AN1:
   # Apostol MA 1–5 的骨架（spec/08 §C2）；AN2.1–AN2.3 搬入，AN1.3、AN1.8–AN1.10 搬到 AN2，AN1.11 收在冊末。

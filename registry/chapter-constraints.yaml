@@ -157,21 +157,24 @@
   book: new
   decided: 2026-10-25
   rule: >-
-    Cover manipulation of finite sums and products, finite geometric sums, the binomial theorem, Bernoulli's
-    inequality, AM-GM, and the finite Cauchy-Schwarz inequality proved by Lagrange's identity. Construct \(n\)th roots
-    and rational powers by a supremum. Write the estimation techniques as Named moves, so that the epsilon-N proofs of
+    Cover manipulation of finite sums and products, finite geometric sums, the binomial theorem in a commutative
+    ring, Bernoulli's inequality, and AM-GM. Construct \(n\)th roots and rational powers by a supremum; real exponents
+    come later in the volume, through the exponential. Leave the finite Cauchy-Schwarz inequality and Lagrange's identity
+    to the chapter on coordinates and vectors. Write the estimation techniques as Named moves, so that the epsilon-N proofs of
     the analysis volume can cite them.
-  why: AN1.2 起的 ε-N 證明直接引用這裡的估計手法；AN1.2 s 依賴本章（spec/08 §A2、決策 2）。
+  why: >-
+    AN1.2 起的 ε-N 證明直接引用這裡的估計手法；AN1.2 s 依賴本章（spec/08 §A2、決策 2）。2026-10-26 fd4+fd5 合冊：二項式定理只在這裡證
+    （F5.2 改引），Cauchy–Schwarz 只在 F4.8（merge-proposal.md §3.4、merged-ch01-f46.md §9）。
 
 - chapter: F4.7
   book: new
   decided: 2026-10-25
   rule: >-
-    Prove the factor theorem and the bound of at most \(n\) roots directly, without the algebraic preliminaries
-    volume. Introduce the exponential function through a borrowed box (E1)-(E4), to be cashed in by the chapter on power
+    Cite the factor theorem and the bound of at most \(n\) roots from the polynomial chapters of the same volume
+    instead of proving them again. Introduce the exponential function through a borrowed box (E1)-(E4), to be cashed in by the chapter on power
     series and the elementary functions. Start a table of pathological functions that the analysis volumes extend.
   why: >-
-    F4 是 AN、CA 的入口，不得依賴 F5。exp 的借用框不能登記成 b 邊（AN1.5 s 依賴本章，b AN1.10 會成環），
+    2026-10-26 fd4+fd5 合冊後 F5.4、F5.5 在同一冊，舊 §05 的重教刪除（merge-proposal.md §3.4）；F5.5 只以 see 引用（s 會經 F4.1 的 b AN1.10 成環）。exp 的借用框不能登記成 b 邊（AN1.5 s 依賴本章，b AN1.10 會成環），
     所以地圖上是 see，AN1.10 以 revisits 兌現；病態函數表最後收束在 AN2.15。
 
 - chapter: F4.8
@@ -185,30 +188,14 @@
 
 - chapter: F4.9
   book: new
-  decided: 2026-10-25
+  decided: 2026-10-26
   rule: >-
-    Prove that an isometry of \(\nR^n\) fixing the origin preserves the inner product, hence is linear and given by a
-    matrix with orthonormal columns, without using the linear algebra volumes.
-  why: 主定理只靠內積就能證，保持 F4 不依賴 LA（spec/08 §A2）。
-
-- chapter: F4.10
-  book: new
-  decided: 2026-10-25
-  rule: >-
-    Use the trigonometric borrowed box (T1)-(T5) of the chapter on complex numbers; leave radians to the analysis
-    volumes. Treat rotation as multiplication by a unit complex number, note that the argument is not unique as a
-    first hint of branches, and classify the isometries of \(\nC\) as \(az+b\) and \(a\bar z+b\) with \(|a|=1\).
-  why: 弧度要用到極限；arg 的不唯一是 CA 分支的伏筆（spec/08 §A2）。
-
-- chapter: F4.11
-  book: new
-  decided: 2026-10-25
-  rule: >-
-    Cover the metric axioms, the metrics \(d_1\), \(d_2\) and \(d_\infty\) and their comparison, the discrete metric,
-    the sup metric on bounded functions, normed spaces, open balls, diameter, subspace metrics, and product metrics;
-    the Hamming distance only in exercises. Do not treat convergence or open sets; they begin in the chapter on metric
-    spaces and their topology.
-  why: 概念螺旋 ℝ → ℝⁿ → metric 的前兩層在 F4 落地，收斂與開集留給 AN2.1，避免重複定義（spec/08 §A2）。
+    Cover lines, segments, hyperplanes, nearest points, spheres and balls, and convex sets and convex hulls in
+    \(\nR^n\), with betweenness stated by distances alone. Use no linear algebra and no trigonometry; the
+    classification of isometries is not part of this chapter.
+  why: >-
+    fd4+fd5 合冊的篇幅答案 Q4 (b)（「再砍到約 257/326 小時」）：等距分類移到 GEO／LA3，F4.10 的旋轉、arg 移到 CA.1 開頭；
+    原 2026-10-25 的「等距分類不用線代」規則撤除（merge-proposal.md §3.5、merged-ch10-f49.md §6）。
 
 - chapter: AN1.4
   book: ab:14
@@ -224,9 +211,13 @@
   decided: 2026-10-25
   rule: >-
     This chapter now follows Chapter 14 in the first analysis volume and is titled Metric Spaces and Their Topology.
-    Take the metric axioms and examples from the foundations chapter on metrics and norms; do not use the linear algebra
-    book. Leave continuity to Chapter 15.
-  why: AN2.1 搬進 AN1，刪掉 s LA1.1 與 b LA3.11；連續改在 AN1.5 一次處理（spec/08 §C2、決策 17）。
+    Open with the metric axioms, the metrics \(d_1\), \(d_2\) and \(d_\infty\) and their comparison, the discrete metric,
+    the sup metric on bounded functions, normed spaces, open balls, diameter, subspace and product metrics (the former
+    foundations chapter on metrics and norms), then the topology; do not use the linear algebra book. Leave continuity to
+    Chapter 15.
+  why: >-
+    AN2.1 搬進 AN1，刪掉 s LA1.1 與 b LA3.11；連續改在 AN1.5 一次處理（spec/08 §C2、決策 17）。2026-10-26 fd4+fd5 合冊：
+    F4.11 Metrics and Norms 併入本章前半（作者答 Q3「移到 AN1」；fd4/authoring/blueprints/f4-11.md 為素材）。
 
 - chapter: AN1.2
   book: ab:12
@@ -292,7 +283,7 @@
   rule: >-
     Cash in the borrowed boxes of the foundations volume: the exponential function (E1)-(E4) and the trigonometric
     properties (T1)-(T5), with a look back at the chapters that stated them.
-  why: AN1.10 revisits F4.1、F4.7、F4.10（spec/08 §A4）。
+  why: AN1.10 revisits F4.1、F4.7（spec/08 §A4；F4.10 於 2026-10-26 退役）。
 
 - chapter: AN2.4
   book: ab:27
@@ -358,9 +349,10 @@
   book: ab:55
   decided: 2026-10-25
   rule: >-
-    Look back at the complex derivative and the Cauchy-Riemann equations of Chapter 17, and use the rotations and
-    the argument from the foundations chapter on the complex plane.
-  why: CA.1 revisits AN1.7，s 加 F4.10（spec/08 §A4、§D1）。
+    Look back at the complex derivative and the Cauchy-Riemann equations of Chapter 17. Open with rotations as
+    multiplication by a unit complex number, the argument as a set of angles, and the oriented angle, using the
+    trigonometric borrowed box of the chapter on complex numbers.
+  why: CA.1 revisits AN1.7（spec/08 §A4、§D1）；退役的 F4.10 的旋轉與 arg 在 2026-10-26 fd4+fd5 合冊時移到這裡（merged-ch10-f49.md §6）。
 
 - chapter: CA.5
   book: ab:59

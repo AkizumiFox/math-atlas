@@ -9,8 +9,7 @@ flowchart TD
   F1["F1 Logic and Proof"]:::found
   F2["F2 Sets and Functions"]:::found
   F3["F3 Number Systems: From ℕ to ℝ"]:::found
-  F4["F4 Analytic Preliminaries"]:::found
-  F5["F5 Algebraic Preliminaries"]:::found
+  F4["F4 Preliminaries for Analysis and Algebra"]:::found
   AN1["AN1 Real Numbers, Metric Spaces, and Derivatives"]:::analysis
   LA1["LA1 Spaces and Maps"]:::linalg
   AL1["AL1 Groups"]:::algebra
@@ -38,10 +37,9 @@ flowchart TD
   F1 --> F2
   F2 --> F3
   AN2 -.-> F4
-  F4 --> F5
   F4 --> AN1
-  F5 --> LA1
-  F5 --> AL1
+  F4 --> LA1
+  F4 --> AL1
   LA1 --> LA2
   LA2 --> LA3
   AL1 --> AL2
@@ -142,50 +140,34 @@ flowchart LR
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
 ```
 
-## F4 Analytic Preliminaries
-
-```mermaid
-flowchart LR
-  F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
-  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
-  F4_6["6 Inequalities, Finite Sums, and Real Powers"]
-  F4_7["7 Real Functions and Their Graphs"]
-  F4_8["8 Coordinates and Vectors in ℝⁿ"]
-  F4_9["9 Lines, Convexity, and Isometries of ℝⁿ"]
-  F4_1["1 Complex Numbers"]
-  F4_10["10 Rotations, Angles, and the Complex Plane"]
-  F4_11["11 Metrics and Norms"]
-  F3_4 --> F4_6
-  F4_6 --> F4_7
-  F4_6 --> F4_8
-  F4_8 --> F4_9
-  AN1_10 -.-> F4_1
-  F4_9 --> F4_10
-  F4_1 --> F4_10
-  F4_7 --> F4_11
-  F4_8 --> F4_11
-  classDef ext fill:#e6e6e6,stroke:#999,color:#555
-  classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
-  classDef segb fill:#f6f6fb,stroke:#99a,color:#333
-```
-
-## F5 Algebraic Preliminaries
+## F4 Preliminaries for Analysis and Algebra
 
 ```mermaid
 flowchart LR
   F3_11["F3.11 The Rationals"]:::ext
-  F4_1["F4.1 Complex Numbers"]:::ext
+  F3_4["F3.4 The Complete Ordered Field Is Unique"]:::ext
+  AN1_10["AN1.10 Power Series, Taylor Series, and the Elementary Functions"]:::ext
+  F4_6["6 Inequalities, Finite Sums, and Real Powers"]
   F5_1["1 Divisibility and Congruences"]
+  F4_1["1 Complex Numbers"]
   F5_2["2 Fields"]
   F5_3["3 Groups, Subgroups, and Homomorphisms"]
   F5_4["4 Formal Polynomials"]
   F5_5["5 Polynomials over a Field"]
+  F4_7["7 Real Functions and Their Graphs"]
+  F4_8["8 Coordinates and Vectors in ℝⁿ"]
+  F4_9["9 Lines, Hyperplanes, and Convex Sets"]
+  F3_4 --> F4_6
   F3_11 --> F5_1
+  AN1_10 -.-> F4_1
+  F4_6 --> F5_2
   F5_1 --> F5_2
   F5_1 --> F5_3
   F5_2 --> F5_4
   F4_1 --> F5_5
-  F5_4 --> F5_5
+  F5_4 --> F4_7
+  F5_2 --> F4_8
+  F4_8 --> F4_9
   classDef ext fill:#e6e6e6,stroke:#999,color:#555
   classDef opt fill:#fff,stroke:#999,stroke-dasharray:4 3,color:#555
   classDef segb fill:#f6f6fb,stroke:#99a,color:#333
@@ -197,8 +179,8 @@ flowchart LR
 flowchart LR
   F2_2["F2.2 Induction and Recursion"]:::ext
   F2_4["F2.4 The Axiom of Choice"]:::ext
+  F4_7["F4.7 Real Functions and Their Graphs"]:::ext
   F4_8["F4.8 Coordinates and Vectors in ℝⁿ"]:::ext
-  F4_11["F4.11 Metrics and Norms"]:::ext
   AN1_1["1 Ordered Fields and the Least Upper Bound Axiom"]
   AN1_4["4 Open, Closed, and Compact Subsets of ℝⁿ"]
   AN2_1["1 Metric Spaces and Their Topology"]
@@ -212,7 +194,7 @@ flowchart LR
   F2_2 --> AN1_1
   F4_8 --> AN1_4
   AN1_1 --> AN1_4
-  F4_11 --> AN2_1
+  F4_7 --> AN2_1
   AN1_4 --> AN2_1
   AN2_1 --> AN1_2
   AN1_2 --> AN2_2
@@ -467,7 +449,6 @@ flowchart LR
 
 ```mermaid
 flowchart LR
-  F4_10["F4.10 Rotations, Angles, and the Complex Plane"]:::ext
   AN2_5["AN2.5 Equicontinuity, the Arzelà–Ascoli Theorem, and Peano's Theorem"]:::ext
   AN3_1["AN3.1 The Derivative in ℝⁿ"]:::ext
   AN3_4["AN3.4 The Riemann Integral on ℝⁿ"]:::ext
@@ -478,7 +459,6 @@ flowchart LR
   CA_4["4 Winding Numbers, the Global Cauchy Theorem, and Counting Zeros"]
   CA_6["6 Harmonic Functions and the Poisson Integral"]
   CA_5["5 Conformal Maps, Normal Families, and the Riemann Mapping Theorem"]
-  F4_10 --> CA_1
   AN3_1 -.-> CA_1
   CA_1 --> CA_10
   AN3_4 -.-> CA_2

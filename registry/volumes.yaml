@@ -11,8 +11,8 @@
 - {id: F1,  title: "Logic and Proof", title_zh: 邏輯與證明,                    branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd1}
 - {id: F2,  title: "Sets and Functions", title_zh: 集合與函數, branch: found,    tier: T1, repo: fd,  status: drafting, book: foundations, prefix: fd2}
 - {id: F3,  title: 'Number Systems: From \(\nN\) to \(\nR\)', title_zh: 數系：從 ℕ 到 ℝ, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd3}
-- {id: F4,  title: "Analytic Preliminaries", title_zh: 分析預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd4}
-- {id: F5,  title: "Algebraic Preliminaries", title_zh: 代數預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd5}
+# 2026-10-26 fd4+fd5 合冊（fd4/authoring/design/merge-proposal.md，作者核准）：F5 退役，F5.1–F5.5 保留 id 搬進 F4。
+- {id: F4,  title: "Preliminaries for Analysis and Algebra", title_zh: 分析與代數預備, branch: found, tier: T1, repo: fd, status: plan, book: foundations, prefix: fd4}
 - {id: AN1, title: "Real Numbers, Metric Spaces, and Derivatives", title_zh: 實數、度量空間與導數, branch: analysis, tier: T1, repo: ab,  status: drafting, book: analysis, prefix: an1}
 - {id: LA1, title: "Spaces and Maps", title_zh: 空間與映射,                    branch: linalg,   tier: T1, repo: la,  status: published, book: linear-algebra, prefix: la1}
 - {id: AL1, title: "Groups", title_zh: 群,                             branch: algebra,  tier: T1, repo: new, status: plan, book: algebra, prefix: al1}

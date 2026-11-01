@@ -22,8 +22,17 @@ ids:
   # 2026-10-26，fd3 re-cut：整除與同餘整章搬到 fd5 當第一章；Dedekind 分割停放到 ST.1
   - {old: F3.5, new: F5.1, decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
   - {old: F3.3, new: ST.1, decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
+  # 2026-10-26，fd4+fd5 合冊：F4.10 併入 F4.9（其旋轉、arg 與等距分類在 S2 依 Q4 (b) 移出本冊，見 merged-ch10-f49.md §6）；F4.11 移到 AN1，併入 AN2.1
+  - {old: F4.10, new: F4.9, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
+  - {old: F4.11, new: AN2.1, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
 
 moves:
+  # 2026-10-26 fd4+fd5 合冊（作者核准）：F5 退役，五章保留 id 搬進 F4（不重編：F4.2–F4.5 已是 F5.2–F5.5 的舊名，重編會成環）
+  - {id: F5.1, from: F5, to: F4, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
+  - {id: F5.2, from: F5, to: F4, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
+  - {id: F5.3, from: F5, to: F4, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
+  - {id: F5.4, from: F5, to: F4, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
+  - {id: F5.5, from: F5, to: F4, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md}
   # 地圖 v2（2026-10-25）：分析主線改走 Apostol MA 的骨架（spec/08 §C、決策 3、17）
   - {id: AN2.1, from: AN2, to: AN1, decided: 2026-10-25, spec: spec/08 §C2}
   - {id: AN2.2, from: AN2, to: AN1, decided: 2026-10-25, spec: spec/08 §C2}
@@ -75,9 +84,13 @@ titles:
   - {id: F3.2, old: "Building the Integers and the Rationals from Equivalence Classes", new: "The Integers", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
   - {id: F3.10, old: "Constructing the Real Numbers from Cauchy Sequences", new: "The Real Numbers from Cauchy Sequences", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md}
   - {id: F5.1, old: "Divisibility, Division with Remainder, and Modular Arithmetic", new: "Divisibility and Congruences", decided: 2026-10-26, spec: fd3/authoring/design/layout-proposal.md, note: 舊 id F3.5}
+  # fd4+fd5 合冊（2026-10-26 作者核准）：F4.9 照 Q4 (b) 只留直線、超平面、最近點與凸集
+  - {id: F4.9, old: 'Lines, Convexity, and Isometries of \(\nR^n\)', new: "Lines, Hyperplanes, and Convex Sets", decided: 2026-10-26, spec: fd4/authoring/blueprints/merged-ch10-f49.md}
 
 volumes:
   - {id: F4, old: "Algebraic Preliminaries", new: "Analytic Preliminaries", alias: algebraic-preliminaries, decided: 2026-10-25, spec: spec/08 §A3, note: 舊的 algebraic-preliminaries 子目錄改指 F5（fd5）}
+  - {id: F4, old: "Analytic Preliminaries", new: "Preliminaries for Analysis and Algebra", alias: analytic-preliminaries, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md, note: 子目錄 preliminaries；fd5 併入}
+  - {id: F5, old: "Algebraic Preliminaries", new: "(merged into F4)", alias: algebraic-preliminaries, decided: 2026-10-26, spec: fd4/authoring/design/merge-proposal.md, note: fd5 退役，algebraic-preliminaries 與 fd5/ 路徑改指 F4}
   - {id: AN1, old: "Analysis on the Real Line", new: "Real Numbers, Metric Spaces, and Derivatives", alias: analysis-on-the-real-line, decided: 2026-10-25, spec: spec/08 §C6}
   - {id: AN2, old: "Metric and Topological Spaces", new: "Integration, Series, and Function Spaces", decided: 2026-10-25, spec: spec/08 §C6}
   - {id: MT, old: "Measure and Integration", new: "Measure, Integration, and Real Analysis", decided: 2026-10-25, spec: spec/08 §D4}

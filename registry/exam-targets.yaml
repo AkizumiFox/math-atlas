@@ -100,14 +100,14 @@
   level: undergrad
   backbone: true
   note: 大學部分析的冊與章序照 Apostol MA 的章序與廣度走（作者 2026-10-25 更正）；10、15 延後到 MT，11 是支線 HA。
-  chapters: [F2.1, F2.3, F4.1, F4.10, AN1.1, AN1.4, AN2.1, AN1.2, AN2.2, AN1.5, AN1.6, AN2.3, AN1.7, AN2.9, AN1.8, AN2.10, AN2.11, AN1.3, AN2.12, AN2.13, AN1.9, AN1.10, AN2.6, AN3.1, AN3.2, AN3.4, CA.1, CA.2, CA.3, CA.4, CA.5]
+  chapters: [F2.1, F2.3, F4.1, AN1.1, AN1.4, AN2.1, AN1.2, AN2.2, AN1.5, AN1.6, AN2.3, AN1.7, AN2.9, AN1.8, AN2.10, AN2.11, AN1.3, AN2.12, AN2.13, AN1.9, AN1.10, AN2.6, AN3.1, AN3.2, AN3.4, CA.1, CA.2, CA.3, CA.4, CA.5]
   branch_cover: [HA.1, HA.2, HA.3, HA.4, HA.5]
   deferred_cover: [MT.1, MT.2, MT.4, MT.5, MT.7]
   deviations:
     - {ch: AN2.11, after: AN1.10, why: 參數積分（Apostol 7.17–7.20）排在 AN1.10 之後，因為 Γ 要用 exp}
-    - {ch: AN1.10, item: Apostol 1, why: Apostol 1 的複數 exp、log 與複數冪在 AN1.10 證明（F4.1、F4.10 只陳述）}
+    - {ch: AN1.10, item: Apostol 1, why: Apostol 1 的複數 exp、log 與複數冪在 AN1.10 證明（F4.1 只陳述；旋轉與 arg 在 CA.1 開頭，F4.10 於 2026-10-26 退役）}
   items:
-    - {topic: "Apostol 1 實數與複數", ch: [AN1.1, F4.1, F4.10, AN1.10]}
+    - {topic: "Apostol 1 實數與複數", ch: [AN1.1, F4.1, AN1.10, CA.1]}
     - {topic: "Apostol 2 集合論、可數性", ch: [F2.1, F2.3]}
     - {topic: "Apostol 3 ℝⁿ 的點集拓樸、度量空間", ch: [AN1.4, AN2.1]}
     - {topic: "Apostol 4 度量空間中的極限與連續", ch: [AN1.2, AN2.2, AN1.5, AN1.6, AN2.3]}
