@@ -175,7 +175,7 @@
  "books": [
   {
    "prefix": "fd1",
-   "path": "../../foundations/fd1",
+   "path": "../books/foundations/fd1",
    "subdir": "logic-and-proof",
    "series": "Foundations",
    "short": "F1",
@@ -190,7 +190,7 @@
   },
   {
    "prefix": "fd2",
-   "path": "../../foundations/fd2",
+   "path": "../books/foundations/fd2",
    "subdir": "sets-and-functions",
    "series": "Foundations",
    "short": "F2",
@@ -206,7 +206,7 @@
   },
   {
    "prefix": "fd3",
-   "path": "../../foundations/fd3",
+   "path": "../books/foundations/fd3",
    "subdir": "number-systems",
    "series": "Foundations",
    "short": "F3",
@@ -221,7 +221,7 @@
   },
   {
    "prefix": "fd4",
-   "path": "../../foundations/fd4",
+   "path": "../books/foundations/fd4",
    "subdir": "preliminaries",
    "series": "Foundations",
    "short": "F4",
@@ -239,7 +239,7 @@
   },
   {
    "prefix": "an1",
-   "path": "../../analysis-series/an1",
+   "path": "../books/analysis-series/an1",
    "subdir": "analysis-on-the-real-line",
    "series": "Analysis",
    "short": "AN1",
@@ -254,7 +254,7 @@
   },
   {
    "prefix": "la",
-   "path": "../../linear-algebra-engine",
+   "path": "../books/linear-algebra-engine",
    "subdir": "linear-algebra",
    "series": "Linear Algebra",
    "short": "LA",
