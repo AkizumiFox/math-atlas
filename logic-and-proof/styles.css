@@ -340,6 +340,17 @@ body {
   background: var(--accent-soft);
 }
 
+/* The glyphs themselves never show as selected, so main.js shades a selected formula.
+   An inline one is padded out to the height of the line, as selected text is. */
+.content mjx-container.math-selected:not([display="true"]) {
+  background: var(--accent-soft);
+  padding-block: calc((var(--line-height) - 1) * 0.5em);
+}
+
+.content mjx-container.math-selected > mjx-math {
+  background: var(--accent-soft);
+}
+
 /* ==========================================================================
    Headings
    ========================================================================== */
@@ -1032,6 +1043,24 @@ div.equation mjx-container[display="true"] {
   .foldable.is-folded .fold-rest {
     display: revert;
   }
+}
+
+/* --- Uses line (components.lua: ::: {.uses}) ---
+   The last paragraph of a proof, idea or solution: the results it used, in small muted
+   type after an italic "Uses:", so the sentences above need not carry the citations. */
+div.uses {
+  margin: 0.7em 0 0.2em;
+  font-size: 0.82em;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+div.uses p {
+  margin: 0;
+}
+
+div.uses p + p {
+  margin-top: 0.3em;
 }
 
 /* --- Second-reading fold (components.lua: ::: {.second-reading title="..."}) ---
