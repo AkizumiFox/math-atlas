@@ -37,13 +37,15 @@ now appeared. The axiom of choice picks one element from each set of a
 family of non-empty sets.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="d9f17e5a29">
-    <link rel="stylesheet" href="../styles.css?v=d9f17e5a29">
+    <meta name="asset-version" content="e3a79a731c">
+    <link rel="stylesheet" href="../styles.css?v=e3a79a731c">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -150,8 +152,8 @@ of Choice</span>
                 past every natural number; <em>Axiomatic Set
                 Theory</em>, Chapter 4 proves it, and with it the three
                 statements are equivalent.</p>
-                <h2 id="zorns-lemma-gives-choice"><span class="header-section-number">6.3.1. </span> Zorn’s
-                lemma gives choice</h2>
+                <h2 id="zorns-lemma-gives-choice"><span class="header-section-number">6.3.1</span> Zorn’s lemma
+                gives choice</h2>
                 <div id="thm-choice-from-zorn" class="theorem env" data-env-type="theorem" data-number="6.3.1" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
                 6.3.1</strong> (Zorn’s Lemma Gives Choice)</span>
@@ -234,7 +236,7 @@ of Choice</span>
                 only the last uses that the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A_i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>A</mi><mi>i</mi></msub></math></mjx-assistive-mml></mjx-container></span> are non-empty; the
                 other three follow the template (<a href="../ch6/chains-and-zorn.html#exm-method-maximality" class="xref" data-ref="exm-method-maximality" data-shard="ch06-axiom-of-choice">Example (Method: the maximality template)</a>),
                 with (C1) and (C2) as the conditions.</p>
-                <h2 id="back-to-comparing-sizes"><span class="header-section-number">6.3.2. </span> Back to
+                <h2 id="back-to-comparing-sizes"><span class="header-section-number">6.3.2</span> Back to
                 comparing sizes</h2>
                 <p>Section 4.4 defined <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left| A \right| \le \left| B \right|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>A</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>≤</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mi>B</mi><mo data-mjx-texclass="CLOSE">|</mo></mrow></math></mjx-assistive-mml></mjx-container></span> as
                 the existence of an injection <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A \to B"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo accent="false" stretchy="false">→</mo><mi>B</mi></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch4/comparing-cardinalities.html#def-card-le" class="xref" data-ref="def-card-le" data-shard="ch04-cardinality">Definition 4.4.1</a>) and
@@ -418,7 +420,7 @@ of Choice</span>
                 not a bijection, although <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left| \mathbb{N} \right| = \left| \mathbb{N} \right|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo data-mjx-texclass="CLOSE">|</mo></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">|</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow><mo data-mjx-texclass="CLOSE">|</mo></mrow></math></mjx-assistive-mml></mjx-container></span>.
                 The proof only promises an injection, and that is all it
                 delivers.</p>
-                <h2 id="the-well-ordering-theorem"><span class="header-section-number">6.3.3. </span> The
+                <h2 id="the-well-ordering-theorem"><span class="header-section-number">6.3.3</span> The
                 well-ordering theorem</h2>
                 <p>Section 6.1 met one rule that picks, again and again:
                 the least element of a non-empty set of natural numbers
@@ -641,7 +643,7 @@ of Choice</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is not; the
                 theorem gives <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> a
                 well-order for which no formula is known.</p>
-                <h2 id="well-orders-give-choice"><span class="header-section-number">6.3.4. </span> Well-orders
+                <h2 id="well-orders-give-choice"><span class="header-section-number">6.3.4</span> Well-orders
                 give choice</h2>
                 <div id="prp-well-ordering-gives-choice" class="proposition env" data-env-type="proposition" data-number="6.3.5" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Proposition</strong><strong>
@@ -705,7 +707,7 @@ of Choice</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="11"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>11</mn></math></mjx-assistive-mml></mjx-container></span>, and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="-11"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><mn>11</mn></math></mjx-assistive-mml></mjx-container></span> is not in it, so
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="c"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c</mi></math></mjx-assistive-mml></mjx-container></span> picks <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="11"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>11</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="what-is-proved-where"><span class="header-section-number">6.3.5. </span> What is
+                <h2 id="what-is-proved-where"><span class="header-section-number">6.3.5</span> What is
                 proved where</h2>
                 <p>The implications between the forms of choice met in
                 this chapter, and where each is proved:</p>
@@ -764,10 +766,9 @@ of Choice</span>
                 statements are equivalent. This book takes the axiom and
                 Zorn’s lemma as given, uses whichever form fits the
                 problem, and flags each use. <em>Linear Algebra</em>,
-                Section 1.8 (<a href="../../linear-algebra/ch01-vector-spaces/08-infinite-dimensional.html#thm-basis-extension-general" class="xref xref-external" data-ref="thm-basis-extension-general" data-shard="ch01-vector-spaces" data-base="../../linear-algebra/" data-book="Linear Algebra">Linear Algebra, Theorem 1.8.2</a>)
-                runs the template once more, with independent sets as
-                partial objects, to extend every independent set to a
-                basis.</p>
+                Section 1.8 (<a href="../../linear-algebra/ch01-vector-spaces/08-infinite-dimensional.html#thm-basis-extension-general" class="xref xref-external" data-ref="thm-basis-extension-general" data-shard="ch01-vector-spaces" data-base="../../linear-algebra/" data-book="Linear Algebra">LA Theorem 1.8.2</a>) runs
+                the template once more, with independent sets as partial
+                objects, to extend every independent set to a basis.</p>
                 <p>The runs of the template in this chapter, side by
                 side:</p>
                 <table>
@@ -821,7 +822,7 @@ of Choice</span>
                 </tr>
                 </tbody>
                 </table>
-                <h2 id="exercises"><span class="header-section-number">6.3.6. </span>
+                <h2 id="exercises"><span class="header-section-number">6.3.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1098,7 +1099,7 @@ of Choice</span>
                 <p><em>Solution</em><em>.</em> The conclusion is true:
                 it is <a href="#thm-cardinal-comparability" class="xref" data-ref="thm-cardinal-comparability" data-shard="ch06-axiom-of-choice">Theorem 6.3.2</a>. The
                 argument does not prove it. It fails at “and so on …
-                when one set runs out”, the gap that (N13) of <a href="../../logic-and-proof/ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Example (What is not allowed)</a>
+                when one set runs out”, the gap that (N13) of <a href="../../logic-and-proof/ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Example (What is not allowed)</a>
                 flags: an “and so on” needs its step, and here the
                 process has no last step in general. Indexed by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, it uses a countable
                 set of elements of each side (<a href="../ch4/countable-sets.html#prp-countable-image" class="xref" data-ref="prp-countable-image" data-shard="ch04-cardinality">Proposition 4.2.4</a>),
@@ -1321,8 +1322,8 @@ of Choice</span>
                 \forall S \, \bigl( S \subseteq X \wedge S \ne \emptyset
                 \to \exists m \in S \; \forall s \in S \; m \preceq s
                 \bigr).
-                "><mjx-math display="true" style="margin-left: 0; margin-right: 0;" class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-TeXAtom texclass="OPEN"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c28 TEX-S1"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2227"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2205"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2AAF"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-TeXAtom texclass="CLOSE"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c29 TEX-S1"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2E"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi mathvariant="normal">∀</mi><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mrow data-mjx-texclass="OPEN"><mo minsize="1.2em" maxsize="1.2em">(</mo></mrow><mi>S</mi><mo>⊆</mo><mi>X</mi><mo>∧</mo><mi>S</mi><mo>≠</mo><mi mathvariant="normal">∅</mi><mo accent="false" stretchy="false">→</mo><mi mathvariant="normal">∃</mi><mi>m</mi><mo>∈</mo><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.278em"></mspace></mstyle><mi mathvariant="normal">∀</mi><mi>s</mi><mo>∈</mo><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.278em"></mspace></mstyle><mi>m</mi><mo>⪯</mo><mi>s</mi><mrow data-mjx-texclass="CLOSE"><mo minsize="1.2em" maxsize="1.2em">)</mo></mrow><mo>.</mo></math></mjx-assistive-mml></mjx-container></span> Its negation (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-bounded-quantifier-negation" class="xref xref-external" data-ref="prp-bounded-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Proposition 6.2.3</a>,
-                as in <a href="../../logic-and-proof/ch6/quantifier-laws.html#exm-negating-definitions" class="xref xref-external" data-ref="exm-negating-definitions" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Example (Three negations from analysis)</a>),
+                "><mjx-math display="true" style="margin-left: 0; margin-right: 0;" class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-TeXAtom texclass="OPEN"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c28 TEX-S1"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2286"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2227"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2205"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-n"><mjx-c class="mjx-c2200"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi><mjx-mstyle><mjx-mspace style="width: 0.278em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2AAF"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-TeXAtom texclass="CLOSE"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c29 TEX-S1"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2E"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi mathvariant="normal">∀</mi><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mrow data-mjx-texclass="OPEN"><mo minsize="1.2em" maxsize="1.2em">(</mo></mrow><mi>S</mi><mo>⊆</mo><mi>X</mi><mo>∧</mo><mi>S</mi><mo>≠</mo><mi mathvariant="normal">∅</mi><mo accent="false" stretchy="false">→</mo><mi mathvariant="normal">∃</mi><mi>m</mi><mo>∈</mo><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.278em"></mspace></mstyle><mi mathvariant="normal">∀</mi><mi>s</mi><mo>∈</mo><mi>S</mi><mstyle scriptlevel="0"><mspace width="0.278em"></mspace></mstyle><mi>m</mi><mo>⪯</mo><mi>s</mi><mrow data-mjx-texclass="CLOSE"><mo minsize="1.2em" maxsize="1.2em">)</mo></mrow><mo>.</mo></math></mjx-assistive-mml></mjx-container></span> Its negation (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-bounded-quantifier-negation" class="xref xref-external" data-ref="prp-bounded-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Proposition 6.2.3</a>, as
+                in <a href="../../logic-and-proof/ch6/quantifier-laws.html#exm-negating-definitions" class="xref xref-external" data-ref="exm-negating-definitions" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Example (Three negations from analysis)</a>),
                 the second alternative, is <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
                 \exists S \, \bigl( S \subseteq X \wedge S \ne \emptyset
                 \wedge \forall m \in S \; \exists s \in S \; s \prec m
@@ -1471,7 +1472,7 @@ and How to Use It</span>
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=d9f17e5a29"></script>
+    <script defer="" src="../main.js?v=e3a79a731c"></script>
             </body>
 
 </html>

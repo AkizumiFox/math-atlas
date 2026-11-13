@@ -33,13 +33,15 @@
         <meta property="og:description" content="Examples.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -150,8 +152,8 @@ Subspaces</span>
                 operator, and its characteristic polynomial, into
                 smaller pieces. The next section looks at the smallest
                 nonzero case, a line, and finds eigenvectors there.</p>
-                <h2 id="subspaces-an-operator-maps-into-itself"><span class="header-section-number">9.1.1. </span> Subspaces
-                an operator maps into itself</h2>
+                <h2 id="subspaces-an-operator-maps-into-itself"><span class="header-section-number">9.1.1</span> Subspaces an
+                operator maps into itself</h2>
                 <p>After a vector space we studied its subspaces, and
                 after linear maps their kernels and images. For an
                 operator <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T \in
@@ -403,7 +405,7 @@ Subspaces</span>
                 1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">e</mi></mrow><mn>2</mn></msub><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, which is not a multiple of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{e}_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">e</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span>, so the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="y"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></mjx-assistive-mml></mjx-container></span>-axis is
                 <strong>not</strong> invariant.</p>
                 </div>
-                <h2 id="restriction-and-the-induced-operator"><span class="header-section-number">9.1.2. </span> Restriction
+                <h2 id="restriction-and-the-induced-operator"><span class="header-section-number">9.1.2</span> Restriction
                 and the induced operator</h2>
                 <p>An invariant subspace <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math></mjx-assistive-mml></mjx-container></span> lets us split <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span> into two smaller
                 operators. One lives on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math></mjx-assistive-mml></mjx-container></span>: since <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span> sends <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math></mjx-assistive-mml></mjx-container></span> into <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math></mjx-assistive-mml></mjx-container></span>, we may simply forget
@@ -569,7 +571,7 @@ Subspaces</span>
                 = x^2 \cdot x"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>p</mi><mi>D</mi></msub><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>⋅</mo><mi>x</mi></math></mjx-assistive-mml></mjx-container></span>. Section 7 of this chapter will
                 run this splitting repeatedly, by induction on the
                 dimension.</p>
-                <h2 id="sums-intersections-and-direct-sums"><span class="header-section-number">9.1.3. </span> Sums,
+                <h2 id="sums-intersections-and-direct-sums"><span class="header-section-number">9.1.3</span> Sums,
                 intersections, and direct sums</h2>
                 <p>Invariant subspaces can be combined. Sums and
                 intersections of invariant subspaces are invariant, in
@@ -741,7 +743,7 @@ Subspaces</span>
                 the sum <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U_1 + U_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.084em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.084em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>U</mi><mn>1</mn></msub><mo>+</mo><msub><mi>U</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span>,
                 which is invariant by <a href="#prp-invariant-sum-intersection" class="xref" data-ref="prp-invariant-sum-intersection" data-shard="ch09-eigenvalues">Proposition 9.1.4</a>.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">9.1.4. </span>
+                <h2 id="exercises"><span class="header-section-number">9.1.4</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1169,7 +1171,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

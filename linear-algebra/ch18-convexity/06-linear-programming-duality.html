@@ -37,13 +37,15 @@ traffic example by admitting what linear algebra alone cannot do:
 “Nonnegativity and street capacities turn the problem into one about…">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -163,7 +165,7 @@ Programming Duality</span>
                 \mathbf{0}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CE TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mo>≥</mo><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">0</mn></mrow></math></mjx-assistive-mml></mjx-container></span>, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{u}
                 \le \mathbf{v}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2264"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">u</mi></mrow><mo>≤</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are the entrywise relations of
                 §05.</p>
-                <h2 id="linear-programs"><span class="header-section-number">18.6.1. </span> Linear
+                <h2 id="linear-programs"><span class="header-section-number">18.6.1</span> Linear
                 programs</h2>
                 <p>Here is a small instance of the kind of question we
                 want to answer. A workshop makes two products. Each unit
@@ -335,7 +337,7 @@ Programming Duality</span>
                 constraint had exactly the objective as its left side.
                 The best upper bound obtainable this way is itself the
                 answer to a linear program.</p>
-                <h2 id="the-dual-program"><span class="header-section-number">18.6.2. </span> The dual
+                <h2 id="the-dual-program"><span class="header-section-number">18.6.2</span> The dual
                 program</h2>
                 <p>Multiply the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container></span>-th constraint of (P) by
                 a number <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="y_i \ge 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>y</mi><mi>i</mi></msub><mo>≥</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>
@@ -396,7 +398,7 @@ Programming Duality</span>
                 constraints say that at these prices the resources used
                 by one unit of each product are worth at least the
                 profit it brings.</p>
-                <h2 id="weak-duality"><span class="header-section-number">18.6.3. </span> Weak
+                <h2 id="weak-duality"><span class="header-section-number">18.6.3</span> Weak
                 duality</h2>
                 <p>The computation that motivated (D) is the first
                 theorem, and it is one line long.</p>
@@ -496,7 +498,7 @@ Programming Duality</span>
                 It is a valid bound, but a poor one compared with the
                 optimal <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\tfrac{81}{5}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mstyle><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c38"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>81</mn><mn>5</mn></mfrac></mstyle></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="strong-duality"><span class="header-section-number">18.6.4. </span> Strong
+                <h2 id="strong-duality"><span class="header-section-number">18.6.4</span> Strong
                 duality</h2>
                 <p>The main theorem says that the gap allowed by weak
                 duality never occurs, and it gives the complete list of
@@ -798,7 +800,7 @@ Programming Duality</span>
                 needed, as <a href="#thm-strong-duality" class="xref" data-ref="thm-strong-duality" data-shard="ch18-convexity">Theorem 18.6.3</a>
                 shows.</p>
                 </div>
-                <h2 id="complementary-slackness"><span class="header-section-number">18.6.5. </span>
+                <h2 id="complementary-slackness"><span class="header-section-number">18.6.5</span>
                 Complementary slackness</h2>
                 <p>Strong duality says that at the optimum the two
                 chains of inequalities in the proof of <a href="#thm-weak-duality" class="xref" data-ref="thm-weak-duality" data-shard="ch18-convexity">Theorem 18.6.1</a> are
@@ -880,7 +882,7 @@ Programming Duality</span>
                 So the multipliers were not a lucky guess: complementary
                 slackness <strong>finds</strong> them from the primal
                 solution.</p>
-                <h2 id="traffic-with-inequalities"><span class="header-section-number">18.6.6. </span> Traffic,
+                <h2 id="traffic-with-inequalities"><span class="header-section-number">18.6.6</span> Traffic,
                 with inequalities</h2>
                 <p>We return to Chapter 3’s town center, to answer the
                 remark made there. Recall from <a href="../ch03-linear-systems/07-applications.html#exm-traffic-network" class="xref" data-ref="exm-traffic-network" data-shard="ch03-linear-systems">Example (Traffic in a town center)</a>
@@ -972,7 +974,7 @@ Programming Duality</span>
                 the corners themselves, as the vertices of a
                 polyhedron.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">18.6.7. </span>
+                <h2 id="exercises"><span class="header-section-number">18.6.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1385,7 +1387,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

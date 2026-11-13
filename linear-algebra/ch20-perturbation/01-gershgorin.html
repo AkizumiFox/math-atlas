@@ -37,13 +37,15 @@ entry, draw the disc whose radius is the total size of the other entries
 in its row.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -157,8 +159,8 @@ Discs</span>
                 real matrix is read inside <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="M_n(\mathbb{C})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.081em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>M</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, as in Chapter
                 16 §04, because its eigenvalues may be nonreal, and they
                 are what we want to locate.</p>
-                <h2 id="discs-around-the-diagonal"><span class="header-section-number">20.1.1. </span> Discs
-                around the diagonal</h2>
+                <h2 id="discs-around-the-diagonal"><span class="header-section-number">20.1.1</span> Discs around
+                the diagonal</h2>
                 <p>Here is the situation to keep in mind. Take <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
                 \mathbf{A} = \begin{pmatrix} 6 & 2 & 5 \\ 1 & -1
                 & 1 \\ 1 & 1 & -1 \end{pmatrix} .
@@ -249,7 +251,7 @@ Discs</span>
                 the information: the radius only measures how far the
                 off-diagonal part can pull an eigenvalue away from
                 it.</p>
-                <h2 id="the-theorem"><span class="header-section-number">20.1.2. </span> The
+                <h2 id="the-theorem"><span class="header-section-number">20.1.2</span> The
                 theorem</h2>
                 <p>It turns out that the guess is right, with no loss at
                 all in the constant:</p>
@@ -465,7 +467,7 @@ Discs</span>
                 particular <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></mjx-assistive-mml></mjx-container></span> is not
                 an eigenvalue, and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{M}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is invertible.</p>
                 </div>
-                <h2 id="diagonal-dominance"><span class="header-section-number">20.1.3. </span> Diagonal
+                <h2 id="diagonal-dominance"><span class="header-section-number">20.1.3</span> Diagonal
                 dominance</h2>
                 <p>The last sentence of the Quick check is a pattern. If
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></mjx-assistive-mml></mjx-container></span> lies outside
@@ -524,7 +526,7 @@ Discs</span>
                 invertible and has zero diagonal. Diagonal dominance is
                 a certificate of invertibility, cheap to check and often
                 available, not a characterization.</p>
-                <h2 id="hermitian-matrices-and-intervals"><span class="header-section-number">20.1.4. </span> Hermitian
+                <h2 id="hermitian-matrices-and-intervals"><span class="header-section-number">20.1.4</span> Hermitian
                 matrices, and intervals</h2>
                 <p>For a Hermitian <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> the eigenvalues are
                 real (<a href="../ch12-spectral-theory/02-self-adjoint-operators.html#thm-self-adjoint-real-eigenvalues" class="xref" data-ref="thm-self-adjoint-real-eigenvalues" data-shard="ch12-spectral-theory">Theorem 12.2.1</a>),
@@ -548,8 +550,8 @@ Discs</span>
                 and column discs coincide, since <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lvert a_{ji}\rvert =
                 \lvert\overline{a_{ij}}\rvert"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mover><mjx-over style="padding-bottom: 0.18em; margin-bottom: -0.248em;"><mjx-mo class="mjx-n"><mjx-stretchy-h style="width: 1.147em;" class="mjx-c2013"><mjx-ext><mjx-c></mjx-c></mjx-ext></mjx-stretchy-h></mjx-mo></mjx-over><mjx-base style="padding-top: 0.001em;"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub></mjx-base></mjx-mover><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo data-mjx-texclass="OPEN" fence="false" stretchy="false">|</mo><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>j</mi><mi>i</mi></mrow></msub><mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">|</mo><mo>=</mo><mo data-mjx-texclass="OPEN" fence="false" stretchy="false">|</mo><mover><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow></msub><mo accent="true">―</mo></mover><mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">|</mo></math></mjx-assistive-mml></mjx-container></span>, so (b) adds
                 nothing.</p>
-                <h2 id="scaling-the-discs"><span class="header-section-number">20.1.5. </span> Scaling
-                the discs</h2>
+                <h2 id="scaling-the-discs"><span class="header-section-number">20.1.5</span> Scaling the
+                discs</h2>
                 <p>The discs depend on the matrix, and the eigenvalues
                 depend only on its similarity class. So any similarity
                 that is easy to compute gives new discs for the same
@@ -669,8 +671,8 @@ Discs</span>
                 this one, §03 will also show that an isolated disc
                 centered on the real axis holds a <strong>real</strong>
                 eigenvalue.</p>
-                <h2 id="eigenvalues-on-the-boundary"><span class="header-section-number">20.1.6. </span>
-                Eigenvalues on the boundary</h2>
+                <h2 id="eigenvalues-on-the-boundary"><span class="header-section-number">20.1.6</span> Eigenvalues
+                on the boundary</h2>
                 <p>Diagonal dominance fails for a matrix that matters.
                 The second-difference matrix <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{K}_n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40A TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">K</mi></mrow><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container></span> of Chapter 19 §09
                 has <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span> on the
@@ -891,7 +893,7 @@ Discs</span>
                 §02 replaces the discs by other regions built from the
                 same entries, and §03 counts the eigenvalues inside a
                 group of discs.</p>
-                <h2 id="exercises"><span class="header-section-number">20.1.7. </span>
+                <h2 id="exercises"><span class="header-section-number">20.1.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1317,7 +1319,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

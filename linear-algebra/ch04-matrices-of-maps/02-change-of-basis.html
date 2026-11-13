@@ -38,13 +38,15 @@ matrix is the matrix of “do nothing”, read with one basis on the way in
 and another on the way out.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -148,7 +150,7 @@ and Similarity</span>
                 map itself, so that no choice of basis can change them?
                 The answers are the change-of-basis formula, drawn as a
                 commutative square, and the relation of similarity.</p>
-                <h2 id="change-of-coordinates-matrices"><span class="header-section-number">4.2.1. </span>
+                <h2 id="change-of-coordinates-matrices"><span class="header-section-number">4.2.1</span>
                 Change-of-coordinates matrices</h2>
                 <p>Recall the definition of the matrix of a map (<a href="../ch04-matrices-of-maps/01-matrix-of-a-map.html#def-matrix-of-linear-map" class="xref" data-ref="def-matrix-of-linear-map" data-shard="ch04-matrices-of-maps">Definition 4.1.1</a>).
                 If <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathcal{B} = (v_1, \dots,
@@ -426,7 +428,7 @@ and Similarity</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="6"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c36"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>6</mn></math></mjx-assistive-mml></mjx-container></span>. The <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathcal{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c43 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span>-coordinates are <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="p(1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="p'(1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-var" size="s"><mjx-c class="mjx-c2032"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>p</mi><mo data-mjx-alternate="1">′</mo></msup><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="p''(1)/2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mo class="mjx-var" size="s"><mjx-c class="mjx-c2033"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>p</mi><mo data-mjx-alternate="1">″</mo></msup><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>, the
                 Taylor coefficients at <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="change-of-basis-for-linear-maps"><span class="header-section-number">4.2.2. </span> Change of
+                <h2 id="change-of-basis-for-linear-maps"><span class="header-section-number">4.2.2</span> Change of
                 basis for linear maps</h2>
                 <p>Now return to a linear map <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T \colon V \to W"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D44A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo data-mjx-texclass="PUNCT">:</mo><mi>V</mi><mo accent="false" stretchy="false">→</mo><mi>W</mi></math></mjx-assistive-mml></mjx-container></span> between
                 finite-dimensional spaces. Suppose we know its matrix
@@ -592,7 +594,7 @@ and Similarity</span>
                 basis acts on the rows; changing the input basis acts on
                 the columns.</p>
                 </div>
-                <h2 id="similar-matrices"><span class="header-section-number">4.2.3. </span> Similar
+                <h2 id="similar-matrices"><span class="header-section-number">4.2.3</span> Similar
                 matrices</h2>
                 <p>For an operator, the two bases on the two sides of
                 the square are the same, and the formula takes the
@@ -735,7 +737,7 @@ and Similarity</span>
                 \mathbf{A}\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c21A6"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mo stretchy="false">↦</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span> has matrix <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{B}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D401 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">B</mi></mrow></math></mjx-assistive-mml></mjx-container></span>?”. Deciding it is one
                 of the central problems of the book, and it will take
                 until Chapter 10 to answer it in general.</p>
-                <h2 id="similarity-invariants"><span class="header-section-number">4.2.4. </span> Similarity
+                <h2 id="similarity-invariants"><span class="header-section-number">4.2.4</span> Similarity
                 invariants</h2>
                 <p>If a quantity computed from a matrix does not change
                 under <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} \mapsto
@@ -872,7 +874,7 @@ and Similarity</span>
                 have trace <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="4"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>4</mn></math></mjx-assistive-mml></mjx-container></span> and
                 rank <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="a-basis-adapted-to-the-operator"><span class="header-section-number">4.2.5. </span> A basis
+                <h2 id="a-basis-adapted-to-the-operator"><span class="header-section-number">4.2.5</span> A basis
                 adapted to the operator</h2>
                 <p>The reflection became diagonal once we chose one
                 basis vector the map keeps and one it flips. The same
@@ -944,7 +946,7 @@ and Similarity</span>
                 basis of them. Operators with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T^2 = T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.056em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>T</mi><mn>2</mn></msup><mo>=</mo><mi>T</mi></math></mjx-assistive-mml></mjx-container></span>, like this one,
                 are the projections of the last section of this
                 chapter.</p>
-                <h2 id="exercises"><span class="header-section-number">4.2.6. </span>
+                <h2 id="exercises"><span class="header-section-number">4.2.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1453,7 +1455,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

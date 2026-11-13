@@ -37,13 +37,15 @@ first attempt, and it is worth watching it fail, because the repair is
 the whole idea of the proof.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -155,7 +157,7 @@ Triangularization</span>
                 <p>Throughout, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="V"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></mjx-assistive-mml></mjx-container></span> is
                 a finite-dimensional inner product space over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F = \mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> or <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F = \mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, and every matrix
                 statement uses the standard inner product on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>F</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span>.</p>
-                <h2 id="why-the-obvious-route-fails"><span class="header-section-number">12.1.1. </span> Why the
+                <h2 id="why-the-obvious-route-fails"><span class="header-section-number">12.1.1</span> Why the
                 obvious route fails</h2>
                 <p>Here is the natural first attempt, and it is worth
                 watching it fail, because the repair is the whole idea
@@ -243,7 +245,7 @@ Triangularization</span>
                 nonzero complex space and the Fundamental Theorem of
                 Algebra gives it an eigenvalue. That is where the field
                 enters, and it is the only place it enters.</p>
-                <h2 id="the-theorem"><span class="header-section-number">12.1.2. </span> The
+                <h2 id="the-theorem"><span class="header-section-number">12.1.2</span> The
                 theorem</h2>
                 <div id="thm-schur-triangularization" class="theorem env" data-env-type="theorem" data-number="12.1.2" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
@@ -395,7 +397,7 @@ Triangularization</span>
                 triangularity is promised. Diagonal is a different and
                 much stronger request, and Sections 4 and 5 say exactly
                 which operators grant it.</p>
-                <h2 id="the-matrix-form"><span class="header-section-number">12.1.3. </span> The matrix
+                <h2 id="the-matrix-form"><span class="header-section-number">12.1.3</span> The matrix
                 form</h2>
                 <p>Translating through an orthonormal basis turns the
                 theorem into a factorization. Recall that a square
@@ -591,8 +593,8 @@ Triangularization</span>
                 diagonal one satisfies strong conditions — Section 4
                 identifies them exactly — and most matrices do not.</p>
                 </div>
-                <h2 id="reading-the-diagonal"><span class="header-section-number">12.1.4. </span> Reading
-                the diagonal</h2>
+                <h2 id="reading-the-diagonal"><span class="header-section-number">12.1.4</span> Reading the
+                diagonal</h2>
                 <p>A triangular form with an explicit factorization
                 makes two Chapter 9 facts fall out in a line each.</p>
                 <div id="cor-trace-sum-eigenvalues-again" class="corollary env" data-env-type="corollary" data-number="12.1.4" style="--env-color: #2f62b5">
@@ -705,7 +707,7 @@ Triangularization</span>
                 exactly this shape; and <a href="#exr-schur-triangularization-c1" class="xref" data-ref="exr-schur-triangularization-c1" data-shard="ch12-spectral-theory">Exercise (C1: Cayley–Hamilton from the triangular factors)</a>
                 uses the triangular form directly, with no limits at
                 all, to reprove the Cayley–Hamilton theorem over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</p>
-                <h2 id="the-real-version"><span class="header-section-number">12.1.5. </span> The real
+                <h2 id="the-real-version"><span class="header-section-number">12.1.5</span> The real
                 version</h2>
                 <p>Over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> the
                 theorem fails, and it fails for the reason it always
@@ -859,7 +861,7 @@ Triangularization</span>
                 form gives up in uniqueness it buys back in stability:
                 the change of basis is an isometry.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">12.1.6. </span>
+                <h2 id="exercises"><span class="header-section-number">12.1.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1378,7 +1380,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

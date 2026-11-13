@@ -37,13 +37,15 @@ at all? Because it is what “the eigenvalues move a little” should
 mean.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -160,7 +162,7 @@ Hoffman–Wielandt Theorem</span>
                 a Hermitian matrix, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lambda_1(\mathbf{A}) \ge \dots \ge
                 \lambda_n(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c22EF"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>λ</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo><mo>≥</mo><mo>⋯</mo><mo>≥</mo><msub><mi>λ</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> is the decreasing list, as in
                 Chapter 17.</p>
-                <h2 id="one-sided-bounds-do-not-pair-eigenvalues"><span class="header-section-number">20.5.1. </span> One-sided
+                <h2 id="one-sided-bounds-do-not-pair-eigenvalues"><span class="header-section-number">20.5.1</span> One-sided
                 bounds do not pair eigenvalues</h2>
                 <p>Recall <a href="../ch20-perturbation/04-bauer-fike.html#cor-bauer-fike-normal" class="xref" data-ref="cor-bauer-fike-normal" data-shard="ch20-perturbation">Corollary 20.4.3</a> (a):
                 if <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} \in M_n(\mathbb{C})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.081em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>∈</mo><msub><mi>M</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>
@@ -235,7 +237,7 @@ Hoffman–Wielandt Theorem</span>
                 pairing attains <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>.
                 Sets that agree can still be far apart as lists.</p>
                 </div>
-                <h2 id="birkhoff-turns-weights-into-a-permutation"><span class="header-section-number">20.5.2. </span> Birkhoff
+                <h2 id="birkhoff-turns-weights-into-a-permutation"><span class="header-section-number">20.5.2</span> Birkhoff
                 turns weights into a permutation</h2>
                 <p>The proof below will produce a sum of the form <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sum_{i,j}s_{ij}c_{ij}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-munder limits="false"><mjx-mo class="mjx-sop"><mjx-c class="mjx-c2211 TEX-S1"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.285em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-munder><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><munder><mo data-mjx-texclass="OP">∑</mo><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>,</mo><mi>j</mi></mrow></munder><msub><mi>s</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>c</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mi>j</mi></mrow></msub></math></mjx-assistive-mml></mjx-container></span>,
                 in which <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="c_{ij} =
@@ -311,7 +313,7 @@ Hoffman–Wielandt Theorem</span>
                 extreme points are the permutation matrices. The proof
                 above uses the second form of Birkhoff’s theorem
                 instead, so no compactness argument appears in it.</p>
-                <h2 id="the-theorem"><span class="header-section-number">20.5.3. </span> The
+                <h2 id="the-theorem"><span class="header-section-number">20.5.3</span> The
                 theorem</h2>
                 <p>We can now prove that two normal matrices have a
                 pairing of their eigenvalues whose cost is at most the
@@ -501,7 +503,7 @@ Hoffman–Wielandt Theorem</span>
                 <strong>cheapest</strong> pairing satisfies the
                 inequality.</p>
                 </div>
-                <h2 id="normality-cannot-be-dropped"><span class="header-section-number">20.5.4. </span> Normality
+                <h2 id="normality-cannot-be-dropped"><span class="header-section-number">20.5.4</span> Normality
                 cannot be dropped</h2>
                 <p>The proof used normality once, in its first line, to
                 make the diagonalizing matrices unitary. For
@@ -609,7 +611,7 @@ Hoffman–Wielandt Theorem</span>
                 \mathbf{B} \right\|_F^2 = 1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msubsup><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c2225"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-TeXAtom space="3" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D401 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2225"></mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align: -0.285em; margin-left: 0;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.282em;"></mjx-spacer><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msubsup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN" symmetric="true">‖</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>−</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">B</mi></mrow><mo data-mjx-texclass="CLOSE" symmetric="true">‖</mo></mrow><mi>F</mi><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>. The theorem needs
                 <strong>both</strong> matrices normal.</p>
                 </div>
-                <h2 id="hermitian-matrices-the-pairing-is-the-order"><span class="header-section-number">20.5.5. </span> Hermitian
+                <h2 id="hermitian-matrices-the-pairing-is-the-order"><span class="header-section-number">20.5.5</span> Hermitian
                 matrices: the pairing is the order</h2>
                 <p>When both matrices are Hermitian, the eigenvalues are
                 real, and there is a natural guess for the best pairing:
@@ -834,7 +836,7 @@ Hoffman–Wielandt Theorem</span>
                 1)^2 + (1 - 3)^2 = 8 > 4"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c38"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>3</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><mn>8</mn><mo>&gt;</mo><mn>4</mn></math></mjx-assistive-mml></mjx-container></span>. Even for Hermitian
                 matrices, the pairing matters.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">20.5.6. </span>
+                <h2 id="exercises"><span class="header-section-number">20.5.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1277,7 +1279,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

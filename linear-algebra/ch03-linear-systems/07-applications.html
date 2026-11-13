@@ -36,13 +36,15 @@ Systems">
 system and the Invertible Matrix Theorem.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -147,7 +149,7 @@ Linear Systems</span>
                 unknown, why the constraints are linear, and over which
                 field. Each model is also honest about what it leaves
                 out.</p>
-                <h2 id="polynomial-interpolation"><span class="header-section-number">3.7.1. </span> Polynomial
+                <h2 id="polynomial-interpolation"><span class="header-section-number">3.7.1</span> Polynomial
                 interpolation</h2>
                 <p>Suppose we know the values of an unknown polynomial
                 at a few points, and want the polynomial. Through two
@@ -441,8 +443,8 @@ Linear Systems</span>
                 points. The honest tool there is a low-degree polynomial
                 that fits approximately, found by least squares in
                 Chapter 11.</p>
-                <h2 id="interpolation-without-a-matrix"><span class="header-section-number">3.7.2. </span>
-                Interpolation without a matrix</h2>
+                <h2 id="interpolation-without-a-matrix"><span class="header-section-number">3.7.2</span> Interpolation
+                without a matrix</h2>
                 <p><a href="#thm-interpolation-unique" class="xref" data-ref="thm-interpolation-unique" data-shard="ch03-linear-systems">Theorem 3.7.3</a> came
                 out of a square system and the Invertible Matrix
                 Theorem. Rank–Nullity, from Chapter 2, reaches the same
@@ -495,7 +497,7 @@ Linear Systems</span>
                 polynomial. That is the price and the power of counting:
                 it tells us a solution exists without saying what it
                 is.</p>
-                <h2 id="balancing-chemical-equations"><span class="header-section-number">3.7.3. </span> Balancing
+                <h2 id="balancing-chemical-equations"><span class="header-section-number">3.7.3</span> Balancing
                 chemical equations</h2>
                 <p>When ammonia burns in oxygen over a catalyst, it
                 produces nitric oxide and water: <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
@@ -602,7 +604,7 @@ Linear Systems</span>
                 happens, and reactions involving ions also conserve
                 electric charge, which adds one more linear
                 equation.</p>
-                <h2 id="flows-in-a-network"><span class="header-section-number">3.7.4. </span> Flows in a
+                <h2 id="flows-in-a-network"><span class="header-section-number">3.7.4</span> Flows in a
                 network</h2>
                 <p>A small town center has four intersections and five
                 one-way streets. Cars enter and leave the center at some
@@ -841,7 +843,7 @@ Linear Systems</span>
                 turn the problem into one about inequalities, which is
                 the subject of linear programming. The matrix <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{N}\mathbf{N}^{\top}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40D TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40D TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A4"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">N</mi></mrow><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">N</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">⊤</mi></mrow></msup></math></mjx-assistive-mml></mjx-container></span> of this model,
                 the graph Laplacian, returns in Chapter 24.</p>
-                <h2 id="lights-out-over-nf_2"><span class="header-section-number">3.7.5. </span> Lights out
+                <h2 id="lights-out-over-nf_2"><span class="header-section-number">3.7.5</span> Lights out
                 over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{F}_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c1D53D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">F</mi></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span></h2>
                 <p>A puzzle has a <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="3 \times
                 3"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn><mo>×</mo><mn>3</mn></math></mjx-assistive-mml></mjx-container></span> grid of lights, each on or off. Pressing a
@@ -1046,7 +1048,7 @@ Linear Systems</span>
                 the model is exact. It even predicts features that are
                 not obvious when playing, such as the irrelevance of the
                 order of presses.</p>
-                <h2 id="exercises"><span class="header-section-number">3.7.6. </span>
+                <h2 id="exercises"><span class="header-section-number">3.7.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1544,7 +1546,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

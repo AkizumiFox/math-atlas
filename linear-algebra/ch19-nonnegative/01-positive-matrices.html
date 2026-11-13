@@ -37,13 +37,15 @@ Perron’s Theorem">
 compares two matrices of the same shape position by position.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -164,7 +166,7 @@ Matrices and Perron’s Theorem</span>
                 the same matrix read in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="M_n(\mathbb{C})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.081em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>M</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, exactly as in
                 Chapter 16 §04, so that <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\rho(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ρ</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> is defined (<a href="../ch16-norms/04-spectral-radius.html#def-spectral-radius" class="xref" data-ref="def-spectral-radius" data-shard="ch16-norms">Definition 16.4.1</a>) and
                 eigenvectors may have complex entries.</p>
-                <h2 id="the-entrywise-order"><span class="header-section-number">19.1.1. </span> The
+                <h2 id="the-entrywise-order"><span class="header-section-number">19.1.1</span> The
                 entrywise order</h2>
                 <p>Chapter 18 §05 wrote <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x} \ge \mathbf{0}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CE TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mo>≥</mo><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">0</mn></mrow></math></mjx-assistive-mml></mjx-container></span> for
                 a real vector with every entry <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\ge 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≥</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>. The same
@@ -502,8 +504,8 @@ Matrices and Perron’s Theorem</span>
                 1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-mover><mjx-over style="padding-bottom: 0.18em; margin-bottom: -0.248em;"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2013"></mjx-c></mjx-mo></mjx-over><mjx-base style="padding-left: 0.016em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D460 TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>c</mi><mi>d</mi><mo>=</mo><mi>s</mi><mover><mi>s</mi><mo accent="true">―</mo></mover><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mo data-mjx-texclass="OPEN" fence="false" stretchy="false">|</mo><mi>s</mi><msup><mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">|</mo><mn>2</mn></msup><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>, gives <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="z_j =
                 \lvert z_j\rvert\,c"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D467 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D450 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>z</mi><mi>j</mi></msub><mo>=</mo><mo data-mjx-texclass="OPEN" fence="false" stretchy="false">|</mo><msub><mi>z</mi><mi>j</mi></msub><mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">|</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mi>c</mi></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="the-spectral-radius-is-monotone"><span class="header-section-number">19.1.2. </span> The
-                spectral radius is monotone</h2>
+                <h2 id="the-spectral-radius-is-monotone"><span class="header-section-number">19.1.2</span> The spectral
+                radius is monotone</h2>
                 <p>A first payoff joins the entrywise order to Chapter
                 16. Enlarging the entries of a nonnegative matrix should
                 not shrink its eigenvalues, and for the spectral radius
@@ -598,7 +600,7 @@ Matrices and Perron’s Theorem</span>
                 positive, which Perron’s theorem below (<a href="#thm-perron" class="xref" data-ref="thm-perron" data-shard="ch19-nonnegative">Theorem 19.1.5</a>)
                 guarantees for the positive <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{B}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D401 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">B</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="perrons-theorem"><span class="header-section-number">19.1.3. </span> Perron’s
+                <h2 id="perrons-theorem"><span class="header-section-number">19.1.3</span> Perron’s
                 theorem</h2>
                 <p>Here is the theorem this section is built around.</p>
                 <div id="thm-perron" class="theorem env" data-env-type="theorem" data-number="19.1.5" style="--env-color: #2f62b5">
@@ -1145,7 +1147,7 @@ Matrices and Perron’s Theorem</span>
                 for <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\rho(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70C TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ρ</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>
                 alone.</p>
                 </div>
-                <h2 id="what-positivity-buys-and-what-it-costs"><span class="header-section-number">19.1.4. </span> What
+                <h2 id="what-positivity-buys-and-what-it-costs"><span class="header-section-number">19.1.4</span> What
                 positivity buys, and what it costs</h2>
                 <p>Each hypothesis of <a href="#thm-perron" class="xref" data-ref="thm-perron" data-shard="ch19-nonnegative">Theorem 19.1.5</a> has a
                 job, and it is instructive to see where it went.
@@ -1180,7 +1182,7 @@ Matrices and Perron’s Theorem</span>
                 hypotheses of <a href="../ch09-eigenvalues/11-powers-recurrences-markov.html#thm-markov-limit-diagonalizable" class="xref" data-ref="thm-markov-limit-diagonalizable" data-shard="ch09-eigenvalues">Theorem 9.11.4</a> hold
                 automatically. The third, diagonalizability, is the one
                 §06 removes.</p>
-                <h2 id="exercises"><span class="header-section-number">19.1.5. </span>
+                <h2 id="exercises"><span class="header-section-number">19.1.5</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1674,7 +1676,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

@@ -39,13 +39,15 @@ function of several vectors that was linear in each of them separately,
 and called it a multilinear form.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -161,7 +163,7 @@ and Their Matrices</span>
                 on the characteristic of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math></mjx-assistive-mml></mjx-container></span> is used anywhere in
                 this section</strong>, and none is used in the next one
                 either.</p>
-                <h2 id="pairing-without-measuring"><span class="header-section-number">14.1.1. </span> Pairing
+                <h2 id="pairing-without-measuring"><span class="header-section-number">14.1.1</span> Pairing
                 without measuring</h2>
                 <p>The dot product on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>F</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> is a machine with two
                 inputs and one scalar output. Over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> it does two different
@@ -364,7 +366,7 @@ and Their Matrices</span>
                 which vectors are orthogonal to which — only make sense
                 when both slots hold vectors of the same space.</p>
                 </div>
-                <h2 id="the-matrix-of-a-form"><span class="header-section-number">14.1.2. </span> The matrix
+                <h2 id="the-matrix-of-a-form"><span class="header-section-number">14.1.2</span> The matrix
                 of a form</h2>
                 <p>The displayed expansion above says that a bilinear
                 form on a finite-dimensional space is determined by
@@ -677,8 +679,8 @@ and Their Matrices</span>
                 meaningless intermediate. Almost every error in this
                 chapter is this confusion.</p>
                 </div>
-                <h2 id="the-form-as-a-map-into-the-dual-space"><span class="header-section-number">14.1.3. </span> The form
-                as a map into the dual space</h2>
+                <h2 id="the-form-as-a-map-into-the-dual-space"><span class="header-section-number">14.1.3</span> The form as
+                a map into the dual space</h2>
                 <p>Fixing the right slot of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\beta"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FD TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>β</mi></math></mjx-assistive-mml></mjx-container></span> leaves a function
                 of the left slot, and clause (B1) says that function is
                 a linear functional. So each <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="v \in V"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi><mo>∈</mo><mi>V</mi></math></mjx-assistive-mml></mjx-container></span> produces
@@ -909,7 +911,7 @@ and Their Matrices</span>
                 specified space</strong>, and restricting changes the
                 space.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">14.1.4. </span>
+                <h2 id="exercises"><span class="header-section-number">14.1.4</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1365,7 +1367,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

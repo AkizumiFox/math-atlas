@@ -37,13 +37,15 @@ something in common: a direction. They are going the same way, and the
 natural thing to say is that they meet “at infinity”.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -149,7 +151,7 @@ Space</span>
                 at all. Everything here works over an arbitrary field
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math></mjx-assistive-mml></mjx-container></span>, and neither
                 analysis nor topology enters.</p>
-                <h2 id="two-lines-that-do-not-meet"><span class="header-section-number">22.6.1. </span> Two lines
+                <h2 id="two-lines-that-do-not-meet"><span class="header-section-number">22.6.1</span> Two lines
                 that do not meet</h2>
                 <p>In the affine plane <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{A}^2(\mathbb{R})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c1D538 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">A</mi></mrow><mn>2</mn></msup><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, take <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
                 L_1 = \{(y_1,y_2) : y_2 - y_1 = 0\}, \qquad
@@ -172,7 +174,7 @@ Space</span>
                 sentence: <em>stop working with points of a vector space
                 and start working with its lines through the
                 origin.</em></p>
-                <h2 id="the-projective-space-of-a-vector-space"><span class="header-section-number">22.6.2. </span> The
+                <h2 id="the-projective-space-of-a-vector-space"><span class="header-section-number">22.6.2</span> The
                 projective space of a vector space</h2>
                 <p>Let <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="V"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></mjx-assistive-mml></mjx-container></span> be a
                 vector space over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math></mjx-assistive-mml></mjx-container></span>. On <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="V \setminus \{0\}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2216"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c7B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c7D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi><mo>∖</mo><mo fence="false" stretchy="false">{</mo><mn>0</mn><mo fence="false" stretchy="false">}</mo></math></mjx-assistive-mml></mjx-container></span>
@@ -333,7 +335,7 @@ Space</span>
                 Whenever a formula below names a coordinate, check that
                 it survives replacing <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span> by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lambda\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>λ</mi><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="the-affine-chart-and-where-the-missing-points-live"><span class="header-section-number">22.6.3. </span> The affine
+                <h2 id="the-affine-chart-and-where-the-missing-points-live"><span class="header-section-number">22.6.3</span> The affine
                 chart, and where the missing points live</h2>
                 <p>Here is the theorem that makes the construction worth
                 doing: projective space is an affine space plus a
@@ -564,7 +566,7 @@ Space</span>
                 vertical direction: one point per direction, and the
                 vertical direction is no longer a special case.</p>
                 </div>
-                <h2 id="projective-subspaces-and-a-dimension-formula-with-one-case"><span class="header-section-number">22.6.4. </span> Projective
+                <h2 id="projective-subspaces-and-a-dimension-formula-with-one-case"><span class="header-section-number">22.6.4</span> Projective
                 subspaces, and a dimension formula with one case</h2>
                 <div id="def-projective-subspace" class="definition env" data-env-type="definition" data-number="22.6.3" style="--env-color: #b0414f">
                 <span class="theorem-title theorem-title-resolved"><strong>Definition</strong><strong>
@@ -813,7 +815,7 @@ Space</span>
                 valid over any field, including finite ones where
                 topology has nothing to say.</p>
                 </div>
-                <h2 id="counting-points"><span class="header-section-number">22.6.5. </span> Counting
+                <h2 id="counting-points"><span class="header-section-number">22.6.5</span> Counting
                 points</h2>
                 <p>Over a finite field the whole space can be counted,
                 and the count is a useful check on the constructions
@@ -979,7 +981,7 @@ Space</span>
                 the same object, and no metric statement about the
                 drawing means anything.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">22.6.6. </span>
+                <h2 id="exercises"><span class="header-section-number">22.6.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1462,7 +1464,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

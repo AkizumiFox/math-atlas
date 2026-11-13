@@ -37,13 +37,15 @@ gone from points to convex sets: a set of points has a convex hull, and
 Carathéodory’s theorem says how few points each element of the…">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -167,8 +169,8 @@ Points</span>
                 sequences being bounded; both facts belong to the
                 elementary algebra of limits that Chapter 16’s
                 introduction imports.</p>
-                <h2 id="points-that-are-not-in-between"><span class="header-section-number">18.8.1. </span> Points
-                that are not in between</h2>
+                <h2 id="points-that-are-not-in-between"><span class="header-section-number">18.8.1</span> Points that
+                are not in between</h2>
                 <p>A convex set contains the segment between any two of
                 its points (<a href="../ch18-convexity/01-convex-sets.html#def-convex-set" class="xref" data-ref="def-convex-set" data-shard="ch18-convexity">Definition 18.1.1</a>). In a
                 filled triangle, a point in the middle of an edge sits
@@ -381,7 +383,7 @@ Points</span>
                 of finitely many points, has finitely many extreme
                 points, all among the points one started from. Section 9
                 is built on this.</p>
-                <h2 id="faces"><span class="header-section-number">18.8.2. </span> Faces</h2>
+                <h2 id="faces"><span class="header-section-number">18.8.2</span> Faces</h2>
                 <p>A single extreme point is too small an object for an
                 induction on dimension. The right object is a piece of
                 the set that behaves like an extreme point as a
@@ -500,8 +502,8 @@ Points</span>
                 <strong>exposed point</strong>. Part (b) says that
                 exposed points are extreme; it is the most convenient
                 test for extremeness.</p>
-                <h2 id="minkowskis-theorem"><span class="header-section-number">18.8.3. </span>
-                Minkowski’s theorem</h2>
+                <h2 id="minkowskis-theorem"><span class="header-section-number">18.8.3</span> Minkowski’s
+                theorem</h2>
                 <p>The main theorem is proved by induction on dimension.
                 Recall from §01 that a nonempty convex set <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="C"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math></mjx-assistive-mml></mjx-container></span> has dimension <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\dim C = \dim \operatorname{aff}
                 C"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="2"><mjx-c class="mjx-c61"></mjx-c><mjx-c class="mjx-c66"></mjx-c><mjx-c class="mjx-c66"></mjx-c></mjx-mi><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>dim</mi><mo data-mjx-texclass="NONE">⁡</mo><mi>C</mi><mo>=</mo><mi>dim</mi><mo data-mjx-texclass="NONE">⁡</mo><mi>aff</mi><mi>C</mi></math></mjx-assistive-mml></mjx-container></span>; by <a href="../ch18-convexity/01-convex-sets.html#prp-affine-hull-coset" class="xref" data-ref="prp-affine-hull-coset" data-shard="ch18-convexity">Proposition 18.1.4</a>,
@@ -752,7 +754,7 @@ Points</span>
                 The same corollary gives a new view of Chapter 17’s
                 variational formulas, as we will see after the density
                 matrices.</p>
-                <h2 id="three-unit-balls"><span class="header-section-number">18.8.4. </span> Three unit
+                <h2 id="three-unit-balls"><span class="header-section-number">18.8.4</span> Three unit
                 balls</h2>
                 <p>The unit balls of the three norms of Chapter 16 (<a href="../ch16-norms/01-vector-norms.html#def-unit-ball" class="xref" data-ref="def-unit-ball" data-shard="ch16-norms">Definition 16.1.2</a>, <a href="../ch16-norms/01-vector-norms.html#exm-p-norms" class="xref" data-ref="exm-p-norms" data-shard="ch16-norms">Example (The <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>-, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>-, and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\infty"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c221E"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="normal">∞</mi></math></mjx-assistive-mml></mjx-container></span>-norms on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>F</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span>)</a>) are compact and
                 convex. They are convex by the remark after <a href="../ch16-norms/01-vector-norms.html#def-unit-ball" class="xref" data-ref="def-unit-ball" data-shard="ch16-norms">Definition 16.1.2</a>. They are
@@ -891,7 +893,7 @@ Points</span>
                 are why <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="B_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>B</mi><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span> is not
                 a polytope.</p>
                 </div>
-                <h2 id="density-matrices"><span class="header-section-number">18.8.5. </span> Density
+                <h2 id="density-matrices"><span class="header-section-number">18.8.5</span> Density
                 matrices</h2>
                 <p>Sums and nonnegative multiples of positive
                 semidefinite matrices are positive semidefinite, because
@@ -1153,7 +1155,7 @@ Points</span>
                 projection <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{Q}\mathbf{Q}^{\top}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D410 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D410 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A4"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">Q</mi></mrow><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">Q</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">⊤</mi></mrow></msup></math></mjx-assistive-mml></mjx-container></span>,
                 but this section does not show that the rank-<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container></span> projections are the
                 extreme points of any convex set.</p>
-                <h2 id="doubly-stochastic-matrices"><span class="header-section-number">18.8.6. </span> Doubly
+                <h2 id="doubly-stochastic-matrices"><span class="header-section-number">18.8.6</span> Doubly
                 stochastic matrices</h2>
                 <p>Chapter 9 met <strong>stochastic</strong> matrices,
                 whose entries are nonnegative and whose columns add up
@@ -1259,7 +1261,7 @@ Points</span>
                 be an average of rearrangements of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\boldsymbol{\uplambda}(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-b"><mjx-utext style="font-size: 88.4%; padding: 0.848em 0 0.226em 0;" variant="bold">𝛌</mjx-utext></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold">λ</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, each
                 majorized by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\boldsymbol{\uplambda}(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-b"><mjx-utext style="font-size: 88.4%; padding: 0.848em 0 0.226em 0;" variant="bold">𝛌</mjx-utext></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold">λ</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, hence
                 majorized by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\boldsymbol{\uplambda}(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-b"><mjx-utext style="font-size: 88.4%; padding: 0.848em 0 0.226em 0;" variant="bold">𝛌</mjx-utext></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi mathvariant="bold">λ</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> itself by <a href="../ch18-convexity/01-convex-sets.html#exm-majorization-set-convex" class="xref" data-ref="exm-majorization-set-convex" data-shard="ch18-convexity">Example (The vectors majorized by a fixed vector)</a>.</p>
-                <h2 id="when-the-extreme-points-are-not-closed"><span class="header-section-number">18.8.7. </span> When the
+                <h2 id="when-the-extreme-points-are-not-closed"><span class="header-section-number">18.8.7</span> When the
                 extreme points are not closed</h2>
                 <p>In every example so far, the extreme points have
                 formed a closed set: finitely many points, a sphere, or
@@ -1377,7 +1379,7 @@ Points</span>
                 circle intact. So the set of extreme points of a compact
                 convex set need not be closed, and hence need not be
                 compact.</p>
-                <h2 id="exercises"><span class="header-section-number">18.8.8. </span>
+                <h2 id="exercises"><span class="header-section-number">18.8.8</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1930,7 +1932,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

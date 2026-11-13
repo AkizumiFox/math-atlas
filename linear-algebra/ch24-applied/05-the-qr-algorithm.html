@@ -35,13 +35,15 @@ put the factors back the wrong way round, and repeat.">
 put the factors back the wrong way round, and repeat.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -152,7 +154,7 @@ Algorithm</span>
                 replace <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{Z}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D419 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">Z</mi></mrow></math></mjx-assistive-mml></mjx-container></span> by <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{R}\mathbf{Q}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D411 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D410 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">R</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">Q</mi></mrow></math></mjx-assistive-mml></mjx-container></span> — and we now ask why
                 it works, why it is always started from a Hessenberg
                 matrix, and why it is always run with a shift.</p>
-                <h2 id="factor-and-multiply-back"><span class="header-section-number">24.5.1. </span> Factor and
+                <h2 id="factor-and-multiply-back"><span class="header-section-number">24.5.1</span> Factor and
                 multiply back</h2>
                 <p>Section 4 iterated a matrix against a
                 <strong>vector</strong>: the power method drives <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}^{(k)} =
@@ -295,7 +297,7 @@ Algorithm</span>
                 instability under rounding is exactly the instability of
                 elimination without pivoting met in Section 2.</p>
                 </div>
-                <h2 id="the-iteration-is-the-power-method-in-disguise"><span class="header-section-number">24.5.2. </span> The
+                <h2 id="the-iteration-is-the-power-method-in-disguise"><span class="header-section-number">24.5.2</span> The
                 iteration is the power method in disguise</h2>
                 <p>Nothing said so far suggests that the iterates go
                 anywhere. The identity that explains them is the
@@ -416,7 +418,7 @@ Algorithm</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\tau_k = (\mathbf{T}_k)_{11} \neq
                 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70F TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.08em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D413 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>τ</mi><mi>k</mi></msub><mo>=</mo><mo stretchy="false">(</mo><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">T</mi></mrow><mi>k</mi></msub><msub><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mn>11</mn></mrow></msub><mo>≠</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="what-converges-and-how-fast"><span class="header-section-number">24.5.3. </span> What
+                <h2 id="what-converges-and-how-fast"><span class="header-section-number">24.5.3</span> What
                 converges, and how fast</h2>
                 <div id="thm-qr-convergence" class="theorem env" data-env-type="theorem" data-number="24.5.3" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
@@ -626,7 +628,7 @@ Algorithm</span>
                 bottom-right. With shifts, which is how the algorithm is
                 actually run, even that ordering goes away.</p>
                 </div>
-                <h2 id="hessenberg-first"><span class="header-section-number">24.5.4. </span> Hessenberg
+                <h2 id="hessenberg-first"><span class="header-section-number">24.5.4</span> Hessenberg
                 first</h2>
                 <p>As written, one step costs a QR factorization of a
                 full <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n \times n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>×</mo><mi>n</mi></math></mjx-assistive-mml></mjx-container></span>
@@ -814,8 +816,7 @@ Algorithm</span>
                 i+1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>j</mi><mo>&gt;</mo><mi>i</mi><mo>+</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>, which is tridiagonality. The cost then
                 drops further, to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="O(n)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> per step.</p>
                 </div>
-                <h2 id="shifts"><span class="header-section-number">24.5.5. </span>
-                Shifts</h2>
+                <h2 id="shifts"><span class="header-section-number">24.5.5</span> Shifts</h2>
                 <p>The rate <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lvert\lambda_{i+1}/\lambda_i\rvert"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo data-mjx-texclass="OPEN" fence="false" stretchy="false">|</mo><msub><mi>λ</mi><mrow data-mjx-texclass="ORD"><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><msub><mi>λ</mi><mi>i</mi></msub><mo data-mjx-texclass="CLOSE" fence="false" stretchy="false">|</mo></math></mjx-assistive-mml></mjx-container></span>
                 is a property of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, and we cannot change
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span>. We can change
@@ -1037,7 +1038,7 @@ Algorithm</span>
                 </ul>
                 </div>
                 </div>
-                <h2 id="three-unshifted-steps-watched"><span class="header-section-number">24.5.6. </span> Three
+                <h2 id="three-unshifted-steps-watched"><span class="header-section-number">24.5.6</span> Three
                 unshifted steps, watched</h2>
                 <div id="exm-qr-three-steps" class="example env" data-env-type="example" data-number="" style="--env-color: #3b7a4c">
                 <span class="theorem-title theorem-title-resolved"><strong>Example</strong>
@@ -1179,7 +1180,7 @@ Algorithm</span>
                 decimal digit in the <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(2,1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> entry. That is the
                 cost of not shifting.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">24.5.7. </span>
+                <h2 id="exercises"><span class="header-section-number">24.5.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1684,7 +1685,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

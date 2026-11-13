@@ -37,13 +37,15 @@ Gaussian elimination written down once, so that it never has to be done
 again.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -152,7 +154,7 @@ Factorizations</span>
                 failures with row swaps.</p>
                 <p>Throughout, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math></mjx-assistive-mml></mjx-container></span> is
                 a field and all matrices are square, in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="M_n(F)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.081em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>M</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mi>F</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>.</p>
-                <h2 id="triangular-systems-are-cheap"><span class="header-section-number">3.6.1. </span> Triangular
+                <h2 id="triangular-systems-are-cheap"><span class="header-section-number">3.6.1</span> Triangular
                 systems are cheap</h2>
                 <p>Some systems need no elimination at all. Take <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
                 \mathbf{U} = \begin{pmatrix} 2 & 1 & -1 \\ 0 & 3
@@ -187,7 +189,7 @@ Factorizations</span>
                 <p><em>An LU factorization is Gaussian elimination
                 written down once, so that it never has to be done
                 again.</em></p>
-                <h2 id="lu-factorizations"><span class="header-section-number">3.6.2. </span> LU
+                <h2 id="lu-factorizations"><span class="header-section-number">3.6.2</span> LU
                 factorizations</h2>
                 <div id="def-lu-factorization" class="definition env" data-env-type="definition" data-number="3.6.1" style="--env-color: #b0414f">
                 <span class="theorem-title theorem-title-resolved"><strong>Definition</strong><strong>
@@ -353,7 +355,7 @@ Factorizations</span>
                 property of the <strong>order of the rows</strong>, not
                 of invertibility.</p>
                 </div>
-                <h2 id="unit-lower-triangular-matrices"><span class="header-section-number">3.6.3. </span> Unit lower
+                <h2 id="unit-lower-triangular-matrices"><span class="header-section-number">3.6.3</span> Unit lower
                 triangular matrices</h2>
                 <p>Elimination builds <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{L}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">L</mi></mrow></math></mjx-assistive-mml></mjx-container></span> out of elementary
                 matrices, and the uniqueness proof below divides one
@@ -491,7 +493,7 @@ Factorizations</span>
                 invertible by <a href="../ch03-linear-systems/04-elementary-matrices-and-inverses.html#thm-invertible-tfae" class="xref" data-ref="thm-invertible-tfae" data-shard="ch03-linear-systems">Theorem 3.4.4</a>. This
                 proves the lemma.</p>
                 </div>
-                <h2 id="elimination-without-row-swaps"><span class="header-section-number">3.6.4. </span> Elimination
+                <h2 id="elimination-without-row-swaps"><span class="header-section-number">3.6.4</span> Elimination
                 without row swaps</h2>
                 <p>To prove that elimination always produces an LU
                 factorization, we first need to say exactly which
@@ -761,8 +763,8 @@ Factorizations</span>
                 3 & 1 \end{pmatrix}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">L</mi></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></span>. Check: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{L}\mathbf{U} = \begin{pmatrix} 2 & 4
                 \\ 6 & 12 - 7 \end{pmatrix} = \mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D414 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 4.222em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c36"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">L</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">U</mi></mrow><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>4</mn></mtd></mtr><mtr><mtd><mn>6</mn></mtd><mtd><mn>12</mn><mo>−</mo><mn>7</mn></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="solving-with-an-lu-factorization"><span class="header-section-number">3.6.5. </span> Solving
-                with an LU factorization</h2>
+                <h2 id="solving-with-an-lu-factorization"><span class="header-section-number">3.6.5</span> Solving with
+                an LU factorization</h2>
                 <p>Once <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} = \mathbf{L}\mathbf{U}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D414 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">L</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">U</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
                 is known, each system <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}\mathbf{x} = \mathbf{b}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">b</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
                 costs two substitutions.</p>
@@ -840,7 +842,7 @@ Factorizations</span>
                 operations for the factorization, done once, against
                 about <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2 \times 10^6"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c36"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn><mo>×</mo><msup><mn>10</mn><mn>6</mn></msup></math></mjx-assistive-mml></mjx-container></span>
                 for each new right-hand side.</p>
-                <h2 id="uniqueness"><span class="header-section-number">3.6.6. </span>
+                <h2 id="uniqueness"><span class="header-section-number">3.6.6</span>
                 Uniqueness</h2>
                 <p>The factorization of <a href="#exm-lu-by-elimination" class="xref" data-ref="exm-lu-by-elimination" data-shard="ch03-linear-systems">Example (An LU factorization from elimination)</a>
                 came from one particular procedure. Could another
@@ -932,8 +934,8 @@ Factorizations</span>
                 “<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="u_{jj} \neq 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>u</mi><mrow data-mjx-texclass="ORD"><mi>j</mi><mi>j</mi></mrow></msub><mo>≠</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>”,
                 here for <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="j = 1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>j</mi><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="row-swaps-and-the-plu-factorization"><span class="header-section-number">3.6.7. </span> Row swaps
-                and the PLU factorization</h2>
+                <h2 id="row-swaps-and-the-plu-factorization"><span class="header-section-number">3.6.7</span> Row swaps and
+                the PLU factorization</h2>
                 <p><a href="#exm-no-lu-factorization" class="xref" data-ref="exm-no-lu-factorization" data-shard="ch03-linear-systems">Example (An invertible matrix with no LU factorization)</a>
                 showed that some matrices, even invertible ones, have no
                 LU factorization, because elimination meets a zero pivot
@@ -1224,7 +1226,7 @@ Factorizations</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\varepsilon"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D700 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>ε</mi></math></mjx-assistive-mml></mjx-container></span>.
                 Chapter 24 makes this precise.</p>
                 </div>
-                <h2 id="symmetric-matrices-the-ldlᵀ-factorization"><span class="header-section-number">3.6.8. </span> Symmetric
+                <h2 id="symmetric-matrices-the-ldlᵀ-factorization"><span class="header-section-number">3.6.8</span> Symmetric
                 matrices: the LDLᵀ factorization</h2>
                 <p>When <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is
                 symmetric, the two factors of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} = \mathbf{L}\mathbf{U}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D414 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">L</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">U</mi></mrow></math></mjx-assistive-mml></mjx-container></span> are secretly
@@ -1317,7 +1319,7 @@ Factorizations</span>
                 The theorem assumes the factorization exists and then
                 improves it.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">3.6.9. </span>
+                <h2 id="exercises"><span class="header-section-number">3.6.9</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1839,7 +1841,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

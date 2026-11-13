@@ -38,13 +38,15 @@ into blocks, ran one step of elimination, and gave a name to what was
 left in the far corner: the Schur complement.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -157,7 +159,7 @@ Matrices in Blocks</span>
                 \mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> or <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F =
                 \mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>F</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> carries the standard
                 inner product.</p>
-                <h2 id="what-the-blocks-of-a-positive-matrix-must-satisfy"><span class="header-section-number">13.6.1. </span> What the
+                <h2 id="what-the-blocks-of-a-positive-matrix-must-satisfy"><span class="header-section-number">13.6.1</span> What the
                 blocks of a positive matrix must satisfy</h2>
                 <p>A Hermitian matrix cut into blocks of sizes <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container></span> and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="l"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D459 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>l</mi></math></mjx-assistive-mml></mjx-container></span> has a shape forced on
                 it. Suppose</p>
@@ -232,8 +234,8 @@ Matrices in Blocks</span>
                 <a href="../ch08-block-matrices/03-block-determinants-and-schur-complements.html#def-schur-complement" class="xref" data-ref="def-schur-complement" data-shard="ch08-block-matrices">Definition 8.3.1</a>.
                 The general statement now writes itself: replace the
                 scalars by blocks.</p>
-                <h2 id="testing-one-block-at-a-time"><span class="header-section-number">13.6.2. </span> Testing
-                one block at a time</h2>
+                <h2 id="testing-one-block-at-a-time"><span class="header-section-number">13.6.2</span> Testing one
+                block at a time</h2>
                 <div id="thm-block-psd-schur" class="theorem env" data-env-type="theorem" data-number="13.6.1" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
                 13.6.1</strong> (Positive Definiteness Block by
@@ -565,7 +567,7 @@ Matrices in Blocks</span>
                 case, which is the one the rest of the chapter
                 consumes.</p>
                 </div>
-                <h2 id="a-positive-definite-certificate-for-stability"><span class="header-section-number">13.6.3. </span> A positive
+                <h2 id="a-positive-definite-certificate-for-stability"><span class="header-section-number">13.6.3</span> A positive
                 definite certificate for stability</h2>
                 <p>Chapter 12 ended its section on the Sylvester
                 equation with a specialization it could not finish. For
@@ -1079,7 +1081,7 @@ Matrices in Blocks</span>
                 identity <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\det \mathbf{M} = \det
                 \mathbf{A}\cdot\det(\mathbf{M}/\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-TeXAtom space="2" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-TeXAtom space="2" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow><mo>=</mo><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>⋅</mo><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> recorded above. The next
                 section reads two classical inequalities off it.</p>
-                <h2 id="exercises"><span class="header-section-number">13.6.4. </span>
+                <h2 id="exercises"><span class="header-section-number">13.6.4</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1509,7 +1511,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

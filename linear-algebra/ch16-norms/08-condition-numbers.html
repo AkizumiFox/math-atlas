@@ -36,13 +36,15 @@ Be">
 first.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -162,8 +164,8 @@ the Answer Be</span>
                 none of the three norms we actually compute with, since
                 <a href="../ch16-norms/03-matrix-and-operator-norms.html#thm-operator-norm-formulas" class="xref" data-ref="thm-operator-norm-formulas" data-shard="ch16-norms">Theorem 16.3.3</a> gives the
                 same three formulas over either field.</p>
-                <h2 id="a-recurring-product"><span class="header-section-number">16.8.1. </span> A
-                recurring product</h2>
+                <h2 id="a-recurring-product"><span class="header-section-number">16.8.1</span> A recurring
+                product</h2>
                 <p>Let <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} \in
                 M_n(\mathbb{C})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.081em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>∈</mo><msub><mi>M</mi><mi>n</mi></msub><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> be invertible, let <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{b} \ne \mathbf{0}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CE TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">b</mi></mrow><mo>≠</mo><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">0</mn></mrow></math></mjx-assistive-mml></mjx-container></span>,
                 and let <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
@@ -467,7 +469,7 @@ the Answer Be</span>
                 unitary changes of coordinates that Chapters 11 to 13
                 use throughout, so it is a property of the linear map
                 and not of the basis it is written in.</p>
-                <h2 id="what-the-condition-number-predicts"><span class="header-section-number">16.8.2. </span> What the
+                <h2 id="what-the-condition-number-predicts"><span class="header-section-number">16.8.2</span> What the
                 condition number predicts</h2>
                 <p>The computation that opened the section is now a
                 theorem, together with the version where <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> itself, and not only
@@ -723,7 +725,7 @@ the Answer Be</span>
                 <em>some</em> direction is dangerous, not that yours
                 is.</p>
                 </div>
-                <h2 id="why-the-normal-equations-are-worse"><span class="header-section-number">16.8.3. </span> Why the
+                <h2 id="why-the-normal-equations-are-worse"><span class="header-section-number">16.8.3</span> Why the
                 normal equations are worse</h2>
                 <p>Chapter 11 §04 solved the least-squares problem
                 through the normal equations <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}^{*}\mathbf{A}\mathbf{x} =
@@ -870,8 +872,8 @@ the Answer Be</span>
                 supplies is the number that appears in both statements,
                 and the reason a square appears in one of them.</li>
                 </ul>
-                <h2 id="conditioning-is-a-property-of-the-problem"><span class="header-section-number">16.8.4. </span>
-                Conditioning is a property of the problem</h2>
+                <h2 id="conditioning-is-a-property-of-the-problem"><span class="header-section-number">16.8.4</span> Conditioning
+                is a property of the problem</h2>
                 <p>This is the last warning of the chapter, and it is
                 the one readers most often need.</p>
                 <div class="warning small-env" data-env-type="warning">
@@ -909,7 +911,7 @@ the Answer Be</span>
                 on what any method can promise, and never as a verdict
                 on a particular answer.</p>
                 </div>
-                <h2 id="what-this-chapter-has-settled"><span class="header-section-number">16.8.5. </span> What this
+                <h2 id="what-this-chapter-has-settled"><span class="header-section-number">16.8.5</span> What this
                 chapter has settled</h2>
                 <p>Nine chapters wrote promissory notes that only a norm
                 could pay. Here is the ledger, with the section that
@@ -977,7 +979,7 @@ the Answer Be</span>
                 number is the bridge to that last subject: it is the
                 exact point at which linear algebra stops and numerical
                 analysis begins.</p>
-                <h2 id="exercises"><span class="header-section-number">16.8.6. </span>
+                <h2 id="exercises"><span class="header-section-number">16.8.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1481,7 +1483,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

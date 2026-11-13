@@ -39,13 +39,15 @@ we need one inequality, and it is a statement about weighted averages,
 not about matrices at all.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -165,7 +167,7 @@ and Conjugate Gradients</span>
                 which over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is
                 not a real number; everything below survives over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{C}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2102 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">C</mi></mrow></math></mjx-assistive-mml></mjx-container></span> with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{b}^{*}\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">b</mi></mrow><mrow data-mjx-texclass="ORD"><mo>∗</mo></mrow></msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
                 replaced by its real part, and nothing else changes.</p>
-                <h2 id="a-linear-system-is-a-minimization-problem"><span class="header-section-number">24.7.1. </span> A linear
+                <h2 id="a-linear-system-is-a-minimization-problem"><span class="header-section-number">24.7.1</span> A linear
                 system is a minimization problem</h2>
                 <p>Positive definiteness is a statement about the number
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}^{\top}\mathbf{A}\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A4"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">⊤</mi></mrow></msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch13-psd-and-svd/01-positive-definite-matrices.html#def-positive-semidefinite" class="xref" data-ref="def-positive-semidefinite" data-shard="ch13-psd-and-svd">Definition 13.1.1</a>), so
@@ -284,7 +286,7 @@ and Conjugate Gradients</span>
                 </div>
                 <p>The residual is computable and the error is not; <a href="#eq-residual-error" class="xref" data-ref="eq-residual-error" data-shard="ch24-applied">Eq. 24.7.1</a> is the exchange
                 rate between them.</p>
-                <h2 id="steepest-descent"><span class="header-section-number">24.7.2. </span> Steepest
+                <h2 id="steepest-descent"><span class="header-section-number">24.7.2</span> Steepest
                 descent</h2>
                 <p>Fix <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow></math></mjx-assistive-mml></mjx-container></span> and
                 a direction <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{d} \ne
@@ -639,7 +641,7 @@ and Conjugate Gradients</span>
                 why <a href="#exm-steepest-descent-sharp" class="xref" data-ref="exm-steepest-descent-sharp" data-shard="ch24-applied">Example (The bound is attained)</a>
                 never escapes its worst case.</p>
                 </div>
-                <h2 id="conjugate-directions"><span class="header-section-number">24.7.3. </span> Conjugate
+                <h2 id="conjugate-directions"><span class="header-section-number">24.7.3</span> Conjugate
                 directions</h2>
                 <p>The defect is now visible: each line search spoils
                 the minimality achieved along the previous direction. We
@@ -1025,7 +1027,7 @@ and Conjugate Gradients</span>
                 matrix of order <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="10^6"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-script style="vertical-align: 0.393em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c36"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>10</mn><mn>6</mn></msup></math></mjx-assistive-mml></mjx-container></span> is stopped after a
                 few hundred steps, and the theorem that matters is <a href="#thm-cg-convergence" class="xref" data-ref="thm-cg-convergence" data-shard="ch24-applied">Theorem 24.7.7</a> below.</p>
                 </div>
-                <h2 id="chebyshev-polynomials"><span class="header-section-number">24.7.4. </span> Chebyshev
+                <h2 id="chebyshev-polynomials"><span class="header-section-number">24.7.4</span> Chebyshev
                 polynomials</h2>
                 <p><a href="#thm-cg-optimality" class="xref" data-ref="thm-cg-optimality" data-shard="ch24-applied">Theorem 24.7.4</a> (d) has an
                 equivalent form that turns the whole question of speed
@@ -1203,7 +1205,7 @@ and Conjugate Gradients</span>
                 <a href="#eq-cg-polynomial-min" class="xref" data-ref="eq-cg-polynomial-min" data-shard="ch24-applied">Eq. 24.7.6</a>: small on the
                 interval where the eigenvalues lie, and large at <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="the-square-root"><span class="header-section-number">24.7.5. </span> The square
+                <h2 id="the-square-root"><span class="header-section-number">24.7.5</span> The square
                 root</h2>
                 <div id="thm-cg-convergence" class="theorem env" data-env-type="theorem" data-number="24.7.7" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
@@ -1387,7 +1389,7 @@ and Conjugate Gradients</span>
                 extreme case. Conjugate gradients sees the whole
                 spectrum, not just its ends.</p>
                 </div>
-                <h2 id="two-footnotes-chebyshev-iteration-and-preconditioning"><span class="header-section-number">24.7.6. </span> Two
+                <h2 id="two-footnotes-chebyshev-iteration-and-preconditioning"><span class="header-section-number">24.7.6</span> Two
                 footnotes: Chebyshev iteration and preconditioning</h2>
                 <p>The polynomial in Step 3 depends only on <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lambda_1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>λ</mi><mn>1</mn></msub></math></mjx-assistive-mml></mjx-container></span> and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lambda_n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D706 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>λ</mi><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container></span>, so one can
                 <em>fix</em> it in advance and update the iterates by
@@ -1420,7 +1422,7 @@ and Conjugate Gradients</span>
                 where <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> came from,
                 and no theorem of linear algebra answers that. We state
                 the mechanism and stop.</p>
-                <h2 id="exercises"><span class="header-section-number">24.7.7. </span>
+                <h2 id="exercises"><span class="header-section-number">24.7.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1868,7 +1870,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

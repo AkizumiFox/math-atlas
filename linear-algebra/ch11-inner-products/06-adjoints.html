@@ -37,13 +37,15 @@ first slot to the second slot, you pay with a new map going the other
 way.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -158,7 +160,7 @@ Adjoint</span>
                 second, and every inner product space is
                 finite-dimensional over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>F</mi></math></mjx-assistive-mml></mjx-container></span> unless we say
                 otherwise.</p>
-                <h2 id="paying-to-cross-the-inner-product"><span class="header-section-number">11.6.1. </span> Paying to
+                <h2 id="paying-to-cross-the-inner-product"><span class="header-section-number">11.6.1</span> Paying to
                 cross the inner product</h2>
                 <p>Here is the situation the adjoint answers. We have a
                 linear map <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span> and an
@@ -290,7 +292,7 @@ Adjoint</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="W"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>W</mi></math></mjx-assistive-mml></mjx-container></span>. We keep both
                 spaces finite-dimensional because the rest of the
                 section does need it.</p>
-                <h2 id="the-adjoint-1"><span class="header-section-number">11.6.2. </span> The
+                <h2 id="the-adjoint-1"><span class="header-section-number">11.6.2</span> The
                 adjoint</h2>
                 <p>The theorem produced an object attached to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span> and to the two inner
                 products, and it is unique, so it deserves a name and a
@@ -531,7 +533,7 @@ Adjoint</span>
                 against any vector, precisely as in the
                 infinite-dimensional discussion of Section 5.</p>
                 </div>
-                <h2 id="arithmetic-of-the-adjoint"><span class="header-section-number">11.6.3. </span> Arithmetic
+                <h2 id="arithmetic-of-the-adjoint"><span class="header-section-number">11.6.3</span> Arithmetic
                 of the adjoint</h2>
                 <p>Starring behaves like transposing: it is additive,
                 conjugate-homogeneous, order-reversing on products, and
@@ -633,7 +635,7 @@ Adjoint</span>
                 familiar from transposes and from dual maps (<a href="../ch05-duality/04-dual-map.html#thm-dual-map-properties" class="xref" data-ref="thm-dual-map-properties" data-shard="ch05-duality">Theorem 5.4.1</a> (b)). Part
                 (d) says that starring is an involution, so no new maps
                 appear by starring twice.</p>
-                <h2 id="the-matrix-of-the-adjoint"><span class="header-section-number">11.6.4. </span> The matrix
+                <h2 id="the-matrix-of-the-adjoint"><span class="header-section-number">11.6.4</span> The matrix
                 of the adjoint</h2>
                 <p>Now fix bases and compute. The conclusion is the one
                 the opening computation suggests, <strong>provided the
@@ -766,8 +768,8 @@ Adjoint</span>
                 \mathbf{I}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D406 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D408 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">G</mi></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">I</mi></mrow></math></mjx-assistive-mml></mjx-container></span> and the rule collapses to <a href="#thm-matrix-of-adjoint" class="xref" data-ref="thm-matrix-of-adjoint" data-shard="ch11-inner-products">Theorem 11.6.3</a>. <a href="#exr-adjoints-c3" class="xref" data-ref="exr-adjoints-c3" data-shard="ch11-inner-products">Exercise (C3: The adjoint in an arbitrary basis)</a>
                 asks for the general rule.</p>
                 </div>
-                <h2 id="the-adjoint-and-the-dual-map"><span class="header-section-number">11.6.5. </span> The
-                adjoint and the dual map</h2>
+                <h2 id="the-adjoint-and-the-dual-map"><span class="header-section-number">11.6.5</span> The adjoint
+                and the dual map</h2>
                 <p>Two backward maps are now attached to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span>: the dual map <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T' \colon W^{*} \to
                 V^{*}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.056em;"><mjx-mo class="mjx-var" size="s"><mjx-c class="mjx-c2032"></mjx-c></mjx-mo></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-msup space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44A TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.059em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2217"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>T</mi><mo data-mjx-alternate="1">′</mo></msup><mo data-mjx-texclass="PUNCT">:</mo><msup><mi>W</mi><mrow data-mjx-texclass="ORD"><mo>∗</mo></mrow></msup><mo accent="false" stretchy="false">→</mo><msup><mi>V</mi><mrow data-mjx-texclass="ORD"><mo>∗</mo></mrow></msup></math></mjx-assistive-mml></mjx-container></span> of <a href="../ch05-duality/04-dual-map.html#def-dual-map" class="xref" data-ref="def-dual-map" data-shard="ch05-duality">Definition 5.4.1</a>, which
                 needs no inner product and sends a functional <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="f"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math></mjx-assistive-mml></mjx-container></span> to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="f \circ T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D453 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2218"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo>∘</mo><mi>T</mi></math></mjx-assistive-mml></mjx-container></span>, and the
@@ -830,7 +832,7 @@ Adjoint</span>
                 conjugate-linear, and over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span> it disappears, which
                 is why the two constructions are so easily confused
                 there.</p>
-                <h2 id="the-four-fundamental-subspaces"><span class="header-section-number">11.6.6. </span> The four
+                <h2 id="the-four-fundamental-subspaces"><span class="header-section-number">11.6.6</span> The four
                 fundamental subspaces</h2>
                 <p>Chapter 3 attached four subspaces to a matrix: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\operatorname{col}(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c6F"></mjx-c><mjx-c class="mjx-c6C"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>col</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\operatorname{nul}(\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c6E"></mjx-c><mjx-c class="mjx-c75"></mjx-c><mjx-c class="mjx-c6C"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>nul</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch03-linear-systems/05-rank.html#def-column-space" class="xref" data-ref="def-column-space" data-shard="ch03-linear-systems">Definition 3.5.1</a>,
                 <a href="../ch03-linear-systems/05-rank.html#def-null-space" class="xref" data-ref="def-null-space" data-shard="ch03-linear-systems">Definition 3.5.3</a>)
@@ -1059,8 +1061,8 @@ Adjoint</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\dim (\operatorname{im} T)^{\perp} = 7 - 3
                 = 4"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-n"><mjx-c class="mjx-c69"></mjx-c><mjx-c class="mjx-c6D"></mjx-c></mjx-mi><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c22A5"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c37"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>dim</mi><mo data-mjx-texclass="NONE">⁡</mo><mo stretchy="false">(</mo><mi>im</mi><mi>T</mi><msup><mo stretchy="false">)</mo><mrow data-mjx-texclass="ORD"><mo>⊥</mo></mrow></msup><mo>=</mo><mn>7</mn><mo>−</mo><mn>3</mn><mo>=</mo><mn>4</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="self-adjoint-and-normal-operators"><span class="header-section-number">11.6.7. </span>
-                Self-adjoint and normal operators</h2>
+                <h2 id="self-adjoint-and-normal-operators"><span class="header-section-number">11.6.7</span> Self-adjoint
+                and normal operators</h2>
                 <p>For an operator <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T \in
                 \mathcal{L}(V)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c4C TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi><mo>∈</mo><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">L</mi></mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, the adjoint lives in the same space
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathcal{L}(V)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c4C TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">L</mi></mrow><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, so we may
@@ -1281,7 +1283,7 @@ Adjoint</span>
                 of nothing until the basis is known to be
                 orthonormal.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">11.6.8. </span>
+                <h2 id="exercises"><span class="header-section-number">11.6.8</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1802,7 +1804,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

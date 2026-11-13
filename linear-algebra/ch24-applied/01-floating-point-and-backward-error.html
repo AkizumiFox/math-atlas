@@ -37,13 +37,15 @@ Error">
 two things that were missing.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -157,8 +159,8 @@ and Backward Error</span>
                 algebra. Then the vocabulary that turns the model into
                 verdicts about algorithms: forward error, backward
                 error, and stability.</p>
-                <h2 id="two-answers-to-one-question"><span class="header-section-number">24.1.1. </span> Two
-                answers to one question</h2>
+                <h2 id="two-answers-to-one-question"><span class="header-section-number">24.1.1</span> Two answers
+                to one question</h2>
                 <p>Chapter 16 §08 left a small experiment on the
                 reader’s desk. The system was <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
                 \begin{aligned}
@@ -181,7 +183,7 @@ and Backward Error</span>
                 method. Section 2 works that example in the model below
                 and says exactly what the exchange achieved. This
                 section builds the language it will be said in.</p>
-                <h2 id="a-model-of-machine-arithmetic"><span class="header-section-number">24.1.2. </span> A model of
+                <h2 id="a-model-of-machine-arithmetic"><span class="header-section-number">24.1.2</span> A model of
                 machine arithmetic</h2>
                 <p>A machine holds finitely many numbers. It cannot hold
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1/3"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>3</mn></math></mjx-assistive-mml></mjx-container></span>, it cannot hold
@@ -350,8 +352,8 @@ and Backward Error</span>
                 subtraction that destroys answers, as the last example
                 of this section will show.</p>
                 </div>
-                <h2 id="accumulated-rounding-the-constant-gamma_k"><span class="header-section-number">24.1.3. </span>
-                Accumulated rounding: the constant <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\gamma_k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FE TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.025em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>γ</mi><mi>k</mi></msub></math></mjx-assistive-mml></mjx-container></span></h2>
+                <h2 id="accumulated-rounding-the-constant-gamma_k"><span class="header-section-number">24.1.3</span> Accumulated
+                rounding: the constant <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\gamma_k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D6FE TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em; margin-left: -0.025em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>γ</mi><mi>k</mi></msub></math></mjx-assistive-mml></mjx-container></span></h2>
                 <p>A single operation costs a factor <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1 + \delta"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D6FF TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn><mo>+</mo><mi>δ</mi></math></mjx-assistive-mml></mjx-container></span>. An algorithm
                 performs many, and the factors pile up: an answer
                 typically carries a product like <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(1 + \delta_1)(1 +
@@ -448,7 +450,7 @@ and Backward Error</span>
                 what the formula gives and what the empty product
                 deserves.</p>
                 </div>
-                <h2 id="the-first-backward-error-analysis"><span class="header-section-number">24.1.4. </span> The first
+                <h2 id="the-first-backward-error-analysis"><span class="header-section-number">24.1.4</span> The first
                 backward error analysis</h2>
                 <p>Here is the simplest algorithm in the book: add up
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container></span> products. What
@@ -559,7 +561,7 @@ and Backward Error</span>
                 with a modestly larger constant, and we do not prove it
                 here or use it.</p>
                 </div>
-                <h2 id="forward-error-backward-error-stability"><span class="header-section-number">24.1.5. </span> Forward
+                <h2 id="forward-error-backward-error-stability"><span class="header-section-number">24.1.5</span> Forward
                 error, backward error, stability</h2>
                 <p>We can now name what <a href="#thm-inner-product-backward-error" class="xref" data-ref="thm-inner-product-backward-error" data-shard="ch24-applied">Theorem 24.1.2</a> did, and
                 the alternative it declined to do. Fix a
@@ -716,8 +718,8 @@ and Backward Error</span>
                 next theorem is the only bridge between the two
                 sides.</p>
                 </div>
-                <h2 id="multiplying-the-two-together"><span class="header-section-number">24.1.6. </span>
-                Multiplying the two together</h2>
+                <h2 id="multiplying-the-two-together"><span class="header-section-number">24.1.6</span> Multiplying
+                the two together</h2>
                 <p>The rule of thumb everyone quotes is <em>forward
                 error <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lesssim"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2272 TEX-A"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≲</mo></math></mjx-assistive-mml></mjx-container></span>
                 condition number <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\times"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>×</mo></math></mjx-assistive-mml></mjx-container></span> backward
@@ -874,7 +876,7 @@ and Backward Error</span>
                 more digits than that, whatever anybody computes
                 with.</p>
                 </div>
-                <h2 id="cancellation-and-where-the-damage-really-happens"><span class="header-section-number">24.1.7. </span>
+                <h2 id="cancellation-and-where-the-damage-really-happens"><span class="header-section-number">24.1.7</span>
                 Cancellation, and where the damage really happens</h2>
                 <p>Backward stability is a property of a whole
                 algorithm, and algorithms are usually wrecked in one
@@ -982,7 +984,7 @@ and Backward Error</span>
                 that makes it exact, is a <strong>backward error
                 analysis</strong>. Chapter 24 builds on it.”</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">24.1.8. </span>
+                <h2 id="exercises"><span class="header-section-number">24.1.8</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1459,7 +1461,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

@@ -37,13 +37,15 @@ the core track (all of A, one B and one C per section, the exit checks);
 about 45 hours for everything.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="d9f17e5a29">
-    <link rel="stylesheet" href="../styles.css?v=d9f17e5a29">
+    <meta name="asset-version" content="e3a79a731c">
+    <link rel="stylesheet" href="../styles.css?v=e3a79a731c">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -174,17 +176,17 @@ Functions</a>
                 of choice.</p>
                 <p><strong>What you need.</strong> <em>Logic and
                 Proof</em>, Chapters 1–8, and <em>Sets and
-                Functions</em>, Chapters 1–3. Induction (<a href="../../logic-and-proof/ch4/induction.html#ax-induction" class="xref xref-external" data-ref="ax-induction" data-shard="ch04-semantics-soundness-completeness" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Axiom 4.2.1</a>)
-                from <em>Logic and Proof</em>, Chapter 4. From <em>Logic
-                and Proof</em>, Chapter 5, the rule <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../../logic-and-proof/ch5/existential-elimination.html#def-rules-existential" class="xref xref-external" data-ref="def-rules-existential" data-shard="ch05-predicate-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Definition 5.6.1</a>),
+                Functions</em>, Chapters 1–3. Induction (<a href="../../logic-and-proof/ch4/induction.html#ax-induction" class="xref xref-external" data-ref="ax-induction" data-shard="ch04-semantics-soundness-completeness" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Axiom 4.2.1</a>) from
+                <em>Logic and Proof</em>, Chapter 4. From <em>Logic and
+                Proof</em>, Chapter 5, the rule <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathrm{\exists E}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c2203"></mjx-c></mjx-mi><mjx-mi class="mjx-n"><mjx-c class="mjx-c45"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">∃</mi><mi mathvariant="normal">E</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../../logic-and-proof/ch5/existential-elimination.html#def-rules-existential" class="xref xref-external" data-ref="def-rules-existential" data-shard="ch05-predicate-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Definition 5.6.1</a>),
                 which names one object at a time. From <em>Logic and
-                Proof</em>, Chapters 2 and 6, excluded middle (<a href="../../logic-and-proof/ch2/reductio-and-classical-rules.html#prp-excluded-middle" class="xref xref-external" data-ref="prp-excluded-middle" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Proposition 2.5.3</a>)
-                and the negation of quantifiers (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-quantifier-negation" class="xref xref-external" data-ref="prp-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Proposition 6.2.1</a>).
+                Proof</em>, Chapters 2 and 6, excluded middle (<a href="../../logic-and-proof/ch2/reductio-and-classical-rules.html#prp-excluded-middle" class="xref xref-external" data-ref="prp-excluded-middle" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Proposition 2.5.3</a>)
+                and the negation of quantifiers (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-quantifier-negation" class="xref xref-external" data-ref="prp-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Proposition 6.2.1</a>).
                 From <em>Logic and Proof</em>, Chapter 8, the catalogue
-                of what a proof may not do (<a href="../../logic-and-proof/ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Example (What is not allowed)</a>).
+                of what a proof may not do (<a href="../../logic-and-proof/ch8/checking-proofs.html#exm-not-allowed-catalogue" class="xref xref-external" data-ref="exm-not-allowed-catalogue" data-shard="ch08-from-derivations-to-prose" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Example (What is not allowed)</a>).
                 The irrationality of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sqrt
-                2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-n"><mjx-c class="mjx-c221A"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.174em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt></math></mjx-assistive-mml></mjx-container></span> (<a href="../../logic-and-proof/ch2/negation-and-contradiction.html#thm-sqrt2-irrational" class="xref xref-external" data-ref="thm-sqrt2-irrational" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Theorem 2.2.1</a>),
-                used in Sections 4.2 and 4.5. From Chapters 1 and 2: the
+                2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msqrt><mjx-sqrt><mjx-surd><mjx-mo class="mjx-n"><mjx-c class="mjx-c221A"></mjx-c></mjx-mo></mjx-surd><mjx-box style="padding-top: 0.174em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-box></mjx-sqrt></mjx-msqrt></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msqrt><mn>2</mn></msqrt></math></mjx-assistive-mml></mjx-container></span> (<a href="../../logic-and-proof/ch2/negation-and-contradiction.html#thm-sqrt2-irrational" class="xref xref-external" data-ref="thm-sqrt2-irrational" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Theorem 2.2.1</a>), used
+                in Sections 4.2 and 4.5. From Chapters 1 and 2: the
                 empty set and its uniqueness (<a href="../ch1/sets-and-subsets.html#def-empty-set" class="xref" data-ref="def-empty-set" data-shard="ch01-sets">Definition 1.2.4</a>, <a href="../ch1/sets-and-subsets.html#prp-empty-set-unique" class="xref" data-ref="prp-empty-set-unique" data-shard="ch01-sets">Proposition 1.2.3</a>); sets cut
                 out by a property (<a href="../ch1/sets-and-subsets.html#def-set-builder" class="xref" data-ref="def-set-builder" data-shard="ch01-sets">Definition 1.2.3</a>) and
                 Russell’s theorem (<a href="../ch1/sets-and-subsets.html#thm-russell" class="xref" data-ref="thm-russell" data-shard="ch01-sets">Theorem 1.2.4</a>); power sets,
@@ -446,7 +448,7 @@ Sets and Finite Sets; the Pigeonhole Principle</span>
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=d9f17e5a29"></script>
+    <script defer="" src="../main.js?v=e3a79a731c"></script>
             </body>
 
 </html>

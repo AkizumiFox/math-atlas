@@ -35,13 +35,15 @@ multiply, rescale, repeat, and read off the dominant eigenvector.">
 multiply, rescale, repeat, and read off the dominant eigenvector.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -169,8 +171,8 @@ Method</span>
                 \left\| \cdot \right\|_2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo></mjx-mrow><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mrow><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN" symmetric="true">‖</mo><mo>⋅</mo><mo data-mjx-texclass="CLOSE" symmetric="true">‖</mo></mrow><mo>=</mo><msub><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN" symmetric="true">‖</mo><mo>⋅</mo><mo data-mjx-texclass="CLOSE" symmetric="true">‖</mo></mrow><mn>2</mn></msub></math></mjx-assistive-mml></mjx-container></span>. Iteration indices are
                 superscripts in parentheses, so that subscripts stay
                 free for coordinates.</p>
-                <h2 id="multiplying-by-the-matrix"><span class="header-section-number">24.4.1. </span>
-                Multiplying by the matrix</h2>
+                <h2 id="multiplying-by-the-matrix"><span class="header-section-number">24.4.1</span> Multiplying
+                by the matrix</h2>
                 <p>Take <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span>
                 diagonalizable with eigenbasis <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{v}_1, \dots,
                 \mathbf{v}_n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container></span> and eigenvalues <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\lambda_1, \dots,
@@ -657,8 +659,8 @@ Method</span>
                 starting vector chosen without regard to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is a better plan than
                 a lucky rounding.</p>
                 </div>
-                <h2 id="shifting-and-inverting"><span class="header-section-number">24.4.2. </span> Shifting
-                and inverting</h2>
+                <h2 id="shifting-and-inverting"><span class="header-section-number">24.4.2</span> Shifting and
+                inverting</h2>
                 <p>The power method finds the eigenvalue of largest
                 modulus, and that is usually not the one anybody wants.
                 The repair is a change of matrix. If <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mu"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D707 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>μ</mi></math></mjx-assistive-mml></mjx-container></span> is not an eigenvalue
@@ -961,7 +963,7 @@ Method</span>
                 nothing, and the computed direction really is
                 unreliable.</p>
                 </div>
-                <h2 id="the-shift-that-improves-itself"><span class="header-section-number">24.4.3. </span> The shift
+                <h2 id="the-shift-that-improves-itself"><span class="header-section-number">24.4.3</span> The shift
                 that improves itself</h2>
                 <p>Inverse iteration needs a shift, and a better shift
                 converges faster. But the iteration is manufacturing
@@ -1203,7 +1205,7 @@ Method</span>
                 statement is classical and is not proved here</strong>,
                 and nothing in this book depends on it.</p>
                 </div>
-                <h2 id="deflation-and-what-comes-next"><span class="header-section-number">24.4.4. </span> Deflation,
+                <h2 id="deflation-and-what-comes-next"><span class="header-section-number">24.4.4</span> Deflation,
                 and what comes next</h2>
                 <p>One eigenpair is rarely enough. For Hermitian <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, once a unit
                 eigenvector <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{q}_1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42A TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">q</mi></mrow><mn>1</mn></msub></math></mjx-assistive-mml></mjx-container></span> and its
@@ -1251,7 +1253,7 @@ Method</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}^{k}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mrow data-mjx-texclass="ORD"><mi>k</mi></mrow></msup></math></mjx-assistive-mml></mjx-container></span>, with the
                 shifts of this section reappearing as the device that
                 makes it fast.</p>
-                <h2 id="exercises"><span class="header-section-number">24.4.5. </span>
+                <h2 id="exercises"><span class="header-section-number">24.4.5</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1803,7 +1805,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

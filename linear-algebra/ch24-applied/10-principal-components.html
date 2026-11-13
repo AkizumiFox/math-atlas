@@ -35,13 +35,15 @@ and the affine problem becomes the linear problem Chapter 13 solved.">
 and the affine problem becomes the linear problem Chapter 13 solved.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -153,7 +155,7 @@ Components</span>
                 \mathbb{R}^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D441 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mi>N</mi></msub><mo>∈</mo><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span>, written as the columns of a matrix, and
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\left\| \cdot \right\|"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN" symmetric="true">‖</mo><mo>⋅</mo><mo data-mjx-texclass="CLOSE" symmetric="true">‖</mo></mrow></math></mjx-assistive-mml></mjx-container></span> is the
                 Euclidean norm.</p>
-                <h2 id="centering"><span class="header-section-number">24.10.1. </span>
+                <h2 id="centering"><span class="header-section-number">24.10.1</span>
                 Centering</h2>
                 <p>An <strong>affine subspace</strong> of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> is a coset <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="A = \mathbf{p} + U = \{\mathbf{p} +
                 \mathbf{z} : \mathbf{z} \in U\}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D429 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c7B"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D429 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-TeXAtom space="3" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D433 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3A"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D433 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">p</mi></mrow><mo>+</mo><mi>U</mi><mo>=</mo><mo fence="false" stretchy="false">{</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">p</mi></mrow><mo>+</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">z</mi></mrow><mo>:</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">z</mi></mrow><mo>∈</mo><mi>U</mi><mo fence="false" stretchy="false">}</mo></math></mjx-assistive-mml></mjx-container></span> of a subspace <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="U"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D448 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>U</mi></math></mjx-assistive-mml></mjx-container></span>, and its dimension is
@@ -245,7 +247,7 @@ Components</span>
                 some data and a meaningless one for most, and in any
                 case is not the one below. The clause that matters is
                 <em>which index is averaged over</em>.</p>
-                <h2 id="the-best-fitting-affine-subspace"><span class="header-section-number">24.10.2. </span> The
+                <h2 id="the-best-fitting-affine-subspace"><span class="header-section-number">24.10.2</span> The
                 best-fitting affine subspace</h2>
                 <p>Distances to an affine subspace reduce to distances
                 to its direction space, and the reduction is Chapter
@@ -444,8 +446,8 @@ Components</span>
                 \sigma_{k+1}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D70E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>σ</mi><mi>k</mi></msub><mo>=</mo><msub><mi>σ</mi><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container></span>, just as the truncation of <a href="../ch13-psd-and-svd/11-low-rank-approximation.html#def-truncated-svd" class="xref" data-ref="def-truncated-svd" data-shard="ch13-psd-and-svd">Definition 13.11.1</a> is
                 nonunique then.</p>
                 </div>
-                <h2 id="the-sample-covariance-matrix"><span class="header-section-number">24.10.3. </span> The
-                sample covariance matrix</h2>
+                <h2 id="the-sample-covariance-matrix"><span class="header-section-number">24.10.3</span> The sample
+                covariance matrix</h2>
                 <p>Fix a direction <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{w}
                 \in \mathbb{R}^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D430 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">w</mi></mrow><mo>∈</mo><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{w} \ne \mathbf{0}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D430 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CE TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">w</mi></mrow><mo>≠</mo><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">0</mn></mrow></math></mjx-assistive-mml></mjx-container></span> and
                 look at the data through it: each point <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}_j"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D431 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">x</mi></mrow><mi>j</mi></msub></math></mjx-assistive-mml></mjx-container></span> has the single
@@ -676,7 +678,7 @@ Components</span>
                 components</strong>: the coordinates of the centered
                 data along <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{u}_i"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">u</mi></mrow><mi>i</mi></msub></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="how-much-variance-a-subspace-explains"><span class="header-section-number">24.10.4. </span> How much
+                <h2 id="how-much-variance-a-subspace-explains"><span class="header-section-number">24.10.4</span> How much
                 variance a subspace explains</h2>
                 <div id="thm-variance-explained" class="theorem env" data-env-type="theorem" data-number="24.10.4" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
@@ -863,7 +865,7 @@ Components</span>
                 decision, and it is not forced by anything proved
                 here.</p>
                 </div>
-                <h2 id="computing-it-and-what-is-not-proved"><span class="header-section-number">24.10.5. </span> Computing
+                <h2 id="computing-it-and-what-is-not-proved"><span class="header-section-number">24.10.5</span> Computing
                 it, and what is not proved</h2>
                 <p>Two closing matters, one computational and one about
                 scope.</p>
@@ -1031,7 +1033,7 @@ Components</span>
                 eigenvector, and leaves every ratio such as <a href="#thm-variance-explained" class="xref" data-ref="thm-variance-explained" data-shard="ch24-applied">Theorem 24.10.4</a> (d)
                 exactly as it was.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">24.10.6. </span>
+                <h2 id="exercises"><span class="header-section-number">24.10.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1485,7 +1487,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

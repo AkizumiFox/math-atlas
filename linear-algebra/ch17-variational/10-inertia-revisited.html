@@ -38,13 +38,15 @@ three numbers to a real symmetric matrix — how many positive, how many
 negative, how many zero entries appear on the diagonal after a…">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -164,7 +166,7 @@ and Additively</span>
                 is the plain transpose and this is exactly the relation
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A} \simeq \mathbf{B}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2243"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D401 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>≃</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">B</mi></mrow></math></mjx-assistive-mml></mjx-container></span> of <a href="../ch14-forms/02-congruence.html#def-congruent" class="xref" data-ref="def-congruent" data-shard="ch14-forms">Definition 14.2.1</a>, and
                 Chapter 13 already used the complex version in <a href="../ch13-psd-and-svd/01-positive-definite-matrices.html#prp-congruence-positivity" class="xref" data-ref="prp-congruence-positivity" data-shard="ch13-psd-and-svd">Proposition 13.1.2</a>.</p>
-                <h2 id="a-symbol-for-the-triple"><span class="header-section-number">17.10.1. </span> A symbol
+                <h2 id="a-symbol-for-the-triple"><span class="header-section-number">17.10.1</span> A symbol
                 for the triple</h2>
                 <p>Chapter 14 §05 named the three counts and proved them
                 well defined, and <a href="../ch14-forms/05-sylvesters-law-of-inertia.html#def-signature" class="xref" data-ref="def-signature" data-shard="ch14-forms">Definition 14.5.1</a> records
@@ -224,8 +226,8 @@ and Additively</span>
                 inertia, and everything below degenerates to a known
                 statement about definiteness when the triple is
                 extreme.</p>
-                <h2 id="sylvesters-law-proved-again"><span class="header-section-number">17.10.2. </span>
-                Sylvester’s law, proved again</h2>
+                <h2 id="sylvesters-law-proved-again"><span class="header-section-number">17.10.2</span> Sylvester’s
+                law, proved again</h2>
                 <p>The description of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n_+"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mo>+</mo></msub></math></mjx-assistive-mml></mjx-container></span> that this chapter can
                 supply is not a count of diagonal entries at all. It is
                 a maximum over subspaces, and it mentions no basis, no
@@ -523,7 +525,7 @@ and Additively</span>
                 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≥</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>, but it does break <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="> 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c3E"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>&gt;</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span> — which is the
                 whole difference between the two numbers.</p>
                 </div>
-                <h2 id="inertia-under-a-perturbation-of-small-rank"><span class="header-section-number">17.10.3. </span> Inertia
+                <h2 id="inertia-under-a-perturbation-of-small-rank"><span class="header-section-number">17.10.3</span> Inertia
                 under a perturbation of small rank</h2>
                 <p>A congruence leaves the inertia alone and does
                 nothing else: it can move the eigenvalues anywhere
@@ -664,8 +666,8 @@ and Additively</span>
                 need <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n_+"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mo class="mjx-n" size="s"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>n</mi><mo>+</mo></msub></math></mjx-assistive-mml></mjx-container></span> to move by
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="additivity-across-a-schur-complement"><span class="header-section-number">17.10.4. </span>
-                Additivity across a Schur complement</h2>
+                <h2 id="additivity-across-a-schur-complement"><span class="header-section-number">17.10.4</span> Additivity
+                across a Schur complement</h2>
                 <p>Chapter 8 built the Schur complement out of block
                 elimination and proved two things about it: <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\det\mathbf{M} =
                 \det\mathbf{A}\cdot\det(\mathbf{M}/\mathbf{A})"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-TeXAtom space="2" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-TeXAtom space="2" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c22C5"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c64"></mjx-c><mjx-c class="mjx-c65"></mjx-c><mjx-c class="mjx-c74"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow><mo>=</mo><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>⋅</mo><mo data-mjx-texclass="OP" movablelimits="true">det</mo><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch08-block-matrices/03-block-determinants-and-schur-complements.html#thm-schur-determinant" class="xref" data-ref="thm-schur-determinant" data-shard="ch08-block-matrices">Theorem 8.3.2</a>) and
@@ -974,7 +976,7 @@ and Additively</span>
                 so shows the definite case as the extreme instance of an
                 equality that holds for every Hermitian <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{M}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40C TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">M</mi></mrow></math></mjx-assistive-mml></mjx-container></span> with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> invertible, definite
                 or not.</p>
-                <h2 id="exercises"><span class="header-section-number">17.10.5. </span>
+                <h2 id="exercises"><span class="header-section-number">17.10.5</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1530,7 +1532,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

@@ -39,13 +39,15 @@ rescale one row by a nonzero scalar, or add a multiple of one row to
 a…">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -215,7 +217,7 @@ Elimination</span>
                 This section makes elimination precise, proves that it
                 always reaches a standard shape, and shows how to read
                 every solution from that shape.</p>
-                <h2 id="three-moves-that-do-not-change-the-answer"><span class="header-section-number">3.2.1. </span> Three moves
+                <h2 id="three-moves-that-do-not-change-the-answer"><span class="header-section-number">3.2.1</span> Three moves
                 that do not change the answer</h2>
                 <p>Here is a system over <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, solved the way one
                 would solve it on paper: <span class="math display"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" display="true" data-tex="
@@ -400,7 +402,7 @@ Elimination</span>
                 writing each elementary row operation as multiplication
                 by an invertible matrix. Until then, “row equivalent”
                 means the definition above.</p>
-                <h2 id="row-operations-preserve-solutions"><span class="header-section-number">3.2.2. </span> Row
+                <h2 id="row-operations-preserve-solutions"><span class="header-section-number">3.2.2</span> Row
                 operations preserve solutions</h2>
                 <p>Here is the promise from the start of the section,
                 now as a theorem.</p>
@@ -540,7 +542,7 @@ Elimination</span>
                 Even swapping two columns of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow></math></mjx-assistive-mml></mjx-container></span> swaps the
                 corresponding entries of every solution.</p>
                 </div>
-                <h2 id="echelon-forms"><span class="header-section-number">3.2.3. </span> Echelon
+                <h2 id="echelon-forms"><span class="header-section-number">3.2.3</span> Echelon
                 forms</h2>
                 <p>Row operations can change a system a great deal. We
                 now choose a target: a shape of matrix from which the
@@ -700,8 +702,8 @@ Elimination</span>
                 and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="x_2, x_4"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mn>2</mn></msub><mo>,</mo><msub><mi>x</mi><mn>4</mn></msub></math></mjx-assistive-mml></mjx-container></span> do
                 not.</p>
                 </div>
-                <h2 id="gaussjordan-elimination"><span class="header-section-number">3.2.4. </span>
-                Gauss–Jordan elimination</h2>
+                <h2 id="gaussjordan-elimination"><span class="header-section-number">3.2.4</span> Gauss–Jordan
+                elimination</h2>
                 <p>We now show that every matrix can be brought to
                 reduced row echelon form. The procedure works through
                 the columns from left to right, keeping a count <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="r"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi></math></mjx-assistive-mml></mjx-container></span> of the pivots found so
@@ -988,7 +990,7 @@ Elimination</span>
                 happens is the theorem of the next section; until it is
                 proved, “the” RREF of a matrix is not yet justified.</p>
                 </div>
-                <h2 id="reading-off-the-solutions"><span class="header-section-number">3.2.5. </span> Reading off
+                <h2 id="reading-off-the-solutions"><span class="header-section-number">3.2.5</span> Reading off
                 the solutions</h2>
                 <p>Once <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="[\, \mathbf{A} \mid \mathbf{b}
                 \,]"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2223"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41B TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mstyle><mjx-mspace style="width: 0.167em;"></mjx-mspace></mjx-mstyle><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mo>∣</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">b</mi></mrow><mstyle scriptlevel="0"><mspace width="0.167em"></mspace></mstyle><mo stretchy="false">]</mo></math></mjx-assistive-mml></mjx-container></span> is in reduced row echelon form, the example
@@ -1241,8 +1243,8 @@ Elimination</span>
                 \pm 1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2260"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-cB1"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi><mo>≠</mo><mo>±</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>, and loses exactly the two interesting
                 cases.</p>
                 </div>
-                <h2 id="more-unknowns-than-equations"><span class="header-section-number">3.2.6. </span> More
-                unknowns than equations</h2>
+                <h2 id="more-unknowns-than-equations"><span class="header-section-number">3.2.6</span> More unknowns
+                than equations</h2>
                 <p>Counting pivots gives a first general theorem. A
                 matrix with <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="m"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container></span> rows
                 has at most <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="m"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container></span>
@@ -1310,7 +1312,7 @@ Elimination</span>
                 theory of Chapter 1 and the computations of this chapter
                 will fit together, and the rest of the chapter makes
                 that fit exact.</p>
-                <h2 id="exercises"><span class="header-section-number">3.2.7. </span>
+                <h2 id="exercises"><span class="header-section-number">3.2.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1878,8 +1880,8 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
-            <script type="module" src="../components.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
+            <script type="module" src="../components.js?v=691f445cb9"></script>
         </body>
 
 </html>

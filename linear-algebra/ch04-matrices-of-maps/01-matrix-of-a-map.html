@@ -37,13 +37,15 @@ map lists, column by column, where the input basis vectors go, written
 in coordinates of the output basis.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -150,8 +152,8 @@ Linear Map</span>
                 working method of the rest of the book: to study an
                 abstract map, write down its matrix, compute there, and
                 translate back.</p>
-                <h2 id="writing-a-map-as-a-matrix"><span class="header-section-number">4.1.1. </span> Writing a
-                map as a matrix</h2>
+                <h2 id="writing-a-map-as-a-matrix"><span class="header-section-number">4.1.1</span> Writing a map
+                as a matrix</h2>
                 <p>We have seen one family of linear maps that is
                 completely described by a table of numbers: the matrix
                 maps <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T_\mathbf{A} \colon F^n \to
@@ -484,7 +486,7 @@ Linear Map</span>
                 column is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(1,
                 1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="the-fundamental-square"><span class="header-section-number">4.1.2. </span> The
+                <h2 id="the-fundamental-square"><span class="header-section-number">4.1.2</span> The
                 fundamental square</h2>
                 <p>Here is the promise behind the definition: once
                 coordinates are taken on both sides, applying <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="T"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D447 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>T</mi></math></mjx-assistive-mml></mjx-container></span> <strong>is</strong>
@@ -607,7 +609,7 @@ Linear Map</span>
                 any two values <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="p(1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>, <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="p(-1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> can be
                 prescribed.</p>
                 </div>
-                <h2 id="composition-is-matrix-multiplication"><span class="header-section-number">4.1.3. </span> Composition
+                <h2 id="composition-is-matrix-multiplication"><span class="header-section-number">4.1.3</span> Composition
                 is matrix multiplication</h2>
                 <p>In Chapter 0, §9 we asked why matrices are multiplied
                 row-against-column. The answer given there was
@@ -808,7 +810,7 @@ Linear Map</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="([D]_{\mathcal{E}_3}^{\mathcal{E}_3})^4 =
                 [D^4]_{\mathcal{E}_3}^{\mathcal{E}_3} = \mathbf{O}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-msubsup><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.325em; margin-left: 0;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c45 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em; margin-left: -0.036em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-TeXAtom size="s" texclass="ORD"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c45 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em; margin-left: -0.036em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-script></mjx-msubsup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-msubsup><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.325em; margin-left: 0;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c45 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em; margin-left: -0.036em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom><mjx-spacer style="margin-top: 0.18em;"></mjx-spacer><mjx-TeXAtom size="s" texclass="ORD"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c45 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em; margin-left: -0.036em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msub></mjx-TeXAtom></mjx-script></mjx-msubsup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mo stretchy="false">[</mo><mi>D</mi><msubsup><mo stretchy="false">]</mo><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">E</mi></mrow><mn>3</mn></msub></mrow><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">E</mi></mrow><mn>3</mn></msub></mrow></msubsup><msup><mo stretchy="false">)</mo><mn>4</mn></msup><mo>=</mo><mo stretchy="false">[</mo><msup><mi>D</mi><mn>4</mn></msup><msubsup><mo stretchy="false">]</mo><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">E</mi></mrow><mn>3</mn></msub></mrow><mrow data-mjx-texclass="ORD"><msub><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">E</mi></mrow><mn>3</mn></msub></mrow></msubsup><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">O</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, recovering <a href="../ch02-linear-maps/04-algebra-of-linear-maps.html#exm-differentiation-nilpotent" class="xref" data-ref="exm-differentiation-nilpotent" data-shard="ch02-linear-maps">Example (Differentiation Is Nilpotent)</a>
                 in matrix form.</p>
-                <h2 id="linear-maps-are-matrices"><span class="header-section-number">4.1.4. </span> Linear maps
+                <h2 id="linear-maps-are-matrices"><span class="header-section-number">4.1.4</span> Linear maps
                 are matrices</h2>
                 <p>The sums in <a href="#cor-matrix-of-polynomial-of-operator" class="xref" data-ref="cor-matrix-of-polynomial-of-operator" data-shard="ch04-matrices-of-maps">Corollary 4.1.3</a>
                 work between different spaces too, and together with the
@@ -896,8 +898,8 @@ Linear Map</span>
                 the same algebra, written in two languages. The
                 dictionary depends on the basis, as every isomorphism to
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="F^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em; margin-left: 0.055em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>F</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> does.</p>
-                <h2 id="reading-rank-and-invertibility-from-a-matrix"><span class="header-section-number">4.1.5. </span> Reading
-                rank and invertibility from a matrix</h2>
+                <h2 id="reading-rank-and-invertibility-from-a-matrix"><span class="header-section-number">4.1.5</span> Reading rank
+                and invertibility from a matrix</h2>
                 <p>Chapter 3 developed tools for the rank and the
                 invertibility of matrices. The square of <a href="#thm-matrix-of-map-coordinates" class="xref" data-ref="thm-matrix-of-map-coordinates" data-shard="ch04-matrices-of-maps">Theorem 4.1.1</a>
                 transfers all of them to linear maps.</p>
@@ -1140,7 +1142,7 @@ Linear Map</span>
                 shows that one map can have a complicated matrix in one
                 basis and a diagonal one in another; the next section
                 finds the formula relating the two.</p>
-                <h2 id="exercises"><span class="header-section-number">4.1.6. </span>
+                <h2 id="exercises"><span class="header-section-number">4.1.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1515,7 +1517,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

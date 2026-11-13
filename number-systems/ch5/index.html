@@ -39,13 +39,15 @@ the core track (all of A, one B and one C per section, the exit checks);
 about 35 hours for everything.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="d9f17e5a29">
-    <link rel="stylesheet" href="../styles.css?v=d9f17e5a29">
+    <meta name="asset-version" content="e3a79a731c">
+    <link rel="stylesheet" href="../styles.css?v=e3a79a731c">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -224,19 +226,19 @@ Real Numbers from Cauchy Sequences</span>
                 and the citing rule by which induction and recursion
                 apply to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{N}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2115 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">N</mi></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch1/categoricity.html#cor-omega-identification" class="xref" data-ref="cor-omega-identification" data-shard="ch01-natural-numbers">Corollary 1.4.3</a>
                 (b)). From <em>Sets and Functions</em>: equivalence
-                classes, quotient sets and the partition theorem (<a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-class" class="xref xref-external" data-ref="def-equivalence-class" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.2.2</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-quotient-set" class="xref xref-external" data-ref="def-quotient-set" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.2.4</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#thm-classes-partition" class="xref xref-external" data-ref="thm-classes-partition" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Theorem 5.2.1</a>),
+                classes, quotient sets and the partition theorem (<a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-class" class="xref xref-external" data-ref="def-equivalence-class" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.2.2</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-quotient-set" class="xref xref-external" data-ref="def-quotient-set" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.2.4</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#thm-classes-partition" class="xref xref-external" data-ref="thm-classes-partition" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Theorem 5.2.1</a>),
                 with the method of checking a rule on representatives
-                (<a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: checking that a definition on classes is well defined)</a>);
-                the recursion theorem (<a href="../../sets-and-functions/ch3/recursion.html#thm-recursion" class="xref xref-external" data-ref="thm-recursion" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Theorem 3.3.1</a>);
+                (<a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: checking that a definition on classes is well defined)</a>);
+                the recursion theorem (<a href="../../sets-and-functions/ch3/recursion.html#thm-recursion" class="xref xref-external" data-ref="thm-recursion" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Theorem 3.3.1</a>);
                 suprema, with their uniqueness and the greatest element
-                as supremum (<a href="../../sets-and-functions/ch5/orders.html#def-order-supremum" class="xref xref-external" data-ref="def-order-supremum" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.3.5</a>,
-                <a href="../../sets-and-functions/ch5/orders.html#prp-greatest-unique" class="xref xref-external" data-ref="prp-greatest-unique" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Proposition 5.3.1</a>);
-                and the axiom of choice (<a href="../../sets-and-functions/ch6/countable-unions-and-choice.html#ax-choice" class="xref xref-external" data-ref="ax-choice" data-shard="ch06-axiom-of-choice" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Axiom 6.1.1</a>),
+                as supremum (<a href="../../sets-and-functions/ch5/orders.html#def-order-supremum" class="xref xref-external" data-ref="def-order-supremum" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.3.5</a>,
+                <a href="../../sets-and-functions/ch5/orders.html#prp-greatest-unique" class="xref xref-external" data-ref="prp-greatest-unique" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Proposition 5.3.1</a>);
+                and the axiom of choice (<a href="../../sets-and-functions/ch6/countable-unions-and-choice.html#ax-choice" class="xref xref-external" data-ref="ax-choice" data-shard="ch06-axiom-of-choice" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Axiom 6.1.1</a>),
                 named only to show that Section 5.5 does not use it.
-                From <em>Logic and Proof</em>: induction (<a href="../../logic-and-proof/ch4/induction.html#ax-induction" class="xref xref-external" data-ref="ax-induction" data-shard="ch04-semantics-soundness-completeness" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Axiom 4.2.1</a>)
-                and the negation of bounded quantifiers (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-bounded-quantifier-negation" class="xref xref-external" data-ref="prp-bounded-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Proposition 6.2.3</a>).
+                From <em>Logic and Proof</em>: induction (<a href="../../logic-and-proof/ch4/induction.html#ax-induction" class="xref xref-external" data-ref="ax-induction" data-shard="ch04-semantics-soundness-completeness" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Axiom 4.2.1</a>) and the
+                negation of bounded quantifiers (<a href="../../logic-and-proof/ch6/quantifier-laws.html#prp-bounded-quantifier-negation" class="xref xref-external" data-ref="prp-bounded-quantifier-negation" data-shard="ch06-working-with-quantifiers" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Proposition 6.2.3</a>).
                 Some exercises also draw on the non-Archimedean field
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{Q}(t)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211A TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D461 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Q</mi></mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> of Chapter
                 4, the fractions of Chapter 3, countability from
@@ -295,7 +297,7 @@ Real Numbers from Cauchy Sequences</span>
                 chapter, cited from then on.</p>
                 <ul>
                 <li><strong>Representatives, then independence</strong>
-                (<a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: checking that a definition on classes is well defined)</a>).
+                (<a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: checking that a definition on classes is well defined)</a>).
                 To define an operation or a property on classes, state
                 it on representatives, then show that the class of the
                 answer survives replacing each input by an equivalent
@@ -423,7 +425,7 @@ Real Numbers from Cauchy Sequences</span>
                 of rationals under <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\sim"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c223C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>∼</mo></math></mjx-assistive-mml></mjx-container></span>; <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R} = \mathcal{C}/{\sim}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-cal mjx-i"><mjx-c class="mjx-c43 TEX-C"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c223C"></mjx-c></mjx-mo></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mo>=</mo><mrow data-mjx-texclass="ORD"><mi data-mjx-variant="-tex-calligraphic" mathvariant="script">C</mi></mrow><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mrow data-mjx-texclass="ORD"><mo>∼</mo></mrow></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch5/the-field-of-reals.html#def-reals-cauchy-classes" class="xref" data-ref="def-reals-cauchy-classes" data-shard="ch05-reals-from-cauchy">Definition 5.2.1</a>).</li>
                 <li><strong>representative</strong>: any <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="b \in [a]"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi><mo>∈</mo><mo stretchy="false">[</mo><mi>a</mi><mo stretchy="false">]</mo></math></mjx-assistive-mml></mjx-container></span> (<a href="../ch5/the-field-of-reals.html#def-reals-cauchy-classes" class="xref" data-ref="def-reals-cauchy-classes" data-shard="ch05-reals-from-cauchy">Definition 5.2.1</a>).</li>
                 <li><strong>supremum</strong>: the least upper bound of
-                a set, as defined in <em>Sets and Functions</em> (<a href="../../sets-and-functions/ch5/orders.html#def-order-supremum" class="xref xref-external" data-ref="def-order-supremum" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.3.5</a>).</li>
+                a set, as defined in <em>Sets and Functions</em> (<a href="../../sets-and-functions/ch5/orders.html#def-order-supremum" class="xref xref-external" data-ref="def-order-supremum" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.3.5</a>).</li>
                 </ul>
             </article>
 
@@ -471,7 +473,7 @@ That Should Converge</span>
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=d9f17e5a29"></script>
+    <script defer="" src="../main.js?v=e3a79a731c"></script>
             </body>
 
 </html>

@@ -37,13 +37,15 @@ that a Markov chain settles down to a unique steady state, but only
 under three hypotheses on the eigenvalues of its transition matrix…">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -167,7 +169,7 @@ Chains</span>
                 Many books use rows and the transposed matrix; we never
                 do. The order <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\ge"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2265"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>≥</mo></math></mjx-assistive-mml></mjx-container></span>
                 is entrywise.</p>
-                <h2 id="steady-states-and-the-perron-root"><span class="header-section-number">19.6.1. </span> Steady
+                <h2 id="steady-states-and-the-perron-root"><span class="header-section-number">19.6.1</span> Steady
                 states and the Perron root</h2>
                 <p>We first place stochastic matrices inside the theory
                 of this chapter. Since <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}_m =
@@ -253,8 +255,8 @@ Chains</span>
                 Existence and uniqueness of the steady state come from
                 irreducibility; convergence needs more.</p>
                 </div>
-                <h2 id="the-long-run-theorem"><span class="header-section-number">19.6.2. </span> The
-                long-run theorem</h2>
+                <h2 id="the-long-run-theorem"><span class="header-section-number">19.6.2</span> The long-run
+                theorem</h2>
                 <p>The “more” is primitivity. Here are the three
                 conclusions of <a href="../ch09-eigenvalues/11-powers-recurrences-markov.html#thm-markov-limit-diagonalizable" class="xref" data-ref="thm-markov-limit-diagonalizable" data-shard="ch09-eigenvalues">Theorem 9.11.4</a>, in the
                 same words, under the hypothesis that Chapter 9 §11
@@ -436,8 +438,8 @@ Chains</span>
                 & 1/2 \end{pmatrix}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 3em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-TeXAtom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-TeXAtom><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>2</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn><mrow data-mjx-texclass="ORD"><mo>/</mo></mrow><mn>2</mn></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></span> has no positive power,
                 yet its powers converge to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{e}_1\mathbf{1}^{\top}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D41E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CF TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c22A4"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">e</mi></mrow><mn>1</mn></msub><msup><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">1</mn></mrow><mrow data-mjx-texclass="ORD"><mi mathvariant="normal">⊤</mi></mrow></msup></math></mjx-assistive-mml></mjx-container></span>, whose
                 steady state has a zero entry.</p>
-                <h2 id="irreducible-chains-convergence-on-average"><span class="header-section-number">19.6.3. </span>
-                Irreducible chains: convergence on average</h2>
+                <h2 id="irreducible-chains-convergence-on-average"><span class="header-section-number">19.6.3</span> Irreducible
+                chains: convergence on average</h2>
                 <p>Now drop primitivity but keep irreducibility. By <a href="#prp-stochastic-perron" class="xref" data-ref="prp-stochastic-perron" data-shard="ch19-nonnegative">Proposition 19.6.1</a> (c)
                 the steady state <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{v}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is still unique
                 and positive, but by <a href="../ch19-nonnegative/05-primitive-matrices.html#thm-primitive-iff-single-peripheral" class="xref" data-ref="thm-primitive-iff-single-peripheral" data-shard="ch19-nonnegative">Theorem 19.5.3</a> and <a href="../ch19-nonnegative/05-primitive-matrices.html#thm-peripheral-spectrum" class="xref" data-ref="thm-peripheral-spectrum" data-shard="ch19-nonnegative">Theorem 19.5.4</a> the
@@ -630,7 +632,7 @@ Chains</span>
                 it is primitive by <a href="../ch19-nonnegative/05-primitive-matrices.html#cor-primitive-iff-aperiodic" class="xref" data-ref="cor-primitive-iff-aperiodic" data-shard="ch19-nonnegative">Corollary 19.5.5</a>, and
                 it has the same steady state; exercise C1 works this
                 out.</p>
-                <h2 id="reducible-chains-many-steady-states"><span class="header-section-number">19.6.4. </span> Reducible
+                <h2 id="reducible-chains-many-steady-states"><span class="header-section-number">19.6.4</span> Reducible
                 chains: many steady states</h2>
                 <p>Without irreducibility, uniqueness fails too. The
                 chain can split into parts that never communicate, and
@@ -726,7 +728,7 @@ Chains</span>
                 entered, is never left, and all convex combinations of
                 these: that is the general picture, which we do not
                 prove here.</p>
-                <h2 id="absorbing-chains"><span class="header-section-number">19.6.5. </span> Absorbing
+                <h2 id="absorbing-chains"><span class="header-section-number">19.6.5</span> Absorbing
                 chains</h2>
                 <p>The simplest traps are single states. A state <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="j"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>j</mi></math></mjx-assistive-mml></mjx-container></span> is
                 <strong>absorbing</strong> if <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="a_{jj} = 1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>j</mi><mi>j</mi></mrow></msub><mo>=</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>, so that
@@ -965,7 +967,7 @@ Chains</span>
                 as <a href="#lem-absorbing-transient-decay" class="xref" data-ref="lem-absorbing-transient-decay" data-shard="ch19-nonnegative">Lemma 19.6.4</a> requires;
                 but the lemma was proved without finding them, which is
                 the pattern of this whole section.</p>
-                <h2 id="exercises"><span class="header-section-number">19.6.6. </span>
+                <h2 id="exercises"><span class="header-section-number">19.6.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1415,7 +1417,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

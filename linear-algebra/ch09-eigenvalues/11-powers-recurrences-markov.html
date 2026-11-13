@@ -39,13 +39,15 @@ at random. A shared bicycle is parked each night at one of a few
 stations; a machine is either working or under repair.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -153,7 +155,7 @@ Recurrences, and Markov Chains</span>
                 explicit formula <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{A}^k = \mathbf{P}
                 \mathbf{D}^k\mathbf{P}^{-1}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D400 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-TeXAtom space="4" texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D403 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D40F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">A</mi></mrow><mi>k</mi></msup><mo>=</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">P</mi></mrow><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">D</mi></mrow><mi>k</mi></msup><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">P</mi></mrow><mrow data-mjx-texclass="ORD"><mo>−</mo><mn>1</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></span> and limits of sequences of numbers,
                 one entry at a time.</p>
-                <h2 id="vector-recurrences"><span class="header-section-number">9.11.1. </span> Vector
+                <h2 id="vector-recurrences"><span class="header-section-number">9.11.1</span> Vector
                 recurrences</h2>
                 <p>A <strong>linear recurrence</strong> of first order
                 is a rule <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{x}_{k+1} =
@@ -210,7 +212,7 @@ Recurrences, and Markov Chains</span>
                 worked Fibonacci example (<a href="../ch09-eigenvalues/04-diagonalization.html#exm-fibonacci-binet" class="xref" data-ref="exm-fibonacci-binet" data-shard="ch09-eigenvalues">Example (A Closed Formula for the Fibonacci Numbers)</a>)
                 is the case <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="n =
                 2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mn>2</mn></math></mjx-assistive-mml></mjx-container></span>.</p>
-                <h2 id="scalar-recurrences-and-companion-matrices"><span class="header-section-number">9.11.2. </span> Scalar
+                <h2 id="scalar-recurrences-and-companion-matrices"><span class="header-section-number">9.11.2</span> Scalar
                 recurrences and companion matrices</h2>
                 <p>A recurrence such as <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="a_{k+3} = 2a_{k+2} + a_{k+1} -
                 2a_k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-TeXAtom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="3"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>+</mo><mn>3</mn></mrow></msub><mo>=</mo><mn>2</mn><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>+</mo><mn>2</mn></mrow></msub><mo>+</mo><msub><mi>a</mi><mrow data-mjx-texclass="ORD"><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mn>2</mn><msub><mi>a</mi><mi>k</mi></msub></math></mjx-assistive-mml></mjx-container></span> involves one number sequence but several
@@ -447,7 +449,7 @@ Recurrences, and Markov Chains</span>
                 the missing eigenvector, just as the entry <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></mjx-assistive-mml></mjx-container></span> was for <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\begin{pmatrix} 1 & 1 \\ 0
                 & 1 \end{pmatrix}^k"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mrow><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2em;" justify="left"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align: 1.177em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow><mi>k</mi></msup></math></mjx-assistive-mml></mjx-container></span> in Section 4.</p>
                 </div>
-                <h2 id="stochastic-matrices"><span class="header-section-number">9.11.3. </span> Stochastic
+                <h2 id="stochastic-matrices"><span class="header-section-number">9.11.3</span> Stochastic
                 matrices</h2>
                 <p>Now a system that moves at random. A shared bicycle
                 is parked each night at one of a few stations; a machine
@@ -600,7 +602,7 @@ Recurrences, and Markov Chains</span>
                 sum to <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml></mjx-container></span> is <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{1}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mn class="mjx-b"><mjx-c class="mjx-c1D7CF TEX-B"></mjx-c></mjx-mn></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mn mathvariant="bold">1</mn></mrow></math></mjx-assistive-mml></mjx-container></span> a right
                 eigenvector.</p>
                 </div>
-                <h2 id="markov-chains"><span class="header-section-number">9.11.4. </span> Markov
+                <h2 id="markov-chains"><span class="header-section-number">9.11.4</span> Markov
                 chains</h2>
                 <div id="def-markov-chain" class="definition env" data-env-type="definition" data-number="9.11.2" style="--env-color: #b0414f">
                 <span class="theorem-title theorem-title-resolved"><strong>Definition</strong><strong>
@@ -962,8 +964,8 @@ Recurrences, and Markov Chains</span>
                 <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{v}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is the
                 only steady state and the long-run distribution, by <a href="#thm-markov-limit-diagonalizable" class="xref" data-ref="thm-markov-limit-diagonalizable" data-shard="ch09-eigenvalues">Theorem 9.11.4</a>.)</p>
                 </div>
-                <h2 id="a-population-model"><span class="header-section-number">9.11.5. </span> A
-                population model</h2>
+                <h2 id="a-population-model"><span class="header-section-number">9.11.5</span> A population
+                model</h2>
                 <p>Not every matrix of this kind is stochastic. In a
                 population divided into age classes, individuals are
                 born, age, and die, and the total need not be preserved.
@@ -1047,7 +1049,7 @@ Recurrences, and Markov Chains</span>
                 effect is bounded while the dominant term grows, so its
                 share fades.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">9.11.6. </span>
+                <h2 id="exercises"><span class="header-section-number">9.11.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1508,7 +1510,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

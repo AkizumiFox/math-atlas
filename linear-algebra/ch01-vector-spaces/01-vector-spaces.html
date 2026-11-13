@@ -37,13 +37,15 @@ kinds of objects that can be added and scaled: pairs of real numbers,
 polynomials, matrices.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -145,7 +147,7 @@ Spaces</span>
                 definition, the vector space, and proves the first
                 consequences once, so that they hold in every example at
                 the same time.</p>
-                <h2 id="one-set-of-rules-in-three-places"><span class="header-section-number">1.1.1. </span> One set of
+                <h2 id="one-set-of-rules-in-three-places"><span class="header-section-number">1.1.1</span> One set of
                 rules in three places</h2>
                 <p>Start with the plane <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span>. A pair <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{u} = (3, 1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42E TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">u</mi></mrow><mo>=</mo><mo stretchy="false">(</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span> can be
                 pictured as an arrow from the origin to the point <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="(3, 1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mn>3</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>. Two arrows are
@@ -185,7 +187,7 @@ Spaces</span>
                 <p><em>A vector space is a set whose elements can be
                 added and scaled by numbers from a field, with the usual
                 rules of arithmetic.</em></p>
-                <h2 id="the-definition"><span class="header-section-number">1.1.2. </span> The
+                <h2 id="the-definition"><span class="header-section-number">1.1.2</span> The
                 definition</h2>
                 <div id="def-vector-space" class="definition env" data-env-type="definition" data-number="1.1.1" style="--env-color: #b0414f">
                 <span class="theorem-title theorem-title-resolved"><strong>Definition</strong><strong>
@@ -308,8 +310,7 @@ Spaces</span>
                 such as “<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="v =
                 0"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi><mo>=</mo><mn>0</mn></math></mjx-assistive-mml></mjx-container></span>” for a matrix <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="v"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="examples"><span class="header-section-number">1.1.3. </span>
-                Examples</h2>
+                <h2 id="examples"><span class="header-section-number">1.1.3</span> Examples</h2>
                 <p>We start with the families we will use throughout the
                 book. For each, the work is to say what the operations
                 are and why the axioms hold. We check some axioms in
@@ -667,7 +668,7 @@ Spaces</span>
                 </ul>
                 </div>
                 </div>
-                <h2 id="non-examples"><span class="header-section-number">1.1.4. </span>
+                <h2 id="non-examples"><span class="header-section-number">1.1.4</span>
                 Nonexamples</h2>
                 <p>Each nonexample below is a small change to an
                 example. We say what still works and name the exact
@@ -704,7 +705,7 @@ Spaces</span>
                 <strong>not a function</strong> <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R} \times \mathbb{Z}^2 \to
                 \mathbb{Z}^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-cD7"></mjx-c></mjx-mo><mjx-msup space="3"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2192"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mo>×</mo><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Z</mi></mrow><mn>2</mn></msup><mo accent="false" stretchy="false">→</mo><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">Z</mi></mrow><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span>.</li>
                 </ul>
-                <h2 id="why-these-axioms"><span class="header-section-number">1.1.5. </span> Why these
+                <h2 id="why-these-axioms"><span class="header-section-number">1.1.5</span> Why these
                 axioms</h2>
                 <p>Each axiom is there for a reason, and a few
                 conventions deserve a comment.</p>
@@ -734,7 +735,7 @@ Spaces</span>
                 any vector space, even when they are polynomials or
                 functions.</li>
                 </ul>
-                <h2 id="first-consequences-of-the-axioms"><span class="header-section-number">1.1.6. </span> First
+                <h2 id="first-consequences-of-the-axioms"><span class="header-section-number">1.1.6</span> First
                 consequences of the axioms</h2>
                 <p>The definition says a zero vector and additive
                 inverses <strong>exist</strong>, not that they are
@@ -1007,7 +1008,7 @@ Spaces</span>
                 spaces are infinite sets, so how should we measure their
                 size? The next section starts on the answer by looking
                 at the vector spaces that sit inside a given one.</p>
-                <h2 id="exercises"><span class="header-section-number">1.1.7. </span>
+                <h2 id="exercises"><span class="header-section-number">1.1.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1520,7 +1521,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

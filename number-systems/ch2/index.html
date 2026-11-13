@@ -37,13 +37,15 @@ the core track (all of A, one B and one C per section, the exit checks);
 about 25 hours for everything.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="d9f17e5a29">
-    <link rel="stylesheet" href="../styles.css?v=d9f17e5a29">
+    <meta name="asset-version" content="e3a79a731c">
+    <link rel="stylesheet" href="../styles.css?v=e3a79a731c">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -173,32 +175,29 @@ Integers</span>
                 well-ordering (<a href="../ch1/order-and-well-ordering.html#thm-omega-well-ordering" class="xref" data-ref="thm-omega-well-ordering" data-shard="ch01-natural-numbers">Theorem 1.3.3</a>),
                 and parity (<a href="../ch1/order-and-well-ordering.html#prp-omega-powers-parity" class="xref" data-ref="prp-omega-powers-parity" data-shard="ch01-natural-numbers">Proposition 1.3.4</a>).
                 <em>Sets and Functions</em>: ordered pairs, products,
-                functions and their equality (<a href="../../sets-and-functions/ch1/products-and-relations.html#def-ordered-pair" class="xref xref-external" data-ref="def-ordered-pair" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 1.4.1</a>,
-                <a href="../../sets-and-functions/ch1/products-and-relations.html#def-cartesian-product" class="xref xref-external" data-ref="def-cartesian-product" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 1.4.2</a>,
-                <a href="../../sets-and-functions/ch2/functions-and-composition.html#def-function" class="xref xref-external" data-ref="def-function" data-shard="ch02-functions" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 2.1.1</a>,
-                <a href="../../sets-and-functions/ch2/functions-and-composition.html#prp-function-equality" class="xref xref-external" data-ref="prp-function-equality" data-shard="ch02-functions" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Proposition 2.1.1</a>);
+                functions and their equality (<a href="../../sets-and-functions/ch1/products-and-relations.html#def-ordered-pair" class="xref xref-external" data-ref="def-ordered-pair" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 1.4.1</a>,
+                <a href="../../sets-and-functions/ch1/products-and-relations.html#def-cartesian-product" class="xref xref-external" data-ref="def-cartesian-product" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 1.4.2</a>,
+                <a href="../../sets-and-functions/ch2/functions-and-composition.html#def-function" class="xref xref-external" data-ref="def-function" data-shard="ch02-functions" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 2.1.1</a>,
+                <a href="../../sets-and-functions/ch2/functions-and-composition.html#prp-function-equality" class="xref xref-external" data-ref="prp-function-equality" data-shard="ch02-functions" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Proposition 2.1.1</a>);
                 equivalence relations, classes, quotient sets and the
                 partition theorem, with the method for checking a rule
-                on representatives, from its Section 5.2 (<a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-relation" class="xref xref-external" data-ref="def-equivalence-relation" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.2.1</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-class" class="xref xref-external" data-ref="def-equivalence-class" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.2.2</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-quotient-set" class="xref xref-external" data-ref="def-quotient-set" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 5.2.4</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#thm-classes-partition" class="xref xref-external" data-ref="thm-classes-partition" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Theorem 5.2.1</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: checking that a definition on classes is well defined)</a>,
-                <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-ill-defined-class-map" class="xref xref-external" data-ref="exm-ill-defined-class-map" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (A rule on classes that is not a function)</a>);
-                the least-element method (<a href="../../sets-and-functions/ch3/naturals-and-well-ordering.html#exm-method-least-element" class="xref xref-external" data-ref="exm-method-least-element" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: the least element)</a>);
+                on representatives, from its Section 5.2 (<a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-relation" class="xref xref-external" data-ref="def-equivalence-relation" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.2.1</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-equivalence-class" class="xref xref-external" data-ref="def-equivalence-class" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.2.2</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#def-quotient-set" class="xref xref-external" data-ref="def-quotient-set" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 5.2.4</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#thm-classes-partition" class="xref xref-external" data-ref="thm-classes-partition" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Theorem 5.2.1</a>, <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: checking that a definition on classes is well defined)</a>,
+                <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-ill-defined-class-map" class="xref xref-external" data-ref="exm-ill-defined-class-map" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (A rule on classes that is not a function)</a>);
+                the least-element method (<a href="../../sets-and-functions/ch3/naturals-and-well-ordering.html#exm-method-least-element" class="xref xref-external" data-ref="exm-method-least-element" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: the least element)</a>);
                 for Section 2.4’s C1 only, finite and infinite sets from
-                its Section 4.1 (<a href="../../sets-and-functions/ch4/finite-sets.html#def-finite" class="xref xref-external" data-ref="def-finite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 4.1.2</a>,
-                <a href="../../sets-and-functions/ch4/finite-sets.html#def-infinite" class="xref xref-external" data-ref="def-infinite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 4.1.3</a>,
-                <a href="../../sets-and-functions/ch4/finite-sets.html#cor-pigeonhole-finite-sets" class="xref xref-external" data-ref="cor-pigeonhole-finite-sets" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Corollary 4.1.3</a>,
-                <a href="../../sets-and-functions/ch4/finite-sets.html#prp-subset-finite" class="xref xref-external" data-ref="prp-subset-finite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Proposition 4.1.6</a>);
+                its Section 4.1 (<a href="../../sets-and-functions/ch4/finite-sets.html#def-finite" class="xref xref-external" data-ref="def-finite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 4.1.2</a>,
+                <a href="../../sets-and-functions/ch4/finite-sets.html#def-infinite" class="xref xref-external" data-ref="def-infinite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 4.1.3</a>,
+                <a href="../../sets-and-functions/ch4/finite-sets.html#cor-pigeonhole-finite-sets" class="xref xref-external" data-ref="cor-pigeonhole-finite-sets" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Corollary 4.1.3</a>,
+                <a href="../../sets-and-functions/ch4/finite-sets.html#prp-subset-finite" class="xref xref-external" data-ref="prp-subset-finite" data-shard="ch04-cardinality" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Proposition 4.1.6</a>);
                 and, for Section 2.5 only, the school facts about
-                division and parity that it compares with (<a href="../../sets-and-functions/ch3/induction-in-practice.html#thm-division-algorithm" class="xref xref-external" data-ref="thm-division-algorithm" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Theorem 3.2.3</a>,
-                <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#thm-even-or-odd" class="xref xref-external" data-ref="thm-even-or-odd" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Theorem 1.1.2</a>,
-                <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#def-divides" class="xref xref-external" data-ref="def-divides" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 1.1.2</a>,
-                <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#def-prime" class="xref xref-external" data-ref="def-prime" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Definition 1.1.3</a>).
+                division and parity that it compares with (<a href="../../sets-and-functions/ch3/induction-in-practice.html#thm-division-algorithm" class="xref xref-external" data-ref="thm-division-algorithm" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Theorem 3.2.3</a>, <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#thm-even-or-odd" class="xref xref-external" data-ref="thm-even-or-odd" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Theorem 1.1.2</a>, <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#def-divides" class="xref xref-external" data-ref="def-divides" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 1.1.2</a>,
+                <a href="../../sets-and-functions/ch1/proofs-from-definitions.html#def-prime" class="xref xref-external" data-ref="def-prime" data-shard="ch01-sets" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Definition 1.1.3</a>).
                 <em>Logic and Proof</em>: the square of an even integer
-                (<a href="../../logic-and-proof/ch2/contradiction-and-vacuous-truth.html#thm-square-even-implies-even" class="xref xref-external" data-ref="thm-square-even-implies-even" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">Logic and Proof, Theorem 2.1.3</a>),
-                for a comparison in Section 2.5.</p>
+                (<a href="../../logic-and-proof/ch2/contradiction-and-vacuous-truth.html#thm-square-even-implies-even" class="xref xref-external" data-ref="thm-square-even-implies-even" data-shard="ch02-negation-and-classical-logic" data-base="../../logic-and-proof/" data-book="Logic and Proof">F1 Theorem 2.1.3</a>), for a
+                comparison in Section 2.5.</p>
                 <p><strong>Time.</strong> About 20 hours on the core
                 track (all of A, one B and one C per section, the exit
                 checks); about 25 hours for everything.</p>
@@ -245,7 +244,7 @@ Integers</span>
                 <ul>
                 <li><strong>Check on representatives, one argument at a
                 time</strong> (<a href="../ch2/well-defined-operations.html#exm-method-one-argument-at-a-time" class="xref" data-ref="exm-method-one-argument-at-a-time" data-shard="ch02-integers">Example (Method: check on representatives, one argument at a time)</a>,
-                with <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: checking that a definition on classes is well defined)</a>
+                with <a href="../../sets-and-functions/ch5/equivalence-relations.html#exm-method-well-definedness" class="xref xref-external" data-ref="exm-method-well-definedness" data-shard="ch05-relations" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: checking that a definition on classes is well defined)</a>
                 and <a href="../ch2/well-defined-operations.html#thm-well-defined-on-classes" class="xref" data-ref="thm-well-defined-on-classes" data-shard="ch02-integers">Theorem 2.2.1</a>). Change
                 one representative with the other fixed; each change is
                 one identity at the level below. A formula symmetric in
@@ -264,7 +263,7 @@ Integers</span>
                 <li><strong>Order from a positive set</strong> (<a href="../ch2/ordered-rings.html#prp-order-from-positives" class="xref" data-ref="prp-order-from-positives" data-shard="ch02-integers">Proposition 2.4.1</a>). Say
                 which elements are positive, check (P1) and (P2), and
                 read off every rule for inequalities. (Section 2.4)</li>
-                <li><strong>Least element</strong> (<a href="../../sets-and-functions/ch3/naturals-and-well-ordering.html#exm-method-least-element" class="xref xref-external" data-ref="exm-method-least-element" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">Sets and Functions, Example (Method: the least element)</a>).
+                <li><strong>Least element</strong> (<a href="../../sets-and-functions/ch3/naturals-and-well-ordering.html#exm-method-least-element" class="xref xref-external" data-ref="exm-method-least-element" data-shard="ch03-induction-and-recursion" data-base="../../sets-and-functions/" data-book="Sets and Functions">F2 Example (Method: the least element)</a>).
                 A set of integers bounded below has a least element; it
                 finds the remainder in Section 2.5 and the integer part
                 in Chapter 3. (Sections 2.4 and 2.5)</li>
@@ -396,7 +395,7 @@ as Classes of Pairs</span>
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=d9f17e5a29"></script>
+    <script defer="" src="../main.js?v=e3a79a731c"></script>
             </body>
 
 </html>

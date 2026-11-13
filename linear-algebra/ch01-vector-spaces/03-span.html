@@ -37,13 +37,15 @@ question in (a) was a small system of equations in the unknown
 coefficients.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -149,7 +151,7 @@ Combinations and Span</span>
                 started with. Along the way we meet the first way of
                 measuring a space, by asking whether finitely many
                 vectors are enough to build all of it.</p>
-                <h2 id="linear-combinations"><span class="header-section-number">1.3.1. </span> Linear
+                <h2 id="linear-combinations"><span class="header-section-number">1.3.1</span> Linear
                 combinations</h2>
                 <p>Take two vectors in <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}^3"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mn>3</mn></msup></math></mjx-assistive-mml></mjx-container></span>, say <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{v}_1 = (1, 0, 1)"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow><mn>1</mn></msub><mo>=</mo><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></span>
                 and <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{v}_2 = (0, 1,
@@ -270,8 +272,7 @@ Combinations and Span</span>
                 means deciding whether a system of linear equations has
                 a solution. Here we solve such systems by hand; Chapter
                 3 gives a systematic method.</p>
-                <h2 id="the-span"><span class="header-section-number">1.3.2. </span> The
-                span</h2>
+                <h2 id="the-span"><span class="header-section-number">1.3.2</span> The span</h2>
                 <p><em>The span of some vectors is everything you can
                 build from them by scaling and adding.</em></p>
                 <p>We have two kinds of input to cover. Usually we start
@@ -427,7 +428,7 @@ Combinations and Span</span>
                 are the line <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="y =
                 2x"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D466 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi></math></mjx-assistive-mml></mjx-container></span>. Different lists can have the same span.</p>
                 </div>
-                <h2 id="the-span-is-the-smallest-subspace"><span class="header-section-number">1.3.3. </span> The span is
+                <h2 id="the-span-is-the-smallest-subspace"><span class="header-section-number">1.3.3</span> The span is
                 the smallest subspace</h2>
                 <p>The plane in <a href="#exm-spans" class="xref" data-ref="exm-spans" data-shard="ch01-vector-spaces">Example (Computing Spans)</a>
                 (a) was a subspace. That was no accident. Adding two
@@ -591,7 +592,7 @@ Combinations and Span</span>
                 “<span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="S"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D446 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>S</mi></math></mjx-assistive-mml></mjx-container></span> spans <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="V"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></mjx-assistive-mml></mjx-container></span>” is a verb, defined
                 next.</p>
                 </div>
-                <h2 id="spanning-lists-and-finite-dimensional-spaces"><span class="header-section-number">1.3.4. </span> Spanning
+                <h2 id="spanning-lists-and-finite-dimensional-spaces"><span class="header-section-number">1.3.4</span> Spanning
                 lists and finite-dimensional spaces</h2>
                 <p>The most important case is when the span is
                 everything. Then the list is a complete toolkit for the
@@ -776,8 +777,8 @@ Combinations and Span</span>
                 will be used for independence of an arbitrary set in the
                 next section.</p>
                 </div>
-                <h2 id="working-with-spans"><span class="header-section-number">1.3.5. </span> Working
-                with spans</h2>
+                <h2 id="working-with-spans"><span class="header-section-number">1.3.5</span> Working with
+                spans</h2>
                 <p>Three facts make spans easy to manipulate. Each
                 follows from <a href="#thm-span-subspace" class="xref" data-ref="thm-span-subspace" data-shard="ch01-vector-spaces">Theorem 1.3.1</a>
                 without writing a single combination.</p>
@@ -915,7 +916,7 @@ Combinations and Span</span>
                 contradiction. So no such <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="a,
                 b"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D44F TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>,</mo><mi>b</mi></math></mjx-assistive-mml></mjx-container></span> exist.</p>
                 </div>
-                <h2 id="exercises"><span class="header-section-number">1.3.6. </span>
+                <h2 id="exercises"><span class="header-section-number">1.3.6</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1274,7 +1275,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>

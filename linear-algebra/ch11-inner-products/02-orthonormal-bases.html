@@ -37,13 +37,15 @@ Gram–Schmidt">
 a list of unit vectors that are pairwise perpendicular.">
         <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 
-    <!-- Fonts: STIX Two Text (matches MathJax's math font), served with the site -->
+    <!-- Fonts: STIX Two Text (matches MathJax's math font) for the text, Inter for the
+         interface, served with the site -->
     <link rel="preload" href="../fonts/stix-two-text-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="../fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin="">
 
     <!-- Styles -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
-    <meta name="asset-version" content="02bad205a2">
-    <link rel="stylesheet" href="../styles.css?v=02bad205a2">
+    <meta name="asset-version" content="691f445cb9">
+    <link rel="stylesheet" href="../styles.css?v=691f445cb9">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Math is rendered at build time (build/math.py); this is its stylesheet. MathJax itself
@@ -149,8 +151,8 @@ Bases and Gram–Schmidt</span>
                 others. This section defines such bases, shows that
                 every finite-dimensional inner product space has one,
                 and gives the algorithm that produces them.</p>
-                <h2 id="orthonormal-lists"><span class="header-section-number">11.2.1. </span>
-                Orthonormal lists</h2>
+                <h2 id="orthonormal-lists"><span class="header-section-number">11.2.1</span> Orthonormal
+                lists</h2>
                 <p>The standard basis of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbb{R}^n"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msup><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c211D TEX-A"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"><mi mathvariant="double-struck">R</mi></mrow><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></span> has two features
                 beyond being a basis: distinct vectors are orthogonal,
                 and each has length <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="1"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1</mn></math></mjx-assistive-mml></mjx-container></span>. The two conditions can
@@ -264,8 +266,8 @@ Bases and Gram–Schmidt</span>
                 (<a href="../ch11-inner-products/01-inner-products.html#thm-norm-properties" class="xref" data-ref="thm-norm-properties" data-shard="ch11-inner-products">Theorem 11.1.2</a>
                 (b)). Scaling is always available; orthogonality is the
                 real content.</p>
-                <h2 id="coordinates-in-an-orthonormal-basis"><span class="header-section-number">11.2.2. </span>
-                Coordinates in an orthonormal basis</h2>
+                <h2 id="coordinates-in-an-orthonormal-basis"><span class="header-section-number">11.2.2</span> Coordinates
+                in an orthonormal basis</h2>
                 <p>Here is the payoff promised in the opening.</p>
                 <div id="thm-orthonormal-coordinates" class="theorem env" data-env-type="theorem" data-number="11.2.1" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Theorem</strong><strong>
@@ -390,7 +392,7 @@ Bases and Gram–Schmidt</span>
                 \tfrac19 = \tfrac{27}{9} = 3 =
                 \left\| \mathbf{v} \right\|^2"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mstyle><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mstyle space="3"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mstyle space="3"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mstyle space="4"><mjx-mfrac><mjx-frac><mjx-num><mjx-nstrut></mjx-nstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn></mjx-num><mjx-dbox><mjx-dtable><mjx-line></mjx-line><mjx-row><mjx-den><mjx-dstrut></mjx-dstrut><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-den></mjx-row></mjx-dtable></mjx-dbox></mjx-frac></mjx-mfrac></mjx-mstyle><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c33"></mjx-c></mjx-mn><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msup space="4"><mjx-mrow><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D42F TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom><mjx-mo class="mjx-sop" style="vertical-align: -0.051em;"><mjx-c class="mjx-c2016 TEX-S1"></mjx-c></mjx-mo></mjx-mrow><mjx-script style="vertical-align: 0.363em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>25</mn><mn>9</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>9</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>1</mn><mn>9</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="false" scriptlevel="0"><mfrac><mn>27</mn><mn>9</mn></mfrac></mstyle><mo>=</mo><mn>3</mn><mo>=</mo><msup><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN" symmetric="true">‖</mo><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">v</mi></mrow><mo data-mjx-texclass="CLOSE" symmetric="true">‖</mo></mrow><mn>2</mn></msup></math></mjx-assistive-mml></mjx-container></span>, as Parseval requires.</p>
                 </div>
-                <h2 id="the-gramschmidt-process"><span class="header-section-number">11.2.3. </span> The
+                <h2 id="the-gramschmidt-process"><span class="header-section-number">11.2.3</span> The
                 Gram–Schmidt process</h2>
                 <p>Everything so far assumed that an orthonormal basis
                 was handed to us. Does one always exist? The answer is
@@ -570,7 +572,7 @@ Bases and Gram–Schmidt</span>
                 e_r"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2026"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="2"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D452 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>e</mi><mn>1</mn></msub><mo>,</mo><mo>…</mo><mo>,</mo><msub><mi>e</mi><mi>r</mi></msub></math></mjx-assistive-mml></mjx-container></span> unchanged, and by (a) and (b) the
                 whole output is an orthonormal basis of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="V"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D449 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>V</mi></math></mjx-assistive-mml></mjx-container></span>.</p>
                 </div>
-                <h2 id="two-worked-examples"><span class="header-section-number">11.2.4. </span> Two worked
+                <h2 id="two-worked-examples"><span class="header-section-number">11.2.4</span> Two worked
                 examples</h2>
                 <div id="exm-gram-schmidt-r3" class="example env" data-env-type="example" data-number="" style="--env-color: #3b7a4c">
                 <span class="theorem-title theorem-title-resolved"><strong>Example</strong>
@@ -710,7 +712,7 @@ Bases and Gram–Schmidt</span>
                 chapter gives the reflection-based method, and Chapter
                 24 explains why it is the stable one.</p>
                 </div>
-                <h2 id="all-inner-product-spaces-of-the-same-dimension-look-alike"><span class="header-section-number">11.2.5. </span> All inner
+                <h2 id="all-inner-product-spaces-of-the-same-dimension-look-alike"><span class="header-section-number">11.2.5</span> All inner
                 product spaces of the same dimension look alike</h2>
                 <div id="cor-inner-product-spaces-isomorphic" class="corollary env" data-env-type="corollary" data-number="11.2.4" style="--env-color: #2f62b5">
                 <span class="theorem-title theorem-title-resolved"><strong>Corollary</strong><strong>
@@ -756,7 +758,7 @@ Bases and Gram–Schmidt</span>
                 and that is the subject of Chapter 12. Isometries in
                 general are the subject of Section 7 of this
                 chapter.</p>
-                <h2 id="gram-matrices"><span class="header-section-number">11.2.6. </span> Gram
+                <h2 id="gram-matrices"><span class="header-section-number">11.2.6</span> Gram
                 matrices</h2>
                 <p>Given a list of vectors, all of its inner products
                 can be collected into one matrix, and that matrix turns
@@ -951,7 +953,7 @@ Bases and Gram–Schmidt</span>
                 writing the vectors as columns is not an option. And the
                 answer comes with a witness: a null vector of <span class="math inline"><mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;" data-tex="\mathbf{G}"><mjx-math class=" MJX-TEX" aria-hidden="true"><mjx-TeXAtom texclass="ORD"><mjx-mi class="mjx-b"><mjx-c class="mjx-c1D406 TEX-B"></mjx-c></mjx-mi></mjx-TeXAtom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="ORD"><mi mathvariant="bold">G</mi></mrow></math></mjx-assistive-mml></mjx-container></span> is a dependence
                 relation, ready to read off.</p>
-                <h2 id="exercises"><span class="header-section-number">11.2.7. </span>
+                <h2 id="exercises"><span class="header-section-number">11.2.7</span>
                 Exercises</h2>
                 <h3 id="a.-check-your-understanding">A. Check your
                 understanding</h3>
@@ -1424,7 +1426,7 @@ BY-NC-SA 4.0</a>.
     </div>
 
     <!-- Tooltip Script -->
-    <script defer="" src="../main.js?v=02bad205a2"></script>
+    <script defer="" src="../main.js?v=691f445cb9"></script>
             </body>
 
 </html>
